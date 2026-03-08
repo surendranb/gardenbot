@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Garden Phase 1: Physical Wiring Guide</title>
+    <style>
+        :root {
+            --color-mind: #4f46e5; /* Indigo */
+            --color-build: #0d9488; /* Teal */
+            --bg: #0f172a;
+            --text: #f1f5f9;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { color: var(--color-build); border-bottom: 2px solid var(--color-build); padding-bottom: 0.5rem; }
+        h2 { color: var(--color-mind); margin-top: 2rem; }
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .step { display: flex; align-items: flex-start; margin-bottom: 1rem; }
+        .step-num {
+            background: var(--color-build);
+            color: white;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        code { background: rgba(0,0,0,0.3); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        .warning {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { text-align: left; padding: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        th { color: var(--color-build); }
+    </style>
+</head>
+<body>
+    <h1>Smart Garden: Phase 1 Wiring</h1>
+    <p>Follow these steps to wire your Arduino Uno, sensors, and pump using a breadboard.</p>
+
+    <div class="card">
+        <h2>1. Power the Breadboard Rails</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div>Connect Arduino <b>5V</b> to the <b>Red (+) Rail</b> on the breadboard.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div>Connect Arduino <b>GND</b> to the <b>Blue/Black (-) Rail</b> on the breadboard.</div>
+        </div>
+        <p><i>This allows all sensors to draw power from these common lines.</i></p>
+    </div>
+
+    <div class="card">
+        <h2>2. Connect the Sensors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>VCC / (+)</th>
+                    <th>GND / (-)</th>
+                    <th>Signal / Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>DHT11</b></td>
+                    <td>(+) Rail</td>
+                    <td>(-) Rail</td>
+                    <td><b>Digital Pin 2</b></td>
+                </tr>
+                <tr>
+                    <td><b>Relay (IN)</b></td>
+                    <td>(+) Rail</td>
+                    <td>(-) Rail</td>
+                    <td><b>Digital Pin 3</b></td>
+                </tr>
+                <tr>
+                    <td><b>Soil Moisture</b></td>
+                    <td>(+) Rail</td>
+                    <td>(-) Rail</td>
+                    <td><b>Analog Pin A0</b></td>
+                </tr>
+                <tr>
+                    <td><b>Light Sensor</b></td>
+                    <td>(+) Rail</td>
+                    <td>(-) Rail</td>
+                    <td><b>Analog Pin A1</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>3. Ultrasonic Water Level (HC-SR04)</h2>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div><b>VCC</b> to (+) Rail | <b>GND</b> to (-) Rail.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div><b>Trig Pin</b> to <b>Digital Pin 4</b>.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div><b>Echo Pin</b> to <b>Digital Pin 5</b>.</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. The Pump & Relay (High Power Side)</h2>
+        <div class="warning">
+            <b>Safety First:</b> The relay acts as a switch. Do not connect the pump directly to the Arduino pins.
+        </div>
+        <div class="step">
+            <div class="step-num">1</div>
+            <div>Connect the Pump's <b>Negative (-) Wire</b> directly to the <b>GND (-) Rail</b>.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div>Connect the Pump's <b>Positive (+) Wire</b> to the <b>NO (Normally Open)</b> terminal of the Relay.</div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div>Connect a wire from the <b>5V (+) Rail</b> to the <b>COM (Common)</b> terminal of the Relay.</div>
+        </div>
+        <p><i>When Digital Pin 3 goes LOW, the Relay closes the circuit and the pump turns on.</i></p>
+    </div>
+
+    <div class="card">
+        <h2>5. Final Checklist</h2>
+        <ul>
+            <li>Are any red and black wires touching each other? (Short circuit check)</li>
+            <li>Is the Arduino disconnected from USB while wiring? (Safety check)</li>
+            <li>Is the HC-SR04 mounted looking <i>down</i> into your water tank?</li>
+            <li>Is the Soil Moisture sensor pushed into the plant's soil?</li>
+        </ul>
+    </div>
+
+    <p style="text-align: center; opacity: 0.6; font-size: 0.8rem;">Generated by Gemini CLI for Surendran's Smart Garden Project</p>
+</body>
+</html>

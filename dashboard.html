@@ -1,0 +1,142 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Arid Architect | Terminal Dashboard</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            :root {
+                --bg: #030712;
+                --card-bg: rgba(17, 24, 39, 0.8);
+                --text-main: #f9fafb;
+                --text-dim: #9ca3af;
+                --accent-mind: #6366f1;
+                --accent-build: #14b8a6;
+                --accent-soul: #f59e0b;
+            }
+            body { 
+                background: var(--bg); 
+                color: var(--text-main); 
+                font-family: 'JetBrains Mono', 'SF Mono', monospace;
+                margin: 0; padding: 40px;
+                background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+                background-size: 40px 40px;
+            }
+            .container { max-width: 1100px; margin: auto; }
+            
+            /* Glassmorphism Header */
+            header {
+                display: flex; justify-content: space-between; align-items: center;
+                margin-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.1);
+                padding-bottom: 20px;
+            }
+            .status-badge {
+                background: #38bdf8; color: #000;
+                padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 0.8rem;
+            }
+
+            /* Grid Layout */
+            .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+            .card { 
+                background: var(--card-bg); 
+                backdrop-filter: blur(12px); 
+                border: 1px solid rgba(255,255,255,0.08);
+                border-radius: 16px; padding: 24px;
+            }
+            
+            /* Components */
+            .col-4 { grid-column: span 4; }
+            .col-8 { grid-column: span 8; }
+            .col-12 { grid-column: span 12; }
+
+            .stat-label { color: var(--text-dim); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; }
+            .stat-value { font-size: 2.4rem; font-weight: 700; margin: 10px 0; color: var(--accent-build); }
+            
+            .architect-log { 
+                border-left: 2px solid var(--accent-mind); 
+                padding-left: 20px; font-style: italic; color: var(--text-dim);
+                line-height: 1.6; font-size: 0.95rem;
+            }
+            
+            .plant-photo { width: 100%; border-radius: 12px; object-fit: cover; height: 300px; border: 1px solid rgba(255,255,255,0.1); }
+            canvas { margin-top: 20px; }
+
+            @media (max-width: 900px) { .col-4, .col-8 { grid-column: span 12; } }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div>
+                    <span class="stat-label">System Active // Chennai, IN</span>
+                    <h1 style="margin: 0; font-size: 1.5rem;">ARID ARCHITECT v1.0</h1>
+                </div>
+                <div style="text-align: right;">
+                    <div class="status-badge">DRENCHED</div>
+                    <div class="stat-label" style="margin-top: 8px;">2026-03-08 14:07:31</div>
+                </div>
+            </header>
+
+            <div class="grid">
+                <!-- Architect's Assessment -->
+                <div class="card col-8">
+                    <div class="stat-label">Architect's Internal Log</div>
+                    <p class="architect-log">
+                        "Initial pulse detected for the String of Nickels. Soil is very wet. Avoid watering to prevent root rot. 
+                        The ambient temperature is 30.0°C with 16.0% humidity. 
+                        Water level in the coffee sipper is at 424.1ml."
+                    </p>
+                </div>
+
+                <!-- Environment Stats -->
+                <div class="card col-4">
+                    <div class="stat-label">Soil Moisture</div>
+                    <div class="stat-value" style="color: var(--accent-soul);">327</div>
+                    <div class="stat-label">Target: 400 - 750</div>
+                </div>
+
+                <!-- Photo Gallery -->
+                <div class="card col-4">
+                    <div class="stat-label">Visual Growth Tracking</div>
+                    <img src="photos/2026-03-08.jpg" class="plant-photo">
+                </div>
+
+                <!-- Charts -->
+                <div class="card col-8">
+                    <div class="stat-label">Pulse History (48h)</div>
+                    <div style="height: 250px;"><canvas id="historyChart"></canvas></div>
+                </div>
+
+                <div class="card col-12" style="text-align: center; border: none; background: transparent;">
+                    <span class="stat-label">Designed for The Infinite Game // Surendran's Workspace</span>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const ctx = document.getElementById('historyChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['14:07'],
+                    datasets: [{
+                        label: 'Soil', data: [327], borderColor: '#14b8a6', borderWidth: 2, tension: 0.4, pointRadius: 0
+                    }, {
+                        label: 'Water (ml)', data: [424.1], borderColor: '#6366f1', borderWidth: 2, tension: 0.4, pointRadius: 0, borderDash: [5, 5]
+                    }]
+                },
+                options: { 
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: true, labels: { color: '#9ca3af', font: { family: 'JetBrains Mono' } } } },
+                    scales: { 
+                        x: { grid: { display: false }, ticks: { color: '#4b5563' } },
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#4b5563' } }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    
