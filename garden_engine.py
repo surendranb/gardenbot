@@ -115,45 +115,93 @@ def render_dashboard():
         df['timestamp'] = pd.to_datetime(df['timestamp'])
         df = df.sort_values('timestamp')
         
-        # View Window (Last 48h)
-        start_time = datetime.now() - timedelta(hours=48)
-        df = df[df['timestamp'] > start_time]
-        if len(df) < 2: return {"error": "Insufficient data"}
+        # Current time and view window: ALWAYS 4 days total
+        now = datetime.now()
+        start_view = now - timedelta(hours=48)
+        end_view = now + timedelta(hours=48) # Fixed 48h future
+        
+        # Filter for history
+        df_hist = df[df['timestamp'] > start_view].copy()
+        if len(df_hist) < 2: return {"error": "Insufficient data for historical view"}
 
         # Setup Plot
         plt.style.use('dark_background')
-        fig, ax1 = plt.subplots(figsize=(15, 10))
+        fig, ax1 = plt.subplots(figsize=(15, 10), dpi=100)
         fig.patch.set_facecolor('#000000'); ax1.set_facecolor('#000000')
         ax2 = ax1.twinx(); ax2.grid(False)
         
-        # Plot Environment
-        ax1.fill_between(df['timestamp'], 0, df['light'], color='#FFD700', alpha=0.1, label='Light')
-        ax2.plot(df['timestamp'], df['temp'], color='#FF3131', label='Temp', linewidth=1.5)
-        ax2.plot(df['timestamp'], df['hum'], color='#00FFFF', label='Humidity', linewidth=1.5)
+        # Colors
+        C_LIGHT = '#FFD700'; C_TEMP = '#FF3131'; C_HUM = '#00FFFF'; C_PROJ = '#F0FF00'
         
-        # Plot Plants
+        # 1. Environment
+        ax1.fill_between(df_hist['timestamp'], 0, df_hist['light'], color=C_LIGHT, alpha=0.1, label='Light')
+        ax2.plot(df_hist['timestamp'], df_hist['temp'], color=C_TEMP, label='Temp °C', linewidth=1.5, alpha=0.8)
+        ax2.plot(df_hist['timestamp'], df_hist['hum'], color=C_HUM, label='Humidity %', linewidth=1.5, alpha=0.8)
+        
+        # 2. Plants & Projections
         for plant in plants:
             pid = plant["id"]
-            if pid in df.columns:
-                # Plot line
-                ax1.plot(df['timestamp'], df[pid], color=plant["color"], linewidth=3, label=plant["name"])
+            if pid in df_hist.columns:
+                color = plant.get("color", "#00FF41")
+                ax1.plot(df_hist['timestamp'], df_hist[pid], color=color, linewidth=4, label=plant["name"], zorder=10)
                 
-                # Add Threshold Dashes
-                ax1.axhline(y=plant["dry_threshold"], color=plant["color"], linestyle=':', alpha=0.5)
+                thresh = plant["dry_threshold"]
+                ax1.axhline(y=thresh, color=color, linestyle=':', alpha=0.3)
+                
+                # Projection Logic
+                recent = df_hist[df_hist['timestamp'] > (now - timedelta(hours=24))].copy()
+                if len(recent) >= 3:
+                    import numpy as np
+                    x_reg = (recent['timestamp'] - recent['timestamp'].min()).dt.total_seconds().values
+                    y_reg = recent[pid].values
+                    slope, intercept = np.polyfit(x_reg, y_reg, 1)
+                    
+                    if slope > 0.00001: 
+                        seconds_to_cross = (thresh - y_reg[-1]) / slope
+                        if seconds_to_cross > 0:
+                            cross_time = now + timedelta(seconds=seconds_to_cross)
+                            # Only plot if within the 48h future window
+                            if cross_time < end_view:
+                                proj_time = [recent['timestamp'].max(), cross_time]
+                                proj_vals = [y_reg[-1], thresh]
+                                ax1.plot(proj_time, proj_vals, color=C_PROJ, linestyle='--', linewidth=2, alpha=0.7)
+                                ax1.scatter([cross_time], [thresh], color=C_PROJ, s=200, marker='*', edgecolors='white', zorder=20)
+                                ax1.text(cross_time, thresh + 20, f" {plant['name']} Dryout\n {cross_time.strftime('%m/%d %I%p')}", color=C_PROJ, fontsize=9)
 
-        # Formatting
-        ax1.set_ylim(0, 1024); ax1.set_ylabel("Moisture Index")
-        ax2.set_ylim(10, 50); ax2.set_ylabel("Env (°C / %)")
-        ax1.set_title("GARDENOS: LIVE MONITORING", fontsize=18, pad=20)
-        ax1.xaxis.set_major_formatter(mdates.DateFormatter('%I%p\n%d'))
-        ax1.legend(loc='upper left', facecolor='#111111')
-        ax2.legend(loc='upper right', facecolor='#111111')
+        # 3. Final Formatting
+        ax1.set_xlim(start_view, end_view)
+        ax1.set_ylim(0, 1024)
+        ax2.set_ylim(10, 60)
+        
+        # Align Grid
+        ax1.yaxis.set_major_locator(ticker.LinearLocator(6))
+        ax2.yaxis.set_major_locator(ticker.LinearLocator(6))
+        ax1.grid(True, which='major', linestyle='--', alpha=0.2)
+        
+        # Shade Future
+        ax1.axvspan(now, end_view, color='#ffffff', alpha=0.05)
+        ax1.axvline(x=now, color='#ffffff', linestyle='-', alpha=0.5)
+        ax1.text(now, 1000, " PRESENT", color='#ffffff', alpha=0.8, fontsize=10, fontweight='bold')
+
+        ax1.set_ylabel("Moisture Index / Light")
+        ax2.set_ylabel("Environment (Temp / Hum)")
+        ax1.set_title("GARDENOS: 4-DAY BIOMETRIC ANALYSIS (48H HISTORY + 48H PROJECTION)", fontsize=18, pad=30)
+        
+        ax1.xaxis.set_major_formatter(mdates.DateFormatter('%m/%d\n%I%p'))
+        plt.xticks(rotation=0)
+        
+        h1, l1 = ax1.get_legend_handles_labels()
+        h2, l2 = ax2.get_legend_handles_labels()
+        ax1.legend(h1+h2, l1+l2, loc='upper left', facecolor='#111111', frameon=True, edgecolor='#333333')
         
         plt.tight_layout()
+        fig.subplots_adjust(bottom=0.15, right=0.9) # Ensure labels fit
         plt.savefig(CHART_PATH, facecolor='#000000')
         plt.close()
         return {"chart_path": CHART_PATH}
-    except Exception as e: return {"error": str(e)}
+    except Exception as e: 
+        import traceback
+        return {"error": f"{str(e)}\n{traceback.format_exc()}"}
 
 if __name__ == "__main__":
     import argparse
