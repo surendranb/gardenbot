@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p1",
+    "name": "String of Nickels",
+    "species": "Dischidia nummularia",
+    "sensor_pin": "A0",
+    "dry_threshold": 800,
+    "wet_threshold": 400,
+    "color": "#00FF41"
+  },
+  {
+    "id": "p2",
+    "name": "Kalanchoe",
+    "species": "Kalanchoe blossfeldiana",
+    "sensor_pin": "A2",
+    "dry_threshold": 700,
+    "wet_threshold": 300,
+    "color": "#ADFF2F"
+  }
+]
