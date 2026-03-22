@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-03-22T12:37:46.194143",
+  "sensors": {
+    "timestamp": "2026-03-22 12:30:21",
+    "temp": 32.0,
+    "hum": 25.0,
+    "light": 739,
+    "p1": 916,
+    "p2": 261,
+    "p3": 307
+  },
+  "moisture_analysis": {
+    "p1": {
+      "moisture_pct": 5.2,
+      "raw": 916,
+      "is_dry": true,
+      "note": "Stable"
+    },
+    "p2": {
+      "moisture_pct": 89.8,
+      "raw": 261,
+      "is_dry": false,
+      "note": "Stable"
+    },
+    "p3": {
+      "moisture_pct": 82.2,
+      "raw": 307,
+      "is_dry": false,
+      "note": "Stable"
+    }
+  },
+  "environment": {
+    "vpd_kpa": 3.566,
+    "weather_forecast": {
+      "timestamp": 1774151927,
+      "main": {
+        "temp": 30.37,
+        "feels_like": 36.77,
+        "temp_min": null,
+        "temp_max": null,
+        "pressure": 1013,
+        "humidity": 73,
+        "sea_level": null,
+        "grnd_level": null
+      },
+      "weather": {
+        "id": 701,
+        "main": "Mist",
+        "description": "mist",
+        "icon": "50d"
+      },
+      "wind": null,
+      "sys": {
+        "sunrise": 1774140120,
+        "sunset": 1774183786
+      },
+      "name": "Asia/Kolkata",
+      "forecast": {
+        "rain_expected": false,
+        "max_probability_of_precipitation": 0,
+        "hourly_forecast": [
+          {
+            "time": 1774148400,
+            "temp": 29.95,
+            "humidity": 72,
+            "pop": 0,
+            "weather": {
+              "id": 802,
+              "main": "Clouds",
+              "description": "scattered clouds",
+              "icon": "03d"
+            }
+          },
+          {
+            "time": 1774152000,
+            "temp": 30.37,
+            "humidity": 73,
+            "pop": 0,
+            "weather": {
+              "id": 802,
+              "main": "Clouds",
+              "description": "scattered clouds",
+              "icon": "03d"
+            }
+          },
+          {
+            "time": 1774155600,
+            "temp": 30.28,
+            "humidity": 70,
+            "pop": 0,
+            "weather": {
+              "id": 802,
+              "main": "Clouds",
+              "description": "scattered clouds",
+              "icon": "03d"
+            }
+          },
+          {
+            "time": 1774159200,
+            "temp": 30.26,
+            "humidity": 67,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02d"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "intelligence": {
+    "slopes": {
+      "p1": {
+        "slope_per_hour": -0.9296,
+        "estimated_hours_to_dryout": null,
+        "solar_phase": "Daylight",
+        "atmospheric_forcing": "Normal"
+      },
+      "p2": {
+        "slope_per_hour": 2.0991,
+        "estimated_hours_to_dryout": 256.8,
+        "solar_phase": "Daylight",
+        "atmospheric_forcing": "Normal"
+      },
+      "p3": {
+        "slope_per_hour": 0.4209,
+        "estimated_hours_to_dryout": 1171.4,
+        "solar_phase": "Daylight",
+        "atmospheric_forcing": "Normal"
+      }
+    },
+    "vision_metadata": null,
+    "recent_visual_ledger": [
+      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+    ]
+  }
+}
