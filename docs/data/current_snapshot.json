@@ -1,48 +1,48 @@
 {
-  "timestamp": "2026-03-22T17:36:39.865553",
+  "timestamp": "2026-03-22T17:39:21.999621",
   "sensors": {
-    "timestamp": "2026-03-22 17:30:21",
+    "timestamp": "2026-03-22 17:39:21",
     "temp": 32.0,
-    "hum": 20.0,
+    "hum": 21.0,
     "light": 815,
-    "p1": 892,
-    "p2": 292,
-    "p3": 320
+    "p1": 900,
+    "p2": 286,
+    "p3": 314
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 8.9,
-      "raw": 892,
+      "moisture_pct": 7.7,
+      "raw": 900,
       "is_dry": true
     },
     "p2": {
-      "moisture_pct": 84.7,
-      "raw": 292,
+      "moisture_pct": 85.7,
+      "raw": 286,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 80.0,
-      "raw": 320,
+      "moisture_pct": 81.0,
+      "raw": 314,
       "is_dry": false
     },
     "p4": {
-      "moisture_pct": 81.6,
-      "raw": 292,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     },
     "p5": {
-      "moisture_pct": 81.6,
-      "raw": 292,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     },
     "p6": {
-      "moisture_pct": 81.6,
-      "raw": 292,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.804,
+    "vpd_kpa": 3.756,
     "weather_forecast": {
       "timestamp": 1774151927,
       "main": {
@@ -126,16 +126,16 @@
   "intelligence": {
     "slopes": {
       "p1": {
-        "slope_per_hour": -0.1799,
+        "slope_per_hour": -0.1079,
         "estimated_hours_to_dryout": null
       },
       "p2": {
-        "slope_per_hour": 1.8198,
-        "estimated_hours_to_dryout": 279.1
+        "slope_per_hour": 1.8217,
+        "estimated_hours_to_dryout": 282.2
       },
       "p3": {
-        "slope_per_hour": 0.4133,
-        "estimated_hours_to_dryout": 1161.5
+        "slope_per_hour": 0.4167,
+        "estimated_hours_to_dryout": 1166.4
       }
     }
   }
