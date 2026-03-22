@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GardenOS Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .card { background-color: #1e293b; border-radius: 0.75rem; padding: 1.5rem; }
+    </style>
+</head>
+<body class="p-6 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+        <div>
+            <h1 class="text-3xl font-bold text-green-400">🌿 GardenOS Warden</h1>
+            <p class="text-slate-400 text-sm mt-1">Live Biometric Monitor • Chennai Station</p>
+        </div>
+        <div id="last-updated" class="text-xs text-slate-500 font-mono">Loading...</div>
+    </div>
+
+    <!-- Top Grid: Vision & Vital Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        
+        <!-- Live Vision (Left Col) -->
+        <div class="md:col-span-1">
+            <div class="card h-full flex flex-col">
+                <h2 class="text-lg font-semibold mb-4 text-slate-200">Live Vision</h2>
+                <div class="relative flex-grow rounded-lg overflow-hidden border border-slate-700">
+                    <img id="live-photo" src="../media/latest.jpg" alt="Garden View" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs font-mono">
+                        <span id="cam-timestamp">Syncing...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sensor Array (Middle & Right Cols) -->
+        <div class="md:col-span-2 grid grid-cols-2 gap-4">
+            
+            <!-- Environment Card -->
+            <div class="card col-span-2 flex justify-between items-center bg-slate-800/50">
+                <div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider">Atmosphere</div>
+                    <div class="flex items-baseline gap-4 mt-1">
+                        <div>
+                            <span id="val-temp" class="text-3xl font-bold text-orange-400">--</span>
+                            <span class="text-sm text-slate-500">°C</span>
+                        </div>
+                        <div>
+                            <span id="val-hum" class="text-3xl font-bold text-blue-400">--</span>
+                            <span class="text-sm text-slate-500">% RH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-xs text-slate-400 uppercase">VPD Load</div>
+                    <div id="val-vpd" class="text-2xl font-mono text-purple-400 font-bold">-- kPa</div>
+                </div>
+            </div>
+
+            <!-- Plant Cards -->
+            <div class="card border-l-4 border-green-500">
+                <div class="text-xs text-slate-400 mb-1">p1: String of Nickels</div>
+                <div class="flex justify-between items-end">
+                    <span id="p1-val" class="text-2xl font-bold">--</span>
+                    <span id="p1-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                </div>
+            </div>
+
+            <div class="card border-l-4 border-lime-400">
+                <div class="text-xs text-slate-400 mb-1">p2: Mexican Mint</div>
+                <div class="flex justify-between items-end">
+                    <span id="p2-val" class="text-2xl font-bold">--</span>
+                    <span id="p2-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                </div>
+            </div>
+
+            <div class="card border-l-4 border-yellow-400">
+                <div class="text-xs text-slate-400 mb-1">p3: Pothos</div>
+                <div class="flex justify-between items-end">
+                    <span id="p3-val" class="text-2xl font-bold">--</span>
+                    <span id="p3-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                </div>
+            </div>
+
+            <div class="card bg-slate-800/50">
+                <div class="text-xs text-slate-400 mb-1">Light Integral</div>
+                <div class="flex justify-between items-end">
+                    <span id="val-light" class="text-2xl font-bold text-yellow-200">--</span>
+                    <span class="text-xs text-slate-500">Lux</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Warden's Log (Full Width) -->
+        <div class="md:col-span-3">
+            <div class="card bg-slate-900/80 border border-slate-700">
+                <h2 class="text-sm font-semibold mb-2 text-slate-400 uppercase tracking-wider">Latest Warden's Log</h2>
+                <div id="warden-log" class="text-sm text-slate-300 font-mono whitespace-pre-wrap h-32 overflow-y-auto pr-2">Loading latest report...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive History -->
+    <div class="card h-96">
+        <h2 class="text-lg font-semibold mb-4 text-slate-200 flex justify-between">
+            <span>72-Hour Telemetry</span>
+            <span class="text-xs font-normal text-slate-500 bg-slate-800 px-2 py-1 rounded">Auto-refresh: 5m</span>
+        </h2>
+        <div class="relative h-full w-full">
+            <canvas id="telemetryChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        async function loadData() {
+            // 1. Fetch Snapshot
+            try {
+                const snapRes = await fetch('../data/current_snapshot.json');
+                const snap = await snapRes.json();
+                
+                // Timestamp
+                document.getElementById('last-updated').textContent = `LAST SYNC: ${new Date(snap.timestamp).toLocaleString()}`;
+                document.getElementById('cam-timestamp').textContent = `CAM: ${snap.sensors.timestamp}`;
+
+                // Environment
+                document.getElementById('val-temp').textContent = snap.sensors.temp;
+                document.getElementById('val-hum').textContent = snap.sensors.hum;
+                document.getElementById('val-vpd').textContent = `${snap.environment.vpd_kpa} kPa`;
+                document.getElementById('val-light').textContent = snap.sensors.light;
+
+                // Plants
+                const updatePlant = (id, label) => {
+                    const p = snap.moisture_analysis[id];
+                    const elVal = document.getElementById(`${id}-val`);
+                    const elStat = document.getElementById(`${id}-status`);
+                    
+                    if (p.error) {
+                        elVal.textContent = "ERR";
+                        elStat.textContent = "MALFUNCTION";
+                        elStat.className = "text-xs px-2 py-1 rounded bg-red-900 text-red-200";
+                    } else {
+                        elVal.textContent = `${p.moisture_pct}%`;
+                        elStat.textContent = p.is_dry ? "DRY" : "WET";
+                        elStat.className = p.is_dry 
+                            ? "text-xs px-2 py-1 rounded bg-orange-900 text-orange-200" 
+                            : "text-xs px-2 py-1 rounded bg-green-900 text-green-200";
+                    }
+                };
+
+                updatePlant('p1', 'Nickels');
+                updatePlant('p2', 'Mint');
+                updatePlant('p3', 'Pothos');
+
+                // Warden's Log
+                if (snap.intelligence.recent_visual_ledger && snap.intelligence.recent_visual_ledger.length > 0) {
+                    // Get the very last entry
+                    const lastLog = snap.intelligence.recent_visual_ledger[snap.intelligence.recent_visual_ledger.length - 1];
+                    document.getElementById('warden-log').textContent = lastLog;
+                } else {
+                    document.getElementById('warden-log').textContent = "No recent logs found.";
+                }
+
+            } catch (e) { console.error("Snapshot load failed", e); }
+
+            // 2. Fetch CSV for Chart
+            Papa.parse("../data/telemetry.csv", {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    renderChart(results.data);
+                }
+            });
+        }
+
+        let chartInstance = null;
+
+        function renderChart(data) {
+            // Filter last 72h (approx 144 entries)
+            const recent = data.slice(-144);
+            
+            const labels = recent.map(d => {
+                const date = new Date(d.timestamp);
+                return `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
+            });
+
+            const ctx = document.getElementById('telemetryChart').getContext('2d');
+            
+            if (chartInstance) chartInstance.destroy();
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Nickels (p1)',
+                            data: recent.map(d => d.p1),
+                            borderColor: '#00FF41',
+                            tension: 0.4,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Mint (p2)',
+                            data: recent.map(d => d.p2),
+                            borderColor: '#ADFF2F',
+                            tension: 0.4,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Pothos (p3)',
+                            data: recent.map(d => d.p3),
+                            borderColor: '#FFD700',
+                            tension: 0.4,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            grid: { color: '#334155' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94a3b8', maxTicksLimit: 10 }
+                        }
+                    },
+                    plugins: {
+                        legend: { labels: { color: '#e2e8f0' } }
+                    }
+                }
+            });
+        }
+
+        loadData();
+        setInterval(loadData, 300000); // Refresh every 5m
+    </script>
+</body>
+</html>

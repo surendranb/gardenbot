@@ -1,36 +1,48 @@
 {
-  "timestamp": "2026-03-22T12:37:46.194143",
+  "timestamp": "2026-03-22T17:36:39.865553",
   "sensors": {
-    "timestamp": "2026-03-22 12:30:21",
+    "timestamp": "2026-03-22 17:30:21",
     "temp": 32.0,
-    "hum": 25.0,
-    "light": 739,
-    "p1": 916,
-    "p2": 261,
-    "p3": 307
+    "hum": 20.0,
+    "light": 815,
+    "p1": 892,
+    "p2": 292,
+    "p3": 320
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 5.2,
-      "raw": 916,
-      "is_dry": true,
-      "note": "Stable"
+      "moisture_pct": 8.9,
+      "raw": 892,
+      "is_dry": true
     },
     "p2": {
-      "moisture_pct": 89.8,
-      "raw": 261,
-      "is_dry": false,
-      "note": "Stable"
+      "moisture_pct": 84.7,
+      "raw": 292,
+      "is_dry": false
     },
     "p3": {
-      "moisture_pct": 82.2,
-      "raw": 307,
-      "is_dry": false,
-      "note": "Stable"
+      "moisture_pct": 80.0,
+      "raw": 320,
+      "is_dry": false
+    },
+    "p4": {
+      "moisture_pct": 81.6,
+      "raw": 292,
+      "is_dry": false
+    },
+    "p5": {
+      "moisture_pct": 81.6,
+      "raw": 292,
+      "is_dry": false
+    },
+    "p6": {
+      "moisture_pct": 81.6,
+      "raw": 292,
+      "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.566,
+    "vpd_kpa": 3.804,
     "weather_forecast": {
       "timestamp": 1774151927,
       "main": {
@@ -114,29 +126,17 @@
   "intelligence": {
     "slopes": {
       "p1": {
-        "slope_per_hour": -0.9296,
-        "estimated_hours_to_dryout": null,
-        "solar_phase": "Daylight",
-        "atmospheric_forcing": "Normal"
+        "slope_per_hour": -0.1799,
+        "estimated_hours_to_dryout": null
       },
       "p2": {
-        "slope_per_hour": 2.0991,
-        "estimated_hours_to_dryout": 256.8,
-        "solar_phase": "Daylight",
-        "atmospheric_forcing": "Normal"
+        "slope_per_hour": 1.8198,
+        "estimated_hours_to_dryout": 279.1
       },
       "p3": {
-        "slope_per_hour": 0.4209,
-        "estimated_hours_to_dryout": 1171.4,
-        "solar_phase": "Daylight",
-        "atmospheric_forcing": "Normal"
+        "slope_per_hour": 0.4133,
+        "estimated_hours_to_dryout": 1161.5
       }
-    },
-    "vision_metadata": null,
-    "recent_visual_ledger": [
-      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
-      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
-      "2026-03-22 12:00:35\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 743 Lux\n- p1 (Nickels): 873 (Resistive/Dry)\n- p2 (Mint): 262 (Capacitive/Wet)\n- p3 (Pothos): 307 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
-    ]
+    }
   }
 }

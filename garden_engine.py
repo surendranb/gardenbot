@@ -10,6 +10,8 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import matplotlib.ticker as ticker
 from datetime import datetime, timedelta
+import hashlib
+import shutil
 
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
@@ -25,14 +27,22 @@ CAM_NAME = "USB2.0 PC CAMERA"
 for d in [MEDIA_DIR, ARCHIVE_DIR, os.path.dirname(CSV_PATH)]:
     os.makedirs(d, exist_ok=True)
 
+# Docs update configuration
+DOCS_DIR = os.path.join(BASE_DIR, "docs")
+DOCS_DATA_DIR = os.path.join(DOCS_DIR, "data")
+DOCS_MEDIA_DIR = os.path.join(DOCS_DIR, "media")
+LAST_HASH_FILE = os.path.join(DOCS_DIR, ".last_push_hash")
+
 def load_plants():
     if not os.path.exists(CONFIG_PATH): return []
     with open(CONFIG_PATH, 'r') as f: return json.load(f)
 
 def get_arduino_port():
+    """Finds a USB modem port dynamically."""
     ports = list(serial.tools.list_ports.comports())
     for p in ports:
-        if "usbmodem" in p.device: return p.device
+        if "usbmodem" in p.device:
+            return p.device
     return None
 
 def capture_data():
@@ -40,54 +50,101 @@ def capture_data():
     port = get_arduino_port()
     if not port: return {"error": "Arduino not found"}
     
-    try:
-        ser = serial.Serial(port, 9600, timeout=5)
-        time.sleep(2)
-        # Flush buffer
-        for _ in range(3): ser.readline()
-        
-        line = ser.readline().decode('utf-8', errors='ignore').strip()
-        ser.close()
-        
-        if not "|" in line: return {"error": "Invalid data format"}
-        
-        # Format: TEMP|HUM|LIGHT|A0|A2|A3|A4|A5
-        parts = line.split("|")
-        
-        row = {
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "temp": float(parts[0]),
-            "hum": float(parts[1]),
-            "light": int(parts[2])
-        }
-        
-        # Map raw analog values (A0..A5) to Plant IDs
-        # The firmware sends: A0, A2, A3, A4, A5 at indices 3, 4, 5, 6, 7
-        raw_values = {
-            "A0": int(parts[3]),
-            "A2": int(parts[4]),
-            "A3": int(parts[5]),
-            "A4": int(parts[6]),
-            "A5": int(parts[7])
-        }
-        
-        for plant in plants:
-            pin = plant["sensor_pin"]
-            if pin in raw_values:
-                row[plant["id"]] = raw_values[pin]
-        
-        # Save to CSV
-        df = pd.DataFrame([row])
-        if not os.path.isfile(CSV_PATH) or os.stat(CSV_PATH).st_size == 0:
-            df.to_csv(CSV_PATH, index=False)
-        else:
-            df.to_csv(CSV_PATH, mode='a', header=False, index=False)
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            ser = serial.Serial(port, 9600, timeout=5)
+            time.sleep(2) # Allow connection to settle
             
-        return row
-    except Exception as e: return {"error": str(e)}
+            # Flush buffer
+            ser.reset_input_buffer()
+            
+            # Read a few lines to clear any partial data
+            for _ in range(5): ser.readline()
+            
+            line = ""
+            for _ in range(10): # Try up to 10 lines to find data
+                line = ser.readline().decode('utf-8', errors='ignore').strip()
+                if "|" in line:
+                    break
+            
+            ser.close()
+            
+            if not "|" in line:
+                if attempt < max_retries - 1:
+                    time.sleep(1)
+                    continue
+                return {"error": "Invalid data format"}
+            
+            # Format: TEMP|HUM|LIGHT|A0|A2|A5
+            parts = line.split("|")
+            
+            row = {
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "temp": float(parts[0]),
+                "hum": float(parts[1]),
+                "light": int(parts[2])
+            }
+            
+            # Map raw analog values to Plant IDs
+            # Targeted: A0, A2, A5 at indices 3, 4, 5
+            if len(parts) >= 6:
+                raw_values = {
+                    "A0": int(parts[3]),
+                    "A2": int(parts[4]),
+                    "A5": int(parts[5])
+                }
+                
+                for plant in plants:
+                    # Only log physical plants p1, p2, p3 to match CSV header
+                    if plant["id"] in ["p1", "p2", "p3"]:
+                        pin = plant.get("sensor_pin")
+                        if pin in raw_values:
+                            row[plant["id"]] = raw_values[pin]
+            
+            # Save to CSV
+            df = pd.DataFrame([row])
+            header = not os.path.isfile(CSV_PATH) or os.stat(CSV_PATH).st_size == 0
+            df.to_csv(CSV_PATH, mode='a', header=header, index=False)
+                
+            return row
+            
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(1)
+                continue
+            return {"error": str(e)}
 
 def capture_vision():
     try:
+        # Try to use OpenCV for higher resolution and control
+        import cv2
+        # Camera index for USB2.0 PC CAMERA (from testing)
+        camera_index = 0
+        cap = cv2.VideoCapture(camera_index)
+        if not cap.isOpened():
+            raise RuntimeError(f"Cannot open camera {camera_index}")
+        
+        # Set resolution to the highest we found supported (640x480)
+        width = 640
+        height = 480
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+        
+        # Allow the camera to warm up and adjust exposure
+        # Read a few frames to flush the buffer
+        for _ in range(5):
+            cap.read()
+        
+        # Capture frame
+        ret, frame = cap.read()
+        if not ret:
+            cap.release()
+            raise RuntimeError("Failed to capture image from camera")
+        
+        # Release the camera
+        cap.release()
+        
         # 1. Archive Path (organized by date)
         today = datetime.now().strftime("%Y-%m-%d")
         day_dir = os.path.join(ARCHIVE_DIR, today)
@@ -96,14 +153,36 @@ def capture_vision():
         ts = datetime.now().strftime("%H%M%S")
         archive_path = os.path.join(day_dir, f"garden_{ts}.jpg")
         
-        # 2. Capture directly to archive
-        cmd = ["imagesnap", "-d", CAM_NAME, "-q", archive_path]
-        subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        # 2. Save the frame to archive
+        success = cv2.imwrite(archive_path, frame)
+        if not success:
+            raise RuntimeError(f"Failed to write image to {archive_path}")
         
         # 3. Copy to "latest" for the agent
         subprocess.run(["cp", archive_path, PHOTO_PATH], check=True)
         
         return {"photo_path": PHOTO_PATH, "archive_path": archive_path}
+    except ImportError:
+        # Fallback to imagesnap if OpenCV is not available
+        try:
+            # 1. Archive Path (organized by date)
+            today = datetime.now().strftime("%Y-%m-%d")
+            day_dir = os.path.join(ARCHIVE_DIR, today)
+            os.makedirs(day_dir, exist_ok=True)
+            
+            ts = datetime.now().strftime("%H%M%S")
+            archive_path = os.path.join(day_dir, f"garden_{ts}.jpg")
+            
+            # 2. Capture directly to archive
+            cmd = ["imagesnap", "-d", CAM_NAME, "-q", archive_path]
+            subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            
+            # 3. Copy to "latest" for the agent
+            subprocess.run(["cp", archive_path, PHOTO_PATH], check=True)
+            
+            return {"photo_path": PHOTO_PATH, "archive_path": archive_path}
+        except Exception as e:
+            return {"error": f"Vision failed (imagesnap fallback): {str(e)}"}
     except Exception as e:
         return {"error": f"Vision failed: {str(e)}"}
 
@@ -141,11 +220,22 @@ def render_dashboard():
         # 2. Plants & Projections
         for plant in plants:
             pid = plant["id"]
-            if pid in df_hist.columns:
+            # Graph p1, p2, p3, and PRIMARY Pilea (p4) only to avoid clutter
+            if pid in ["p5", "p6"]: continue 
+            
+            # Determine data source for virtual plants
+            source_id = pid
+            if "linked_to" in plant:
+                source_id = plant["linked_to"]
+            
+            if source_id in df_hist.columns:
                 color = plant.get("color", "#00FF41")
-                ax1.plot(df_hist['timestamp'], df_hist[pid], color=color, linewidth=4, label=plant["name"], zorder=10)
+                # Use dashed line for virtual plants to distinguish them
+                style = '--' if "linked_to" in plant else '-'
                 
-                thresh = plant["dry_threshold"]
+                ax1.plot(df_hist['timestamp'], df_hist[source_id], color=color, linewidth=2, linestyle=style, label=plant["name"], zorder=10)
+                
+                thresh = plant["raw_dry"]
                 ax1.axhline(y=thresh, color=color, linestyle=':', alpha=0.3)
                 
                 # Projection Logic
@@ -153,7 +243,7 @@ def render_dashboard():
                 if len(recent) >= 3:
                     import numpy as np
                     x_reg = (recent['timestamp'] - recent['timestamp'].min()).dt.total_seconds().values
-                    y_reg = recent[pid].values
+                    y_reg = recent[source_id].values
                     slope, intercept = np.polyfit(x_reg, y_reg, 1)
                     
                     if slope > 0.00001: 
@@ -166,7 +256,7 @@ def render_dashboard():
                                 proj_vals = [y_reg[-1], thresh]
                                 ax1.plot(proj_time, proj_vals, color=C_PROJ, linestyle='--', linewidth=2, alpha=0.7)
                                 ax1.scatter([cross_time], [thresh], color=C_PROJ, s=200, marker='*', edgecolors='white', zorder=20)
-                                ax1.text(cross_time, thresh + 20, f" {plant['name']} Dryout\n {cross_time.strftime('%m/%d %I%p')}", color=C_PROJ, fontsize=9)
+                                ax1.text(cross_time, thresh + 20, f" {plant['name']} Dryout\n {cross_time.strftime('%d %b, %I:%M %p')}", color=C_PROJ, fontsize=9)
 
         # 3. Final Formatting
         ax1.set_xlim(start_view, end_view)
@@ -203,16 +293,356 @@ def render_dashboard():
         import traceback
         return {"error": f"{str(e)}\n{traceback.format_exc()}"}
 
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--capture", action="store_true")
-    parser.add_argument("--dashboard", action="store_true")
-    parser.add_argument("--vision", action="store_true")
-    args = parser.parse_args()
+import numpy as np
+import math
+
+# --- Add to configuration ---
+WEATHER_PATH = os.path.join(BASE_DIR, "data/weather_context.json")
+SNAPSHOT_PATH = os.path.join(BASE_DIR, "data/current_snapshot.json")
+LEDGER_PATH = os.path.join(BASE_DIR, "logs/vision_ledger.md")
+MILESTONES_PATH = os.path.join(BASE_DIR, "logs/growth_milestones.md")
+
+def calculate_vpd(temp_c, hum_rh):
+    """Calculates Vapor Pressure Deficit (VPD) in kPa using Tetens Equation."""
+    # Saturation Vapor Pressure (SVP)
+    svp = 0.61078 * math.exp((17.27 * temp_c) / (temp_c + 237.3))
+    # Actual Vapor Pressure (AVP)
+    avp = svp * (hum_rh / 100.0)
+    # VPD
+    return round(svp - avp, 3)
+
+def compute_slopes(df, plants, weather):
+    """Computes moisture slopes and weights them by OWM forecast/VPD."""
+    now = datetime.now()
+    cutoff = now - timedelta(hours=72)
+    df_recent = df[df['timestamp'] >= cutoff].copy()
     
+    # Extract Solar Cycle from OWM
+    sunrise = weather.get("sys", {}).get("sunrise", 0)
+    sunset = weather.get("sys", {}).get("sunset", 0)
+    is_daylight = sunrise < now.timestamp() < sunset
+    
+    slopes = {}
+    if len(df_recent) < 5: return slopes
+    
+    for plant in plants:
+        pid = plant["id"]
+        if pid in df_recent.columns:
+            y = df_recent[pid].values
+            x = (df_recent['timestamp'] - df_recent['timestamp'].min()).dt.total_seconds().values / 3600.0
+            
+            m, b = np.polyfit(x, y, 1)
+            
+            # Forecast Weighting
+            # If forecast humidity > 70%, slow the drying slope by 20%
+            forecast_hum = weather.get("main", {}).get("humidity", 50)
+            weight = 1.0
+            if forecast_hum > 70: weight = 0.8
+            if forecast_hum < 30: weight = 1.2 # Accelerate in dry air
+            
+            weighted_m = m * weight
+            
+            # Clamp slope to prevent noise artifacts (Max 5.0 units/hr)
+            if weighted_m > 5.0: weighted_m = 5.0
+            
+            thresh = plant["raw_dry"]
+            current_val = y[-1]
+            ttcd = None
+            if weighted_m > 0.001:
+                ttcd = round((thresh - current_val) / weighted_m, 1)
+            
+            slopes[pid] = {
+                "slope_per_hour": round(weighted_m, 4),
+                "estimated_hours_to_dryout": ttcd,
+                "solar_phase": "Daylight" if is_daylight else "Night",
+                "atmospheric_forcing": "High" if weight > 1.0 else "Normal"
+            }
+    return slopes
+
+def compute_moisture_stats(row, plants):
+    """Normalizes raw readings to 0-100% moisture and detects malfunctions."""
+    stats = {}
+    # First pass: Get raw data for physical sensors
+    raw_data_map = {}
+    for plant in plants:
+        pid = plant["id"]
+        if pid in row:
+            raw_data_map[pid] = row[pid]
+            
+    for plant in plants:
+        pid = plant["id"]
+        
+        # Determine raw value source
+        raw = None
+        if "linked_to" in plant:
+            parent_id = plant["linked_to"]
+            raw = raw_data_map.get(parent_id)
+        elif pid in row:
+            raw = row[pid]
+            
+        if raw is None: continue
+
+        wet = plant["raw_wet"]
+        dry = plant["raw_dry"]
+        
+        # 1. Edge Case Handling (Wait & See)
+        at_rail = False
+        if raw >= 1023:
+            at_rail = True # Could be fault OR extreme state
+        if raw <= 0:
+            stats[pid] = {"error": "Sensor Short Circuit (0)", "raw": raw}
+            continue
+            
+        # 2. Normalization (Linear mapping)
+        try:
+            moisture_pct = 100 - ((raw - wet) / (dry - wet) * 100)
+            moisture_pct = max(0, min(100, round(moisture_pct, 1)))
+            
+            stats[pid] = {
+                "moisture_pct": moisture_pct,
+                "raw": raw,
+                "is_dry": moisture_pct < plant["dry_threshold_pct"],
+                "note": "At maximum rail voltage (1023). Observing for trend." if at_rail else "Stable"
+            }
+        except ZeroDivisionError:
+            stats[pid] = {"error": "Calibration Error (Dry==Wet)", "raw": raw}
+                
+    return stats
+
+def check_alerts(snapshot):
+    """Checks for alerts, throttling duplicates to every 4 hours."""
+    moisture_analysis = snapshot.get("moisture_analysis", {})
+    plants_info = {p["id"]: p for p in load_plants()}
+    current_alerts = []
+    
+    now_dt = datetime.now()
+    is_3pm_window = now_dt.hour == 15 and now_dt.minute < 30
+
+    # Get weather forecast information
+    weather_forecast = snapshot.get("environment", {}).get("weather_forecast", {})
+    forecast_data = weather_forecast.get("forecast", {})
+    
+    for pid, stats in moisture_analysis.items():
+        name = plants_info.get(pid, {}).get("name", pid)
+        if "error" in stats:
+            current_alerts.append(f"🔧 *SENSOR MALFUNCTION*: {name} reporting error: {stats['error']}")
+        elif stats.get("is_dry"):
+            pct = stats.get("moisture_pct")
+            current_alerts.append(f"🚨 *EMERGENCY ALERT*: {name} is DRY ({pct}%). Immediate watering recommended.")
+
+    # 1. Handle Regular 3 PM Observer Report
+    if is_3pm_window:
+        report_state_path = os.path.join(BASE_DIR, "data/report_state.json")
+        last_report_date = ""
+        if os.path.exists(report_state_path):
+            try:
+                with open(report_state_path, 'r') as f:
+                    last_report_date = json.load(f).get("date", "")
+            except: pass
+        
+        today_str = now_dt.strftime("%Y-%m-%d")
+        if last_report_date != today_str:
+            # Synthesize 3 PM Report
+            env = snapshot.get("sensors", {})
+            report = [
+                f"☀️ *DAILY OBSERVER REPORT* ({now_dt.strftime('%H:%M')})",
+                f"Env: {env.get('temp')}\u00b0C | {env.get('hum')}% Hum | {env.get('light')} Lux",
+                "\n*Plant Status*:"
+            ]
+            for pid, stats in moisture_analysis.items():
+                name = plants_info.get(pid, {}).get("name", pid)
+                status = "🔴 DRY" if stats.get("is_dry") else "🟢 NOMINAL"
+                report.append(f"• {name}: {status} ({stats.get('moisture_pct')}%)")
+            
+            report_msg = "\n".join(report)
+            channel = "C0AK6A4SJES" # #plantclaw
+            print("Sentinel: Sending Daily Observer Report...")
+            subprocess.run(["openclaw", "message", "send", "--target", channel, "--message", report_msg], capture_output=True)
+            
+            with open(report_state_path, 'w') as f:
+                json.dump({"date": today_str}, f)
+
+    if not current_alerts: return
+
+    # 2. Handle Emergency Alerts (Throttled)
+    alert_state_path = os.path.join(BASE_DIR, "data/alert_state.json")
+    last_state = {}
+    if os.path.exists(alert_state_path):
+        try:
+            with open(alert_state_path, 'r') as f:
+                last_state = json.load(f)
+        except: pass
+
+    now_ts = now_dt.timestamp()
+    last_sent_ts = last_state.get("timestamp", 0)
+    last_alerts = last_state.get("alerts", [])
+    
+    alerts_changed = set(current_alerts) != set(last_alerts)
+    time_passed = (now_ts - last_sent_ts) > 14400
+    
+    if alerts_changed or time_passed:
+        message = "\n".join(current_alerts)
+        channel = "C0AK6A4SJES" # #plantclaw
+        print(f"Sentinel: Sending {len(current_alerts)} emergency alert(s) to Slack...")
+        subprocess.run(["openclaw", "message", "send", "--target", channel, "--message", message], capture_output=True)
+        
+        with open(alert_state_path, 'w') as f:
+            json.dump({"timestamp": now_ts, "alerts": current_alerts}, f)
+    else:
+        print("Sentinel: Emergency alerts active but throttled (duplicate).")
+
+def generate_snapshot(capture_res=None, vision_res=None):
+    """Generates a unified intelligence snapshot. Loads from CSV if capture_res is None."""
+    plants = load_plants()
+    if not os.path.exists(CSV_PATH): return None
+    
+    try:
+        # Robust reading: Skip bad lines to prevent Monolith crashes
+        df = pd.read_csv(CSV_PATH, on_bad_lines='skip')
+    except Exception as e:
+        print(f"Sentinel: CSV Critical Failure ({e}). Proceeding with partial context.")
+        # Fallback: create empty DF with columns to avoid downstream crashes
+        df = pd.DataFrame(columns=['timestamp', 'temp', 'hum', 'light'] + [p['id'] for p in plants])
+    
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    
+    # If no fresh data, grab the latest row from CSV
+    if capture_res is None:
+        latest_row = df.iloc[-1].to_dict()
+        # Convert timestamp to string for JSON serialization
+        latest_row["timestamp"] = latest_row["timestamp"].strftime("%Y-%m-%d %H:%M:%S")
+        capture_res = latest_row
+
+    # 1. Weather Context
+    weather = {}
+    if os.path.exists(WEATHER_PATH):
+        with open(WEATHER_PATH, 'r') as f:
+            weather = json.load(f)
+
+    # 2. Deterministic Math
+    vpd = calculate_vpd(capture_res["temp"], capture_res["hum"])
+    moisture_stats = compute_moisture_stats(capture_res, plants)
+    slopes = compute_slopes(df, plants, weather)
+            
+    # 3. Vision Context (Last 3 Ledger Entries)
+    recent_notes = []
+    if os.path.exists(LEDGER_PATH):
+        with open(LEDGER_PATH, 'r') as f:
+            lines = f.readlines()
+            # Crude parser for the last few ## headers
+            sections = "".join(lines).split("## ")
+            recent_notes = [s.strip() for s in sections[-3:] if s.strip()]
+
+    # 4. Growth Context
+    milestones = ""
+    if os.path.exists(MILESTONES_PATH):
+        with open(MILESTONES_PATH, 'r') as f:
+            milestones = f.read()
+
+    snapshot = {
+        "timestamp": datetime.now().isoformat(),
+        "sensors": capture_res,
+        "moisture_analysis": moisture_stats,
+        "environment": {
+            "vpd_kpa": vpd,
+            "weather_forecast": weather
+        },
+        "intelligence": {
+            "slopes": slopes,
+            "vision_metadata": vision_res,
+            "recent_visual_ledger": recent_notes,
+            "growth_milestones": milestones
+        }
+    }
+    
+    # --- SENTINEL CHECK ---
+    check_alerts(snapshot)
+    
+    with open(SNAPSHOT_PATH, 'w') as f:
+        json.dump(snapshot, f, indent=2)
+    
+    # --- Docs update (GitHub Pages) ---
+    try:
+        # compute hash of snapshot and latest.jpg
+        hash_snap = hashlib.sha256()
+        with open(SNAPSHOT_PATH, 'rb') as f:
+            hash_snap.update(f.read())
+        hash_photo = hashlib.sha256()
+        with open(PHOTO_PATH, 'rb') as f:
+            hash_photo.update(f.read())
+        combined_hash = hash_snap.hexdigest() + hash_photo.hexdigest()
+        last_hash = ""
+        if os.path.exists(LAST_HASH_FILE):
+            with open(LAST_HASH_FILE, 'r') as f:
+                last_hash = f.read().strip()
+        if combined_hash != last_hash:
+            # copy files to repo root (overwrite)
+            shutil.copy2(SNAPSHOT_PATH, os.path.join(BASE_DIR, "data/current_snapshot.json"))
+            shutil.copy2(PHOTO_PATH, os.path.join(BASE_DIR, "media/latest.jpg"))
+            # also copy telemetry.csv for chart
+            shutil.copy2(CSV_PATH, os.path.join(BASE_DIR, "data/telemetry.csv"))
+            # git add/commit/push
+            repo_dir = BASE_DIR
+            subprocess.run(["git", "add", "data/current_snapshot.json", "media/latest.jpg", "data/telemetry.csv"], cwd=repo_dir, check=False)
+            subprocess.run(["git", "commit", "-m", f"Update garden data {datetime.now().isoformat()}"], cwd=repo_dir, check=False)
+            subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=repo_dir, check=False)
+            # store hash
+            with open(LAST_HASH_FILE, 'w') as f:
+                f.write(combined_hash)
+    except Exception as e:
+        # don't break the main flow
+        pass
+    
+    return snapshot
+
+if __name__ == "__main__":
+
+    import argparse
+
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("--capture", action="store_true")
+
+    parser.add_argument("--dashboard", action="store_true")
+
+    parser.add_argument("--vision", action="store_true")
+
+    parser.add_argument("--snapshot", action="store_true")
+
+    args = parser.parse_args()
+
+    
+
     res = {}
-    if args.capture: res["capture"] = capture_data()
-    if args.vision: res["vision"] = capture_vision()
+
+    capture_data_res = None
+
+    vision_capture_res = None
+
+    
+
+    if args.capture: 
+
+        capture_data_res = capture_data()
+
+        res["capture"] = capture_data_res
+
+    if args.vision: 
+
+        vision_capture_res = capture_vision()
+
+        res["vision"] = vision_capture_res
+
     if args.dashboard: res["dashboard"] = render_dashboard()
+
+    
+
+    # Generate snapshot if explicitly requested or if we did a capture
+
+    if args.snapshot or (capture_data_res and "error" not in capture_data_res):
+
+        res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+
+        
+
     print(json.dumps(res, indent=2))

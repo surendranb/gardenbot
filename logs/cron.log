@@ -18,3 +18,4454 @@
     "p2": 560
   }
 }
+{
+  "capture": {
+    "timestamp": "2026-03-20 11:00:07",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 847,
+    "p1": 703,
+    "p2": 569
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 11:30:08",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 815,
+    "p1": 713,
+    "p2": 579
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 12:00:08",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 811,
+    "p1": 715,
+    "p2": 573
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 12:30:08",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 812,
+    "p1": 723,
+    "p2": 578
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 13:00:09",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 775,
+    "p1": 765,
+    "p2": 605
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 15:02:05",
+    "temp": 30.0,
+    "hum": 18.0,
+    "light": 795,
+    "p1": 762,
+    "p2": 607
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 16:30:08",
+    "temp": 30.0,
+    "hum": 18.0,
+    "light": 815,
+    "p1": 793,
+    "p2": 633
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 17:00:08",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 862,
+    "p1": 816,
+    "p2": 650
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 17:30:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 858,
+    "p1": 830,
+    "p2": 655
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 18:00:13",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 863,
+    "p1": 836,
+    "p2": 662
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 18:34:05",
+    "temp": 31.0,
+    "hum": 15.0,
+    "light": 873,
+    "p1": 846,
+    "p2": 668
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 19:02:59",
+    "temp": 31.0,
+    "hum": 17.0,
+    "light": 869,
+    "p1": 677,
+    "p2": 546
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 20:00:12",
+    "temp": 31.0,
+    "hum": 17.0,
+    "light": 855,
+    "p1": 668,
+    "p2": 538
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 20:30:12",
+    "temp": 31.0,
+    "hum": 16.0,
+    "light": 878,
+    "p1": 670,
+    "p2": 538
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 21:00:12",
+    "temp": 31.0,
+    "hum": 15.0,
+    "light": 880,
+    "p1": 670,
+    "p2": 543
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 21:30:11",
+    "temp": 31.0,
+    "hum": 15.0,
+    "light": 880,
+    "p1": 676,
+    "p2": 546
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 22:00:12",
+    "temp": 30.0,
+    "hum": 21.0,
+    "light": 884,
+    "p1": 674,
+    "p2": 540
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 22:30:12",
+    "temp": 31.0,
+    "hum": 15.0,
+    "light": 893,
+    "p1": 735,
+    "p2": 588
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-20 23:00:11",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 886,
+    "p1": 760,
+    "p2": 602
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 03:30:58",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 887,
+    "p1": 781,
+    "p2": 614
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 07:30:30",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 860,
+    "p1": 833,
+    "p2": 654
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 08:00:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 841,
+    "p1": 862,
+    "p2": 677
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 08:30:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 839,
+    "p1": 872,
+    "p2": 681
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 09:00:12",
+    "temp": 30.0,
+    "hum": 17.0,
+    "light": 801,
+    "p1": 872,
+    "p2": 677
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 09:30:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 786,
+    "p1": 880,
+    "p2": 689
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 10:00:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 771,
+    "p1": 881,
+    "p2": 686
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 10:30:12",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 787,
+    "p1": 878,
+    "p2": 688
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 11:30:13",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 727,
+    "p1": 834,
+    "p2": 655
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 12:00:12",
+    "temp": 31.0,
+    "hum": 22.0,
+    "light": 708,
+    "p1": 826,
+    "p2": 1023
+  }
+}
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 340, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 277, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 6 fields in line 561, saw 7
+
+{
+  "capture": {
+    "timestamp": "2026-03-21 13:00:12",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 750,
+    "p1": 851,
+    "p2": 0,
+    "p3": 0
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T13:00:12.374562",
+    "sensors": {
+      "timestamp": "2026-03-21 13:00:12",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 750,
+      "p1": 851,
+      "p2": 0,
+      "p3": 0
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774075328,
+        "main": {
+          "temp": 31.72,
+          "feels_like": 38.72,
+          "temp_min": 31.01,
+          "temp_max": 32.22,
+          "pressure": 1010,
+          "humidity": 68,
+          "sea_level": 1010,
+          "grnd_level": 1009
+        },
+        "weather": {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        },
+        "wind": {
+          "speed": 4.12,
+          "deg": 140
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 4.1877,
+          "estimated_hours_to_dryout": -12.2,
+          "current_status": "Drying"
+        },
+        "p2": {
+          "slope_per_hour": -316.8636,
+          "estimated_hours_to_dryout": null,
+          "current_status": "Stable/Watered"
+        },
+        "p3": {
+          "slope_per_hour": -455.0891,
+          "estimated_hours_to_dryout": null,
+          "current_status": "Stable/Watered"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 09:15:55 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 793, Soil Moisture (p1): 873, (p2): 684\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating dry to very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 873/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 684/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~29.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 09:33:50 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 823, Soil Moisture (p1): 882, (p2): 692\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 882/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 692/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~5.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 12:00:56 (Automated Cron Run)\n**Sensor Data:** Temperature: 31.0\u00b0C, Humidity: 22.0%, Light: 697, Soil Moisture (p1): 843, (p2): 0\n**Visual Assessment**: \n- *String of Nickels*: Plant maintains healthy appearance with plump, well-hydrated leaf segments. No visible signs of shriveling or wrinkling observed.\n- *Mexican Mint*: Central crown appears vigorous. The basal yellow leaf (previously noted) remains attached. \n- *Soil*: Surface appears dry and granular in yellow pot. Black pot sensor reading of 0 indicates potential sensor malfunction - visual inspection shows normal soil appearance without extreme dryness signs.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition with p1 at 843/800 (very dry). Plant continues to show no visible stress symptoms, likely accessing deeper moisture reserves. slight improvement in moisture reading from previous 882 suggests possible moisture redistribution or sensor fluctuation.\n- Mexican Mint: Unable to assess soil moisture accurately due to p2 sensor reading of 0 (likely malfunction). Visual inspection shows healthy central crown with no signs of drooping or distress. The yellowing basal leaf remains attached but stable.\n- Environmental Conditions: Temperature remains high at 31\u00b0C (above ideal range). Humidity improved to 22% but still below optimal levels. Light levels at 697 Lux provide adequate photosynthesis support.\n**Recommended Action**: \n1. **Recommend manual misting of leaves** due to sub-optimal humidity levels (per Warden's Protocol - though improved from previous critical low).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. **Investigate p2 sensor malfunction** - black pot moisture reading of 0 is inconsistent with visual assessment and historical data.\n4. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n5. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs)."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 13:30:12",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 767,
+    "p1": 863,
+    "p2": 709,
+    "p3": 1023
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T13:30:12.798179",
+    "sensors": {
+      "timestamp": "2026-03-21 13:30:12",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 767,
+      "p1": 863,
+      "p2": 709,
+      "p3": 1023
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774075328,
+        "main": {
+          "temp": 31.72,
+          "feels_like": 38.72,
+          "temp_min": 31.01,
+          "temp_max": 32.22,
+          "pressure": 1010,
+          "humidity": 68,
+          "sea_level": 1010,
+          "grnd_level": 1009
+        },
+        "weather": {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        },
+        "wind": {
+          "speed": 4.12,
+          "deg": 140
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 15.3037,
+          "estimated_hours_to_dryout": -4.1,
+          "current_status": "Drying"
+        },
+        "p2": {
+          "slope_per_hour": 115.7842,
+          "estimated_hours_to_dryout": -0.1,
+          "current_status": "Drying"
+        },
+        "p3": {
+          "slope_per_hour": 166.8882,
+          "estimated_hours_to_dryout": -1.3,
+          "current_status": "Drying"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 09:15:55 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 793, Soil Moisture (p1): 873, (p2): 684\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating dry to very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 873/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 684/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~29.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 09:33:50 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 823, Soil Moisture (p1): 882, (p2): 692\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 882/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 692/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~5.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 12:00:56 (Automated Cron Run)\n**Sensor Data:** Temperature: 31.0\u00b0C, Humidity: 22.0%, Light: 697, Soil Moisture (p1): 843, (p2): 0\n**Visual Assessment**: \n- *String of Nickels*: Plant maintains healthy appearance with plump, well-hydrated leaf segments. No visible signs of shriveling or wrinkling observed.\n- *Mexican Mint*: Central crown appears vigorous. The basal yellow leaf (previously noted) remains attached. \n- *Soil*: Surface appears dry and granular in yellow pot. Black pot sensor reading of 0 indicates potential sensor malfunction - visual inspection shows normal soil appearance without extreme dryness signs.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition with p1 at 843/800 (very dry). Plant continues to show no visible stress symptoms, likely accessing deeper moisture reserves. slight improvement in moisture reading from previous 882 suggests possible moisture redistribution or sensor fluctuation.\n- Mexican Mint: Unable to assess soil moisture accurately due to p2 sensor reading of 0 (likely malfunction). Visual inspection shows healthy central crown with no signs of drooping or distress. The yellowing basal leaf remains attached but stable.\n- Environmental Conditions: Temperature remains high at 31\u00b0C (above ideal range). Humidity improved to 22% but still below optimal levels. Light levels at 697 Lux provide adequate photosynthesis support.\n**Recommended Action**: \n1. **Recommend manual misting of leaves** due to sub-optimal humidity levels (per Warden's Protocol - though improved from previous critical low).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. **Investigate p2 sensor malfunction** - black pot moisture reading of 0 is inconsistent with visual assessment and historical data.\n4. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n5. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs)."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "error": "Invalid data format"
+  }
+}
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 378, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 319, in generate_snapshot
+    slopes = compute_slopes(df, plants)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 262, in compute_slopes
+    thresh = plant["dry_threshold"]
+KeyError: 'dry_threshold'
+{
+  "capture": {
+    "error": "device reports readiness to read but returned no data (device disconnected or multiple access on port?)"
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 15:30:21",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 823,
+    "p1": 858,
+    "p2": 219,
+    "p3": 298
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T15:30:21.784856",
+    "sensors": {
+      "timestamp": "2026-03-21 15:30:21",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 823,
+      "p1": 858,
+      "p2": 219,
+      "p3": 298
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 14.2,
+        "raw": 858,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 96.8,
+        "raw": 219,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 83.7,
+        "raw": 298,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774075328,
+        "main": {
+          "temp": 31.72,
+          "feels_like": 38.72,
+          "temp_min": 31.01,
+          "temp_max": 32.22,
+          "pressure": 1010,
+          "humidity": 68,
+          "sea_level": 1010,
+          "grnd_level": 1009
+        },
+        "weather": {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        },
+        "wind": {
+          "speed": 4.12,
+          "deg": 140
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 9.4807,
+          "estimated_hours_to_dryout": -88.9,
+          "current_status": "Drying"
+        },
+        "p2": {
+          "slope_per_hour": 0.5212,
+          "estimated_hours_to_dryout": -381.8,
+          "current_status": "Drying"
+        },
+        "p3": {
+          "slope_per_hour": 3.2726,
+          "estimated_hours_to_dryout": -84.9,
+          "current_status": "Drying"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 09:15:55 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 793, Soil Moisture (p1): 873, (p2): 684\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating dry to very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 873/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 684/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~29.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 09:33:50 (Automated Cron Run)\n**Sensor Data:** Temperature: 30.0\u00b0C, Humidity: 16.0%, Light: 823, Soil Moisture (p1): 882, (p2): 692\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in both pots, consistent with sensor readings indicating very dry conditions. Surface cracking visible in yellow pot.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 882/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves.\n- Mexican Mint: Stable condition with p2 at 692/700 (at dry threshold). Central crown remains vigorous. Monitor the basal yellow leaf for natural shedding.\n- Environmental Stressors: Temperature at 30\u00b0C (at upper tolerance limit) and humidity at 16% (desert-dry) create high evaporative demand. VPD calculation indicates extreme atmospheric pull (~5.0 kPa using simplified formula).\n**Recommended Action**: \n1. **Explicitly recommend manual misting of leaves** due to humidity < 20% (per Warden's Protocol).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n4. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs).",
+        "2026-03-21 12:00:56 (Automated Cron Run)\n**Sensor Data:** Temperature: 31.0\u00b0C, Humidity: 22.0%, Light: 697, Soil Moisture (p1): 843, (p2): 0\n**Visual Assessment**: \n- *String of Nickels*: Plant maintains healthy appearance with plump, well-hydrated leaf segments. No visible signs of shriveling or wrinkling observed.\n- *Mexican Mint*: Central crown appears vigorous. The basal yellow leaf (previously noted) remains attached. \n- *Soil*: Surface appears dry and granular in yellow pot. Black pot sensor reading of 0 indicates potential sensor malfunction - visual inspection shows normal soil appearance without extreme dryness signs.\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition with p1 at 843/800 (very dry). Plant continues to show no visible stress symptoms, likely accessing deeper moisture reserves. slight improvement in moisture reading from previous 882 suggests possible moisture redistribution or sensor fluctuation.\n- Mexican Mint: Unable to assess soil moisture accurately due to p2 sensor reading of 0 (likely malfunction). Visual inspection shows healthy central crown with no signs of drooping or distress. The yellowing basal leaf remains attached but stable.\n- Environmental Conditions: Temperature remains high at 31\u00b0C (above ideal range). Humidity improved to 22% but still below optimal levels. Light levels at 697 Lux provide adequate photosynthesis support.\n**Recommended Action**: \n1. **Recommend manual misting of leaves** due to sub-optimal humidity levels (per Warden's Protocol - though improved from previous critical low).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. **Investigate p2 sensor malfunction** - black pot moisture reading of 0 is inconsistent with visual assessment and historical data.\n4. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n5. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs)."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 16:00:43",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 857,
+    "p1": 882,
+    "p2": 221,
+    "p3": 299
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T16:00:43.475911",
+    "sensors": {
+      "timestamp": "2026-03-21 16:00:43",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 857,
+      "p1": 882,
+      "p2": 221,
+      "p3": 299
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 10.5,
+        "raw": 882,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 96.5,
+        "raw": 221,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 83.5,
+        "raw": 299,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774075328,
+        "main": {
+          "temp": 31.72,
+          "feels_like": 38.72,
+          "temp_min": 31.01,
+          "temp_max": 32.22,
+          "pressure": 1010,
+          "humidity": 68,
+          "sea_level": 1010,
+          "grnd_level": 1009
+        },
+        "weather": {
+          "id": 802,
+          "main": "Clouds",
+          "description": "scattered clouds",
+          "icon": "03d"
+        },
+        "wind": {
+          "speed": 4.12,
+          "deg": 140
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 5.8392,
+          "estimated_hours_to_dryout": -148.5,
+          "current_status": "Drying"
+        },
+        "p2": {
+          "slope_per_hour": 1.1894,
+          "estimated_hours_to_dryout": -169.0,
+          "current_status": "Drying"
+        },
+        "p3": {
+          "slope_per_hour": 2.6554,
+          "estimated_hours_to_dryout": -105.1,
+          "current_status": "Drying"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 15:29:32\n**Sensor Data:** Temperature: 32.0\u00b0C, Hum: 26.0%, Light: 813, Soil Moisture (p1): 876, (p2): 219, (p3): 298\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in yellow pot, consistent with sensor readings indicating dry to very dry conditions. Black pot sensor reading of 219 indicates potential sensor malfunction - visual inspection shows normal soil appearance without extreme dryness signs (soil appears moist).\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 876/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves. Rapid drying slope (24.75 %/hr) indicates fast moisture loss.\n- Mexican Mint: Unable to assess soil moisture accurately due to p2 sensor reading of 219 (inconsistent with historical range of 600-700). Visual inspection shows healthy central crown with no signs of drooping or distress. The yellowing basal leaf remains attached but stable.\n- Environmental Conditions: Temperature remains high at 32.0\u00b0C (above ideal range for both plants). Humidity at 26.0% is below optimal levels but above the 20% threshold for explicit misting recommendation. Light levels at 813 Lux provide adequate photosynthesis support.\n**Recommended Action**: \n1. **Consider manual misting of leaves** due to sub-optimal humidity levels and high temperature (though humidity is above 20% threshold, misting may alleviate stress).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. **Investigate p2 sensor malfunction** - black pot moisture reading of 219 is inconsistent with visual assessment and historical data (previous readings ~680-690).\n4. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n5. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs)."
+      ]
+    }
+  }
+}
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 446, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 393, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 340, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 446, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 393, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 340, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+{
+  "capture": {
+    "timestamp": "2026-03-21 17:30:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 894,
+    "p1": 847,
+    "p2": 227,
+    "p3": 300
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T17:30:26.932706",
+    "sensors": {
+      "timestamp": "2026-03-21 17:30:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 894,
+      "p1": 847,
+      "p2": 227,
+      "p3": 300
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 15.8,
+        "raw": 847,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 95.5,
+        "raw": 227,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 83.3,
+        "raw": 300,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 0.6753,
+          "estimated_hours_to_dryout": 152.5,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.4314,
+          "estimated_hours_to_dryout": 235.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 1.7238,
+          "estimated_hours_to_dryout": 290.1,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 15:29:32\n**Sensor Data:** Temperature: 32.0\u00b0C, Hum: 26.0%, Light: 813, Soil Moisture (p1): 876, (p2): 219, (p3): 298\n**Visual Assessment**: \n- *String of Nickels*: Continued healthy appearance. Leaf segments remain plump and well-hydrated. No visible signs of shriveling or wrinkling observed in latest capture.\n- *Mexican Mint*: Central crown shows continued vigor. The yellowing leaf at base (noted previously) remains attached but may be progressing in senescence.\n- *Soil*: Surface appears dry and granular in yellow pot, consistent with sensor readings indicating dry to very dry conditions. Black pot sensor reading of 219 indicates potential sensor malfunction - visual inspection shows normal soil appearance without extreme dryness signs (soil appears moist).\n**Plant Condition Assessment**: \n- String of Nickels: Stable condition despite p1 sensor reading 876/800 (very dry). Plant shows no visible stress symptoms, likely accessing deeper moisture reserves. Rapid drying slope (24.75 %/hr) indicates fast moisture loss.\n- Mexican Mint: Unable to assess soil moisture accurately due to p2 sensor reading of 219 (inconsistent with historical range of 600-700). Visual inspection shows healthy central crown with no signs of drooping or distress. The yellowing basal leaf remains attached but stable.\n- Environmental Conditions: Temperature remains high at 32.0\u00b0C (above ideal range for both plants). Humidity at 26.0% is below optimal levels but above the 20% threshold for explicit misting recommendation. Light levels at 813 Lux provide adequate photosynthesis support.\n**Recommended Action**: \n1. **Consider manual misting of leaves** due to sub-optimal humidity levels and high temperature (though humidity is above 20% threshold, misting may alleviate stress).\n2. Continue monitoring for visual stress signals - particularly shriveling in Nickels and drooping in Mint.\n3. **Investigate p2 sensor malfunction** - black pot moisture reading of 219 is inconsistent with visual assessment and historical data (previous readings ~680-690).\n4. Consider watering if visual stress appears, though plants currently appear to be utilizing deep reserves.\n5. Track crown expansion on Mexican Mint for growth metrics (new leaf pairs)."
+      ]
+    }
+  }
+}
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 449, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 396, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 343, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 449, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 396, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 343, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 449, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 396, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 343, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+{
+  "capture": {
+    "timestamp": "2026-03-21 19:30:21",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 843,
+    "p1": 848,
+    "p2": 233,
+    "p3": 301
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T19:30:21.405790",
+    "sensors": {
+      "timestamp": "2026-03-21 19:30:21",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 843,
+      "p1": 848,
+      "p2": 233,
+      "p3": 301
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 15.7,
+        "raw": 848,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 94.5,
+        "raw": 233,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 83.2,
+        "raw": 301,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 0.4315,
+          "estimated_hours_to_dryout": 236.4,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.2528,
+          "estimated_hours_to_dryout": 174.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 1.1097,
+          "estimated_hours_to_dryout": 449.7,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 449, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 396, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 343, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 449, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 396, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 343, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+{
+  "capture": {
+    "timestamp": "2026-03-21 21:00:21",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 844,
+    "p1": 896,
+    "p2": 239,
+    "p3": 303
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T21:00:21.472480",
+    "sensors": {
+      "timestamp": "2026-03-21 21:00:21",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 844,
+      "p1": 896,
+      "p2": 239,
+      "p3": 303
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 8.3,
+        "raw": 896,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 93.5,
+        "raw": 239,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.8,
+        "raw": 303,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 0.2284,
+          "estimated_hours_to_dryout": 236.4,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.3112,
+          "estimated_hours_to_dryout": 169.4,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.9578,
+          "estimated_hours_to_dryout": 518.9,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 21:30:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 845,
+    "p1": 864,
+    "p2": 243,
+    "p3": 303
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T21:30:26.417510",
+    "sensors": {
+      "timestamp": "2026-03-21 21:30:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 845,
+      "p1": 864,
+      "p2": 243,
+      "p3": 303
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 13.2,
+        "raw": 864,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 92.8,
+        "raw": 243,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.8,
+        "raw": 303,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.3405,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4102,
+          "estimated_hours_to_dryout": 163.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.9445,
+          "estimated_hours_to_dryout": 526.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 22:00:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 849,
+    "p1": 877,
+    "p2": 245,
+    "p3": 303
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T22:00:26.796797",
+    "sensors": {
+      "timestamp": "2026-03-21 22:00:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 849,
+      "p1": 877,
+      "p2": 245,
+      "p3": 303
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 11.2,
+        "raw": 877,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 92.5,
+        "raw": 245,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.8,
+        "raw": 303,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 1.5472,
+          "estimated_hours_to_dryout": 47.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.5588,
+          "estimated_hours_to_dryout": 156.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.9068,
+          "estimated_hours_to_dryout": 548.1,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 22:30:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 883,
+    "p2": 245,
+    "p3": 303
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T22:30:27.021284",
+    "sensors": {
+      "timestamp": "2026-03-21 22:30:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 883,
+      "p2": 245,
+      "p3": 303
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 10.3,
+        "raw": 883,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 92.5,
+        "raw": 245,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.8,
+        "raw": 303,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 1.5884,
+          "estimated_hours_to_dryout": 42.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.5581,
+          "estimated_hours_to_dryout": 156.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8936,
+          "estimated_hours_to_dryout": 556.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 23:00:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 865,
+    "p2": 248,
+    "p3": 304
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T23:00:26.383166",
+    "sensors": {
+      "timestamp": "2026-03-21 23:00:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 865,
+      "p2": 248,
+      "p3": 304
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 13.1,
+        "raw": 865,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 92.0,
+        "raw": 248,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.7,
+        "raw": 304,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 1.1689,
+          "estimated_hours_to_dryout": 72.7,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.5818,
+          "estimated_hours_to_dryout": 154.1,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8745,
+          "estimated_hours_to_dryout": 567.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-21 23:30:26",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 876,
+    "p2": 248,
+    "p3": 304
+  },
+  "snapshot": {
+    "timestamp": "2026-03-21T23:30:26.580622",
+    "sensors": {
+      "timestamp": "2026-03-21 23:30:26",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 876,
+      "p2": 248,
+      "p3": 304
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 11.4,
+        "raw": 876,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 92.0,
+        "raw": 248,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.7,
+        "raw": 304,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 1.1327,
+          "estimated_hours_to_dryout": 65.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.572,
+          "estimated_hours_to_dryout": 154.5,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8661,
+          "estimated_hours_to_dryout": 572.7,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 00:00:21",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 925,
+    "p1": 885,
+    "p2": 250,
+    "p3": 304
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T00:00:21.428417",
+    "sensors": {
+      "timestamp": "2026-03-22 00:00:21",
+      "temp": 32.0,
+      "hum": 26.0,
+      "light": 925,
+      "p1": 885,
+      "p2": 250,
+      "p3": 304
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 10.0,
+        "raw": 885,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 91.7,
+        "raw": 250,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.7,
+        "raw": 304,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.518,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 1.2069,
+          "estimated_hours_to_dryout": 53.9,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.5659,
+          "estimated_hours_to_dryout": 154.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8531,
+          "estimated_hours_to_dryout": 581.4,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 00:30:27",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 925,
+    "p1": 882,
+    "p2": 251,
+    "p3": 305
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T00:30:27.163566",
+    "sensors": {
+      "timestamp": "2026-03-22 00:30:27",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 925,
+      "p1": 882,
+      "p2": 251,
+      "p3": 305
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 10.5,
+        "raw": 882,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 91.5,
+        "raw": 251,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.5,
+        "raw": 305,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.057,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.509,
+          "estimated_hours_to_dryout": 156.5,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8315,
+          "estimated_hours_to_dryout": 595.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 01:00:27",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 925,
+    "p1": 875,
+    "p2": 252,
+    "p3": 305
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T01:00:27.372444",
+    "sensors": {
+      "timestamp": "2026-03-22 01:00:27",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 925,
+      "p1": 875,
+      "p2": 252,
+      "p3": 305
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 11.5,
+        "raw": 875,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 91.3,
+        "raw": 252,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.5,
+        "raw": 305,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": 0.0074,
+          "estimated_hours_to_dryout": 10128.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4896,
+          "estimated_hours_to_dryout": 157.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8228,
+          "estimated_hours_to_dryout": 601.6,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 01:30:31",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 925,
+    "p1": 846,
+    "p2": 253,
+    "p3": 305
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T01:30:31.664364",
+    "sensors": {
+      "timestamp": "2026-03-22 01:30:31",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 925,
+      "p1": 846,
+      "p2": 253,
+      "p3": 305
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 16.0,
+        "raw": 846,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 91.2,
+        "raw": 253,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.5,
+        "raw": 305,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.0603,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4577,
+          "estimated_hours_to_dryout": 158.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.8081,
+          "estimated_hours_to_dryout": 612.5,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 02:00:21",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 925,
+    "p1": 844,
+    "p2": 255,
+    "p3": 305
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T02:00:21.210391",
+    "sensors": {
+      "timestamp": "2026-03-22 02:00:21",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 925,
+      "p1": 844,
+      "p2": 255,
+      "p3": 305
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 16.3,
+        "raw": 844,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 90.8,
+        "raw": 255,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.5,
+        "raw": 305,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.2746,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4447,
+          "estimated_hours_to_dryout": 158.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7981,
+          "estimated_hours_to_dryout": 620.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 02:30:20",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 851,
+    "p2": 259,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T02:30:20.925117",
+    "sensors": {
+      "timestamp": "2026-03-22 02:30:20",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 851,
+      "p2": 259,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 15.2,
+        "raw": 851,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 90.2,
+        "raw": 259,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.4035,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4203,
+          "estimated_hours_to_dryout": 158.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7779,
+          "estimated_hours_to_dryout": 635.1,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 03:00:21",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 893,
+    "p2": 260,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T03:00:21.366645",
+    "sensors": {
+      "timestamp": "2026-03-22 03:00:21",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 893,
+      "p2": 260,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 8.8,
+        "raw": 893,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 90.0,
+        "raw": 260,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.2175,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4224,
+          "estimated_hours_to_dryout": 157.8,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7724,
+          "estimated_hours_to_dryout": 639.6,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 03:30:32",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 854,
+    "p2": 262,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T03:30:32.073504",
+    "sensors": {
+      "timestamp": "2026-03-22 03:30:32",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 854,
+      "p2": 262,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 14.8,
+        "raw": 854,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.7,
+        "raw": 262,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.3246,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4264,
+          "estimated_hours_to_dryout": 157.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7644,
+          "estimated_hours_to_dryout": 646.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 04:00:26",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 849,
+    "p2": 263,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T04:00:26.191408",
+    "sensors": {
+      "timestamp": "2026-03-22 04:00:26",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 849,
+      "p2": 263,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 15.5,
+        "raw": 849,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.5,
+        "raw": 263,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.4585,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.425,
+          "estimated_hours_to_dryout": 156.8,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7543,
+          "estimated_hours_to_dryout": 654.9,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 04:30:20",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 927,
+    "p1": 872,
+    "p2": 268,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T04:30:20.883101",
+    "sensors": {
+      "timestamp": "2026-03-22 04:30:20",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 927,
+      "p1": 872,
+      "p2": 268,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 12.0,
+        "raw": 872,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.7,
+        "raw": 268,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.4168,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4471,
+          "estimated_hours_to_dryout": 154.3,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7424,
+          "estimated_hours_to_dryout": 665.4,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 05:00:21",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 926,
+    "p1": 876,
+    "p2": 268,
+    "p3": 306
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T05:00:21.495969",
+    "sensors": {
+      "timestamp": "2026-03-22 05:00:21",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 926,
+      "p1": 876,
+      "p2": 268,
+      "p3": 306
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 11.4,
+        "raw": 876,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.7,
+        "raw": 268,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.3,
+        "raw": 306,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774089506,
+        "main": {
+          "temp": 31.49,
+          "feels_like": 37.97,
+          "temp_min": 30.63,
+          "temp_max": 32.01,
+          "pressure": 1007,
+          "humidity": 67,
+          "sea_level": 1007,
+          "grnd_level": 1007
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        },
+        "wind": {
+          "speed": 5.14,
+          "deg": 160
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774053761,
+          "sunset": 1774097383
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.3495,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 3.4552,
+          "estimated_hours_to_dryout": 154.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.7289,
+          "estimated_hours_to_dryout": 677.7,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 05:30:26",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 926,
+    "p1": 845,
+    "p2": 269,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T05:30:26.585070",
+    "sensors": {
+      "timestamp": "2026-03-22 05:30:26",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 926,
+      "p1": 845,
+      "p2": 269,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 16.2,
+        "raw": 845,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.5,
+        "raw": 269,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.3992,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7661,
+          "estimated_hours_to_dryout": 192.0,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5768,
+          "estimated_hours_to_dryout": 854.7,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 06:00:21",
+    "temp": 31.0,
+    "hum": 24.0,
+    "light": 925,
+    "p1": 828,
+    "p2": 270,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T06:00:21.057502",
+    "sensors": {
+      "timestamp": "2026-03-22 06:00:21",
+      "temp": 31.0,
+      "hum": 24.0,
+      "light": 925,
+      "p1": 828,
+      "p2": 270,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 18.8,
+        "raw": 828,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.3,
+        "raw": 270,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.414,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.5967,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7639,
+          "estimated_hours_to_dryout": 191.8,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5692,
+          "estimated_hours_to_dryout": 866.2,
+          "solar_phase": "Night",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 06:30:26",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 912,
+    "p1": 865,
+    "p2": 271,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T06:30:26.392639",
+    "sensors": {
+      "timestamp": "2026-03-22 06:30:26",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 912,
+      "p1": 865,
+      "p2": 271,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 13.1,
+        "raw": 865,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.2,
+        "raw": 271,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.5802,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7582,
+          "estimated_hours_to_dryout": 191.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5605,
+          "estimated_hours_to_dryout": 879.6,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 07:00:26",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 879,
+    "p1": 871,
+    "p2": 271,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T07:00:26.493493",
+    "sensors": {
+      "timestamp": "2026-03-22 07:00:26",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 879,
+      "p1": 871,
+      "p2": 271,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 12.2,
+        "raw": 871,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.2,
+        "raw": 271,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.5331,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7443,
+          "estimated_hours_to_dryout": 192.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5508,
+          "estimated_hours_to_dryout": 895.0,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 07:30:21",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 834,
+    "p1": 871,
+    "p2": 273,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T07:30:21.235854",
+    "sensors": {
+      "timestamp": "2026-03-22 07:30:21",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 834,
+      "p1": 871,
+      "p2": 273,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 12.2,
+        "raw": 871,
+        "is_dry": true,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 87.8,
+        "raw": 273,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.4893,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7333,
+          "estimated_hours_to_dryout": 192.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5405,
+          "estimated_hours_to_dryout": 912.0,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 08:00:21",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 797,
+    "p1": 842,
+    "p2": 275,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T08:00:21.472604",
+    "sensors": {
+      "timestamp": "2026-03-22 08:00:21",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 797,
+      "p1": 842,
+      "p2": 275,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 16.6,
+        "raw": 842,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 87.5,
+        "raw": 275,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.5865,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7248,
+          "estimated_hours_to_dryout": 192.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5297,
+          "estimated_hours_to_dryout": 930.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 08:30:21",
+    "temp": 31.0,
+    "hum": 24.0,
+    "light": 756,
+    "p1": 833,
+    "p2": 273,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T08:30:21.149504",
+    "sensors": {
+      "timestamp": "2026-03-22 08:30:21",
+      "temp": 31.0,
+      "hum": 24.0,
+      "light": 756,
+      "p1": 833,
+      "p2": 273,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 18.0,
+        "raw": 833,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 87.8,
+        "raw": 273,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.414,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.7131,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.7002,
+          "estimated_hours_to_dryout": 195.2,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5185,
+          "estimated_hours_to_dryout": 950.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 09:00:26",
+    "temp": 31.0,
+    "hum": 24.0,
+    "light": 729,
+    "p1": 820,
+    "p2": 265,
+    "p3": 308
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T09:00:26.378543",
+    "sensors": {
+      "timestamp": "2026-03-22 09:00:26",
+      "temp": 31.0,
+      "hum": 24.0,
+      "light": 729,
+      "p1": 820,
+      "p2": 265,
+      "p3": 308
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 20.0,
+        "raw": 820,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.2,
+        "raw": 265,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.0,
+        "raw": 308,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.414,
+      "weather_forecast": {
+        "timestamp": 1774137008,
+        "main": {
+          "temp": 27.18,
+          "feels_like": 30.36,
+          "temp_min": 25.71,
+          "temp_max": 27.24,
+          "pressure": 1011,
+          "humidity": 82,
+          "sea_level": 1011,
+          "grnd_level": 1010
+        },
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        },
+        "wind": {
+          "speed": 1.34,
+          "deg": 168,
+          "gust": 1.34
+        },
+        "sys": {
+          "type": 2,
+          "id": 2104103,
+          "country": "IN",
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Park Town"
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -0.8819,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.6352,
+          "estimated_hours_to_dryout": 203.0,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.5116,
+          "estimated_hours_to_dryout": 961.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "# GardenOS Vision Ledger (RESET: 2026-03-21)",
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 09:30:28",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 825,
+    "p1": 825,
+    "p2": 272,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T09:30:28.353288",
+    "sensors": {
+      "timestamp": "2026-03-22 09:30:28",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 825,
+      "p1": 825,
+      "p2": 272,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 19.2,
+        "raw": 825,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 88.0,
+        "raw": 272,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774151927,
+        "main": {
+          "temp": 30.37,
+          "feels_like": 36.77,
+          "temp_min": null,
+          "temp_max": null,
+          "pressure": 1013,
+          "humidity": 73,
+          "sea_level": null,
+          "grnd_level": null
+        },
+        "weather": {
+          "id": 701,
+          "main": "Mist",
+          "description": "mist",
+          "icon": "50d"
+        },
+        "wind": null,
+        "sys": {
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Asia/Kolkata",
+        "forecast": {
+          "rain_expected": false,
+          "max_probability_of_precipitation": 0,
+          "hourly_forecast": [
+            {
+              "time": 1774148400,
+              "temp": 29.95,
+              "humidity": 72,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774152000,
+              "temp": 30.37,
+              "humidity": 73,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774155600,
+              "temp": 30.28,
+              "humidity": 70,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774159200,
+              "temp": 30.26,
+              "humidity": 67,
+              "pop": 0,
+              "weather": {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -1.1215,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.5662,
+          "estimated_hours_to_dryout": 205.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.4935,
+          "estimated_hours_to_dryout": 999.0,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further.",
+        "2026-03-22 09:01:04\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 729 Lux\n- p1 (Nickels): 820 (Resistive)\n- p2 (Mint): 265 (Capacitive)\n- p3 (Pothos): 308 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 10:00:21",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 810,
+    "p1": 826,
+    "p2": 266,
+    "p3": 308
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T10:00:21.169682",
+    "sensors": {
+      "timestamp": "2026-03-22 10:00:21",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 810,
+      "p1": 826,
+      "p2": 266,
+      "p3": 308
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 19.1,
+        "raw": 826,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.0,
+        "raw": 266,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.0,
+        "raw": 308,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774151927,
+        "main": {
+          "temp": 30.37,
+          "feels_like": 36.77,
+          "temp_min": null,
+          "temp_max": null,
+          "pressure": 1013,
+          "humidity": 73,
+          "sea_level": null,
+          "grnd_level": null
+        },
+        "weather": {
+          "id": 701,
+          "main": "Mist",
+          "description": "mist",
+          "icon": "50d"
+        },
+        "wind": null,
+        "sys": {
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Asia/Kolkata",
+        "forecast": {
+          "rain_expected": false,
+          "max_probability_of_precipitation": 0,
+          "hourly_forecast": [
+            {
+              "time": 1774148400,
+              "temp": 29.95,
+              "humidity": 72,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774152000,
+              "temp": 30.37,
+              "humidity": 73,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774155600,
+              "temp": 30.28,
+              "humidity": 70,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774159200,
+              "temp": 30.26,
+              "humidity": 67,
+              "pop": 0,
+              "weather": {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -1.1852,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.4305,
+          "estimated_hours_to_dryout": 219.7,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.4727,
+          "estimated_hours_to_dryout": 1040.9,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further.",
+        "2026-03-22 09:01:04\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 729 Lux\n- p1 (Nickels): 820 (Resistive)\n- p2 (Mint): 265 (Capacitive)\n- p3 (Pothos): 308 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 10:30:21",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 838,
+    "p1": 837,
+    "p2": 263,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T10:30:21.439116",
+    "sensors": {
+      "timestamp": "2026-03-22 10:30:21",
+      "temp": 31.0,
+      "hum": 26.0,
+      "light": 838,
+      "p1": 837,
+      "p2": 263,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 17.4,
+        "raw": 837,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.5,
+        "raw": 263,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.324,
+      "weather_forecast": {
+        "timestamp": 1774151927,
+        "main": {
+          "temp": 30.37,
+          "feels_like": 36.77,
+          "temp_min": null,
+          "temp_max": null,
+          "pressure": 1013,
+          "humidity": 73,
+          "sea_level": null,
+          "grnd_level": null
+        },
+        "weather": {
+          "id": 701,
+          "main": "Mist",
+          "description": "mist",
+          "icon": "50d"
+        },
+        "wind": null,
+        "sys": {
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Asia/Kolkata",
+        "forecast": {
+          "rain_expected": false,
+          "max_probability_of_precipitation": 0,
+          "hourly_forecast": [
+            {
+              "time": 1774148400,
+              "temp": 29.95,
+              "humidity": 72,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774152000,
+              "temp": 30.37,
+              "humidity": 73,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774155600,
+              "temp": 30.28,
+              "humidity": 70,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774159200,
+              "temp": 30.26,
+              "humidity": 67,
+              "pop": 0,
+              "weather": {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -1.2192,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.3778,
+          "estimated_hours_to_dryout": 225.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.4642,
+          "estimated_hours_to_dryout": 1062.1,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further.",
+        "2026-03-22 09:01:04\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 729 Lux\n- p1 (Nickels): 820 (Resistive)\n- p2 (Mint): 265 (Capacitive)\n- p3 (Pothos): 308 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+{
+  "capture": {
+    "timestamp": "2026-03-22 11:00:45",
+    "temp": 31.0,
+    "hum": 25.0,
+    "light": 690,
+    "p1": 846,
+    "p2": 266,
+    "p3": 307
+  },
+  "snapshot": {
+    "timestamp": "2026-03-22T11:00:45.514130",
+    "sensors": {
+      "timestamp": "2026-03-22 11:00:45",
+      "temp": 31.0,
+      "hum": 25.0,
+      "light": 690,
+      "p1": 846,
+      "p2": 266,
+      "p3": 307
+    },
+    "moisture_analysis": {
+      "p1": {
+        "moisture_pct": 16.0,
+        "raw": 846,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p2": {
+        "moisture_pct": 89.0,
+        "raw": 266,
+        "is_dry": false,
+        "note": "Stable"
+      },
+      "p3": {
+        "moisture_pct": 82.2,
+        "raw": 307,
+        "is_dry": false,
+        "note": "Stable"
+      }
+    },
+    "environment": {
+      "vpd_kpa": 3.369,
+      "weather_forecast": {
+        "timestamp": 1774151927,
+        "main": {
+          "temp": 30.37,
+          "feels_like": 36.77,
+          "temp_min": null,
+          "temp_max": null,
+          "pressure": 1013,
+          "humidity": 73,
+          "sea_level": null,
+          "grnd_level": null
+        },
+        "weather": {
+          "id": 701,
+          "main": "Mist",
+          "description": "mist",
+          "icon": "50d"
+        },
+        "wind": null,
+        "sys": {
+          "sunrise": 1774140120,
+          "sunset": 1774183786
+        },
+        "name": "Asia/Kolkata",
+        "forecast": {
+          "rain_expected": false,
+          "max_probability_of_precipitation": 0,
+          "hourly_forecast": [
+            {
+              "time": 1774148400,
+              "temp": 29.95,
+              "humidity": 72,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774152000,
+              "temp": 30.37,
+              "humidity": 73,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774155600,
+              "temp": 30.28,
+              "humidity": 70,
+              "pop": 0,
+              "weather": {
+                "id": 802,
+                "main": "Clouds",
+                "description": "scattered clouds",
+                "icon": "03d"
+              }
+            },
+            {
+              "time": 1774159200,
+              "temp": 30.26,
+              "humidity": 67,
+              "pop": 0,
+              "weather": {
+                "id": 801,
+                "main": "Clouds",
+                "description": "few clouds",
+                "icon": "02d"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "intelligence": {
+      "slopes": {
+        "p1": {
+          "slope_per_hour": -1.2556,
+          "estimated_hours_to_dryout": null,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p2": {
+          "slope_per_hour": 2.2642,
+          "estimated_hours_to_dryout": 235.8,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        },
+        "p3": {
+          "slope_per_hour": 0.4465,
+          "estimated_hours_to_dryout": 1104.1,
+          "solar_phase": "Daylight",
+          "atmospheric_forcing": "Normal"
+        }
+      },
+      "vision_metadata": null,
+      "recent_visual_ledger": [
+        "2026-03-21 18:45:00 (Baseline Reset)\n**Sensor Data**: Temp: 32.0\u00b0C, Hum: 26%, Light: 813 Lux\n- p1 (Nickels): 876 (Resistive/Dry)\n- p2 (Mint): 219 (Capacitive/Wet)\n- p3 (Pothos): 298 (Capacitive/Wet)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable. \n- **CRITICAL**: Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity.",
+        "2026-03-22 06:00:30\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 925 Lux\n- p1 (Nickels): 828 (Resistive)\n- p2 (Mint): 270 (Capacitive)\n- p3 (Pothos): 307 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Leaves appear turgid, no signs of wilting.\n- **Mexican Mint (p2)**: Central crown vigorous, leaves green.\n- **Pothos (p3)**: Leaves upright, reaching towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable and well-hydrated.\n- Sensor p1 reads high due to resistive nature; visual turgidity indicates adequate moisture.\n- Sensors p2 and p3 readings consistent with wet soil (200-300 range).\n\n**Recommended Action**:\n- Continue monitoring growth.\n- Mist leaves if humidity drops further.",
+        "2026-03-22 09:01:04\n**Sensor Data**: Temp: 31.0\u00b0C, Hum: 24.0%, Light: 729 Lux\n- p1 (Nickels): 820 (Resistive)\n- p2 (Mint): 265 (Capacitive)\n- p3 (Pothos): 308 (Capacitive)\n\n**Visual Assessment**:\n- **String of Nickels (p1)**: Healthy. Leaves are plump/turgid. No shriveling.\n- **Mexican Mint (p2)**: Healthy. Central crown is vigorous.\n- **Pothos (p3)**: Healthy. Leaves reaching up (turgid) towards light.\n\n**Plant Condition Assessment**:\n- All plants are stable.\n- Sensors p2 and p3 are reading correctly (200-300 = Wet). This is NOT a malfunction.\n- p1 sensor is resistive and reads high; rely on visual turgidity.\n\n**Recommended Action**:\n- Continue monitoring growth markers (Mint crown, Pothos orientation).\n- Mist leaves due to low humidity."
+      ]
+    }
+  }
+}
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 532, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 479, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 420, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 532, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 479, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 420, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 532, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 479, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 420, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 572, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 487, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 428, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 572, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 487, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 428, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Sentinel: Sending 1 alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 572, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 487, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 428, in check_alerts
+    subprocess.run(cmd, capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 572, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 441, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 94, saw 8
+
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 607, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 469, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 94, saw 8
+
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 607, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 469, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 96, saw 10
+
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 607, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 469, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 96, saw 10
+
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 607, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 469, in generate_snapshot
+    df = pd.read_csv(CSV_PATH)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 626, in _read
+    return parser.read(nrows)
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/readers.py", line 1923, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+  File "/Users/surendran/Library/Python/3.9/lib/python/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 234, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 838, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 905, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 874, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2061, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 7 fields in line 96, saw 10
+
+Sentinel: Sending 1 emergency alert(s) to Slack...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 645, in <module>
+    res["snapshot"] = generate_snapshot(capture_data_res, vision_capture_res)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 560, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./garden_engine.py", line 487, in check_alerts
+    subprocess.run(["openclaw", "message", "send", "--target", channel, "--message", message], capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./warden.py", line 188, in <module>
+    if args.snapshot or args.capture: res["snapshot"] = generate_snapshot(res.get("capture"))
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./warden.py", line 167, in generate_snapshot
+    check_alerts(snapshot)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/./warden.py", line 131, in check_alerts
+    subprocess.run(["openclaw", "message", "send", "--target", "C0AK6A4SJES", "--message", "\n".join(current_alerts)], capture_output=True)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 505, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1821, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'openclaw'
