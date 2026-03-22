@@ -484,7 +484,7 @@ def check_alerts(snapshot):
         message = "\n".join(current_alerts)
         channel = "C0AK6A4SJES" # #plantclaw
         print(f"Sentinel: Sending {len(current_alerts)} emergency alert(s) to Slack...")
-        subprocess.run(["openclaw", "message", "send", "--target", channel, "--message", message], capture_output=True)
+        subprocess.run(["/Users/surendran/.pnpm-global/openclaw", "message", "send", "--target", channel, "--message", message], capture_output=True)
         
         with open(alert_state_path, 'w') as f:
             json.dump({"timestamp": now_ts, "alerts": current_alerts}, f)

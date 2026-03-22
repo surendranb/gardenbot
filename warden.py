@@ -128,7 +128,7 @@ def check_alerts(snapshot):
         except: pass
     now_ts = datetime.now().timestamp()
     if set(current_alerts) != set(last_state.get("alerts", [])) or (now_ts - last_state.get("timestamp", 0)) > 14400:
-        subprocess.run(["openclaw", "message", "send", "--target", "C0AK6A4SJES", "--message", "\n".join(current_alerts)], capture_output=True)
+        subprocess.run(["/Users/surendran/.pnpm-global/openclaw", "message", "send", "--target", "C0AK6A4SJES", "--message", "\n".join(current_alerts)], capture_output=True)
         with open(alert_state_path, 'w') as f: json.dump({"timestamp": now_ts, "alerts": current_alerts}, f)
 
 def render_dashboard():

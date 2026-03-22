@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-22T18:33:15.787464",
+  "timestamp": "2026-03-22T18:45:29.209027",
   "sensors": {
     "timestamp": "2026-03-22 18:30:21",
     "temp": 32.0,
@@ -126,16 +126,16 @@
   "intelligence": {
     "slopes": {
       "p1": {
-        "slope_per_hour": 0.0506,
-        "estimated_hours_to_dryout": 829.9
+        "slope_per_hour": 0.0044,
+        "estimated_hours_to_dryout": 9443.4
       },
       "p2": {
-        "slope_per_hour": 1.8146,
-        "estimated_hours_to_dryout": 283.3
+        "slope_per_hour": 1.8353,
+        "estimated_hours_to_dryout": 280.1
       },
       "p3": {
-        "slope_per_hour": 0.4235,
-        "estimated_hours_to_dryout": 1145.2
+        "slope_per_hour": 0.4273,
+        "estimated_hours_to_dryout": 1135.1
       }
     }
   }
