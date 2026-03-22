@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-03-22T17:39:36.436298",
+  "timestamp": "2026-03-22T18:03:19.272509",
   "sensors": {
-    "timestamp": "2026-03-22 17:39:21",
+    "timestamp": "2026-03-22 18:00:21",
     "temp": 32.0,
     "hum": 21.0,
-    "light": 815,
-    "p1": 900,
-    "p2": 286,
+    "light": 832,
+    "p1": 908,
+    "p2": 283,
     "p3": 314
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 7.7,
-      "raw": 900,
+      "moisture_pct": 6.5,
+      "raw": 908,
       "is_dry": true
     },
     "p2": {
-      "moisture_pct": 85.7,
-      "raw": 286,
+      "moisture_pct": 86.2,
+      "raw": 283,
       "is_dry": false
     },
     "p3": {
@@ -26,40 +26,40 @@
       "is_dry": false
     },
     "p4": {
-      "moisture_pct": 82.8,
-      "raw": 286,
+      "moisture_pct": 83.4,
+      "raw": 283,
       "is_dry": false
     },
     "p5": {
-      "moisture_pct": 82.8,
-      "raw": 286,
+      "moisture_pct": 83.4,
+      "raw": 283,
       "is_dry": false
     },
     "p6": {
-      "moisture_pct": 82.8,
-      "raw": 286,
+      "moisture_pct": 83.4,
+      "raw": 283,
       "is_dry": false
     }
   },
   "environment": {
     "vpd_kpa": 3.756,
     "weather_forecast": {
-      "timestamp": 1774151927,
+      "timestamp": 1774181615,
       "main": {
-        "temp": 30.37,
-        "feels_like": 36.77,
+        "temp": 30,
+        "feels_like": 35.53,
         "temp_min": null,
         "temp_max": null,
-        "pressure": 1013,
-        "humidity": 73,
+        "pressure": 1009,
+        "humidity": 72,
         "sea_level": null,
         "grnd_level": null
       },
       "weather": {
-        "id": 701,
-        "main": "Mist",
-        "description": "mist",
-        "icon": "50d"
+        "id": 801,
+        "main": "Clouds",
+        "description": "few clouds",
+        "icon": "02d"
       },
       "wind": null,
       "sys": {
@@ -72,51 +72,51 @@
         "max_probability_of_precipitation": 0,
         "hourly_forecast": [
           {
-            "time": 1774148400,
-            "temp": 29.95,
+            "time": 1774180800,
+            "temp": 30,
             "humidity": 72,
-            "pop": 0,
-            "weather": {
-              "id": 802,
-              "main": "Clouds",
-              "description": "scattered clouds",
-              "icon": "03d"
-            }
-          },
-          {
-            "time": 1774152000,
-            "temp": 30.37,
-            "humidity": 73,
-            "pop": 0,
-            "weather": {
-              "id": 802,
-              "main": "Clouds",
-              "description": "scattered clouds",
-              "icon": "03d"
-            }
-          },
-          {
-            "time": 1774155600,
-            "temp": 30.28,
-            "humidity": 70,
-            "pop": 0,
-            "weather": {
-              "id": 802,
-              "main": "Clouds",
-              "description": "scattered clouds",
-              "icon": "03d"
-            }
-          },
-          {
-            "time": 1774159200,
-            "temp": 30.26,
-            "humidity": 67,
             "pop": 0,
             "weather": {
               "id": 801,
               "main": "Clouds",
               "description": "few clouds",
               "icon": "02d"
+            }
+          },
+          {
+            "time": 1774184400,
+            "temp": 29.54,
+            "humidity": 73,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02n"
+            }
+          },
+          {
+            "time": 1774188000,
+            "temp": 29,
+            "humidity": 74,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02n"
+            }
+          },
+          {
+            "time": 1774191600,
+            "temp": 28.51,
+            "humidity": 74,
+            "pop": 0,
+            "weather": {
+              "id": 800,
+              "main": "Clear",
+              "description": "clear sky",
+              "icon": "01n"
             }
           }
         ]
@@ -126,16 +126,16 @@
   "intelligence": {
     "slopes": {
       "p1": {
-        "slope_per_hour": -0.1079,
+        "slope_per_hour": -0.0259,
         "estimated_hours_to_dryout": null
       },
       "p2": {
-        "slope_per_hour": 1.8217,
-        "estimated_hours_to_dryout": 282.2
+        "slope_per_hour": 1.8162,
+        "estimated_hours_to_dryout": 284.7
       },
       "p3": {
-        "slope_per_hour": 0.4167,
-        "estimated_hours_to_dryout": 1166.4
+        "slope_per_hour": 0.4195,
+        "estimated_hours_to_dryout": 1158.6
       }
     }
   }
