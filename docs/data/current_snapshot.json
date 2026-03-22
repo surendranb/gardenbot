@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-22T18:03:19.272509",
+  "timestamp": "2026-03-22T18:30:21.286866",
   "sensors": {
-    "timestamp": "2026-03-22 18:00:21",
+    "timestamp": "2026-03-22 18:30:21",
     "temp": 32.0,
     "hum": 21.0,
-    "light": 832,
+    "light": 840,
     "p1": 908,
-    "p2": 283,
-    "p3": 314
+    "p2": 286,
+    "p3": 315
   },
   "moisture_analysis": {
     "p1": {
@@ -16,28 +16,28 @@
       "is_dry": true
     },
     "p2": {
-      "moisture_pct": 86.2,
-      "raw": 283,
+      "moisture_pct": 85.7,
+      "raw": 286,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 81.0,
-      "raw": 314,
+      "moisture_pct": 80.8,
+      "raw": 315,
       "is_dry": false
     },
     "p4": {
-      "moisture_pct": 83.4,
-      "raw": 283,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     },
     "p5": {
-      "moisture_pct": 83.4,
-      "raw": 283,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     },
     "p6": {
-      "moisture_pct": 83.4,
-      "raw": 283,
+      "moisture_pct": 82.8,
+      "raw": 286,
       "is_dry": false
     }
   },
@@ -126,16 +126,16 @@
   "intelligence": {
     "slopes": {
       "p1": {
-        "slope_per_hour": -0.0259,
-        "estimated_hours_to_dryout": null
+        "slope_per_hour": 0.0506,
+        "estimated_hours_to_dryout": 829.9
       },
       "p2": {
-        "slope_per_hour": 1.8162,
-        "estimated_hours_to_dryout": 284.7
+        "slope_per_hour": 1.8146,
+        "estimated_hours_to_dryout": 283.3
       },
       "p3": {
-        "slope_per_hour": 0.4195,
-        "estimated_hours_to_dryout": 1158.6
+        "slope_per_hour": 0.4235,
+        "estimated_hours_to_dryout": 1145.2
       }
     }
   }
