@@ -7,9 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         body { background-color: #0f172a; color: #e2e8f0; }
         .card { background-color: #1e293b; border-radius: 0.75rem; padding: 1.5rem; }
+        #warden-log h2 { font-size: 1.125rem; font-weight: 700; color: #4ade80; margin-top: 1rem; margin-bottom: 0.5rem; }
+        #warden-log p { margin-bottom: 0.75rem; color: #cbd5e1; }
+        #warden-log ul { list-style-type: disc; margin-left: 1.25rem; margin-bottom: 0.75rem; color: #cbd5e1; }
+        #warden-log strong { color: #f1f5f9; }
     </style>
 </head>
 <body class="p-6 max-w-7xl mx-auto">
@@ -83,7 +88,7 @@
         <div class="md:col-span-3">
             <div class="card bg-slate-900/80 border border-slate-700">
                 <h2 class="text-xs font-semibold mb-2 text-slate-400 uppercase tracking-wider">Latest Observer Insight</h2>
-                <div id="warden-log" class="text-sm text-slate-300 font-mono whitespace-pre-wrap h-32 overflow-y-auto pr-2 italic">Waiting for report...</div>
+                <div id="warden-log" class="text-sm text-slate-300 font-mono h-auto overflow-y-auto pr-2">Waiting for report...</div>
             </div>
         </div>
     </div>
@@ -155,8 +160,8 @@
                     const entries = text.split(/^## /m);
                     const lastEntry = entries[entries.length - 1];
                     if (lastEntry) {
-                        // Clean up the entry and display
-                        document.getElementById('warden-log').textContent = "## " + lastEntry.trim();
+                        // Parse as Markdown and display as HTML
+                        document.getElementById('warden-log').innerHTML = marked.parse("## " + lastEntry.trim());
                     }
                 }
 
