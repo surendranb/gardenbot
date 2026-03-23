@@ -29,7 +29,7 @@
             <div class="card h-full">
                 <h2 class="text-lg font-semibold mb-4">Live Vision</h2>
                 <div class="rounded-lg overflow-hidden border border-slate-700">
-                    <img id="live-photo" src="media/latest.jpg" alt="Garden View" class="w-full object-cover">
+                    <img id="live-photo" src="./media/latest.jpg" alt="Garden View" class="w-full object-cover">
                 </div>
             </div>
         </div>
@@ -97,23 +97,24 @@
     </div>
 
     <script>
+        console.log("Dashboard Base URL:", window.location.href);
         async function updateDashboard() {
             try {
                 // 1. Snapshot Data
-                const res = await fetch('data/current_snapshot.json');
-                if (!res.ok) throw new Error('Snapshot not found');
+                const res = await fetch('./data/current_snapshot.json');
+                if (!res.ok) throw new Error('Snapshot not found at ./data/current_snapshot.json');
                 const snap = await res.json();
 
                 document.getElementById('last-updated').textContent = `SYNC: ${new Date(snap.timestamp).toLocaleTimeString()}`;
-                document.getElementById('val-temp').textContent = snap.sensors.temp;
-                document.getElementById('val-hum').textContent = snap.sensors.hum;
-                document.getElementById('val-vpd').textContent = `${snap.environment.vpd_kpa} kPa`;
-                document.getElementById('val-light').textContent = snap.sensors.light;
+                document.getElementById('val-temp').textContent = snap.sensors.temp || '--';
+                document.getElementById('val-hum').textContent = snap.sensors.hum || '--';
+                document.getElementById('val-vpd').textContent = `${snap.environment.vpd_kpa || '--'} kPa`;
+                document.getElementById('val-light').textContent = snap.sensors.light || '--';
 
                 const updatePlant = (id) => {
                     const p = snap.moisture_analysis[id];
                     if (!p) return;
-                    document.getElementById(`${id}-val`).textContent = `${p.moisture_pct}%`;
+                    document.getElementById(`${id}-val`).textContent = `${p.moisture_pct || '--'}%`;
                     const stat = document.getElementById(`${id}-status`);
                     stat.textContent = p.is_dry ? "DRY" : "NOMINAL";
                     stat.className = `text-xs px-2 py-1 rounded ${p.is_dry ? 'bg-red-900 text-red-200' : 'bg-green-900 text-green-200'}`;
@@ -132,10 +133,14 @@
             }
 
             // 2. Chart Data
-            Papa.parse("data/telemetry.csv", {
+            Papa.parse("./data/telemetry.csv", {
                 download: true, header: true, skipEmptyLines: true,
                 complete: function(results) {
-                    drawChart(results.data.slice(-144));
+                    if (results.data && results.data.length > 0) {
+                        drawChart(results.data.slice(-144));
+                    } else {
+                        console.error("No CSV data found");
+                    }
                 }
             });
         }
@@ -149,9 +154,9 @@
                 data: {
                     labels: data.map(d => d.timestamp.split(' ')[1].substring(0,5)),
                     datasets: [
-                        { label: 'Nickels', data: data.map(d => d.a0), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
-                        { label: 'Mint', data: data.map(d => d.a5), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
-                        { label: 'Pothos', data: data.map(d => d.a2), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
+                        { label: 'Nickels', data: data.map(d => d.p1), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
+                        { label: 'Mint', data: data.map(d => d.p2), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
+                        { label: 'Pothos', data: data.map(d => d.p3), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
                     ]
                 },
                 options: { 
