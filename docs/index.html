@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="/docs/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GardenOS Dashboard</title>
@@ -199,30 +198,29 @@
                 type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [
-                        {
-                            label: 'Nickels (p1)',
-                            data: recent.map(d => d.p1),
-                            borderColor: '#00FF41',
-                            tension: 0.4,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Mint (p2)',
-                            data: recent.map(d => d.p2),
-                            borderColor: '#ADFF2F',
-                            tension: 0.4,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Pothos (p3)',
-                            data: recent.map(d => d.p3),
-                            borderColor: '#FFD700',
-                            tension: 0.4,
-                            pointRadius: 0
-                        }
-                    ]
-                },
+                                            datasets: [
+                                            {
+                                                label: 'Nickels (p1)',
+                                                data: recent.map(d => d.a0),
+                                                borderColor: '#00FF41',
+                                                tension: 0.4,
+                                                pointRadius: 0
+                                            },
+                                            {
+                                                label: 'Mint (p2)',
+                                                data: recent.map(d => d.a5),
+                                                borderColor: '#ADFF2F',
+                                                tension: 0.4,
+                                                pointRadius: 0
+                                            },
+                                            {
+                                                label: 'Pothos (p3)',
+                                                data: recent.map(d => d.a2),
+                                                borderColor: '#FFD700',
+                                                tension: 0.4,
+                                                pointRadius: 0
+                                            }
+                                        ]                },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
