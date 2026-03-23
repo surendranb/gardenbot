@@ -29,7 +29,7 @@
             <div class="card h-full">
                 <h2 class="text-lg font-semibold mb-4">Live Vision</h2>
                 <div class="rounded-lg overflow-hidden border border-slate-700">
-                    <img id="live-photo" src="./media/latest.jpg" alt="Garden View" class="w-full object-cover">
+                    <img id="live-photo" src="./media/latest.jpg?t=${Date.now()}" alt="Garden View" class="w-full object-cover">
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
 
     <!-- Chart -->
     <div class="card h-96">
-        <h2 class="text-lg font-semibold mb-4">72-Hour Moisture Trends</h2>
+        <h2 class="text-lg font-semibold mb-4">72-Hour Moisture Trends (%)</h2>
         <div class="relative h-full w-full">
             <canvas id="telemetryChart"></canvas>
         </div>
@@ -98,51 +98,68 @@
 
     <script>
         console.log("Dashboard Base URL:", window.location.href);
+
+        function parseCSV(url) {
+            return new Promise((resolve, reject) => {
+                Papa.parse(url, {
+                    download: true,
+                    header: true,
+                    skipEmptyLines: true,
+                    complete: (results) => resolve(results.data),
+                    error: (err) => reject(err)
+                });
+            });
+        }
+
         async function updateDashboard() {
             try {
-                // 1. Snapshot Data
-                const res = await fetch('./data/current_snapshot.json');
-                if (!res.ok) throw new Error('Snapshot not found at ./data/current_snapshot.json');
-                const snap = await res.json();
+                // Fetch both CSVs in parallel
+                const [telemetry, metrics] = await Promise.all([
+                    parseCSV("./data/telemetry.csv"),
+                    parseCSV("./data/metrics.csv")
+                ]);
 
-                document.getElementById('last-updated').textContent = `SYNC: ${new Date(snap.timestamp).toLocaleTimeString()}`;
-                document.getElementById('val-temp').textContent = snap.sensors.temp || '--';
-                document.getElementById('val-hum').textContent = snap.sensors.hum || '--';
-                document.getElementById('val-vpd').textContent = `${snap.environment.vpd_kpa || '--'} kPa`;
-                document.getElementById('val-light').textContent = snap.sensors.light || '--';
+                if (!telemetry.length || !metrics.length) throw new Error("Missing data in CSVs");
 
+                const lastTel = telemetry[telemetry.length - 1];
+                const lastMet = metrics[metrics.length - 1];
+
+                // 1. Update Header & Atmosphere
+                document.getElementById('last-updated').textContent = `SYNC: ${new Date(lastTel.timestamp).toLocaleTimeString()}`;
+                document.getElementById('val-temp').textContent = lastTel.temp || '--';
+                document.getElementById('val-hum').textContent = lastTel.hum || '--';
+                document.getElementById('val-vpd').textContent = `${lastMet.vpd || '--'} kPa`;
+                document.getElementById('val-light').textContent = lastTel.light || '--';
+
+                // 2. Update Plants
                 const updatePlant = (id) => {
-                    const p = snap.moisture_analysis[id];
-                    if (!p) return;
-                    document.getElementById(`${id}-val`).textContent = `${p.moisture_pct || '--'}%`;
-                    const stat = document.getElementById(`${id}-status`);
-                    stat.textContent = p.is_dry ? "DRY" : "NOMINAL";
-                    stat.className = `text-xs px-2 py-1 rounded ${p.is_dry ? 'bg-red-900 text-red-200' : 'bg-green-900 text-green-200'}`;
+                    const pct = lastMet[`${id}_pct`];
+                    const isDry = lastMet[`${id}_is_dry`] === "True";
+                    
+                    if (pct !== undefined) {
+                        document.getElementById(`${id}-val`).textContent = `${pct}%`;
+                        const stat = document.getElementById(`${id}-status`);
+                        stat.textContent = isDry ? "DRY" : "NOMINAL";
+                        stat.className = `text-xs px-2 py-1 rounded ${isDry ? 'bg-red-900 text-red-200' : 'bg-green-900 text-green-200'}`;
+                    }
                 };
                 ['p1', 'p2', 'p3'].forEach(updatePlant);
 
-                // Log
-                if (snap.intelligence && snap.intelligence.recent_visual_ledger) {
-                    const logs = snap.intelligence.recent_visual_ledger;
-                    document.getElementById('warden-log').textContent = logs[logs.length - 1] || "No logs available.";
+                // 3. Update Chart using Metrics (Percentages)
+                drawChart(metrics.slice(-144));
+
+                // 4. Update Log from Observer Context (or similar source)
+                const observerRes = await fetch('./data/observer_context.md');
+                if (observerRes.ok) {
+                    const text = await observerRes.text();
+                    // Just a simple hack to show the note or a summary
+                    document.getElementById('warden-log').textContent = text.substring(0, 500) + "...";
                 }
 
             } catch (e) { 
                 console.error("Dashboard error:", e);
                 document.getElementById('last-updated').textContent = "ERROR LOADING DATA";
             }
-
-            // 2. Chart Data
-            Papa.parse("./data/telemetry.csv", {
-                download: true, header: true, skipEmptyLines: true,
-                complete: function(results) {
-                    if (results.data && results.data.length > 0) {
-                        drawChart(results.data.slice(-144));
-                    } else {
-                        console.error("No CSV data found");
-                    }
-                }
-            });
         }
 
         let chart = null;
@@ -152,23 +169,30 @@
             chart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: data.map(d => d.timestamp.split(' ')[1].substring(0,5)),
+                    labels: data.map(d => d.timestamp ? d.timestamp.split(' ')[1].substring(0,5) : ''),
                     datasets: [
-                        { label: 'Nickels', data: data.map(d => d.p1), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
-                        { label: 'Mint', data: data.map(d => d.p2), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
-                        { label: 'Pothos', data: data.map(d => d.p3), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
+                        { label: 'Nickels', data: data.map(d => d.p1_pct), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
+                        { label: 'Mint', data: data.map(d => d.p2_pct), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
+                        { label: 'Pothos', data: data.map(d => d.p3_pct), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
                     ]
                 },
                 options: { 
                     responsive: true, maintainAspectRatio: false,
-                    scales: { y: { grid: { color: '#334155' } }, x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } } },
+                    scales: { 
+                        y: { 
+                            min: 0, max: 100,
+                            grid: { color: '#334155' },
+                            title: { display: true, text: 'Moisture %', color: '#94a3b8' }
+                        }, 
+                        x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } } 
+                    },
                     plugins: { legend: { labels: { color: '#94a3b8' } } }
                 }
             });
         }
 
         updateDashboard();
-        setInterval(updateDashboard, 1800000); // 30 minute sync
+        setInterval(updateDashboard, 300000); // 5 minute sync
     </script>
 </body>
 </html>
