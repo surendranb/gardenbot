@@ -148,8 +148,8 @@
                 // 3. Update Chart using Metrics (Percentages)
                 drawChart(metrics.slice(-144));
 
-                // 4. Update Log from Vision Ledger (The actual narrative)
-                const ledgerRes = await fetch('../logs/vision_ledger.md');
+                // 4. Update Log from Public Ledger (The actual narrative)
+                const ledgerRes = await fetch('./data/ledger.md');
                 if (ledgerRes.ok) {
                     const text = await ledgerRes.text();
                     const entries = text.split(/^## /m);

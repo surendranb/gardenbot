@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-03-23T14:25:29.742254",
+  "timestamp": "2026-03-23T14:40:15.483704",
   "sensors": {
-    "timestamp": "2026-03-23 14:25:29",
-    "temp": 32.0,
-    "hum": 16.0,
-    "light": 764,
-    "p1": 477,
-    "p2": 249,
+    "timestamp": "2026-03-23 14:40:15",
+    "temp": 31.0,
+    "hum": 15.0,
+    "light": 780,
+    "p1": 452,
+    "p2": 240,
     "p3": 325
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 76.7,
+      "moisture_pct": 84.4,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 81.1,
+      "moisture_pct": 85.0,
       "is_dry": false
     },
     "p3": {
@@ -24,7 +24,7 @@
     }
   },
   "environment": {
-    "vpd_kpa": 3.994
+    "vpd_kpa": 3.819
   },
   "intelligence": {
     "recent_visual_ledger": [
