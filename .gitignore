@@ -15,7 +15,7 @@ archive/
 backup_audit/
 *.bak
 *.backup*
-data/
+/data/
 
 # Documentation/Reports
 # We keep docs/ as it contains the dashboard
