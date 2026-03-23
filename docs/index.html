@@ -17,232 +17,153 @@
     <!-- Header -->
     <div class="flex justify-between items-center mb-8">
         <div>
-            <h1 class="text-3xl font-bold text-green-400">🌿 GardenOS Warden</h1>
-            <p class="text-slate-400 text-sm mt-1">Live Biometric Monitor • Chennai Station</p>
+            <h1 class="text-3xl font-bold text-green-400">🌿 GardenOS Dashboard</h1>
+            <p class="text-slate-400 text-sm mt-1">Chennai Station • Automated Monitoring</p>
         </div>
-        <div id="last-updated" class="text-xs text-slate-500 font-mono">Loading...</div>
+        <div id="last-updated" class="text-xs text-slate-500 font-mono">Syncing data...</div>
     </div>
 
-    <!-- Top Grid: Vision & Vital Stats -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <!-- Live Vision (Left Col) -->
+        <!-- Live Vision -->
         <div class="md:col-span-1">
-            <div class="card h-full flex flex-col">
-                <h2 class="text-lg font-semibold mb-4 text-slate-200">Live Vision</h2>
-                <div class="relative flex-grow rounded-lg overflow-hidden border border-slate-700">
-                    <img id="live-photo" src="media/latest.jpg" alt="Garden View" class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 bg-black/70 p-2 text-xs font-mono">
-                        <span id="cam-timestamp">Syncing...</span>
-                    </div>
+            <div class="card h-full">
+                <h2 class="text-lg font-semibold mb-4">Live Vision</h2>
+                <div class="rounded-lg overflow-hidden border border-slate-700">
+                    <img id="live-photo" src="media/latest.jpg" alt="Garden View" class="w-full object-cover">
                 </div>
             </div>
         </div>
 
-        <!-- Sensor Array (Middle & Right Cols) -->
+        <!-- Stats -->
         <div class="md:col-span-2 grid grid-cols-2 gap-4">
-            
-            <!-- Environment Card -->
-            <div class="card col-span-2 flex justify-between items-center bg-slate-800/50">
+            <div class="card col-span-2 bg-slate-800/50 flex justify-between items-center">
                 <div>
-                    <div class="text-xs text-slate-400 uppercase tracking-wider">Atmosphere</div>
-                    <div class="flex items-baseline gap-4 mt-1">
-                        <div>
-                            <span id="val-temp" class="text-3xl font-bold text-orange-400">--</span>
-                            <span class="text-sm text-slate-500">°C</span>
-                        </div>
-                        <div>
-                            <span id="val-hum" class="text-3xl font-bold text-blue-400">--</span>
-                            <span class="text-sm text-slate-500">% RH</span>
-                        </div>
+                    <div class="text-xs text-slate-400 uppercase">Atmosphere</div>
+                    <div class="text-3xl font-bold mt-1">
+                        <span id="val-temp" class="text-orange-400">--</span><span class="text-slate-500 text-xl">°C</span>
+                        <span class="mx-2 text-slate-700">|</span>
+                        <span id="val-hum" class="text-blue-400">--</span><span class="text-slate-500 text-xl">%</span>
                     </div>
                 </div>
                 <div class="text-right">
-                    <div class="text-xs text-slate-400 uppercase">VPD Load</div>
+                    <div class="text-xs text-slate-400 uppercase">VPD</div>
                     <div id="val-vpd" class="text-2xl font-mono text-purple-400 font-bold">-- kPa</div>
                 </div>
             </div>
 
-            <!-- Plant Cards -->
-            <div class="card border-l-4 border-green-500">
-                <div class="text-xs text-slate-400 mb-1">p1: String of Nickels</div>
-                <div class="flex justify-between items-end">
+            <!-- Plants -->
+            <div id="p1-card" class="card border-l-4 border-green-500">
+                <div class="text-xs text-slate-400">Nickels (p1)</div>
+                <div class="flex justify-between items-end mt-1">
                     <span id="p1-val" class="text-2xl font-bold">--</span>
-                    <span id="p1-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                    <span id="p1-status" class="text-xs px-2 py-1 rounded bg-slate-700">...</span>
                 </div>
             </div>
-
-            <div class="card border-l-4 border-lime-400">
-                <div class="text-xs text-slate-400 mb-1">p2: Mexican Mint</div>
-                <div class="flex justify-between items-end">
+            <div id="p2-card" class="card border-l-4 border-lime-400">
+                <div class="text-xs text-slate-400">Mint (p2)</div>
+                <div class="flex justify-between items-end mt-1">
                     <span id="p2-val" class="text-2xl font-bold">--</span>
-                    <span id="p2-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                    <span id="p2-status" class="text-xs px-2 py-1 rounded bg-slate-700">...</span>
                 </div>
             </div>
-
-            <div class="card border-l-4 border-yellow-400">
-                <div class="text-xs text-slate-400 mb-1">p3: Pothos</div>
-                <div class="flex justify-between items-end">
+            <div id="p3-card" class="card border-l-4 border-yellow-400">
+                <div class="text-xs text-slate-400">Pothos (p3)</div>
+                <div class="flex justify-between items-end mt-1">
                     <span id="p3-val" class="text-2xl font-bold">--</span>
-                    <span id="p3-status" class="text-xs px-2 py-1 rounded bg-slate-700">Checking...</span>
+                    <span id="p3-status" class="text-xs px-2 py-1 rounded bg-slate-700">...</span>
                 </div>
             </div>
-
             <div class="card bg-slate-800/50">
-                <div class="text-xs text-slate-400 mb-1">Light Integral</div>
-                <div class="flex justify-between items-end">
-                    <span id="val-light" class="text-2xl font-bold text-yellow-200">--</span>
-                    <span class="text-xs text-slate-500">Lux</span>
-                </div>
+                <div class="text-xs text-slate-400">Light</div>
+                <div id="val-light" class="text-2xl font-bold text-yellow-200 mt-1">-- Lux</div>
             </div>
         </div>
-        
-        <!-- Warden's Log (Full Width) -->
+
+        <!-- Warden Log -->
         <div class="md:col-span-3">
             <div class="card bg-slate-900/80 border border-slate-700">
-                <h2 class="text-sm font-semibold mb-2 text-slate-400 uppercase tracking-wider">Latest Warden's Log</h2>
-                <div id="warden-log" class="text-sm text-slate-300 font-mono whitespace-pre-wrap h-32 overflow-y-auto pr-2">Loading latest report...</div>
+                <h2 class="text-xs font-semibold mb-2 text-slate-400 uppercase tracking-wider">Latest Observer Insight</h2>
+                <div id="warden-log" class="text-sm text-slate-300 font-mono whitespace-pre-wrap h-32 overflow-y-auto pr-2 italic">Waiting for report...</div>
             </div>
         </div>
     </div>
 
-    <!-- Interactive History -->
+    <!-- Chart -->
     <div class="card h-96">
-        <h2 class="text-lg font-semibold mb-4 text-slate-200 flex justify-between">
-            <span>72-Hour Telemetry</span>
-            <span class="text-xs font-normal text-slate-500 bg-slate-800 px-2 py-1 rounded">Auto-refresh: 5m</span>
-        </h2>
+        <h2 class="text-lg font-semibold mb-4">72-Hour Moisture Trends</h2>
         <div class="relative h-full w-full">
             <canvas id="telemetryChart"></canvas>
         </div>
     </div>
 
     <script>
-        async function loadData() {
-            // 1. Fetch Snapshot
+        async function updateDashboard() {
             try {
-                const snapRes = await fetch('data/current_snapshot.json');
-                const snap = await snapRes.json();
-                
-                // Timestamp
-                document.getElementById('last-updated').textContent = `LAST SYNC: ${new Date(snap.timestamp).toLocaleString()}`;
-                document.getElementById('cam-timestamp').textContent = `CAM: ${snap.sensors.timestamp}`;
+                // 1. Snapshot Data
+                const res = await fetch('data/current_snapshot.json');
+                if (!res.ok) throw new Error('Snapshot not found');
+                const snap = await res.json();
 
-                // Environment
+                document.getElementById('last-updated').textContent = `SYNC: ${new Date(snap.timestamp).toLocaleTimeString()}`;
                 document.getElementById('val-temp').textContent = snap.sensors.temp;
                 document.getElementById('val-hum').textContent = snap.sensors.hum;
                 document.getElementById('val-vpd').textContent = `${snap.environment.vpd_kpa} kPa`;
                 document.getElementById('val-light').textContent = snap.sensors.light;
 
-                // Plants
-                const updatePlant = (id, label) => {
+                const updatePlant = (id) => {
                     const p = snap.moisture_analysis[id];
-                    const elVal = document.getElementById(`${id}-val`);
-                    const elStat = document.getElementById(`${id}-status`);
-                    
-                    if (p.error) {
-                        elVal.textContent = "ERR";
-                        elStat.textContent = "MALFUNCTION";
-                        elStat.className = "text-xs px-2 py-1 rounded bg-red-900 text-red-200";
-                    } else {
-                        elVal.textContent = `${p.moisture_pct}%`;
-                        elStat.textContent = p.is_dry ? "DRY" : "WET";
-                        elStat.className = p.is_dry 
-                            ? "text-xs px-2 py-1 rounded bg-orange-900 text-orange-200" 
-                            : "text-xs px-2 py-1 rounded bg-green-900 text-green-200";
-                    }
+                    if (!p) return;
+                    document.getElementById(`${id}-val`).textContent = `${p.moisture_pct}%`;
+                    const stat = document.getElementById(`${id}-status`);
+                    stat.textContent = p.is_dry ? "DRY" : "NOMINAL";
+                    stat.className = `text-xs px-2 py-1 rounded ${p.is_dry ? 'bg-red-900 text-red-200' : 'bg-green-900 text-green-200'}`;
                 };
+                ['p1', 'p2', 'p3'].forEach(updatePlant);
 
-                updatePlant('p1', 'Nickels');
-                updatePlant('p2', 'Mint');
-                updatePlant('p3', 'Pothos');
-
-                // Warden's Log
-                if (snap.intelligence.recent_visual_ledger && snap.intelligence.recent_visual_ledger.length > 0) {
-                    // Get the very last entry
-                    const lastLog = snap.intelligence.recent_visual_ledger[snap.intelligence.recent_visual_ledger.length - 1];
-                    document.getElementById('warden-log').textContent = lastLog;
-                } else {
-                    document.getElementById('warden-log').textContent = "No recent logs found.";
+                // Log
+                if (snap.intelligence && snap.intelligence.recent_visual_ledger) {
+                    const logs = snap.intelligence.recent_visual_ledger;
+                    document.getElementById('warden-log').textContent = logs[logs.length - 1] || "No logs available.";
                 }
 
-            } catch (e) { console.error("Snapshot load failed", e); }
+            } catch (e) { 
+                console.error("Dashboard error:", e);
+                document.getElementById('last-updated').textContent = "ERROR LOADING DATA";
+            }
 
-            // 2. Fetch CSV for Chart
+            // 2. Chart Data
             Papa.parse("data/telemetry.csv", {
-                download: true,
-                header: true,
-                skipEmptyLines: true,
+                download: true, header: true, skipEmptyLines: true,
                 complete: function(results) {
-                    renderChart(results.data);
+                    drawChart(results.data.slice(-144));
                 }
             });
         }
 
-        let chartInstance = null;
-
-        function renderChart(data) {
-            // Filter last 72h (approx 144 entries)
-            const recent = data.slice(-144);
-            
-            const labels = recent.map(d => {
-                const date = new Date(d.timestamp);
-                return `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')}`;
-            });
-
+        let chart = null;
+        function drawChart(data) {
             const ctx = document.getElementById('telemetryChart').getContext('2d');
-            
-            if (chartInstance) chartInstance.destroy();
-
-            chartInstance = new Chart(ctx, {
+            if (chart) chart.destroy();
+            chart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: labels,
-                                            datasets: [
-                                            {
-                                                label: 'Nickels (p1)',
-                                                data: recent.map(d => d.a0),
-                                                borderColor: '#00FF41',
-                                                tension: 0.4,
-                                                pointRadius: 0
-                                            },
-                                            {
-                                                label: 'Mint (p2)',
-                                                data: recent.map(d => d.a5),
-                                                borderColor: '#ADFF2F',
-                                                tension: 0.4,
-                                                pointRadius: 0
-                                            },
-                                            {
-                                                label: 'Pothos (p3)',
-                                                data: recent.map(d => d.a2),
-                                                borderColor: '#FFD700',
-                                                tension: 0.4,
-                                                pointRadius: 0
-                                            }
-                                        ]                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            grid: { color: '#334155' },
-                            ticks: { color: '#94a3b8' }
-                        },
-                        x: {
-                            grid: { display: false },
-                            ticks: { color: '#94a3b8', maxTicksLimit: 10 }
-                        }
-                    },
-                    plugins: {
-                        legend: { labels: { color: '#e2e8f0' } }
-                    }
+                    labels: data.map(d => d.timestamp.split(' ')[1].substring(0,5)),
+                    datasets: [
+                        { label: 'Nickels', data: data.map(d => d.a0), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
+                        { label: 'Mint', data: data.map(d => d.a5), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
+                        { label: 'Pothos', data: data.map(d => d.a2), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
+                    ]
+                },
+                options: { 
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { y: { grid: { color: '#334155' } }, x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } } },
+                    plugins: { legend: { labels: { color: '#94a3b8' } } }
                 }
             });
         }
 
-        loadData();
-        setInterval(loadData, 300000); // Refresh every 5m
+        updateDashboard();
+        setInterval(updateDashboard, 1800000); // 30 minute sync
     </script>
 </body>
 </html>
