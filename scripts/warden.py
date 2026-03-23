@@ -214,7 +214,8 @@ def save_snapshot(raw, metrics, plants):
 def git_sync():
     print("Warden: Syncing to GitHub...")
     try:
-        subprocess.run(["git", "add", "docs/"], cwd=BASE_DIR, check=True)
+        # Add both docs (dashboard data) and the narrative ledger
+        subprocess.run(["git", "add", "docs/", "logs/vision_ledger.md"], cwd=BASE_DIR, check=True)
         status_res = subprocess.run(["git", "status", "--porcelain"], cwd=BASE_DIR, capture_output=True, text=True).stdout
         if status_res:
             msg = f"Warden Cycle: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"

@@ -148,12 +148,16 @@
                 // 3. Update Chart using Metrics (Percentages)
                 drawChart(metrics.slice(-144));
 
-                // 4. Update Log from Observer Context (or similar source)
-                const observerRes = await fetch('./data/observer_context.md');
-                if (observerRes.ok) {
-                    const text = await observerRes.text();
-                    // Just a simple hack to show the note or a summary
-                    document.getElementById('warden-log').textContent = text.substring(0, 500) + "...";
+                // 4. Update Log from Vision Ledger (The actual narrative)
+                const ledgerRes = await fetch('../logs/vision_ledger.md');
+                if (ledgerRes.ok) {
+                    const text = await ledgerRes.text();
+                    const entries = text.split(/^## /m);
+                    const lastEntry = entries[entries.length - 1];
+                    if (lastEntry) {
+                        // Clean up the entry and display
+                        document.getElementById('warden-log').textContent = "## " + lastEntry.trim();
+                    }
                 }
 
             } catch (e) { 

@@ -10,6 +10,7 @@ Thumbs.db
 
 # GardenBot Temporary/Local Data
 logs/*.log
+!logs/vision_ledger.md
 archive/
 backup_audit/
 *.bak
