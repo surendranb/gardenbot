@@ -214,8 +214,15 @@ def save_snapshot(raw, metrics, plants):
 def git_sync():
     print("Warden: Syncing to GitHub...")
     try:
-        # Add both docs (dashboard data) and the narrative ledger
-        subprocess.run(["git", "add", "docs/", "logs/vision_ledger.md"], cwd=BASE_DIR, check=True)
+        # Copy vision_ledger to a public location for the dashboard
+        ledger_src = os.path.join(BASE_DIR, "logs/vision_ledger.md")
+        ledger_dst = os.path.join(BASE_DIR, "docs/data/ledger.md")
+        if os.path.exists(ledger_src):
+            shutil.copy2(ledger_src, ledger_dst)
+            print(f"Warden: Public ledger updated at {ledger_dst}")
+
+        # Add docs (dashboard data)
+        subprocess.run(["git", "add", "docs/"], cwd=BASE_DIR, check=True)
         status_res = subprocess.run(["git", "status", "--porcelain"], cwd=BASE_DIR, capture_output=True, text=True).stdout
         if status_res:
             msg = f"Warden Cycle: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
