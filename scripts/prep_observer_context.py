@@ -11,7 +11,7 @@ METRICS_PATH = os.path.join(BASE_DIR, "docs/data/metrics.csv")
 WEATHER_PATH = os.path.join(BASE_DIR, "docs/data/weather_context.json")
 OUTPUT_PATH = os.path.join(BASE_DIR, "docs/data/observer_context.md")
 
-def load_tail(path, n=12):
+def load_tail(path, n=3):
     try:
         if not os.path.exists(path): return "No data file found."
         df = pd.read_csv(path).tail(n)
@@ -24,12 +24,25 @@ def load_weather():
         with open(WEATHER_PATH, 'r') as f: return json.dumps(json.load(f), indent=2)
     except Exception as e: return f"Error reading weather: {e}"
 
+def load_ledger(path, n=3):
+    try:
+        if not os.path.exists(path): return "No ledger file found."
+        with open(path, 'r') as f:
+            content = f.read()
+            # Split by markdown headers
+            entries = content.split("## ")
+            # The first element is usually empty before the first header
+            valid_entries = [e.strip() for e in entries if e.strip()]
+            return "\n\n---\n\n".join([f"## {e}" for e in valid_entries[-n:]])
+    except Exception as e: return f"Error reading {path}: {e}"
+
 def main():
     print("Preparing Observer Context...")
     
     telemetry = load_tail(TELEMETRY_PATH)
     metrics = load_tail(METRICS_PATH)
     weather = load_weather()
+    ledger = load_ledger(os.path.join(BASE_DIR, "logs/vision_ledger.md"))
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -51,7 +64,10 @@ def main():
 {weather}
 ```
 
-## 4. ℹ️ Note to Observer
+## 4. 📖 Previous Ledger Entries (Last 3)
+{ledger}
+
+## 5. ℹ️ Note to Observer
 - **Visuals supersede sensors**: Cross-reference CSV data with `docs/media/latest.jpg`.
 - **Primary Targets**: p1 (String of Nickels), p2 (Mint), p3 (Pothos), p4 (Silver Guest Alpha).
 - **Physical Constants**: White Rabbit figurine is exactly **50 mm**.
