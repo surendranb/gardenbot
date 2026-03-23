@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+archive/
+logs/
+.git/
+.DS_Store
+backup_audit/
+firmware/
+*.pyc
+*.log
+*.bak
+*.backup*
