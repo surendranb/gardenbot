@@ -150,8 +150,13 @@
                 };
                 ['p1', 'p2', 'p3'].forEach(updatePlant);
 
-                // 3. Update Chart using Metrics (Percentages)
-                drawChart(metrics.slice(-144));
+                // 3. Join Telemetry and Metrics for the Chart (72-Hour Window) 
+                // Assumes 1 measurement every 20-30 mins, so ~216 points for 72h
+                const chartData = metrics.slice(-216).map(m => {
+                    const t = telemetry.find(tel => tel.timestamp === m.timestamp);
+                    return t ? { ...m, temp: t.temp, hum: t.hum, light: t.light } : m;
+                });
+                drawChart(chartData);
 
                 // 4. Update Log from Public Ledger (The actual narrative)
                 const ledgerRes = await fetch('./data/ledger.md');
@@ -180,22 +185,37 @@
                 data: {
                     labels: data.map(d => d.timestamp ? d.timestamp.split(' ')[1].substring(0,5) : ''),
                     datasets: [
-                        { label: 'Nickels', data: data.map(d => d.p1_pct), borderColor: '#00FF41', tension: 0.3, pointRadius: 0 },
-                        { label: 'Mint', data: data.map(d => d.p2_pct), borderColor: '#ADFF2F', tension: 0.3, pointRadius: 0 },
-                        { label: 'Pothos', data: data.map(d => d.p3_pct), borderColor: '#FFD700', tension: 0.3, pointRadius: 0 }
+                        { label: 'Nickels', data: data.map(d => d.p1_pct), borderColor: '#00FF41', bg: '#00FF41', tension: 0.3, pointRadius: 0, borderWidth: 2, z: 10 },
+                        { label: 'Mint', data: data.map(d => d.p2_pct), borderColor: '#ADFF2F', bg: '#ADFF2F', tension: 0.3, pointRadius: 0, borderWidth: 2, z: 10 },
+                        { label: 'Pothos', data: data.map(d => d.p3_pct), borderColor: '#FFD700', bg: '#FFD700', tension: 0.3, pointRadius: 0, borderWidth: 2, z: 10 },
+                        { label: 'Temp (°C)', data: data.map(d => d.temp), borderColor: 'rgba(249, 115, 22, 0.4)', tension: 0.3, pointRadius: 0, borderWidth: 1, fill: false },
+                        { label: 'Hum (%)', data: data.map(d => d.hum), borderColor: 'rgba(56, 189, 248, 0.4)', tension: 0.3, pointRadius: 0, borderWidth: 1, fill: false },
+                        { label: 'Light (Lux)', data: data.map(d => d.light), borderColor: 'rgba(250, 204, 21, 0.8)', tension: 0.3, pointRadius: 0, borderWidth: 1, yAxisID: 'yLux', fill: false }
                     ]
                 },
                 options: { 
                     responsive: true, maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
                     scales: { 
                         y: { 
                             min: 0, max: 100,
                             grid: { color: '#334155' },
-                            title: { display: true, text: 'Moisture %', color: '#94a3b8' }
-                        }, 
-                        x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } } 
+                            title: { display: true, text: 'Moisture / Humidity %', color: '#94a3b8' },
+                            ticks: { color: '#94a3b8' }
+                        },
+                        yLux: {
+                            position: 'right',
+                            min: 0,
+                            grid: { display: false },
+                            title: { display: true, text: 'Light (Lux)', color: '#94a3b8' },
+                            ticks: { color: '#facc15' }
+                        },
+                        x: { grid: { display: false }, ticks: { maxTicksLimit: 12, color: '#64748b' } } 
                     },
-                    plugins: { legend: { labels: { color: '#94a3b8' } } }
+                    plugins: { 
+                        legend: { position: 'top', labels: { color: '#94a3b8', usePointStyle: true, padding: 20 } },
+                        tooltip: { backgroundColor: '#1e293b', titleColor: '#4ade80', bodyColor: '#e2e8f0', borderColor: '#334155', borderWidth: 1 }
+                    }
                 }
             });
         }
