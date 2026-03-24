@@ -1,21 +1,21 @@
 # 📝 Garden Observer Context
-**Generated:** 2026-03-24 19:58:01
+**Generated:** 2026-03-24 20:58:01
 
 ## 1. 🌡️ Recent Telemetry (Last 12 Readings)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-24 17:55:34,31.0,18.0,824,374.0,235.0,404.0
-2026-03-24 18:27:29,31.0,17.0,845,377.0,254.0,423.0
 2026-03-24 19:55:28,31.0,17.0,841,386.0,231.0,405.0
+2026-03-24 20:25:28,31.0,17.0,842,386.0,279.0,403.0
+2026-03-24 20:55:34,31.0,17.0,842,383.0,259.0,405.0
 
 ```
 
 ## 2. 📊 Computed Metrics (Last 12 Calculations)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-24 17:55:34,3.684,100.0,,87.1,,76.9,,,,,,,,False,False,False
-2026-03-24 18:27:29,3.729,100.0,,79.0,,71.5,,,,,,,,False,False,False
 2026-03-24 19:55:28,3.729,100.0,,88.8,,76.6,,,,,,,,False,False,False
+2026-03-24 20:25:28,3.729,100.0,,68.2,,77.2,,,,,,,,False,False,False
+2026-03-24 20:55:34,3.729,100.0,,76.8,,76.6,,,,,,,,False,False,False
 
 ```
 
