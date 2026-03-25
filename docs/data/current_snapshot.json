@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-03-25T13:25:28.938168",
+  "timestamp": "2026-03-25T14:25:29.953288",
   "sensors": {
-    "timestamp": "2026-03-25 13:25:28",
+    "timestamp": "2026-03-25 14:25:29",
     "temp": 31.0,
     "hum": 15.0,
-    "light": 562,
-    "p1": 468,
-    "p2": 215,
-    "p3": 450
+    "light": 600,
+    "p1": 492,
+    "p2": 247,
+    "p3": 436
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 79.4,
+      "moisture_pct": 72.1,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 95.7,
+      "moisture_pct": 82.0,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 63.8,
+      "moisture_pct": 67.8,
       "is_dry": false
     }
   },
