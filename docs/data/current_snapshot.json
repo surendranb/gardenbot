@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-03-25T14:55:28.887276",
+  "timestamp": "2026-03-25T15:55:29.936246",
   "sensors": {
-    "timestamp": "2026-03-25 14:55:28",
-    "temp": 31.0,
-    "hum": 15.0,
-    "light": 609,
-    "p1": 485,
-    "p2": 271,
-    "p3": 458
+    "timestamp": "2026-03-25 15:55:29",
+    "temp": 30.0,
+    "hum": 16.0,
+    "light": 758,
+    "p1": 493,
+    "p2": 269,
+    "p3": 459
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 74.2,
+      "moisture_pct": 71.8,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 71.7,
+      "moisture_pct": 72.5,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 61.5,
+      "moisture_pct": 61.3,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.819
+    "vpd_kpa": 3.564
   },
   "intelligence": {
     "recent_visual_ledger": [
-      "2026-03-25 09:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (100% wet) [visual: turgid]; p2: \ud83d\udfe2 NOMINAL (91% wet); p3: \ud83d\udfe2 NOMINAL (74% wet); p4: \ud83d\udfe2 NOMINAL (91% wet) [shared sensor]\n\n**The Biome Discovery**: Soil surface shows no crusting, moisture appears even. Shadow angles consistent with morning light. Sensor wires are secured and not causing any physical stress to plants.\n\n**Growth Momentum**: Apical Leans: No significant apical lean observed in p1-p3; all exhibit upright growth. Stasis Points: No new stasis points; growth points remain active. (mm-deltas not measured outside 06:00 AM)\n\n**Weather Alignment**: Forecast: 26.3\u00b0C, 84% humidity, mist. Current: 30.0\u00b0C, 18.0% humidity. Plants show good turgidity, indicating effective water retention. Forecast mist and higher humidity are favorable.\n\n**The Warden's Decision**: Verdict: All plants are healthy and well-hydrated. No intervention required. Action: Continue standard monitoring. Prepare for light misting if humidity does not rise as forecasted.",
-      "2026-03-25 12:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (83",
-      "2026-03-25 12:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (83% wet) [visual: turgid]; p2: \ud83d\udfe2 NOMINAL (98% wet); p3: \ud83d\udfe2 NOMINAL (71% wet); p4: \ud83d\udfe2 NOMINAL (98% wet) [shared sensor]\n\n**The Biome Discovery**: Soil surface shows no crusting, moisture appears even. Shadow angles consistent with midday light. Sensor wires are secured and not causing any physical stress to plants.\n\n**Growth Momentum**: Apical Leans: No significant apical lean observed in p1-p3; all exhibit upright growth. Stasis Points: No new stasis points; growth points remain active. (mm-deltas not measured outside 06:00 AM)\n\n**Weather Alignment**: Forecast: 26.3\u00b0C, 84% humidity, mist. Current: 31.0\u00b0C, 16.0% humidity. Plants show good turgidity, indicating effective water retention. Forecast mist and higher humidity are favorable.\n\n**The Warden's Decision**: Verdict: All plants are healthy and well-hydrated. No intervention required. Action: Continue standard monitoring. Prepare for light misting if humidity does not rise as forecasted."
+      "2026-03-25 12:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (83% wet) [visual: turgid]; p2: \ud83d\udfe2 NOMINAL (98% wet); p3: \ud83d\udfe2 NOMINAL (71% wet); p4: \ud83d\udfe2 NOMINAL (98% wet) [shared sensor]\n\n**The Biome Discovery**: Soil surface shows no crusting, moisture appears even. Shadow angles consistent with midday light. Sensor wires are secured and not causing any physical stress to plants.\n\n**Growth Momentum**: Apical Leans: No significant apical lean observed in p1-p3; all exhibit upright growth. Stasis Points: No new stasis points; growth points remain active. (mm-deltas not measured outside 06:00 AM)\n\n**Weather Alignment**: Forecast: 26.3\u00b0C, 84% humidity, mist. Current: 31.0\u00b0C, 16.0% humidity. Plants show good turgidity, indicating effective water retention. Forecast mist and higher humidity are favorable.\n\n**The Warden's Decision**: Verdict: All plants are healthy and well-hydrated. No intervention required. Action: Continue standard monitoring. Prepare for light misting if humidity does not rise as forecasted.",
+      "2026-03-25 15:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (74",
+      "2026-03-25 15:03\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (74% wet) [visual: turgid]; p2: \ud83d\udfe2 NOMINAL (72% wet) [visual: turgid]; p3: \ud83d\udfe2 NOMINAL (62% wet) [visual: turgid]; p4: \ud83d\udfe2 NOMINAL (72% wet) [shared sensor]\n\n**The Biome Discovery**: Soil surface shows no crusting, moisture appears even. Shadow angles consistent with afternoon light (3:03 PM). Sensor wires are secured and not causing any physical stress to plants.\n\n**Growth Momentum**: Apical Leans: No significant apical lean observed in p1-p3; all exhibit upright growth. Stasis Points: No new stasis points; growth points remain active. (mm-deltas not measured outside 06:00 AM)\n\n**Weather Alignment**: Forecast: 26.3\u00b0C, 84% humidity, mist. Current: 31.0\u00b0C, 15.0% humidity. Plants show good turgidity, indicating effective water retention. Forecast mist and higher humidity are favorable.\n\n**The Warden's Decision**: Verdict: All plants are healthy and well-hydrated. No intervention required. Action: Continue standard monitoring. Prepare for light misting if humidity does not rise as forecasted."
     ]
   }
 }
