@@ -1,48 +1,48 @@
 # 📝 Garden Observer Context
-**Generated:** 2026-03-25 04:58:01
+**Generated:** 2026-03-25 05:58:01
 
 ## 1. 🌡️ Recent Telemetry (Last 12 Readings)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-25 03:55:28,30.0,19.0,896,376.0,235.0,416.0
-2026-03-25 04:25:29,30.0,19.0,896,375.0,236.0,406.0
 2026-03-25 04:55:28,30.0,18.0,896,377.0,232.0,407.0
+2026-03-25 05:25:34,30.0,18.0,896,376.0,236.0,400.0
+2026-03-25 05:55:28,30.0,18.0,896,378.0,237.0,424.0
 
 ```
 
 ## 2. 📊 Computed Metrics (Last 12 Calculations)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-25 03:55:28,3.437,100.0,,87.1,,73.5,,,,,,,,False,False,False
-2026-03-25 04:25:29,3.437,100.0,,86.7,,76.4,,,,,,,,False,False,False
 2026-03-25 04:55:28,3.479,100.0,,88.4,,76.1,,,,,,,,False,False,False
+2026-03-25 05:25:34,3.479,100.0,,86.7,,78.1,,,,,,,,False,False,False
+2026-03-25 05:55:28,3.479,100.0,,86.3,,71.2,,,,,,,,False,False,False
 
 ```
 
 ## 3. 🌤️ Weather Forecast
 ```json
 {
-  "timestamp": 1774310412,
+  "timestamp": 1774396819,
   "main": {
-    "temp": 27.22,
-    "feels_like": 30.13,
+    "temp": 26.29,
+    "feels_like": 26.29,
     "temp_min": null,
     "temp_max": null,
     "pressure": 1010,
-    "humidity": 79,
+    "humidity": 84,
     "sea_level": null,
     "grnd_level": null
   },
   "weather": {
-    "id": 802,
-    "main": "Clouds",
-    "description": "scattered clouds",
-    "icon": "03n"
+    "id": 701,
+    "main": "Mist",
+    "description": "mist",
+    "icon": "50n"
   },
   "wind": null,
   "sys": {
-    "sunrise": 1774312838,
-    "sunset": 1774356592
+    "sunrise": 1774399197,
+    "sunset": 1774442995
   },
   "name": "Asia/Kolkata",
   "forecast": {
@@ -50,33 +50,21 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
     "max_probability_of_precipitation": 0,
     "hourly_forecast": [
       {
-        "time": 1774310400,
-        "temp": 27.22,
-        "humidity": 79,
+        "time": 1774396800,
+        "temp": 26.29,
+        "humidity": 84,
         "pop": 0,
         "weather": {
-          "id": 802,
+          "id": 801,
           "main": "Clouds",
-          "description": "scattered clouds",
-          "icon": "03n"
+          "description": "few clouds",
+          "icon": "02n"
         }
       },
       {
-        "time": 1774314000,
-        "temp": 26.84,
-        "humidity": 79,
-        "pop": 0,
-        "weather": {
-          "id": 802,
-          "main": "Clouds",
-          "description": "scattered clouds",
-          "icon": "03d"
-        }
-      },
-      {
-        "time": 1774317600,
-        "temp": 26.92,
-        "humidity": 77,
+        "time": 1774400400,
+        "temp": 26.14,
+        "humidity": 82,
         "pop": 0,
         "weather": {
           "id": 801,
@@ -86,15 +74,27 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
         }
       },
       {
-        "time": 1774321200,
-        "temp": 27.47,
-        "humidity": 73,
+        "time": 1774404000,
+        "temp": 26.33,
+        "humidity": 80,
         "pop": 0,
         "weather": {
           "id": 801,
           "main": "Clouds",
           "description": "few clouds",
           "icon": "02d"
+        }
+      },
+      {
+        "time": 1774407600,
+        "temp": 27.05,
+        "humidity": 75,
+        "pop": 0,
+        "weather": {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
         }
       }
     ]
