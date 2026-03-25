@@ -1,0 +1,27 @@
+site_name: GardenOS
+site_description: High-Fidelity Botanical Agent
+site_url: https://surendranb.github.io/gardenbot/
+repo_url: https://github.com/surendranb/gardenbot
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - navigation.tabs
+    - content.code.copy
+nav:
+  - 🌿 Live Dashboard: index.md
+  - ⚙️ Hardware & Sensors: hardware.md
+  - 📖 Daily Gallery: gallery.md
+  - 🧠 Dev Blog:
+      - Master Context Architecture: blog/context.md
+      - GardenOS V5 Manifesto: blog/architecture.md
+      - Origins & Setup: blog/origins.md
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
