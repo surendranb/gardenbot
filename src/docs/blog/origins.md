@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Hello World: The Origins of GardenOS
 
 GardenOS wasn't built to be a simple "sensor box." It was built to be a **Curious Warden**—an agent that doesn't just read numbers, but *investigates* the biome using vision and deterministic math. This is the story of how it's set up and how it thinks.

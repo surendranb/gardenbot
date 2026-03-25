@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Daily Baseline Gallery
 
 A temporal record of the garden's state, captured daily at 06:00 AM. This provides the primary visual baseline to track macro-growth and canopy health.
