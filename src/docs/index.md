@@ -10,6 +10,15 @@ hide:
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <style>
+/* SLEDGEHAMMER: Force content area to be full width on the dashboard */
+.md-content__inner {
+    max-width: none !important;
+    padding-top: 0 !important;
+}
+.md-main__inner {
+    max-width: none !important;
+}
+
 /* Robust Dashboard Styling */
 .dashboard-container {
     display: flex;
