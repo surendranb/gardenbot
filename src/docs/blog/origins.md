@@ -1,34 +1,28 @@
-# The Gardenbot Setup
+# Hello World: The Origins of GardenOS
 
-*March 20, 2026*
+GardenOS wasn't built to be a simple "sensor box." It was built to be a **Curious Warden**—an agent that doesn't just read numbers, but *investigates* the biome using vision and deterministic math. This is the story of how it's set up and how it thinks.
 
-GardenOS is a monitoring system designed to track the health of an indoor tropical desk-top biome in Chennai, India, where ambient temperatures regularly exceed 30°C and humidity often drops below 25%. The primary purpose of this system is to provide actionable intelligence for manual plant care, operating entirely without automated pumps or valves.
+## 🛠 The Hardware Stack
+We've kept the hardware lean and focused on "Local Truth." The system is entirely local-first, avoiding cloud-dependency where possible.
 
-## The Plant Registry
+*   **Brain**: An old laptop running **OpenClaw**, which serves as the primary execution environment for our agentic workflows.
+*   **Controller**: An **Arduino** acting as the serial bridge for the sensor array.
+*   **Atmosphere**: A **DHT11** sensor for temperature and humidity.
+*   **Light**: A dedicated **Lux sensor** to track solar exposure.
+*   **Soil Moisture**: Three **Capacitive Moisture Sensors** (p1: Nickels, p2: Mint, p3: Pothos). We use capacitive sensors specifically because they don't corrode like cheaper resistive ones, ensuring long-term data stability.
+*   **Vision**: A standard **Webcam** mounted for top-down biome surveillance.
 
-The system monitors four specific botanical targets:
+## 🧠 The Logical Flow
+The system operates on a rigorous temporal rhythm. It doesn't just "ping" sensors; it conducts an audit.
 
-1.  **p1 (String of Nickels / Dischidia nummularia)**: A drought-tolerant epiphyte monitored via a resistive moisture sensor (A0). It serves as the indicator for extreme dry conditions.
-2.  **p2 (Mexican Mint / Plectranthus amboinicus)**: A fleshy, fast-growing herb monitored via a capacitive sensor (A5). It provides clear visual indicators of turgidity and wilting.
-3.  **p3 (Pothos / Epipremnum aureum)**: The primary growth target in the biome, monitored via a capacitive sensor (A2).
-4.  **p4 (Silver Guest Alpha / Pilea glaucophylla)**: A secondary indicator plant sharing the same pot and sensor (A5) as the Mexican Mint.
+1.  **Trigger**: A system-level `cron` job wakes the Warden every hour.
+2.  **Vision Capture**: The webcam takes a high-res snap of the biome.
+3.  **Sensor Audit**: The Arduino polls the DHT11, Lux, and Moisture sensors via serial.
+4.  **Agent Logic**: The Warden AI analyzes the *Delta*—comparing the new photo and sensor data against the previous hour's state. It looks for "Flickers" (sudden changes), "Spatial Anomalies," and "Negative Audits" (checking if things that *should* be happening are missing).
+5.  **Recording**: Findings are logged into the `telemetry.csv` and the human-readable `vision_ledger.md`.
+6.  **Delivery**: A summary of the Warden's "Detective" report is sent to Slack for human oversight.
 
-## The Hardware and Telemetry Stack
+## 🌿 Final Thoughts
+This setup allows GardenOS to go beyond simple "if temperature > X" logic. By correlating weather forecasts with visual turgidity and soil moisture slopes, the Warden can predict stress before it becomes visible to the human eye. 
 
-The environment is continuously tracked using a suite of hardware sensors. The system logs raw data (`telemetry.csv`) every 20 minutes, which includes:
-
-- **Atmospheric Data**: Temperature (°C) and Humidity (%).
-- **Soil Moisture**: Percentage saturation for each individual sensor.
-- **Ambient Light**: Measured in Lux.
-
-This raw data is then processed to calculate derived metrics (`metrics.csv`), specifically Vapor Pressure Deficit (VPD), which helps determine the rate of transpiration and overall thermal stress on the plants.
-
-## The Observer Protocol
-
-Rather than relying purely on sensor data—which can be compromised by soil shifting or sensor oxidation—GardenOS employs a "Visuals Supersede Sensors" philosophy.
-
-Every three hours, a wide-angle camera captures the biome (`latest.jpg`). Using a 50mm White Rabbit figurine as a physical scaling anchor, an automated Observer agent reviews the image. It compares the current visual state of the plants (turgidity, drooping, necrosis) against historical baselines and telemetry, producing a deterministic agricultural verdict logged to both a persistent markdown ledger and a Slack channel.
-
-## Future Improvements
-
-While this setup successfully acts as an early warning system, future iterations will focus on advancing the intelligence of the Observer agent. We intend to shift from flat-file procedural reporting toward a semantic, Vector-based episodic memory architecture. By giving the agent a historical sense of visual anomalies and a formal ontology of the biome, we aim to transition the system from a reactive monitor to a proactive, highly capable digital familiar.
+It's not just a garden; it's a monitored biome.
