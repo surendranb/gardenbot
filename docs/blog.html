@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GardenOS Dev Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; }
+        .card { background-color: #1e293b; border-radius: 0.75rem; padding: 2rem; margin-bottom: 2rem;}
+        h1, h2, h3 { color: #f8fafc; margin-top: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+        h1 { font-size: 2.25rem; color: #4ade80; }
+        h2 { font-size: 1.5rem; border-bottom: 1px solid #334155; padding-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; line-height: 1.7; color: #cbd5e1; }
+        ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        li { margin-bottom: 0.5rem; }
+        code { background-color: #0f172a; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-family: monospace; color: #38bdf8; }
+        strong { color: #f1f5f9; }
+        .post-meta { font-size: 0.875rem; color: #94a3b8; font-family: monospace; margin-bottom: 2rem; }
+    </style>
+</head>
+<body class="p-6 max-w-4xl mx-auto">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-10 border-b border-slate-700 pb-6">
+        <div>
+            <h1 class="text-3xl font-bold text-green-400 m-0">🌿 GardenOS Dev Blog</h1>
+            <p class="text-slate-400 text-sm mt-1">Building a High-Fidelity Botanical Agent</p>
+        </div>
+        <div>
+            <a href="index.html" class="text-sm bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded border border-slate-600 transition">&larr; Back to Dashboard</a>
+        </div>
+    </div>
+
+    <!-- Post 2: Context Engineering -->
+    <div class="card">
+        <h1>🧠 Value Optimization: Master Context Architecture</h1>
+        <div class="post-meta">Date: 2026-03-25 • Author: AI Engineer</div>
+        
+        <p>If token limits are removed as a constraint, the singular goal becomes <strong>Maximizing Real-World Reasoning Fidelity</strong>. An LLM is a stateless reasoning engine; it maps the text/image context it receives to an internal multidimensional space. To make it act as a highly capable "Curious Warden," we must perfectly structure its perception of the world.</p>
+
+        <h2>1. The Ontology of an Agent Prompt</h2>
+        <p>A highly capable agent needs its input cleanly partitioned. Mixing instructions, identity, and data causes "attention dilution."</p>
+        <ul>
+            <li><strong>The System Prompt (The Agent's "Self")</strong>: Identity (The Curious Warden), core operating philosophy, invariant rules.</li>
+            <li><strong>The Context Payload (The "World State")</strong>: The objective reality at the moment of execution. The structural map, recent trends, and image data.</li>
+            <li><strong>The User Prompt (The "Trigger")</strong>: The specific mission for this invocation.</li>
+        </ul>
+
+        <h2>2. Semantic State Summaries (No More CSVs)</h2>
+        <p>Raw tabular data forces the LLM to waste reasoning tokens on spatial parsing. Instead, the Python pre-processor should feed a narrative <em>State of the World</em>:</p>
+        <ul>
+            <li><strong>Bad</strong>: <code>10:00,31.2,18</code></li>
+            <li><strong>Good</strong>: <code>Temperature is 31.5°C (Trending up +0.3°C/hr). Humidity is critical at 17%.</code></li>
+        </ul>
+        <p>The LLM no longer has to deduce the trend; it receives the trend as an explicit semantic fact. It can immediately dedicate its reasoning power to <em>what that trend means for the plant</em>.</p>
+
+        <h2>3. Explicit A/B Visual Injection</h2>
+        <p>Instead of telling the agent to "find yesterday's photo," we explicitly spoon-feed it <code>baseline_24h.jpg</code> alongside <code>latest.jpg</code>. When vision models receive explicit T-24h and T-0 anchors, their ability to detect leaf-level deltas skyrockets.</p>
+    </div>
+
+    <!-- Post 1: V4 Architecture -->
+    <div class="card">
+        <h1>🏗️ GardenOS V5: Scalable Agent Architecture</h1>
+        <div class="post-meta">Date: 2026-03-25 • Author: AI Engineer</div>
+        
+        <p>To move from a "Scripted Observer" to a "True Botanical Agent," we must shift from <strong>Data Injection</strong> to <strong>Semantic Reasoning</strong>. This is the architectural roadmap.</p>
+
+        <h2>1. The Epistemic Layer (Storage & Retrieval)</h2>
+        <ul>
+            <li><strong>Temporal Layer (SQL)</strong>: For quantitative metrics. Enables the agent to query historical averages (e.g., VPD during watering).</li>
+            <li><strong>Episodic Layer (RAG)</strong>: For visual history. Enables retrieval of similar past anomalies (e.g., "Search photos from 6 months ago for leaf discoloration").</li>
+            <li><strong>Ground Truth Layer (YAML/JSON)</strong>: For static botanical constraints.</li>
+        </ul>
+
+        <h2>2. The Botanical Scene Graph</h2>
+        <p>The agent shouldn't just "see a JPEG." It should reason over a <strong>Scene Graph</strong> where a <code>Pot</code> contains a <code>Plant</code> and hosts a <code>Sensor</code>. <br>
+        <code>[Pot p2] -> contains -> [Mexican Mint] -> showing -> [New Node] -> while -> [Sensor A5] -> reports -> [Moisture Descent]</code></p>
+
+        <p>By moving to this architecture, we reduce the agent's <strong>Cognitive Load</strong> and infinitely expand its <strong>Situational Memory</strong>.</p>
+    </div>
+
+</body>
+</html>
