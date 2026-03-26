@@ -559,6 +559,10 @@
             <span style="color: #94a3b8; font-size: 0.85rem;">Vapor Pressure Deficit</span>
             <span style="color:#a855f7; font-weight: 800; background: rgba(168, 85, 247, 0.15); padding: 2px 8px; border-radius: 4px;"><span id="val-vpd">--</span> kPa</span>
         </div>
+        <div style="margin-top: 0.8rem; border-top: 1px dashed #334155; padding-top: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="color: #64748b; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Outdoor Forecast</span>
+            <span style="color:#38bdf8; font-size: 0.85rem; font-weight: 600;"><span id="val-forecast">--</span></span>
+        </div>
     </div>
 
     <!-- Soil Moisture -->
@@ -606,6 +610,7 @@
 <script>
     const CSV_TELEMETRY = "data/telemetry.csv";
     const CSV_METRICS = "data/metrics.csv";
+    const JSON_WEATHER = "data/weather_context.json";
     const MD_LEDGER = "data/ledger.md";
 
     function parseCSV(url) {
@@ -626,6 +631,18 @@
             if (img) img.src = `media/latest.jpg?t=${Date.now()}`;
 
             const [tel, met] = await Promise.all([parseCSV(CSV_TELEMETRY), parseCSV(CSV_METRICS)]);
+            
+            // Weather Fetch
+            try {
+                const wRes = await fetch(JSON_WEATHER);
+                if (wRes.ok) {
+                    const wData = await wRes.json();
+                    const desc = wData.weather.description || "Unknown";
+                    const hum = wData.main.humidity || "--";
+                    document.getElementById('val-forecast').textContent = `${desc.charAt(0).toUpperCase() + desc.slice(1)} (${hum}% RH)`;
+                }
+            } catch(we) { console.error("Weather load failed", we); }
+
             if (!tel.length) return;
 
             const lT = tel[tel.length - 1];
