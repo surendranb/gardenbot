@@ -1,11 +1,9 @@
 # 📝 Garden Observer Context
-**Generated:** 2026-03-26 08:58:01
+**Generated:** 2026-03-26 09:58:01
 
 ## 1. 🌡️ Recent Telemetry (Last 12 Readings)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-26 04:25:28,30.0,16.0,910,489.0,188.0,443.0
-2026-03-26 04:55:34,30.0,16.0,910,497.0,211.0,443.0
 2026-03-26 05:25:28,30.0,16.0,910,486.0,216.0,439.0
 2026-03-26 05:55:34,30.0,16.0,909,480.0,208.0,441.0
 2026-03-26 06:25:28,30.0,16.0,880,490.0,216.0,434.0
@@ -16,19 +14,19 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-26 08:25:28,30.0,38.0,604,505.0,211.0,453.0
 2026-03-26 08:33:09,30.0,38.0,670,506.0,204.0,451.0
 2026-03-26 08:55:28,31.0,37.0,599,501.0,204.0,448.0
+2026-03-26 09:29:29,31.0,37.0,572,498.0,215.0,454.0
+2026-03-26 09:55:28,31.0,36.0,542,502.0,203.0,447.0
 
 ```
 
 ## 2. 🌬️ Atmospheric Pull (Indoor vs. Outdoor)
-**Indoor VPD**: 2.83 kPa | **Outdoor VPD**: 0.553 kPa
-**Pressure Delta**: -2.277 kPa
+**Indoor VPD**: 2.875 kPa | **Outdoor VPD**: 0.553 kPa
+**Pressure Delta**: -2.322 kPa
 🛡️ **INDOOR REFUGE**: Outdoor air is much more humid than indoors. Evaporative stress is low.
 
 ## 3. 📊 Computed Metrics (Last 12 Calculations)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-26 04:25:28,3.564,73.0,,100.0,,65.8,,,,,,,,False,False,False
-2026-03-26 04:55:34,3.564,70.6,,97.4,,65.8,,,,,,,,False,False,False
 2026-03-26 05:25:28,3.564,73.9,,95.3,,67.0,,,,,,,,False,False,False
 2026-03-26 05:55:34,3.564,75.8,,98.7,,66.4,,,,,,,,False,False,False
 2026-03-26 06:25:28,3.564,72.7,,95.3,,68.4,,,,,,,,False,False,False
@@ -39,6 +37,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-26 08:25:28,2.631,68.1,-16.0,97.4,0.0,63.0,-4.0,,,,,,,False,False,False
 2026-03-26 08:33:09,2.631,67.8,-2.34,100.0,20.3,63.5,3.9,,,,,,,False,False,False
 2026-03-26 08:55:28,2.83,69.3,4.03,100.0,0.0,64.4,2.42,,,,,,,False,False,False
+2026-03-26 09:29:29,2.83,70.2,1.59,95.7,-7.58,62.7,-3.0,,,,,,,False,False,False
+2026-03-26 09:55:28,2.875,69.0,-2.77,100.0,9.93,64.7,4.62,,,,,,,False,False,False
 
 ```
 
