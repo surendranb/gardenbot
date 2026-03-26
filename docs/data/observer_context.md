@@ -1,31 +1,31 @@
 # 📝 Garden Observer Context
-**Generated:** 2026-03-26 04:58:01
+**Generated:** 2026-03-26 05:58:01
 
 ## 1. 🌡️ Recent Telemetry (Last 12 Readings)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-26 03:55:34,30.0,16.0,910,484.0,198.0,445.0
-2026-03-26 04:25:28,30.0,16.0,910,489.0,188.0,443.0
 2026-03-26 04:55:34,30.0,16.0,910,497.0,211.0,443.0
+2026-03-26 05:25:28,30.0,16.0,910,486.0,216.0,439.0
+2026-03-26 05:55:34,30.0,16.0,909,480.0,208.0,441.0
 
 ```
 
 ## 2. 📊 Computed Metrics (Last 12 Calculations)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-26 03:55:34,3.564,74.5,,100.0,,65.2,,,,,,,,False,False,False
-2026-03-26 04:25:28,3.564,73.0,,100.0,,65.8,,,,,,,,False,False,False
 2026-03-26 04:55:34,3.564,70.6,,97.4,,65.8,,,,,,,,False,False,False
+2026-03-26 05:25:28,3.564,73.9,,95.3,,67.0,,,,,,,,False,False,False
+2026-03-26 05:55:34,3.564,75.8,,98.7,,66.4,,,,,,,,False,False,False
 
 ```
 
 ## 3. 🌤️ Weather Forecast
 ```json
 {
-  "timestamp": 1774396819,
+  "timestamp": 1774483226,
   "main": {
-    "temp": 26.29,
-    "feels_like": 26.29,
+    "temp": 26.47,
+    "feels_like": 26.47,
     "temp_min": null,
     "temp_max": null,
     "pressure": 1010,
@@ -41,8 +41,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
   },
   "wind": null,
   "sys": {
-    "sunrise": 1774399197,
-    "sunset": 1774442995
+    "sunrise": 1774485556,
+    "sunset": 1774529398
   },
   "name": "Asia/Kolkata",
   "forecast": {
@@ -50,8 +50,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
     "max_probability_of_precipitation": 0,
     "hourly_forecast": [
       {
-        "time": 1774396800,
-        "temp": 26.29,
+        "time": 1774483200,
+        "temp": 26.47,
         "humidity": 84,
         "pop": 0,
         "weather": {
@@ -62,9 +62,9 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
         }
       },
       {
-        "time": 1774400400,
-        "temp": 26.14,
-        "humidity": 82,
+        "time": 1774486800,
+        "temp": 26.18,
+        "humidity": 83,
         "pop": 0,
         "weather": {
           "id": 801,
@@ -74,8 +74,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
         }
       },
       {
-        "time": 1774404000,
-        "temp": 26.33,
+        "time": 1774490400,
+        "temp": 26.3,
         "humidity": 80,
         "pop": 0,
         "weather": {
@@ -86,8 +86,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
         }
       },
       {
-        "time": 1774407600,
-        "temp": 27.05,
+        "time": 1774494000,
+        "temp": 26.94,
         "humidity": 75,
         "pop": 0,
         "weather": {
