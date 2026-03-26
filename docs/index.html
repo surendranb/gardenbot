@@ -665,10 +665,23 @@
             };
             ['p1', 'p2', 'p3'].forEach(upP);
 
-            const cData = met.slice(-216).map(m => {
+            let rawData = met.slice(-216).map(m => {
                 const t = tel.find(x => x.timestamp === m.timestamp);
                 return t ? {...m, temp: t.temp, hum: t.hum, light: t.light} : m;
             });
+
+            // Inject gaps if time skips significantly (>2 hours)
+            const cData = [];
+            for (let i = 0; i < rawData.length; i++) {
+                if (i > 0) {
+                    const t1 = new Date(rawData[i-1].timestamp).getTime();
+                    const t2 = new Date(rawData[i].timestamp).getTime();
+                    if (t2 - t1 > 7200000) { // 2 hours
+                        cData.push({ timestamp: "GAP", temp: null, hum: null, light: null, p1_pct: null, p2_pct: null, p3_pct: null });
+                    }
+                }
+                cData.push(rawData[i]);
+            }
             draw(cData);
 
             const res = await fetch(MD_LEDGER);
@@ -677,6 +690,10 @@
                 const parts = text.split(/^## /m);
                 if (parts.length > 1) {
                     document.getElementById('warden-log-output').innerHTML = marked.parse("## " + parts[parts.length-1].trim());
+                } else {
+                    // Fallback if the agent forgot the ## header
+                    const summary = text.slice(-1500); 
+                    document.getElementById('warden-log-output').innerHTML = marked.parse((text.length > 1500 ? "... " : "") + summary.trim());
                 }
             }
         } catch(e) { console.error(e); }
@@ -689,13 +706,18 @@
         chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: data.map(d => d.timestamp ? d.timestamp.split(' ')[1].substring(0,5) : ''),
+                labels: data.map(d => {
+                    if (!d.timestamp) return '';
+                    if (d.timestamp === 'GAP') return '...';
+                    const parts = d.timestamp.split(' ');
+                    return parts.length > 1 ? parts[1].substring(0,5) : '';
+                }),
                 datasets: [
-                    { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', tension: 0.3, pointRadius: 0 },
-                    { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', tension: 0.3, pointRadius: 0 },
-                    { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', tension: 0.3, pointRadius: 0 },
-                    { label: 'Temp', data: data.map(d => d.temp), borderColor: 'rgba(249,115,22,0.3)', tension: 0.3, pointRadius: 0, borderWidth: 1 },
-                    { label: 'Solar', data: data.map(d => d.light), borderColor: 'rgba(250,204,21,0.3)', tension: 0.3, pointRadius: 0, borderWidth: 1, yAxisID: 'yL' }
+                    { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', tension: 0.3, pointRadius: 0, spanGaps: false },
+                    { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', tension: 0.3, pointRadius: 0, spanGaps: false },
+                    { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', tension: 0.3, pointRadius: 0, spanGaps: false },
+                    { label: 'Temp', data: data.map(d => d.temp), borderColor: 'rgba(249,115,22,0.3)', tension: 0.3, pointRadius: 0, borderWidth: 1, spanGaps: false },
+                    { label: 'Solar', data: data.map(d => d.light), borderColor: 'rgba(250,204,21,0.3)', tension: 0.3, pointRadius: 0, borderWidth: 1, yAxisID: 'yL', spanGaps: false }
                 ]
             },
             options: {
