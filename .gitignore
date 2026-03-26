@@ -36,3 +36,6 @@ cron.log
 cron_failure_report.md
 cron_log.txt
 garden_cron.log
+
+# Local Sandbox
+local/
