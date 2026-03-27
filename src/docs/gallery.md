@@ -4,75 +4,120 @@ hide:
   - toc
 ---
 
-# Daily Baseline Gallery
+# 📖 Botanical Baseline Gallery
 
 A temporal record of the garden's state, captured daily. This provides the primary visual baseline to track macro-growth and canopy health.
 
+<!-- SimpleLightbox CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.3/simple-lightbox.min.css" />
+
 <style>
-.gallery-grid {
+.gallery-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 2rem;
     margin-top: 2rem;
 }
-.gallery-item {
+.gallery-card {
     background: #1e293b;
     border: 1px solid #334155;
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+    text-decoration: none !important;
 }
-.gallery-item:hover {
-    transform: translateY(-5px);
+.gallery-card:hover {
+    transform: translateY(-8px);
     border-color: #4ade80;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3);
 }
-.gallery-item img {
+.img-wrapper {
+    position: relative;
     width: 100%;
     aspect-ratio: 4/3;
+    overflow: hidden;
+}
+.gallery-card img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.5s ease;
+}
+.gallery-card:hover img {
+    transform: scale(1.08);
 }
 .gallery-info {
-    padding: 1rem;
+    padding: 1.2rem;
     background: #1e293b;
-    border-top: 1px solid #334155;
 }
-.gallery-date {
+.date-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.gallery-title {
     color: #f8fafc;
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
 }
 </style>
 
-<div id="gallery-root" class="gallery-grid">
-    Loading visual history...
+<div id="gallery-root" class="gallery-container">
+    <!-- Automated loading... -->
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.3/simple-lightbox.min.js"></script>
+
 <script>
-    async function loadGallery() {
+    async function initGallery() {
+        const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
+        const root = document.getElementById('gallery-root');
+        
         try {
-            const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
-            const res = await fetch(GITHUB_RAW + "data/gallery.json");
+            const res = await fetch(GITHUB_RAW + "data/gallery.json?t=" + Date.now());
             const data = await res.json();
             
-            const root = document.getElementById('gallery-root');
             root.innerHTML = '';
-            
             data.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'gallery-item';
-                div.innerHTML = `
-                    <img src="${GITHUB_RAW}${item.path}" alt="${item.date}">
+                const anchor = document.createElement('a');
+                anchor.href = GITHUB_RAW + item.path;
+                anchor.className = 'gallery-card item';
+                
+                // Format Date: 2026-03-27 -> March 27, 2026
+                const dateParts = item.date.split('-');
+                const dateObj = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
+                const displayDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+                anchor.innerHTML = `
+                    <div class="img-wrapper">
+                        <img src="${GITHUB_RAW}${item.path}" alt="${displayDate}" loading="lazy" />
+                    </div>
                     <div class="gallery-info">
-                        <div class="gallery-date">${item.date}</div>
+                        <span class="date-badge">${item.date}</span>
+                        <span class="gallery-title">${displayDate}</span>
                     </div>
                 `;
-                root.appendChild(div);
+                root.appendChild(anchor);
             });
-        } catch(e) { 
-            document.getElementById('gallery-root').textContent = "Failed to load gallery.";
-            console.error(e); 
+
+            // Init SimpleLightbox
+            new SimpleLightbox('.gallery-container a.item', {
+                overlayOpacity: 0.9,
+                className: 'garden-lightbox'
+            });
+
+        } catch (e) {
+            root.innerHTML = `<p style="color: #ef4444;">Failed to sync visual ledger: ${e.message}</p>`;
         }
     }
-    loadGallery();
+
+    initGallery();
 </script>

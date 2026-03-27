@@ -54,7 +54,7 @@ hide:
 <div class="status-header">
     <div style="display: flex; align-items: center; gap: 15px;">
         <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span id="sync-status-text" style="color: #4ade80;">ACTIVE</span></span>
+        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span style="color: #4ade80;">ACTIVE</span></span>
     </div>
     <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
         LAST SYNC: <span id="sync-status">--:--</span>
@@ -126,9 +126,16 @@ hide:
 
     function formatXAxis(timestamp) {
         const d = new Date(timestamp);
-        const day = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
-        const time = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-        return [day, time];
+        // Only show date if it's the first reading of the day OR every 6 hours
+        const hour = d.getHours();
+        const min = d.getMinutes();
+        const dateStr = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+        
+        if (hour % 6 === 0 && min < 30) {
+            return [dateStr, timeStr];
+        }
+        return timeStr;
     }
 
     async function refresh() {
@@ -148,12 +155,12 @@ hide:
             document.getElementById('val-forecast').textContent = lW.description.toUpperCase();
             document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
 
-            const window = 144; // Approx 72h
-            drawVitality(met.slice(-window));
-            drawEnv(tel.slice(-window), met.slice(-window));
+            const windowLen = 144; // Approx 72h
+            drawVitality(met.slice(-windowLen));
+            drawEnv(tel.slice(-windowLen), met.slice(-windowLen));
 
             // Ledger
-            const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md");
+            const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
             if (res.ok) {
                 const text = await res.text();
                 const parts = text.split(/^## /m);
@@ -167,12 +174,8 @@ hide:
         x: { ticks: { 
             maxTicksLimit: 12, 
             color: '#64748b',
-            callback: function(value, index, values) {
-                const label = this.getLabelForValue(value);
-                // Only show day once per cluster
-                if (Array.isArray(label)) return label;
-                return label;
-            }
+            autoSkip: true,
+            maxRotation: 0
         }, grid: { display: false } }
     };
 
@@ -192,7 +195,7 @@ hide:
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: commonScaleOptions,
-                plugins: { legend: { labels: { color: '#94a3b8' } } }
+                plugins: { legend: { labels: { color: '#94a3b8', usePointStyle: true, boxWidth: 6 } } }
             }
         });
     }
@@ -205,9 +208,9 @@ hide:
             data: {
                 labels: tel.map(t => formatXAxis(t.timestamp)),
                 datasets: [
-                    { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y' },
-                    { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y' },
-                    { label: 'Solar', data: tel.map(t => t.light), borderColor: '#facc15', pointRadius: 0, fill: true, backgroundColor: 'rgba(250, 204, 21, 0.05)', yAxisID: 'ySolar' }
+                    { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
+                    { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
+                    { label: 'Solar', data: tel.map(t => t.light), borderColor: '#facc15', pointRadius: 0, fill: true, backgroundColor: 'rgba(250, 204, 21, 0.05)', yAxisID: 'ySolar', tension: 0.3 }
                 ]
             },
             options: {
@@ -217,7 +220,7 @@ hide:
                     ySolar: { position: 'right', min: 0, max: 1024, grid: { display: false }, ticks: { display: false } },
                     x: commonScaleOptions.x
                 },
-                plugins: { legend: { labels: { color: '#94a3b8' } } }
+                plugins: { legend: { labels: { color: '#94a3b8', usePointStyle: true, boxWidth: 6 } } }
             }
         });
     }
