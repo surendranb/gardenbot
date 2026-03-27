@@ -4853,3 +4853,64 @@ Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned
 Warden: Run complete.
 Preparing Observer Context...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main a8f662c] Warden Cycle: 2026-03-27 09:25:29
+ 16 files changed, 745 insertions(+), 1193 deletions(-)
+ delete mode 100644 data/alert_state.json
+ delete mode 100644 data/forecast.txt
+ create mode 100644 data/metrics.csv
+ delete mode 100644 data/report_state.json
+ delete mode 100644 data/telemetry.csv.backup
+ delete mode 100644 data/telemetry.csv.bak
+ delete mode 100644 data/weather_context.json
+ create mode 100644 logs/gateway.log
+ rename data/forecast_raw.json => logs/manual_observer_run.log (100%)
+ delete mode 100644 media/latest.jpg
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Warming up sensor...
+  Warmup frame 1 captured.
+  Warmup frame 2 captured.
+  Warmup frame 3 captured.
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_095000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_095000.jpg"
+}
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Warming up sensor...
+  Warmup frame 1 captured.
+  Warmup frame 2 captured.
+  Warmup frame 3 captured.
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_105000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_105000.jpg"
+}
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md

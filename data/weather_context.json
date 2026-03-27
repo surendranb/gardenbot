@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-03-27 11:14:18",
+  "main": {
+    "temp": 32.01,
+    "humidity": 62,
+    "pressure": 1011
+  },
+  "weather": {
+    "id": 802,
+    "main": "Clouds",
+    "description": "scattered clouds",
+    "icon": "03d"
+  },
+  "forecast": {
+    "rain_expected": false,
+    "max_pop": 0
+  }
+}
