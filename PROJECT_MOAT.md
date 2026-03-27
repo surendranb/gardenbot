@@ -17,10 +17,11 @@ To transform GardenOS from a fragile collection of scripts into a robust, "local
 ### 🧠 PILLAR 2: THE REASONER (Intelligence/OpenClaw)
 *   **Role**: Outlier detection and botanical narrative.
 *   **Mechanism**: OpenClaw Agent (The Warden).
-*   **Logic**: 
-    *   **Zero-Trust Analysis**: Cross-references `latest.jpg` (Visual Turgidity) vs. `telemetry.csv` (Electrical Moisture).
-    *   **Outlier Detection**: Identifies sensor drift (e.g., A5 reporting 10% moisture while leaves are turgid).
-    *   **Temporal Context**: Compares current state vs. 24h baseline.
+*   **Mechanism**: OpenClaw Agent (The Warden) + Semantic Synthesis Layer.
+*   **Intelligence**: 
+    *   **World Model**: Uses codified physical constants (Indoor truth) to interpret sensors.
+    *   **Semantic Synthesis**: Converts telemetry into high-level botanical facts.
+    *   **Temporal Memory**: Compares current state vs. historical baselines.
 *   **Output**: Appends findings to `docs/blog/posts/[date].md` and Slack `#plantclaw`.
 
 ### 🌐 PILLAR 3: THE SHARER (Public Presence)
@@ -36,22 +37,29 @@ To transform GardenOS from a fragile collection of scripts into a robust, "local
 
 | File | Type | Purpose |
 | :--- | :--- | :--- |
-| `data/telemetry.csv` | CSV | Historical raw sensor data (A0, A2, A5, Temp, Hum, Light). |
+| `data/telemetry.csv` | CSV | Historical raw sensor data. |
 | `data/metrics.csv` | CSV | Computed values (VPD, Soil %, Vigor Scores). |
 | `data/weather.csv` | CSV | Historical weather (Temp, Hum, Forecast Pop, VPD_expected). |
-| `media/latest.jpg` | JPG | Most recent high-res visual capture. |
+| `data/observer_context.md` | MD | Synthesized "Daily Facts" for the Warden. |
+| `media/latest.jpg` | JPG | Most recent visual ground-truth. |
 | `docs/blog/` | MD | The "Warden's Ledger" - AI-generated historical narrative. |
+| `PROJECT_SILICA.md` | MD | The Cognitive Architecture blueprint. |
 
 ---
 
 ## 4. EXECUTION ROADMAP
 
-### Phase 1: Structural Consolidation
+### Phase 1: Structural Consolidation [x]
 1.  **Consolidate Paths**: Move all fragmented data from `docs/data/` to root `data/`.
 2.  **SSH Implementation**: Generate local SSH key and update GitHub remote.
-3.  **Weather Refactor**: Transition `weather_context.json` to `weather.csv` for long-term climate tracking.
+3.  **World Model**: Codify physical constants in `GARDEN_MANIFEST.md`.
 
-### Phase 2: Hardware Stabilization
+### Phase 2: Cognitive Intelligence [/]
+1.  **Semantic Synthesis**: Upgrade `prep_observer_context.py` to fact-based synthesis.
+2.  **Baseline Completion**: Finalize 7-day visual history.
+3.  **Memory Core**: Implement SQLite-based phenological tracking (Phase 3).
+
+### Phase 3: Hardware Stabilization
 1.  **Launchd Migration**: Move capture loops from `cron` to `launchd`.
 2.  **Camera Logic**: Implement exposure warmup in `scripts/vision.py`.
 
