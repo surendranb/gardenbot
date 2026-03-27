@@ -56,11 +56,11 @@ To transform GardenOS from a fragile collection of scripts into a robust, "local
 2.  **Camera Logic**: Implement exposure warmup in `scripts/vision.py`.
 
 ## 5. VERIFICATION CHECKLIST
-- [ ] Weather Scout: `data/weather.csv` updated.
-- [ ] Warden: `data/telemetry.csv` and `data/metrics.csv` updated.
-- [ ] Vision: `media/latest.jpg` capture successful.
-- [ ] Prep Context: `data/observer_context.md` generated with new paths.
-- [ ] Sync Agent: `scripts/sync.sh` commits and pushes successfully.
+- [x] Weather Scout: `data/weather.csv` updated.
+- [x] Warden: `data/telemetry.csv` and `data/metrics.csv` updated.
+- [x] Vision: `media/latest.jpg` capture successful.
+- [x] Prep Context: `data/observer_context.md` generated with new paths.
+- [x] Sync Agent: `scripts/sync.sh` commits and pushes successfully.
 
 ## 6. PENDING TASKS
 - [ ] **OpenClaw Jobs Update**: Update `jobs.json` with the escaped JSON prompt (Blocked: Permissions).
