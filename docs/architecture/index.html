@@ -733,7 +733,7 @@
 <hr />
 <h2 id="layer-breakdown">🛠️ Layer Breakdown</h2>
 <h3 id="1-the-physical-layer">1. The Physical Layer</h3>
-<p>The hardware is "dumb" by design. The <strong>Arduino</strong> simply reads electrical signals and streams them over USB. We use <strong>Capacitive Sensors</strong> to avoid the corrosion common in cheaper IoT setups, ensuring the data stays clean for years.</p>
+<p>The hardware is "dumb" by design. The <strong>Arduino</strong> reads signals from a DHT11 (Atmosphere) and three <strong>Capacitive Moisture Sensors (TLC555)</strong>. We use capacitive sensors because standard resistive sensors rely on DC current passing through the soil, which causes electrolysis and rapid corrosion of the probes.</p>
 <h3 id="2-the-data-layer-local-first">2. The Data Layer (Local-First)</h3>
 <p>Everything is recorded locally on a <strong>MacBook Air</strong>. Even if the WiFi fails, the system continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.</p>
 <h3 id="3-the-intelligence-layer">3. The Intelligence Layer</h3>
