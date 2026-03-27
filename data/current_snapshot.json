@@ -1,142 +1,36 @@
 {
-  "timestamp": "2026-03-22T19:00:21.548758",
+  "timestamp": "2026-03-27T09:25:29.124359",
   "sensors": {
-    "timestamp": "2026-03-22 19:00:21",
+    "timestamp": "2026-03-27 09:25:28",
     "temp": 32.0,
-    "hum": 21.0,
-    "light": 834,
-    "p1": 910,
-    "p2": 277,
-    "p3": 315
+    "hum": 36.0,
+    "light": 598,
+    "p1": 531,
+    "p2": 194,
+    "p3": 351
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 6.2,
-      "raw": 910,
-      "is_dry": true
+      "moisture_pct": 60.1,
+      "is_dry": false
     },
     "p2": {
-      "moisture_pct": 87.2,
-      "raw": 277,
+      "moisture_pct": 100,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 80.8,
-      "raw": 315,
-      "is_dry": false
-    },
-    "p4": {
-      "moisture_pct": 84.6,
-      "raw": 277,
-      "is_dry": false
-    },
-    "p5": {
-      "moisture_pct": 84.6,
-      "raw": 277,
-      "is_dry": false
-    },
-    "p6": {
-      "moisture_pct": 84.6,
-      "raw": 277,
+      "moisture_pct": 92.0,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.756,
-    "weather_forecast": {
-      "timestamp": 1774181615,
-      "main": {
-        "temp": 30,
-        "feels_like": 35.53,
-        "temp_min": null,
-        "temp_max": null,
-        "pressure": 1009,
-        "humidity": 72,
-        "sea_level": null,
-        "grnd_level": null
-      },
-      "weather": {
-        "id": 801,
-        "main": "Clouds",
-        "description": "few clouds",
-        "icon": "02d"
-      },
-      "wind": null,
-      "sys": {
-        "sunrise": 1774140120,
-        "sunset": 1774183786
-      },
-      "name": "Asia/Kolkata",
-      "forecast": {
-        "rain_expected": false,
-        "max_probability_of_precipitation": 0,
-        "hourly_forecast": [
-          {
-            "time": 1774180800,
-            "temp": 30,
-            "humidity": 72,
-            "pop": 0,
-            "weather": {
-              "id": 801,
-              "main": "Clouds",
-              "description": "few clouds",
-              "icon": "02d"
-            }
-          },
-          {
-            "time": 1774184400,
-            "temp": 29.54,
-            "humidity": 73,
-            "pop": 0,
-            "weather": {
-              "id": 801,
-              "main": "Clouds",
-              "description": "few clouds",
-              "icon": "02n"
-            }
-          },
-          {
-            "time": 1774188000,
-            "temp": 29,
-            "humidity": 74,
-            "pop": 0,
-            "weather": {
-              "id": 801,
-              "main": "Clouds",
-              "description": "few clouds",
-              "icon": "02n"
-            }
-          },
-          {
-            "time": 1774191600,
-            "temp": 28.51,
-            "humidity": 74,
-            "pop": 0,
-            "weather": {
-              "id": 800,
-              "main": "Clear",
-              "description": "clear sky",
-              "icon": "01n"
-            }
-          }
-        ]
-      }
-    }
+    "vpd_kpa": 3.043
   },
   "intelligence": {
-    "slopes": {
-      "p1": {
-        "slope_per_hour": 0.0843,
-        "estimated_hours_to_dryout": 474.2
-      },
-      "p2": {
-        "slope_per_hour": 1.8134,
-        "estimated_hours_to_dryout": 288.4
-      },
-      "p3": {
-        "slope_per_hour": 0.4304,
-        "estimated_hours_to_dryout": 1126.7
-      }
-    }
+    "recent_visual_ledger": [
+      "WARDEN REPORT - 2026-03-27 06:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84%, no precipitation expected. Visual plant state shows robust turgidity, indicating effective moisture retention despite ambient sensor readings suggesting warmer/drier microclimate.\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required.",
+      "WARDEN REPORT - 2026-03-27 09:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84",
+      "WARDEN REPORT - 2026-03-27 09:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84%, no precipitation expected. Visual plant state shows robust turgidity, indicating effective moisture retention despite ambient sensor readings suggesting warmer/drier microclimate (current telemetry: 32.0\u00b0C, 36% humidity).\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required."
+    ]
   }
 }

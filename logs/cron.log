@@ -4650,3 +4650,206 @@ Warden: Syncing to GitHub...
 Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
 Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
 Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_195000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_195000.jpg"
+}
+[main 5b71163] Warden Cycle: 2026-03-26 19:55:29
+ 5 files changed, 11 insertions(+), 9 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main fd0785a] Warden Cycle: 2026-03-26 20:25:29
+ 4 files changed, 13 insertions(+), 11 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_205001.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_205001.jpg"
+}
+[main ec7bf81] Warden Cycle: 2026-03-26 20:55:29
+ 5 files changed, 13 insertions(+), 11 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main 94e5975] Warden Cycle: 2026-03-26 21:25:29
+ 6 files changed, 42 insertions(+), 19 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_215000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_215000.jpg"
+}
+[main 1e3e866] Warden Cycle: 2026-03-26 21:55:29
+ 5 files changed, 11 insertions(+), 9 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main 41ab6c7] Warden Cycle: 2026-03-26 22:25:30
+ 5 files changed, 42 insertions(+), 44 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+[main d524d8f] Warden Cycle: 2026-03-26 23:55:31
+ 4 files changed, 13 insertions(+), 11 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+[main 80a0fd3] Warden Cycle: 2026-03-27 01:57:32
+ 4 files changed, 12 insertions(+), 10 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main 2533f45] Warden Cycle: 2026-03-27 05:25:41
+ 5 files changed, 18 insertions(+), 16 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+[main 8461bfb] Warden Cycle: 2026-03-27 06:56:03
+ 6 files changed, 35 insertions(+), 286 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main 35fd523] Warden Cycle: 2026-03-27 07:25:29
+ 6 files changed, 41 insertions(+), 102 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_075000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_075000.jpg"
+}
+[main ff018e2] Warden Cycle: 2026-03-27 07:55:29
+ 5 files changed, 11 insertions(+), 9 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
+[main 149466d] Warden Cycle: 2026-03-27 08:25:29
+ 5 files changed, 15 insertions(+), 13 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_085000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/docs/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_085000.jpg"
+}
+[main 290801b] Warden Cycle: 2026-03-27 08:55:29
+ 5 files changed, 10 insertions(+), 8 deletions(-)
+fatal: could not read Username for 'https://github.com': Device not configured
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/current_snapshot.json
+Warden: Syncing to GitHub...
+Warden: Public ledger updated at /Users/surendran/.openclaw/workspace/gardenbot/docs/data/ledger.md
+Warden: GitHub Sync Failed: Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 128.
+Warden: Run complete.
+Preparing Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/docs/data/observer_context.md
