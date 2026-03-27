@@ -17,18 +17,16 @@ nav:
   - 📖 Daily Gallery: gallery.md
   - 🧠 Dev Blog: blog/index.md
 
-extra:
-  authors:
-    surendran:
-      name: Surendran B.
-      description: Botanical Warden & Engineer
-      avatar: https://github.com/surendranb.png
-
 plugins:
   - blog:
       post_dir: blog/posts
       post_date_format: full
       post_url_format: "{date}/{slug}"
+      authors:
+        surendran:
+          name: Surendran B.
+          description: Botanical Warden & Engineer
+          avatar: https://github.com/surendranb.png
   - search
 
 markdown_extensions:
