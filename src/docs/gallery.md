@@ -6,7 +6,7 @@ hide:
 
 # Daily Baseline Gallery
 
-A temporal record of the garden's state, captured daily at 06:00 AM. This provides the primary visual baseline to track macro-growth and canopy health.
+A temporal record of the garden's state, captured daily. This provides the primary visual baseline to track macro-growth and canopy health.
 
 <style>
 .gallery-grid {
@@ -44,36 +44,35 @@ A temporal record of the garden's state, captured daily at 06:00 AM. This provid
 }
 </style>
 
-<div class="gallery-grid">
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-25.jpg" alt="Mar 25">
-        <div class="gallery-info"><div class="gallery-date">March 25, 2026</div></div>
-    </div>
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-24.jpg" alt="Mar 24">
-        <div class="gallery-info"><div class="gallery-date">March 24, 2026</div></div>
-    </div>
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-23.jpg" alt="Mar 23">
-        <div class="gallery-info"><div class="gallery-date">March 23, 2026</div></div>
-    </div>
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-22.jpg" alt="Mar 22">
-        <div class="gallery-info"><div class="gallery-date">March 22, 2026</div></div>
-    </div>
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-21.jpg" alt="Mar 21">
-        <div class="gallery-info"><div class="gallery-date">March 21, 2026</div></div>
-    </div>
-
-    <div class="gallery-item">
-        <img src="../media/baselines/2026-03-20.jpg" alt="Mar 20">
-        <div class="gallery-info"><div class="gallery-date">March 20, 2026</div></div>
-    </div>
-
+<div id="gallery-root" class="gallery-grid">
+    Loading visual history...
 </div>
+
+<script>
+    async function loadGallery() {
+        try {
+            const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
+            const res = await fetch(GITHUB_RAW + "data/gallery.json");
+            const data = await res.json();
+            
+            const root = document.getElementById('gallery-root');
+            root.innerHTML = '';
+            
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.innerHTML = `
+                    <img src="${GITHUB_RAW}${item.path}" alt="${item.date}">
+                    <div class="gallery-info">
+                        <div class="gallery-date">${item.date}</div>
+                    </div>
+                `;
+                root.appendChild(div);
+            });
+        } catch(e) { 
+            document.getElementById('gallery-root').textContent = "Failed to load gallery.";
+            console.error(e); 
+        }
+    }
+    loadGallery();
+</script>

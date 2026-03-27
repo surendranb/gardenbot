@@ -46,7 +46,7 @@ hide:
     padding: 1.2rem;
     border-radius: 16px;
     border: 1px solid #334155;
-    height: 350px;
+    height: 400px;
     margin-top: 1rem;
 }
 </style>
@@ -54,7 +54,7 @@ hide:
 <div class="status-header">
     <div style="display: flex; align-items: center; gap: 15px;">
         <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span style="color: #4ade80;">ACTIVE</span></span>
+        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span id="sync-status-text" style="color: #4ade80;">ACTIVE</span></span>
     </div>
     <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
         LAST SYNC: <span id="sync-status">--:--</span>
@@ -116,13 +116,19 @@ hide:
     const CSV_METRICS = GITHUB_RAW + "data/metrics.csv";
     const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv";
     const CSV_WEATHER = GITHUB_RAW + "data/weather.csv";
-    const MD_LEDGER = GITHUB_RAW + "data/ledger.md";
 
     function parseCSV(url) {
         return new Promise((resolve, reject) => {
             Papa.parse(url, { download: true, header: true, skipEmptyLines: true, 
                 complete: (r) => resolve(r.data), error: (e) => reject(e) });
         });
+    }
+
+    function formatXAxis(timestamp) {
+        const d = new Date(timestamp);
+        const day = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+        const time = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+        return [day, time];
     }
 
     async function refresh() {
@@ -135,14 +141,13 @@ hide:
             const lW = wea.length ? wea[wea.length - 1] : { description: "N/A" };
 
             // UI Updates
-            document.getElementById('sync-status').textContent = lM.timestamp.substring(5,16);
+            document.getElementById('sync-status').textContent = lM.timestamp;
             document.getElementById('val-temp').textContent = parseFloat(lT.temp).toFixed(1);
             document.getElementById('val-hum').textContent = Math.round(lT.hum);
             document.getElementById('val-vpd').textContent = parseFloat(lM.vpd).toFixed(2);
             document.getElementById('val-forecast').textContent = lW.description.toUpperCase();
             document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
 
-            // Charts
             const window = 144; // Approx 72h
             drawVitality(met.slice(-window));
             drawEnv(tel.slice(-window), met.slice(-window));
@@ -157,13 +162,27 @@ hide:
         } catch(e) { console.error(e); }
     }
 
+    const commonScaleOptions = {
+        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+        x: { ticks: { 
+            maxTicksLimit: 12, 
+            color: '#64748b',
+            callback: function(value, index, values) {
+                const label = this.getLabelForValue(value);
+                // Only show day once per cluster
+                if (Array.isArray(label)) return label;
+                return label;
+            }
+        }, grid: { display: false } }
+    };
+
     function drawVitality(data) {
         const ctx = document.getElementById('vitalityChart').getContext('2d');
         if (window.vChart) window.vChart.destroy();
         window.vChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: data.map(d => d.timestamp.substring(11,16)),
+                labels: data.map(d => formatXAxis(d.timestamp)),
                 datasets: [
                     { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
                     { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
@@ -172,10 +191,8 @@ hide:
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
-                scales: { 
-                    y: { min: 0, max: 100, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
-                    x: { ticks: { maxTicksLimit: 12, color: '#64748b' }, grid: { display: false } }
-                }
+                scales: commonScaleOptions,
+                plugins: { legend: { labels: { color: '#94a3b8' } } }
             }
         });
     }
@@ -186,7 +203,7 @@ hide:
         window.eChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: tel.map(t => t.timestamp.substring(11,16)),
+                labels: tel.map(t => formatXAxis(t.timestamp)),
                 datasets: [
                     { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y' },
                     { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y' },
@@ -195,11 +212,12 @@ hide:
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
-                scales: { 
-                    y: { min: 0, max: 100, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                scales: {
+                    y: { ...commonScaleOptions.y, min: 0, max: 100 },
                     ySolar: { position: 'right', min: 0, max: 1024, grid: { display: false }, ticks: { display: false } },
-                    x: { ticks: { maxTicksLimit: 12, color: '#64748b' }, grid: { display: false } }
-                }
+                    x: commonScaleOptions.x
+                },
+                plugins: { legend: { labels: { color: '#94a3b8' } } }
             }
         });
     }
