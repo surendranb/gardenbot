@@ -71,13 +71,14 @@ A temporal record of the garden's state, captured daily. This provides the prima
 </style>
 
 <div id="gallery-root" class="gallery-container">
-    <!-- Automated loading... -->
+    Scanning historical visual ledger...
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.14.3/simple-lightbox.min.js"></script>
 
 <script>
     async function initGallery() {
+        // Cache bust the JSON to always get latest even if GitHub raw is slow
         const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
         const root = document.getElementById('gallery-root');
         
@@ -85,13 +86,18 @@ A temporal record of the garden's state, captured daily. This provides the prima
             const res = await fetch(GITHUB_RAW + "data/gallery.json?t=" + Date.now());
             const data = await res.json();
             
+            if (data.length === 0) {
+                root.innerHTML = "<p>No entries found in the archive.</p>";
+                return;
+            }
+
             root.innerHTML = '';
             data.forEach(item => {
                 const anchor = document.createElement('a');
                 anchor.href = GITHUB_RAW + item.path;
                 anchor.className = 'gallery-card item';
                 
-                // Format Date: 2026-03-27 -> March 27, 2026
+                // Date formatting for UI
                 const dateParts = item.date.split('-');
                 const dateObj = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]);
                 const displayDate = dateObj.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -108,14 +114,14 @@ A temporal record of the garden's state, captured daily. This provides the prima
                 root.appendChild(anchor);
             });
 
-            // Init SimpleLightbox
+            // Init SimpleLightbox for that sweet UX
             new SimpleLightbox('.gallery-container a.item', {
                 overlayOpacity: 0.9,
                 className: 'garden-lightbox'
             });
 
         } catch (e) {
-            root.innerHTML = `<p style="color: #ef4444;">Failed to sync visual ledger: ${e.message}</p>`;
+            root.innerHTML = `<p style="color: #ef4444;">Gallery Sync Failed: ${e.message}</p>`;
         }
     }
 
