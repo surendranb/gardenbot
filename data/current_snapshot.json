@@ -1,34 +1,35 @@
 {
-  "timestamp": "2026-03-27T20:25:29.345966",
+  "timestamp": "2026-03-27T20:55:29.309295",
   "sensors": {
-    "timestamp": "2026-03-27 20:25:28",
+    "timestamp": "2026-03-27 20:55:28",
     "temp": 32.0,
-    "hum": 30.0,
+    "hum": 31.0,
     "light": 869,
-    "p1": 557,
-    "p2": 240,
-    "p3": 412
+    "p1": 555,
+    "p2": 225,
+    "p3": 413
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 52.1,
+      "moisture_pct": 52.8,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 85.0,
+      "moisture_pct": 91.4,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 74.6,
+      "moisture_pct": 74.4,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.328
+    "vpd_kpa": 3.281
   },
   "intelligence": {
     "recent_visual_ledger": [
-      "# VISION LEDGER"
+      "# VISION LEDGER",
+      "WARDEN REPORT - 2026-03-27 20:23\n\n**Vitality Pulse**:\n- p1: \ud83d\udfe2 Turgid (52% moisture, above 15% threshold)\n- p2: \ud83d\udfe2 Turgid (95% moisture, above 20% threshold)\n- p3: \ud83d\udfe2 Turgid (75% moisture, above 20% threshold)\n- p4: \ud83d\udfe2 Turgid (inferred from shared sensor with p2, above 30% threshold)\n\n**The Biome Discovery**:\n- Non-plant observation: Desk surface appears dry; sensor wires secure; no foreign debris.\n\n**Growth Momentum**:\n- Monitoring (non-06:00 hour). No apical lean detected.\n\n**Weather Alignment**:\n- Indoor microclimate (AC 26\u00b0C, fans, humidity 30%) contrasts with outdoor scattered clouds, 32\u00b0C, 62% humidity. VPD extreme (3.328 kPa) confirms AC-dehumidified indoor air, aligning with Section 1.B and 2.E.\n\n**The Warden's Decision**:\n- Verdict: Soil moisture adequate but VPD extreme indicates transpiration stress.\n- Action: Light misting advised to raise local humidity and alleviate VPD stress. Do not water; check soil again in next cycle."
     ]
   }
 }
