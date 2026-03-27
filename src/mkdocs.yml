@@ -22,7 +22,6 @@ plugins:
       post_dir: blog/posts
       post_date_format: full
       post_url_format: "{date}/{slug}"
-      authors: true
   - search
 
 markdown_extensions:
@@ -32,8 +31,3 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-Error: (none)
-Exit Code: 0
-Signal: 0
-Background PIDs: (none)
-Process Group PGID: 21578

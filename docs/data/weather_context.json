@@ -1,0 +1,79 @@
+{
+  "timestamp": 1774483226,
+  "main": {
+    "temp": 26.47,
+    "feels_like": 26.47,
+    "temp_min": null,
+    "temp_max": null,
+    "pressure": 1010,
+    "humidity": 84,
+    "sea_level": null,
+    "grnd_level": null
+  },
+  "weather": {
+    "id": 701,
+    "main": "Mist",
+    "description": "mist",
+    "icon": "50n"
+  },
+  "wind": null,
+  "sys": {
+    "sunrise": 1774485556,
+    "sunset": 1774529398
+  },
+  "name": "Asia/Kolkata",
+  "forecast": {
+    "rain_expected": false,
+    "max_probability_of_precipitation": 0,
+    "hourly_forecast": [
+      {
+        "time": 1774483200,
+        "temp": 26.47,
+        "humidity": 84,
+        "pop": 0,
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        }
+      },
+      {
+        "time": 1774486800,
+        "temp": 26.18,
+        "humidity": 83,
+        "pop": 0,
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        }
+      },
+      {
+        "time": 1774490400,
+        "temp": 26.3,
+        "humidity": 80,
+        "pop": 0,
+        "weather": {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02d"
+        }
+      },
+      {
+        "time": 1774494000,
+        "temp": 26.94,
+        "humidity": 75,
+        "pop": 0,
+        "weather": {
+          "id": 800,
+          "main": "Clear",
+          "description": "clear sky",
+          "icon": "01d"
+        }
+      }
+    ]
+  }
+}
