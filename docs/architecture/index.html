@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/">
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/architecture/">
       
       
-        <link rel="prev" href="../gallery/">
+        <link rel="prev" href="..">
       
+      
+        <link rel="next" href="../gallery/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>GardenOS Dev Blog - GardenOS</title>
+        <title>🏗️ Architecture - GardenOS</title>
       
     
     
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gardenos-dev-blog" class="md-skip">
+        <a href="#the-architecture-of-gardenos" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GardenOS Dev Blog
+              🏗️ Architecture
             
           </span>
         </div>
@@ -210,9 +212,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../architecture/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -248,11 +252,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../blog/" class="md-tabs__link">
         
   
   
@@ -275,6 +277,8 @@
         <div class="md-main__inner md-grid">
           
             
+              
+                
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
@@ -341,10 +345,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    🏗️ Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -360,6 +391,109 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 System Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Layer Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Layer Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-data-layer-local-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Data Layer (Local-First)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-intelligence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Intelligence Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-public-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Public Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resilience-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Resilience Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -395,23 +529,12 @@
       
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../blog/" class="md-nav__link">
         
   
   
@@ -427,7 +550,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -440,7 +562,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -452,6 +576,97 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📡 System Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#layer-breakdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Layer Breakdown
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Layer Breakdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-data-layer-local-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Data Layer (Local-First)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-intelligence-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Intelligence Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-public-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Public Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resilience-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Resilience Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -459,65 +674,97 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="gardenos-dev-blog">GardenOS Dev Blog</h1>
-<p>Welcome to the chronicles of a digital warden. Here, we document the evolution of GardenOS, from sensor calibration to the philosophical reasoning of our AI-driven biome.</p>
-<hr />
-<!-- The blog plugin will automatically inject the post list here -->
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-03-27 00:00:00+00:00">Friday, March 27, 2026</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              1 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="hello-world-the-origins-of-gardenos"><a class="toclink" href="2026/03/27/hello-world-the-origins-of-gardenos/">Hello World: The Origins of GardenOS</a></h2>
-<p>GardenOS wasn't built to be a simple "sensor box." It was built to be a <strong>Curious Warden</strong>—an agent that doesn't just read numbers, but <em>investigates</em> the biome using vision and deterministic math. This is the story of how it's set up and how it thinks.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/03/27/hello-world-the-origins-of-gardenos/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-      
-        
-          
-
-
-
-<nav class="md-pagination">
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
   
-</nav>
-        
-      
-    </div>
-  </div>
 
+
+
+  
+  
+
+
+<h1 id="the-architecture-of-gardenos">🏗️ The Architecture of GardenOS</h1>
+<p>GardenOS is designed to be a <strong>Resilient Digital Twin</strong> of a physical desk-top biome. Instead of a single complex program, it is built as a series of decoupled layers that ensure data is never lost, even if the internet goes down.</p>
+<h2 id="system-data-flow">📡 System Data Flow</h2>
+<div class="highlight"><pre><span></span><code>graph TD
+    %% Layer 1: Physical
+    subgraph Physical[&quot;1. THE SENSES (Hardware)&quot;]
+        S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Nano]
+        CAM[USB Webcam] --&gt;|USB| MAC[Local Mac Mini]
+        AR --&gt; MAC
+    end
+
+    %% Layer 2: Local Processing
+    subgraph Local[&quot;2. THE MEMORY (Local Data)&quot;]
+        MAC --&gt;|warden.py| CSV[telemetry.csv]
+        MAC --&gt;|vision.py| IMG[media/archive/]
+        API[Weather API] --&gt;|scout.py| WTH[weather.csv]
+    end
+
+    %% Layer 3: Intelligence
+    subgraph Intel[&quot;3. THE WARDEN (AI Reasoning)&quot;]
+        CSV &amp; IMG &amp; WTH --&gt;|Briefing| PREP[Context Prep]
+        PREP --&gt;|OpenClaw| AI[AI Garden Warden]
+        AI --&gt;|Reasoning| LDG[vision_ledger.md]
+    end
+
+    %% Layer 4: Public
+    subgraph Public[&quot;4. THE VOICE (GitHub)&quot;]
+        CSV &amp; IMG &amp; LDG --&gt;|sync.sh| GH[GitHub Repo]
+        GH --&gt;|MkDocs| WEB[Live Dashboard &amp; Blog]
+    end
+
+    %% Styling
+    style Physical fill:#1e293b,stroke:#334155
+    style Local fill:#0f172a,stroke:#4ade80
+    style Intel fill:#1e1b4b,stroke:#a855f7
+    style Public fill:#064e3b,stroke:#4ade80
+</code></pre></div>
+<hr />
+<h2 id="layer-breakdown">🛠️ Layer Breakdown</h2>
+<h3 id="1-the-physical-layer">1. The Physical Layer</h3>
+<p>The hardware is "dumb" by design. The <strong>Arduino</strong> simply reads electrical signals and streams them over USB. We use <strong>Capacitive Sensors</strong> to avoid the corrosion common in cheaper IoT setups, ensuring the data stays clean for years.</p>
+<h3 id="2-the-data-layer-local-first">2. The Data Layer (Local-First)</h3>
+<p>Everything is recorded locally first. Even if the WiFi fails, the Mac continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.</p>
+<h3 id="3-the-intelligence-layer">3. The Intelligence Layer</h3>
+<p>This is the "Brain" powered by <strong>OpenClaw</strong>. Every 3 hours, an AI agent acts as a <strong>Curious Warden</strong>. It doesn't just trust the sensors; it cross-references the photo with the data. </p>
+<blockquote>
+<p><em>Example: If a sensor says "Dry" but the AI sees "Turgid Leaves," it flags a sensor error instead of telling the human to water.</em></p>
+</blockquote>
+<h3 id="4-the-public-layer">4. The Public Layer</h3>
+<p>The final layer turns code and data into a narrative. We use <strong>MkDocs-Material</strong> to build a static site that fetches your data directly from GitHub. This makes the dashboard fast, free to host, and accessible to anyone.</p>
+<hr />
+<h2 id="resilience-philosophy">🛡️ Resilience Philosophy</h2>
+<ul>
+<li><strong>Decoupled</strong>: If the AI fails, the graphs still update. </li>
+<li><strong>Stateless Dashboard</strong>: The website doesn't have a database; it reads raw files.</li>
+<li><strong>Atomic Sync</strong>: Data is pushed in "checkpoints" via SSH for maximum security and reliability.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
