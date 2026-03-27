@@ -1,0 +1,67 @@
+{
+  "nvidia/nemotron-3-super-120b-a12b:free": {
+    "error": "{\"error\":{\"message\":\"No endpoints found that support image input\",\"code\":404}}",
+    "status_code": 404
+  },
+  "arcee-ai/trinity-large-preview:free": {
+    "error": "{\"error\":{\"message\":\"No endpoints found that support image input\",\"code\":404}}",
+    "status_code": 404
+  },
+  "liquid/lfm-2.5-1.2b-thinking:free": {
+    "error": "{\"error\":{\"message\":\"No endpoints found that support image input\",\"code\":404}}",
+    "status_code": 404
+  },
+  "openai/gpt-oss-120b:free": {
+    "error": "{\"error\":{\"message\":\"No endpoints found that support image input\",\"code\":404}}",
+    "status_code": 404
+  },
+  "google/gemma-3-12b-it:free": {
+    "id": "gen-1774612040-7mhauLHDbXESqTyLodrm",
+    "object": "chat.completion",
+    "created": 1774612040,
+    "model": "google/gemma-3-12b-it:free",
+    "provider": "Google AI Studio",
+    "system_fingerprint": null,
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": null,
+        "finish_reason": "stop",
+        "native_finish_reason": "STOP",
+        "message": {
+          "role": "assistant",
+          "content": "Here's an analysis of the garden image:\n\n1.  **Non-Plant Objects:**\n    *   White ceramic figurine (appears to be a rabbit or similar animal).\n    *   Electrical wires (red, yellow, and black) running across the pots.\n\n2.  **Plant Health:**\n    *   Mixed. Some leaves appear turgid (firm, upright), particularly in the bottom pot. Others, especially in the center pot, show signs of slight wilting or drooping.\n\n3.  **Soil Appearance:**\n    *   Dark brown, appears relatively moist. Some areas show a lighter, possibly drier, surface layer.\n\n\n\nHope this helps!",
+          "refusal": null,
+          "reasoning": null
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 305,
+      "completion_tokens": 0,
+      "total_tokens": 305,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  "google/gemma-3-27b-it:free": {
+    "error": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"google/gemma-3-27b-it:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Google AI Studio\",\"is_byok\":false}},\"user_id\":\"user_2mk9Yb1iuNRBvqMObkx4h5v3rLa\"}",
+    "status_code": 429
+  }
+}
