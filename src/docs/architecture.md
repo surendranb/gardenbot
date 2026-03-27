@@ -22,14 +22,14 @@ graph TD
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
         S[Sensors: Temp, Hum, Soil] -->|Serial| AR[Arduino Nano]
-        CAM[USB Webcam] -->|USB| MAC[Local Mac Mini]
-        AR --> MAC
+        CAM[USB Webcam] -->|USB| MBA[MacBook Air]
+        AR --> MBA
     end
 
     %% Layer 2: Local Processing
     subgraph Local["2. THE MEMORY (Local Data)"]
-        MAC -->|warden.py| CSV[telemetry.csv]
-        MAC -->|vision.py| IMG[media/archive/]
+        MBA -->|warden.py| CSV[telemetry.csv]
+        MBA -->|vision.py| IMG[media/archive/]
         API[Weather API] -->|scout.py| WTH[weather.csv]
     end
 
@@ -61,7 +61,7 @@ graph TD
 The hardware is "dumb" by design. The **Arduino** simply reads electrical signals and streams them over USB. We use **Capacitive Sensors** to avoid the corrosion common in cheaper IoT setups, ensuring the data stays clean for years.
 
 ### 2. The Data Layer (Local-First)
-Everything is recorded locally first. Even if the WiFi fails, the Mac continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.
+Everything is recorded locally on a **MacBook Air**. Even if the WiFi fails, the system continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.
 
 ### 3. The Intelligence Layer
 This is the "Brain" powered by **OpenClaw**. Every 3 hours, an AI agent acts as a **Curious Warden**. It doesn't just trust the sensors; it cross-references the photo with the data. 

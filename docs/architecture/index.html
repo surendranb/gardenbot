@@ -701,14 +701,14 @@
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
         S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Nano]
-        CAM[USB Webcam] --&gt;|USB| MAC[Local Mac Mini]
-        AR --&gt; MAC
+        CAM[USB Webcam] --&gt;|USB| MBA[MacBook Air]
+        AR --&gt; MBA
     end
 
     %% Layer 2: Local Processing
     subgraph Local["2. THE MEMORY (Local Data)"]
-        MAC --&gt;|warden.py| CSV[telemetry.csv]
-        MAC --&gt;|vision.py| IMG[media/archive/]
+        MBA --&gt;|warden.py| CSV[telemetry.csv]
+        MBA --&gt;|vision.py| IMG[media/archive/]
         API[Weather API] --&gt;|scout.py| WTH[weather.csv]
     end
 
@@ -735,7 +735,7 @@
 <h3 id="1-the-physical-layer">1. The Physical Layer</h3>
 <p>The hardware is "dumb" by design. The <strong>Arduino</strong> simply reads electrical signals and streams them over USB. We use <strong>Capacitive Sensors</strong> to avoid the corrosion common in cheaper IoT setups, ensuring the data stays clean for years.</p>
 <h3 id="2-the-data-layer-local-first">2. The Data Layer (Local-First)</h3>
-<p>Everything is recorded locally first. Even if the WiFi fails, the Mac continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.</p>
+<p>Everything is recorded locally on a <strong>MacBook Air</strong>. Even if the WiFi fails, the system continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.</p>
 <h3 id="3-the-intelligence-layer">3. The Intelligence Layer</h3>
 <p>This is the "Brain" powered by <strong>OpenClaw</strong>. Every 3 hours, an AI agent acts as a <strong>Curious Warden</strong>. It doesn't just trust the sensors; it cross-references the photo with the data. </p>
 <blockquote>
