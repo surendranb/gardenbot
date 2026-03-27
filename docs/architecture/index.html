@@ -122,6 +122,46 @@
     
     
     
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
     
       <div class="md-header__source">
         <a href="https://github.com/surendranb/gardenbot" title="Go to repository" class="md-source" data-md-component="source">
@@ -240,7 +280,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -648,42 +688,48 @@
 
 
 <h1 id="the-architecture-of-gardenos">🏗️ The Architecture of GardenOS</h1>
+<style>
+/* Full Width Overrides */
+.md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
+.md-main__inner { max-width: none !important; }
+.md-sidebar { display: none !important; }
+</style>
+
 <p>GardenOS is designed to be a <strong>Resilient Digital Twin</strong> of a physical desk-top biome. Instead of a single complex program, it is built as a series of decoupled layers that ensure data is never lost, even if the internet goes down.</p>
 <h2 id="system-data-flow">📡 System Data Flow</h2>
-<div class="highlight"><pre><span></span><code>graph TD
+<pre class="mermaid"><code>graph TD
     %% Layer 1: Physical
-    subgraph Physical[&quot;1. THE SENSES (Hardware)&quot;]
+    subgraph Physical["1. THE SENSES (Hardware)"]
         S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Nano]
         CAM[USB Webcam] --&gt;|USB| MAC[Local Mac Mini]
         AR --&gt; MAC
     end
 
     %% Layer 2: Local Processing
-    subgraph Local[&quot;2. THE MEMORY (Local Data)&quot;]
+    subgraph Local["2. THE MEMORY (Local Data)"]
         MAC --&gt;|warden.py| CSV[telemetry.csv]
         MAC --&gt;|vision.py| IMG[media/archive/]
         API[Weather API] --&gt;|scout.py| WTH[weather.csv]
     end
 
     %% Layer 3: Intelligence
-    subgraph Intel[&quot;3. THE WARDEN (AI Reasoning)&quot;]
+    subgraph Intel["3. THE WARDEN (AI Reasoning)"]
         CSV &amp; IMG &amp; WTH --&gt;|Briefing| PREP[Context Prep]
         PREP --&gt;|OpenClaw| AI[AI Garden Warden]
         AI --&gt;|Reasoning| LDG[vision_ledger.md]
     end
 
     %% Layer 4: Public
-    subgraph Public[&quot;4. THE VOICE (GitHub)&quot;]
+    subgraph Public["4. THE VOICE (GitHub)"]
         CSV &amp; IMG &amp; LDG --&gt;|sync.sh| GH[GitHub Repo]
         GH --&gt;|MkDocs| WEB[Live Dashboard &amp; Blog]
     end
 
     %% Styling
-    style Physical fill:#1e293b,stroke:#334155
-    style Local fill:#0f172a,stroke:#4ade80
-    style Intel fill:#1e1b4b,stroke:#a855f7
-    style Public fill:#064e3b,stroke:#4ade80
-</code></pre></div>
+    style Physical fill:#1e293b,stroke:#334155,color:#fff
+    style Local fill:#0f172a,stroke:#4ade80,color:#fff
+    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
+    style Public fill:#064e3b,stroke:#4ade80,color:#fff</code></pre>
 <hr />
 <h2 id="layer-breakdown">🛠️ Layer Breakdown</h2>
 <h3 id="1-the-physical-layer">1. The Physical Layer</h3>

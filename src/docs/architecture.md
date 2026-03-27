@@ -1,9 +1,17 @@
 ---
 hide:
+  - navigation
   - toc
 ---
 
 # 🏗️ The Architecture of GardenOS
+
+<style>
+/* Full Width Overrides */
+.md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
+.md-main__inner { max-width: none !important; }
+.md-sidebar { display: none !important; }
+</style>
 
 GardenOS is designed to be a **Resilient Digital Twin** of a physical desk-top biome. Instead of a single complex program, it is built as a series of decoupled layers that ensure data is never lost, even if the internet goes down.
 
@@ -39,10 +47,10 @@ graph TD
     end
 
     %% Styling
-    style Physical fill:#1e293b,stroke:#334155
-    style Local fill:#0f172a,stroke:#4ade80
-    style Intel fill:#1e1b4b,stroke:#a855f7
-    style Public fill:#064e3b,stroke:#4ade80
+    style Physical fill:#1e293b,stroke:#334155,color:#fff
+    style Local fill:#0f172a,stroke:#4ade80,color:#fff
+    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
+    style Public fill:#064e3b,stroke:#4ade80,color:#fff
 ```
 
 ---
