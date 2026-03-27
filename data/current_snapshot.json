@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-27T19:55:29.766794",
+  "timestamp": "2026-03-27T20:25:29.345966",
   "sensors": {
-    "timestamp": "2026-03-27 19:55:29",
+    "timestamp": "2026-03-27 20:25:28",
     "temp": 32.0,
     "hum": 30.0,
     "light": 869,
     "p1": 557,
-    "p2": 219,
-    "p3": 410
+    "p2": 240,
+    "p3": 412
   },
   "moisture_analysis": {
     "p1": {
@@ -15,11 +15,11 @@
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 94.0,
+      "moisture_pct": 85.0,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 75.2,
+      "moisture_pct": 74.6,
       "is_dry": false
     }
   },
@@ -28,8 +28,7 @@
   },
   "intelligence": {
     "recent_visual_ledger": [
-      "# VISION LEDGER",
-      "WARDEN REPORT - 2026-03-27 19:49\n\n**Vitality Pulse**: p1: \ud83d\udfe2 NOMINAL (Visual: turgid leaves; Sensor 51.5% >15% dry threshold). p2: \ud83d\udfe2 NOMINAL (Visual: turgid foliage; Sensor 97.0% >20% dry threshold). p3: \ud83d\udfe2 NOMINAL (Visual: turgid foliage; Sensor 76.9% >20% dry threshold). p4: \ud83d\udfe2 NOMINAL (Visual: turgid small round leaves; Sensor inferred 97.0% >30% dry threshold). Note: p4's existing lower leaf wilting unchanged from previous observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with dark sheen; electrical wires (red/yellow/white) visible across pots; three distinct pots (brown/yellow/darker shade); white amorphous object (likely figurine) in top left pot; small stick/twig in middle pot. Shadow angles indicate afternoon light consistent with timestamp, confirming North-light geometry.\n\n**Growth Momentum**: Monitoring (non-06:00 hour). Apical leans: Pothos (p3) shows steady apical tilt toward light source; Mexican Mint (p2) upright. Stasis points: no new leaves observed since last baseline.\n\n**Weather Alignment**: Indoor microclimate (AC-clamped) shows temperature ~32\u00b0C, humidity 29% (sensor), VPD EXTREME (3.376 kPa). Outdoor forecast: 32\u00b0C, 62% humidity. Indoor humidity 34% lower than forecast\u2014confirms AC-dehumidified microclimate. Visual plant state indicates adequate hydration despite high VPD, suggesting effective leaf-level hydration or recent care.\n\n**The Warden's Decision**: Verdict: System stable with recent care event detected (misting/watering) causing moisture spike in p2/p4. No immediate stress symptoms observed. Action: Continue standard monitoring; inspect for any pest/disease; maintain current watering schedule; consider adjusting misting frequency to counter extreme VPD."
+      "# VISION LEDGER"
     ]
   }
 }
