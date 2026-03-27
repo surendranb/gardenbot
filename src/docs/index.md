@@ -1,6 +1,17 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # 🌿 GardenOS Terminal
 
 <style>
+/* Full Width Overrides */
+.md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
+.md-main__inner { max-width: none !important; }
+.md-sidebar { display: none !important; }
+
 .status-header {
     display: flex;
     justify-content: space-between;
@@ -13,7 +24,7 @@
 }
 .dash-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1.5rem;
 }
 .dash-card {
@@ -22,26 +33,28 @@
     border-radius: 16px;
     padding: 1.5rem;
 }
-.val-large { font-size: 2.5em; font-weight: 800; }
-.status-badge {
-    font-size: 0.65rem;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 800;
-    text-transform: uppercase;
-}
+.val-large { font-size: 2.2em; font-weight: 800; letter-spacing: -0.02em; }
+.label-sub { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
 .vision-container {
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #334155;
     background: #000;
 }
+.chart-container {
+    background: #1e293b;
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid #334155;
+    height: 350px;
+    margin-top: 1rem;
+}
 </style>
 
 <div class="status-header">
     <div style="display: flex; align-items: center; gap: 15px;">
         <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc;">BIOME STATUS: <span style="color: #4ade80;">ACTIVE</span></span>
+        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span style="color: #4ade80;">ACTIVE</span></span>
     </div>
     <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
         LAST SYNC: <span id="sync-status">--:--</span>
@@ -51,57 +64,59 @@
 <div class="dash-grid">
     <!-- Atmosphere -->
     <div class="dash-card">
-        <h3 style="margin:0 0 1rem 0; color: #94a3b8; font-size: 0.8rem; letter-spacing: 0.1em;">🌡 ATMOSPHERE</h3>
-        <div style="display: flex; align-items: baseline; gap: 1rem;">
-            <div style="color:#f97316;"><span id="val-temp" class="val-large">--</span><span style="font-size: 1.2em;">°C</span></div>
-            <div style="color:#38bdf8;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1.2em;">%</span></div>
+        <span class="label-sub">🌡 ATMOSPHERE</span>
+        <div style="display: flex; align-items: baseline; gap: 1.2rem;">
+            <div style="color:#f97316;"><span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span></div>
+            <div style="color:#38bdf8;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span></div>
+            <div style="color:#a855f7; margin-left: auto;"><span id="val-vpd" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;"> kPa</span></div>
         </div>
-        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; display: flex; justify-content: space-between;">
-            <span style="color: #94a3b8;">VPD Strength</span>
-            <span id="val-vpd" style="color:#a855f7; font-weight: 800;">-- kPa</span>
-        </div>
-    </div>
-
-    <!-- Vitality -->
-    <div class="dash-card">
-        <h3 style="margin:0 0 1rem 0; color: #94a3b8; font-size: 0.8rem; letter-spacing: 0.1em;">🍃 VITALITY PULSE</h3>
-        <div style="display: flex; flex-direction: column; gap: 0.8rem;">
-            <div style="display: flex; justify-content: space-between;">
-                <span>p1: Nickels</span>
-                <div><span id="p1-val">--</span> <span id="p1-status" class="status-badge"></span></div>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <span>p2: Mint</span>
-                <div><span id="p2-val">--</span> <span id="p2-status" class="status-badge"></span></div>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <span>p3: Pothos</span>
-                <div><span id="p3-val">--</span> <span id="p3-status" class="status-badge"></span></div>
-            </div>
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="color: #94a3b8;">Outdoor Forecast</span>
+            <span id="val-forecast" style="color:#38bdf8; font-weight: 600;">--</span>
         </div>
     </div>
 
     <!-- Vision -->
-    <div class="dash-card" style="grid-column: span 1;">
-        <h3 style="margin:0 0 1rem 0; color: #94a3b8; font-size: 0.8rem; letter-spacing: 0.1em;">📸 LIVE FEED</h3>
+    <div class="dash-card">
+        <span class="label-sub">📸 LIVE VISION FEED</span>
         <div class="vision-container">
             <img id="live-photo" src="https://raw.githubusercontent.com/surendranb/gardenbot/main/media/latest.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
         </div>
     </div>
 </div>
 
-<h2 style="margin-top: 3rem !important;">72-Hour Environmental Trends</h2>
-<div style="background: #1e293b; padding: 1.5rem; border-radius: 16px; border: 1px solid #334155; height: 450px;">
-    <canvas id="telemetryChart"></canvas>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+    <!-- Chart 1: Vitality -->
+    <div>
+        <span class="label-sub">📈 PLANT VITALITY (72H)</span>
+        <div class="chart-container">
+            <canvas id="vitalityChart"></canvas>
+        </div>
+    </div>
+    <!-- Chart 2: Environment -->
+    <div>
+        <span class="label-sub">📊 ENVIRONMENTAL CHRONICLE (72H)</span>
+        <div class="chart-container">
+            <canvas id="envChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<h2 style="margin-top: 3rem !important; border-bottom: 1px solid #334155; padding-bottom: 10px;">The Warden's Ledger</h2>
+<div id="warden-log-output" style="background: #0f172a; padding: 20px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.6; border: 1px solid #334155; color: #cbd5e1;">
+    Accessing neural audit...
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
     const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
     const CSV_METRICS = GITHUB_RAW + "data/metrics.csv";
     const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv";
+    const CSV_WEATHER = GITHUB_RAW + "data/weather.csv";
+    const MD_LEDGER = GITHUB_RAW + "data/ledger.md";
 
     function parseCSV(url) {
         return new Promise((resolve, reject) => {
@@ -112,61 +127,83 @@
 
     async function refresh() {
         try {
-            const [met, tel] = await Promise.all([parseCSV(CSV_METRICS), parseCSV(CSV_TELEMETRY)]);
+            const [met, tel, wea] = await Promise.all([parseCSV(CSV_METRICS), parseCSV(CSV_TELEMETRY), parseCSV(CSV_WEATHER)]);
+            if (!met.length || !tel.length) return;
+
             const lM = met[met.length - 1];
             const lT = tel[tel.length - 1];
+            const lW = wea.length ? wea[wea.length - 1] : { description: "N/A" };
 
-            document.getElementById('sync-status').textContent = lM.timestamp.split(' ')[1].substring(0,5);
+            // UI Updates
+            document.getElementById('sync-status').textContent = lM.timestamp.substring(5,16);
             document.getElementById('val-temp').textContent = parseFloat(lT.temp).toFixed(1);
             document.getElementById('val-hum').textContent = Math.round(lT.hum);
             document.getElementById('val-vpd').textContent = parseFloat(lM.vpd).toFixed(2);
+            document.getElementById('val-forecast').textContent = lW.description.toUpperCase();
             document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
 
-            const updateBadge = (id) => {
-                const val = parseFloat(lM[id + '_pct']).toFixed(1);
-                const dry = lM[id + '_is_dry'] === "True";
-                document.getElementById(id + '-val').textContent = val + "%";
-                const b = document.getElementById(id + '-status');
-                b.textContent = dry ? "Dry" : "OK";
-                b.style.background = dry ? "#991b1b" : "#064e3b";
-                b.style.color = dry ? "#fecaca" : "#a7f3d0";
-            };
-            ['p1', 'p2', 'p3'].forEach(updateBadge);
+            // Charts
+            const window = 144; // Approx 72h
+            drawVitality(met.slice(-window));
+            drawEnv(tel.slice(-window), met.slice(-window));
 
-            drawChart(met.slice(-144), tel.slice(-144));
+            // Ledger
+            const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md");
+            if (res.ok) {
+                const text = await res.text();
+                const parts = text.split(/^## /m);
+                document.getElementById('warden-log-output').innerHTML = marked.parse("## " + (parts[parts.length-1] || "No entries yet."));
+            }
         } catch(e) { console.error(e); }
     }
 
-    let chart = null;
-    function drawChart(met, tel) {
-        const ctx = document.getElementById('telemetryChart').getContext('2d');
-        if (chart) chart.destroy();
-        
-        // Align telemetry to metrics by timestamp
-        const alignedTel = met.map(m => tel.find(t => t.timestamp === m.timestamp) || {});
-
-        chart = new Chart(ctx, {
+    function drawVitality(data) {
+        const ctx = document.getElementById('vitalityChart').getContext('2d');
+        if (window.vChart) window.vChart.destroy();
+        window.vChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: met.map(m => m.timestamp.split(' ')[1].substring(0,5)),
+                labels: data.map(d => d.timestamp.substring(11,16)),
                 datasets: [
-                    { label: 'p1 (Nickels)', data: met.map(m => m.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
-                    { label: 'p2 (Mint)', data: met.map(m => m.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
-                    { label: 'p3 (Pothos)', data: met.map(m => m.p3_pct), borderColor: '#facc15', pointRadius: 0, tension: 0.3 },
-                    { label: 'Temp °C', data: alignedTel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, borderWidth: 1, borderDash: [5,5], yAxisID: 'y1' }
+                    { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
+                    { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
+                    { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', pointRadius: 0, tension: 0.3 }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: { 
                     y: { min: 0, max: 100, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
-                    y1: { position: 'right', min: 20, max: 45, grid: { display: false }, ticks: { color: '#f97316' } },
                     x: { ticks: { maxTicksLimit: 12, color: '#64748b' }, grid: { display: false } }
-                },
-                plugins: { legend: { labels: { color: '#94a3b8', usePointStyle: true, boxWidth: 6 } } }
+                }
             }
         });
     }
+
+    function drawEnv(tel, met) {
+        const ctx = document.getElementById('envChart').getContext('2d');
+        if (window.eChart) window.eChart.destroy();
+        window.eChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: tel.map(t => t.timestamp.substring(11,16)),
+                datasets: [
+                    { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y' },
+                    { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y' },
+                    { label: 'Solar', data: tel.map(t => t.light), borderColor: '#facc15', pointRadius: 0, fill: true, backgroundColor: 'rgba(250, 204, 21, 0.05)', yAxisID: 'ySolar' }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: { 
+                    y: { min: 0, max: 100, grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
+                    ySolar: { position: 'right', min: 0, max: 1024, grid: { display: false }, ticks: { display: false } },
+                    x: { ticks: { maxTicksLimit: 12, color: '#64748b' }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
     refresh();
     setInterval(refresh, 300000);
 </script>

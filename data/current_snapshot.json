@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-03-27T11:55:28.991876",
+  "timestamp": "2026-03-27T12:25:29.115492",
   "sensors": {
-    "timestamp": "2026-03-27 11:55:28",
+    "timestamp": "2026-03-27 12:25:28",
     "temp": 32.0,
-    "hum": 33.0,
-    "light": 649,
-    "p1": 506,
-    "p2": 237,
-    "p3": 383
+    "hum": 34.0,
+    "light": 659,
+    "p1": 508,
+    "p2": 232,
+    "p3": 382
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 67.8,
+      "moisture_pct": 67.2,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 86.3,
+      "moisture_pct": 88.4,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 82.9,
+      "moisture_pct": 83.2,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.186
+    "vpd_kpa": 3.138
   },
   "intelligence": {
     "recent_visual_ledger": [
-      "WARDEN REPORT - 2026-03-27 06:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84%, no precipitation expected. Visual plant state shows robust turgidity, indicating effective moisture retention despite ambient sensor readings suggesting warmer/drier microclimate.\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required.",
       "WARDEN REPORT - 2026-03-27 09:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84",
-      "WARDEN REPORT - 2026-03-27 09:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84%, no precipitation expected. Visual plant state shows robust turgidity, indicating effective moisture retention despite ambient sensor readings suggesting warmer/drier microclimate (current telemetry: 32.0\u00b0C, 36% humidity).\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required."
+      "WARDEN REPORT - 2026-03-27 09:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate early morning light consistent with timestamp.\n\n**Growth Momentum**: Pothos (p3) shows approximately 2-3 mm apical growth since yesterday's baseline. Mexican Mint (p2) exhibits minimal growth, approximately 1 mm. No new leaves observed on either plant.\n\n**Weather Alignment**: Forecast indicates mist with temperatures 26-27C and humidity 75-84%, no precipitation expected. Visual plant state shows robust turgidity, indicating effective moisture retention despite ambient sensor readings suggesting warmer/drier microclimate (current telemetry: 32.0\u00b0C, 36% humidity).\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required.",
+      "WARDEN REPORT - 2026-03-27 12:03\n\n**Vitality Pulse**: p1-p4 Status: All plants exhibit turgid foliage with no signs of wilting or discoloration. p4 retains a stable, localized wilting on one lower leaf unchanged from prior observations.\n\n\n**The Biome Discovery**: Non-plant observation: The soil surface appears moist and dark, indicating recent watering. No exposed wiring or artificial structures are visible. Shadow angles suggest the sun is at approximately 45 degrees from the east, consistent with the time of day.\n\n**Growth Momentum**: Monitoring (non-06:00 hour). No apical growth measurement performed.\n\n**Weather Alignment**: Current telemetry shows temperature 32.0\u00b0C, humidity 33%, light 649. The weather forecast indicates scattered clouds with a temperature of 32.01\u00b0C and humidity 62%. The visual state of the plants shows turgid foliage, indicating adequate moisture retention despite the lower humidity reading from sensors.\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required. However, note the discrepancy between sensor humidity (33%) and forecast humidity (62%)\u2014suggest possible sensor drift or microclimate effect. Recommend cross-verifying with a manual hygrometer at next opportunity.\n**The Biome Discovery**: Non-plant observation: The soil surface appears moist and dark, indicating recent watering. No exposed wiring or artificial structures are visible. Shadow angles suggest the sun is at approximately 45 degrees from the east, consistent with the time of day.\n\n**Growth Momentum**: Monitoring (non-06:00 hour). No apical growth measurement performed.\n\n**Weather Alignment**: Current telemetry shows temperature 32.0\u00b0C, humidity 33%, light 649. The weather forecast indicates scattered clouds with a temperature of 32.01\u00b0C and humidity 62%. The visual state of the plants shows turgid foliage, indicating adequate moisture retention despite the lower humidity reading from sensors.\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required. However, note the discrepancy between sensor humidity (33%) and forecast humidity (62%)\u2014suggest possible sensor drift or microclimate effect. Recommend cross-verifying with a manual hygrometer at next opportunity."
     ]
   }
 }
