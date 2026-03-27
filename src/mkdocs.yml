@@ -2,6 +2,7 @@ site_name: GardenOS
 site_description: High-Fidelity Botanical Agent
 site_url: https://surendranb.github.io/gardenbot/
 repo_url: https://github.com/surendranb/gardenbot
+
 theme:
   name: material
   palette:
@@ -9,10 +10,24 @@ theme:
   features:
     - navigation.tabs
     - content.code.copy
+    - blog
+
 nav:
   - 🌿 Live Dashboard: index.md
   - 📖 Daily Gallery: gallery.md
-  - 🧠 Blog: blog/origins.md
+  - 🧠 Dev Blog: blog/index.md
+
+plugins:
+  - blog:
+      post_dir: blog/posts
+      post_date_format: full
+      post_url_format: "{date}/{slug}"
+      sidebar_links:
+        - title: Recent Posts
+          links: blog/posts
+        - title: Archive
+          links: blog/archive
+  - search
 
 markdown_extensions:
   - attr_list

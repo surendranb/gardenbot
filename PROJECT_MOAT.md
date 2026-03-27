@@ -62,7 +62,9 @@ To transform GardenOS from a fragile collection of scripts into a robust, "local
 - [x] Prep Context: `data/observer_context.md` generated with new paths.
 - [x] Sync Agent: `scripts/sync.sh` commits and pushes successfully.
 
-## 6. PENDING TASKS
-- [ ] **OpenClaw Jobs Update**: Update `jobs.json` with the escaped JSON prompt (Blocked: Permissions).
-- [ ] **SSH Key Activation**: User to add `id_ed25519.pub` to GitHub.
-- [ ] **Launchd Migration**: Move cron jobs to LaunchAgents for long-term stability.
+## 7. BLOGGING SOP
+To write a new blog post:
+1. Create a file in `src/docs/blog/posts/YYYY-MM-DD-title.md`.
+2. Ensure it has the standard frontmatter (Date, Description).
+3. Use the `<!-- more -->` tag to define the snippet for the index page.
+4. Run `./scripts/sync.sh` (or wait for the cron) to publish.
