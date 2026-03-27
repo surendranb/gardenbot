@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-27 17:58:01
+**Generated:** 2026-03-27 18:58:01
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -29,15 +29,13 @@
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
 - **VPD State**: EXTREME (Critical Stress) at 3.376 kPa.
-- **Dry-down**: p1 is drying at a rate of 3.7% per interval.
+- **Dry-down**: p1 is drying at a rate of 4.6% per interval.
 - **Care Detected**: Sudden moisture spike in p2 (+10.7%). Likely misting or watering.
 - **Divergence**: Indoor humidity (29.0%) is significantly lower than Outdoor (62%). Confirming AC-clamped microclimate.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-27 12:25:28,32.0,34.0,659,508.0,232.0,382.0
-2026-03-27 12:55:28,32.0,31.0,659,520.0,215.0,387.0
 2026-03-27 13:25:28,32.0,26.0,540,509.0,244.0,407.0
 2026-03-27 13:55:28,32.0,32.0,586,507.0,217.0,383.0
 2026-03-27 14:25:29,32.0,30.0,601,522.0,225.0,397.0
@@ -48,14 +46,14 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-27 16:55:28,32.0,28.0,825,534.0,218.0,408.0
 2026-03-27 17:25:29,31.0,28.0,850,532.0,230.0,415.0
 2026-03-27 17:55:28,32.0,29.0,881,544.0,198.0,401.0
+2026-03-27 18:25:28,32.0,29.0,866,544.0,237.0,409.0
+2026-03-27 18:55:28,32.0,29.0,868,559.0,212.0,404.0
 
 ```
 
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-27 12:25:28,3.138,67.2,,88.4,,83.2,,,,,,,,False,False,False
-2026-03-27 12:55:28,3.281,63.5,,95.7,,81.8,,,,,,,,False,False,False
 2026-03-27 13:25:28,3.518,66.9,,83.3,,76.1,,,,,,,,False,False,False
 2026-03-27 13:55:28,3.233,67.5,,94.8,,82.9,,,,,,,,False,False,False
 2026-03-27 14:25:29,3.328,62.9,,91.4,,78.9,,,,,,,,False,False,False
@@ -66,6 +64,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-27 16:55:28,3.423,59.2,,94.4,,75.8,,,,,,,,False,False,False
 2026-03-27 17:25:29,3.235,59.8,,89.3,,73.8,,,,,,,,False,False,False
 2026-03-27 17:55:28,3.376,56.1,,100.0,,77.8,,,,,,,,False,False,False
+2026-03-27 18:25:28,3.376,56.1,,86.3,,75.5,,,,,,,,False,False,False
+2026-03-27 18:55:28,3.376,51.5,,97.0,,76.9,,,,,,,,False,False,False
 
 ```
 
