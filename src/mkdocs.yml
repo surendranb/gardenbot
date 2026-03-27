@@ -12,7 +12,7 @@ theme:
 nav:
   - 🌿 Live Dashboard: index.md
   - 📖 Daily Gallery: gallery.md
-  - 🧠 Dev Blog: blog/origins.md
+  - 🧠 Blog: blog/origins.md
 
 markdown_extensions:
   - attr_list
