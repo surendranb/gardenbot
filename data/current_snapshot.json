@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-03-27T18:55:29.348188",
+  "timestamp": "2026-03-27T19:25:29.362749",
   "sensors": {
-    "timestamp": "2026-03-27 18:55:28",
+    "timestamp": "2026-03-27 19:25:28",
     "temp": 32.0,
     "hum": 29.0,
-    "light": 868,
-    "p1": 559,
-    "p2": 212,
-    "p3": 404
+    "light": 869,
+    "p1": 555,
+    "p2": 215,
+    "p3": 416
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 51.5,
+      "moisture_pct": 52.8,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 97.0,
+      "moisture_pct": 95.7,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 76.9,
+      "moisture_pct": 73.5,
       "is_dry": false
     }
   },
@@ -27,10 +27,6 @@
     "vpd_kpa": 3.376
   },
   "intelligence": {
-    "recent_visual_ledger": [
-      "WARDEN REPORT - 2026-03-27 17:19",
-      "WARDEN REPORT - 2026-03-27 17:19\n\n**Vitality Pulse**: p1-p4: All plants exhibit turgid foliage with no signs of wilting or discoloration except p4's existing lower leaf wilting unchanged.\n\n**The Biome Discovery**: Non-plant observation: Soil surface appears uniformly moist with no exposed wiring or artificial structures visible; shadow angles indicate afternoon light consistent with timestamp.\n\n**Growth Momentum**: Monitoring (non-06:00 hour). Apical leans: Pothos (p3) shows steady apical tilt toward light source; Mexican Mint (p2) upright. Stasis points: no new leaves observed.\n\n**Weather Alignment**: Indoor microclimate (AC-clamped) shows humidity 28% vs outdoor forecast 62%; VPD EXTREME (3.42 kPa). Visual plant state indicates adequate moisture retention despite low indoor humidity, confirming effective leaf-level hydration.\n\n**The Warden's Decision**: Verdict: System stable. Action: Continue standard monitoring; no intervention required. Note: Sensor humidity trend (30-32%) aligns with indoor microclimate; forecast divergence expected due to AC dehumidification.",
-      "WARDEN REPORT - 2026-03-27 17:35:06\n\ud83d\udd2d _3-HOUR GARDEN OBSERVER REPORT_ (2026-03-27 16:55)\n- **Vitality Pulse**: \n  - p1: \ud83d\udfe2 NOMINAL (Visual: turgid large leaves; Sensor: 59.2% >15% dry threshold)\n  - p2: \ud83d\udfe1 STRESS (Visual: mixed turgidity in middle pot\u2014some drooping; Sensor: 94.4% >20% dry threshold)\n  - p3: \ud83d\udfe1 STRESS (Visual: mixed turgidity in middle pot\u2014some drooping; Sensor: 75.8% >20% dry threshold)\n  - p4: \ud83d\udfe2 NOMINAL (Visual: turgid small round leaves; Sensor: inferred from p2 94.4% >30% dry threshold)\n- **The Biome Discovery**: \n  Electrical wires (red/yellow/white) visible across pots; three distinct pots (brown/yellow/darker shade); white amorphous object in top left pot; small stick/twig in middle pot. Soil appears damp with dark sheen, no pooling.\n- **Growth Momentum**: \n  Not 06:00 AM\u2014monitoring only. Prior wilting on p4\u2019s lower leaf (noted in 15:03 report) no longer observed; plant fully turgid. No new apical growth metrics available.\n- **Weather Alignment**: \n  Indoor (31.0\u00b0C, 28.0% humidity, VPD 3.423 kPa) vs. Forecast (32.01\u00b0C, 62% humidity). Indoor humidity 34% lower than forecast\u2014confirms AC-clamped microclimate (AC at 26\u00b0C + fans causing extreme VPD divergence).\n- **The Warden's Decision**: \n  Verdict: Localized stress in p2/p3 despite adequate soil moisture; p1/p4 healthy. Microclimate stable but transpiration stress likely from extreme VPD. \n  Action: Increase misting for p2/p3 to reduce leaf-level water loss; inspect middle pot for pests/disease; maintain current watering schedule (soil moist per visual). No sensor trust\u2014visuals override. \n  ---"
-    ]
+    "recent_visual_ledger": []
   }
 }
