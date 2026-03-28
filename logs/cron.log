@@ -5298,3 +5298,11 @@ Traceback (most recent call last):
 TypeError: save_snapshot() missing 1 required positional argument: 'state'
 Preparing Project SILICA Observer Context...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/warden.py", line 349, in <module>
+    save_snapshot(raw, metrics, plants)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+TypeError: save_snapshot() missing 1 required positional argument: 'state'
