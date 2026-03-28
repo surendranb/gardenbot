@@ -13,3 +13,6 @@ Thumbs.db
 .env.local
 .env.*
 ! .env.example
+
+# Claude
+CLAUDE.md

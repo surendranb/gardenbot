@@ -1,43 +1,44 @@
 ---
 date: 2026-03-28
-description: Transitioning GardenOS from a Zero-Trust observer to a context-aware Digital Familiar.
+description: Transitioning GardenOS from a zero-trust observer to a context-aware system that cross-verifies sensors and vision.
 categories:
   - Context Engineering
   - SILICA
 draft: true
 ---
 
-# The Rise of the Digital Familiar: From Data to Deduction
+# From Data to Deduction
 
-In our previous update, we established Project SILICA—the context layer designed to ground our AI Warden in the physical reality of a Chennai desktop. Today, we’ve taken a massive leap forward, transitioning from a system that merely **watches** to one that **understands**.
+Last post I talked about SILICA — the context layer that grounds the Warden in the physical reality of the desk. Since then I've made a few changes that shifted how the system actually thinks.
 
-## Beyond Zero-Trust: The Era of Reconciliation
+## Cross-verification
 
-For the past week, our protocol was simple: "Visuals supersede sensors." It was a "Zero-Trust" model designed to ignore noisy capacitive probes. But true intelligence isn't about choosing one witness over another; it’s about **reconciling** them.
+For the first week, the protocol was simple: visuals supersede sensors. If the camera says the plant looks fine but the soil sensor says dry, trust the camera. It was a zero-trust approach to handle noisy capacitive probes.
 
-We have now implemented the **Cross-Verification Protocol**. The Warden no longer blindly trusts the camera or the soil sensor. Instead, it looks for **Divergence**. If the soil says 10% but the leaves are turgid and upright, the Warden doesn't just "pick a winner"—it flags a sensor drift and investigates the cause. This turns our AI from a reporter into a **Data Analyst**.
-
-## The Human-Gated Biome
-
-The most significant semantic improvement is the codification of the **Human-Gated Microclimate**. Our biome isn't a static laboratory; it’s a living space governed by human comfort. We’ve taught the Warden to recognize the **Hierarchical Cooling Loop**:
-
-1.  **Fan S (The Presence Baseline)**: Always ON when the human is at the desk.
-2.  **Fan N (The Auxiliary)**: Intermittent air for extra heat.
-3.  **The AC (The Last Resort)**: A thermal clamp that simultaneously crashes humidity.
-
-By teaching the Warden that **Fan S** is a proxy for human presence, it now understands the **"Metabolic Scouring"** effect—where high air exchange forces plants to transpire faster. The Warden no longer sees "Dry Air" as a random event; it sees it as a logical consequence of human activity.
-
-## Semantic Synthesis: Inferring Reality
-
-Through our updated `prep_observer_context.py`, we are now performing **State Inference**. The Warden now receives "Facts" instead of raw telemetry:
-- *"The AC Pulse is active; monitor p1 for VPD shock."*
-- *"Human Presence is HIGH; Fan S is scoured leaf boundary layers."*
-- *"Thermal Peak detected from the 1st-floor ceiling terrace."*
-
-## The Architecture of Resilience
-
-Finally, we’ve hardened the backbone. Moving to a **local-first, cloud-reasoning** split using **OpenClaw** allows us to keep our data private and persistent on the MacBook, while offloading the heavy-weight botanical reasoning to the cloud. We’ve also secured the system by migrating all secrets to environment variables—ensuring our "Digital Twin" remains as secure as it is intelligent.
-
-We aren't just logging data anymore. We are building a **Digital Familiar**—a world-aware partner that knows the difference between a hot day in Chennai and a thirsty plant on a wooden desk.
+That's not great long-term. Real intelligence isn't about picking a winner between two data sources — it's about looking at where they disagree and asking why. So now the Warden compares sensor readings against visual evidence and flags divergences. If the soil reads 10% but the leaves are turgid and upright, it doesn't just pick one — it notes the mismatch and investigates. Could be sensor drift, could be recent watering that hasn't registered yet. Either way, flagging the gap is more useful than ignoring one input.
 
 <!-- more -->
+
+## The human-gated microclimate
+
+The biggest improvement was teaching the Warden about the cooling hierarchy. The biome isn't a lab — it's my desk, and the climate changes based on what I'm doing.
+
+Fan S is always on when I'm sitting here. Fan N kicks in when it's hot. The AC is a last resort. Each step changes the environment differently — fan S alone gives high air exchange that forces plants to transpire faster, which means VPD goes up. The AC crashes humidity entirely.
+
+By encoding this in the world model, the Warden now understands that dry air isn't random — it's a predictable consequence of fan S running while I'm at the desk. It treats human presence as a climate variable, not just background noise.
+
+## Better context synthesis
+
+I updated `prep_observer_context.py` to produce higher-level facts. Instead of just reporting sensor values, it now infers state:
+
+- "AC active — expect humidity drop and VPD spike, watch p1 for stress"
+- "Human presence high — Fan S scouring leaf boundary layers"
+- "Thermal peak from terrace ceiling, 12:00-15:00 window"
+
+The Warden gets these as pre-built observations instead of having to piece together what's happening from raw numbers.
+
+## Local-first, cloud-reasoning
+
+The data stays on the MacBook. Collection scripts run via cron/launchd, write flat files, and don't touch the internet. The only cloud dependency is the LLM call during reasoning — and if that fails, everything else keeps logging. Secrets are in env vars, not config files.
+
+I'm not just logging data anymore. The system knows the difference between a hot day in Chennai and a thirsty plant on a wooden desk. That's the part that took the most work to get right.

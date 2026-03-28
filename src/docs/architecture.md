@@ -13,7 +13,7 @@ hide:
 .md-sidebar { display: none !important; }
 </style>
 
-GardenOS is a **Resilient Digital Twin** of a physical desk-top biome. It is built as a set of decoupled layers so local sensing, visual interpretation, reasoning, and publishing can each continue independently.
+GardenOS is a digital twin of a desk-top biome. It's built as decoupled layers — sensing, context, reasoning, and publishing each run independently, so if one breaks the others keep going.
 
 ## 📡 System Data Flow
 
@@ -69,65 +69,62 @@ graph TD
 
 ---
 
-## 🌎 The Environmental Story: Biome & Context
+## 🌎 The Environment
 
-GardenOS connects the **Tropical Macro-Context** of Chennai with the **Human-Gated Micro-Context** of the room.
+The biome sits in Chennai, but the outdoor climate has almost nothing to do with what happens on the desk. That disconnect is the whole reason the context layer exists.
 
-### 1. The Chennai Outdoors (The Macro-Context)
-* **The Solar Battery**: The room is on the **1st floor with an open terrace above**. This terrace acts as a thermal battery, soaking up the intense Chennai sun and radiating heat into the room between **12:00 and 15:00**.
-* **The Tropical Air**: Outside is high-energy and humid (~30°C+). This is the drift state when cooling is inactive.
+### The outdoors
+The room is on the 1st floor with an open terrace above. That terrace soaks up Chennai sun all day and radiates heat into the room between noon and 3pm. Outside it's typically 30°C+ with high humidity. That's the drift state when cooling is off.
 
-### 2. The Room Geometry (The Protective Shield)
-* **North Window (2m away)**: Provides **pure indirect diffuse light**. No UV spikes, no sun-scorch.
-* **East Wall**: A physical shield against the direct morning sun, keeping the biome shaded during the early hours.
+### The room
+The north window (2m from the desk) gives only indirect diffuse light — no UV spikes, no scorch. The east wall blocks morning sun entirely. So the plants never see direct sunlight.
 
-### 3. The Cooling Hierarchy (The Human-Gated Pulse)
-The room climate is controlled by a human-comfort loop:
-* **Fan S (South)**: The baseline air exchange. Always ON when the human is present.
-* **Fan N (North)**: Auxiliary air movement for additional heat management.
-* **The AC**: The final thermal resort. It clamps temperature at **26°C** but drops humidity and raises VPD.
+### Cooling
+The room climate follows a human-comfort hierarchy:
 
-### 4. The Desk (The Isolated Stage)
-* **Wooden Surface**: Acts as a thermal insulator, decoupling the pots from the desk mass.
-* **The White Rabbit (50mm)**: The system's scale anchor, providing a constant mm-scale reference.
+* Fan S (south): baseline air exchange, always on when I'm at the desk
+* Fan N (north): extra airflow when it's hot
+* The AC: last resort. Clamps temp at 26°C but tanks humidity and pushes VPD up
+
+### The desk
+Wooden surface, acts as a thermal insulator. The pots are decoupled from the desk mass. There's a white rabbit figurine (50mm) that serves as a mm-scale reference for the camera.
 
 ---
 
 ## 🛠️ Layer Breakdown
 
-### 1. The Data Collection Layer (System-Level)
+### 1. Data collection
 
-Three independent scripts run on the MacBook via **cron/launchd** — no orchestrator, no framework. They run at the OS level and write flat files to `data/`.
+Three Python scripts run on the MacBook via cron/launchd. No orchestrator, no framework — they just run at the OS level and write flat files to `data/`.
 
-- **`warden.py`** connects to the Arduino over serial, reads temperature, humidity, light, and soil moisture, and writes `telemetry.csv`, `metrics.csv`, `current_snapshot.json`, and `warden_state.json`.
-- **`vision.py`** captures a frame from the USB webcam via OpenCV, then sends it to **Gemma 3 on Google AI Studio** for visual interpretation. The model describes what it sees — leaf color, posture, soil surface — and the output is written to `vision_observation.json` and `vision_observation.md`. Gemma 3 handles *perception* here, not reasoning.
-- **`weather_scout.py`** fetches current Chennai weather from OpenWeatherMap, providing the outdoor macro-context. Output goes to `weather_context.json`.
+`warden.py` connects to the Arduino over serial and reads temp, humidity, light, and soil moisture. It writes `telemetry.csv`, `metrics.csv`, `current_snapshot.json`, and `warden_state.json`.
 
-OpenClaw has **zero involvement** in this layer. These scripts run independently whether or not the reasoning layer is online.
+`vision.py` grabs a frame from the webcam via OpenCV, then sends it to Gemma 3 on Google AI Studio for visual interpretation. Gemma 3 describes what it sees — leaf color, posture, soil surface — and the output goes to `vision_observation.json` and `vision_observation.md`. This is perception only, not reasoning.
 
-### 2. The SILICA Context Layer
+`weather_scout.py` fetches current Chennai weather from OpenWeatherMap for the outdoor macro-context. Output goes to `weather_context.json`.
 
-SILICA is not a single script or service — it's a **collection of scripts and artifacts** that bridge raw data and LLM reasoning. Its job is to convert raw telemetry into **semantic facts** and prevent the LLM from hallucinating based on outdoor Chennai climate.
+OpenClaw has nothing to do with this layer. These scripts run whether or not the reasoning layer is alive.
 
-The key components:
+### 2. SILICA (context layer)
 
-- **`prep_observer_context.py`** — the synthesizer. It reads all Layer 1 outputs, merges them with the World Model and plant config, and produces a single `observer_context.md` file.
-- **`GARDEN_MANIFEST.md`** — the World Model. Codifies the physical constants of the biome: lighting geometry, atmospheric microclimate, human occupancy patterns, cooling hierarchy.
-- **`scripts/config/plants.json`** — plant species metadata, sensor calibration values, and dry thresholds.
+SILICA is a collection of scripts and config files that sit between raw data and the LLM. The job is to turn CSV rows into something the model can actually reason about, and to stop it from hallucinating based on outdoor Chennai weather.
 
-The result is that the LLM never sees raw CSV rows. It sees semantic facts like "VPD: EXTREME at 3.5 kPa, rising trend" and "Soil Moisture p1 (Nickels): DRY, below threshold."
+`prep_observer_context.py` reads all the data files from layer 1, merges them with `GARDEN_MANIFEST.md` (the world model — physical constants of the biome) and `scripts/config/plants.json` (species, calibration, thresholds), and produces one file: `observer_context.md`.
 
-### 3. The Warden / Observer (OpenClaw)
+The LLM never sees raw telemetry. It gets things like "VPD: 3.5 kPa, rising trend" and "Soil p1 (Nickels): dry, below threshold." That's the whole point.
 
-OpenClaw receives `observer_context.md` as its input and calls an LLM to reason about plant health. The Warden cross-verifies sensor data against visual evidence, detects anomalies, and produces care recommendations. Output is written to `logs/vision_ledger.md` and sent to Slack `#plantclaw`.
+### 3. The Warden (OpenClaw)
 
-### 4. The Public Layer
+OpenClaw reads `observer_context.md` and sends it to an LLM. The model reasons about plant health — cross-checking sensors against visual evidence, comparing against recent history, flagging anything that needs attention. Output goes to `logs/vision_ledger.md` and gets posted to Slack `#plantclaw`.
 
-`sync.sh` builds the MkDocs site, commits all data and artifacts to GitHub, and pushes to GitHub Pages. The live dashboard at `surendranb.github.io/gardenbot` reads CSVs directly from the GitHub repo — no database, no backend.
+### 4. Publishing
+
+`sync.sh` builds the MkDocs site, commits everything to GitHub, and pushes to GitHub Pages. The dashboard reads CSVs straight from the repo. No database, no backend.
 
 ---
 
-## 🛡️ Resilience Philosophy
-* **Decoupled**: If the reasoning layer fails, the local data still updates. If weather fails, sensors still log. Each layer is independent.
-* **Stateless Dashboard**: The website doesn't have a database; it reads repository artifacts directly.
-* **Atomic Sync**: Data is pushed in checkpoints via Git for reliability.
+## 🛡️ Resilience
+
+* If reasoning fails, data still collects. If weather fails, sensors still log. Each layer is independent.
+* The dashboard is stateless — it reads repo artifacts directly, no database.
+* Data syncs via git commits, so every push is an atomic checkpoint.
