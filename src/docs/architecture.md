@@ -23,7 +23,11 @@ hide:
 
 GardenOS is a digital twin of a desk-top biome. It's built as decoupled layers — sensing, context, reasoning, and publishing each run independently, so if one breaks the others keep going.
 
-<div class="center-img"> ![The biome — three pots, an Arduino, and a webcam on a desk in Chennai](https://raw.githubusercontent.com/surendranb/gardenbot/main/media/latest.jpg) </div>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/surendranb/gardenbot/main/media/latest.jpg" 
+       alt="The biome — three pots, an Arduino, and a webcam on a desk in Chennai" 
+       style="max-width: 100%; height: auto;">
+</div>
 
 ## 📡 System Data Flow
 
