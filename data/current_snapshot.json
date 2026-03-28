@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-28T15:55:29.076877",
+  "timestamp": "2026-03-28T17:55:27.619637",
   "sensors": {
-    "timestamp": "2026-03-28 15:55:29",
+    "timestamp": "2026-03-28 17:55:27",
     "temp": 33.0,
-    "hum": 29.0,
-    "light": 755,
-    "p1": 581,
-    "p2": 154,
-    "p3": 403
+    "hum": 30.0,
+    "light": 832,
+    "p1": 487,
+    "p2": 152,
+    "p3": 412
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 44.8,
+      "moisture_pct": 73.6,
       "is_dry": false
     },
     "p2": {
@@ -19,12 +19,12 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 77.2,
+      "moisture_pct": 74.6,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.571
+    "vpd_kpa": 3.521
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,11 +33,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-03-28T14:50:30.262606",
+      "timestamp": "2026-03-28T17:50:28.294928",
       "model": "gemma-3-27b-it",
       "baseline_reference": {
         "rabbit_height_cm": 5.0,
@@ -47,13 +47,13 @@
       },
       "image_availability": {
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg",
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg",
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg",
         "compare_set": [
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
         ]
       },
       "frame_sequence": [
@@ -63,23 +63,23 @@
         },
         {
           "label": "comparison",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg"
-        },
-        {
-          "label": "comparison",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg"
         },
         {
-          "label": "previous",
+          "label": "comparison",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
+        },
+        {
+          "label": "previous",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
         }
       ],
       "capture": {
         "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
-        "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
+        "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg"
       },
       "vision_report": {
-        "timestamp": "2026-03-28T14:00:00Z",
+        "timestamp": "2026-03-28T15:00:01Z",
         "model": "Garden Vision Interpreter v1.0",
         "baseline_reference": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
         "image_availability": "All four frames (anchor, previous, and two comparisons) are available.",
@@ -90,18 +90,14 @@
           },
           {
             "label": "previous",
-            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
           },
           {
             "label": "comparison_1",
-            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg"
-          },
-          {
-            "label": "comparison_2",
             "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg"
           },
           {
-            "label": "current",
+            "label": "comparison_2",
             "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
           }
         ],
@@ -120,7 +116,7 @@
           "p2": {
             "name": "Mexican Mint",
             "health": "healthy",
-            "leaf_count": 8,
+            "leaf_count": 6,
             "posture": "centered",
             "growth": "stable",
             "damage": "none",
@@ -134,10 +130,10 @@
             "leaf_count": 4,
             "posture": "centered",
             "growth": "stable",
-            "damage": "none",
+            "damage": "minor hole in one leaf",
             "droop": "none",
             "occlusion": "none",
-            "notes": "Rabbit is inside the pot. Leaf count stable."
+            "notes": "White rabbit is inside the pot. Minor damage to one leaf is consistent across frames."
           },
           "p4": {
             "name": "Silver Guest",
@@ -148,23 +144,23 @@
             "damage": "none",
             "droop": "none",
             "occlusion": "none",
-            "notes": "Difficult to assess due to image quality and limited visibility."
+            "notes": "Plant is mostly obscured by wiring. Leaf count is difficult to determine."
           }
         },
         "temporal_changes": {
-          "p1": "No significant changes in leaf count or posture observed across frames.",
-          "p2": "No significant changes in leaf count or posture observed across frames.",
-          "p3": "No significant changes in leaf count or posture observed across frames. Rabbit position stable.",
-          "p4": "Minor variations in visibility due to image quality, but no clear growth or decline detected."
+          "p1": "No significant changes in posture, leaf count, or health.",
+          "p2": "No significant changes in posture, leaf count, or health.",
+          "p3": "No significant changes in posture, leaf count, or health. Minor leaf damage is consistent.",
+          "p4": "No significant changes are detectable due to occlusion."
         },
         "anomalies": [
-          "Image quality is consistently low, making detailed assessment difficult.",
-          "Leaf count for p4 is uncertain due to poor visibility."
+          "The Silver Guest (p4) is heavily occluded by wiring, making accurate assessment difficult.",
+          "Minor hole in one Pothos (p3) leaf is present in all frames."
         ],
-        "narrative_report": "The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains within the Pothos pot, serving as a consistent scale reference. The low image quality continues to be a limiting factor for detailed analysis, particularly for the Silver Guest (p4).",
-        "confidence": "medium"
+        "narrative_report": "The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains inside the Pothos pot, serving as a consistent scale reference. The Silver Guest remains largely obscured, preventing detailed observation. The minor damage to the Pothos leaf is unchanged, suggesting it is not progressing.",
+        "confidence": "high"
       },
-      "raw_model_output": "```json\n{\n  \"timestamp\": \"2026-03-28T14:00:00Z\",\n  \"model\": \"Garden Vision Interpreter v1.0\",\n  \"baseline_reference\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\",\n  \"image_availability\": \"All four frames (anchor, previous, and two comparisons) are available.\",\n  \"frame_sequence\": [\n    {\n      \"label\": \"anchor\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\"\n    },\n    {\n      \"label\": \"previous\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg\"\n    },\n    {\n      \"label\": \"comparison_1\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg\"\n    },\n    {\n      \"label\": \"comparison_2\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg\"\n    },\n    {\n      \"label\": \"current\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg\"\n    }\n  ],\n  \"plants\": {\n    \"p1\": {\n      \"name\": \"String of Nickels\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 30,\n      \"posture\": \"trailing\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Dense trailing growth, consistent across frames.\"\n    },\n    \"p2\": {\n      \"name\": \"Mexican Mint\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 8,\n      \"posture\": \"centered\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Consistent leaf count and posture.\"\n    },\n    \"p3\": {\n      \"name\": \"Pothos\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 4,\n      \"posture\": \"centered\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Rabbit is inside the pot. Leaf count stable.\"\n    },\n    \"p4\": {\n      \"name\": \"Silver Guest\",\n      \"health\": \"unknown\",\n      \"leaf_count\": \"uncertain\",\n      \"posture\": \"spreading\",\n      \"growth\": \"uncertain\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Difficult to assess due to image quality and limited visibility.\"\n    }\n  },\n  \"temporal_changes\": {\n    \"p1\": \"No significant changes in leaf count or posture observed across frames.\",\n    \"p2\": \"No significant changes in leaf count or posture observed across frames.\",\n    \"p3\": \"No significant changes in leaf count or posture observed across frames. Rabbit position stable.\",\n    \"p4\": \"Minor variations in visibility due to image quality, but no clear growth or decline detected.\"\n  },\n  \"anomalies\": [\n    \"Image quality is consistently low, making detailed assessment difficult.\",\n    \"Leaf count for p4 is uncertain due to poor visibility.\"\n  ],\n  \"narrative_report\": \"The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains within the Pothos pot, serving as a consistent scale reference. The low image quality continues to be a limiting factor for detailed analysis, particularly for the Silver Guest (p4).\",\n  \"confidence\": \"medium\"\n}\n```\n\nThe overall garden state appears stable, with no major changes observed across the provided frames. However, the consistently low image quality introduces uncertainty in assessing the health and growth of certain plants, especially the Silver Guest."
+      "raw_model_output": "```json\n{\n  \"timestamp\": \"2026-03-28T15:00:01Z\",\n  \"model\": \"Garden Vision Interpreter v1.0\",\n  \"baseline_reference\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\",\n  \"image_availability\": \"All four frames (anchor, previous, and two comparisons) are available.\",\n  \"frame_sequence\": [\n    {\n      \"label\": \"anchor\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\"\n    },\n    {\n      \"label\": \"previous\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg\"\n    },\n    {\n      \"label\": \"comparison_1\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg\"\n    },\n    {\n      \"label\": \"comparison_2\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg\"\n    }\n  ],\n  \"plants\": {\n    \"p1\": {\n      \"name\": \"String of Nickels\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 30,\n      \"posture\": \"trailing\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Dense trailing growth, consistent across frames.\"\n    },\n    \"p2\": {\n      \"name\": \"Mexican Mint\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 6,\n      \"posture\": \"centered\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Consistent leaf count and posture.\"\n    },\n    \"p3\": {\n      \"name\": \"Pothos\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 4,\n      \"posture\": \"centered\",\n      \"growth\": \"stable\",\n      \"damage\": \"minor hole in one leaf\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"White rabbit is inside the pot. Minor damage to one leaf is consistent across frames.\"\n    },\n    \"p4\": {\n      \"name\": \"Silver Guest\",\n      \"health\": \"unknown\",\n      \"leaf_count\": \"uncertain\",\n      \"posture\": \"spreading\",\n      \"growth\": \"uncertain\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Plant is mostly obscured by wiring. Leaf count is difficult to determine.\"\n    }\n  },\n  \"temporal_changes\": {\n    \"p1\": \"No significant changes in posture, leaf count, or health.\",\n    \"p2\": \"No significant changes in posture, leaf count, or health.\",\n    \"p3\": \"No significant changes in posture, leaf count, or health. Minor leaf damage is consistent.\",\n    \"p4\": \"No significant changes are detectable due to occlusion.\"\n  },\n  \"anomalies\": [\n    \"The Silver Guest (p4) is heavily occluded by wiring, making accurate assessment difficult.\",\n    \"Minor hole in one Pothos (p3) leaf is present in all frames.\"\n  ],\n  \"narrative_report\": \"The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains inside the Pothos pot, serving as a consistent scale reference. The Silver Guest remains largely obscured, preventing detailed observation. The minor damage to the Pothos leaf is unchanged, suggesting it is not progressing.\",\n  \"confidence\": \"high\"\n}\n```\n\nThe JSON provides a detailed snapshot of the garden's state, focusing on stability and consistency across the observed frames. The occlusion of the Silver Guest remains a limitation for comprehensive analysis."
     },
     "recent_visual_ledger": [
       "The Warden's Decision\nVerdict: Soil moisture remains adequate, but atmospheric demand has increased further, indicating escalating transpiration stress despite ample soil water.\nAction: Continue light misting of foliage to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for leaf edge curling or tip burn in next cycle.",
