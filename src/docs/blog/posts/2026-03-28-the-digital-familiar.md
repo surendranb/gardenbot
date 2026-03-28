@@ -13,9 +13,9 @@ Last post I talked about SILICA — the context layer that grounds the Warden in
 
 ## Cross-verification
 
-For the first week, the protocol was simple: visuals supersede sensors. If the camera says the plant looks fine but the soil sensor says dry, trust the camera. It was a zero-trust approach to handle noisy capacitive probes.
+For the first week, the protocol was simple: *visuals supersede sensors*. If the camera says the plant looks fine but the soil sensor says dry, trust the camera. A zero-trust approach to handle noisy capacitive probes.
 
-That's not great long-term. Real intelligence isn't about picking a winner between two data sources — it's about looking at where they disagree and asking why. So now the Warden compares sensor readings against visual evidence and flags divergences. If the soil reads 10% but the leaves are turgid and upright, it doesn't just pick one — it notes the mismatch and investigates. Could be sensor drift, could be recent watering that hasn't registered yet. Either way, flagging the gap is more useful than ignoring one input.
+That's not great long-term. The useful thing isn't picking a winner between two data sources — it's looking at where they **disagree** and asking why. So now the Warden compares sensor readings against visual evidence and flags divergences. If the soil reads 10% but the leaves are turgid and upright, it doesn't just pick one — it notes the mismatch and investigates. Could be sensor drift, could be recent watering that hasn't registered yet. Flagging the gap is more useful than ignoring one input.
 
 <!-- more -->
 
@@ -23,9 +23,9 @@ That's not great long-term. Real intelligence isn't about picking a winner betwe
 
 The biggest improvement was teaching the Warden about the cooling hierarchy. The biome isn't a lab — it's my desk, and the climate changes based on what I'm doing.
 
-Fan S is always on when I'm sitting here. Fan N kicks in when it's hot. The AC is a last resort. Each step changes the environment differently — fan S alone gives high air exchange that forces plants to transpire faster, which means VPD goes up. The AC crashes humidity entirely.
+**Fan S** is always on when I'm sitting here. **Fan N** kicks in when it's hot. **The AC** is a last resort. Each step changes the environment differently — Fan S alone gives high air exchange that forces plants to transpire faster, which means VPD goes up. The AC crashes humidity entirely.
 
-By encoding this in the world model, the Warden now understands that dry air isn't random — it's a predictable consequence of fan S running while I'm at the desk. It treats human presence as a climate variable, not just background noise.
+By encoding this in the world model, the Warden now understands that dry air isn't random — it's a predictable consequence of Fan S running while I'm at the desk. It treats **human presence as a climate variable**, not background noise.
 
 ## Better context synthesis
 

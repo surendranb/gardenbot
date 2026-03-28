@@ -9,11 +9,11 @@ categories:
 
 ## The problem
 
-Using an LLM to monitor 3 pots on my desktop is fun, but it kept guessing. Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees "Chennai, 32°C, 60% humidity" and concludes the plants must be wilting. Makes sense if you're going by vibes. Completely wrong physically.
+Using an LLM to monitor 3 pots on my desktop is fun, but it kept guessing. Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees *"Chennai, 32°C, 60% humidity"* and concludes the plants must be wilting. Makes sense if you're going by vibes. Completely wrong physically.
 
 <!-- more -->
 
-The plants sit on a desk in an HVAC-clamped room. The AC holds temp at 26°C and crushes humidity below 30%. VPD regularly hits 3.5+ kPa — that's extreme dryness, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the outdoor climate, not the actual microclimate 2 meters from a north-facing window.
+The plants sit on a desk in an HVAC-clamped room. The AC holds temp at **26°C** and crushes humidity below **30%**. VPD regularly hits **3.5+ kPa** — that's extreme dryness, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the *outdoor* climate, not the actual microclimate 2 meters from a north-facing window.
 
 ## SILICA
 
@@ -21,11 +21,11 @@ SILICA is what I'm calling the context layer. It's not one script — it's a few
 
 `prep_observer_context.py` is the main piece. It reads all the data files from the collection scripts (`warden.py`, `vision.py`, `weather_scout.py`), merges them with the world model and plant config, and outputs `observer_context.md`.
 
-`GARDEN_MANIFEST.md` is the world model. I wrote it by hand — it codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings.
+`GARDEN_MANIFEST.md` is the **world model**. I wrote it by hand — it codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings alone.
 
 `scripts/config/plants.json` has species info, sensor calibration, and dry thresholds for each pot.
 
-The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files — it doesn't run them. OpenClaw doesn't run them either. Data collection has no dependency on reasoning.
+The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files — it doesn't run them. OpenClaw doesn't run them either. **Data collection has no dependency on reasoning.**
 
 ## Why semantic synthesis matters
 

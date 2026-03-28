@@ -82,9 +82,9 @@ The north window (2m from the desk) gives only indirect diffuse light — no UV 
 ### Cooling
 The room climate follows a human-comfort hierarchy:
 
-* Fan S (south): baseline air exchange, always on when I'm at the desk
-* Fan N (north): extra airflow when it's hot
-* The AC: last resort. Clamps temp at 26°C but tanks humidity and pushes VPD up
+* **Fan S** (south): baseline air exchange, always on when I'm at the desk
+* **Fan N** (north): extra airflow when it's hot
+* **The AC**: last resort — clamps temp at 26°C but tanks humidity and pushes VPD up
 
 ### The desk
 Wooden surface, acts as a thermal insulator. The pots are decoupled from the desk mass. There's a white rabbit figurine (50mm) that serves as a mm-scale reference for the camera.
@@ -95,23 +95,23 @@ Wooden surface, acts as a thermal insulator. The pots are decoupled from the des
 
 ### 1. Data collection
 
-Three Python scripts run on the MacBook via cron/launchd. No orchestrator, no framework — they just run at the OS level and write flat files to `data/`.
+Three Python scripts run on the MacBook via **cron/launchd**. No orchestrator, no framework — they just run at the OS level and write flat files to `data/`.
 
-`warden.py` connects to the Arduino over serial and reads temp, humidity, light, and soil moisture. It writes `telemetry.csv`, `metrics.csv`, `current_snapshot.json`, and `warden_state.json`.
+`warden.py` connects to the Arduino over serial and reads temp, humidity, light, and soil moisture. Writes `telemetry.csv`, `metrics.csv`, `current_snapshot.json`, and `warden_state.json`.
 
-`vision.py` grabs a frame from the webcam via OpenCV, then sends it to Gemma 3 on Google AI Studio for visual interpretation. Gemma 3 describes what it sees — leaf color, posture, soil surface — and the output goes to `vision_observation.json` and `vision_observation.md`. This is perception only, not reasoning.
+`vision.py` grabs a frame from the webcam via OpenCV, then sends it to **Gemma 3 on Google AI Studio** for visual interpretation. Gemma describes what it sees — leaf color, posture, soil surface — and writes `vision_observation.json` and `vision_observation.md`. This is *perception* only, not reasoning.
 
-`weather_scout.py` fetches current Chennai weather from OpenWeatherMap for the outdoor macro-context. Output goes to `weather_context.json`.
+`weather_scout.py` fetches current Chennai weather from OpenWeatherMap for the outdoor macro-context. Writes `weather_context.json`.
 
 OpenClaw has nothing to do with this layer. These scripts run whether or not the reasoning layer is alive.
 
 ### 2. SILICA (context layer)
 
-SILICA is a collection of scripts and config files that sit between raw data and the LLM. The job is to turn CSV rows into something the model can actually reason about, and to stop it from hallucinating based on outdoor Chennai weather.
+SILICA is a collection of scripts and config files that sit between raw data and the LLM. The job is to turn CSV rows into **semantic facts** the model can reason about, and to prevent it from hallucinating based on outdoor Chennai weather.
 
-`prep_observer_context.py` reads all the data files from layer 1, merges them with `GARDEN_MANIFEST.md` (the world model — physical constants of the biome) and `scripts/config/plants.json` (species, calibration, thresholds), and produces one file: `observer_context.md`.
+`prep_observer_context.py` reads all the Layer 1 data files, merges them with `GARDEN_MANIFEST.md` (the **world model** — physical constants of the biome) and `scripts/config/plants.json` (species, calibration, thresholds), and produces one file: `observer_context.md`.
 
-The LLM never sees raw telemetry. It gets things like "VPD: 3.5 kPa, rising trend" and "Soil p1 (Nickels): dry, below threshold." That's the whole point.
+The LLM never sees raw telemetry. It gets things like *"VPD: 3.5 kPa, rising trend"* and *"Soil p1 (Nickels): dry, below threshold."* That's the whole point.
 
 ### 3. The Warden (OpenClaw)
 
