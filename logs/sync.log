@@ -702,3 +702,16 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.77 seconds
 Staging all assets...
+Staging changes...
+[main 9c95a9e] GardenOS Sync: 2026-03-28 06:35:02
+ 14 files changed, 127 insertions(+), 38 deletions(-)
+ create mode 100644 archive/2026-03-27/garden_225001.jpg
+To github.com:surendranb/gardenbot.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:surendranb/gardenbot.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+Sync Failed. Check network or SSH keys.
