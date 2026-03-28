@@ -64,13 +64,36 @@ hide:
 <div class="dash-grid">
     <!-- Atmosphere -->
     <div class="dash-card">
-        <span class="label-sub">🌡 ATMOSPHERE</span>
-        <div style="display: flex; align-items: baseline; gap: 1.2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span class="label-sub">🌡 ATMOSPHERE</span>
+            <span id="val-state" style="font-size: 0.65rem; color: #4ade80; border: 1px solid #4ade80; padding: 1px 6px; border-radius: 4px; font-weight: bold;">STABLE</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 1.2rem; margin-top: 0.5rem;">
             <div style="color:#f97316;"><span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span></div>
             <div style="color:#38bdf8;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span></div>
             <div style="color:#a855f7; margin-left: auto;"><span id="val-vpd" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;"> kPa</span></div>
         </div>
-        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; display: flex; justify-content: space-between; font-size: 0.85rem;">
+        
+        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem;">
+            <div>
+                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">LUMINOUS INTENSITY</span>
+                <span id="val-light" style="color:#facc15; font-weight: 600;">--</span>
+            </div>
+            <div>
+                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">SHIELDING (ΔT/ΔH)</span>
+                <span id="val-shield" style="color:#4ade80; font-weight: 600;">--</span>
+            </div>
+            <div>
+                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">BARO PRESSURE</span>
+                <span id="val-press" style="color:#94a3b8;">-- hPa</span>
+            </div>
+            <div>
+                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">RAIN PROBABILITY</span>
+                <span id="val-pop" style="color:#38bdf8;">--%</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed #334155; display: flex; justify-content: space-between; font-size: 0.8rem;">
             <span style="color: #94a3b8;">Outdoor Forecast</span>
             <span id="val-forecast" style="color:#38bdf8; font-weight: 600;">--</span>
         </div>
@@ -145,15 +168,40 @@ hide:
 
             const lM = met[met.length - 1];
             const lT = tel[tel.length - 1];
-            const lW = wea.length ? wea[wea.length - 1] : { description: "N/A" };
+            const lW = wea.length ? wea[wea.length - 1] : { description: "N/A", pressure: "--", pop: 0, temp: lT.temp, humidity: lT.hum };
 
             // UI Updates
-            document.getElementById('sync-status').textContent = lM.timestamp;
-            document.getElementById('val-temp').textContent = parseFloat(lT.temp).toFixed(1);
-            document.getElementById('val-hum').textContent = Math.round(lT.hum);
-            document.getElementById('val-vpd').textContent = parseFloat(lM.vpd).toFixed(2);
-            document.getElementById('val-forecast').textContent = lW.description.toUpperCase();
+            document.getElementById('sync-status').textContent = lM.timestamp || "--:--";
+            document.getElementById('val-temp').textContent = lT.temp ? parseFloat(lT.temp).toFixed(1) : "--";
+            document.getElementById('val-hum').textContent = lT.hum ? Math.round(lT.hum) : "--";
+            document.getElementById('val-vpd').textContent = lM.vpd ? parseFloat(lM.vpd).toFixed(2) : "--";
+            document.getElementById('val-forecast').textContent = (lW.description || "N/A").toUpperCase();
             document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
+
+            // New Factual Metrics
+            document.getElementById('val-light').textContent = lT.light || "--";
+            document.getElementById('val-press').textContent = (lW.pressure || "--") + " hPa";
+            
+            // Handle pop as either 0-1 or 0-100
+            let popVal = parseFloat(lW.pop) || 0;
+            if (popVal > 0 && popVal <= 1) popVal = popVal * 100;
+            document.getElementById('val-pop').textContent = Math.round(popVal) + "%";
+            
+            // Shielding Delta (Outdoor - Indoor)
+            if (lW.temp && lT.temp) {
+                const dT = (parseFloat(lW.temp) - parseFloat(lT.temp)).toFixed(1);
+                const dH = (parseFloat(lW.humidity || lW.hum) - parseFloat(lT.hum)).toFixed(0);
+                document.getElementById('val-shield').textContent = `${dT > 0 ? '+' : ''}${dT}° / ${dH > 0 ? '+' : ''}${dH}%`;
+            } else {
+                document.getElementById('val-shield').textContent = "-- / --";
+            }
+
+            // Simple State Inference (One factual-based indicator)
+            const vpd = parseFloat(lM.vpd);
+            const stateEl = document.getElementById('val-state');
+            if (vpd > 2.0) { stateEl.textContent = "HIGH STRESS"; stateEl.style.color = "#ef4444"; stateEl.style.borderColor = "#ef4444"; }
+            else if (vpd < 0.5) { stateEl.textContent = "STAGNANT"; stateEl.style.color = "#38bdf8"; stateEl.style.borderColor = "#38bdf8"; }
+            else { stateEl.textContent = "STABLE"; stateEl.style.color = "#4ade80"; stateEl.style.borderColor = "#4ade80"; }
 
             const windowLen = 144; // Approx 72h
             drawVitality(met.slice(-windowLen));
