@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/category/botany/">
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/category/context-engineering/">
       
       
       
@@ -23,7 +23,7 @@
     
     
       
-        <title>Botany - GardenOS</title>
+        <title>Context Engineering - GardenOS</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#botany" class="md-skip">
+        <a href="#context-engineering" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Botany
+              Context Engineering
             
           </span>
         </div>
@@ -446,7 +446,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="botany">Botany</h1>
+        <h1 id="context-engineering">Context Engineering</h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -460,14 +460,13 @@
           <li class="md-meta__item">
             in
             
-              <a href="../engineering/" class="md-meta__link">Engineering</a>, 
-              <a href="./" class="md-meta__link">Botany</a></li>
+              <a href="./" class="md-meta__link">Context Engineering</a></li>
         
         
           
           <li class="md-meta__item">
             
-              1 min read
+              2 min read
             
           </li>
         
@@ -477,16 +476,27 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="beyond-the-baseline-building-a-world-model"><a class="toclink" href="../../2026/03/27/beyond-the-baseline-building-a-world-model/">Beyond the Baseline: Building a World Model</a></h2>
-<p>Today marks a critical milestone for Gardenbot. We have officially completed our <strong>7-day visual baseline</strong> for <em>Dischidia nummularia</em> and <em>Plectranthus amboinicus</em>. </p>
-<p>But as we looked at the data, a foundational flaw became apparent: our Observer was blind to the "World" outside its sensor readings.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../2026/03/27/beyond-the-baseline-building-a-world-model/">
-          Continue reading
-        </a>
-      </nav>
+    <h2 id="2026-03-27-world-model"><a class="toclink" href="../../2026/03/27/2026-03-27-world-model/">2026 03 27 world model</a></h2>
+<h3 id="building-a-context-layer-for-the-gardenbot"><a class="toclink" href="../../2026/03/27/2026-03-27-world-model/#building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</a></h3>
+<p>The Challenge: LLMs in the Biome</p>
+<p>Using LLMs to monitor the 3 pots on my deskop is fun but very soon we ran into the classic problem - LLMs are Statelessness. Each 3-hour monitoring loop begins as a Tabula Rasa. This leads to "Predictive Guessing" — where the model reports plant stress based on linguistic patterns (e.g., "It's 32°C, therefore the plant must be wilting") rather than the physical reality of the desk. Even though I set it up in a way that it gets a lot of context, it was still guessing. </p>
+<p>The Environment: The Atmospheric Paradox
+The GardenWarden operates in a high-divergence environment. While outdoor temperatures in Chennai consistently exceed 32°C with 60% humidity, the actual biome is an HVAC-clamped microclimate (26°C with &lt;30% humidity). Without specific grounding, a standard LLM will hallucinate stress symptoms to satisfy its internal statistical model of "Tropical Heat," ignoring the protective "Physics Floor" of the indoor air conditioning.</p>
+<p>The Solution: Project SILICA (The Context Layer)</p>
+<p>To solve this, we developed Project SILICA, a Context Layer designed for stateful bio-monitoring. This architecture transitions GardenWarden from simple prompting to active State Management:</p>
+<p>Semantic Synthesis: We condense high-entropy raw telemetry into Semantic Facts. Instead of parsing raw logs, the model receives synthesized state (e.g., "State: Isothermal Stability").
+The World Model: We codified the physical constants of the desk—North-facing light geometry, East-facing shielding, and AC-driven thermal floors. This prevents the model from "guessing" stress by providing it with a deterministic physical boundary.</p>
+<p>Roadmap: Autonomous Stability</p>
+<p>Project SILICA is now transitioning into its long-term stability phase:</p>
+<p>Relational Memory: Moving from flat ledgers to SQLite for sub-second trend analysis and deterministic baselining.
+Hardware Hardening: Migrating to robust launchd services with camera-exposure warmup loops to ensure visual fidelity.
+Extended Windowing: Implementing a 30-minute gateway timeout to allow the heavy-weight reasoning layer the necessary time to process complex multi-image audits.
+GardenWarden has transitioned from a passive logger to a stateful observer capable of managing high-entropy sensor data and synchronizing disparate microclimates through a unified Context Layer. By grounding the 120B reasoning layer in a deterministic World Model, we have established a reliable baseline for the next phase of autonomous bio-monitoring.</p>
+<p>Next Steps: Moving to Tier 2 (Relational Memory)</p>
+<p>Phase 3 focuses on long-term hardware and data stability:</p>
+<p>SQLite Migration: Moving from Markdown ledgers to relational memory for deterministic trend analysis.
+Hardware Hardening: Transitioning from cron-based scripts to launchd services with integrated camera warmup logic.
+Autonomous Stability: Full-loop automation with a 30-minute reasoning buffer for consistent, high-fidelity audits.</p>
     
     
   </div>
