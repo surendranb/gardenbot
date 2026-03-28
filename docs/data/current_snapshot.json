@@ -1,32 +1,35 @@
 {
-  "timestamp": "2026-03-26T15:55:29.495550",
+  "timestamp": "2026-03-28T09:25:29.348279",
   "sensors": {
-    "timestamp": "2026-03-26 15:55:28",
-    "temp": 32.0,
-    "hum": 33.0,
-    "light": 740,
-    "p1": 472,
-    "p2": 177,
-    "p3": 438
+    "timestamp": "2026-03-28 09:25:28",
+    "temp": 30.0,
+    "hum": 30.0,
+    "light": 584,
+    "p1": 548,
+    "p2": 231,
+    "p3": 429
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 78.2,
+      "moisture_pct": 54.9,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 100,
+      "moisture_pct": 88.8,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 67.2,
+      "moisture_pct": 69.8,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.186
+    "vpd_kpa": 2.97
   },
   "intelligence": {
-    "recent_visual_ledger": []
+    "recent_visual_ledger": [
+      "WARDEN REPORT - 2026-03-28 09:03\n\n**Vitality Pulse**:\n- p1: \ud83d\udfe2 Turgid (56.1% moisture, above 15% threshold)\n- p2: \ud83d\udfe2 Turgid (100.0% moisture, above 20% threshold)\n- p3: \ud83d\udfe2 Turgid (70.4% moisture, above 20% threshold)\n- p4: \ud83d\udfe2 Turgid (inferred from shared sensor with p2, above 30% threshold)\n\n**The Biome Scan**:\n- White Rabbit figurine: White ceramic figurine, approximately 50mm height, oriented upright facing slightly left, positioned near p3 pot as scale anchor.\n- Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.\n\n**Weather Alignment**:\n- Indoor microclimate: AC maintaining 26\u00b0C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0\u00b0C, 30.0% humidity, VPD at 2.97 kPa.\n- Outdoor forecast (Section 5): mist, 26.08\u00b0C, 85% humidity.\n- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.\n\n**The Warden's Decision**:\n- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.\n- Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle.",
+      "WARDEN REPORT - 2026-03-28 09:03\n\n**Vitality Pulse**:\n- p1: \ud83d\udfe2 Turgid (56.1% moisture, above 15% threshold)\n- p2: \ud83d\udfe2 Turgid (100.0% moisture, above 20% threshold)\n- p3: \ud83d\udfe2 Turgent (70.4% moisture, above 20% threshold)\n- p4: \ud83d\udfe2 Turgid (inferred from shared sensor with p2, above 30% threshold)\n\n**The Biome Scan**:\n- White Rabbit figurine: White ceramic figurine, approximately 50mm height, oriented upright facing slightly left, positioned near p3 pot as scale anchor.\n- Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.\n\n**Weather Alignment**:\n- Indoor microclimate: AC maintaining 26\u00b0C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0\u00b0C, 30.0% humidity, VPD at 2.97 kPa.\n- Outdoor forecast (Section 5): mist, 26.08\u00b0C, 85% humidity.\n- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.\n\n**The Warden's Decision**:\n- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.\n- Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle."
+    ]
   }
 }
