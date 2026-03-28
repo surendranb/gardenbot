@@ -823,9 +823,38 @@
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
         S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Uno]
-        CAM[USB Webcam] --&gt;|USB| MBA[MacBook]
-        AR --&gt; MBA
-    end</code></pre>
+        CAM[USB Webcam] --&gt;|USB| MB[MacBook]
+        AR --&gt; MB
+    end
+
+    %% Layer 2: Local Processing (The Memory)
+    subgraph Local["2. THE MEMORY (Local Data)"]
+        MB --&gt;|warden.py| CSV[telemetry.csv]
+        MB --&gt;|vision.py| IMG[media/latest.jpg]
+        API[Weather API] --&gt;|scout.py| WTH[weather_context.json]
+    end
+
+    %% Layer 3: Intelligence (OpenClaw Engine)
+    subgraph Intel["3. THE WARDEN (Reasoning)"]
+        CSV &amp; IMG &amp; WTH --&gt;|prep_context.py| PREP[SILICA Context]
+        PREP --&gt;|OpenClaw Engine| CLAW[Warden Agent]
+        CLAW &lt;--&gt;|API Calls| OR[OpenRouter Cloud LLM]
+        CLAW --&gt;|Synthesis| LDG[vision_ledger.md]
+    end
+
+    %% Layer 4: Public Presence (The Voice)
+    subgraph Public["4. THE OUTPUT (Sync &amp; Notify)"]
+        LDG --&gt;|Real-time| SLK[Slack #plantclaw]
+        CSV &amp; IMG &amp; LDG --&gt;|sync.sh| GH[GitHub Repo]
+        GH --&gt;|GitHub Pages| WEB[Live Dashboard &amp; Blog]
+    end
+
+    %% Styling
+    style Physical fill:#1e293b,stroke:#334155,color:#fff
+    style Local fill:#0f172a,stroke:#4ade80,color:#fff
+    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
+    style Public fill:#064e3b,stroke:#4ade80,color:#fff
+    style OR fill:#4338ca,stroke:#818cf8,color:#fff</code></pre>
 <hr />
 <h2 id="the-environmental-story-biome-context">🌎 The Environmental Story: Biome &amp; Context</h2>
 <p>GardenOS doesn't exist in a vacuum. It is a bridge between the <strong>Tropical Macro-Context</strong> of Chennai and the <strong>Human-Gated Micro-Context</strong> of your room.</p>

@@ -5,7 +5,7 @@ categories:
   - Context Engineering
 ---
 
-## Building a Context Layer for the GardenBot
+# Building a Context Layer for the GardenBot
 
 The Challenge: LLMs in the Biome
 

@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/27/2026-03-27-world-model/">
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/27/building-a-context-layer-for-the-gardenbot/">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>2026 03 27 world model - GardenOS</title>
+        <title>Building a Context Layer for the GardenBot - GardenOS</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2026 03 27 world model
+              Building a Context Layer for the GardenBot
             
           </span>
         </div>
@@ -443,25 +443,8 @@
   
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#building-a-context-layer-for-the-gardenbot" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Building a Context Layer for the GardenBot
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -547,9 +530,7 @@
   
 
 
-  <h1>2026 03 27 world model</h1>
-
-<h2 id="building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</h2>
+<h1 id="building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</h1>
 <p>The Challenge: LLMs in the Biome</p>
 <p>Using LLMs to monitor the 3 pots on my deskop is fun but very soon we ran into the classic problem - LLMs are Statelessness. Each 3-hour monitoring loop begins as a Tabula Rasa. This leads to "Predictive Guessing" — where the model reports plant stress based on linguistic patterns (e.g., "It's 32°C, therefore the plant must be wilting") rather than the physical reality of the desk. Even though I set it up in a way that it gets a lot of context, it was still guessing. </p>
 <p>The Environment: The Atmospheric Paradox

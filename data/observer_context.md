@@ -1,19 +1,22 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-28 08:58:01
+**Generated:** 2026-03-28 09:24:13
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
  *Codified March 27, 2026. Use for semantic reasoning/divergence analysis.*
  
  ### **A. LIGHTING GEOMETRY**
- - **Primary Window**: North-facing, 2m distance. Diffuse, stable light. Low UV-index.
- - **Wall Orientation**: Plants against East-facing wall. No direct morning sun entry (wall-shielded).
+ - **Primary Window**: North-facing, 2m distance. Diffuse, stable light. **Zero direct sunlight ever.**
+ - **Wall Orientation**: Plants against East-facing wall. Complete shield against morning UV entry.
  - **Camera LED**: Always ON. Provides persistent cool-spectrum fill light.
  
  ### **B. ATMOSPHERIC MICROCLIMATE**
- - **Thermal Ceiling**: 26°C (When AC is active). AC is located farthest from the North window.
- - **Convection**: Two ceiling fans (2m above, 1m lateral). High air exchange; prevents stagnant boundary layers.
- - **Thermal Gain**: Room is on the 1st floor with an open terrace above. Expect solar-thermal radiation through the ceiling during peak hours (12:00-15:00).
+ - **Climate Hierarchy (Human-Gated)**:
+    - **Fan S (South)**: Always ON when the human is present. Baseline air exchange.
+    - **Fan N (North)**: Auxiliary cooling for additional heat management.
+    - **AC (Last Resort)**: Activated (26°C) only when fans are insufficient.
+ - **Aerodynamics**: High air exchange prevents stagnant boundary layers; expect high VPD when fans are scoured.
+ - **Thermal Gain**: Room is on the 1st floor with an open terrace above. Expect solar-thermal radiation from the ceiling during peak hours (12:00-15:00).
  
  ### **C. PHYSICAL LAYOUT**
  - **Desk Surface**: Wooden (Insulating). Low thermal conduction from desk to pots.
@@ -24,13 +27,13 @@
  - **Impact**: Localized CO2 enrichment and thermal mass (body heat) within 1m of the desk.
  
  ### **E. HYPOTHESIS-DRIVEN CARE**
- - **Spike Analysis**: If Soil % jumps without recorded care, infer **Misting** or **User-led Watering**.
- - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than "Misty" outdoor forecasts due to AC dehumidification.
+ - **Divergence Logic**: Reconcile AC-induced dryness vs. metabolic drought. 
+ - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than outdoor forecasts due to AC dehumidification and fan scouring.
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
-- **VPD State**: HIGH (Transpiration heavy) at 2.97 kPa.
-- **Care Detected**: Sudden moisture spike in p2 (+5.6%). Likely misting or watering.
-- **Divergence**: Indoor humidity (30.0%) is significantly lower than Outdoor (85%). Confirming AC-clamped microclimate.
+- **VPD State**: HIGH (Transpiration heavy) at 2.97 kPa. Fans are likely scouring leaf boundary layers.
+- **Care Event**: Sudden moisture spike in p2 (+5.6%). Likely misting or human watering.
+- **Human Presence**: HIGH. Fan S (South) is active; human-gated air exchange is the current baseline.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
@@ -91,12 +94,12 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 ```
 
 ## 📖 6. PREVIOUS LEDGER ENTRIES (Last 3)
-## WARDEN REPORT - 2026-03-28 06:13
+## WARDEN REPORT - 2026-03-28 09:03
 
 **Vitality Pulse**:
-- p1: 🟢 Turgid (55% moisture, above 15% threshold)
-- p2: 🟢 Turgid (100% moisture, above 20% threshold)
-- p3: 🟢 Turgid (68% moisture, above 20% threshold)
+- p1: 🟢 Turgid (56.1% moisture, above 15% threshold)
+- p2: 🟢 Turgid (100.0% moisture, above 20% threshold)
+- p3: 🟢 Turgid (70.4% moisture, above 20% threshold)
 - p4: 🟢 Turgid (inferred from shared sensor with p2, above 30% threshold)
 
 **The Biome Scan**:
@@ -104,12 +107,35 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 - Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.
 
 **Weather Alignment**:
-- Indoor microclimate: AC maintaining 26°C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0°C, 26.0% humidity, VPD extreme at 3.14 kPa.
-- Outdoor forecast (Section 5): scattered clouds, 32.01°C, 62% humidity.
-- Divergence: Indoor humidity (26.0%) is ~58% lower than outdoor forecast (62%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.
+- Indoor microclimate: AC maintaining 26°C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0°C, 30.0% humidity, VPD at 2.97 kPa.
+- Outdoor forecast (Section 5): mist, 26.08°C, 85% humidity.
+- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.
 
 **The Warden's Decision**:
-- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in EXTREME range (3.14 kPa) indicating significant transpiration stress despite adequate soil moisture.
+- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.
+- Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle.
+
+---
+
+## WARDEN REPORT - 2026-03-28 09:03
+
+**Vitality Pulse**:
+- p1: 🟢 Turgid (56.1% moisture, above 15% threshold)
+- p2: 🟢 Turgid (100.0% moisture, above 20% threshold)
+- p3: 🟢 Turgent (70.4% moisture, above 20% threshold)
+- p4: 🟢 Turgid (inferred from shared sensor with p2, above 30% threshold)
+
+**The Biome Scan**:
+- White Rabbit figurine: White ceramic figurine, approximately 50mm height, oriented upright facing slightly left, positioned near p3 pot as scale anchor.
+- Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.
+
+**Weather Alignment**:
+- Indoor microclimate: AC maintaining 26°C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0°C, 30.0% humidity, VPD at 2.97 kPa.
+- Outdoor forecast (Section 5): mist, 26.08°C, 85% humidity.
+- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.
+
+**The Warden's Decision**:
+- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.
 - Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle.
 
 ## ℹ️ FINAL INSTRUCTIONS TO OBSERVER

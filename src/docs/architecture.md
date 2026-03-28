@@ -22,9 +22,38 @@ graph TD
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
         S[Sensors: Temp, Hum, Soil] -->|Serial| AR[Arduino Uno]
-        CAM[USB Webcam] -->|USB| MBA[MacBook]
-        AR --> MBA
+        CAM[USB Webcam] -->|USB| MB[MacBook]
+        AR --> MB
     end
+
+    %% Layer 2: Local Processing (The Memory)
+    subgraph Local["2. THE MEMORY (Local Data)"]
+        MB -->|warden.py| CSV[telemetry.csv]
+        MB -->|vision.py| IMG[media/latest.jpg]
+        API[Weather API] -->|scout.py| WTH[weather_context.json]
+    end
+
+    %% Layer 3: Intelligence (OpenClaw Engine)
+    subgraph Intel["3. THE WARDEN (Reasoning)"]
+        CSV & IMG & WTH -->|prep_context.py| PREP[SILICA Context]
+        PREP -->|OpenClaw Engine| CLAW[Warden Agent]
+        CLAW <-->|API Calls| OR[OpenRouter Cloud LLM]
+        CLAW -->|Synthesis| LDG[vision_ledger.md]
+    end
+
+    %% Layer 4: Public Presence (The Voice)
+    subgraph Public["4. THE OUTPUT (Sync & Notify)"]
+        LDG -->|Real-time| SLK[Slack #plantclaw]
+        CSV & IMG & LDG -->|sync.sh| GH[GitHub Repo]
+        GH -->|GitHub Pages| WEB[Live Dashboard & Blog]
+    end
+
+    %% Styling
+    style Physical fill:#1e293b,stroke:#334155,color:#fff
+    style Local fill:#0f172a,stroke:#4ade80,color:#fff
+    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
+    style Public fill:#064e3b,stroke:#4ade80,color:#fff
+    style OR fill:#4338ca,stroke:#818cf8,color:#fff
 ```
 
 ---
