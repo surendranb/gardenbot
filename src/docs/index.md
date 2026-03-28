@@ -49,6 +49,11 @@ hide:
     height: 400px;
     margin-top: 1rem;
 }
+.chart-note {
+    color: #94a3b8;
+    font-size: 0.78rem;
+    margin-top: 0.35rem;
+}
 </style>
 
 <div class="status-header">
@@ -111,17 +116,19 @@ hide:
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
     <!-- Chart 1: Vitality -->
     <div>
-        <span class="label-sub">📈 PLANT VITALITY (72H)</span>
+        <span class="label-sub">📈 PLANT VITALITY (LAST 48H)</span>
         <div class="chart-container">
             <canvas id="vitalityChart"></canvas>
         </div>
+        <div class="chart-note">Full date/time labels shown for every point in the 48-hour window.</div>
     </div>
     <!-- Chart 2: Environment -->
     <div>
-        <span class="label-sub">📊 ENVIRONMENTAL CHRONICLE (72H)</span>
+        <span class="label-sub">📊 ENVIRONMENTAL CHRONICLE (LAST 48H)</span>
         <div class="chart-container">
             <canvas id="envChart"></canvas>
         </div>
+        <div class="chart-note">Full date/time labels shown for every point in the 48-hour window.</div>
     </div>
 </div>
 
@@ -147,18 +154,33 @@ hide:
         });
     }
 
+    function parseTimestamp(value) {
+        const normalized = String(value || "").replace(" ", "T");
+        const d = new Date(normalized);
+        return isNaN(d.getTime()) ? null : d;
+    }
+
     function formatXAxis(timestamp) {
-        const d = new Date(timestamp);
-        // Only show date if it's the first reading of the day OR every 6 hours
-        const hour = d.getHours();
-        const min = d.getMinutes();
-        const dateStr = d.toLocaleDateString([], { month: 'short', day: 'numeric' });
-        const timeStr = d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-        
-        if (hour % 6 === 0 && min < 30) {
-            return [dateStr, timeStr];
-        }
-        return timeStr;
+        const d = parseTimestamp(timestamp);
+        if (!d) return String(timestamp || "--");
+        return d.toLocaleString([], {
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+    }
+
+    function lastHours(data, hours) {
+        if (!data.length) return data;
+        const points = data
+            .map(row => ({ row, dt: parseTimestamp(row.timestamp) }))
+            .filter(item => item.dt)
+            .sort((a, b) => a.dt - b.dt);
+        if (!points.length) return data;
+        const cutoff = points[points.length - 1].dt.getTime() - (hours * 60 * 60 * 1000);
+        return points.filter(item => item.dt.getTime() >= cutoff).map(item => item.row);
     }
 
     async function refresh() {
@@ -203,16 +225,18 @@ hide:
             else if (vpd < 0.5) { stateEl.textContent = "STAGNANT"; stateEl.style.color = "#38bdf8"; stateEl.style.borderColor = "#38bdf8"; }
             else { stateEl.textContent = "STABLE"; stateEl.style.color = "#4ade80"; stateEl.style.borderColor = "#4ade80"; }
 
-            const windowLen = 144; // Approx 72h
-            drawVitality(met.slice(-windowLen));
-            drawEnv(tel.slice(-windowLen), met.slice(-windowLen));
+            const met48 = lastHours(met, 48);
+            const tel48 = lastHours(tel, 48);
+            drawVitality(met48);
+            drawEnv(tel48, met48);
 
             // Ledger
             const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
             if (res.ok) {
                 const text = await res.text();
-                const parts = text.split(/^## /m);
-                document.getElementById('warden-log-output').innerHTML = marked.parse("## " + (parts[parts.length-1] || "No entries yet."));
+                const blocks = text.split(/^# WARDEN REPORT /m).filter(Boolean);
+                const latest = blocks.length ? "# WARDEN REPORT " + blocks[blocks.length - 1].trim() : text;
+                document.getElementById('warden-log-output').innerHTML = marked.parse(latest || "No entries yet.");
             }
         } catch(e) { console.error(e); }
     }
@@ -233,12 +257,12 @@ hide:
         window.vChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: data.map(d => formatXAxis(d.timestamp)),
-                datasets: [
-                    { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
-                    { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
-                    { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', pointRadius: 0, tension: 0.3 }
-                ]
+            labels: data.map(d => formatXAxis(d.timestamp)),
+            datasets: [
+                { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
+                { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
+                { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', pointRadius: 0, tension: 0.3 }
+            ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
@@ -254,10 +278,10 @@ hide:
         window.eChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: tel.map(t => formatXAxis(t.timestamp)),
-                datasets: [
-                    { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
-                    { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
+            labels: tel.map(t => formatXAxis(t.timestamp)),
+            datasets: [
+                { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
+                { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
                     { label: 'Solar', data: tel.map(t => t.light), borderColor: '#facc15', pointRadius: 0, fill: true, backgroundColor: 'rgba(250, 204, 21, 0.05)', yAxisID: 'ySolar', tension: 0.3 }
                 ]
             },
