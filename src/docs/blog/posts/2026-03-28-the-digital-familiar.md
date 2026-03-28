@@ -15,7 +15,7 @@ Last post I talked about SILICA — the context layer that grounds the Warden in
 
 For the first week, the protocol was simple: *visuals supersede sensors*. If the camera says the plant looks fine but the soil sensor says dry, trust the camera. A zero-trust approach to handle noisy capacitive probes.
 
-That's not great long-term. The useful thing isn't picking a winner between two data sources — it's looking at where they **disagree** and asking why. So now the Warden compares sensor readings against visual evidence and flags divergences. If the soil reads 10% but the leaves are turgid and upright, it doesn't just pick one — it notes the mismatch and investigates. Could be sensor drift, could be recent watering that hasn't registered yet. Flagging the gap is more useful than ignoring one input.
+That's not great long-term. The interesting signal is where the two **disagree**. So now the Warden compares sensor readings against visual evidence and flags divergences. If the soil reads 10% but the leaves are turgid and upright, it notes the mismatch and investigates. Could be sensor drift, could be recent watering that hasn't registered yet. Flagging the gap is more useful than ignoring one input.
 
 <!-- more -->
 
