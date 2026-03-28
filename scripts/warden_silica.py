@@ -6,9 +6,18 @@ import os
 import sys
 from datetime import datetime
 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
-API_KEY = "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"
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+if not API_KEY:
+    raise ValueError("OPENROUTER_API_KEY not found in environment variables.")
+
 MANIFEST_PATH = os.path.join(BASE_DIR, "GARDEN_MANIFEST.md")
 CONTEXT_PATH = os.path.join(BASE_DIR, "data/observer_context.md")
 IMAGE_PATH = os.path.join(BASE_DIR, "media/latest.jpg")

@@ -7,3 +7,9 @@ __pycache__/
 # System
 .DS_Store
 Thumbs.db
+
+# Secrets
+.env
+.env.local
+.env.*
+! .env.example

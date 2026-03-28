@@ -4,8 +4,16 @@ import json
 import os
 
 # Configuration
-# Using the key from env: OPENROUTER_API_KEY=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
-API_KEY = "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"
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# --- Configuration ---
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+if not API_KEY:
+    raise ValueError("OPENROUTER_API_KEY not found in environment variables.")
 IMAGE_PATH = "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
 MODELS = [
     "nvidia/nemotron-3-super-120b-a12b:free",

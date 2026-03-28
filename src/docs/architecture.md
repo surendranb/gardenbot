@@ -21,44 +21,42 @@ GardenOS is designed to be a **Resilient Digital Twin** of a physical desk-top b
 graph TD
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
-        S[Sensors: Temp, Hum, Soil] -->|Serial| AR[Arduino Nano]
-        CAM[USB Webcam] -->|USB| MBA[MacBook Air]
+        S[Sensors: Temp, Hum, Soil] -->|Serial| AR[Arduino Uno]
+        CAM[USB Webcam] -->|USB| MBA[MacBook]
         AR --> MBA
     end
-
-    %% Layer 2: Local Processing
-    subgraph Local["2. THE MEMORY (Local Data)"]
-        MBA -->|warden.py| CSV[telemetry.csv]
-        MBA -->|vision.py| IMG[media/archive/]
-        API[Weather API] -->|scout.py| WTH[weather.csv]
-    end
-
-    %% Layer 3: Intelligence
-    subgraph Intel["3. THE WARDEN (AI Reasoning)"]
-        CSV & IMG & WTH -->|Briefing| PREP[Context Prep]
-        PREP -->|OpenClaw| AI[AI Garden Warden]
-        AI -->|Reasoning| LDG[vision_ledger.md]
-    end
-
-    %% Layer 4: Public
-    subgraph Public["4. THE VOICE (GitHub)"]
-        CSV & IMG & LDG -->|sync.sh| GH[GitHub Repo]
-        GH -->|MkDocs| WEB[Live Dashboard & Blog]
-    end
-
-    %% Styling
-    style Physical fill:#1e293b,stroke:#334155,color:#fff
-    style Local fill:#0f172a,stroke:#4ade80,color:#fff
-    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
-    style Public fill:#064e3b,stroke:#4ade80,color:#fff
 ```
+
+---
+
+## 🌎 The Environmental Story: Biome & Context
+
+GardenOS doesn't exist in a vacuum. It is a bridge between the **Tropical Macro-Context** of Chennai and the **Human-Gated Micro-Context** of your room.
+
+### 1. The Chennai Outdoors (The Macro-Context)
+*   **The Solar Battery**: The room is on the **1st floor with an open terrace above**. This terrace acts as a thermal battery, soaking up the intense Chennai sun and radiating heat into the room between **12:00 and 15:00**.
+*   **The Tropical Air**: Outside is high-energy and humid (~30°C+). This represents the "Drift" state of the room when cooling is inactive.
+
+### 2. The Room Geometry (The Protective Shield)
+*   **North Window (2m away)**: Provides **Pure Indirect Diffuse Light**. No UV spikes, no sun-scorch. It's a stable, "Soft Box" lighting environment.
+*   **East Wall**: A physical shield against the direct morning sun, ensuring the biome remains cool and shaded during the early hours.
+
+### 3. The Cooling Hierarchy (The Human-Gated Pulse)
+The room's climate is controlled by a human-comfort loop:
+*   **Fan S (South)**: The baseline air exchange. Always ON when the human is present, ensuring the plants never sit in stagnant air.
+*   **Fan N (North)**: Auxiliary air movement for additional heat management.
+*   **The AC**: The final thermal resort. It clamps the temperature at **26°C** but crashes the humidity, creating a "Violent VPD Spike" that the Warden must reconcile.
+
+### 4. The Desk (The Isolated Stage)
+*   **Wooden Surface**: Acts as a thermal insulator, decoupling the pots from the building's thermal mass.
+*   **The White Rabbit (50mm)**: The system's scale anchor, providing a constant mm-scale reference in an ever-changing visual environment.
 
 ---
 
 ## 🛠️ Layer Breakdown
 
 ### 1. The Physical Layer
-The hardware is "dumb" by design. The **Arduino** reads signals from a DHT11 (Atmosphere) and three **Capacitive Moisture Sensors (TLC555)**. We use capacitive sensors because standard resistive sensors rely on DC current passing through the soil, which causes electrolysis and rapid corrosion of the probes.
+The hardware is "dumb" by design. The **Arduino Uno** reads signals from a DHT11 (Atmosphere) and three **Capacitive Moisture Sensors (TLC555)**. We use capacitive sensors because standard resistive sensors rely on DC current passing through the soil, which causes electrolysis and rapid corrosion of the probes.
 
 ### 2. The Data Layer (Local-First)
 Everything is recorded locally on a **MacBook Air**. Even if the WiFi fails, the system continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.
