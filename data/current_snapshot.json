@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-03-28T13:25:29.608744",
+  "timestamp": "2026-03-28T14:03:33.851423",
   "sensors": {
-    "timestamp": "2026-03-28 13:25:28",
+    "timestamp": "2026-03-28 14:03:33",
     "temp": 32.0,
-    "hum": 29.0,
-    "light": 606,
-    "p1": 598,
-    "p2": 202,
-    "p3": 433
+    "hum": 28.0,
+    "light": 596,
+    "p1": 596,
+    "p2": 212,
+    "p3": 409
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 39.6,
+      "moisture_pct": 40.2,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 100,
+      "moisture_pct": 97.0,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 68.7,
+      "moisture_pct": 75.5,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.376
+    "vpd_kpa": 3.423
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,8 +33,153 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_115001.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
+    },
+    "vision_observation": {
+      "timestamp": "2026-03-28T13:58:18.305839",
+      "model": "gemma-3-27b-it",
+      "baseline_reference": {
+        "rabbit_height_cm": 5.0,
+        "camera_distance_cm": 30.0,
+        "black_pot_diameter_cm": 12.0,
+        "yellow_pot_diameter_cm": 10.0
+      },
+      "image_availability": {
+        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg",
+        "compare_set": [
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135002.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg"
+        ]
+      },
+      "frame_sequence": [
+        {
+          "label": "anchor",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg"
+        },
+        {
+          "label": "comparison",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135002.jpg"
+        },
+        {
+          "label": "comparison",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg"
+        },
+        {
+          "label": "previous",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg"
+        }
+      ],
+      "capture": {
+        "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
+        "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
+      },
+      "vision_report": {
+        "timestamp": "2026-03-28T13:58:01Z",
+        "model": "Garden Vision Interpreter v1.0",
+        "baseline_reference": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
+        "image_availability": "All four comparison frames and the anchor frame are available.",
+        "frame_sequence": [
+          {
+            "label": "anchor",
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg"
+          },
+          {
+            "label": "frame_1",
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135002.jpg"
+          },
+          {
+            "label": "frame_2",
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg"
+          },
+          {
+            "label": "frame_3",
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg"
+          },
+          {
+            "label": "current",
+            "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135801.jpg"
+          }
+        ],
+        "plants": {
+          "p1": {
+            "name": "String of Nickels",
+            "health": "healthy",
+            "leaf_count": 30,
+            "posture": "trailing",
+            "growth": "stable",
+            "damage": "none",
+            "droop": "none",
+            "occlusion": "none",
+            "notes": "Dense trailing growth, consistent across frames."
+          },
+          "p2": {
+            "name": "Mexican Mint",
+            "health": "healthy",
+            "leaf_count": 6,
+            "posture": "upright",
+            "growth": "stable",
+            "damage": "none",
+            "droop": "none",
+            "occlusion": "none",
+            "notes": "Consistent leaf count and posture."
+          },
+          "p3": {
+            "name": "Pothos",
+            "health": "healthy",
+            "leaf_count": 3,
+            "posture": "upright",
+            "growth": "stable",
+            "damage": "none",
+            "droop": "none",
+            "occlusion": "none",
+            "notes": "Rabbit is inside the pot. Leaf count stable."
+          },
+          "p4": {
+            "name": "Silver Guest",
+            "health": "unknown",
+            "leaf_count": "uncertain",
+            "posture": "spreading",
+            "growth": "uncertain",
+            "damage": "none",
+            "droop": "none",
+            "occlusion": "none",
+            "notes": "Difficult to assess leaf count due to density. Growth is uncertain."
+          }
+        },
+        "temporal_changes": {
+          "p1": {
+            "leaf_count": "stable",
+            "posture": "stable",
+            "growth": "stable"
+          },
+          "p2": {
+            "leaf_count": "stable",
+            "posture": "stable",
+            "growth": "stable"
+          },
+          "p3": {
+            "leaf_count": "stable",
+            "posture": "stable",
+            "growth": "stable"
+          },
+          "p4": {
+            "leaf_count": "uncertain",
+            "posture": "stable",
+            "growth": "uncertain"
+          }
+        },
+        "anomalies": [
+          "Leaf count for Silver Guest (p4) is difficult to determine due to density and image quality."
+        ],
+        "narrative_report": "The latest image shows a stable garden state. All plants maintain their posture and leaf counts from the previous three frames. The white rabbit remains inside the Pothos pot, serving as a consistent scale anchor. The Silver Guest remains densely packed, making accurate leaf counting difficult. Overall, the garden appears healthy with no significant changes observed.",
+        "confidence": "high"
+      },
+      "raw_model_output": "```json\n{\n  \"timestamp\": \"2026-03-28T13:58:01Z\",\n  \"model\": \"Garden Vision Interpreter v1.0\",\n  \"baseline_reference\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\",\n  \"image_availability\": \"All four comparison frames and the anchor frame are available.\",\n  \"frame_sequence\": [\n    {\n      \"label\": \"anchor\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\"\n    },\n    {\n      \"label\": \"frame_1\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135002.jpg\"\n    },\n    {\n      \"label\": \"frame_2\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135241.jpg\"\n    },\n    {\n      \"label\": \"frame_3\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135525.jpg\"\n    },\n    {\n      \"label\": \"current\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135801.jpg\"\n    }\n  ],\n  \"plants\": {\n    \"p1\": {\n      \"name\": \"String of Nickels\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 30,\n      \"posture\": \"trailing\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Dense trailing growth, consistent across frames.\"\n    },\n    \"p2\": {\n      \"name\": \"Mexican Mint\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 6,\n      \"posture\": \"upright\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Consistent leaf count and posture.\"\n    },\n    \"p3\": {\n      \"name\": \"Pothos\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 3,\n      \"posture\": \"upright\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Rabbit is inside the pot. Leaf count stable.\"\n    },\n    \"p4\": {\n      \"name\": \"Silver Guest\",\n      \"health\": \"unknown\",\n      \"leaf_count\": \"uncertain\",\n      \"posture\": \"spreading\",\n      \"growth\": \"uncertain\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Difficult to assess leaf count due to density. Growth is uncertain.\"\n    }\n  },\n  \"temporal_changes\": {\n    \"p1\": {\n      \"leaf_count\": \"stable\",\n      \"posture\": \"stable\",\n      \"growth\": \"stable\"\n    },\n    \"p2\": {\n      \"leaf_count\": \"stable\",\n      \"posture\": \"stable\",\n      \"growth\": \"stable\"\n    },\n    \"p3\": {\n      \"leaf_count\": \"stable\",\n      \"posture\": \"stable\",\n      \"growth\": \"stable\"\n    },\n    \"p4\": {\n      \"leaf_count\": \"uncertain\",\n      \"posture\": \"stable\",\n      \"growth\": \"uncertain\"\n    }\n  },\n  \"anomalies\": [\n    \"Leaf count for Silver Guest (p4) is difficult to determine due to density and image quality.\"\n  ],\n  \"narrative_report\": \"The latest image shows a stable garden state. All plants maintain their posture and leaf counts from the previous three frames. The white rabbit remains inside the Pothos pot, serving as a consistent scale anchor. The Silver Guest remains densely packed, making accurate leaf counting difficult. Overall, the garden appears healthy with no significant changes observed.\",\n  \"confidence\": \"high\"\n}\n```\n\nThe JSON output provides a detailed snapshot of the garden's state, tracking changes over the last four frames. The consistent positioning of the rabbit and pot rims helps establish a reliable baseline for comparison."
     },
     "recent_visual_ledger": [
       "The Warden's Decision\nVerdict: Soil moisture remains adequate, but atmospheric demand has increased further, indicating escalating transpiration stress despite ample soil water.\nAction: Continue light misting of foliage to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for leaf edge curling or tip burn in next cycle.",
