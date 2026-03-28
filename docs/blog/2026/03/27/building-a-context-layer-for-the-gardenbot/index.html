@@ -6,15 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Transitions GardenOS from data-logging to a context-aware botanical intelligence system.">
+        <meta name="description" content="How SILICA grounds the LLM in physical reality and prevents hallucinated plant stress.">
       
       
       
         <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/27/building-a-context-layer-for-the-gardenbot/">
       
       
+        <link rel="prev" href="../../20/hello-world-the-origins-of-gardenos/">
       
-        <link rel="next" href="../hello-world-the-origins-of-gardenos/">
       
       
         
@@ -446,6 +446,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SILICA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-semantic-synthesis-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why semantic synthesis matters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -503,7 +566,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              2 min read
+                              3 min read
                             
                           </span>
                         </div>
@@ -531,25 +594,32 @@
 
 
 <h1 id="building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</h1>
-<p>The Challenge: LLMs in the Biome</p>
-<p>Using LLMs to monitor the 3 pots on my deskop is fun but very soon we ran into the classic problem - LLMs are Statelessness. Each 3-hour monitoring loop begins as a Tabula Rasa. This leads to "Predictive Guessing" — where the model reports plant stress based on linguistic patterns (e.g., "It's 32°C, therefore the plant must be wilting") rather than the physical reality of the desk. Even though I set it up in a way that it gets a lot of context, it was still guessing. </p>
-<p>The Environment: The Atmospheric Paradox
-The GardenWarden operates in a high-divergence environment. While outdoor temperatures in Chennai consistently exceed 32°C with 60% humidity, the actual biome is an HVAC-clamped microclimate (26°C with &lt;30% humidity). Without specific grounding, a standard LLM will hallucinate stress symptoms to satisfy its internal statistical model of "Tropical Heat," ignoring the protective "Physics Floor" of the indoor air conditioning.</p>
-<p>The Solution: Project SILICA (The Context Layer)</p>
-<p>To solve this, we developed Project SILICA, a Context Layer designed for stateful bio-monitoring. This architecture transitions GardenWarden from simple prompting to active State Management:</p>
-<p>Semantic Synthesis: We condense high-entropy raw telemetry into Semantic Facts. Instead of parsing raw logs, the model receives synthesized state (e.g., "State: Isothermal Stability").
-The World Model: We codified the physical constants of the desk—North-facing light geometry, East-facing shielding, and AC-driven thermal floors. This prevents the model from "guessing" stress by providing it with a deterministic physical boundary.</p>
-<p>Roadmap: Autonomous Stability</p>
-<p>Project SILICA is now transitioning into its long-term stability phase:</p>
-<p>Relational Memory: Moving from flat ledgers to SQLite for sub-second trend analysis and deterministic baselining.
-Hardware Hardening: Migrating to robust launchd services with camera-exposure warmup loops to ensure visual fidelity.
-Extended Windowing: Implementing a 30-minute gateway timeout to allow the heavy-weight reasoning layer the necessary time to process complex multi-image audits.
-GardenWarden has transitioned from a passive logger to a stateful observer capable of managing high-entropy sensor data and synchronizing disparate microclimates through a unified Context Layer. By grounding the 120B reasoning layer in a deterministic World Model, we have established a reliable baseline for the next phase of autonomous bio-monitoring.</p>
-<p>Next Steps: Moving to Tier 2 (Relational Memory)</p>
-<p>Phase 3 focuses on long-term hardware and data stability:</p>
-<p>SQLite Migration: Moving from Markdown ledgers to relational memory for deterministic trend analysis.
-Hardware Hardening: Transitioning from cron-based scripts to launchd services with integrated camera warmup logic.
-Autonomous Stability: Full-loop automation with a 30-minute reasoning buffer for consistent, high-fidelity audits.</p>
+<h2 id="the-problem">The problem</h2>
+<p>Using an LLM to monitor 3 pots on my desktop is fun, but it kept guessing. Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees <em>"Chennai, 32°C, 60% humidity"</em> and concludes the plants must be wilting. Makes sense if you're going by vibes. Completely wrong physically.</p>
+<!-- more -->
+
+<p>The plants sit on a desk in an HVAC-clamped room. The AC holds temp at <strong>26°C</strong> and crushes humidity below <strong>30%</strong>. VPD regularly hits <strong>3.5+ kPa</strong> — that's extreme dryness, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the <em>outdoor</em> climate, not the actual microclimate 2 meters from a north-facing window.</p>
+<h2 id="silica">SILICA</h2>
+<p>SILICA is what I'm calling the context layer. It's not one script — it's a few things that sit between raw data and the LLM.</p>
+<p><code>prep_observer_context.py</code> is the main piece. It reads all the data files from the collection scripts (<code>warden.py</code>, <code>vision.py</code>, <code>weather_scout.py</code>), merges them with the world model and plant config, and outputs <code>observer_context.md</code>.</p>
+<p><code>GARDEN_MANIFEST.md</code> is the <strong>world model</strong>. I wrote it by hand — it codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings alone.</p>
+<p><code>scripts/config/plants.json</code> has species info, sensor calibration, and dry thresholds for each pot.</p>
+<p>The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files — it doesn't run them. OpenClaw doesn't run them either. <strong>Data collection has no dependency on reasoning.</strong></p>
+<h2 id="why-semantic-synthesis-matters">Why semantic synthesis matters</h2>
+<p>Raw CSV rows are bad LLM input. A row like <code>2026-03-27T14:30:00,27.1,28.2,412,wet,dry,wet</code> is meaningless without schema, calibration, and context. The model would need to know which column is which, what the thresholds are, what "wet" means for each species, and how the reading compares to recent trends.</p>
+<p><code>prep_observer_context.py</code> does that translation. It produces facts like:</p>
+<ul>
+<li>"Temperature: 27.1°C — within normal indoor range, AC active"</li>
+<li>"VPD: 3.5 kPa, rising trend — low humidity stress likely"</li>
+<li>"Soil p1 (Nickels): dry, below threshold — watering recommended"</li>
+<li>"Vision: Gemma 3 reports slight leaf curl on Pothos, consistent with low humidity"</li>
+</ul>
+<p>The LLM gets <code>observer_context.md</code> — pre-digested facts — instead of CSVs. And because the world model is baked in, it knows "32°C outdoors" doesn't mean the plants are at 32°C.</p>
+<h2 id="what-changed">What changed</h2>
+<p>Before SILICA, the LLM would see Chennai weather and hallucinate heat stress. It'd recommend misting because it assumed tropical humidity, when the room is actually bone-dry from the AC. It flagged "high temperature" when the desk has never been above 28°C.</p>
+<p>After SILICA, it flags the real problems — high VPD causing leaf curl, dry soil in specific pots, sensor readings that contradict what Gemma 3 sees in the image. Much more useful once I stopped letting it guess and started feeding it facts.</p>
+<h2 id="whats-next">What's next</h2>
+<p>Moving historical data into SQLite for faster trend queries. Hardening the launchd services so camera warmup happens reliably. Extending the reasoning window so the LLM has time for complex audits. But the foundation — grounding the model in a world model — that part works.</p>
 
 
 

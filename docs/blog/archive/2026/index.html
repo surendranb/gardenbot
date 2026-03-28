@@ -457,11 +457,16 @@
         <li class="md-meta__item">
           <time datetime="2026-03-27 00:00:00+00:00">Friday, March 27, 2026</time></li>
         
+          <li class="md-meta__item">
+            in
+            
+              <a href="../../category/context-engineering/" class="md-meta__link">Context Engineering</a></li>
+        
         
           
           <li class="md-meta__item">
             
-              1 min read
+              3 min read
             
           </li>
         
@@ -471,12 +476,13 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="hello-world-the-origins-of-gardenos"><a class="toclink" href="../../2026/03/27/hello-world-the-origins-of-gardenos/">Hello World: The Origins of GardenOS</a></h2>
-<p>GardenOS wasn't built to be a simple "sensor box." It was built to be a <strong>Curious Warden</strong>—an agent that doesn't just read numbers, but <em>investigates</em> the biome using vision and deterministic math. This is the story of how it's set up and how it thinks.</p>
+    <h2 id="building-a-context-layer-for-the-gardenbot"><a class="toclink" href="../../2026/03/27/building-a-context-layer-for-the-gardenbot/">Building a Context Layer for the GardenBot</a></h2>
+<h3 id="the-problem"><a class="toclink" href="../../2026/03/27/building-a-context-layer-for-the-gardenbot/#the-problem">The problem</a></h3>
+<p>Using an LLM to monitor 3 pots on my desktop is fun, but it kept guessing. Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees <em>"Chennai, 32°C, 60% humidity"</em> and concludes the plants must be wilting. Makes sense if you're going by vibes. Completely wrong physically.</p>
 
     
       <nav class="md-post__action">
-        <a href="../../2026/03/27/hello-world-the-origins-of-gardenos/">
+        <a href="../../2026/03/27/building-a-context-layer-for-the-gardenbot/">
           Continue reading
         </a>
       </nav>
@@ -491,12 +497,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2026-03-27 00:00:00+00:00">Friday, March 27, 2026</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../category/context-engineering/" class="md-meta__link">Context Engineering</a></li>
+          <time datetime="2026-03-20 00:00:00+00:00">Friday, March 20, 2026</time></li>
         
         
           
@@ -512,26 +513,16 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="building-a-context-layer-for-the-gardenbot"><a class="toclink" href="../../2026/03/27/building-a-context-layer-for-the-gardenbot/">Building a Context Layer for the GardenBot</a></h2>
-<p>The Challenge: LLMs in the Biome</p>
-<p>Using LLMs to monitor the 3 pots on my deskop is fun but very soon we ran into the classic problem - LLMs are Statelessness. Each 3-hour monitoring loop begins as a Tabula Rasa. This leads to "Predictive Guessing" — where the model reports plant stress based on linguistic patterns (e.g., "It's 32°C, therefore the plant must be wilting") rather than the physical reality of the desk. Even though I set it up in a way that it gets a lot of context, it was still guessing. </p>
-<p>The Environment: The Atmospheric Paradox
-The GardenWarden operates in a high-divergence environment. While outdoor temperatures in Chennai consistently exceed 32°C with 60% humidity, the actual biome is an HVAC-clamped microclimate (26°C with &lt;30% humidity). Without specific grounding, a standard LLM will hallucinate stress symptoms to satisfy its internal statistical model of "Tropical Heat," ignoring the protective "Physics Floor" of the indoor air conditioning.</p>
-<p>The Solution: Project SILICA (The Context Layer)</p>
-<p>To solve this, we developed Project SILICA, a Context Layer designed for stateful bio-monitoring. This architecture transitions GardenWarden from simple prompting to active State Management:</p>
-<p>Semantic Synthesis: We condense high-entropy raw telemetry into Semantic Facts. Instead of parsing raw logs, the model receives synthesized state (e.g., "State: Isothermal Stability").
-The World Model: We codified the physical constants of the desk—North-facing light geometry, East-facing shielding, and AC-driven thermal floors. This prevents the model from "guessing" stress by providing it with a deterministic physical boundary.</p>
-<p>Roadmap: Autonomous Stability</p>
-<p>Project SILICA is now transitioning into its long-term stability phase:</p>
-<p>Relational Memory: Moving from flat ledgers to SQLite for sub-second trend analysis and deterministic baselining.
-Hardware Hardening: Migrating to robust launchd services with camera-exposure warmup loops to ensure visual fidelity.
-Extended Windowing: Implementing a 30-minute gateway timeout to allow the heavy-weight reasoning layer the necessary time to process complex multi-image audits.
-GardenWarden has transitioned from a passive logger to a stateful observer capable of managing high-entropy sensor data and synchronizing disparate microclimates through a unified Context Layer. By grounding the 120B reasoning layer in a deterministic World Model, we have established a reliable baseline for the next phase of autonomous bio-monitoring.</p>
-<p>Next Steps: Moving to Tier 2 (Relational Memory)</p>
-<p>Phase 3 focuses on long-term hardware and data stability:</p>
-<p>SQLite Migration: Moving from Markdown ledgers to relational memory for deterministic trend analysis.
-Hardware Hardening: Transitioning from cron-based scripts to launchd services with integrated camera warmup logic.
-Autonomous Stability: Full-loop automation with a 30-minute reasoning buffer for consistent, high-fidelity audits.</p>
+    <h2 id="hello-world-the-origins-of-gardenos"><a class="toclink" href="../../2026/03/20/hello-world-the-origins-of-gardenos/">Hello World: The Origins of GardenOS</a></h2>
+<p>I have three pots on my desk in Chennai — a Dischidia, some Mint, and a Pothos. They keep almost-dying because I forget to water them, or the AC dries out the air and I don't notice until the leaves curl. I wanted to see if I could point an LLM and a camera at them and build something that actually <em>understands</em> what's going on — not just logs numbers, but looks at the plants, reads the sensors, checks the weather, and reasons about what to do.</p>
+<p>That's GardenOS. An Arduino for sensors, a webcam for vision, Gemma 3 for visual interpretation, and an LLM to tie it all together.</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2026/03/20/hello-world-the-origins-of-gardenos/">
+          Continue reading
+        </a>
+      </nav>
     
     
   </div>

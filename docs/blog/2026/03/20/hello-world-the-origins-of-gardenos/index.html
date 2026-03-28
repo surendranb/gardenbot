@@ -6,15 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="The philosophical and technical foundations of the GardenOS project.">
+        <meta name="description" content="Using LLMs and computer vision to keep a desktop biome alive.">
       
       
       
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/27/hello-world-the-origins-of-gardenos/">
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/20/hello-world-the-origins-of-gardenos/">
       
       
-        <link rel="prev" href="../building-a-context-layer-for-the-gardenbot/">
       
+        <link rel="next" href="../../27/building-a-context-layer-for-the-gardenbot/">
       
       
         
@@ -453,10 +453,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-hardware-stack" class="md-nav__link">
+  <a href="#the-hardware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠 The Hardware Stack
+        🛠 The hardware
       
     </span>
   </a>
@@ -464,10 +464,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-logical-flow" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧠 The Logical Flow
+        🧠 How it works
       
     </span>
   </a>
@@ -475,10 +475,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#final-thoughts" class="md-nav__link">
+  <a href="#whats-next" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌿 Final Thoughts
+        🗺️ What's next
       
     </span>
   </a>
@@ -522,7 +522,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-03-27 00:00:00+00:00" class="md-ellipsis">Friday, March 27, 2026</time>
+                        <time datetime="2026-03-20 00:00:00+00:00" class="md-ellipsis">Friday, March 20, 2026</time>
                       </div>
                     </li>
                     
@@ -534,7 +534,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              1 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -562,30 +562,41 @@
 
 
 <h1 id="hello-world-the-origins-of-gardenos">Hello World: The Origins of GardenOS</h1>
-<p>GardenOS wasn't built to be a simple "sensor box." It was built to be a <strong>Curious Warden</strong>—an agent that doesn't just read numbers, but <em>investigates</em> the biome using vision and deterministic math. This is the story of how it's set up and how it thinks.</p>
+<p>I have three pots on my desk in Chennai — a Dischidia, some Mint, and a Pothos. They keep almost-dying because I forget to water them, or the AC dries out the air and I don't notice until the leaves curl. I wanted to see if I could point an LLM and a camera at them and build something that actually <em>understands</em> what's going on — not just logs numbers, but looks at the plants, reads the sensors, checks the weather, and reasons about what to do.</p>
+<p>That's GardenOS. An Arduino for sensors, a webcam for vision, Gemma 3 for visual interpretation, and an LLM to tie it all together.</p>
 <!-- more -->
 
-<h2 id="the-hardware-stack">🛠 The Hardware Stack</h2>
-<p>We've kept the hardware lean and focused on "Local Truth." The system is entirely local-first, avoiding cloud-dependency where possible.</p>
+<h2 id="the-hardware">🛠 The hardware</h2>
+<p>Kept it simple:</p>
 <ul>
-<li><strong>Brain</strong>: An old laptop running <strong>OpenClaw</strong>, which serves as the primary execution environment for our agentic workflows.</li>
-<li><strong>Controller</strong>: An <strong>Arduino</strong> acting as the serial bridge for the sensor array.</li>
-<li><strong>Atmosphere</strong>: A <strong>DHT11</strong> sensor for temperature and humidity.</li>
-<li><strong>Light</strong>: A dedicated <strong>Lux sensor</strong> to track solar exposure.</li>
-<li><strong>Soil Moisture</strong>: Three <strong>Capacitive Moisture Sensors</strong> (p1: Nickels, p2: Mint, p3: Pothos).</li>
-<li><strong>Vision</strong>: A standard <strong>Webcam</strong> mounted for top-down biome surveillance.</li>
+<li><strong>MacBook Air</strong> — runs the scripts and OpenClaw</li>
+<li><strong>Arduino</strong> — serial bridge for the sensor array</li>
+<li><strong>DHT11</strong> — temperature and humidity</li>
+<li><strong>Lux sensor</strong> — light tracking</li>
+<li><strong>3x capacitive moisture sensors</strong> — p1: Nickels, p2: Mint, p3: Pothos</li>
+<li><strong>Webcam</strong> — mounted above the desk for top-down shots</li>
 </ul>
-<h2 id="the-logical-flow">🧠 The Logical Flow</h2>
-<p>The system operates on a rigorous temporal rhythm. It doesn't just "ping" sensors; it conducts an audit.</p>
+<h2 id="how-it-works">🧠 How it works</h2>
+<p>The system is a pipeline of independent scripts that each do one thing.</p>
 <ol>
-<li><strong>Trigger</strong>: A system-level heartbeat wakes the Warden.</li>
-<li><strong>Vision Capture</strong>: The webcam takes a high-res snap of the biome.</li>
-<li><strong>Sensor Audit</strong>: The Arduino polls the array via serial.</li>
-<li><strong>Agent Logic</strong>: The Warden AI analyzes the <em>Delta</em>—comparing new data against history.</li>
-<li><strong>Recording</strong>: Findings are logged into the <code>telemetry.csv</code> and the human-readable ledger.</li>
+<li><code>warden.py</code>, <code>vision.py</code>, and <code>weather_scout.py</code> run on a schedule via <strong>cron/launchd</strong> on the MacBook.</li>
+<li><code>warden.py</code> reads the Arduino over serial — temp, humidity, light, soil moisture — and writes to <code>telemetry.csv</code>, <code>metrics.csv</code>, <code>current_snapshot.json</code>, and <code>warden_state.json</code>.</li>
+<li><code>vision.py</code> grabs a frame from the webcam, sends it to <strong>Gemma 3 on Google AI Studio</strong>. Gemma describes what it sees — leaf color, posture, soil surface. Output goes to <code>vision_observation.json</code> and <code>vision_observation.md</code>.</li>
+<li><code>weather_scout.py</code> pulls current Chennai weather from OpenWeatherMap. This is the outdoor macro-context — useful because what's happening outside is <em>almost completely decoupled</em> from what's happening on the desk.</li>
+<li><strong>OpenClaw's Warden</strong> reads all the data and calls an LLM. It cross-checks sensor data against visual evidence, looks at trends, and flags anything that needs attention.</li>
+<li>The report goes to <code>vision_ledger.md</code> and gets posted to Slack.</li>
+<li><code>sync.sh</code> builds the MkDocs site, commits everything to GitHub, and pushes to Pages.</li>
 </ol>
-<h2 id="final-thoughts">🌿 Final Thoughts</h2>
-<p>It's not just a garden; it's a monitored biome.</p>
+<p>Each script runs on its own. If the LLM goes down, sensors still log. If the webcam is unplugged, telemetry still records. If the weather API is flaky, everything else keeps going.</p>
+<h2 id="whats-next">🗺️ What's next</h2>
+<p>This is day zero. The LLM gets raw data and does its best, but it doesn't understand the <em>environment</em> yet — it sees "Chennai, 32°C" and assumes the plants are baking, even though the desk is in an air-conditioned room at 26°C. That's the first thing to solve: a context layer that teaches the model about the physical reality of the biome.</p>
+<p>Beyond that:</p>
+<ul>
+<li><strong>Better hardware</strong> — the DHT11 is imprecise, the soil sensors drift, the camera quality is marginal. All need upgrades.</li>
+<li><strong>Automated care</strong> — right now the system advises and I water by hand. Eventually, automated misting or drip irrigation.</li>
+<li><strong>Historical reasoning</strong> — the LLM has no memory between cycles. It needs a history layer to spot trends over days and weeks.</li>
+</ul>
+<p>More soon.</p>
 
 
 
