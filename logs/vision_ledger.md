@@ -1,42 +1,34 @@
+# WARDEN REPORT - 2026-03-28 12:27
 
-## WARDEN REPORT - 2026-03-28 09:03
-
-**Vitality Pulse**:
-- p1: 🟢 Turgid (56.1% moisture, above 15% threshold)
-- p2: 🟢 Turgid (100.0% moisture, above 20% threshold)
-- p3: 🟢 Turgid (70.4% moisture, above 20% threshold)
+## Vitality Pulse
+- p1: 🟢 Turgid (57.7% moisture, above 15% threshold)
+- p2: 🟢 Turgid (90.6% moisture, above 20% threshold)
+- p3: 🟢 Turgid (69.5% moisture, above 20% threshold)
 - p4: 🟢 Turgid (inferred from shared sensor with p2, above 30% threshold)
 
-**The Biome Scan**:
-- White Rabbit figurine: White ceramic figurine, approximately 50mm height, oriented upright facing slightly left, positioned near p3 pot as scale anchor.
-- Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.
+## Temporal Vision
+Anchor image (06:50): Read successfully.
+Previous image (10:50): Read successfully.
+Current image (12:25): Read successfully.
+As a text-only model, I cannot perform visual analysis; however, all three images were present and readable. No explicit visual changes were reported by the system beyond sensor-derived metrics.
 
-**Weather Alignment**:
-- Indoor microclimate: AC maintaining 26°C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0°C, 30.0% humidity, VPD at 2.97 kPa.
-- Outdoor forecast (Section 5): mist, 26.08°C, 85% humidity.
-- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.
+## Weather Alignment
+Indoor microclimate: 31.0°C, 26.0% humidity, VPD at 3.324 kPa (rising from 2.97 kPa earlier).
+Outdoor forecast: mist, 26.08°C, 85% humidity.
+Divergence: Indoor humidity (~26%) is ~69% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis of extreme VPD.
 
-**The Warden's Decision**:
-- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.
-- Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle.
+## Hypothesis Review
+Previous hypothesis: "Soil moisture is adequate, but atmospheric demand remains high."
+- Soil moisture: All plants show turgid levels well above dry thresholds (p1 57.7%, p2 90.6%, p3 69.5%).
+- Atmospheric demand: VPD increased to 3.324 kPa, indicating high transpiration stress.
+Verdict: Hypothesis CONFIRMED.
 
-## WARDEN REPORT - 2026-03-28 09:03
+## The Warden's Decision
+Verdict: Soil moisture remains adequate, but atmospheric demand has increased further, indicating escalating transpiration stress despite ample soil water.
+Action: Continue light misting of foliage to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for leaf edge curling or tip burn in next cycle.
 
-**Vitality Pulse**:
-- p1: 🟢 Turgid (56.1% moisture, above 15% threshold)
-- p2: 🟢 Turgid (100.0% moisture, above 20% threshold)
-- p3: 🟢 Turgent (70.4% moisture, above 20% threshold)
-- p4: 🟢 Turgid (inferred from shared sensor with p2, above 30% threshold)
+## NEW HYPOTHESIS
+Soil moisture remains adequate while atmospheric demand continues to rise, necessitating ongoing foliar misting to mitigate VPD stress.
 
-**The Biome Scan**:
-- White Rabbit figurine: White ceramic figurine, approximately 50mm height, oriented upright facing slightly left, positioned near p3 pot as scale anchor.
-- Non-plant findings: Sensor wires secure and insulated, no corrosion visible. Desk surface dry. Camera LED emitting persistent cool-spectrum fill light. No foreign debris or pests observed.
-
-**Weather Alignment**:
-- Indoor microclimate: AC maintaining 26°C thermal ceiling, two ceiling fans creating high air exchange, latest readings 30.0°C, 30.0% humidity, VPD at 2.97 kPa.
-- Outdoor forecast (Section 5): mist, 26.08°C, 85% humidity.
-- Divergence: Indoor humidity (30.0%) is ~65% lower than outdoor forecast (85%) due to active AC dehumidification and high air exchange from ceiling fans, confirming the microclimate hypothesis in Section 1.B and 2.E.
-
-**The Warden's Decision**:
-- Verdict: All plants show turgid, healthy moisture levels far above dry thresholds. However, VPD remains in HIGH range (2.97 kPa) indicating significant transpiration stress despite adequate soil moisture.
-- Action: Light misting of foliage advised to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for any leaf edge curling or tip burn in next cycle.
+## ACTIVE CONCERNS
+- high-vpd
