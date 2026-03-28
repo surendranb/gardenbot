@@ -19,44 +19,52 @@ GardenOS is a **Resilient Digital Twin** of a physical desk-top biome. It is bui
 
 ```mermaid
 graph TD
-    %% Layer 1: Physical
-    subgraph Physical["1. THE SENSES (Hardware)"]
-        S[Sensors: Temp, Hum, Soil] -->|Serial| AR[Arduino Uno]
-        CAM[USB Webcam] -->|USB| MB[MacBook]
-        AR --> MB
+    %% Layer 1: Data Collection
+    subgraph Collection["1. DATA COLLECTION (cron / launchd on MacBook)"]
+        AR[Arduino Uno: Temp, Humidity, Light, Soil] -->|Serial| WPY[warden.py]
+        WPY --> CSV[telemetry.csv]
+        WPY --> MET[metrics.csv]
+        WPY --> SNS[current_snapshot.json]
+        WPY --> STS[warden_state.json]
+
+        CAM[USB Webcam] -->|OpenCV| VPY[vision.py]
+        VPY -->|Frames sent to Gemma 3 via Google AI Studio| VJS[vision_observation.json]
+        VPY --> VMD[vision_observation.md]
+
+        OWM[OpenWeatherMap API] --> WSC[weather_scout.py]
+        WSC --> WTH[weather_context.json]
     end
 
-    %% Layer 2: Local Processing (The Memory)
-    subgraph Local["2. THE MEMORY (Local Data)"]
-        MB -->|warden.py| CSV[telemetry.csv]
-        MB -->|vision.py + Gemma 3 on Google AI Studio| VJS[vision_observation.json]
-        MB -->|vision.py| VMD[vision_observation.md]
-        MB -->|warden.py| SNS[current_snapshot.json]
-        MB -->|warden.py| STS[warden_state.json]
-        API[Weather API] -->|scout.py| WTH[weather_context.json]
+    %% Layer 2: SILICA Context Layer
+    subgraph SILICA["2. SILICA (Context Layer)"]
+        CSV & MET & SNS & STS & VJS & WTH --> POC[prep_observer_context.py]
+        GM[GARDEN_MANIFEST.md — World Model] --> POC
+        PC[plants.json — Plant Config] --> POC
+        POC --> CTX[observer_context.md]
     end
 
-    %% Layer 3: Intelligence (Reasoning)
-    subgraph Intel["3. THE REASONING LAYER"]
-        CSV & VJS & WTH & SNS & STS -->|prep_observer_context.py| PREP[observer_context.md]
-        PREP -->|OpenClaw| CLAW[Observer / Warden Agent]
-        CLAW <-->|API Calls| OR[Nemotron Super on OpenRouter]
-        CLAW -->|Synthesis| LDG[vision_ledger.md]
+    %% Layer 3: The Warden / Observer
+    subgraph Warden["3. THE WARDEN (OpenClaw)"]
+        CTX --> OC[OpenClaw Agent]
+        OC <-->|Reasoning| LLM[LLM via OpenRouter]
+        OC --> LDG[vision_ledger.md]
+        OC --> SLK[Slack #plantclaw]
     end
 
-    %% Layer 4: Public Presence (The Voice)
-    subgraph Public["4. THE OUTPUT (Sync & Notify)"]
-        LDG -->|Real-time| SLK[Slack #plantclaw]
-        CSV & VJS & VMD & LDG -->|sync.sh| GH[GitHub Repo]
-        GH -->|GitHub Pages| WEB[Live Dashboard & Blog]
+    %% Layer 4: Public Presence
+    subgraph Public["4. PUBLIC PRESENCE (Sync & Publish)"]
+        LDG --> SYNC[sync.sh]
+        CSV & VJS & VMD --> SYNC
+        SYNC --> GH[GitHub Repo]
+        GH --> WEB[GitHub Pages — Live Dashboard & Blog]
     end
 
     %% Styling
-    style Physical fill:#1e293b,stroke:#334155,color:#fff
-    style Local fill:#0f172a,stroke:#4ade80,color:#fff
-    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
+    style Collection fill:#1e293b,stroke:#334155,color:#fff
+    style SILICA fill:#0f172a,stroke:#4ade80,color:#fff
+    style Warden fill:#1e1b4b,stroke:#a855f7,color:#fff
     style Public fill:#064e3b,stroke:#4ade80,color:#fff
-    style OR fill:#4338ca,stroke:#818cf8,color:#fff
+    style LLM fill:#4338ca,stroke:#818cf8,color:#fff
 ```
 
 ---
@@ -87,21 +95,39 @@ The room climate is controlled by a human-comfort loop:
 
 ## 🛠️ Layer Breakdown
 
-### 1. The Physical Layer
-The hardware is intentionally simple. The **Arduino Uno** reads a DHT11 for atmosphere and capacitive moisture sensors for plant roots.
+### 1. The Data Collection Layer (System-Level)
 
-### 2. The Data Layer (Local-First)
-Everything is recorded locally on a **MacBook Air**. Even if the WiFi fails, the system continues to log telemetry, vision observations, and context artifacts to local files. This is the system's black box recorder.
+Three independent scripts run on the MacBook via **cron/launchd** — no orchestrator, no framework. They run at the OS level and write flat files to `data/`.
 
-### 3. The Intelligence Layer
-This is a split intelligence layer. `vision.py` uses **Gemma 3 via Google AI Studio** to turn images into `vision_observation.json` and `vision_observation.md`. `warden.py` combines telemetry with the vision artifact and writes `current_snapshot.json` and `warden_state.json`. `prep_observer_context.py` packages telemetry, metrics, weather, `vision_observation.json`, `current_snapshot.json`, `warden_state.json`, and the world model into `observer_context.md`. The observer uses **OpenClaw** with **Nemotron Super via OpenRouter** to reconcile sensor and visual evidence into a hypothesis, active concerns, and a narrative report.
+- **`warden.py`** connects to the Arduino over serial, reads temperature, humidity, light, and soil moisture, and writes `telemetry.csv`, `metrics.csv`, `current_snapshot.json`, and `warden_state.json`.
+- **`vision.py`** captures a frame from the USB webcam via OpenCV, then sends it to **Gemma 3 on Google AI Studio** for visual interpretation. The model describes what it sees — leaf color, posture, soil surface — and the output is written to `vision_observation.json` and `vision_observation.md`. Gemma 3 handles *perception* here, not reasoning.
+- **`weather_scout.py`** fetches current Chennai weather from OpenWeatherMap, providing the outdoor macro-context. Output goes to `weather_context.json`.
+
+OpenClaw has **zero involvement** in this layer. These scripts run independently whether or not the reasoning layer is online.
+
+### 2. The SILICA Context Layer
+
+SILICA is not a single script or service — it's a **collection of scripts and artifacts** that bridge raw data and LLM reasoning. Its job is to convert raw telemetry into **semantic facts** and prevent the LLM from hallucinating based on outdoor Chennai climate.
+
+The key components:
+
+- **`prep_observer_context.py`** — the synthesizer. It reads all Layer 1 outputs, merges them with the World Model and plant config, and produces a single `observer_context.md` file.
+- **`GARDEN_MANIFEST.md`** — the World Model. Codifies the physical constants of the biome: lighting geometry, atmospheric microclimate, human occupancy patterns, cooling hierarchy.
+- **`scripts/config/plants.json`** — plant species metadata, sensor calibration values, and dry thresholds.
+
+The result is that the LLM never sees raw CSV rows. It sees semantic facts like "VPD: EXTREME at 3.5 kPa, rising trend" and "Soil Moisture p1 (Nickels): DRY, below threshold."
+
+### 3. The Warden / Observer (OpenClaw)
+
+OpenClaw receives `observer_context.md` as its input and calls an LLM to reason about plant health. The Warden cross-verifies sensor data against visual evidence, detects anomalies, and produces care recommendations. Output is written to `logs/vision_ledger.md` and sent to Slack `#plantclaw`.
 
 ### 4. The Public Layer
-The final layer turns code and data into a narrative. We use **MkDocs-Material** to build a static site that reads the latest repository artifacts directly from GitHub.
+
+`sync.sh` builds the MkDocs site, commits all data and artifacts to GitHub, and pushes to GitHub Pages. The live dashboard at `surendranb.github.io/gardenbot` reads CSVs directly from the GitHub repo — no database, no backend.
 
 ---
 
 ## 🛡️ Resilience Philosophy
-* **Decoupled**: If the reasoning layer fails, the local data still updates.
+* **Decoupled**: If the reasoning layer fails, the local data still updates. If weather fails, sensors still log. Each layer is independent.
 * **Stateless Dashboard**: The website doesn't have a database; it reads repository artifacts directly.
 * **Atomic Sync**: Data is pushed in checkpoints via Git for reliability.
