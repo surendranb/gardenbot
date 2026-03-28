@@ -21,5 +21,5 @@ The Warden executes a rigorous audit loop across the Local/Cloud boundary:
 
 ## 3. DOMAIN SEPARATION
 - **💻 LOCAL (Device)**: OpenClaw execution, Python collection on MacBook, and raw data storage (`data/`, `media/`).
-- **☁️ CLOUD (Intelligence)**: The Warden's reasoning (Gemini API) and persistent state (GitHub Private Repository).
-- **📢 PUBLIC (Presentation)**: GardenOS Website (Netlify) and Slack (#plantclaw).
+- **☁️ CLOUD (Intelligence)**: The Warden's reasoning (Gemini API) and persistent state (GitHub Public Repository).
+- **📢 PUBLIC (Presentation)**: GardenOS Website (GitHub Pages) and Slack (#plantclaw).

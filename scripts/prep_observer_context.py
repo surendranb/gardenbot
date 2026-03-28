@@ -48,15 +48,16 @@ def load_ledger(path, n=3):
 def synthesize_facts(telemetry, metrics, weather):
     """Generates high-level semantic observations from raw data."""
     facts = []
+    current_hour = datetime.now().hour
     
     if metrics is not None and not metrics.empty:
-        # 1. VPD Analysis
+        # 1. VPD Analysis & Transpiration Pressure
         current_vpd = metrics.iloc[-1].get('vpd', 0)
         if current_vpd > 3.0: vpd_state = "EXTREME (Critical Stress)"
         elif current_vpd > 2.0: vpd_state = "HIGH (Transpiration heavy)"
         elif current_vpd > 1.0: vpd_state = "MODERATE (Healthy)"
         else: vpd_state = "LOW (Stagnant/Mist)"
-        facts.append(f"- **VPD State**: {vpd_state} at {current_vpd} kPa.")
+        facts.append(f"- **VPD State**: {vpd_state} at {current_vpd} kPa. Fans are likely scouring leaf boundary layers.")
 
         # 2. Moisture Trend / Spikes
         if len(metrics) > 1:
@@ -65,16 +66,30 @@ def synthesize_facts(telemetry, metrics, weather):
                 if col in metrics.columns:
                     diff = metrics.iloc[-1][col] - metrics.iloc[-2][col]
                     if diff > 5:
-                        facts.append(f"- **Care Detected**: Sudden moisture spike in {p} (+{round(diff,1)}%). Likely misting or watering.")
+                        facts.append(f"- **Care Event**: Sudden moisture spike in {p} (+{round(diff,1)}%). Likely misting or human watering.")
                     elif diff < -2:
-                        facts.append(f"- **Dry-down**: {p} is drying at a rate of {abs(round(diff,1))}% per interval.")
+                        facts.append(f"- **Dry-down**: {p} is drying at {abs(round(diff,1))}% per interval. High metabolic activity.")
 
-    # 3. Indoor vs Outdoor Divergence
-    if weather and telemetry is not None and not telemetry.empty:
-        out_hum = weather.get('main', {}).get('humidity', 0)
-        in_hum = telemetry.iloc[-1].get('hum', 0)
-        if abs(out_hum - in_hum) > 20:
-            facts.append(f"- **Divergence**: Indoor humidity ({in_hum}%) is significantly lower than Outdoor ({out_hum}%). Confirming AC-clamped microclimate.")
+    # 3. Micro-Climate Inferences (SILICA Logic)
+    if telemetry is not None and not telemetry.empty:
+        curr = telemetry.iloc[-1]
+        prev = telemetry.iloc[-2] if len(telemetry) > 1 else curr
+        
+        # Human Presence Inference (Based on Fan S Logic)
+        if 9 <= current_hour <= 23:
+            facts.append("- **Human Presence**: HIGH. Fan S (South) is active; human-gated air exchange is the current baseline.")
+        
+        # AC Pulse Detection
+        if (curr['hum'] < prev['hum'] - 3) and (curr['temp'] < prev['temp']):
+            facts.append("- **AC Pulse**: Rapid humidity drop + temperature cooling detected. AC is active; monitor p1 for VPD shock.")
+            
+        # Thermal Peak (12:00-15:00)
+        if 12 <= current_hour <= 15:
+            facts.append("- **Thermal Gain**: Ceiling terrace is absorbing peak solar radiation. Internal temp rise expected.")
+
+    # 4. Growth Pulse Directive
+    if current_hour == 6:
+        facts.append("- **DIRECTIVE: Growth Pulse**: Conduct mm-scale analysis of p3 and p2 using the White Rabbit (50mm) anchor.")
 
     if not facts: return "No significant anomalies or trends detected in the current window."
     return "\n".join(facts)
