@@ -5251,3 +5251,21 @@ Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
 Warden: Valid stream found on /dev/cu.usbmodem1201
 Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
 Warden: Run complete.
+Attempting camera capture using OpenCV (cv2)...
+Warming up sensor...
+  Warmup frame 1 captured.
+  Warmup frame 2 captured.
+  Warmup frame 3 captured.
+Image captured using CV2 and saved to /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_095000.jpg
+Updated latest photo: /Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg
+{
+  "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
+  "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_095000.jpg"
+}
+Warden: Scanning ports: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
