@@ -2,5 +2,8 @@
   "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
   "active_concerns": [
     "high-vpd"
-  ]
+  ],
+  "last_human_action": "nothing",
+  "last_human_action_at": "2026-03-28T15:19:07+05:30",
+  "human_action_source": "slack"
 }
