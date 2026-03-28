@@ -18,13 +18,13 @@ from datetime import datetime, timedelta
 
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
-CONFIG_PATH = os.path.join(BASE_DIR, "config/plants.json")
-RAW_CSV_PATH = os.path.join(BASE_DIR, "docs/data/telemetry.csv")
-METRICS_CSV_PATH = os.path.join(BASE_DIR, "docs/data/metrics.csv")
-SNAPSHOT_PATH = os.path.join(BASE_DIR, "docs/data/current_snapshot.json")
-WEATHER_PATH = os.path.join(BASE_DIR, "docs/data/weather_context.json")
-CHART_PATH = os.path.join(BASE_DIR, "docs/media/dashboard.png")
-PHOTO_PATH = os.path.join(BASE_DIR, "docs/media/latest.jpg")
+CONFIG_PATH = os.path.join(BASE_DIR, "scripts/config/plants.json")
+RAW_CSV_PATH = os.path.join(BASE_DIR, "data/telemetry.csv")
+METRICS_CSV_PATH = os.path.join(BASE_DIR, "data/metrics.csv")
+SNAPSHOT_PATH = os.path.join(BASE_DIR, "data/current_snapshot.json")
+WEATHER_PATH = os.path.join(BASE_DIR, "data/weather_context.json")
+CHART_PATH = os.path.join(BASE_DIR, "media/dashboard.png")
+PHOTO_PATH = os.path.join(BASE_DIR, "media/latest.jpg")
 
 def load_plants():
     if not os.path.exists(CONFIG_PATH): return []
@@ -211,29 +211,6 @@ def save_snapshot(raw, metrics, plants):
     with open(SNAPSHOT_PATH, 'w') as f: json.dump(snapshot, f, indent=2)
     print(f"Warden: Snapshot saved to {SNAPSHOT_PATH}")
 
-def git_sync():
-    print("Warden: Syncing to GitHub...")
-    try:
-        # Copy vision_ledger to a public location for the dashboard
-        ledger_src = os.path.join(BASE_DIR, "logs/vision_ledger.md")
-        ledger_dst = os.path.join(BASE_DIR, "docs/data/ledger.md")
-        if os.path.exists(ledger_src):
-            shutil.copy2(ledger_src, ledger_dst)
-            print(f"Warden: Public ledger updated at {ledger_dst}")
-
-        # Add docs (dashboard data)
-        subprocess.run(["git", "add", "docs/"], cwd=BASE_DIR, check=True)
-        status_res = subprocess.run(["git", "status", "--porcelain"], cwd=BASE_DIR, capture_output=True, text=True).stdout
-        if status_res:
-            msg = f"Warden Cycle: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-            subprocess.run(["git", "commit", "-m", msg], cwd=BASE_DIR, check=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=BASE_DIR, check=True)
-            print("Warden: GitHub Sync Successful.")
-        else:
-            print("Warden: Nothing to sync.")
-    except Exception as e:
-        print(f"Warden: GitHub Sync Failed: {e}")
-
 # --- Calibration Helpers ---
 
 def collect_once():
@@ -329,5 +306,4 @@ if __name__ == "__main__":
     metrics = compute_metrics(raw, plants)
     render_dashboard(plants)
     save_snapshot(raw, metrics, plants)
-    git_sync()
     print("Warden: Run complete.")

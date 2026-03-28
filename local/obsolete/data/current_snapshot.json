@@ -1,0 +1,142 @@
+{
+  "timestamp": "2026-03-22T19:00:21.548758",
+  "sensors": {
+    "timestamp": "2026-03-22 19:00:21",
+    "temp": 32.0,
+    "hum": 21.0,
+    "light": 834,
+    "p1": 910,
+    "p2": 277,
+    "p3": 315
+  },
+  "moisture_analysis": {
+    "p1": {
+      "moisture_pct": 6.2,
+      "raw": 910,
+      "is_dry": true
+    },
+    "p2": {
+      "moisture_pct": 87.2,
+      "raw": 277,
+      "is_dry": false
+    },
+    "p3": {
+      "moisture_pct": 80.8,
+      "raw": 315,
+      "is_dry": false
+    },
+    "p4": {
+      "moisture_pct": 84.6,
+      "raw": 277,
+      "is_dry": false
+    },
+    "p5": {
+      "moisture_pct": 84.6,
+      "raw": 277,
+      "is_dry": false
+    },
+    "p6": {
+      "moisture_pct": 84.6,
+      "raw": 277,
+      "is_dry": false
+    }
+  },
+  "environment": {
+    "vpd_kpa": 3.756,
+    "weather_forecast": {
+      "timestamp": 1774181615,
+      "main": {
+        "temp": 30,
+        "feels_like": 35.53,
+        "temp_min": null,
+        "temp_max": null,
+        "pressure": 1009,
+        "humidity": 72,
+        "sea_level": null,
+        "grnd_level": null
+      },
+      "weather": {
+        "id": 801,
+        "main": "Clouds",
+        "description": "few clouds",
+        "icon": "02d"
+      },
+      "wind": null,
+      "sys": {
+        "sunrise": 1774140120,
+        "sunset": 1774183786
+      },
+      "name": "Asia/Kolkata",
+      "forecast": {
+        "rain_expected": false,
+        "max_probability_of_precipitation": 0,
+        "hourly_forecast": [
+          {
+            "time": 1774180800,
+            "temp": 30,
+            "humidity": 72,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02d"
+            }
+          },
+          {
+            "time": 1774184400,
+            "temp": 29.54,
+            "humidity": 73,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02n"
+            }
+          },
+          {
+            "time": 1774188000,
+            "temp": 29,
+            "humidity": 74,
+            "pop": 0,
+            "weather": {
+              "id": 801,
+              "main": "Clouds",
+              "description": "few clouds",
+              "icon": "02n"
+            }
+          },
+          {
+            "time": 1774191600,
+            "temp": 28.51,
+            "humidity": 74,
+            "pop": 0,
+            "weather": {
+              "id": 800,
+              "main": "Clear",
+              "description": "clear sky",
+              "icon": "01n"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "intelligence": {
+    "slopes": {
+      "p1": {
+        "slope_per_hour": 0.0843,
+        "estimated_hours_to_dryout": 474.2
+      },
+      "p2": {
+        "slope_per_hour": 1.8134,
+        "estimated_hours_to_dryout": 288.4
+      },
+      "p3": {
+        "slope_per_hour": 0.4304,
+        "estimated_hours_to_dryout": 1126.7
+      }
+    }
+  }
+}

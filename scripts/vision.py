@@ -7,7 +7,7 @@ import json
 
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
-PHOTO_PATH = os.path.join(BASE_DIR, "docs/media/latest.jpg")
+PHOTO_PATH = os.path.join(BASE_DIR, "media/latest.jpg")
 ARCHIVE_DIR = os.path.join(BASE_DIR, "archive")
 DAILY_BENCHMARK_PATH = os.path.join(ARCHIVE_DIR, "daily_benchmark.jpg")
 
@@ -36,11 +36,13 @@ def capture_vision():
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         
-        # Warmup
-        for _ in range(5): 
+        # Warmup (3 frames)
+        print("Warming up sensor...")
+        for i in range(3): 
             ret, frame = cap.read()
-            if not ret: time.sleep(0.5)
-            else: break
+            if ret:
+                print(f"  Warmup frame {i+1} captured.")
+            time.sleep(0.5)
 
         ret, frame = cap.read()
         cap.release()

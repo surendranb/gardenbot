@@ -3,10 +3,14 @@ import json
 import requests
 import os
 import sys
+import csv
+from datetime import datetime
 
 # --- Configuration ---
 CONFIG_PATH = os.path.expanduser("~/.config/openweathermap/credentials.json")
-OUTPUT_PATH = "/Users/surendran/.openclaw/workspace/gardenbot/docs/data/weather_context.json"
+BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
+JSON_OUTPUT_PATH = os.path.join(BASE_DIR, "data/weather_context.json")
+CSV_OUTPUT_PATH = os.path.join(BASE_DIR, "data/weather.csv")
 
 def fetch_weather():
     try:
@@ -41,46 +45,43 @@ def fetch_weather():
             if pop > max_pop: max_pop = pop
             if pop > 0.3: rain_expected = True
         
+        # 1. Prepare JSON (Legacy/Full Context)
         context = {
-            "timestamp": current.get("dt"),
+            "timestamp": datetime.fromtimestamp(current.get("dt", 0)).strftime("%Y-%m-%d %H:%M:%S"),
             "main": {
                 "temp": current.get("temp"),
-                "feels_like": current.get("feels_like"),
-                "temp_min": current.get("temp_min"),
-                "temp_max": current.get("temp_max"),
-                "pressure": current.get("pressure"),
                 "humidity": current.get("humidity"),
-                "sea_level": current.get("sea_level"),
-                "grnd_level": current.get("grnd_level")
+                "pressure": current.get("pressure")
             },
             "weather": current.get("weather", [{}])[0] if current.get("weather") else {},
-            "wind": current.get("wind"),
-            "sys": {
-                "sunrise": data.get("current", {}).get("sunrise", 0),
-                "sunset": data.get("current", {}).get("sunset", 0)
-            },
-            "name": data.get("timezone", "Unknown"),
             "forecast": {
                 "rain_expected": rain_expected,
-                "max_probability_of_precipitation": max_pop,
-                "hourly_forecast": [
-                    {
-                        "time": hour.get("dt"),
-                        "temp": hour.get("temp"),
-                        "humidity": hour.get("humidity"),
-                        "pop": hour.get("pop", 0),
-                        "weather": hour.get("weather", [{}])[0] if hour.get("weather") else {}
-                    }
-                    for hour in hourly
-                ]
+                "max_pop": max_pop
             }
         }
         
-        os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-        with open(OUTPUT_PATH, 'w') as f:
+        os.makedirs(os.path.dirname(JSON_OUTPUT_PATH), exist_ok=True)
+        with open(JSON_OUTPUT_PATH, 'w') as f:
             json.dump(context, f, indent=2)
+
+        # 2. Prepare CSV Row (Historical Tracking)
+        row = {
+            "timestamp": context["timestamp"],
+            "temp": current.get("temp"),
+            "humidity": current.get("humidity"),
+            "pressure": current.get("pressure"),
+            "pop": max_pop,
+            "description": context["weather"].get("description", "clear")
+        }
+
+        file_exists = os.path.isfile(CSV_OUTPUT_PATH)
+        with open(CSV_OUTPUT_PATH, 'a', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=row.keys())
+            if not file_exists:
+                writer.writeheader()
+            writer.writerow(row)
             
-        print(f"Weather context saved to {OUTPUT_PATH}")
+        print(f"Weather context saved to {JSON_OUTPUT_PATH} and {CSV_OUTPUT_PATH}")
         
     except Exception as e:
         print(f"Error fetching weather: {e}", file=sys.stderr)

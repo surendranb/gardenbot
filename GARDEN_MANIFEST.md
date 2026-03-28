@@ -47,4 +47,29 @@ To maintain a thriving indoor garden on a desk in Chennai, India, where ambient 
 *   **Biometric Status**: Bullet points for p1-p4 (e.g., `• p1: 🟢 NOMINAL (15%)`).
 *   **Visual Interpretation**: Detailed observations for p1-p4. Vitality check is paramount.
 *   **Growth Pulse** (06:00 AM Only): explicit growth metrics. Otherwise, state "Monitoring".
-*   **Action**: Recommendations (e.g., manual misting).
+*   **Action**: ---
+ 
+ ## 6. WORLD MODEL (The Biome)
+ *Codified March 27, 2026. Use for semantic reasoning/divergence analysis.*
+ 
+ ### **A. LIGHTING GEOMETRY**
+ - **Primary Window**: North-facing, 2m distance. Diffuse, stable light. Low UV-index.
+ - **Wall Orientation**: Plants against East-facing wall. No direct morning sun entry (wall-shielded).
+ - **Camera LED**: Always ON. Provides persistent cool-spectrum fill light.
+ 
+ ### **B. ATMOSPHERIC MICROCLIMATE**
+ - **Thermal Ceiling**: 26°C (When AC is active). AC is located farthest from the North window.
+ - **Convection**: Two ceiling fans (2m above, 1m lateral). High air exchange; prevents stagnant boundary layers.
+ - **Thermal Gain**: Room is on the 1st floor with an open terrace above. Expect solar-thermal radiation through the ceiling during peak hours (12:00-15:00).
+ 
+ ### **C. PHYSICAL LAYOUT**
+ - **Desk Surface**: Wooden (Insulating). Low thermal conduction from desk to pots.
+ - **Spatial Density**: P2, P3, and P4 are clustered in a single black pot (sharing resources/shading). P1 is isolated in a smaller yellow pot.
+ 
+ ### **D. HUMAN FACTOR**
+ - **Occupancy**: Human present 09:00 - 23:00 daily (12+ hours).
+ - **Impact**: Localized CO2 enrichment and thermal mass (body heat) within 1m of the desk.
+ 
+ ### **E. HYPOTHESIS-DRIVEN CARE**
+ - **Spike Analysis**: If Soil % jumps without recorded care, infer **Misting** or **User-led Watering**.
+ - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than "Misty" outdoor forecasts due to AC dehumidification.

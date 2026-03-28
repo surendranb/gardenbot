@@ -7,37 +7,3 @@ __pycache__/
 # System
 .DS_Store
 Thumbs.db
-
-# GardenBot Temporary/Local Data
-logs/*.log
-!logs/vision_ledger.md
-archive/
-backup_audit/
-*.bak
-*.backup*
-/data/
-
-# Documentation/Reports
-# We keep docs/ as it contains the dashboard
-# We ignore other temp reports
-report_state.json
-alert_state.json
-forecast_raw.json
-forecast.txt
-weather_context.json
-current_snapshot.json
-telemetry.csv.backup
-telemetry.csv.bak
-observer_context.md
-vision_ledger.md.bak
-growth_milestones.md
-cron.log
-2026-03-21-watchdog.log
-cron_failure_report.md
-cron_log.txt
-garden_cron.log
-
-# Local Sandbox
-local/
-# Local Sources
-src/
