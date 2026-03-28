@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-28 11:04:09
+**Generated:** 2026-03-28 11:58:01
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -31,17 +31,15 @@
  - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than outdoor forecasts due to AC dehumidification and fan scouring.
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
-- **VPD State**: EXTREME (Critical Stress) at 3.097 kPa (Stable trend: 0.085).
-- **Care Event**: p1 is rehydrating (+11.7%). Action confirmed.
-- **Dry-down**: p2 moisture velocity is -6.4% per window. Metabolic activity is active.
-- **Dry-down**: p3 moisture velocity is -2.6% per window. Metabolic activity is active.
+- **VPD State**: EXTREME (Critical Stress) at 3.324 kPa (Rising trend: 0.354).
+- **Dry-down**: p1 moisture velocity is -8.0% per window. Metabolic activity is active.
+- **Care Event**: p2 is rehydrating (+11.2%). Action confirmed.
+- **Hydration Stagnancy**: p3 is flat (Δ2.0%). Check for root-stasis or sensor drift.
 - **Human Occupancy**: HIGH. Fan S (South) is active; localized air exchange is manual.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-27 22:25:28,30.0,27.0,870,533.0,176.0,420.0
-2026-03-27 22:57:51,30.0,26.0,914,547.0,174.0,434.0
 2026-03-28 05:55:30,31.0,27.0,913,525.0,227.0,432.0
 2026-03-28 06:55:28,31.0,27.0,784,527.0,216.0,443.0
 2026-03-28 07:25:28,30.0,28.0,717,545.0,234.0,435.0
@@ -52,14 +50,14 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-28 09:55:28,30.0,28.0,578,547.0,239.0,438.0
 2026-03-28 10:25:28,30.0,27.0,580,542.0,236.0,438.0
 2026-03-28 10:55:28,30.0,27.0,572,509.0,233.0,438.0
+2026-03-28 11:25:28,31.0,26.0,546,575.0,217.0,426.0
+2026-03-28 11:55:28,31.0,26.0,554,574.0,202.0,422.0
 
 ```
 
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-27 22:25:28,3.097,59.5,,100.0,,72.4,,,,,,,,False,False,False
-2026-03-27 22:57:51,3.14,55.2,,100.0,,68.4,,,,,,,,False,False,False
 2026-03-28 05:55:30,3.279,62.0,,90.6,,68.9,,,,,,,,False,False,False
 2026-03-28 06:55:28,3.279,61.3,,95.3,,65.8,,,,,,,,False,False,False
 2026-03-28 07:25:28,3.055,55.8,,87.6,,68.1,,,,,,,,False,False,False
@@ -70,6 +68,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-28 09:55:28,3.055,55.2,,85.4,,67.2,,,,,,,,False,False,False
 2026-03-28 10:25:28,3.097,56.7,,86.7,,67.2,,,,,,,,False,False,False
 2026-03-28 10:55:28,3.097,66.9,,88.0,,67.2,,,,,,,,False,False,False
+2026-03-28 11:25:28,3.324,46.6,,94.8,,70.7,,,,,,,,False,False,False
+2026-03-28 11:55:28,3.324,46.9,,100.0,,71.8,,,,,,,,False,False,False
 
 ```
 
