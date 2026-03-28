@@ -30,7 +30,7 @@ To ensure plants **thrive and grow** on a desk-top biome in Chennai, India. Whil
  
  ### **C. PHYSICAL LAYOUT**
  - **Desk Surface**: Wooden (Insulating). Low thermal conduction from desk to pots.
- - **Spatial Density**: P2, P3, and P4 are clustered in a single black pot (sharing resources/shading). P1 is isolated in a smaller yellow pot.
+ - **Spatial Density**: P1 is isolated in the yellow pot. P2 and P4 share the same black pot and sensor channel (`a5`). P3 is in its own black pot. The white rabbit sits in the Pothos (`p3`) pot and serves as the visual scale anchor.
  
  ### **D. HUMAN FACTOR**
  - **Occupancy**: Human present 09:00 - 23:00 daily (12+ hours).

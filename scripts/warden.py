@@ -5,9 +5,6 @@ import time
 import os
 import json
 import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
 import numpy as np
 import math
 import subprocess
@@ -22,13 +19,101 @@ CONFIG_PATH = os.path.join(BASE_DIR, "scripts/config/plants.json")
 RAW_CSV_PATH = os.path.join(BASE_DIR, "data/telemetry.csv")
 METRICS_CSV_PATH = os.path.join(BASE_DIR, "data/metrics.csv")
 SNAPSHOT_PATH = os.path.join(BASE_DIR, "data/current_snapshot.json")
+STATE_PATH = os.path.join(BASE_DIR, "data/warden_state.json")
 WEATHER_PATH = os.path.join(BASE_DIR, "data/weather_context.json")
-CHART_PATH = os.path.join(BASE_DIR, "media/dashboard.png")
+VISION_OBSERVATION_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
 PHOTO_PATH = os.path.join(BASE_DIR, "media/latest.jpg")
+ARCHIVE_DIR = os.path.join(BASE_DIR, "archive")
 
 def load_plants():
     if not os.path.exists(CONFIG_PATH): return []
     with open(CONFIG_PATH, 'r') as f: return json.load(f)
+
+def load_warden_state():
+    """Loads the persistent reasoning state (Hypothesis Engine)."""
+    if os.path.exists(STATE_PATH):
+        try:
+            with open(STATE_PATH, 'r') as f: return json.load(f)
+        except: pass
+    return {"last_hypothesis": "Initial Observation", "active_concerns": []}
+
+def save_warden_state(state):
+    with open(STATE_PATH, 'w') as f: json.dump(state, f, indent=2)
+
+def get_temporal_vision_stack():
+    """Retrieves paths for Anchor (6AM), Previous (T-3h), and Current photos."""
+    now = datetime.now()
+    today_str = now.strftime("%Y-%m-%d")
+    day_dir = os.path.join(ARCHIVE_DIR, today_str)
+    
+    stack = {"anchor": None, "previous": None, "current": PHOTO_PATH}
+    
+    if os.path.exists(day_dir):
+        files = sorted([f for f in os.listdir(day_dir) if f.endswith(".jpg")])
+        if files:
+            # Anchor: prefer the first 06:xx capture, then 07:xx, then oldest available.
+            for prefix in ("garden_06", "garden_07"):
+                for f in files:
+                    if f.startswith(prefix):
+                        stack["anchor"] = os.path.join(day_dir, f)
+                        break
+                if stack["anchor"]:
+                    break
+            if not stack["anchor"]:
+                stack["anchor"] = os.path.join(day_dir, files[0])
+
+            # Previous: most recent archived image before the current capture.
+            if len(files) >= 2:
+                stack["previous"] = os.path.join(day_dir, files[-2])
+                
+    return stack
+
+def load_vision_observation():
+    """Loads the structured visual interpretation produced by vision.py."""
+    if not os.path.exists(VISION_OBSERVATION_PATH):
+        return {}
+    try:
+        with open(VISION_OBSERVATION_PATH, "r") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Warden: Failed to load vision observation: {e}")
+        return {"error": str(e)}
+
+def derive_hypothesis(raw, metrics, plants):
+    """Produces a compact state update for the next run."""
+    if not raw or not metrics:
+        return {
+            "last_hypothesis": "Insufficient telemetry; awaiting next valid capture.",
+            "active_concerns": ["missing-telemetry"]
+        }
+
+    concerns = []
+    dry_plants = []
+    for p in plants:
+        pid = p["id"]
+        pct = metrics.get(f"{pid}_pct")
+        if pct is not None and metrics.get(f"{pid}_is_dry"):
+            dry_plants.append(pid)
+
+    vpd = metrics.get("vpd")
+    if dry_plants:
+        concerns.append(f"dry:{','.join(dry_plants)}")
+    if vpd is not None and vpd >= 3.0:
+        concerns.append("high-vpd")
+
+    if dry_plants and vpd is not None and vpd >= 3.0:
+        hypothesis = f"Plants {', '.join(dry_plants)} are under dry-down pressure with elevated VPD."
+    elif dry_plants:
+        hypothesis = f"Dry-down detected in {', '.join(dry_plants)}; moisture needs follow-up."
+    elif vpd is not None and vpd >= 3.0:
+        hypothesis = "Soil moisture is adequate, but atmospheric demand remains high."
+    else:
+        hypothesis = "Telemetry stable; no immediate stress signal."
+
+    return {
+        "last_hypothesis": hypothesis,
+        "active_concerns": concerns
+    }
 
 def find_active_arduino_port():
     """Scans for a port streaming valid gardenbot data (pipe-delimited)."""
@@ -139,36 +224,7 @@ def compute_metrics(raw_row, plants):
         print(f"Warden: Metrics error: {e}")
         return None
 
-def render_dashboard(plants):
-    try:
-        if not os.path.exists(RAW_CSV_PATH): return
-        df = pd.read_csv(RAW_CSV_PATH)
-        df['timestamp'] = pd.to_datetime(df['timestamp'])
-        now = datetime.now()
-        df_view = df[df['timestamp'] > (now - timedelta(hours=48))].copy()
-        if len(df_view) < 2: return
-        
-        plt.style.use('dark_background')
-        fig, ax1 = plt.subplots(figsize=(15, 10), dpi=100)
-        fig.patch.set_facecolor('#000000'); ax1.set_facecolor('#000000')
-        ax2 = ax1.twinx()
-        
-        for p in plants:
-            pid = p["id"]
-            if pid in df_view.columns:
-                ax1.plot(df_view['timestamp'], df_view[pid], color=p["color"], label=p["name"], linewidth=2)
-        
-        ax2.plot(df_view['timestamp'], df_view['temp'], color='red', alpha=0.3, label='Temp')
-        ax2.plot(df_view['timestamp'], df_view['hum'], color='cyan', alpha=0.3, label='Hum')
-        
-        ax1.set_xlim(now - timedelta(hours=48), now + timedelta(hours=48))
-        ax1.set_ylim(0, 1024); ax2.set_ylim(10, 60)
-        ax1.legend(loc='upper left'); ax1.grid(alpha=0.1)
-        plt.title("GARDENOS BIOMETRIC TRENDS (48H HISTORY)")
-        plt.savefig(CHART_PATH); plt.close()
-    except Exception as e: print(f"Warden: Dashboard error: {e}")
-
-def save_snapshot(raw, metrics, plants):
+def save_snapshot(raw, metrics, plants, state):
     # FALLBACK: If fresh capture failed, read last row from CSV
     if not raw:
         print("Warden: Capture failed, attempting CSV fallback...")
@@ -182,12 +238,20 @@ def save_snapshot(raw, metrics, plants):
         except Exception as e:
             print(f"Warden: Fallback failed: {e}")
 
+    vision_stack = get_temporal_vision_stack()
+    vision_observation = load_vision_observation()
     snapshot = {
         "timestamp": datetime.now().isoformat(), 
         "sensors": raw or {}, 
         "moisture_analysis": {}, 
         "environment": {"vpd_kpa": metrics.get("vpd") if metrics else None}, 
-        "intelligence": {"recent_visual_ledger": []}
+        "intelligence": {
+            "hypothesis": state.get("last_hypothesis"),
+            "active_concerns": state.get("active_concerns", []),
+            "temporal_stack": vision_stack,
+            "vision_observation": vision_observation,
+            "recent_visual_ledger": []
+        }
     }
     
     if metrics:
@@ -209,6 +273,7 @@ def save_snapshot(raw, metrics, plants):
         except: pass
 
     with open(SNAPSHOT_PATH, 'w') as f: json.dump(snapshot, f, indent=2)
+    save_warden_state(state)
     print(f"Warden: Snapshot saved to {SNAPSHOT_PATH}")
 
 # --- Calibration Helpers ---
@@ -302,8 +367,10 @@ if __name__ == "__main__":
         sys.exit(0)
 
     plants = load_plants()
+    state = load_warden_state()
     raw = capture_data()
     metrics = compute_metrics(raw, plants)
-    render_dashboard(plants)
-    save_snapshot(raw, metrics, plants)
+    state_update = derive_hypothesis(raw, metrics, plants)
+    state.update(state_update)
+    save_snapshot(raw, metrics, plants, state)
     print("Warden: Run complete.")

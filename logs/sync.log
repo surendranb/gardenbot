@@ -1382,3 +1382,25 @@ INFO    -  Documentation built in 0.79 seconds
 error: cannot pull with rebase: You have unstaged changes.
 error: Please commit or stash them.
 2026-03-28 17:38:04 Staging all assets...
+2026-03-28 17:38:04 Staging changes...
+[main ee88b7d] GardenOS Sync: 2026-03-28 17:38:04
+ 1 file changed, 29 insertions(+)
+2026-03-28 17:38:04 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:surendranb/gardenbot.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-03-28 17:38:07 Push failed; pulling remote and retrying.
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:surendranb/gardenbot.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'github.com:surendranb/gardenbot.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. If you want to integrate the remote changes,
+hint: use 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+2026-03-28 17:38:09 Sync Failed even after rebasing; please inspect the repo.
