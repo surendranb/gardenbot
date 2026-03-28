@@ -419,6 +419,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-environmental-story-biome-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌎 The Environmental Story: Biome &amp; Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌎 The Environmental Story: Biome &amp; Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-chennai-outdoors-the-macro-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Chennai Outdoors (The Macro-Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-room-geometry-the-protective-shield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Room Geometry (The Protective Shield)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-cooling-hierarchy-the-human-gated-pulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Cooling Hierarchy (The Human-Gated Pulse)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-desk-the-isolated-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Desk (The Isolated Stage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#layer-breakdown" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -594,6 +655,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#the-environmental-story-biome-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌎 The Environmental Story: Biome &amp; Context
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌎 The Environmental Story: Biome &amp; Context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-chennai-outdoors-the-macro-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Chennai Outdoors (The Macro-Context)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-the-room-geometry-the-protective-shield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The Room Geometry (The Protective Shield)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-the-cooling-hierarchy-the-human-gated-pulse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The Cooling Hierarchy (The Human-Gated Pulse)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-the-desk-the-isolated-stage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Desk (The Isolated Stage)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#layer-breakdown" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -700,40 +822,37 @@
 <pre class="mermaid"><code>graph TD
     %% Layer 1: Physical
     subgraph Physical["1. THE SENSES (Hardware)"]
-        S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Nano]
-        CAM[USB Webcam] --&gt;|USB| MBA[MacBook Air]
+        S[Sensors: Temp, Hum, Soil] --&gt;|Serial| AR[Arduino Uno]
+        CAM[USB Webcam] --&gt;|USB| MBA[MacBook]
         AR --&gt; MBA
-    end
-
-    %% Layer 2: Local Processing
-    subgraph Local["2. THE MEMORY (Local Data)"]
-        MBA --&gt;|warden.py| CSV[telemetry.csv]
-        MBA --&gt;|vision.py| IMG[media/archive/]
-        API[Weather API] --&gt;|scout.py| WTH[weather.csv]
-    end
-
-    %% Layer 3: Intelligence
-    subgraph Intel["3. THE WARDEN (AI Reasoning)"]
-        CSV &amp; IMG &amp; WTH --&gt;|Briefing| PREP[Context Prep]
-        PREP --&gt;|OpenClaw| AI[AI Garden Warden]
-        AI --&gt;|Reasoning| LDG[vision_ledger.md]
-    end
-
-    %% Layer 4: Public
-    subgraph Public["4. THE VOICE (GitHub)"]
-        CSV &amp; IMG &amp; LDG --&gt;|sync.sh| GH[GitHub Repo]
-        GH --&gt;|MkDocs| WEB[Live Dashboard &amp; Blog]
-    end
-
-    %% Styling
-    style Physical fill:#1e293b,stroke:#334155,color:#fff
-    style Local fill:#0f172a,stroke:#4ade80,color:#fff
-    style Intel fill:#1e1b4b,stroke:#a855f7,color:#fff
-    style Public fill:#064e3b,stroke:#4ade80,color:#fff</code></pre>
+    end</code></pre>
+<hr />
+<h2 id="the-environmental-story-biome-context">🌎 The Environmental Story: Biome &amp; Context</h2>
+<p>GardenOS doesn't exist in a vacuum. It is a bridge between the <strong>Tropical Macro-Context</strong> of Chennai and the <strong>Human-Gated Micro-Context</strong> of your room.</p>
+<h3 id="1-the-chennai-outdoors-the-macro-context">1. The Chennai Outdoors (The Macro-Context)</h3>
+<ul>
+<li><strong>The Solar Battery</strong>: The room is on the <strong>1st floor with an open terrace above</strong>. This terrace acts as a thermal battery, soaking up the intense Chennai sun and radiating heat into the room between <strong>12:00 and 15:00</strong>.</li>
+<li><strong>The Tropical Air</strong>: Outside is high-energy and humid (~30°C+). This represents the "Drift" state of the room when cooling is inactive.</li>
+</ul>
+<h3 id="2-the-room-geometry-the-protective-shield">2. The Room Geometry (The Protective Shield)</h3>
+<ul>
+<li><strong>North Window (2m away)</strong>: Provides <strong>Pure Indirect Diffuse Light</strong>. No UV spikes, no sun-scorch. It's a stable, "Soft Box" lighting environment.</li>
+<li><strong>East Wall</strong>: A physical shield against the direct morning sun, ensuring the biome remains cool and shaded during the early hours.</li>
+</ul>
+<h3 id="3-the-cooling-hierarchy-the-human-gated-pulse">3. The Cooling Hierarchy (The Human-Gated Pulse)</h3>
+<p>The room's climate is controlled by a human-comfort loop:
+*   <strong>Fan S (South)</strong>: The baseline air exchange. Always ON when the human is present, ensuring the plants never sit in stagnant air.
+*   <strong>Fan N (North)</strong>: Auxiliary air movement for additional heat management.
+*   <strong>The AC</strong>: The final thermal resort. It clamps the temperature at <strong>26°C</strong> but crashes the humidity, creating a "Violent VPD Spike" that the Warden must reconcile.</p>
+<h3 id="4-the-desk-the-isolated-stage">4. The Desk (The Isolated Stage)</h3>
+<ul>
+<li><strong>Wooden Surface</strong>: Acts as a thermal insulator, decoupling the pots from the building's thermal mass.</li>
+<li><strong>The White Rabbit (50mm)</strong>: The system's scale anchor, providing a constant mm-scale reference in an ever-changing visual environment.</li>
+</ul>
 <hr />
 <h2 id="layer-breakdown">🛠️ Layer Breakdown</h2>
 <h3 id="1-the-physical-layer">1. The Physical Layer</h3>
-<p>The hardware is "dumb" by design. The <strong>Arduino</strong> reads signals from a DHT11 (Atmosphere) and three <strong>Capacitive Moisture Sensors (TLC555)</strong>. We use capacitive sensors because standard resistive sensors rely on DC current passing through the soil, which causes electrolysis and rapid corrosion of the probes.</p>
+<p>The hardware is "dumb" by design. The <strong>Arduino Uno</strong> reads signals from a DHT11 (Atmosphere) and three <strong>Capacitive Moisture Sensors (TLC555)</strong>. We use capacitive sensors because standard resistive sensors rely on DC current passing through the soil, which causes electrolysis and rapid corrosion of the probes.</p>
 <h3 id="2-the-data-layer-local-first">2. The Data Layer (Local-First)</h3>
 <p>Everything is recorded locally on a <strong>MacBook Air</strong>. Even if the WiFi fails, the system continues to log data to CSV files. This is our "Black Box" recorder. If the internet returns after a week, the system simply pushes the entire history at once.</p>
 <h3 id="3-the-intelligence-layer">3. The Intelligence Layer</h3>
