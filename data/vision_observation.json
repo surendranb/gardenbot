@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-03-28T13:34:46.385765",
+  "model": "gemma-3-12b-it",
+  "baseline_reference": {
+    "rabbit_height_cm": 5.0,
+    "camera_distance_cm": 30.0,
+    "black_pot_diameter_cm": 12.0,
+    "yellow_pot_diameter_cm": 10.0
+  },
+  "image_availability": {
+    "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
+    "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_125001.jpg",
+    "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg"
+  },
+  "capture": {
+    "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
+    "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg"
+  },
+  "raw_model_output": "```json\n{\n  \"timestamp\": \"2024-01-18T17:30:00\",\n  \"model\": \"Garden Vision Interpreter\",\n  \"baseline_reference\": {\n    \"white_rabbit_height_cm\": 5,\n    \"camera_distance_cm\": 30,\n    \"black_pot_diameter_cm\": 12,\n    \"yellow_pot_diameter_cm\": 10,\n    \"black_pot_type\": \"centered\",\n    \"yellow_pot_type\": \"spreading/trailing\"\n  },\n  \"image_availability\": \"complete\",\n  \"plants\": {\n    \"p1\": {\n      \"name\": \"String of Nickels\",\n      \"pot_color\": \"black\",\n      \"health\": \"unknown\",\n      \"leaf_count\": 10,\n      \"growth_type\": \"trailing\",\n      \"new_growth\": false,\n      \"damaged_leaves\": false,\n      \"droop\": false,\n      \"spread\": true,\n      \"occluded\": false\n    },\n    \"p2\": {\n      \"name\": \"Mexican Mint\",\n      \"pot_color\": \"black\",\n      \"health\": \"unknown\",\n      \"leaf_count\": 5,\n      \"growth_type\": \"upright\",\n      \"new_growth\": true,\n      \"damaged_leaves\": false,\n      \"droop\": false,\n      \"spread\": false,\n      \"occluded\": false\n    },\n    \"p3\": {\n      \"name\": \"Pothos\",\n      \"pot_color\": \"yellow\",\n      \"health\": \"unknown\",\n      \"leaf_count\": 3,\n      \"growth_type\": \"spreading\",\n      \"new_growth\": false,\n      \"damaged_leaves\": false,\n      \"droop\": false,\n      \"spread\": true,\n      \"occluded\": false\n    },\n    \"p4\": {\n      \"name\": \"Silver Guest\",\n      \"pot_color\": \"black\",\n      \"health\": \"unknown\",\n      \"leaf_count\": 6,\n      \"growth_type\": \"upright\",\n      \"new_growth\": false,\n      \"damaged_leaves\": false,\n      \"droop\": false,\n      \"spread\": false,\n      \"occluded\": false\n    }\n  },\n  \"temporal_changes\": {\n    \"p2\": \"New growth observed.\"\n  },\n  \"anomalies\": [\n    \"Multiple wires are present and intersecting the pots.\",\n    \"A white rabbit figurine is present in the pot with the String of Nickels.\"\n  ],\n  \"confidence\": 0.8\n}\n```\n\n**Summary:**\n\nThis baseline assessment reveals four plants: String of Nickels (trailing in a black pot), Mexican Mint (upright in a black pot with new growth), Pothos (spreading in a yellow pot), and Silver Guest (upright in a black pot).  The String of Nickels is trailing, and the Pothos is spreading. New growth is visible on the Mexican Mint. Several wires are present, intersecting the pots, and a white rabbit figurine is in the String of Nickels pot. Overall health is currently unknown for all plants. Confidence in this assessment is 80%."
+}
