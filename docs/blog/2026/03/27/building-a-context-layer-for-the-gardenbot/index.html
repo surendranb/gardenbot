@@ -595,16 +595,18 @@
 
 <h1 id="building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</h1>
 <h2 id="the-problem">The problem</h2>
-<p>Using an LLM to monitor 3 pots on my desktop is fun, but it kept guessing. Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees <em>"Chennai, 32°C, 60% humidity"</em> and concludes the plants must be wilting. Makes sense if you're going by vibes. Completely wrong physically.</p>
+<p>Using an LLM to monitor 3 pots on my desktop is a fun idea. But ultimately just dumping numbers into an LLM is no joy. </p>
+<p>Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees <em>"Chennai, 32°C, 60% humidity"</em> and concludes the plants must be wilting. Makes sense if you're going by vibes. It doesn't take into account the fact that the plants are indoors or how the room is aligned to the sun or what is the actual physics.</p>
 <!-- more -->
 
-<p>The plants sit on a desk in an HVAC-clamped room. The AC holds temp at <strong>26°C</strong> and crushes humidity below <strong>30%</strong>. VPD regularly hits <strong>3.5+ kPa</strong> — that's extreme dryness, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the <em>outdoor</em> climate, not the actual microclimate 2 meters from a north-facing window.</p>
+<p>The plants sit on my desk. Once in a while I turn on the AC, which is also set to a max of <strong>26°C</strong>. If it is on it pushes humidity below <strong>30%</strong>. This makes the room dry and VPD regularly hits <strong>3.5+ kPa</strong>, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the <em>outdoor</em> climate, not the actual microclimate 2 meters from a north-facing window.</p>
 <h2 id="silica">SILICA</h2>
-<p>SILICA is what I'm calling the context layer. It's not one script — it's a few things that sit between raw data and the LLM.</p>
-<p><code>prep_observer_context.py</code> is the main piece. It reads all the data files from the collection scripts (<code>warden.py</code>, <code>vision.py</code>, <code>weather_scout.py</code>), merges them with the world model and plant config, and outputs <code>observer_context.md</code>.</p>
-<p><code>GARDEN_MANIFEST.md</code> is the <strong>world model</strong>. I wrote it by hand — it codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings alone.</p>
+<p>The answer: Build a context layer. SILICA is we named it. It is the abbreviation of "Semantic Intelligence &amp; Local Indoor Context Awareness for Agentic Bio-Monitoring". A collection of scripts that sit between raw data and the LLM.</p>
+<p><code>prep_observer_context.py</code> does the heavy lifting. It reads all the data files from the collection scripts (<code>warden.py</code>, <code>vision.py</code>, <code>weather_scout.py</code>), merges them with the world model and plant config, and outputs <code>observer_context.md</code>.</p>
+<p><code>GARDEN_MANIFEST.md</code> is the <strong>world model</strong>. It codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC, if on, clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings alone.</p>
 <p><code>scripts/config/plants.json</code> has species info, sensor calibration, and dry thresholds for each pot.</p>
-<p>The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files — it doesn't run them. OpenClaw doesn't run them either. <strong>Data collection has no dependency on reasoning.</strong></p>
+<p>The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files and prepares the context of the agent to pass on to the LLM.</p>
+<p>The reason I use OpenClaw for this is - it makes the human in the loop easy/possible. When the agent finishes, it posts the observation and tells me what to do about it - water, mist etc. I reply in the thread once in a while about if I did act on its advice and it is added to the context layer in return.</p>
 <h2 id="why-semantic-synthesis-matters">Why semantic synthesis matters</h2>
 <p>Raw CSV rows are bad LLM input. A row like <code>2026-03-27T14:30:00,27.1,28.2,412,wet,dry,wet</code> is meaningless without schema, calibration, and context. The model would need to know which column is which, what the thresholds are, what "wet" means for each species, and how the reading compares to recent trends.</p>
 <p><code>prep_observer_context.py</code> does that translation. It produces facts like:</p>
@@ -619,7 +621,7 @@
 <p>Before SILICA, the LLM would see Chennai weather and hallucinate heat stress. It'd recommend misting because it assumed tropical humidity, when the room is actually bone-dry from the AC. It flagged "high temperature" when the desk has never been above 28°C.</p>
 <p>After SILICA, it flags the real problems — high VPD causing leaf curl, dry soil in specific pots, sensor readings that contradict what Gemma 3 sees in the image. Much more useful once I stopped letting it guess and started feeding it facts.</p>
 <h2 id="whats-next">What's next</h2>
-<p>Moving historical data into SQLite for faster trend queries. Hardening the launchd services so camera warmup happens reliably. Extending the reasoning window so the LLM has time for complex audits. But the foundation — grounding the model in a world model — that part works.</p>
+<p>Moving historical data into SQLite for faster trend queries. Hardening the launchd services so camera warmup happens reliably. Extending the reasoning window so the LLM has time for complex audits. All this would be building on top of the system that's grounded in a world model.</p>
 
 
 
