@@ -929,3 +929,12 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.82 seconds
 2026-03-28 09:35:04 Staging all assets...
+2026-03-28 09:35:05 Staging changes...
+[main fb628a4] GardenOS Sync: 2026-03-28 09:35:05
+ 19 files changed, 207 insertions(+), 68 deletions(-)
+ rename docs/blog/2026/03/27/{2026-03-27-world-model => building-a-context-layer-for-the-gardenbot}/index.html (96%)
+ create mode 100644 src/docs/blog/posts/2026-03-28-the-digital-familiar.md
+2026-03-28 09:35:05 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   17aa1ae..fb628a4  main -> main
+2026-03-28 09:35:08 Sync Successful.
