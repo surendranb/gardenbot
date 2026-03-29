@@ -15,6 +15,7 @@
 - **NEW_HYPOTHESIS**: Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while monitoring p1 dark spot and p3 yellowing progression.
 - **LAST_HUMAN_ACTION**: queried p2
 - **ACTIVE CONCERNS**: high-vpd, p1-dark-spot, p3-yellowing
+
 # WARDEN REPT - 2026-03-29 15:03
 
 ## 🪴 Individual Plant Status
