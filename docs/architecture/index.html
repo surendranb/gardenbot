@@ -841,8 +841,7 @@
         WPY --&gt; STS[warden_state.json]
 
         CAM[USB Webcam] --&gt;|OpenCV| VPY[vision.py]
-        VPY --&gt;|Frames sent to Gemma 3 via Google AI Studio| VJS[vision_observation.json]
-        VPY --&gt; VMD[vision_observation.md]
+        VPY --&gt;|Multi-day temporal analysis sent to Gemini| VJS[vision_observation.json]
 
         OWM[OpenWeatherMap API] --&gt; WSC[weather_scout.py]
         WSC --&gt; WTH[weather_context.json]
@@ -910,11 +909,8 @@
 2026-03-21 14:35:57,32.0,26.0,796,864.0,219.0,295.0
 </code></pre></div>
 <p>It also writes <code>metrics.csv</code> (computed values like VPD), <code>current_snapshot.json</code>, and <code>warden_state.json</code>.</p>
-<p><strong><code>vision.py</code></strong> — captures a frame from the USB webcam via OpenCV, then sends it to <strong>Gemma 3 on Google AI Studio</strong>. Gemma looks at the image and describes what it sees — leaf posture, color, soil surface condition. This is <em>perception</em>, not reasoning. Here's a sample of its output:</p>
-<blockquote>
-<p><em>"The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains within the Pothos pot, serving as a consistent scale reference."</em></p>
-</blockquote>
-<p>The full observation gets written to <code>vision_observation.json</code> (structured data with image paths and baseline references) and <code>vision_observation.md</code> (the human-readable description above).</p>
+<p><strong><code>vision.py</code></strong> — captures a frame from the USB webcam via OpenCV, then samples a multi-day temporal sequence (Historical Peak Stress + Today's morning recovery + Now). This stack is sent to <strong>Gemini on Google AI Studio</strong> for a meticulous "Expert Visual Ethologist" audit. It identifies specific orientation-calibrated physical changes (leaf count, color gradients, postural shifts) and provides pixel-based health inferences.</p>
+<p>The full observation is written to <code>vision_observation.json</code> (a high-resolution machine-readable audit) which feeds directly into the SILICA context layer. This ensures the Warden can correlate visual "why" with sensor "why" without lossy translation.</p>
 <p><strong><code>weather_scout.py</code></strong> — calls the OpenWeatherMap API for current Chennai conditions. This gives us the outdoor macro-context, which matters because the indoor microclimate is completely different. Here's a sample:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;main&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;temp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">26.08</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;humidity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;pressure&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1009</span><span class="w"> </span><span class="p">},</span>

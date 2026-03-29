@@ -42,8 +42,7 @@ graph TD
         WPY --> STS[warden_state.json]
 
         CAM[USB Webcam] -->|OpenCV| VPY[vision.py]
-        VPY -->|Frames sent to Gemma 3 via Google AI Studio| VJS[vision_observation.json]
-        VPY --> VMD[vision_observation.md]
+        VPY -->|Multi-day temporal analysis sent to Gemini| VJS[vision_observation.json]
 
         OWM[OpenWeatherMap API] --> WSC[weather_scout.py]
         WSC --> WTH[weather_context.json]
@@ -127,11 +126,9 @@ timestamp,temp,hum,light,p1,p2,p3
 
 It also writes `metrics.csv` (computed values like VPD), `current_snapshot.json`, and `warden_state.json`.
 
-**`vision.py`** — captures a frame from the USB webcam via OpenCV, then sends it to **Gemma 3 on Google AI Studio**. Gemma looks at the image and describes what it sees — leaf posture, color, soil surface condition. This is *perception*, not reasoning. Here's a sample of its output:
+**`vision.py`** — captures a frame from the USB webcam via OpenCV, then samples a multi-day temporal sequence (Historical Peak Stress + Today's morning recovery + Now). This stack is sent to **Gemini on Google AI Studio** for a meticulous "Expert Visual Ethologist" audit. It identifies specific orientation-calibrated physical changes (leaf count, color gradients, postural shifts) and provides pixel-based health inferences.
 
-> *"The latest image shows a stable garden state. All plants maintain their established postures and leaf counts. The white rabbit remains within the Pothos pot, serving as a consistent scale reference."*
-
-The full observation gets written to `vision_observation.json` (structured data with image paths and baseline references) and `vision_observation.md` (the human-readable description above).
+The full observation is written to `vision_observation.json` (a high-resolution machine-readable audit) which feeds directly into the SILICA context layer. This ensures the Warden can correlate visual "why" with sensor "why" without lossy translation.
 
 **`weather_scout.py`** — calls the OpenWeatherMap API for current Chennai conditions. This gives us the outdoor macro-context, which matters because the indoor microclimate is completely different. Here's a sample:
 
