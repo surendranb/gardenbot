@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-29T12:58:16.523613",
+  "timestamp": "2026-03-29T13:25:28.158215",
   "sensors": {
-    "timestamp": "2026-03-29 12:58:16",
+    "timestamp": "2026-03-29 13:25:28",
     "temp": 32.0,
     "hum": 36.0,
-    "light": 586,
-    "p1": 529,
-    "p2": 117,
-    "p3": 419
+    "light": 596,
+    "p1": 558,
+    "p2": 122,
+    "p3": 421
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 60.7,
+      "moisture_pct": 51.8,
       "is_dry": false
     },
     "p2": {
@@ -19,7 +19,7 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 72.6,
+      "moisture_pct": 72.1,
       "is_dry": false
     }
   },
@@ -129,9 +129,9 @@
       }
     },
     "recent_visual_ledger": [
-      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Stress - Sensor shows 60.4% moisture (adequate) but visuals reveal mild stress with developing dark spot and slight drooping \u2794 **Advice:** Monitor dark spot for fungal infection; continue foliar misting to address VPD stress\n* **p2 (Mexican Mint):** Healthy - Sensor shows 100% moisture and visuals confirm healthy, upright growth with no changes \u2794 **Advice:** No action needed\n* **p3 (Pothos):** Stress - Sensor shows 73.5% moisture (adequate) but visuals show significant stress with progressive yellowing (30% leaf surface) and increased drooping \u2794 **Advice:** Investigate possible nutrient deficiency or root rot; continue foliar misting for VPD stress\n* **p4 (Silver Guest):** Healthy - Sensor shows 100% moisture (shared with p2) and visuals confirm healthy, upright growth with no changes \u2794 **Advice:** No action needed",
-      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** EXTREME at 3.233 kPa (rising trend: 0.19), indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.233 kPa), indicating ongoing transpiration stress despite adequate hydration. Visual inspection shows stress symptoms on p1 and p3 that diverge from sensor readings, suggesting localized issues exacerbated by VPD stress.",
-      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while monitoring for localized issues on p1 and p3.\n- **LAST_HUMAN_ACTION**: water\n- **ACTIVE CONCERNS**: high-vpd, p1-dark-spot, p3-yellowing"
+      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Stress - Sensor shows 60.7% moisture (adequate) but visuals reveal mild stress with developing dark spot and slight drooping \u2794 **Advice:** Monitor dark spot for fungal infection; continue foliar misting to address VPD stress\n* **p2 (Mexican Mint):** Healthy - Sensor shows 100% moisture and visuals confirm healthy, upright growth with no changes \u2794 **Advice:** No action needed\n* **p3 (Pothos):** Stress - Sensor shows 72.6% moisture (adequate) but visuals show significant stress with progressive yellowing (50% leaf surface) and increased drooping \u2794 **Advice:** Investigate possible nutrient deficiency or root rot; continue foliar misting for VPD stress\n* **p4 (Silver Guest):** Healthy - Sensor shows 100% moisture (shared with p2) and visuals confirm healthy, upright growth with no significant changes \u2794 **Advice:** No action needed",
+      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** EXTREME at 3.043 kPa, indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.043 kPa), indicating ongoing transpiration stress despite adequate hydration. Visual inspection shows stress symptoms on p1 and p3 that diverge from sensor readings, suggesting localized issues exacerbated by VPD stress.",
+      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while monitoring p1 dark spot and p3 yellowing progression.\n- **LAST_HUMAN_ACTION**: queried p2\n- **ACTIVE CONCERNS**: high-vpd, p1-dark-spot, p3-yellowing"
     ]
   }
 }

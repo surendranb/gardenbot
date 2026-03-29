@@ -3,7 +3,7 @@
   "active_concerns": [
     "high-vpd"
   ],
-  "last_human_action": "water",
-  "last_human_action_at": "2026-03-28T18:20:05+05:30",
+  "last_human_action": "queried p2",
+  "last_human_action_at": "2026-03-29T13:14:00+05:30",
   "human_action_source": "slack"
 }
