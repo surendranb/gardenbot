@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-29 19:58:01
+**Generated:** 2026-03-30 00:01:29
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -31,17 +31,14 @@
  - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than outdoor forecasts due to AC dehumidification and fan scouring.
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
-- **VPD State**: EXTREME (Critical Stress) at 3.269 kPa (Stable trend: -0.051).
-- **Hydration Stagnancy**: p1 is flat (Δ-1.0%). Check for root-stasis or sensor drift.
+- **VPD State**: EXTREME (Critical Stress) at 3.269 kPa (Stable trend: 0.0).
+- **Dry-down**: p1 moisture velocity is -12.9% per window. Metabolic activity is active.
 - **Hydration Stagnancy**: p2 is flat (Δ0.0%). Check for root-stasis or sensor drift.
-- **Dry-down**: p3 moisture velocity is -4.8% per window. Metabolic activity is active.
-- **Human Occupancy**: HIGH. Fan S (South) is active; localized air exchange is manual.
+- **Dry-down**: p3 moisture velocity is -7.4% per window. Metabolic activity is active.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-29 10:25:27,32.0,34.0,567,542.0,120.0,420.0
-2026-03-29 10:55:28,32.0,32.0,570,530.0,123.0,416.0
 2026-03-29 11:25:28,32.0,32.0,566,534.0,120.0,418.0
 2026-03-29 12:58:16,32.0,36.0,586,529.0,117.0,419.0
 2026-03-29 13:25:28,32.0,36.0,596,558.0,122.0,421.0
@@ -52,14 +49,14 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-29 16:55:27,33.0,35.0,791,536.0,121.0,427.0
 2026-03-29 17:57:05,33.0,34.0,876,539.0,122.0,429.0
 2026-03-29 19:55:27,33.0,35.0,858,542.0,123.0,442.0
+2026-03-29 20:25:27,33.0,35.0,898,558.0,122.0,454.0
+2026-03-29 23:01:23,33.0,35.0,899,575.0,125.0,451.0
 
 ```
 
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-29 10:25:27,3.138,56.7,,100.0,,72.4,,,,,,,,False,False,False
-2026-03-29 10:55:28,3.233,60.4,,100.0,,73.5,,,,,,,,False,False,False
 2026-03-29 11:25:28,3.233,59.2,,100.0,,72.9,,,,,,,,False,False,False
 2026-03-29 12:58:16,3.043,60.7,,100.0,,72.6,,,,,,,,False,False,False
 2026-03-29 13:25:28,3.043,51.8,,100.0,,72.1,,,,,,,,False,False,False
@@ -70,6 +67,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-29 16:55:27,3.269,58.6,,100.0,,70.4,,,,,,,,False,False,False
 2026-03-29 17:57:05,3.32,57.7,,100.0,,69.8,,,,,,,,False,False,False
 2026-03-29 19:55:27,3.269,56.7,,100.0,,66.1,,,,,,,,False,False,False
+2026-03-29 20:25:27,3.269,51.8,,100.0,,62.7,,,,,,,,False,False,False
+2026-03-29 23:01:23,3.269,46.6,,100.0,,63.5,,,,,,,,False,False,False
 
 ```
 
@@ -97,23 +96,23 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 
 ## 📖 6. PREVIOUS LEDGER ENTRIES (Last 3)
 ## 🪴 Individual Plant Status
-* **p1 (String of Nickels):** Healthy - Sensor shows 52.8% moisture (adequate) and visuals show healthy, turgid growth ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
-* **p2 (Mexican Mint):** Stress - Sensor shows 100% moisture (ample) but visuals reveal stress with yellowing and browning at leaf margins and increased drooping ➔ **Advice:** Check for overwatering; allow topsoil to dry slightly; inspect for pests/nutrient deficiency; consider foliar feeding
-* **p3 (Pothos):** Healthy - Sensor shows 71.2% moisture (adequate) and visuals show robust, healthy growth with no discoloration ➔ **Advice:** Continue foliar misting for VPD stress; maintain current care
-* **p4 (Silver Guest):** Stress - Sensor shows 100% moisture (shared with p2, ample) but visuals show pale coloration suggesting insufficient light or nutrient deficiency ➔ **Advice:** Consider increasing light exposure (move closer to window or add grow light); inspect for nutrient deficiency
+* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 51.8% moisture adequate and visuals show healthy, stable growth) ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
+* **p2 (Mexican Mint):** Stress - Divergence (sensor shows 100% moisture ample but visuals reveal expanding brown spot and pale new leaves indicating stress) ➔ **Advice:** Check for overwatering; allow topsoil to dry slightly; inspect for pests/nutrient deficiency; consider foliar feeding
+* **p3 (Pothos):** Healthy - Alignment (sensor shows 62.7% moisture adequate and visuals show stable, healthy growth) ➔ **Advice:** Continue foliar misting for VPD stress; maintain current care
+* **p4 (Silver Guest):** Stress - Divergence (sensor shows 100% moisture ample (shared with p2) but visuals show pale color and obscured growth suggesting insufficient light or nutrient deficiency) ➔ **Advice:** Consider increasing light exposure (move closer to window or add grow light); inspect for nutrient deficiency
 
 ---
 
 ## 🌡️ Biome Dynamics
-* **VPD Context:** EXTREME at 3.37 kPa, indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.
-* **The Warden's Verdict:** Soil moisture remains ample across all plants, but extreme VPD (3.37 kPa) drives transpiration stress; visual stress on p2 and p4 diverges from sensor readings, suggesting issues beyond hydration (overwatering for p2, light deficiency for p4). p1 and p3 show alignment and remain healthy.
+* **VPD Context:** EXTREME at 3.269 kPa, indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.
+* **The Warden's Verdict:** Soil moisture remains ample across all plants, but extreme VPD (3.269 kPa) drives transpiration stress; visual stress on p2 and p4 diverges from sensor readings, suggesting issues beyond hydration (overwatering/biological issue for p2, light deficiency for p4). p1 and p3 show alignment and remain healthy.
 
 ---
 
 ## 💾 STATE UPDATE (INTERNAL)
-- **NEW_HYPOTHESIS**: Adjusting watering for p2 and increasing light for p4 will alleviate visual stress despite adequate sensor moisture.
-- **LAST_HUMAN_ACTION**: user replied: queried p2
-- **ACTIVE CONCERNS**: high-vpd, p2-overwatering, p4-insufficient-light
+- **NEW_HYPOTHESIS**: Addressing the brown spot on p2 through inspection and possible treatment, and increasing light for p4, will mitigate the observed visual stresses.
+- **LAST_HUMAN_ACTION**: queried p2
+- **ACTIVE CONCERNS**: high-vpd, p2-brown-spot, p4-insufficient-light
 
 ## 🎥 7. VISION OBSERVATION (Structured Visual Evidence)
 ```json
