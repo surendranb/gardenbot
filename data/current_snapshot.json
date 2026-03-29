@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-29T09:25:28.511495",
+  "timestamp": "2026-03-29T09:55:28.540616",
   "sensors": {
-    "timestamp": "2026-03-29 09:25:28",
+    "timestamp": "2026-03-29 09:55:28",
     "temp": 32.0,
-    "hum": 36.0,
-    "light": 671,
-    "p1": 523,
+    "hum": 35.0,
+    "light": 651,
+    "p1": 542,
     "p2": 124,
-    "p3": 415
+    "p3": 417
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 62.6,
+      "moisture_pct": 56.7,
       "is_dry": false
     },
     "p2": {
@@ -19,12 +19,12 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 73.8,
+      "moisture_pct": 73.2,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.043
+    "vpd_kpa": 3.091
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,11 +33,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_091051.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_091646.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-03-29T09:17:05.211076",
+      "timestamp": "2026-03-29T09:50:22.867708",
       "model": "gemma-3-27b-it",
       "image_availability": {
         "compare_set": [
@@ -46,9 +46,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_135000.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_091646.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_095002.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_091646.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_095002.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-25/garden_145000.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg"
       },
@@ -58,68 +58,69 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-25/garden_145000.jpg"
         },
         {
-          "label": "T-{len(stack_info['compare_set'])-1-i}",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_135001.jpg"
         },
         {
-          "label": "T-{len(stack_info['compare_set'])-1-i}",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_135000.jpg"
         },
         {
-          "label": "T-{len(stack_info['compare_set'])-1-i}",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg"
         },
         {
-          "label": "T-{len(stack_info['compare_set'])-1-i}",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg"
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_091646.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_095002.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-03-29T09:16:46",
-        "model": "Garden Botanical Observer v1.0",
+        "timestamp": "2026-03-29 09:50:02",
+        "model": "GardenBot v1.0",
         "plant_audit": {
           "p1": {
             "leaf_count": 3,
             "color_gradients": "Dark green with subtle yellowing at leaf margins. One leaf exhibits a distinct dark spot.",
-            "posture": "Leaves are generally upright, but slightly drooping compared to earlier images. The largest leaf is approximately 10mm above the pot rim."
+            "posture": "Leaves are drooping downwards, with the apical leaf positioned approximately 5mm below the pot rim."
           },
           "p2": {
-            "leaf_count": 25,
+            "leaf_count": 20,
             "color_gradients": "Consistent pale green across all leaves. No significant color variation.",
-            "posture": "Leaves are densely packed and maintain a relatively upright posture. No noticeable drooping."
+            "posture": "Leaves are densely packed and upright, maintaining a consistent height relative to the pot rim."
           },
           "p3": {
             "leaf_count": 4,
-            "color_gradients": "Leaves exhibit a gradient from light to dark green. One leaf shows significant yellowing and wilting.",
-            "posture": "Leaves are significantly drooping. The largest leaf is now approximately 5mm below the pot rim, a decrease of 15mm over the past 5 days."
+            "color_gradients": "Leaves exhibit a gradient from light green at the base to darker green towards the tips. One leaf shows significant yellowing.",
+            "posture": "Leaves are generally upright, but the largest leaf is drooping noticeably, positioned approximately 10mm below the pot rim."
           },
           "p4": {
-            "leaf_count": 18,
-            "color_gradients": "Silver-green with subtle variations in tone. Some leaves show minor browning at the tips.",
-            "posture": "Leaves are generally upright, but some exhibit slight curling downwards. No significant changes in posture observed."
+            "leaf_count": 15,
+            "color_gradients": "Silver-grey coloration with subtle green veins. No significant color changes observed.",
+            "posture": "Leaves are spreading outwards, maintaining a relatively consistent height above the pot rim."
           }
         },
         "temporal_deltas": {
-          "p1": "Minimal change in leaf count. Yellowing at margins has increased by approximately 1mm over the past 24 hours.",
-          "p2": "No significant changes in leaf count or posture observed.",
-          "p3": "Significant decline in leaf turgor. Yellowing has progressed rapidly, covering approximately 40% of the largest leaf. Drooping has increased by 5mm in the last 24 hours.",
-          "p4": "Minor browning at leaf tips has increased slightly. No significant changes in posture."
+          "p1": "Over the past 5 days, the dark spot on the leaf has increased in size by approximately 1mm. Drooping has increased by 2mm.",
+          "p2": "No significant changes in leaf count or posture observed over the past 5 days.",
+          "p3": "The yellowing on the largest leaf has progressed significantly over the past 5 days, covering approximately 30% of the leaf surface. Drooping has increased by 5mm.",
+          "p4": "No significant changes in leaf count or posture observed over the past 5 days."
         },
         "visual_health_inference": {
-          "p1": "Mild stress. Reasoning: Yellowing at leaf margins suggests nutrient deficiency or slight overwatering. The dark spot may indicate a fungal infection.",
-          "p2": "Healthy. Reasoning: Consistent color and upright posture indicate optimal conditions.",
-          "p3": "Severe stress. Reasoning: Significant yellowing, wilting, and drooping indicate severe dehydration or root rot. The rapid decline suggests a critical issue.",
-          "p4": "Mild stress. Reasoning: Browning at leaf tips suggests minor dehydration or nutrient imbalance."
+          "p1": "Mild stress due to the developing dark spot and slight drooping. Potential fungal infection or nutrient deficiency.",
+          "p2": "Healthy. No visible signs of stress or disease.",
+          "p3": "Significant stress. The yellowing and drooping indicate potential overwatering, nutrient deficiency, or root rot.",
+          "p4": "Healthy. No visible signs of stress or disease."
         },
         "anomalies": [
-          "p3 exhibits a rapid decline in health, indicating a potentially critical issue.",
-          "The dark spot on p1 warrants further investigation."
+          "Dark spot on p1 leaf.",
+          "Significant yellowing and drooping of p3 leaf.",
+          "Consistent lack of direct sunlight impacting overall growth."
         ],
-        "narrative_description": "The plants are exhibiting varying degrees of stress, likely due to the consistent indoor environment and potential nutrient imbalances. P3 is in the most critical condition, showing signs of severe dehydration or root rot. P1 shows early signs of stress, while P2 appears healthy. P4 is showing minor signs of stress.",
+        "narrative_description": "The plants are exhibiting varying degrees of stress, likely due to the consistent indoor environment and potential nutrient imbalances. P3 is showing the most severe symptoms, while p2 and p4 appear relatively healthy. P1 is showing early signs of a potential issue.",
         "confidence": 0.85
       }
     },
