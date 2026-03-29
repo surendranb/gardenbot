@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-03-29T10:55:28.449369",
+  "timestamp": "2026-03-29T11:25:28.819050",
   "sensors": {
-    "timestamp": "2026-03-29 10:55:28",
+    "timestamp": "2026-03-29 11:25:28",
     "temp": 32.0,
     "hum": 32.0,
-    "light": 570,
-    "p1": 530,
-    "p2": 123,
-    "p3": 416
+    "light": 566,
+    "p1": 534,
+    "p2": 120,
+    "p3": 418
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 60.4,
+      "moisture_pct": 59.2,
       "is_dry": false
     },
     "p2": {
@@ -19,7 +19,7 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 73.5,
+      "moisture_pct": 72.9,
       "is_dry": false
     }
   },
@@ -124,9 +124,9 @@
       }
     },
     "recent_visual_ledger": [
-      "The Warden's Decision\nVerdict: Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.043 kPa), indicating ongoing transpiration stress despite adequate hydration.\nAction: Continue light misting of foliage to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for subtle posture changes or leaf texture variations in next cycle.",
-      "NEW HYPOTHESIS\nPersistent elevated VPD requires continued foliar misting to mitigate transpiration stress while soil moisture remains adequate.",
-      "ACTIVE CONCERNS\n- high-vpd"
+      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Stress - Sensor shows 60.4% moisture (adequate) but visuals reveal mild stress with developing dark spot and slight drooping \u2794 **Advice:** Monitor dark spot for fungal infection; continue foliar misting to address VPD stress\n* **p2 (Mexican Mint):** Healthy - Sensor shows 100% moisture and visuals confirm healthy, upright growth with no changes \u2794 **Advice:** No action needed\n* **p3 (Pothos):** Stress - Sensor shows 73.5% moisture (adequate) but visuals show significant stress with progressive yellowing (30% leaf surface) and increased drooping \u2794 **Advice:** Investigate possible nutrient deficiency or root rot; continue foliar misting for VPD stress\n* **p4 (Silver Guest):** Healthy - Sensor shows 100% moisture (shared with p2) and visuals confirm healthy, upright growth with no changes \u2794 **Advice:** No action needed",
+      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** EXTREME at 3.233 kPa (rising trend: 0.19), indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.233 kPa), indicating ongoing transpiration stress despite adequate hydration. Visual inspection shows stress symptoms on p1 and p3 that diverge from sensor readings, suggesting localized issues exacerbated by VPD stress.",
+      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while monitoring for localized issues on p1 and p3.\n- **LAST_HUMAN_ACTION**: water\n- **ACTIVE CONCERNS**: high-vpd, p1-dark-spot, p3-yellowing"
     ]
   }
 }
