@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T18:50:31.328449",
+  "timestamp": "2026-03-29T08:58:59.588411",
   "model": "gemma-3-27b-it",
   "baseline_reference": {
     "rabbit_height_cm": 5.0,
@@ -8,120 +8,79 @@
     "yellow_pot_diameter_cm": 10.0
   },
   "image_availability": {
-    "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-    "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg",
-    "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_185003.jpg",
+    "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-25/garden_145000.jpg",
+    "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg",
+    "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_085843.jpg",
     "compare_set": [
-      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg",
-      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg",
-      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg"
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-25/garden_145000.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_135001.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_135000.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_085843.jpg"
     ]
   },
   "frame_sequence": [
     {
       "label": "anchor",
-      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg"
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-25/garden_145000.jpg"
     },
     {
       "label": "comparison",
-      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-26/garden_135001.jpg"
     },
     {
       "label": "comparison",
-      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-27/garden_135000.jpg"
+    },
+    {
+      "label": "comparison",
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg"
     },
     {
       "label": "previous",
-      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg"
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_084645.jpg"
+    },
+    {
+      "label": "current",
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_085843.jpg"
     }
   ],
   "capture": {
     "photo_path": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg",
-    "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_185003.jpg"
+    "archive_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_085843.jpg"
   },
   "vision_report": {
-    "timestamp": "2026-03-28T18:50:02Z",
-    "model": "Garden Vision Interpreter v1.0",
-    "baseline_reference": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg",
-    "image_availability": "All four frames (anchor, comparison 1, comparison 2, previous) are available.",
-    "frame_sequence": [
-      {
-        "label": "anchor",
-        "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg"
-      },
-      {
-        "label": "comparison_1",
-        "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg"
-      },
-      {
-        "label": "comparison_2",
-        "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg"
-      },
-      {
-        "label": "previous",
-        "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg"
-      },
-      {
-        "label": "current",
-        "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_185001.jpg"
-      }
-    ],
+    "timestamp": "2026-03-29T09:12:00Z",
+    "model": "GardenVision-Temporal-v1.0",
     "plants": {
+      "p1": "Nickels",
+      "p2": "Mexican Mint",
+      "p3": "Pothos",
+      "p4": "Silver Guest"
+    },
+    "temporal_trends": {
       "p1": {
-        "name": "String of Nickels",
-        "health": "healthy",
-        "leaf_count": 30,
-        "posture": "trailing",
-        "growth": "stable",
-        "damage": "none",
-        "droop": "none",
-        "occlusion": "none",
-        "notes": "Dense trailing growth, consistent across frames."
+        "growth": "Minimal. No significant leaf expansion or stem elongation observed over the 5-day period.",
+        "turgor": "Stable. Leaf angle consistent across images, indicating maintained hydration."
       },
       "p2": {
-        "name": "Mexican Mint",
-        "health": "healthy",
-        "leaf_count": 6,
-        "posture": "upright",
-        "growth": "stable",
-        "damage": "none",
-        "droop": "none",
-        "occlusion": "none",
-        "notes": "Consistent leaf count and posture."
+        "growth": "Moderate. Visible increase in trailing stem length (estimated 5-7mm) and slight increase in leaf density.",
+        "turgor": "Improved. Leaf angle has increased slightly from drooped to more horizontal, suggesting better hydration."
       },
       "p3": {
-        "name": "Pothos",
-        "health": "healthy",
-        "leaf_count": 3,
-        "posture": "centered",
-        "growth": "stable",
-        "damage": "none",
-        "droop": "none",
-        "occlusion": "none",
-        "notes": "White rabbit is inside the pot. Leaf count stable."
+        "growth": "Slow. Limited new leaf development. One new leaf node visible, but small.",
+        "turgor": "Fluctuating. Initial images show some leaf droop, but the current image shows slight improvement, though still not fully turgid."
       },
       "p4": {
-        "name": "Silver Guest",
-        "health": "healthy",
-        "leaf_count": 5,
-        "posture": "spreading",
-        "growth": "stable",
-        "damage": "none",
-        "droop": "none",
-        "occlusion": "none",
-        "notes": "Consistent spread and leaf count."
+        "growth": "Minimal. No significant changes observed.",
+        "turgor": "Stable. Consistent leaf angle."
       }
     },
-    "temporal_changes": {
-      "p1": "No significant changes in leaf count, posture, or health observed across the four frames.",
-      "p2": "No significant changes in leaf count, posture, or health observed across the four frames.",
-      "p3": "No significant changes in leaf count, posture, or health observed across the four frames. Rabbit position stable.",
-      "p4": "No significant changes in leaf count, posture, or health observed across the four frames."
-    },
-    "anomalies": [],
-    "narrative_report": "The latest image shows a stable garden state. All plants maintain consistent health, posture, and leaf counts compared to the previous three frames and the anchor image. The white rabbit remains positioned within the Pothos pot, serving as a reliable scale reference. No new growth or damage is apparent.",
-    "confidence": "high"
+    "feedback_analysis": "The 'Last Human Action' (watering) appears to have partially resolved the stress observed in the previous images. While p2 (Mint) shows clear signs of recovery with improved turgor and growth, p3 (Pothos) exhibits only marginal improvement. The 'Previous Hypothesis' regarding high atmospheric demand is confirmed, as the plants continue to show signs of stress even after watering, suggesting the issue is not solely limited to soil moisture.",
+    "anomalies": "None detected.",
+    "narrative_report": "Over the past five days, the plants exhibited varying degrees of stress, likely induced by high atmospheric demand. The recent watering intervention resulted in a noticeable improvement in turgor for p2 (Mexican Mint), evidenced by the increased leaf angle and stem extension. However, p3 (Pothos) continues to display signs of stress, indicating that the water alone may not be sufficient to fully mitigate the effects of the environment. Further investigation into humidity levels and potential shading strategies may be necessary to optimize plant health.",
+    "confidence": 0.85
   },
-  "raw_model_output": "```json\n{\n  \"timestamp\": \"2026-03-28T18:50:02Z\",\n  \"model\": \"Garden Vision Interpreter v1.0\",\n  \"baseline_reference\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\",\n  \"image_availability\": \"All four frames (anchor, comparison 1, comparison 2, previous) are available.\",\n  \"frame_sequence\": [\n    {\n      \"label\": \"anchor\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_065001.jpg\"\n    },\n    {\n      \"label\": \"comparison_1\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_135751.jpg\"\n    },\n    {\n      \"label\": \"comparison_2\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_145002.jpg\"\n    },\n    {\n      \"label\": \"previous\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_175002.jpg\"\n    },\n    {\n      \"label\": \"current\",\n      \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_185001.jpg\"\n    }\n  ],\n  \"plants\": {\n    \"p1\": {\n      \"name\": \"String of Nickels\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 30,\n      \"posture\": \"trailing\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Dense trailing growth, consistent across frames.\"\n    },\n    \"p2\": {\n      \"name\": \"Mexican Mint\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 6,\n      \"posture\": \"upright\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Consistent leaf count and posture.\"\n    },\n    \"p3\": {\n      \"name\": \"Pothos\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 3,\n      \"posture\": \"centered\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"White rabbit is inside the pot. Leaf count stable.\"\n    },\n    \"p4\": {\n      \"name\": \"Silver Guest\",\n      \"health\": \"healthy\",\n      \"leaf_count\": 5,\n      \"posture\": \"spreading\",\n      \"growth\": \"stable\",\n      \"damage\": \"none\",\n      \"droop\": \"none\",\n      \"occlusion\": \"none\",\n      \"notes\": \"Consistent spread and leaf count.\"\n    }\n  },\n  \"temporal_changes\": {\n    \"p1\": \"No significant changes in leaf count, posture, or health observed across the four frames.\",\n    \"p2\": \"No significant changes in leaf count, posture, or health observed across the four frames.\",\n    \"p3\": \"No significant changes in leaf count, posture, or health observed across the four frames. Rabbit position stable.\",\n    \"p4\": \"No significant changes in leaf count, posture, or health observed across the four frames.\"\n  },\n  \"anomalies\": [],\n  \"narrative_report\": \"The latest image shows a stable garden state. All plants maintain consistent health, posture, and leaf counts compared to the previous three frames and the anchor image. The white rabbit remains positioned within the Pothos pot, serving as a reliable scale reference. No new growth or damage is apparent.\",\n  \"confidence\": \"high\"\n}\n```\n\nThe image sequence demonstrates a remarkably stable environment. The plants show no significant changes in health or posture, and the fixed landmarks (rabbit, pot rims, wiring) remain consistent. This suggests a well-maintained and controlled growing environment."
+  "raw_model_output": "```json\n{\n  \"timestamp\": \"2026-03-29T09:12:00Z\",\n  \"model\": \"GardenVision-Temporal-v1.0\",\n  \"plants\": {\n    \"p1\": \"Nickels\",\n    \"p2\": \"Mexican Mint\",\n    \"p3\": \"Pothos\",\n    \"p4\": \"Silver Guest\"\n  },\n  \"temporal_trends\": {\n    \"p1\": {\n      \"growth\": \"Minimal. No significant leaf expansion or stem elongation observed over the 5-day period.\",\n      \"turgor\": \"Stable. Leaf angle consistent across images, indicating maintained hydration.\"\n    },\n    \"p2\": {\n      \"growth\": \"Moderate. Visible increase in trailing stem length (estimated 5-7mm) and slight increase in leaf density.\",\n      \"turgor\": \"Improved. Leaf angle has increased slightly from drooped to more horizontal, suggesting better hydration.\"\n    },\n    \"p3\": {\n      \"growth\": \"Slow. Limited new leaf development. One new leaf node visible, but small.\",\n      \"turgor\": \"Fluctuating. Initial images show some leaf droop, but the current image shows slight improvement, though still not fully turgid.\"\n    },\n    \"p4\": {\n      \"growth\": \"Minimal. No significant changes observed.\",\n      \"turgor\": \"Stable. Consistent leaf angle.\"\n    }\n  },\n  \"feedback_analysis\": \"The 'Last Human Action' (watering) appears to have partially resolved the stress observed in the previous images. While p2 (Mint) shows clear signs of recovery with improved turgor and growth, p3 (Pothos) exhibits only marginal improvement. The 'Previous Hypothesis' regarding high atmospheric demand is confirmed, as the plants continue to show signs of stress even after watering, suggesting the issue is not solely limited to soil moisture.\",\n  \"anomalies\": \"None detected.\",\n  \"narrative_report\": \"Over the past five days, the plants exhibited varying degrees of stress, likely induced by high atmospheric demand. The recent watering intervention resulted in a noticeable improvement in turgor for p2 (Mexican Mint), evidenced by the increased leaf angle and stem extension. However, p3 (Pothos) continues to display signs of stress, indicating that the water alone may not be sufficient to fully mitigate the effects of the environment. Further investigation into humidity levels and potential shading strategies may be necessary to optimize plant health.\",\n  \"confidence\": 0.85\n}\n```"
 }
