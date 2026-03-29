@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-29 10:58:01
+**Generated:** 2026-03-29 12:58:02
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -32,15 +32,14 @@
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
 - **VPD State**: EXTREME (Critical Stress) at 3.233 kPa (Rising trend: 0.19).
-- **Dry-down**: p1 moisture velocity is -2.2% per window. Metabolic activity is active.
+- **Hydration Stagnancy**: p1 is flat (Δ1.5%). Check for root-stasis or sensor drift.
 - **Hydration Stagnancy**: p2 is flat (Δ0.0%). Check for root-stasis or sensor drift.
-- **Hydration Stagnancy**: p3 is flat (Δ2.0%). Check for root-stasis or sensor drift.
+- **Hydration Stagnancy**: p3 is flat (Δ2.2%). Check for root-stasis or sensor drift.
 - **Human Occupancy**: HIGH. Fan S (South) is active; localized air exchange is manual.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-28 17:55:27,33.0,30.0,832,487.0,152.0,412.0
 2026-03-28 18:26:00,33.0,30.0,852,488.0,192.0,406.0
 2026-03-28 20:25:28,32.0,31.0,851,489.0,142.0,410.0
 2026-03-29 08:04:43,32.0,37.0,660,490.0,134.0,410.0
@@ -52,13 +51,13 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-29 09:55:28,32.0,35.0,651,542.0,124.0,417.0
 2026-03-29 10:25:27,32.0,34.0,567,542.0,120.0,420.0
 2026-03-29 10:55:28,32.0,32.0,570,530.0,123.0,416.0
+2026-03-29 11:25:28,32.0,32.0,566,534.0,120.0,418.0
 
 ```
 
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-28 17:55:27,3.521,73.6,,100.0,,74.6,,,,,,,,False,False,False
 2026-03-28 18:26:00,3.521,73.3,,100.0,,76.4,,,,,,,,False,False,False
 2026-03-28 20:25:28,3.281,73.0,,100.0,,75.2,,,,,,,,False,False,False
 2026-03-29 08:04:43,2.995,72.7,,100.0,,75.2,,,,,,,,False,False,False
@@ -70,6 +69,7 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-29 09:55:28,3.091,56.7,,100.0,,73.2,,,,,,,,False,False,False
 2026-03-29 10:25:27,3.138,56.7,,100.0,,72.4,,,,,,,,False,False,False
 2026-03-29 10:55:28,3.233,60.4,,100.0,,73.5,,,,,,,,False,False,False
+2026-03-29 11:25:28,3.233,59.2,,100.0,,72.9,,,,,,,,False,False,False
 
 ```
 
@@ -96,19 +96,24 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 ```
 
 ## 📖 6. PREVIOUS LEDGER ENTRIES (Last 3)
-## The Warden's Decision
-Verdict: Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.043 kPa), indicating ongoing transpiration stress despite adequate hydration.
-Action: Continue light misting of foliage to raise immediate leaf-surface humidity and alleviate VPD stress. Do not water soil as moisture is abundant. Monitor for subtle posture changes or leaf texture variations in next cycle.
+## 🪴 Individual Plant Status
+* **p1 (String of Nickels):** Stress - Sensor shows 60.4% moisture (adequate) but visuals reveal mild stress with developing dark spot and slight drooping ➔ **Advice:** Monitor dark spot for fungal infection; continue foliar misting to address VPD stress
+* **p2 (Mexican Mint):** Healthy - Sensor shows 100% moisture and visuals confirm healthy, upright growth with no changes ➔ **Advice:** No action needed
+* **p3 (Pothos):** Stress - Sensor shows 73.5% moisture (adequate) but visuals show significant stress with progressive yellowing (30% leaf surface) and increased drooping ➔ **Advice:** Investigate possible nutrient deficiency or root rot; continue foliar misting for VPD stress
+* **p4 (Silver Guest):** Healthy - Sensor shows 100% moisture (shared with p2) and visuals confirm healthy, upright growth with no changes ➔ **Advice:** No action needed
 
 ---
 
-## NEW HYPOTHESIS
-Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while soil moisture remains adequate.
+## 🌡️ Biome Dynamics
+* **VPD Context:** EXTREME at 3.233 kPa (rising trend: 0.19), indicating high atmospheric demand causing transpiration stress despite adequate soil moisture.
+* **The Warden's Verdict:** Soil moisture remains ample across all plants, but atmospheric demand remains elevated (VPD 3.233 kPa), indicating ongoing transpiration stress despite adequate hydration. Visual inspection shows stress symptoms on p1 and p3 that diverge from sensor readings, suggesting localized issues exacerbated by VPD stress.
 
 ---
 
-## ACTIVE CONCERNS
-- high-vpd
+## 💾 STATE UPDATE (INTERNAL)
+- **NEW_HYPOTHESIS**: Persistent elevated VPD requires continued foliar misting to mitigate transpiration stress while monitoring for localized issues on p1 and p3.
+- **LAST_HUMAN_ACTION**: water
+- **ACTIVE CONCERNS**: high-vpd, p1-dark-spot, p3-yellowing
 
 ## 🎥 7. VISION OBSERVATION (Structured Visual Evidence)
 ```json
