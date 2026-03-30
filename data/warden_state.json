@@ -1,9 +1,12 @@
 {
-  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
+  "last_hypothesis": "Addressing nutrient deficiency in p2 and increasing humidity for p3 will alleviate visual stresses while monitoring p4 establishment.",
   "active_concerns": [
-    "high-vpd"
+    "high-vpd",
+    "p2-nutrient-deficiency",
+    "p3-humidity-stress",
+    "p4-establishment"
   ],
-  "last_human_action": "queried p2",
-  "last_human_action_at": "2026-03-29T09:54:25Z",
+  "last_human_action": "misted p1",
+  "last_human_action_at": "2026-03-30T09:03:00Z",
   "human_action_source": "slack"
 }
