@@ -1,7 +1,9 @@
 {
-  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
+  "last_hypothesis": "Addressing nutrient/light stress for p2 and establishment/light for p4 will alleviate visual stresses.",
   "active_concerns": [
-    "high-vpd"
+    "high-vpd",
+    "p2-nutrient-light-stress",
+    "p4-establishment-light"
   ],
   "last_human_action": "misted p1",
   "last_human_action_at": "2026-03-30T12:03:00Z",
