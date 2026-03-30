@@ -703,9 +703,16 @@
             const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
             if (res.ok) {
                 const text = await res.text();
-                const blocks = text.split(/^# WARDEN REPORT /m).filter(Boolean);
-                const latest = blocks.length ? "# WARDEN REPORT " + blocks[blocks.length - 1].trim() : text;
-                document.getElementById('warden-log-output').innerHTML = marked.parse(latest || "No entries yet.");
+                // Split by H1 headers (the WARDEN REPT lines)
+                const blocks = text.split(/^# /m).filter(b => b.trim().startsWith('WARDEN REPT'));
+                if (blocks.length) {
+                    let latest = "# " + blocks[blocks.length - 1].trim();
+                    // Hide internal state section from public dashboard
+                    latest = latest.split('## 💾 STATE UPDATE')[0].trim();
+                    document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
+                } else {
+                    document.getElementById('warden-log-output').innerHTML = "No recent reports found.";
+                }
             }
         } catch(e) { console.error(e); }
     }

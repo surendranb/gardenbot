@@ -31,8 +31,9 @@
 ## 💾 STATE UPDATE (INTERNAL)
 - **NEW_HYPOTHESIS**: Adjusting watering for p2 and increasing light for p4 will alleviate visual stress despite adequate sensor moisture.
 - **LAST_HUMAN_ACTION**: user replied: queried p2
-- **ACTIVE CONCERNS**: high-vpd, p2-overwatering, p4-insufficient-light
-WARDEN REPT - 2026-03-29 21:07
+- **ACTIVE CONCERNS**: high-vpd, p2-brown-spot, p4-insufficient-light
+
+# WARDEN REPT - 2026-03-29 21:07
 
 ## 🪴 Individual Plant Status
 * **p1 (String of Nickels):** Healthy - Alignment (sensor shows 51.8% moisture adequate and visuals show healthy, stable growth) ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
