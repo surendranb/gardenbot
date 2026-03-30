@@ -703,13 +703,20 @@
             const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
             if (res.ok) {
                 const text = await res.text();
-                // Split by H1 headers (the WARDEN REPT lines)
-                const blocks = text.split(/^# /m).filter(b => b.trim().startsWith('WARDEN REPT'));
-                if (blocks.length) {
-                    let latest = "# " + blocks[blocks.length - 1].trim();
-                    // Hide internal state section from public dashboard
-                    latest = latest.split('## 💾 STATE UPDATE')[0].trim();
-                    document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
+                // Split by the specific header pattern
+                const blocks = text.split(/^# WARDEN REPT - /m);
+                if (blocks.length > 1) {
+                    // Get the very last block
+                    let lastBlock = blocks[blocks.length - 1];
+                    // The split removed the header text, so we reconstruct it partially or just use the block
+                    // Actually, let's just find the last index of '# WARDEN REPT'
+                    const lastIndex = text.lastIndexOf('# WARDEN REPT - ');
+                    if (lastIndex !== -1) {
+                        let latest = text.substring(lastIndex);
+                        // Hide internal state section
+                        latest = latest.split('## 💾 STATE UPDATE')[0].trim();
+                        document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
+                    }
                 } else {
                     document.getElementById('warden-log-output').innerHTML = "No recent reports found.";
                 }
