@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-30T17:25:27.768781",
+  "timestamp": "2026-03-30T18:25:28.592845",
   "sensors": {
-    "timestamp": "2026-03-30 17:25:27",
-    "temp": 32.0,
-    "hum": 27.0,
-    "light": 800,
-    "p1": 397,
-    "p2": 139,
-    "p3": 490
+    "timestamp": "2026-03-30 18:25:28",
+    "temp": 31.0,
+    "hum": 26.0,
+    "light": 803,
+    "p1": 395,
+    "p2": 136,
+    "p3": 484
   },
   "moisture_analysis": {
     "p1": {
@@ -19,12 +19,12 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 52.4,
+      "moisture_pct": 54.1,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.471
+    "vpd_kpa": 3.324
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -139,8 +139,8 @@
       }
     },
     "recent_visual_ledger": [
-      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 100% moisture adequate and visuals show healthy, turgid growth) \u2794 **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes\n* **p2 (Mexican Mint):** Healthy - Alignment (sensor shows 100% moisture adequate and visuals show healthy, turgid growth with developing bud) \u2794 **Advice:** No action needed\n* **p3 (Pothos):** Stress - Divergence (sensor shows 56.4% moisture adequate but visuals show slight drooping suggesting VPD/humidity stress) \u2794 **Advice:** Increase foliar misting to address VPD stress; monitor leaf turgor\n* **p4 (Silver Guest):** Stress - Divergence (sensor shows ample moisture (inferred from p2) but visuals show limited growth suggesting competition for resources) \u2794 **Advice:** Consider increasing light exposure; inspect for nutrient deficiency; ensure proper establishment",
-      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** VPD at 3.328 kPa (EXTREME range) indicates high atmospheric demand driving transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but extreme VPD drives transpiration stress; visual stress on p3 and p4 diverges from sensor readings, suggesting issues beyond hydration (humidity stress for p3, competition/light for p4). p1 and p2 show alignment and remain healthy.",
+      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 100% moisture adequate and visuals show healthy, turgid growth) \u2794 **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes\n* **p2 (Mexican Mint):** Healthy - Alignment (sensor shows 100% moisture adequate and visuals show healthy, turgid growth with developing bud) \u2794 **Advice:** No action needed\n* **p3 (Pothos):** Stress - Divergence (sensor shows 52.4% moisture adequate but visuals show limited growth suggesting VPD/humidity stress or light/nutrient stress) \u2794 **Advice:** Increase foliar misting to address VPD stress; consider increasing light or nutrients; monitor leaf turgor and growth\n* **p4 (Silver Guest):** Stress - Divergence (sensor shows ample moisture (inferred from p2) but visuals show limited growth suggesting competition for resources) \u2794 **Advice:** Consider increasing light exposure; inspect for nutrient deficiency; ensure proper establishment",
+      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** VPD at 3.471 kPa (EXTREME range) indicates high atmospheric demand driving transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but extreme VPD drives transpiration stress; visual stress on p3 (limited growth) and p4 (struggling to establish) diverges from sensor readings, suggesting issues beyond hydration (humidity/light stress for p3, competition/light for p4). p1 and p2 show alignment and remain healthy.",
       "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: Addressing humidity stress for p3 and competition/light for p4 will alleviate visual stresses.\n- **LAST_HUMAN_ACTION**: misted p1\n- **ACTIVE CONCERNS**: high-vpd, p3-humidity-stress, p4-competition-light"
     ]
   }
