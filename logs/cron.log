@@ -5860,3 +5860,8 @@ Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/cu
 Warden: Run complete.
 Preparing Project SILICA Observer Context...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+Warden: No candidate ports found (usbmodem/usbserial).
+Warden: Capture failed, attempting CSV fallback...
+Warden: Fallback raw data found: {'timestamp': '2026-03-31 14:55:27', 'temp': 32.0, 'hum': 29.0, 'light': 757, 'p1': 406.0, 'p2': 123.0, 'p3': 402.0}
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.

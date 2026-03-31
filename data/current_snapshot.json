@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-03-31T14:55:28.015431",
+  "timestamp": "2026-03-31T15:25:01.232799",
   "sensors": {
     "timestamp": "2026-03-31 14:55:27",
     "temp": 32.0,
     "hum": 29.0,
     "light": 757,
-    "p1": 406,
-    "p2": 123,
-    "p3": 402
+    "p1": 406.0,
+    "p2": 123.0,
+    "p3": 402.0
   },
   "moisture_analysis": {
     "p1": {
@@ -27,9 +27,9 @@
     "vpd_kpa": 3.376
   },
   "intelligence": {
-    "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
+    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
     "active_concerns": [
-      "high-vpd"
+      "missing-telemetry"
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-31/garden_073449.jpg",
