@@ -1,9 +1,7 @@
 {
-  "last_hypothesis": "The extreme VPD is likely causing transpiration stress that exacerbates nutrient deficiencies in p2 and light competition in p4; recommend foliar intervention for p2 and light assessment for p4.",
+  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
   "active_concerns": [
-    "high-vpd",
-    "p2-nutrient-light-stress",
-    "p4-establishment-light"
+    "high-vpd"
   ],
   "last_human_action": "misted p1",
   "last_human_action_at": "2026-03-30T12:03:00Z",
