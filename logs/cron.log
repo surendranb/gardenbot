@@ -6029,3 +6029,42 @@ Warden: Capture failed, attempting CSV fallback...
 Warden: Fallback raw data found: {'timestamp': '2026-04-01 11:55:28', 'temp': 31.0, 'hum': 27.0, 'light': 676, 'p1': 478.0, 'p2': 99.0, 'p3': 464.0}
 Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
 Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_125751.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-30/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-31/garden_135447.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_065010.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-28/garden_133431.jpg
+  Added T-5: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-29/garden_125751.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-30/garden_125002.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-31/garden_135447.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_065010.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_145313.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
