@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-03-31 23:58:01
+**Generated:** 2026-04-01 04:00:06
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -35,7 +35,6 @@
 - **Hydration Stagnancy**: p1 is flat (Δ0.0%). Check for root-stasis or sensor drift.
 - **Hydration Stagnancy**: p2 is flat (Δ0.0%). Check for root-stasis or sensor drift.
 - **Hydration Stagnancy**: p3 is flat (Δ0.0%). Check for root-stasis or sensor drift.
-- **Human Occupancy**: HIGH. Fan S (South) is active; localized air exchange is manual.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
@@ -58,11 +57,11 @@ timestamp,temp,hum,light,p1,p2,p3
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-03-31 10:55:27,3.186,100.0,,100.0,,60.4,,,,,,,,False,False,False
-2026-03-31 12:25:28,3.138,100.0,,100.0,,63.0,,,,,,,,False,False,False
 2026-03-31 12:55:28,3.233,99.7,,100.0,,56.7,,,,,,,,False,False,False
 2026-03-31 13:55:27,3.328,99.7,,100.0,,60.7,,,,,,,,False,False,False
 2026-03-31 14:25:28,3.376,100.0,,100.0,,57.5,,,,,,,,False,False,False
+2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
+2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
