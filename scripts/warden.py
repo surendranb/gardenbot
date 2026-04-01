@@ -117,14 +117,37 @@ def derive_hypothesis(raw, metrics, plants):
 
 def find_active_arduino_port():
     """Scans for a port streaming valid gardenbot data (pipe-delimited)."""
-    candidates = [p.device for p in serial.tools.list_ports.comports() 
-                 if "usbmodem" in p.device or "usbserial" in p.device]
+    all_p = list(serial.tools.list_ports.comports())
+    print(f"Warden: Found {len(all_p)} ports on system.")
+    
+    # Priority list of keywords
+    keywords = ["usbmodem", "usbserial", "arduino", "ch340", "cp210x", "ftdi"]
+    
+    candidates = []
+    for p in all_p:
+        device = p.device.lower()
+        desc = p.description.lower()
+        if any(k in device or k in desc for k in keywords):
+            candidates.append(p.device)
     
     if not candidates:
-        print("Warden: No candidate ports found (usbmodem/usbserial).")
+        print("Warden: No candidate ports found with keyword filter. Trying exhaustive scan of all non-system ports...")
+        system_keywords = ["bluetooth", "debug", "wlan", "iphone", "apple", "wireless"]
+        candidates = [p.device for p in all_p if not any(sk in p.device.lower() or sk in p.description.lower() for sk in system_keywords)]
+        
+    if not candidates:
+        print("Warden: No candidate ports found after exhaustive scan.")
+        # Final desperation: if /dev/cu.usbmodem* exists in filesystem but not in pyserial list
+        import glob
+        fs_candidates = glob.glob("/dev/cu.usbmodem*") + glob.glob("/dev/cu.usbserial*")
+        if fs_candidates:
+            print(f"Warden: pyserial missed these filesystem devices: {fs_candidates}")
+            candidates = fs_candidates
+
+    if not candidates:
         return None
 
-    print(f"Warden: Scanning ports: {candidates}...")
+    print(f"Warden: Scanning candidates: {candidates}...")
     
     for port in candidates:
         try:
