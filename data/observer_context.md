@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-04-01 07:58:01
+**Generated:** 2026-04-01 08:22:12
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -31,16 +31,14 @@
  - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than outdoor forecasts due to AC dehumidification and fan scouring.
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
-- **VPD State**: EXTREME (Critical Stress) at 3.376 kPa (Stable trend: 0.0).
-- **Hydration Stagnancy**: p1 is flat (Δ0.0%). Check for root-stasis or sensor drift.
+- **VPD State**: EXTREME (Critical Stress) at 3.281 kPa (Stable trend: -0.095).
+- **Dry-down**: p1 moisture velocity is -4.6% per window. Metabolic activity is active.
 - **Hydration Stagnancy**: p2 is flat (Δ0.0%). Check for root-stasis or sensor drift.
-- **Hydration Stagnancy**: p3 is flat (Δ0.0%). Check for root-stasis or sensor drift.
+- **Dry-down**: p3 moisture velocity is -8.0% per window. Metabolic activity is active.
 
 ## 🌡️ 3. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-03-30 21:25:27,32.0,30.0,774,378.0,124.0,439.0
-2026-03-30 22:57:21,32.0,30.0,817,377.0,128.0,441.0
 2026-03-31 07:25:27,31.0,32.0,679,393.0,132.0,464.0
 2026-03-31 07:55:28,32.0,33.0,768,383.0,134.0,422.0
 2026-03-31 08:55:28,32.0,35.0,788,391.0,91.0,438.0
@@ -51,6 +49,8 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-03-31 13:55:27,32.0,30.0,761,402.0,119.0,461.0
 2026-03-31 14:25:28,32.0,29.0,789,400.0,101.0,472.0
 2026-03-31 14:55:27,32.0,29.0,757,406.0,123.0,402.0
+2026-04-01 08:19:33,32.0,31.0,702,422.0,94.0,434.0
+2026-04-01 08:21:17,32.0,31.0,700,421.0,73.0,430.0
 
 ```
 
@@ -67,8 +67,8 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
 2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
-2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
-2026-03-31 14:55:27,3.376,98.5,,100.0,,77.5,,,,,,,,False,False,False
+2026-04-01 08:19:33,3.281,93.6,,100.0,,68.4,,,,,,,,False,False,False
+2026-04-01 08:21:17,3.281,93.9,,100.0,,69.5,,,,,,,,False,False,False
 
 ```
 
