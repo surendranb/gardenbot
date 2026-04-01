@@ -230,29 +230,53 @@ hide:
             drawVitality(met48);
             drawEnv(tel48, met48);
 
-            // Ledger
-            const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
-            if (res.ok) {
-                const text = await res.text();
-                // Split by the specific header pattern
-                const blocks = text.split(/^# WARDEN REPT - /m);
-                if (blocks.length > 1) {
-                    // Get the very last block
-                    let lastBlock = blocks[blocks.length - 1];
-                    // The split removed the header text, so we reconstruct it partially or just use the block
-                    // Actually, let's just find the last index of '# WARDEN REPT'
-                    const lastIndex = text.lastIndexOf('# WARDEN REPT - ');
-                    if (lastIndex !== -1) {
-                        let latest = text.substring(lastIndex);
-                        // Hide internal state section
-                        latest = latest.split('## 💾 STATE UPDATE')[0].trim();
-                        document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
-                    }
+            // Ledger: Try CSV first, fallback to Markdown
+            try {
+                const csvData = await parseCSV(GITHUB_RAW + "logs/vision_ledger.csv?t=" + Date.now());
+                if (csvData && csvData.length > 0) {
+                    renderCsvLedger(csvData[csvData.length - 1]);
                 } else {
-                    document.getElementById('warden-log-output').innerHTML = "No recent reports found.";
+                    await fallbackToMarkdownLedger();
                 }
+            } catch (e) {
+                console.warn("CSV Ledger failed, falling back to MD", e);
+                await fallbackToMarkdownLedger();
             }
         } catch(e) { console.error(e); }
+    }
+
+    async function fallbackToMarkdownLedger() {
+        const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
+        if (res.ok) {
+            const text = await res.text();
+            const lastIndex = text.lastIndexOf('# WARDEN REPT');
+            if (lastIndex !== -1) {
+                let latest = text.substring(lastIndex);
+                latest = latest.split('## 💾 STATE UPDATE')[0].trim();
+                document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
+            }
+        }
+    }
+
+    function renderCsvLedger(row) {
+        let html = `<h3>🪴 Garden Observer Report - ${row.timestamp || "Recent"}</h3>`;
+        
+        html += "<h4>🪴 Individual Plant Status</h4><ul>";
+        ['p1', 'p2', 'p3', 'p4'].forEach(p => {
+            const status = row[`${p}_status`] || "--";
+            const advice = row[`${p}_advice`] || "--";
+            html += `<li><strong>${p.toUpperCase()}:</strong> ${status} ➔ <strong>Advice:</strong> ${advice}</li>`;
+        });
+        html += "</ul>";
+
+        if (row.vpd_context || row.verdict) {
+            html += "<h4>🌡️ Biome Dynamics</h4><ul>";
+            html += `<li><strong>VPD Context:</strong> ${row.vpd_context || "--"}</li>`;
+            html += `<li><strong>The Warden's Verdict:</strong> ${row.verdict || "--"}</li>`;
+            html += "</ul>";
+        }
+
+        document.getElementById('warden-log-output').innerHTML = html;
     }
 
     const commonScaleOptions = {
