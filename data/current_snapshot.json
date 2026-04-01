@@ -1,17 +1,17 @@
 {
-  "timestamp": "2026-04-01T10:55:27.955869",
+  "timestamp": "2026-04-01T11:25:28.342892",
   "sensors": {
-    "timestamp": "2026-04-01 10:55:27",
+    "timestamp": "2026-04-01 11:25:28",
     "temp": 31.0,
     "hum": 26.0,
-    "light": 661,
-    "p1": 417,
-    "p2": 94,
-    "p3": 471
+    "light": 667,
+    "p1": 421,
+    "p2": 99,
+    "p3": 469
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 95.1,
+      "moisture_pct": 93.9,
       "is_dry": false
     },
     "p2": {
@@ -19,7 +19,7 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 57.8,
+      "moisture_pct": 58.4,
       "is_dry": false
     }
   },
@@ -118,9 +118,9 @@
       }
     },
     "recent_visual_ledger": [
-      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 98.5% moisture adequate and visuals show healthy, turgid growth) \u2794 **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes\n* **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 100% moisture adequate but visuals show chlorosis/yellowing) \u2794 **Advice:** Investigate nutrient deficiency or light stress; consider reducing watering if over-saturation suspected\n* **p3 (Pothos):** Stable - Alignment (sensor shows 77.5% moisture adequate and visuals show stable necrotic lesion) \u2794 **Advice:** Maintain current care; monitor lesion for changes; consider humidity support for VPD stress\n* **p4 (Silver Guest):** Fragile - Divergence (sensor shows ample moisture (inferred from p2) but visuals show limited growth and establishment) \u2794 **Advice:** Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting",
-      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** VPD at 3.376 kPa (EXTREME, stable trend: 0.0) indicates high atmospheric demand driving transpiration stress despite adequate soil moisture.\n* **The Warden's Verdict:** Soil moisture remains ample across all plants, but extreme VPD drives transpiration stress; visual stress on p2 (leaf curl/yellowing) and p4 (limited growth) diverges from sensor readings, suggesting issues beyond hydration (nutrient/light stress for p2, establishment/light for p4). p1 and p3 show alignment and remain stable.",
-      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: The persistent extreme VPD is likely causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture.\n- **LAST_HUMAN_ACTION**: misted p1\n- **ACTIVE CONCERNS**: high-vpd, p2-nutrient-light-stress, p4-establishment-light"
+      "\ud83e\udeb4 Individual Plant Status\n* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 95.1% moisture adequate and visuals show healthy, turgid growth) \u2794 **Advice:** Continue foliar misting to mitigate VPD stress.\n* **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 100% moisture adequate but visuals show tissue collapse on secondary leaves) \u2794 **Advice:** Potential root-zone hypoxia; ensure soil is not waterlogged despite sensor reading.\n* **p3 (Pothos):** Stable - Alignment (sensor shows 57.8% moisture adequate and visuals show consistent stasis) \u2794 **Advice:** Maintain current care; VPD stress is high but the plant is resilient.\n* **p4 (Silver Guest):** Critical - Divergence (sensor inferred 100% moisture but visuals show terminal desiccation) \u2794 **Advice:** Specimen likely lost; investigate if localized soil compaction or damping-off occurred.",
+      "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** VPD at 3.324 kPa (EXTREME) remains the dominant environmental stressor, driving high transpiration despite high soil moisture.\n* **The Warden's Verdict:** The biome is in a state of high-VPD divergence. Established plants (p1, p3) are stable, but newer/smaller growth (p2, p4) is failing, suggesting that soil moisture alone is not sufficient to counteract atmospheric pull or that root health is compromised.",
+      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: Extreme VPD is scuttling smaller growth (p2, p4) via transpiration shock or localized root-zone failure.\n- **LAST_HUMAN_ACTION**: misted p1\n- **ACTIVE CONCERNS**: high-vpd, p2-tissue-collapse, p4-critical-desiccation"
     ]
   }
 }
