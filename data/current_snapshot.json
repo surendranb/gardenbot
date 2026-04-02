@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-02T15:55:28.026540",
+  "timestamp": "2026-04-02T20:56:50.575542",
   "sensors": {
-    "timestamp": "2026-04-02 15:55:27",
+    "timestamp": "2026-04-02 20:56:50",
     "temp": 33.0,
-    "hum": 26.0,
-    "light": 805,
-    "p1": 414,
-    "p2": 98,
-    "p3": 349
+    "hum": 28.0,
+    "light": 865,
+    "p1": 425,
+    "p2": 114,
+    "p3": 390
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 96.0,
+      "moisture_pct": 92.6,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 99.4,
+      "moisture_pct": 94.7,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 92.6,
+      "moisture_pct": 80.9,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.722
+    "vpd_kpa": 3.622
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
