@@ -1,6 +1,8 @@
 {
   "last_run": "2026-04-02 06:26 AM IST",
-  "last_hypothesis": "A5 sensor failure is impacting p2/p4 readings; visual cues are now critical for these plants.",
+  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
   "last_human_action": "No new human action reported.",
-  "active_concerns": ["A5-sensor-failure", "high-vpd", "p2-dehydration-risk"]
+  "active_concerns": [
+    "high-vpd"
+  ]
 }
