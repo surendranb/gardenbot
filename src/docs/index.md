@@ -230,12 +230,12 @@ hide:
             drawVitality(met48);
             drawEnv(tel48, met48);
 
-            // Ledger: Primary source is the latest_report.json
+            // Ledger: Primary source is the latest_report.md
             try {
-                const res = await fetch(GITHUB_RAW + "logs/latest_report.json?t=" + Date.now());
+                const res = await fetch(GITHUB_RAW + "logs/latest_report.md?t=" + Date.now());
                 if (res.ok) {
-                    const data = await res.json();
-                    renderLatestReport(data);
+                    const mdText = await res.text();
+                    document.getElementById('warden-log-output').innerHTML = marked.parse(mdText);
                 } else {
                     document.getElementById('warden-log-output').innerHTML = "Waiting for latest report...";
                 }
@@ -243,27 +243,6 @@ hide:
                 console.error("Failed to load latest report", e);
             }
         } catch(e) { console.error(e); }
-    }
-
-    function renderLatestReport(data) {
-        let html = `<h3>🪴 Garden Observer Report - ${data.timestamp || "Recent"}</h3>`;
-        
-        html += "<h4>🪴 Individual Plant Status</h4><ul>";
-        ['p1', 'p2', 'p3', 'p4'].forEach(p => {
-            const status = data[`${p}_status`] || "--";
-            const advice = data[`${p}_advice`] || "--";
-            html += `<li><strong>${p.toUpperCase()}:</strong> ${status} ➔ <strong>Advice:</strong> ${advice}</li>`;
-        });
-        html += "</ul>";
-
-        if (data.vpd_context || data.verdict) {
-            html += "<h4>🌡️ Biome Dynamics</h4><ul>";
-            html += `<li><strong>VPD Context:</strong> ${data.vpd_context || "--"}</li>`;
-            html += `<li><strong>The Warden's Verdict:</strong> ${data.verdict || "--"}</li>`;
-            html += "</ul>";
-        }
-
-        document.getElementById('warden-log-output').innerHTML = html;
     }
 
     const commonScaleOptions = {
