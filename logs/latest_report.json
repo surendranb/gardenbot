@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-04-03 08:30 AM IST",
+  "p1_status": "Healthy",
+  "p1_advice": "Maintain care",
+  "p2_status": "Sensor Failure",
+  "p2_advice": "Check hardware",
+  "p3_status": "Stable",
+  "p3_advice": "No change",
+  "p4_status": "Stressed",
+  "p4_advice": "Visual audit needed",
+  "vpd_context": "High",
+  "verdict": "Biome in flux",
+  "hypothesis": "A5 failing",
+  "concerns": "Hardware"
+}

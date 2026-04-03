@@ -230,49 +230,36 @@ hide:
             drawVitality(met48);
             drawEnv(tel48, met48);
 
-            // Ledger: Try CSV first, fallback to Markdown
+            // Ledger: Primary source is the latest_report.json
             try {
-                const csvData = await parseCSV(GITHUB_RAW + "logs/vision_ledger.csv?t=" + Date.now());
-                if (csvData && csvData.length > 0) {
-                    renderCsvLedger(csvData[csvData.length - 1]);
+                const res = await fetch(GITHUB_RAW + "logs/latest_report.json?t=" + Date.now());
+                if (res.ok) {
+                    const data = await res.json();
+                    renderLatestReport(data);
                 } else {
-                    await fallbackToMarkdownLedger();
+                    document.getElementById('warden-log-output').innerHTML = "Waiting for latest report...";
                 }
             } catch (e) {
-                console.warn("CSV Ledger failed, falling back to MD", e);
-                await fallbackToMarkdownLedger();
+                console.error("Failed to load latest report", e);
             }
         } catch(e) { console.error(e); }
     }
 
-    async function fallbackToMarkdownLedger() {
-        const res = await fetch(GITHUB_RAW + "logs/vision_ledger.md?t=" + Date.now());
-        if (res.ok) {
-            const text = await res.text();
-            const lastIndex = text.lastIndexOf('# WARDEN REPT');
-            if (lastIndex !== -1) {
-                let latest = text.substring(lastIndex);
-                latest = latest.split('## 💾 STATE UPDATE')[0].trim();
-                document.getElementById('warden-log-output').innerHTML = marked.parse(latest);
-            }
-        }
-    }
-
-    function renderCsvLedger(row) {
-        let html = `<h3>🪴 Garden Observer Report - ${row.timestamp || "Recent"}</h3>`;
+    function renderLatestReport(data) {
+        let html = `<h3>🪴 Garden Observer Report - ${data.timestamp || "Recent"}</h3>`;
         
         html += "<h4>🪴 Individual Plant Status</h4><ul>";
         ['p1', 'p2', 'p3', 'p4'].forEach(p => {
-            const status = row[`${p}_status`] || "--";
-            const advice = row[`${p}_advice`] || "--";
+            const status = data[`${p}_status`] || "--";
+            const advice = data[`${p}_advice`] || "--";
             html += `<li><strong>${p.toUpperCase()}:</strong> ${status} ➔ <strong>Advice:</strong> ${advice}</li>`;
         });
         html += "</ul>";
 
-        if (row.vpd_context || row.verdict) {
+        if (data.vpd_context || data.verdict) {
             html += "<h4>🌡️ Biome Dynamics</h4><ul>";
-            html += `<li><strong>VPD Context:</strong> ${row.vpd_context || "--"}</li>`;
-            html += `<li><strong>The Warden's Verdict:</strong> ${row.verdict || "--"}</li>`;
+            html += `<li><strong>VPD Context:</strong> ${data.vpd_context || "--"}</li>`;
+            html += `<li><strong>The Warden's Verdict:</strong> ${data.verdict || "--"}</li>`;
             html += "</ul>";
         }
 
