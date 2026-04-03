@@ -6373,3 +6373,11 @@ Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
 Warden: Valid stream found on /dev/cu.usbmodem1201
 Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
 Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-30/garden_125002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-31/garden_135447.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_045002.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_105002.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json

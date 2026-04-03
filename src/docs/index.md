@@ -113,7 +113,7 @@ hide:
     </div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+<div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem;">
     <!-- Chart 1: Vitality -->
     <div>
         <span class="label-sub">📈 PLANT VITALITY (LAST 48H)</span>
@@ -269,7 +269,7 @@ hide:
     const commonScaleOptions = {
         y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
         x: { ticks: { 
-            maxTicksLimit: 12, 
+            maxTicksLimit: 24, 
             color: '#64748b',
             autoSkip: true,
             maxRotation: 0
