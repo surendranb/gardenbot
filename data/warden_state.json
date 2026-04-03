@@ -1,10 +1,8 @@
 {
   "last_run": "2026-04-03 10:38 AM IST",
-  "last_hypothesis": "The persistent extreme VPD is likely causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3.",
+  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
   "last_human_action": "misted p1",
   "active_concerns": [
-    "high-vpd",
-    "p2-nutrient-light-stress",
-    "p4-establishment-light"
+    "high-vpd"
   ]
 }
