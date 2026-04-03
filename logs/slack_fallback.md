@@ -82,3 +82,7 @@ The Warden's Decision: Verdict: System stable. EXTREME VPD is a stress factor bu
 **The Warden's Decision**:
 - Verdict: Soil moisture adequate but VPD extreme indicates transpiration stress.
 - Action: Light misting advised to raise local humidity and alleviate VPD stress. Do not water; check soil again in next cycle.
+* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 85.3% moisture adequate and visuals show healthy, turgid growth) ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
+* **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 88.0% moisture adequate but visuals show severe leaf-margin necrosis and wilting) ➔ **Advice:** HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.
+* **p3 (Pothos):** Stable - Alignment (sensor shows 67.5% moisture adequate and visuals show stable leaf surface intact) ➔ **Advice:** Maintain current care; monitor for changes; consider humidity support for VPD stress.
+* **p4 (Silver Guest):** Stagnant - Divergence (sensor data unreliable due to A5 failure; visuals show lack of new leaf development suggesting slow establishment) ➔ **Advice:** HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.
