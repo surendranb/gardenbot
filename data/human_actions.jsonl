@@ -1,1 +1,2 @@
-{"timestamp": "2026-04-04 11:30", "action": "watered p1"}
+{"timestamp": "2026-04-04T18:25:00Z", "action": "manual_bypass_sensor_a5", "target": ["p2", "p4"], "note": "Sensor A5 failure; visual dehydration confirmed."}
+{"timestamp": "2026-04-04T18:25:05Z", "action": "trigger_water_mist_cycle", "target": ["p2", "p4"], "note": "Corrective care for dehydration."}
