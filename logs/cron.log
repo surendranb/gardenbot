@@ -7292,3 +7292,27 @@ Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_co
 [2026-04-04 22:52:04.456154] Logged Telemetry: {'temp': 32.0, 'hum': 29.0, 'light': 936, 'p1': 404, 'p3': 389, 'p2': 160}
 [2026-04-04 22:52:04.623588] Logged Weather: {'temp': 29.5, 'humidity': 85, 'pressure': 1009, 'description': 'mist'}
 [vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+2026-04-04 22:52:12 [PULSE] Pulse Complete.
+2026-04-04 23:22:12 [PULSE] Starting Pulse...
+Weather context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/weather_context.json and /Users/surendran/.openclaw/workspace/gardenbot/data/weather.csv
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-03-31/garden_135447.jpg
+  Added T-5: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_000205.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_232241.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+[2026-04-04 23:22:56.229542] Starting Ingestion Phase...
+[2026-04-04 23:23:03.906164] Logged Telemetry: {'temp': 32.0, 'hum': 29.0, 'light': 896, 'p1': 398, 'p3': 389, 'p2': 154}
+[2026-04-04 23:23:04.189468] Logged Weather: {'temp': 29.5, 'humidity': 84, 'pressure': 1009, 'description': 'mist'}
+[vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
