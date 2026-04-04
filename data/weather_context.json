@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-04 17:41:19",
+  "timestamp": "2026-04-04 18:12:18",
   "main": {
-    "temp": 30.42,
-    "humidity": 79,
-    "pressure": 1006
+    "temp": 30.09,
+    "humidity": 80,
+    "pressure": 1007
   },
   "weather": {
     "id": 802,
@@ -13,6 +13,6 @@
   },
   "forecast": {
     "rain_expected": false,
-    "max_pop": 0
+    "max_pop": 0.2
   }
 }
