@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-04-04 20:16:24",
+  "timestamp": "2026-04-04 20:47:25",
   "main": {
     "temp": 29.99,
-    "humidity": 82,
+    "humidity": 83,
     "pressure": 1009
   },
   "weather": {
-    "id": 500,
-    "main": "Rain",
-    "description": "light rain",
-    "icon": "10n"
+    "id": 701,
+    "main": "Mist",
+    "description": "mist",
+    "icon": "50n"
   },
   "forecast": {
     "rain_expected": false,
-    "max_pop": 0.2
+    "max_pop": 0
   }
 }
