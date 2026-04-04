@@ -1,8 +1,10 @@
 {
-  "last_run": "2026-04-04 08:48 AM IST",
-  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
-  "last_human_action": "misted p1",
+  "last_run": "2026-04-04 09:46 AM IST",
+  "last_hypothesis": "Extreme VPD (3.186 kPa) is the dominant stressor. Sensor A5 (p2, p4) is non-functional. Visuals indicate p2 is stressed despite moisture readings.",
+  "last_human_action": "none",
   "active_concerns": [
-    "high-vpd"
+    "high-vpd",
+    "a5-sensor-failure",
+    "p2-visual-stress"
   ]
 }
