@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-04-05 01:57:02",
+  "timestamp": "2026-04-05 02:27:59",
   "main": {
     "temp": 29.45,
     "humidity": 82,
-    "pressure": 1008
+    "pressure": 1007
   },
   "weather": {
     "id": 701,
