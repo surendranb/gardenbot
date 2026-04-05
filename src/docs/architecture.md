@@ -34,26 +34,25 @@ GardenOS is a digital twin of a desk-top biome. It's built as decoupled layers �
 ```mermaid
 graph TD
     %% Layer 1: Data Collection
-    subgraph Collection["1. DATA COLLECTION (cron / launchd on MacBook)"]
+    subgraph Collection["1. DATA COLLECTION (launchd on MacBook)"]
         AR[Arduino Uno: Temp, Humidity, Light, Soil] -->|Serial| WPY[warden.py]
         WPY --> CSV[telemetry.csv]
         WPY --> MET[metrics.csv]
-        WPY --> SNS[current_snapshot.json]
-        WPY --> STS[warden_state.json]
 
         CAM[USB Webcam] -->|OpenCV| VPY[vision.py]
-        VPY -->|Multi-day temporal analysis sent to Gemini| VJS[vision_observation.json]
+        VPY -->|Temporal stack analysis via Gemini| VJS[vision_observation.json]
+        VPY -->|Append| VHS[vision_history.jsonl]
 
         OWM[OpenWeatherMap API] --> WSC[weather_scout.py]
         WSC --> WTH[weather_context.json]
     end
 
-    %% Layer 2: SILICA Context Layer
-    subgraph SILICA["2. SILICA (Context Layer)"]
-        CSV & MET & SNS & STS & VJS & WTH --> POC[prep_observer_context.py]
+    %% Layer 2: SILICA Context Layer (v2.1)
+    subgraph SILICA["2. SILICA (Semantic Context v2.1)"]
+        CSV & MET & VJS & VHS & WTH --> POC[prep_observer_context_v2.py]
         GM[GARDEN_MANIFEST.md — World Model] --> POC
-        PC[plants.json — Plant Config] --> POC
-        POC --> CTX[observer_context.md]
+        HA[human_actions.jsonl — HITL Actions] --> POC
+        POC --> CTX[observer_context_v2.md]
     end
 
     %% Layer 3: The Warden / Observer
@@ -67,7 +66,7 @@ graph TD
     %% Layer 4: Public Presence
     subgraph Public["4. PUBLIC PRESENCE (Sync & Publish)"]
         LDG --> SYNC[sync.sh]
-        CSV & VJS & VMD --> SYNC
+        CSV & MET & VHS --> SYNC
         SYNC --> GH[GitHub Repo]
         GH --> WEB[GitHub Pages — Live Dashboard & Blog]
     end
@@ -108,7 +107,7 @@ Wooden surface, acts as a thermal insulator. The pots are decoupled from the des
 
 ### 1. Data Collection
 
-Three Python scripts run on a schedule via **cron/launchd** on the MacBook. Each one collects a different type of data and writes it to flat files in `data/`.
+Three Python scripts run on independent **launchd** schedules on the MacBook. Each one collects a different type of data and writes it to flat files in `data/`.
 
 **`warden.py`** — connects to the Arduino over serial and reads from four sensors:
 
@@ -116,65 +115,46 @@ Three Python scripts run on a schedule via **cron/launchd** on the MacBook. Each
 * **Lux sensor**: ambient light level
 * **3 capacitive soil probes**: one per pot (p1: Nickels, p2: Mint, p3: Pothos)
 
-Every reading gets written to `telemetry.csv`. Here's what a couple of rows look like:
-
-```
-timestamp,temp,hum,light,p1,p2,p3
-2026-03-21 14:32:02,32.0,26.0,776,860.0,218.0,295.0
-2026-03-21 14:35:57,32.0,26.0,796,864.0,219.0,295.0
-```
-
-It also writes `metrics.csv` (computed values like VPD), `current_snapshot.json`, and `warden_state.json`.
+Every reading gets written to `telemetry.csv` and `metrics.csv`.
 
 **`vision.py`** — captures a frame from the USB webcam via OpenCV, then samples a multi-day temporal sequence (Historical Peak Stress + Today's morning recovery + Now). This stack is sent to **Gemini on Google AI Studio** for a meticulous "Expert Visual Ethologist" audit. It identifies specific orientation-calibrated physical changes (leaf count, color gradients, postural shifts) and provides pixel-based health inferences.
 
-The full observation is written to `vision_observation.json` (a high-resolution machine-readable audit) which feeds directly into the SILICA context layer. This ensures the Warden can correlate visual "why" with sensor "why" without lossy translation.
+The output is written to `vision_observation.json` (latest) and appended to `vision_history.jsonl` (historical log).
 
-**`weather_scout.py`** — calls the OpenWeatherMap API for current Chennai conditions. This gives us the outdoor macro-context, which matters because the indoor microclimate is completely different. Here's a sample:
-
-```json
-{
-  "main": { "temp": 26.08, "humidity": 85, "pressure": 1009 },
-  "weather": { "main": "Mist", "description": "mist" },
-  "forecast": { "rain_expected": false, "max_pop": 0 }
-}
-```
+**`weather_scout.py`** — calls the OpenWeatherMap API for current Chennai conditions. To minimize API overhead, this runs on a separate twice-daily schedule (06:00 and 18:00).
 
 Output goes to `weather_context.json`.
 
 ---
 
-### 2. SILICA (Context Layer)
+### 2. SILICA (Context Layer v2.1)
 
-SILICA sits between raw data and the LLM. Its job is to turn all those CSV rows and JSON files into **semantic facts** — plain-language statements the model can reason about — and to ground the LLM in the physical reality of the desk so it doesn't hallucinate based on outdoor weather.
+SILICA v2.1 is the "Brain" of GardenOS. It sits between raw data and the LLM. Instead of a simple data dump, it performs **Semantic Synthesis** — turning CSV rows into high-level botanical facts and visual trajectories.
 
-It's made up of three things:
+It's made up of four key components:
 
-**`GARDEN_MANIFEST.md`** — the **world model**. I wrote this by hand. It codifies things the LLM can't infer from sensors alone:
+**`GARDEN_MANIFEST.md`** — the **world model**. It codifies the physical constants of the desk biome (window orientation, AC behavior, fan placement).
 
-* The north-facing window gives only indirect diffuse light, and the east wall blocks all morning sun
-* The AC clamps temperature at 26°C but crushes humidity below 30%
-* The terrace above radiates solar heat into the room between noon and 3pm
-* Fan S runs whenever I'm at the desk, creating high air exchange that dries leaf surfaces
-* I'm present at the desk ~12 hours a day, which adds CO2 and body heat within 1 meter
+**`human_actions.jsonl`** — the **HITL (Human-in-the-Loop) Log**. Every manual action (misting, watering, sensor checks) is recorded here. In v2.1, these actions serve as **Master Overrides** that can invalidate historical "Hardware Issue" patterns.
 
-**`scripts/config/plants.json`** — plant configuration. Species names, which sensor channel maps to which pot, and the soil moisture thresholds that define "dry" vs "wet" for each plant.
+**`prep_observer_context_v2.py`** — the **Expert Synthesizer**. This script calculates three temporal layers for the LLM:
+* **The Pulse (4h)**: High-resolution immediate impact.
+* **The Day (24h)**: Overnight recovery analysis.
+* **The Rhythm (72h/7d)**: Metabolic trends and growth baselines.
 
-**`prep_observer_context.py`** — the synthesizer. It reads all the Layer 1 data files, merges them with the world model and plant config, and produces one file: `observer_context.md`. Here's a sample of what the LLM actually receives:
+**`observer_context_v2.md`** — the output. Here's a sample of the **Biological Tempo** the LLM receives:
 
 ```
-- VPD State: EXTREME (Critical Stress) at 3.521 kPa (Rising trend: 0.286).
-- Hydration Stagnancy: p1 is flat (Δ-1.2%). Check for root-stasis or sensor drift.
-- Human Occupancy: HIGH. Fan S (South) is active; localized air exchange is manual.
+- VPD Rhythm: Current avg 3.6 kPa (Stable).
+- P1 Velocity: 📈 REHYDRATING (-5.5% last 4h) | 7d Baseline: +30.4% (🌿 THRIVING).
+- P2 Velocity: ⚖️ MAINTAINING (-1.2% last 4h) | 7d Baseline: -27.0% (⚠️ STRESSED).
 ```
-
-The LLM gets these pre-digested facts instead of parsing raw CSVs. That's the core of what SILICA does.
 
 ---
 
 ### 3. The Warden (OpenClaw)
 
-OpenClaw reads `observer_context.md` and sends it to an LLM. The model reasons about plant health — cross-checking sensors against visual evidence, comparing against recent history, and flagging anything that needs attention. Output goes to `logs/vision_ledger.md` and gets posted to Slack `#plantclaw`.
+OpenClaw reads `observer_context_v2.md` and sends it to an LLM. The model performs a **Evidence Reconciliation** — cross-checking Section 2 (Sensors) against Section 3 (Vision History) and Section 0 (Human Action). It ignores historical errors if Section 0 shows a resolution.
 
 ---
 

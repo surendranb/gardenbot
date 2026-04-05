@@ -6,17 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How SILICA grounds the LLM in physical reality and prevents hallucinated plant stress.">
+        <meta name="description" content="Upgrading the SILICA context layer from static snapshots to a temporal motion picture.">
       
       
       
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/03/27/building-a-context-layer-for-the-gardenbot/">
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/blog/2026/04/05/silica-v21-the-temporal-motion-picture/">
       
       
-        <link rel="prev" href="../../20/hello-world-the-origins-of-gardenos/">
+        <link rel="prev" href="../../../03/27/building-a-context-layer-for-the-gardenbot/">
       
-      
-        <link rel="next" href="../../../04/05/silica-v21-the-temporal-motion-picture/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>Building a Context Layer for the GardenBot - GardenOS</title>
+        <title>SILICA v2.1: The Temporal Motion Picture - GardenOS</title>
       
     
     
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-a-context-layer-for-the-gardenbot" class="md-skip">
+        <a href="#silica-v21-the-temporal-motion-picture" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Building a Context Layer for the GardenBot
+              SILICA v2.1: The Temporal Motion Picture
             
           </span>
         </div>
@@ -455,10 +453,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#the-problem-the-echo-chamber-of-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The problem
+        The Problem: The Echo Chamber of Context
       
     </span>
   </a>
@@ -466,43 +464,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#silica" class="md-nav__link">
+  <a href="#the-fix-multi-resolution-temporal-layers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SILICA
+        The Fix: Multi-Resolution Temporal Layers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Fix: Multi-Resolution Temporal Layers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-hierarchy-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Hierarchy of Truth
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#why-semantic-synthesis-matters" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-the-nested-telemetry-zoom" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why semantic synthesis matters
+        2. The Nested Telemetry Zoom
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#what-changed" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-the-visual-health-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What changed
+        3. The Visual Health Timeline
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#whats-next" class="md-nav__link">
+  <a href="#the-result-from-debugger-to-biologist" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What's next
+        The Result: From Debugger to Biologist
       
     </span>
   </a>
@@ -546,7 +561,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2026-03-27 00:00:00+00:00" class="md-ellipsis">Friday, March 27, 2026</time>
+                        <time datetime="2026-04-05 00:00:00+00:00" class="md-ellipsis">Sunday, April 5, 2026</time>
                       </div>
                     </li>
                     
@@ -557,7 +572,8 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/context-engineering/">Context Engineering</a></span>
+                              <a href="../../../../category/context-engineering/">Context Engineering</a>, 
+                              <a href="../../../../category/architecture/">Architecture</a></span>
                         </div>
                       </li>
                     
@@ -568,7 +584,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              2 min read
                             
                           </span>
                         </div>
@@ -595,35 +611,31 @@
   
 
 
-<h1 id="building-a-context-layer-for-the-gardenbot">Building a Context Layer for the GardenBot</h1>
-<h2 id="the-problem">The problem</h2>
-<p>Using an LLM to monitor 3 pots on my desktop is a fun idea. But ultimately just dumping numbers into an LLM is no joy. </p>
-<p>Each cycle starts from scratch, and an LLM with no memory defaults to pattern-matching. It sees <em>"Chennai, 32°C, 60% humidity"</em> and concludes the plants must be wilting. Makes sense if you're going by vibes. It doesn't take into account the fact that the plants are indoors or how the room is aligned to the sun or what is the actual physics.</p>
+<h1 id="silica-v21-the-temporal-motion-picture">SILICA v2.1: The Temporal Motion Picture</h1>
+<p>For the last two weeks, the GardenBot has been surviving, but not thriving. It was trapped in a "stateless" reasoning loop—every three hours, it would wake up, look at a single snapshot of data, and try to guess what was happening. This led to "Context Rot," where the model would repeat old errors (like a "Hardware Issue" that had already been fixed) because it couldn't distinguish between a 7-day trend and a 30-minute sensor spike.</p>
+<p>Today, we rolled out <strong>SILICA v2.1</strong>. It moves the system from "Data Dumps" to "Semantic Synthesis."</p>
 <!-- more -->
 
-<p>The plants sit on my desk. Once in a while I turn on the AC, which is also set to a max of <strong>26°C</strong>. If it is on it pushes humidity below <strong>30%</strong>. This makes the room dry and VPD regularly hits <strong>3.5+ kPa</strong>, the opposite of what "tropical Chennai" would suggest. Without grounding, the LLM hallucinates stress symptoms that match the <em>outdoor</em> climate, not the actual microclimate 2 meters from a north-facing window.</p>
-<h2 id="silica">SILICA</h2>
-<p>The answer: Build a context layer. SILICA is we named it. It is the abbreviation of "Semantic Intelligence &amp; Local Indoor Context Awareness for Agentic Bio-Monitoring". A collection of scripts that sit between raw data and the LLM.</p>
-<p><code>prep_observer_context.py</code> does the heavy lifting. It reads all the data files from the collection scripts (<code>warden.py</code>, <code>vision.py</code>, <code>weather_scout.py</code>), merges them with the world model and plant config, and outputs <code>observer_context.md</code>.</p>
-<p><code>GARDEN_MANIFEST.md</code> is the <strong>world model</strong>. It codifies the physical constants of the desk biome. The north window gives only indirect light. The east wall blocks morning sun. The AC, if on, clamps temp at 26°C but tanks humidity. The terrace above radiates heat between noon and 3pm. These are things the LLM can't figure out from sensor readings alone.</p>
-<p><code>scripts/config/plants.json</code> has species info, sensor calibration, and dry thresholds for each pot.</p>
-<p>The collection scripts run independently via cron/launchd. They write flat files. SILICA reads those files and prepares the context of the agent to pass on to the LLM.</p>
-<p>The reason I use OpenClaw for this is - it makes the human in the loop easy/possible. When the agent finishes, it posts the observation and tells me what to do about it - water, mist etc. I reply in the thread once in a while about if I did act on its advice and it is added to the context layer in return.</p>
-<h2 id="why-semantic-synthesis-matters">Why semantic synthesis matters</h2>
-<p>Raw CSV rows are bad LLM input. A row like <code>2026-03-27T14:30:00,27.1,28.2,412,wet,dry,wet</code> is meaningless without schema, calibration, and context. The model would need to know which column is which, what the thresholds are, what "wet" means for each species, and how the reading compares to recent trends.</p>
-<p><code>prep_observer_context.py</code> does that translation. It produces facts like:</p>
-<ul>
-<li>"Temperature: 27.1°C — within normal indoor range, AC active"</li>
-<li>"VPD: 3.5 kPa, rising trend — low humidity stress likely"</li>
-<li>"Soil p1 (Nickels): dry, below threshold — watering recommended"</li>
-<li>"Vision: Gemma 3 reports slight leaf curl on Pothos, consistent with low humidity"</li>
-</ul>
-<p>The LLM gets <code>observer_context.md</code> — pre-digested facts — instead of CSVs. And because the world model is baked in, it knows "32°C outdoors" doesn't mean the plants are at 32°C.</p>
-<h2 id="what-changed">What changed</h2>
-<p>Before SILICA, the LLM would see Chennai weather and hallucinate heat stress. It'd recommend misting because it assumed tropical humidity, when the room is actually bone-dry from the AC. It flagged "high temperature" when the desk has never been above 28°C.</p>
-<p>After SILICA, it flags the real problems — high VPD causing leaf curl, dry soil in specific pots, sensor readings that contradict what Gemma 3 sees in the image. Much more useful once I stopped letting it guess and started feeding it facts.</p>
-<h2 id="whats-next">What's next</h2>
-<p>Moving historical data into SQLite for faster trend queries. Hardening the launchd services so camera warmup happens reliably. Extending the reasoning window so the LLM has time for complex audits. All this would be building on top of the system that's grounded in a world model.</p>
+<h3 id="the-problem-the-echo-chamber-of-context">The Problem: The Echo Chamber of Context</h3>
+<p>In the legacy architecture (v1), we gave the Warden the last 3 full reports. If those reports were from a period of failure, the model adopted that failure as its "Normal." Even if a human logged a "Resolved" note, the model's pattern-matching brain often prioritized the 1,500 words of "Broken" history over the 10 words of "Fixed" reality. </p>
+<p>We called this <strong>Context Poisoning.</strong></p>
+<h3 id="the-fix-multi-resolution-temporal-layers">The Fix: Multi-Resolution Temporal Layers</h3>
+<p>SILICA v2.1 fixes this by moving the "reasoning heavy lifting" into the Python synthesis layer. Instead of asking the LLM to do the math and remember the past, we calculate the <strong>Deltas</strong> for it.</p>
+<h4 id="1-the-hierarchy-of-truth">1. The Hierarchy of Truth</h4>
+<p>We introduced a "Section 0: Reality Overrides." If a human marks an issue as "Resolved," the Python script explicitly tells the LLM: <em>"This is the absolute truth. Disregard the historical failure labels below."</em> This breaks the pattern-matching loop instantly.</p>
+<h4 id="2-the-nested-telemetry-zoom">2. The Nested Telemetry Zoom</h4>
+<p>We stopped giving the model raw CSV rows. Now, it receives pre-digested averages across three windows:
+*   <strong>The Pulse (4h)</strong>: For immediate impact (AC on? Misted?).
+*   <strong>The Day (24h)</strong>: To analyze overnight metabolic recovery.
+*   <strong>The Rhythm (72h/7d)</strong>: To measure actual growth (Thriving) vs. stagnancy.</p>
+<h4 id="3-the-visual-health-timeline">3. The Visual Health Timeline</h4>
+<p>The biggest change is in Vision. Previously, the model only saw the "Now." In v2.1, we parse the <strong>Vision History Log</strong> to build a textual trajectory. The Biologist now sees a narrative: <em>"Friday: Drooping -&gt; Saturday: Stagnant -&gt; Sunday: Recovering."</em> </p>
+<p>This turns a static image into a <strong>Temporal Motion Picture.</strong></p>
+<h3 id="the-result-from-debugger-to-biologist">The Result: From Debugger to Biologist</h3>
+<p>The difference in output is profound. The first report under v2.1 completely bypassed the "Hardware Failure" debate that had plagued the bot for days. It correctly identified that while the plant was rehydrating <em>now</em>, it was still 27% below its weekly baseline. </p>
+<p>The advice shifted from "Fix your sensors" to <strong>"Metabolic Acceleration."</strong> The GardenBot is finally acting like a Warden, not a debugger.</p>
+<hr />
+<p><em>Follow the live trajectory on the <a href="../../../../../architecture/">Architecture Page</a>.</em></p>
 
 
 
