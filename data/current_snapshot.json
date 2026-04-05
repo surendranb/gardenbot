@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-05T13:22:12.813212",
+  "timestamp": "2026-04-05T13:53:10.832730",
   "sensors": {
-    "timestamp": "2026-04-05 13:22:12",
-    "temp": 32.0,
-    "hum": 26.0,
-    "light": 733,
-    "p1": 419,
-    "p2": 162,
-    "p3": 407
+    "timestamp": "2026-04-05 13:53:10",
+    "temp": 33.0,
+    "hum": 25.0,
+    "light": 739,
+    "p1": 415,
+    "p2": 164,
+    "p3": 401
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 94.5,
+      "moisture_pct": 95.7,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 80.7,
+      "moisture_pct": 80.1,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 76.1,
+      "moisture_pct": 77.8,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.518
+    "vpd_kpa": 3.772
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,91 +33,27 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_060512.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_121722.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_125118.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-05T12:51:38.133281",
+      "timestamp": "2026-04-05T12:51:18Z",
       "model": "gemini-3.1-flash-lite-preview",
-      "image_availability": {
-        "compare_set": [
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_121722.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_125118.jpg"
-        ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_125118.jpg",
-        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_121722.jpg"
-      },
-      "frame_sequence": [
-        {
-          "label": "EARLIEST",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg"
-        },
-        {
-          "label": "T-5",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg"
-        },
-        {
-          "label": "T-4",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg"
-        },
-        {
-          "label": "T-3",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg"
-        },
-        {
-          "label": "T-2",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg"
-        },
-        {
-          "label": "T-1",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_121722.jpg"
-        },
-        {
-          "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_125118.jpg"
-        }
-      ],
+      "image_path": "archive/2026-04-05/garden_125118.jpg",
       "vision_report": {
-        "timestamp": "2024-05-22T09:00:00Z",
-        "model": "Garden Botanical Observer v1.0",
+        "timestamp": "2026-04-05 125118",
+        "model": "Garden Botanical Observer v4.2",
         "plant_audit": {
-          "p1_string_of_nickels": {
-            "physical_facts": "Stable leaf count; dense foliage; consistent orientation.",
-            "explanatory_transformations": "No significant morphological changes observed across the sequence.",
-            "visual_health_inference": "Healthy; turgor pressure appears optimal with no signs of chlorosis."
-          },
-          "p2_mexican_mint": {
-            "physical_facts": "Two primary leaves, one smaller pair emerging.",
-            "explanatory_transformations": "Stagnant growth; no measurable expansion of the apical pair over the 5-day period.",
-            "visual_health_inference": "Stressed; lack of new leaf development suggests potential root-zone restriction or nutrient deficiency."
-          },
-          "p3_pothos": {
-            "physical_facts": "Two leaves present; one large, one smaller with a central fenestration/hole.",
-            "explanatory_transformations": "The large leaf shows a persistent necrotic tip at the petiole junction, which has remained static since T-5.",
-            "visual_health_inference": "Stable but compromised; the necrotic tip indicates past overwatering or localized tissue damage."
-          },
-          "p4_silver_guest": {
-            "physical_facts": "Small seedling located near the rim of the shared p2/p4 pot.",
-            "explanatory_transformations": "No observable change in size or leaf count.",
-            "visual_health_inference": "Dormant; growth rate is extremely slow, likely due to competition with p2."
-          }
+          "succulent": "Maintains moderate turgor; foliage remains clustered in the yellow container.",
+          "aroid": "Significant chlorosis and necrosis observed on the primary leaf; structural integrity is failing.",
+          "seedlings": "Minimal biomass; high mortality risk; soil surface appears dry and compacted."
         },
-        "biome_observations": {
-          "soil_condition": "Soil surface appears consistently dry with a granular texture; no signs of fungal mycelium or moss.",
-          "desk_surface": "Presence of electronic wiring and a metallic component (likely a sensor or probe) near p3.",
-          "incidental_growth": "None detected."
-        },
-        "temporal_deltas": "The sequence shows a high degree of stasis. The most notable change is the introduction of a metallic probe/connector into the p3 pot in the final frames.",
-        "visual_health_inference": "The biome is in a 'maintenance' state. Growth is minimal, suggesting either a low-light adaptation or a nutrient-limited environment.",
-        "anomalies": "The metallic object introduced in the final image is a physical anomaly that may interfere with root development if inserted too deeply.",
-        "narrative_description": "The botanical collection is currently in a state of arrested development. While there is no acute decline, there is also no active vegetative expansion. The Pothos (p3) shows signs of historical stress (necrotic tip), and the Mexican Mint (p2) is failing to thrive. The introduction of hardware into the p3 pot suggests an active monitoring phase, but the plants themselves remain largely unchanged over the 5-day observation window.",
-        "confidence": 0.95
+        "biome_observations": "The environment remains stagnant. The presence of exposed wiring and electronic components suggests an ongoing, albeit ineffective, attempt at automated monitoring or irrigation.",
+        "temporal_deltas": "The aroid's decline has accelerated since the previous audit, with visible browning at the leaf margins. The seedlings show no signs of growth, confirming a state of arrested development.",
+        "visual_health_inference": "Critical. The botanical subjects are suffering from chronic neglect, likely due to improper moisture regulation and lack of nutrient cycling.",
+        "anomalies": "The white rabbit figurine remains the only stable element, now partially obscured by the proximity of the electronic sensor probe.",
+        "narrative_description": "The garden is a study in entropy. The succulent persists in its yellow vessel, while the aroid, under the gaze of the white rabbit, continues its slow, inevitable decay. The seedlings are barely clinging to life, surrounded by a tangle of wires that serve as a monument to failed technological intervention.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
