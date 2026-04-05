@@ -1,5 +1,5 @@
 # 📝 Project SILICA: Garden Observer Context
-**Generated:** 2026-04-05 08:40:15
+**Generated:** 2026-04-05 09:11:04
 
 ## 🏛️ 1. WORLD MODEL CONSTRAINTS (The Indoor Truth)
 (The Biome)
@@ -31,10 +31,12 @@
  - **VPD Divergence**: Expect indoor humidity to be 30-40% lower than outdoor forecasts due to AC dehumidification and fan scouring.
 
 ## 🧠 2. SEMANTIC FACT SYNTHESIS (The Warden's Logic)
-- **VPD State**: EXTREME (Critical Stress) at 3.518 kPa (Stable trend: 0.0).
-- **Hydration Stagnancy**: p1 is flat (Δ0.0%). Check for root-stasis or sensor drift.
-- **Dry-down**: p2 moisture velocity is -8.2% per window. Metabolic activity is active.
-- **Dry-down**: p3 moisture velocity is -2.3% per window. Metabolic activity is active.
+- **VPD State**: EXTREME (Critical Stress) at 3.549 kPa (Stable trend: 0.031).
+- **Dry-down**: p1 moisture velocity is -4.3% per window. Metabolic activity is active.
+- **Dry-down**: p2 moisture velocity is -6.1% per window. Metabolic activity is active.
+- **Dry-down**: p3 moisture velocity is -7.1% per window. Metabolic activity is active.
+- **AC Pulse**: Clamped thermal floor (26°C) detected via humidity crash. VPD shock in progress.
+- **Human Occupancy**: HIGH. Fan S (South) is active; localized air exchange is manual.
 
 ## 🛠️ 3. RECENT HUMAN INTERVENTIONS
 - **[2026-04-04T18:25:00Z]**: manual_bypass_sensor_a5
@@ -44,7 +46,6 @@
 ## 🌡️ 4. RECENT TELEMETRY (Verifier Data)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-04-05 02:59:24,32.0,28.0,936,389.0,165.0,380.0
 2026-04-05 03:30:22,32.0,28.0,936,390.0,165.0,380.0
 2026-04-05 04:01:22,32.0,28.0,936,384.0,162.0,381.0
 2026-04-05 04:32:20,32.0,27.0,937,388.0,169.0,384.0
@@ -56,13 +57,13 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-04-05 07:38:06,32.0,26.0,854,399.0,170.0,395.0
 2026-04-05 08:09:02,32.0,26.0,764,396.0,172.0,390.0
 2026-04-05 08:40:01,32.0,26.0,719,396.0,185.0,396.0
+2026-04-05 09:10:58,31.0,21.0,710,415.0,185.0,413.0
 
 ```
 
 ## 📊 4. COMPUTED METRICS (Verifier Data)
 ```csv
 timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5_pct,p5_slope,p6_pct,p6_slope,p1_is_dry,p2_is_dry,p3_is_dry
-2026-04-05 02:59:24,3.423,100.0,,79.8,,83.8,,,,,,,,False,False,False
 2026-04-05 03:30:22,3.423,100.0,,79.8,,83.8,,,,,,,,False,False,False
 2026-04-05 04:01:22,3.423,100.0,,80.7,,83.5,,,,,,,,False,False,False
 2026-04-05 04:32:20,3.471,100.0,,78.7,,82.6,,,,,,,,False,False,False
@@ -74,23 +75,24 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-04-05 07:38:06,3.518,100.0,,78.4,,79.5,,,,,,,,False,False,False
 2026-04-05 08:09:02,3.518,100.0,,77.8,,80.9,,,,,,,,False,False,False
 2026-04-05 08:40:01,3.518,100.0,,74.0,,79.2,,,,,,,,False,False,False
+2026-04-05 09:10:58,3.549,95.7,,74.0,,74.4,,,,,,,,False,False,False
 
 ```
 
 ## 🌤️ 5. WEATHER FORECAST (Macro-Context)
 ```json
 {
-  "timestamp": "2026-04-05 08:39:33",
+  "timestamp": "2026-04-05 09:10:31",
   "main": {
-    "temp": 30.62,
-    "humidity": 68,
-    "pressure": 1010
+    "temp": 32.32,
+    "humidity": 61,
+    "pressure": 1011
   },
   "weather": {
-    "id": 721,
-    "main": "Haze",
-    "description": "haze",
-    "icon": "50d"
+    "id": 801,
+    "main": "Clouds",
+    "description": "few clouds",
+    "icon": "02d"
   },
   "forecast": {
     "rain_expected": false,

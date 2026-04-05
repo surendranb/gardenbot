@@ -7730,3 +7730,26 @@ Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_co
 [2026-04-05 08:40:23.652182] Logged Telemetry: {'temp': 31.0, 'hum': 26.0, 'light': 719, 'p1': 402, 'p3': 396, 'p2': 186}
 [2026-04-05 08:40:23.821767] Logged Weather: {'temp': 30.62, 'humidity': 68, 'pressure': 1010, 'description': 'haze'}
 [vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+2026-04-05 08:40:31 [PULSE] Pulse Complete.
+2026-04-05 09:10:31 [PULSE] Starting Pulse...
+Weather context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/weather_context.json and /Users/surendran/.openclaw/workspace/gardenbot/data/weather.csv
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_091059.jpg
+Inference failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\nPlease retry in 56.190403444s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+[2026-04-05 09:11:04.860429] Starting Ingestion Phase...
+[2026-04-05 09:11:12.541733] Logged Telemetry: {'temp': 31.0, 'hum': 19.0, 'light': 723, 'p1': 413, 'p3': 413, 'p2': 189}
+[2026-04-05 09:11:12.706912] Logged Weather: {'temp': 32.32, 'humidity': 61, 'pressure': 1011, 'description': 'few clouds'}
+[vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
