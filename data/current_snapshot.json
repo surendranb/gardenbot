@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-05T16:41:07.694286",
+  "timestamp": "2026-04-05T17:30:17.365425",
   "sensors": {
-    "timestamp": "2026-04-05 16:41:07",
+    "timestamp": "2026-04-05 17:30:17",
     "temp": 32.0,
-    "hum": 27.0,
-    "light": 838,
-    "p1": 427,
-    "p2": 169,
-    "p3": 390
+    "hum": 29.0,
+    "light": 834,
+    "p1": 406,
+    "p2": 170,
+    "p3": 379
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 92.0,
+      "moisture_pct": 98.5,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 78.7,
+      "moisture_pct": 78.4,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 80.9,
+      "moisture_pct": 84.0,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.471
+    "vpd_kpa": 3.376
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,11 +33,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_060512.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_145748.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_155426.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-05T15:54:39.195926",
+      "timestamp": "2026-04-05T16:41:19.585937",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,9 +47,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_155426.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_164108.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_155426.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_164108.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg"
       },
@@ -80,50 +80,44 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_155426.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_164108.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-05 15:54:29",
-        "model": "Garden Botanical Observer v2.4",
+        "timestamp": "2026-04-05 16:41:11",
+        "model": "Garden Botanical Observer v1.2",
         "plant_audit": {
           "p1_string_of_nickels": {
-            "physical_facts": "High leaf density, succulent foliage, consistent radial growth pattern.",
-            "explanatory_transformations": "Stable throughout the 5-day sequence; no significant morphological shifts observed.",
-            "visual_health_inference": "Optimal. Turgidity is maintained, indicating consistent hydration and light absorption."
-          },
-          "p2_mexican_mint": {
-            "physical_facts": "Two primary wide leaves, central stem development.",
-            "explanatory_transformations": "Minimal vertical growth; foliage remains static in orientation.",
+            "physical_facts": "Stable leaf count; foliage remains dense and clustered in the yellow pot.",
+            "explanatory_transformations": "No significant morphological changes observed over the 5-day period.",
             "visual_health_inference": "Stable. No signs of chlorosis or wilting."
           },
+          "p2_mexican_mint": {
+            "physical_facts": "Two primary leaves with secondary growth emerging; located in the black pot.",
+            "explanatory_transformations": "Growth rate is slow but consistent; no significant positional shift.",
+            "visual_health_inference": "Healthy. Turgor pressure appears optimal."
+          },
           "p3_pothos": {
-            "physical_facts": "Two leaves present; one large, one smaller with a central fenestration/hole.",
-            "explanatory_transformations": "The large leaf shows persistent marginal necrosis at the tip, which has remained static since T-5.",
-            "visual_health_inference": "Stressed. The persistent necrosis suggests a past localized trauma or nutrient imbalance, though it is not currently spreading."
+            "physical_facts": "Two leaves present; one large, one smaller with a central perforation.",
+            "explanatory_transformations": "The apical leaf shows a persistent necrotic tip that has remained static since T-5.",
+            "visual_health_inference": "Stressed. The necrotic tip suggests previous over-watering or humidity imbalance, though currently stable."
           },
           "p4_silver_guest": {
-            "physical_facts": "Small seedling, located near the rim of the p2/p4 shared pot.",
-            "explanatory_transformations": "Negligible change in leaf surface area over the 5-day period.",
-            "visual_health_inference": "Dormant/Slow-growth. Appears healthy but lacks active expansion."
+            "physical_facts": "Small seedling located near the rim of the p2/p4 shared pot.",
+            "explanatory_transformations": "Minimal vertical development observed.",
+            "visual_health_inference": "Stable. Appears to be in a slow establishment phase."
           }
         },
         "biome_observations": {
-          "soil_condition": "Consistent moisture levels; no visible surface cracking or fungal blooms.",
-          "desk_surface": "Clean, no debris or foreign contaminants detected.",
-          "incidental_growth": "None observed in any of the four pots."
+          "soil_texture": "Soil appears consistently dry across all pots; no visible surface cracking.",
+          "incidental_growth": "No weeds or moss detected.",
+          "debris": "No significant debris on the desk surface."
         },
-        "temporal_deltas": {
-          "methodology": "Comparison of pixel-density and spatial coordinates of leaf tips across the 6-image sequence.",
-          "summary": "The environment is highly stable. The only significant change is the introduction of a metallic probe/sensor near p3 in the final two frames."
-        },
-        "visual_health_inference": "The botanical collection is in a state of 'stasis-maintenance'. No acute distress is visible, but growth rates are low, likely due to the lack of direct sunlight.",
-        "anomalies": {
-          "p3_necrosis": "Localized tip necrosis on the large Pothos leaf.",
-          "sensor_interference": "A metallic probe has been introduced to the p3 pot in the final frames, potentially affecting soil moisture readings or root space."
-        },
-        "narrative_description": "The audit confirms a stable, controlled indoor environment. Plants p1, p2, and p4 show no signs of distress. Plant p3 exhibits a static necrotic tip, which is not progressing. The most notable change is the recent addition of a sensor probe in the p3 pot, which should be monitored for potential soil compaction or root disturbance.",
-        "confidence": 0.96
+        "temporal_deltas": "The sequence shows a high degree of stasis. The most notable change is the introduction of a metallic probe/sensor in the p3 pot starting at T-1, which persists into the current image.",
+        "visual_health_inference": "Overall ecosystem is in a 'maintenance' state. No acute decline or rapid growth spurts detected.",
+        "anomalies": "The presence of a metallic probe in p3 is a human-introduced variable. No biological anomalies (fungi/pests) observed.",
+        "narrative_description": "The botanical collection is currently in a state of equilibrium. The plants are showing minimal growth, likely due to the stable, low-light indoor environment. The Pothos (p3) retains a localized necrotic lesion on its primary leaf, which has not progressed, indicating the stressor has been mitigated. The soil moisture levels appear uniform and low, suggesting a conservative watering regimen.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
