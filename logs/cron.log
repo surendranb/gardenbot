@@ -7799,3 +7799,65 @@ Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_co
 [2026-04-05 10:13:11.661401] Logged Telemetry: {'temp': 31.0, 'hum': 22.0, 'light': 615, 'p1': 583, 'p3': 547, 'p2': 475}
 [2026-04-05 10:13:11.874313] Logged Weather: {'temp': 32.88, 'humidity': 60, 'pressure': 1010, 'description': 'few clouds'}
 [vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+2026-04-05 10:13:19 [PULSE] Pulse Complete.
+2026-04-05 10:43:19 [PULSE] Starting Pulse...
+Weather context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/weather_context.json and /Users/surendran/.openclaw/workspace/gardenbot/data/weather.csv
+Warden: Found 5 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201', '/dev/cu.usbmodemR8YW70P747P2']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_104347.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+[2026-04-05 10:44:00.544137] Starting Ingestion Phase...
+[2026-04-05 10:44:08.217773] Logged Telemetry: {'temp': 32.0, 'hum': 21.0, 'light': 709, 'p1': 419, 'p3': 417, 'p2': 187}
+[2026-04-05 10:44:08.370623] Logged Weather: {'temp': 34.36, 'humidity': 58, 'pressure': 1010, 'description': 'few clouds'}
+[vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+2026-04-05 11:14:08 [PULSE] Starting Pulse...
+Weather context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/weather_context.json and /Users/surendran/.openclaw/workspace/gardenbot/data/weather.csv
+Warden: Found 5 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201', '/dev/cu.usbmodemR8YW70P747P2']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_111436.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+[2026-04-05 11:14:52.084399] Starting Ingestion Phase...
+[2026-04-05 11:14:59.765566] Logged Telemetry: {'temp': 32.0, 'hum': 21.0, 'light': 707, 'p1': 417, 'p3': 415, 'p2': 141}
+[2026-04-05 11:14:59.921278] Logged Weather: {'temp': 34.77, 'humidity': 57, 'pressure': 1009, 'description': 'few clouds'}
+[vision_capture] Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+2026-04-05 11:40:10 [PULSE] Starting Pulse...
+Warden: Found 5 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201', '/dev/cu.usbmodemR8YW70P747P2']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_114037.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Preparing Project SILICA Observer Context...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md

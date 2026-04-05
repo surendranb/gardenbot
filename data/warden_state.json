@@ -1,9 +1,8 @@
 {
   "last_run": "2026-04-04 09:46 AM IST",
-  "last_hypothesis": "Plants p2 are under dry-down pressure with elevated VPD.",
+  "last_hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
   "last_human_action": "none",
   "active_concerns": [
-    "dry:p2",
     "high-vpd"
   ]
 }
