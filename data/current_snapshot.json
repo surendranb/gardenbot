@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-05T13:53:10.832730",
+  "timestamp": "2026-04-05T14:26:57.349859",
   "sensors": {
-    "timestamp": "2026-04-05 13:53:10",
-    "temp": 33.0,
-    "hum": 25.0,
-    "light": 739,
-    "p1": 415,
-    "p2": 164,
-    "p3": 401
+    "timestamp": "2026-04-05 14:26:57",
+    "temp": 32.0,
+    "hum": 26.0,
+    "light": 769,
+    "p1": 433,
+    "p2": 218,
+    "p3": 442
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 95.7,
+      "moisture_pct": 90.2,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 80.1,
+      "moisture_pct": 64.3,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 77.8,
+      "moisture_pct": 66.1,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.772
+    "vpd_kpa": 3.518
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,27 +33,94 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_060512.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_125118.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-05T12:51:18Z",
+      "timestamp": "2026-04-05T13:53:24.407021",
       "model": "gemini-3.1-flash-lite-preview",
-      "image_path": "archive/2026-04-05/garden_125118.jpg",
-      "vision_report": {
-        "timestamp": "2026-04-05 125118",
-        "model": "Garden Botanical Observer v4.2",
-        "plant_audit": {
-          "succulent": "Maintains moderate turgor; foliage remains clustered in the yellow container.",
-          "aroid": "Significant chlorosis and necrosis observed on the primary leaf; structural integrity is failing.",
-          "seedlings": "Minimal biomass; high mortality risk; soil surface appears dry and compacted."
+      "image_availability": {
+        "compare_set": [
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_135311.jpg"
+        ],
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_135311.jpg",
+        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg",
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg"
+      },
+      "frame_sequence": [
+        {
+          "label": "EARLIEST",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-01/garden_135002.jpg"
         },
-        "biome_observations": "The environment remains stagnant. The presence of exposed wiring and electronic components suggests an ongoing, albeit ineffective, attempt at automated monitoring or irrigation.",
-        "temporal_deltas": "The aroid's decline has accelerated since the previous audit, with visible browning at the leaf margins. The seedlings show no signs of growth, confirming a state of arrested development.",
-        "visual_health_inference": "Critical. The botanical subjects are suffering from chronic neglect, likely due to improper moisture regulation and lack of nutrient cycling.",
-        "anomalies": "The white rabbit figurine remains the only stable element, now partially obscured by the proximity of the electronic sensor probe.",
-        "narrative_description": "The garden is a study in entropy. The succulent persists in its yellow vessel, while the aroid, under the gaze of the white rabbit, continues its slow, inevitable decay. The seedlings are barely clinging to life, surrounded by a tangle of wires that serve as a monument to failed technological intervention.",
-        "confidence": 0.92
+        {
+          "label": "T-5",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-02/garden_125004.jpg"
+        },
+        {
+          "label": "T-4",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg"
+        },
+        {
+          "label": "T-3",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg"
+        },
+        {
+          "label": "T-2",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_002440.jpg"
+        },
+        {
+          "label": "T-1",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg"
+        },
+        {
+          "label": "CURRENT",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_135311.jpg"
+        }
+      ],
+      "vision_report": {
+        "timestamp": "2026-04-05 13:53:14",
+        "model": "Garden Botanical Observer v1.2",
+        "plant_audit": {
+          "p1_string_of_nickels": {
+            "physical_facts": "High leaf density, circular succulent foliage, vibrant green with slight silver sheen.",
+            "explanatory_transformations": "Stable throughout the 5-day sequence; no significant growth or senescence observed.",
+            "visual_health_inference": "Excellent. Turgidity is maintained; no signs of chlorosis or wilting."
+          },
+          "p2_mexican_mint": {
+            "physical_facts": "Two primary large leaves, central position, pair of smaller apical leaves emerging.",
+            "explanatory_transformations": "Minimal change in leaf surface area; slight vertical orientation shift in the apical pair.",
+            "visual_health_inference": "Stable. Leaf margins are intact; no necrosis present."
+          },
+          "p3_pothos": {
+            "physical_facts": "Two leaves, one large, one smaller with a central fenestration/hole.",
+            "explanatory_transformations": "The large leaf shows a persistent brown necrotic tip at the petiole junction, which has remained static since the earliest image.",
+            "visual_health_inference": "Fair. The necrotic tip suggests past water stress or nutrient imbalance, but the plant is currently in a state of stasis."
+          },
+          "p4_silver_guest": {
+            "physical_facts": "Small seedling, located near the rim of the p2/p4 shared pot.",
+            "explanatory_transformations": "Growth is extremely slow; no measurable expansion over the 5-day period.",
+            "visual_health_inference": "Stable. Appears healthy but dormant or slow-growing."
+          }
+        },
+        "biome_observations": {
+          "soil_condition": "Soil appears consistently dry across all pots; no visible surface cracking or fungal mycelium.",
+          "desk_surface": "Clean, no debris or water spills detected.",
+          "incidental_growth": "None detected."
+        },
+        "temporal_deltas": {
+          "methodology": "First, I performed a pixel-by-pixel comparison of the leaf edges and soil moisture markers across the 6-image sequence. Second, I validated these findings by checking the relative position of the rabbit anchor to ensure no camera shift occurred.",
+          "summary": "The biome is in a state of high stability. No significant growth or decline has occurred in the last 120 hours."
+        },
+        "visual_health_inference": "The plants are in a 'maintenance phase'. The lack of growth suggests either a dormant period or a need for increased light/nutrient availability to trigger active vegetative development.",
+        "anomalies": "The necrotic tip on the large Pothos leaf (p3) is the only notable anomaly; it is not spreading, indicating the stressor has been removed.",
+        "narrative_description": "The botanical collection remains in a static, healthy state. The environment is stable, with no signs of pests, fungal outbreaks, or rapid environmental degradation. The plants are currently holding their position, with the Pothos showing the only sign of historical stress.",
+        "confidence": 0.98
       }
     },
     "recent_visual_ledger": [
