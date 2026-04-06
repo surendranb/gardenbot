@@ -1,9 +1,9 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-06 23:21:50
+**Generated:** 2026-04-07 00:08:29
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 23:21
-- **HUMAN OCCUPANCY**: HIGH
+- **TIME OF AUDIT**: 00:08
+- **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Warden)**: UNKNOWN (FFmpeg error: [Errno 2] No such file or directory: 'ffmpeg')
 - **EMPIRICAL PROOF**: N/A
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
@@ -30,12 +30,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 3.241 kPa | **24h Cycle**: 3.31 kPa | **72h Rhythm**: 3.407 kPa
+- **4h Pulse**: 3.267 kPa | **24h Cycle**: 3.308 kPa | **72h Rhythm**: 3.406 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 78.0% (Current) vs 81.1% (24h Avg) | **7d Baseline Delta**: -22.0% (📉 DECLINE/DRY)
-- **P2**: 45.0% (Current) vs 67.1% (24h Avg) | **7d Baseline Delta**: -55.0% (📉 DECLINE/DRY)
-- **P3**: 69.1% (Current) vs 76.2% (24h Avg) | **7d Baseline Delta**: 2.7% (⚖️ STABLE)
+- **P1**: 73.2% (Current) vs 80.6% (24h Avg)
+- **P2**: 46.1% (Current) vs 66.1% (24h Avg)
+- **P3**: 71.1% (Current) vs 75.8% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -80,7 +80,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-04-06 18:11:45,31.0,27.0,948,546.0,303.0,476.0
 2026-04-06 18:58:06,31.0,30.0,946,536.0,263.0,422.0
 2026-04-06 19:56:56,30.0,28.0,907,367.0,346.0,492.0
 2026-04-06 20:27:44,31.0,26.0,877,544.0,239.0,416.0
@@ -88,6 +87,7 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-04-06 21:39:07,31.0,27.0,878,271.0,269.0,397.0
 2026-04-06 23:09:52,31.0,27.0,882,508.0,310.0,449.0
 2026-04-06 23:21:38,31.0,28.0,946,513.0,317.0,444.0
+2026-04-07 00:08:17,31.0,28.0,946,510.0,320.0,442.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
