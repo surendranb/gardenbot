@@ -1,8 +1,8 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 00:08:29
+**Generated:** 2026-04-07 00:55:08
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 00:08
+- **TIME OF AUDIT**: 00:55
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Warden)**: UNKNOWN (FFmpeg error: [Errno 2] No such file or directory: 'ffmpeg')
 - **EMPIRICAL PROOF**: N/A
@@ -30,12 +30,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 3.267 kPa | **24h Cycle**: 3.308 kPa | **72h Rhythm**: 3.406 kPa
+- **4h Pulse**: 3.247 kPa | **24h Cycle**: 3.302 kPa | **72h Rhythm**: 3.404 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 73.2% (Current) vs 80.6% (24h Avg)
-- **P2**: 46.1% (Current) vs 66.1% (24h Avg)
-- **P3**: 71.1% (Current) vs 75.8% (24h Avg)
+- **P1**: 74.9% (Current) vs 79.6% (24h Avg)
+- **P2**: 42.3% (Current) vs 64.1% (24h Avg)
+- **P3**: 70.0% (Current) vs 75.4% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -80,7 +80,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3
-2026-04-06 18:58:06,31.0,30.0,946,536.0,263.0,422.0
 2026-04-06 19:56:56,30.0,28.0,907,367.0,346.0,492.0
 2026-04-06 20:27:44,31.0,26.0,877,544.0,239.0,416.0
 2026-04-06 20:58:31,31.0,28.0,880,541.0,238.0,425.0
@@ -88,6 +87,7 @@ timestamp,temp,hum,light,p1,p2,p3
 2026-04-06 23:09:52,31.0,27.0,882,508.0,310.0,449.0
 2026-04-06 23:21:38,31.0,28.0,946,513.0,317.0,444.0
 2026-04-07 00:08:17,31.0,28.0,946,510.0,320.0,442.0
+2026-04-07 00:54:57,31.0,29.0,945,507.0,330.0,444.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK

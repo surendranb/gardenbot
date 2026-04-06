@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-07T00:08:17.964971",
+  "timestamp": "2026-04-07T00:54:57.278866",
   "sensors": {
-    "timestamp": "2026-04-07 00:08:17",
+    "timestamp": "2026-04-07 00:54:57",
     "temp": 31.0,
-    "hum": 28.0,
-    "light": 946,
-    "p1": 510,
-    "p2": 320,
-    "p3": 442
+    "hum": 29.0,
+    "light": 945,
+    "p1": 507,
+    "p2": 330,
+    "p3": 444
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 66.6,
+      "moisture_pct": 67.5,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 34.5,
+      "moisture_pct": 31.6,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 66.1,
+      "moisture_pct": 65.5,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.235
+    "vpd_kpa": 3.19
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -32,7 +32,7 @@
       "high-vpd"
     ],
     "temporal_stack": {
-      "anchor": null,
+      "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg",
       "previous": null,
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
