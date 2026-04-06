@@ -1,8 +1,8 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-06 21:39:19
+**Generated:** 2026-04-06 22:50:38
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 21:39
+- **TIME OF AUDIT**: 22:50
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Warden)**: UNKNOWN (FFmpeg error: [Errno 2] No such file or directory: 'ffmpeg')
 - **EMPIRICAL PROOF**: N/A
@@ -30,12 +30,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 3.22 kPa | **24h Cycle**: 3.316 kPa | **72h Rhythm**: 3.413 kPa
+- **4h Pulse**: 3.228 kPa | **24h Cycle**: 3.314 kPa | **72h Rhythm**: 3.412 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 71.2% (Current) vs 82.7% (24h Avg) | **7d Baseline Delta**: -28.8% (📉 DECLINE/DRY)
-- **P2**: 47.3% (Current) vs 70.8% (24h Avg) | **7d Baseline Delta**: -52.7% (📉 DECLINE/DRY)
-- **P3**: 67.2% (Current) vs 76.9% (24h Avg) | **7d Baseline Delta**: 0.2% (⚖️ STABLE)
+- **P1**: 75.3% (Current) vs 83.2% (24h Avg) | **7d Baseline Delta**: -24.7% (📉 DECLINE/DRY)
+- **P2**: 47.6% (Current) vs 70.1% (24h Avg) | **7d Baseline Delta**: -52.4% (📉 DECLINE/DRY)
+- **P3**: 68.9% (Current) vs 77.0% (24h Avg) | **7d Baseline Delta**: 1.9% (⚖️ STABLE)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
