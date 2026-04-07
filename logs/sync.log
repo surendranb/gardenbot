@@ -9675,3 +9675,28 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.28 seconds
 2026-04-07 09:07:53 Staging all assets...
+2026-04-07 09:07:53 Staging changes...
+[main 0ee3928] GardenOS Sync: 2026-04-07 09:07:53
+ 28 files changed, 168 insertions(+), 913 deletions(-)
+ create mode 100644 archive/2026-04-07/garden_090737.jpg
+ delete mode 100644 data/observer_context_v2.md
+ delete mode 100644 data/vision_observation.md
+ delete mode 100644 data/warden_state.json.backup
+ delete mode 100644 data/weather.csv
+ delete mode 100644 logs/2026-03-21-watchdog.log
+ delete mode 100644 logs/gateway.log
+ delete mode 100644 logs/latest_report.json
+ delete mode 100644 logs/manual_observer_run.log
+ delete mode 100644 logs/model_eval_results.json
+ delete mode 100644 logs/slack_fallback.md
+ delete mode 100644 logs/temp_report.md
+ delete mode 100644 logs/vision.old.md
+ delete mode 100644 logs/vision_history.jsonl.bak
+ delete mode 100644 logs/vision_ledger.csv
+ delete mode 100644 logs/vision_ledger.jsonl
+ delete mode 100644 logs/vision_ledger.md.bak
+ delete mode 100644 logs/vision_ledger_audit_backup.md
+2026-04-07 09:07:53 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   318fc57..0ee3928  main -> main
+2026-04-07 09:07:57 Sync Successful.
