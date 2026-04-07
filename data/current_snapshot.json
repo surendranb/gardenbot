@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-04-07T23:34:45.908967",
+  "timestamp": "2026-04-08T00:36:55.403107",
   "sensors": {
-    "timestamp": "2026-04-07 23:34:45",
-    "temp": 35.41,
-    "hum": 65.96,
-    "light": 862,
-    "p1": 466,
+    "timestamp": "2026-04-08 00:36:55",
+    "temp": 35.49,
+    "hum": 66.09,
+    "light": 860,
+    "p1": 452,
     "p2": 175,
-    "p3": 388,
-    "press": 1009.21,
-    "gas": 34.86,
+    "p3": 393,
+    "press": 1008.86,
+    "gas": 34.37,
     "db": 0.0
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 80.1,
+      "moisture_pct": 84.4,
       "is_dry": false
     },
     "p2": {
@@ -22,23 +22,23 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 81.5,
+      "moisture_pct": 80.1,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 1.958
+    "vpd_kpa": 1.959
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
-      "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_062727.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_220603.jpg",
+      "anchor": null,
+      "previous": null,
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-07T18:46:49.445562",
+      "timestamp": "2026-04-07T23:35:03.743855",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -48,9 +48,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_184538.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_233446.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_184538.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_233446.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg"
       },
@@ -81,47 +81,52 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_184538.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_233446.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-07 18:45:41",
-        "model": "Garden Botanical Observer v2.4",
+        "timestamp": "2026-04-07 23:34:49",
+        "model": "Garden Botanical Observer v1.2",
         "plant_audit": {
-          "p1_string_of_nickels": {
-            "physical_facts": "Yellow pot, dense foliage, consistent leaf count.",
-            "explanatory_transformations": "Remained stable throughout the observation period.",
-            "visual_health_inference": "Healthy; no signs of chlorosis or wilting."
+          "p1": {
+            "status": "Stable",
+            "leaf_count": "Multiple",
+            "health_notes": "Consistent foliage density observed throughout the sequence."
           },
-          "p2_mexican_mint": {
-            "physical_facts": "Black pot, central position, two primary leaves.",
-            "explanatory_transformations": "Gradual decline in turgidity observed over 5 days.",
-            "visual_health_inference": "Stressed; leaf margins show signs of dehydration."
+          "p2": {
+            "status": "Declining",
+            "leaf_count": "2 primary, 2 secondary",
+            "health_notes": "Progressive wilting and loss of turgor pressure observed in the central Mexican Mint."
           },
-          "p3_pothos": {
-            "physical_facts": "Black pot, two leaves, white rabbit anchor present.",
-            "explanatory_transformations": "Leaf orientation shifted slightly; apical leaf shows minor necrosis.",
-            "visual_health_inference": "Moderate stress; necrosis at leaf tip suggests potential over-watering or nutrient imbalance."
+          "p3": {
+            "status": "Stressed",
+            "leaf_count": "2",
+            "health_notes": "Leaf-margin necrosis on the larger leaf has expanded; the petiole shows signs of drooping."
           },
-          "p4_silver_guest": {
-            "physical_facts": "Black pot, small sprout near rim.",
-            "explanatory_transformations": "Growth has been stagnant; minimal development observed.",
-            "visual_health_inference": "Dormant/Stunted; lack of new leaf production."
+          "p4": {
+            "status": "Critical",
+            "leaf_count": "1 visible",
+            "health_notes": "Significant desiccation and loss of structural integrity."
           }
         },
         "biome_observations": {
-          "soil_texture": "Soil in p3 and p4 shows increased white mineral/salt crusting over time.",
-          "incidental_growth": "No weeds or moss detected.",
-          "biome_anomalies": "White granular debris (likely perlite or salt buildup) increased significantly in p3/p4 by T-1."
+          "soil_condition": "Increasingly dry with visible surface cracking in p2/p4 pot.",
+          "anomalies": "Introduction of white granular substance (likely perlite or fertilizer) in T-1; total loss of visual data in CURRENT.",
+          "desk_surface": "Debris accumulation noted near the base of the pots."
         },
         "temporal_deltas": {
-          "T-5_to_T-3": "Initial stability followed by onset of soil surface crusting.",
-          "T-2_to_Current": "Increased accumulation of white particulate matter on soil surface; p3 leaf necrosis progression."
+          "T-5_to_T-3": "Initial signs of soil moisture loss; p4 shows reduced leaf surface area.",
+          "T-3_to_T-1": "Significant structural collapse of p2 and p4; introduction of white granular material to the soil surface.",
+          "T-1_to_CURRENT": "Complete loss of visual telemetry (blackout)."
         },
-        "visual_health_inference": "Overall biome health is declining due to potential soil compaction and salt accumulation. Pothos (p3) is the primary indicator of environmental stress.",
-        "anomalies": "Significant white particulate accumulation in p3/p4 pots; possible mineral salt buildup from water evaporation.",
-        "narrative_description": "The botanical environment shows signs of environmental stress. While the String of Nickels (p1) remains robust, the plants in the black pots (p2, p3, p4) are struggling. The most notable change is the appearance and accumulation of white mineral deposits on the soil surface, which correlates with the observed leaf necrosis in the Pothos (p3). The Mexican Mint (p2) is showing signs of reduced turgor pressure, likely due to the same soil-level stressors.",
-        "confidence": 0.92
+        "visual_health_inference": "The biome is suffering from severe dehydration and potential nutrient toxicity or improper substrate amendment. The progression from T-5 to T-1 indicates a failure in the irrigation cycle, leading to rapid senescence of the smaller specimens (p2, p4).",
+        "anomalies": [
+          "Sudden appearance of white particulate matter in T-1.",
+          "Total sensor blackout in CURRENT image.",
+          "Rapid wilting of p2 and p4 suggesting acute water stress."
+        ],
+        "narrative_description": "The audit reveals a deteriorating botanical environment. While p1 remains relatively stable, the central pots (p2, p3, p4) show clear signs of physiological distress, characterized by leaf necrosis and loss of turgor. The sudden appearance of white granules in T-1 suggests an intervention that failed to mitigate the ongoing desiccation. The current state is a complete data void, preventing further visual assessment.",
+        "confidence": 0.85
       }
     },
     "recent_visual_ledger": [
