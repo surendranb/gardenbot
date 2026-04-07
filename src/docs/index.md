@@ -10,7 +10,6 @@ hide:
 /* Modern Glassmorphic Dashboard */
 .md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
 .md-main__inner { max-width: none !important; }
-.md-sidebar { display: none !important; }
 
 .status-header {
     display: flex;

@@ -23,7 +23,6 @@ plugins:
       post_dir: blog/posts
       post_date_format: full
       post_url_format: "{date}/{slug}"
-  - search
 
 markdown_extensions:
   - attr_list
