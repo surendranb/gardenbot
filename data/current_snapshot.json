@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-07T16:55:29.592116",
+  "timestamp": "2026-04-07T17:26:25.202989",
   "sensors": {
-    "timestamp": "2026-04-07 16:55:23",
+    "timestamp": "2026-04-07 17:26:19",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 856,
-    "p1": 448,
-    "p2": 181,
-    "p3": 354,
+    "light": 866,
+    "p1": 479,
+    "p2": 203,
+    "p3": 389,
     "press": 0.0,
     "gas": 0.0,
-    "db": -23.6
+    "db": -28.2
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 85.6,
+      "moisture_pct": 76.1,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 75.1,
+      "moisture_pct": 68.7,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 91.2,
+      "moisture_pct": 81.2,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_062727.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_155340.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_162436.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-07T16:24:48.771876",
+      "timestamp": "2026-04-07T16:55:44.557385",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -48,9 +48,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_162436.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_165530.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_162436.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_165530.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg"
       },
@@ -81,44 +81,50 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_162436.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_165530.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-07 16:24:40",
-        "model": "Garden Botanical Observer v1.2",
+        "timestamp": "2026-04-07 16:55:33",
+        "model": "Garden Botanical Observer v2.1",
         "plant_audit": {
-          "p1_string_of_nickels": {
+          "p1": {
             "physical_facts": "Yellow pot, dense foliage, consistent leaf count.",
-            "explanatory_transformations": "Remained stable throughout the sequence; no significant growth or decline observed.",
-            "visual_health_inference": "Stable. No signs of chlorosis or wilting."
+            "explanatory_transformations": "Remained stable throughout the observation period with no significant growth or decline.",
+            "visual_health_inference": "Stable; no signs of chlorosis or wilting."
           },
-          "p2_mexican_mint": {
+          "p2": {
             "physical_facts": "Black pot, two primary leaves, central position.",
-            "explanatory_transformations": "Gradual decline in turgor pressure observed from T-3 to Current.",
-            "visual_health_inference": "Stressed. Reasoning: Leaf drooping and loss of structural rigidity indicate potential water stress or root zone instability."
+            "explanatory_transformations": "Gradual decline in leaf turgor observed from T-3 to current state.",
+            "visual_health_inference": "Stressed; leaf margins show signs of dehydration and potential nutrient lockout."
           },
-          "p3_pothos": {
-            "physical_facts": "Black pot, two leaves, white rabbit anchor present.",
-            "explanatory_transformations": "The larger leaf shows progressive marginal browning starting from the earliest image.",
-            "visual_health_inference": "Declining. Reasoning: Necrosis on the leaf margin has expanded by approximately 3mm since the earliest image."
+          "p3": {
+            "physical_facts": "Black pot, two leaves, rabbit anchor present.",
+            "explanatory_transformations": "Leaf posture has shifted downward; the apical leaf shows increased necrosis at the tip.",
+            "visual_health_inference": "Declining; necrosis progression indicates potential root zone issues."
           },
-          "p4_silver_guest": {
-            "physical_facts": "Black pot, small seedling near rim.",
-            "explanatory_transformations": "Showed initial signs of life, but has since withered significantly by the Current state.",
-            "visual_health_inference": "Critical. Reasoning: Severe desiccation and loss of green pigment suggest the plant is failing to establish."
+          "p4": {
+            "physical_facts": "Black pot, shared with p2, small sprout near rim.",
+            "explanatory_transformations": "Growth has stalled; the sprout appears desiccated compared to the T-5 baseline.",
+            "visual_health_inference": "Critical; high risk of mortality due to lack of development."
           }
         },
         "biome_observations": {
-          "soil_condition": "Surface soil in p2/p4 pot shows increasing dryness and cracking.",
-          "debris": "White granular material (likely perlite or mineral salts) has accumulated on the soil surface of p2/p4 over the last 48 hours.",
-          "desk_surface": "Clean, no significant biological growth or spills."
+          "soil_texture": "Increasingly dry and cracked surface across all black pots.",
+          "fungal_presence": "None detected.",
+          "debris": "White granular material (likely perlite or mineral salt buildup) has accumulated in the center of the p3/p4 pot cluster."
         },
-        "temporal_deltas": "The most significant change occurred between T-2 and T-1, where white granular deposits appeared on the soil surface of the black pot containing p2/p4.",
-        "visual_health_inference": "Overall biome health is trending downward. The p3 Pothos is suffering from chronic marginal necrosis, while the p2/p4 cluster is exhibiting signs of acute dehydration and potential soil toxicity (salt buildup).",
-        "anomalies": "Presence of white crystalline/granular debris on the soil surface of the black pot (p2/p4) starting at T-1.",
-        "narrative_description": "The botanical collection is under stress. While the p1 String of Nickels remains robust, the plants in the black pot (p2, p3, p4) are showing clear signs of environmental distress. The Pothos (p3) is experiencing slow, progressive leaf necrosis, and the smaller seedlings (p2, p4) are struggling with what appears to be soil-surface salt accumulation and dehydration. Immediate intervention regarding soil moisture and potential mineral buildup is recommended.",
-        "confidence": 0.92
+        "temporal_deltas": {
+          "T-5_to_T-3": "Initial stability followed by onset of soil surface cracking.",
+          "T-3_to_Current": "Accelerated dehydration of p2 and p4; p3 leaf necrosis expanded by 3mm."
+        },
+        "visual_health_inference": "The biome is experiencing a moisture deficit. The plants in the black pots (p2, p3, p4) are showing signs of water stress, specifically leaf drooping and marginal necrosis. The yellow pot (p1) is the only unit maintaining homeostasis.",
+        "anomalies": {
+          "soil_cracking": "Significant surface fissures in p2/p4 pot.",
+          "mineral_buildup": "White crystalline deposits appearing on soil surface, suggesting poor drainage or over-fertilization."
+        },
+        "narrative_description": "The botanical audit reveals a clear divergence in health between the yellow-potted specimen and the black-potted cluster. The black pots are suffering from a combination of substrate compaction and dehydration. The rabbit anchor in p3 remains stable, but the surrounding soil environment is deteriorating. Immediate hydration intervention is recommended to prevent further necrosis in p3 and total failure of the p4 sprout.",
+        "confidence": 0.94
       }
     },
     "recent_visual_ledger": [
