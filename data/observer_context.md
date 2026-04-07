@@ -1,11 +1,11 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 11:11:25
+**Generated:** 2026-04-07 11:12:34
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 11:11
+- **TIME OF AUDIT**: 11:12
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Warden)**: ON (Multiple Fans S+N)
-- **AIR QUALITY INFERENCE**: OPTIMAL - Fans effectively clearing VOCs (Gas Resistance rising: +4.36 kOhms)
+- **AIR QUALITY INFERENCE**: SUB-OPTIMAL - Fans running but VOC clearing is weak (Delta: -1.64 kOhms)
 - **EMPIRICAL PROOF**: -24.9 dB (Calibrated High)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling.
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.378 kPa | **24h Cycle**: 3.016 kPa | **72h Rhythm**: 3.3 kPa
+- **4h Pulse**: 2.159 kPa | **24h Cycle**: 2.954 kPa | **72h Rhythm**: 3.277 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 69.3% (Current) vs 69.9% (24h Avg) | **7d Baseline Delta**: -30.7% (📉 DECLINE/DRY)
-- **P2**: 58.4% (Current) vs 51.7% (24h Avg) | **7d Baseline Delta**: -41.6% (📉 DECLINE/DRY)
-- **P3**: 79.6% (Current) vs 73.3% (24h Avg) | **7d Baseline Delta**: 18.9% (📈 GROWTH/WET)
+- **P1**: 70.0% (Current) vs 69.4% (24h Avg) | **7d Baseline Delta**: -30.0% (📉 DECLINE/DRY)
+- **P2**: 61.4% (Current) vs 51.6% (24h Avg) | **7d Baseline Delta**: -38.6% (📉 DECLINE/DRY)
+- **P3**: 81.6% (Current) vs 73.2% (24h Avg) | **7d Baseline Delta**: 21.2% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -86,7 +86,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas
-2026-04-07 07:34:01,31.0,28.0,755,510.0,265.0,457.0,,
 2026-04-07 08:04:55,31.0,27.0,726,497.0,307.0,452.0,,
 2026-04-07 08:36:14,31.0,28.0,697,503.0,297.0,451.0,,
 2026-04-07 09:07:36,31.0,29.0,679,506.0,299.0,380.0,,
@@ -94,6 +93,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas
 2026-04-07 10:04:39,0.0,0.0,724,548.0,118.0,373.0,0.0,0.0
 2026-04-07 10:15:20,0.0,0.0,716,504.0,220.0,358.0,0.0,0.0
 2026-04-07 10:47:53,34.89,64.64,648,481.0,197.0,348.0,1010.34,6.54
+2026-04-07 11:12:21,0.0,0.0,640,482.0,196.0,373.0,0.0,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
