@@ -9280,3 +9280,13 @@ Warden: Capture failed, attempting CSV fallback...
 Warden: Fallback raw data found: {'timestamp': '2026-04-07 11:48:09', 'temp': 0.0, 'hum': 0.0, 'light': 643, 'p1': 474.0, 'p2': 227.0, 'p3': 349.0, 'press': 0.0, 'gas': 0.0, 'db': -25.8}
 Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
 Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_120205.jpg
+Inference failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Synthesizing SILICA v2.2 (Corrected Logic)...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
