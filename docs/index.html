@@ -554,12 +554,16 @@
                 <span id="val-light" style="color:#facc15; font-weight: 600;">--</span>
             </div>
             <div>
+                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">AIR QUALITY (VOC)</span>
+                <span id="val-gas" style="color:#a855f7; font-weight: 600;">-- kΩ</span>
+            </div>
+            <div>
                 <span style="color: #94a3b8; font-size: 0.7rem; display: block;">SHIELDING (ΔT/ΔH)</span>
                 <span id="val-shield" style="color:#4ade80; font-weight: 600;">--</span>
             </div>
             <div>
                 <span style="color: #94a3b8; font-size: 0.7rem; display: block;">BARO PRESSURE</span>
-                <span id="val-press" style="color:#94a3b8;">-- hPa</span>
+                <span id="val-press" style="color:#f8fafc; font-weight: 600;">-- hPa</span>
             </div>
             <div>
                 <span style="color: #94a3b8; font-size: 0.7rem; display: block;">RAIN PROBABILITY</span>
@@ -671,7 +675,13 @@
 
             // New Factual Metrics
             document.getElementById('val-light').textContent = lT.light || "--";
-            document.getElementById('val-press').textContent = (lW.pressure || "--") + " hPa";
+
+            // Prefer local BME680 pressure over OWM API
+            const localPress = lT.press || lW.pressure;
+            document.getElementById('val-press').textContent = (localPress || "--") + " hPa";
+
+            // Gas Resistance
+            document.getElementById('val-gas').textContent = lT.gas ? parseFloat(lT.gas).toFixed(2) + " kΩ" : "-- kΩ";
 
             // Handle pop as either 0-1 or 0-100
             let popVal = parseFloat(lW.pop) || 0;
