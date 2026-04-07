@@ -1,30 +1,30 @@
 {
-  "timestamp": "2026-04-07T08:04:55.341060",
+  "timestamp": "2026-04-07T08:36:14.818141",
   "sensors": {
-    "timestamp": "2026-04-07 08:04:55",
+    "timestamp": "2026-04-07 08:36:14",
     "temp": 31.0,
-    "hum": 27.0,
-    "light": 726,
-    "p1": 497,
-    "p2": 307,
-    "p3": 452
+    "hum": 28.0,
+    "light": 697,
+    "p1": 503,
+    "p2": 297,
+    "p3": 451
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 70.6,
+      "moisture_pct": 68.7,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 38.3,
+      "moisture_pct": 41.2,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 63.2,
+      "moisture_pct": 63.5,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 3.279
+    "vpd_kpa": 3.235
   },
   "intelligence": {
     "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
@@ -33,11 +33,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_062727.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_070313.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_073402.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-07T07:34:20.294521",
+      "timestamp": "2026-04-07T08:05:06.621894",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -46,9 +46,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_073402.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_080456.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_073402.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_080456.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg"
       },
@@ -75,46 +75,47 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_073402.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_080456.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-07 07:34:06",
+        "timestamp": "2026-04-07 08:05:01",
         "model": "Garden Botanical Observer v1.2",
         "plant_audit": {
-          "p1_string_of_nickels": {
-            "physical_facts": "Yellow pot, dense foliage, consistent circular leaf structure.",
-            "explanatory_transformations": "Remained stable throughout the 5-day sequence with no significant wilting or growth spurts.",
-            "visual_health_inference": "Healthy; turgor pressure is maintained across all visible leaves."
+          "p1": {
+            "physical_facts": "String of Nickels in yellow pot. Dense foliage, trailing habit, consistent leaf count.",
+            "explanatory_transformations": "Remained stable throughout the sequence. No significant growth or decline observed.",
+            "visual_health_inference": "Stable. No signs of chlorosis or wilting."
           },
-          "p2_mexican_mint": {
-            "physical_facts": "Black pot, two primary leaves with central growth point.",
-            "explanatory_transformations": "The plant has shown a slight decline in vertical posture over the 5-day period.",
-            "visual_health_inference": "Stressed; leaf margins show signs of dehydration, likely due to soil moisture fluctuations."
+          "p2": {
+            "physical_facts": "Mexican Mint in black pot. Two primary leaves, central position.",
+            "explanatory_transformations": "Progressive decline in turgor pressure observed from T-2 to Current.",
+            "visual_health_inference": "Stressed. Reasoning: Leaf curling and loss of structural rigidity indicate potential water stress or root zone issues."
           },
-          "p3_pothos": {
-            "physical_facts": "Black pot, two leaves, white rabbit anchor present.",
-            "explanatory_transformations": "The larger leaf has developed a necrotic tip that has expanded by approximately 3mm since the earliest image.",
-            "visual_health_inference": "Stressed; the necrosis on the leaf tip suggests potential over-watering or localized fungal activity."
+          "p3": {
+            "physical_facts": "Pothos in black pot with rabbit anchor. Two leaves present.",
+            "explanatory_transformations": "The leaf near the rabbit shows progressive necrosis at the margin, increasing in area by approximately 15% over the 5-day period.",
+            "visual_health_inference": "Declining. Reasoning: Visible margin necrosis and slight yellowing of the leaf tip suggest nutrient imbalance or over-saturation."
           },
-          "p4_silver_guest": {
-            "physical_facts": "Black pot, small seedling near rim.",
-            "explanatory_transformations": "Minimal change in size, but the leaf color has shifted from a vibrant green to a slightly chlorotic pale green.",
-            "visual_health_inference": "Stressed; chlorosis indicates a potential nutrient deficiency or light-related stress."
+          "p4": {
+            "physical_facts": "Silver Guest in black pot. Small seedling near rim.",
+            "explanatory_transformations": "Minimal change in size; appears dormant or slow-growing.",
+            "visual_health_inference": "Stable but fragile. No signs of active growth or decay."
           }
         },
         "biome_observations": {
-          "soil_texture": "Soil appears consistently dark and damp, with some surface compaction observed in p2 and p3.",
-          "incidental_growth": "No weeds or moss detected; soil surface remains clear of secondary sprouts.",
-          "desk_surface": "Clean, no debris or fungal growth observed."
+          "soil_texture": "Soil in p2/p4 appears consistently damp with no surface cracking. p3 soil shows slight compaction.",
+          "incidental_growth": "No weeds or moss detected in any pots.",
+          "biome_anomalies": "None detected on the desk surface; debris levels are negligible."
         },
         "temporal_deltas": {
-          "t_minus_5_to_current": "Gradual decline in plant vigor across p2, p3, and p4. p1 remains the most resilient."
+          "earliest_to_t-2": "Initial stability followed by onset of leaf necrosis in p3.",
+          "t-2_to_current": "Noticeable loss of turgor in p2 and continued expansion of necrotic tissue in p3."
         },
-        "visual_health_inference": "The overall biome is experiencing mild environmental stress. The primary concern is the progressive necrosis in p3 and the chlorosis in p4.",
-        "anomalies": "None detected beyond standard plant senescence and minor stress markers.",
-        "narrative_description": "The audit confirms a stable but slightly declining health trend for the indoor collection. While p1 is thriving, the plants in the black pots (p2, p3, p4) are showing signs of environmental strain, specifically leaf-tip necrosis and chlorosis. Immediate intervention regarding soil moisture management is recommended.",
-        "confidence": "0.92"
+        "visual_health_inference": "The biome is experiencing a mild decline in health, specifically regarding the Pothos (p3) and Mexican Mint (p2). The String of Nickels (p1) remains the most resilient specimen.",
+        "anomalies": "The necrotic progression on the Pothos leaf is the primary concern, likely linked to the moisture levels in the black pot substrate.",
+        "narrative_description": "The audit confirms a stable environment for p1, while p2 and p3 show signs of physiological stress. The rabbit anchor remains a reliable scale reference. The lack of direct sunlight and consistent LED lighting suggests the issues are likely related to substrate moisture management rather than light deficiency.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
