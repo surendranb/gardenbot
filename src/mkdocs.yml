@@ -13,10 +13,10 @@ theme:
     - blog
 
 nav:
-  - 🌿 Live Dashboard: index.md
-  - 🏗️ Architecture: architecture.md
-  - 📖 Daily Gallery: gallery.md
-  - 🧠 Dev Blog: blog/index.md
+  - Dashboard: index.md
+  - Architecture: architecture.md
+  - Gallery: gallery.md
+  - Dev Blog: blog/index.md
 
 plugins:
   - blog:

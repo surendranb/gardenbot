@@ -4,8 +4,6 @@ hide:
   - toc
 ---
 
-# 🌿 GardenOS Terminal: V3 Registry
-
 <style>
 /* Modern Glassmorphic Dashboard */
 .md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
