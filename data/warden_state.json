@@ -1,6 +1,8 @@
 {
   "last_run": "2026-04-04 09:46 AM IST",
-  "last_hypothesis": "Telemetry stable; no immediate stress signal.",
+  "last_hypothesis": "Insufficient telemetry; awaiting next valid capture.",
   "last_human_action": "none",
-  "active_concerns": []
+  "active_concerns": [
+    "missing-telemetry"
+  ]
 }
