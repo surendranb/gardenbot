@@ -1,18 +1,19 @@
-# Python
-.venv/
+
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
-
-# System
-.DS_Store
-Thumbs.db
-
-# Secrets
-.env
-.env.local
-.env.*
 ! .env.example
-
+.DS_Store
+.env
+.env.*
+.env.local
+.ipynb_checkpoints/
+.venv/
+*.pyc
 # Claude
+# Python
+# Secrets
+# System
 CLAUDE.md
+GEMINI.md
+PROJECT_V2_STATUS.md
+Thumbs.db
+local/

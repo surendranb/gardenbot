@@ -1,25 +1,37 @@
-## 1. The data & reasoning split
+## 🌿 Garden Warden Mode (Digital Familiar)
 
-The system has a clear boundary between local execution and cloud intelligence:
-
-- **Local (data collection)**: Three Python scripts (`warden.py`, `vision.py`, `weather_scout.py`) run on the MacBook via cron/launchd. They collect telemetry, visual observations, and weather data, writing flat files to `data/`. No orchestrator involved.
-- **Cloud (reasoning)**: The Warden runs via OpenClaw, reads the synthesized context, and calls an LLM for botanical reasoning, anomaly detection, and reporting.
-- **The bridge — SILICA**: `prep_observer_context.py`, `GARDEN_MANIFEST.md` (the world model), and `plants.json` (plant config) turn raw data files into semantic facts in `observer_context.md`. The LLM gets facts, not noise.
-
----
-
-## 2. The loop
-
-Three steps, repeated on a schedule:
-
-1. **Collect (local, cron/launchd)**: `warden.py` reads Arduino sensors. `vision.py` captures a webcam frame and sends it to Gemma 3 on Google AI Studio for visual interpretation. `weather_scout.py` fetches Chennai weather from OpenWeatherMap. All output goes to `data/`.
-2. **Reason (OpenClaw + LLM)**: `prep_observer_context.py` synthesizes everything into `observer_context.md`. OpenClaw's Warden reads it, calls an LLM, compares visual evidence against sensor data, and reconciles with the world model.
-3. **Share**: Findings go to `vision_ledger.md` and Slack `#plantclaw`. `sync.sh` commits and pushes to GitHub Pages.
+- **Persona**: An expert agricultural statistician with a specialty in tropical meteorology (Chennai context). 
+- **Core Philosophy**: "Local Truth over Textbook Guesses." Prioritize visual turgidity, deterministic math (VPD/Slopes), and acoustic ground-truth over raw sensor alarms.
+- **Decision Engine**: 
+    1. Deterministic Data (Sensors via `warden.py` & Mic acoustics for fan state) 
+    2. Visual Delta (Photo comparison via `vision.py`) 
+    3. Strategy Alignment (GARDEN_MANIFEST.md & `human_actions.jsonl`) 
+    4. Narrative Decision (OpenClaw Agent via 3h jobs.json).
 
 ---
 
-## 3. Domain separation
+## 1. The Decentralized Architecture (v2.1)
 
-- **Local**: cron/launchd Python scripts on MacBook, raw data in `data/` and `media/`.
-- **Cloud**: OpenClaw calling an LLM for reasoning. Gemma 3 on Google AI Studio for vision. Persistent state in the GitHub repo.
-- **Public**: GardenOS site on GitHub Pages, Slack `#plantclaw`.
+The system is fully decoupled into 4 distinct functional layers:
+
+- **1. Collection (`launchd`/Local)**: `pulse.sh` runs every 30m to pull telemetry from the Arduino (`warden.py`) and capture webcam imagery (`vision.py`). Ambient climate variables are checked separately twice daily via `weather_scout.py`.
+- **2. The Context Layer (SILICA v2.2)**: `prep_observer_context.py` acts as the pre-frontal cortex. It calculates nested temporal windows (4h, 24h, 72h, 7d) and captures acoustic empirical proof of AC/Fan airflow. It synthesizes all visual logs, telemetry, and manual human interventions into one single source of truth: `data/observer_context.md`.
+- **3. Reasoning (OpenClaw/Cloud)**: A dedicated OpenClaw job (`~/.openclaw/cron/jobs.json`) running every 3 hours reads the prepared SILICA context. It reconciles conflicting data (e.g. human actions invalidating sensor drift) and broadcasts targeted action plans to Slack. (Note: Older local reasoning scripts like `warden_reasoning.py` are archived in `local/obsolete/`).
+- **4. Publishing (`sync.sh`)**: Generates MkDocs from `src/` and commits data endpoints seamlessly to GitHub Pages for the stateless frontend dashboard.
+
+---
+
+## 2. The Multi-Resolution Verification Loop
+
+1. **Pulse (4h)**: Captures immediate micro-climate shifts (AC pulses, Misting, Transpiration spikes from fans).
+2. **Rhythm (72h)**: Tracks the dry-down metabolic curve of the soil.
+3. **Motion Picture (7 Days)**: Anchored against a 7-day visual baseline to detect slow growth/decline.
+4. **Resolution (HITL)**: Human manual-care interventions inside `human_actions.jsonl` instantly de-poison the visual or sensor context from lingering "failure narratives."
+
+---
+
+## 3. Strict Domain Boundaries
+
+- **State Persistence**: launchd schedules, raw CSVs in `data/`, visual histories in `logs/`. 
+- **Agent Context**: `data/observer_context.md`. This is the sole source of intelligence for the Agent execution layer.
+- **Public Exposure**: Static web presentation via MkDocs and Slack alerts in `#plantclaw`.

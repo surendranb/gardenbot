@@ -185,15 +185,17 @@ def capture_data():
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
-                if len(parts) >= 6:
+                if len(parts) >= 8:
                     data = {
                         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                         "temp": float(parts[0]), 
                         "hum": float(parts[1]), 
                         "light": int(parts[2]),
                         "p1": int(parts[3]), # A0
-                        "p2": int(parts[5]), # A5
-                        "p3": int(parts[4])  # A2
+                        "p2": int(parts[5]), # A3 (formerly A5)
+                        "p3": int(parts[4]), # A2
+                        "press": float(parts[6]),
+                        "gas": float(parts[7])
                     }
                     ser.close()
                     
@@ -325,10 +327,10 @@ def collect_once():
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
-                if len(parts) >= 6:
+                if len(parts) >= 8:
                     # Parsing logic matches capture_data
                     # parts[3] -> p1 (A0)
-                    # parts[5] -> p2 (A5)
+                    # parts[5] -> p2 (A3, formerly A5)
                     # parts[4] -> p3 (A2)
                     data = {
                         "p1": int(parts[3]),

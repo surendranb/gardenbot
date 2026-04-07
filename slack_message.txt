@@ -1,7 +1,0 @@
-⚠️ BIOME ANOMALY DETECTED
-
-## 🪴 Individual Plant Status
-* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 100% moisture adequate and visuals show healthy, turgid growth) ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
-* **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 100% moisture adequate but visuals show chlorosis/yellowing) ➔ **Advice:** Investigate nutrient deficiency or light stress; consider reducing watering if over-saturation suspected
-* **p3 (Pothos):** Stable - Alignment (sensor shows 60.4% moisture adequate and visuals show stable necrotic lesion) ➔ **Advice:** Maintain current care; monitor lesion for changes; consider humidity support for VPD stress
-* **p4 (Silver Guest):** Fragile - Divergence (sensor shows ample moisture (inferred from p2) but visuals show limited growth and establishment) ➔ **Advice:** Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting

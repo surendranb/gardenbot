@@ -15,6 +15,7 @@ BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
 PHOTO_PATH = os.path.join(BASE_DIR, "media/latest.jpg")
 ARCHIVE_DIR = os.path.join(BASE_DIR, "archive")
 VISION_JSON_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
+VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 DAILY_BENCHMARK_PATH = os.path.join(ARCHIVE_DIR, "daily_benchmark.jpg")
 VISION_MODEL = os.environ.get("GEMINI_VISION_MODEL", "gemini-3.1-flash-lite-preview")
 ENV_PATH = os.path.join(BASE_DIR, ".env")
@@ -106,7 +107,9 @@ def pick_temporal_stack(archive_path):
     }
 
 def build_prompt():
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     return (
+        f"Today's Date: {now_str}\n"
         "You are the Garden Botanical Observer (Expert Visual Ethologist).\n"
         "Your task is to perform a meticulous physical audit and EXPLANATORY health inference of a CHRONOLOGICAL sequence of images. Starting from the oldest to the newsest (now)\n"
         "Create a detailed checklist of each plant"
@@ -207,7 +210,12 @@ def main():
         }
         with open(VISION_JSON_PATH, "w") as f:
             json.dump(payload, f, indent=2)
-        print(f"Vision JSON saved to {VISION_JSON_PATH}")
+        
+        # Append to historical log
+        with open(VISION_HISTORY_PATH, "a") as f:
+            f.write(json.dumps(payload) + "\n")
+            
+        print(f"Vision JSON saved to {VISION_JSON_PATH} and history appended to {VISION_HISTORY_PATH}")
     except Exception as e:
         print(f"Inference failed: {e}")
         # If it failed, we might want to see the raw response for debugging

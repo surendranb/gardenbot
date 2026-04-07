@@ -4,6 +4,12 @@
 
 BASE_DIR="/Users/surendran/.openclaw/workspace/gardenbot"
 MKDOCS_VENV="$BASE_DIR/.venv_mkdocs"
+
+# 🔑 SSH Configuration for Cron
+export GIT_SSH_COMMAND="/usr/bin/ssh -i /Users/surendran/.ssh/id_ed25519 -o IdentitiesOnly=yes"
+
+GIT="/usr/bin/git"
+
 cd "$BASE_DIR"
 
 log() {
@@ -11,25 +17,25 @@ log() {
 }
 
 ensure_remote() {
-    git fetch origin main >/dev/null 2>&1
-    counts=$(git rev-list --left-right --count HEAD...origin/main 2>/dev/null || echo "0 0")
+    $GIT fetch origin main >/dev/null 2>&1
+    counts=$($GIT rev-list --left-right --count HEAD...origin/main 2>/dev/null || echo "0 0")
     behind=$(echo "$counts" | awk '{print $2}')
     if [ -n "$behind" ] && [ "$behind" -gt 0 ]; then
         log "Remote has $behind unseen commit(s); rebasing onto origin/main."
-        git pull --rebase origin main >/dev/null
+        $GIT pull --rebase origin main >/dev/null
     fi
 }
 
 push_with_retry() {
     log "Pushing to GitHub..."
-    if git push origin main; then
+    if $GIT push origin main; then
         log "Sync Successful."
         return 0
     fi
 
     log "Push failed; pulling remote and retrying."
-    git pull --rebase origin main >/dev/null
-    if git push origin main; then
+    $GIT pull --rebase origin main >/dev/null
+    if $GIT push origin main; then
         log "Sync Successful after rebasing."
     else
         log "Sync Failed even after rebasing; please inspect the repo."
@@ -53,6 +59,13 @@ done
 
 echo "]" >> data/gallery.json
 
+log "Updating latest report pointer..."
+LATEST_REPORT=$(ls -t logs/reports/report_*.md 2>/dev/null | head -n 1)
+if [ -n "$LATEST_REPORT" ]; then
+    cp "$LATEST_REPORT" logs/latest_report.md
+    log "Latest report updated to: $LATEST_REPORT"
+fi
+
 log "Building site..."
 source "$MKDOCS_VENV/bin/activate"
 cd src && mkdocs build -d ../docs
@@ -62,13 +75,13 @@ deactivate
 ensure_remote
 
 log "Staging all assets..."
-git add data/ media/ logs/ docs/ src/ archive/ PROJECT_MOAT.md
+$GIT add data/ media/ logs/ docs/ src/ archive/ PROJECT_MOAT.md
 
-if git diff --cached --quiet; then
+if $GIT diff --cached --quiet; then
     log "No changes to sync."
 else
     log "Staging changes..."
-    git commit -m "GardenOS Sync: $(date +'%Y-%m-%d %H:%M:%S')"
+    $GIT commit -m "GardenOS Sync: $(date +'%Y-%m-%d %H:%M:%S')"
 fi
 
 push_with_retry
