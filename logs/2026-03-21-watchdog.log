@@ -1,5 +1,0 @@
-2026-03-21 11:06:49 - GardenOS Watchdog v2 executed
-Sensor readings: temp=30.0, hum=16.0, light=750, p1=832, p2=649
-Thresholds: p1 dry=800 wet=400, p2 dry=700 wet=300
-ALERT: p1 moisture 832 > dry_threshold 800 (bone dry)
-Sent emergency alert to #plantclaw (C0AK6A4SJES)

@@ -1,5 +1,0 @@
-2026-03-26T10:30:50.246+05:30 Gateway failed to start: gateway already running (pid 94529); lock timeout after 5000ms
-If the gateway is supervised, stop it with: openclaw gateway stop
-2026-03-26T10:30:50.300+05:30 Port 18789 is already in use.
-2026-03-26T10:30:50.302+05:30 - pid 94529 surendran: openclaw-gateway (127.0.0.1:18789)
-2026-03-26T10:30:50.303+05:30 - Gateway already running locally. Stop it (openclaw gateway stop) or use a different port.
