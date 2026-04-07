@@ -1,12 +1,12 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 11:07:07
+**Generated:** 2026-04-07 11:11:25
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 11:07
+- **TIME OF AUDIT**: 11:11
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Warden)**: ON (Multiple Fans S+N)
 - **AIR QUALITY INFERENCE**: OPTIMAL - Fans effectively clearing VOCs (Gas Resistance rising: +4.36 kOhms)
-- **EMPIRICAL PROOF**: -25.8 dB (Calibrated High)
+- **EMPIRICAL PROOF**: -24.9 dB (Calibrated High)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling.
 
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.414 kPa | **24h Cycle**: 3.042 kPa | **72h Rhythm**: 3.312 kPa
+- **4h Pulse**: 2.378 kPa | **24h Cycle**: 3.016 kPa | **72h Rhythm**: 3.3 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 68.7% (Current) vs 69.8% (24h Avg) | **7d Baseline Delta**: -31.3% (📉 DECLINE/DRY)
-- **P2**: 57.3% (Current) vs 51.3% (24h Avg) | **7d Baseline Delta**: -42.7% (📉 DECLINE/DRY)
-- **P3**: 78.4% (Current) vs 72.8% (24h Avg) | **7d Baseline Delta**: 17.7% (📈 GROWTH/WET)
+- **P1**: 69.3% (Current) vs 69.9% (24h Avg) | **7d Baseline Delta**: -30.7% (📉 DECLINE/DRY)
+- **P2**: 58.4% (Current) vs 51.7% (24h Avg) | **7d Baseline Delta**: -41.6% (📉 DECLINE/DRY)
+- **P3**: 79.6% (Current) vs 73.3% (24h Avg) | **7d Baseline Delta**: 18.9% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
