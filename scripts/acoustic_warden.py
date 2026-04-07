@@ -17,7 +17,7 @@ def capture_volume():
     
     # ffmpeg command to record and analyze volume statistics
     cmd = [
-        "ffmpeg", "-y",
+        "/opt/homebrew/bin/ffmpeg", "-y",
         "-f", "avfoundation",
         "-i", f":{MIC_INDEX}",
         "-t", str(DURATION),
