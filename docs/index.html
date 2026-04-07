@@ -620,9 +620,10 @@ h1 { display: none !important; }
     });
 
     const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
-    const CSV_METRICS = GITHUB_RAW + "data/metrics.csv";
-    const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv";
-    const CSV_WEATHER = GITHUB_RAW + "data/weather.csv";
+    const CACHE_BUST = "?t=" + Date.now();
+    const CSV_METRICS = GITHUB_RAW + "data/metrics.csv" + CACHE_BUST;
+    const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv" + CACHE_BUST;
+    const CSV_WEATHER = GITHUB_RAW + "data/weather.csv" + CACHE_BUST;
 
     // V3 Palette
     const PALETTE = {
@@ -696,13 +697,15 @@ h1 { display: none !important; }
                 { id: 'press', key: 'press', min: 900, precision: 0 },
                 { id: 'gas', key: 'gas', min: 0.1, precision: 2 },
                 { id: 'light', key: 'light', min: -0.1, precision: 0 },
-                { id: 'db', key: 'db', min: -100, precision: 1 }
+                { id: 'db', key: 'db', min: -100, precision: 1 },
+                { id: 'vpd', key: 'vpd', min: -1.0, precision: 2, source: met }
             ];
 
             let hardwareWarning = false;
 
             metrics.forEach(m => {
-                const res = findLastValid(tel, m.key, m.min);
+                const sourceData = m.source || tel;
+                const res = findLastValid(sourceData, m.key, m.min);
                 const el = document.getElementById(`val-${m.id}`);
                 const staleEl = document.getElementById(`stale-${m.id}`);
 
