@@ -36,38 +36,27 @@ def load_json(path):
         with open(path, 'r') as f: return json.load(f)
     except: return {}
 
-def get_acoustic_fan_state():
-    """Captures 3s of audio and returns empirical fan status."""
-    print("Capturing acoustic ground-truth (3s)...")
-    cmd = [
-        "ffmpeg", "-y", "-f", "avfoundation", "-i", f":{MIC_INDEX}",
-        "-t", "3", "-filter:a", "volumedetect", "-f", "null", "/dev/null"
-    ]
-    try:
-        result = subprocess.run(cmd, stderr=subprocess.PIPE, text=True, timeout=10)
-        output = result.stderr
-        match = re.search(r"mean_volume: ([\-\d.]+) dB", output)
-        if match:
-            vol = float(match.group(1))
-            if vol < THRESH_SILENCE:
-                return "OFF (All)", f"{vol} dB (Calibrated Baseline)"
-            elif vol < THRESH_SINGLE:
-                return "ON (Single Fan S)", f"{vol} dB (Calibrated Single)"
-            else:
-                return "ON (Multiple Fans S+N)", f"{vol} dB (Calibrated High)"
-        return "UNKNOWN (Mean volume not found in output)", "N/A"
-    except subprocess.TimeoutExpired:
-        return "UNKNOWN (FFmpeg timed out)", "N/A"
-    except Exception as e:
-        return f"UNKNOWN (FFmpeg error: {str(e)})", "N/A"
+def get_acoustic_fan_status(db_val):
+    """Translates raw dB into a human-readable convection status."""
+    if db_val is None: return "UNKNOWN", "N/A"
+    if db_val < THRESH_SILENCE:
+        return "OFF (All)", f"{db_val} dB (Dead Quiet)"
+    elif db_val < THRESH_SINGLE:
+        return "ON (Low/Single)", f"{db_val} dB (Active convection)"
+    else:
+        return "ON (High/Multiple)", f"{db_val} dB (Maximum convection)"
 
 def get_dynamic_world_model(t_df):
     now = datetime.now()
     hour = now.hour
     occupancy = "HIGH" if 9 <= hour <= 23 else "LOW"
     
-    # New Acoustic Ground Truth
-    fan_status, empirical_proof = get_acoustic_fan_state()
+    # New Acoustic Ground Truth from Telemetry
+    db_val = None
+    if t_df is not None and not t_df.empty and 'db' in t_df.columns:
+        db_val = t_df['db'].iloc[-1]
+    
+    fan_status, empirical_proof = get_acoustic_fan_status(db_val)
     
     # BME680 Integration: Gas resistance based Air Quality Inference
     air_quality_inference = "UNKNOWN (Insufficient Data)"
@@ -85,10 +74,12 @@ def get_dynamic_world_model(t_df):
                 if is_fan_on:
                     if delta > 0.5:
                         air_quality_inference = f"OPTIMAL - Fans effectively clearing VOCs (Gas Resistance rising: +{round(delta, 2)} kOhms)"
+                    elif delta < -0.5:
+                        air_quality_inference = f"CRITICAL - Fans active but VOCs failing to clear (Check Fan Positioning). Delta: {round(delta, 2)} kOhms"
                     else:
-                        air_quality_inference = f"SUB-OPTIMAL - Fans running but VOC clearing is weak (Delta: {round(delta, 2)} kOhms)"
+                        air_quality_inference = f"EFFICIENT - VOC baseline maintained. Delta: {round(delta, 2)} kOhms"
                 else:
-                    if delta < -0.5:
+                    if delta < -1.0:
                         air_quality_inference = f"STAGNANT - VOCs accumulating (Gas Resistance dropping: {round(delta, 2)} kOhms). ACTIVATE FANS."
                     else:
                         air_quality_inference = "STABLE - Passive clearing sufficient."
@@ -99,11 +90,11 @@ def get_dynamic_world_model(t_df):
     
     res = f"- **TIME OF AUDIT**: {now.strftime('%H:%M')}\n"
     res += f"- **HUMAN OCCUPANCY**: {occupancy}\n"
-    res += f"- **FANS STATUS (Acoustic Warden)**: {fan_status}\n"
+    res += f"- **FANS STATUS (Acoustic Registry)**: {fan_status}\n"
     res += f"- **AIR QUALITY INFERENCE**: {air_quality_inference}\n"
     res += f"- **EMPIRICAL PROOF**: {empirical_proof}\n"
     res += f"- **BIOME STATE**: {biome_mode}\n"
-    res += f"- **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling."
+    res += f"- **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling."
     return res
 
 def get_human_context():

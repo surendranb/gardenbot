@@ -12,6 +12,7 @@ import shutil
 import sys
 import argparse
 from datetime import datetime, timedelta
+from acoustic_warden import capture_volume
 
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
@@ -195,7 +196,8 @@ def capture_data():
                         "p2": int(parts[5]), # A3 (formerly A5)
                         "p3": int(parts[4]), # A2
                         "press": float(parts[6]),
-                        "gas": float(parts[7])
+                        "gas": float(parts[7]),
+                        "db": capture_volume() or 0.0
                     }
                     ser.close()
                     

@@ -1,14 +1,14 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 11:30:58
+**Generated:** 2026-04-07 11:48:29
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 11:30
+- **TIME OF AUDIT**: 11:48
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Warden)**: UNKNOWN (FFmpeg error: [Errno 2] No such file or directory: 'ffmpeg')
-- **AIR QUALITY INFERENCE**: STAGNANT - VOCs accumulating (Gas Resistance dropping: -1.73 kOhms). ACTIVATE FANS.
-- **EMPIRICAL PROOF**: N/A
-- **BIOME STATE**: REST (Night/Stagnant Recovery)
-- **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling.
+- **FANS STATUS (Acoustic Registry)**: ON (High/Multiple)
+- **AIR QUALITY INFERENCE**: CRITICAL - Fans active but VOCs failing to clear (Check Fan Positioning). Delta: -1.54 kOhms
+- **EMPIRICAL PROOF**: -25.8 dB (Maximum convection)
+- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
+- **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling.
 
 ## 📖 2. PRIOR INSIGHTS & RECOMMENDATIONS (Last 3 Reports)
 ### Report: 🪴 Garden Observer Report - 2026-04-03 06:03 PM IST
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.827 kPa | **24h Cycle**: 2.765 kPa | **72h Rhythm**: 3.194 kPa
+- **4h Pulse**: 1.663 kPa | **24h Cycle**: 2.706 kPa | **72h Rhythm**: 3.17 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 72.4% (Current) vs 70.3% (24h Avg)
-- **P2**: 65.9% (Current) vs 54.0% (24h Avg)
-- **P3**: 84.1% (Current) vs 74.9% (24h Avg)
+- **P1**: 73.1% (Current) vs 70.0% (24h Avg)
+- **P2**: 66.6% (Current) vs 53.7% (24h Avg)
+- **P3**: 86.0% (Current) vs 74.8% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -84,15 +84,15 @@
 
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
-timestamp,temp,hum,light,p1,p2,p3,press,gas
-2026-04-07 10:04:39,0.0,0.0,724,548.0,118.0,373.0,0.0,0.0
-2026-04-07 10:15:20,0.0,0.0,716,504.0,220.0,358.0,0.0,0.0
-2026-04-07 10:47:53,34.89,64.64,648,481.0,197.0,348.0,1010.34,6.54
-2026-04-07 11:12:21,0.0,0.0,640,482.0,196.0,373.0,0.0,0.0
-2026-04-07 11:14:48,0.0,0.0,645,473.0,108.0,350.0,0.0,0.0
-2026-04-07 11:23:32,0.0,0.0,656,470.0,208.0,353.0,0.0,0.0
-2026-04-07 11:24:54,34.52,72.69,681,472.0,154.0,362.0,1010.13,7.32
-2026-04-07 11:30:22,0.0,0.0,621,454.0,196.0,347.0,0.0,0.0
+timestamp,temp,hum,light,p1,p2,p3,press,gas,db
+2026-04-07 10:15:20,0.0,0.0,716,504.0,220.0,358.0,0.0,0.0,
+2026-04-07 10:47:53,34.89,64.64,648,481.0,197.0,348.0,1010.34,6.54,
+2026-04-07 11:12:21,0.0,0.0,640,482.0,196.0,373.0,0.0,0.0,
+2026-04-07 11:14:48,0.0,0.0,645,473.0,108.0,350.0,0.0,0.0,
+2026-04-07 11:23:32,0.0,0.0,656,470.0,208.0,353.0,0.0,0.0,
+2026-04-07 11:24:54,34.52,72.69,681,472.0,154.0,362.0,1010.13,7.32,
+2026-04-07 11:30:22,0.0,0.0,621,454.0,196.0,347.0,0.0,0.0,
+2026-04-07 11:48:09,0.0,0.0,643,474.0,227.0,349.0,0.0,0.0,-25.8
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK

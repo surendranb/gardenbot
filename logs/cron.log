@@ -9161,3 +9161,113 @@ Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_
 Synthesizing SILICA v2.2 (Corrected Logic)...
 Capturing acoustic ground-truth (3s)...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-04-07 11:31:06 [PULSE] Pulse Complete.
+2026-04-07 11:47:42 [PULSE] Starting Pulse...
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Listening to the room for 5 seconds...
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Sending 6 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-03/garden_125002.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_000818.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_114815.jpg
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/vision.py", line 228, in <module>
+    main()
+    ~~~~^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/vision.py", line 192, in main
+    response = client.models.generate_content(
+        model=VISION_MODEL,
+        contents=contents,
+        config=types.GenerateContentConfig(temperature=0.2)
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/google/genai/models.py", line 5864, in generate_content
+    response = self._generate_content(
+        model=model, contents=contents, config=parsed_config
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/google/genai/models.py", line 4526, in _generate_content
+    response = self._api_client.request(
+        'post', path, request_dict, http_options
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/google/genai/_api_client.py", line 1402, in request
+    response = self._request(http_request, http_options, stream=False)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/google/genai/_api_client.py", line 1238, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/concurrent/futures/_base.py", line 395, in __get_result
+    raise self._exception
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/google/genai/_api_client.py", line 1208, in _request_once
+    response = self._httpx_client.request(
+        method=http_request.method,
+    ...<3 lines>...
+        timeout=http_request.timeout,
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+        self.READ_NUM_BYTES, timeout=timeout
+    )
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1285, in recv
+    return self.read(buflen)
+           ~~~~~~~~~^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.2_1/Frameworks/Python.framework/Versions/3.14/lib/python3.14/ssl.py", line 1140, in read
+    return self._sslobj.read(len)
+           ~~~~~~~~~~~~~~~~~^^^^^
+KeyboardInterrupt

@@ -4,10 +4,10 @@ hide:
   - toc
 ---
 
-# 🌿 GardenOS Terminal
+# 🌿 GardenOS Terminal: V3 Registry
 
 <style>
-/* Full Width Overrides */
+/* Modern Glassmorphic Dashboard */
 .md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
 .md-main__inner { max-width: none !important; }
 .md-sidebar { display: none !important; }
@@ -17,7 +17,7 @@ hide:
     justify-content: space-between;
     align-items: center;
     background: #0f172a;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 12px;
     border: 1px solid #334155;
     margin-bottom: 1.5rem;
@@ -32,9 +32,10 @@ hide:
     border: 1px solid #334155;
     border-radius: 16px;
     padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 }
-.val-large { font-size: 2.2em; font-weight: 800; letter-spacing: -0.02em; }
-.label-sub { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+.val-large { font-size: 2.4em; font-weight: 800; letter-spacing: -0.02em; }
+.label-sub { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.6rem; display: block; font-weight: 600; }
 .vision-container {
     border-radius: 12px;
     overflow: hidden;
@@ -43,26 +44,44 @@ hide:
 }
 .chart-container {
     background: #1e293b;
-    padding: 1.2rem;
+    padding: 1.5rem;
     border-radius: 16px;
     border: 1px solid #334155;
-    height: 400px;
-    margin-top: 1rem;
+    height: 380px;
+    margin-top: 0.5rem;
 }
-.chart-note {
-    color: #94a3b8;
-    font-size: 0.78rem;
-    margin-top: 0.35rem;
+.chart-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+@media (min-width: 1200px) {
+    .chart-grid { grid-template-columns: 1fr 1fr; }
+    .chart-full { grid-column: span 2; }
+}
+
+.db-meter {
+    background: #0f172a;
+    height: 6px;
+    border-radius: 3px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+.db-fill {
+    height: 100%;
+    background: #10b981;
+    transition: width 0.5s ease;
 }
 </style>
 
 <div class="status-header">
     <div style="display: flex; align-items: center; gap: 15px;">
         <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">BIOME STATUS: <span style="color: #4ade80;">ACTIVE</span></span>
+        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">REGISTRY STATUS: <span style="color: #4ade80;">SYNCHRONIZED</span></span>
     </div>
     <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
-        LAST SYNC: <span id="sync-status">--:--</span>
+        <span id="sync-status">--:--:--</span>
     </div>
 </div>
 
@@ -70,74 +89,73 @@ hide:
     <!-- Atmosphere -->
     <div class="dash-card">
         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <span class="label-sub">🌡 ATMOSPHERE</span>
+            <span class="label-sub">🌡 ATMOMSPHERIC STATISTICS</span>
             <span id="val-state" style="font-size: 0.65rem; color: #4ade80; border: 1px solid #4ade80; padding: 1px 6px; border-radius: 4px; font-weight: bold;">STABLE</span>
         </div>
         <div style="display: flex; align-items: baseline; gap: 1.2rem; margin-top: 0.5rem;">
             <div style="color:#f97316;"><span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span></div>
-            <div style="color:#38bdf8;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span></div>
+            <div style="color:#0ea5e9;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span></div>
             <div style="color:#a855f7; margin-left: auto;"><span id="val-vpd" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;"> kPa</span></div>
         </div>
         
-        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #334155; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.8rem;">
+        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #334155; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.8rem;">
             <div>
-                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">LUMINOUS INTENSITY</span>
-                <span id="val-light" style="color:#facc15; font-weight: 600;">--</span>
+                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">LIGHT INTENSITY</span>
+                <span id="val-light" style="color:#f59e0b; font-weight: 700; font-size: 1.1rem;">--</span>
             </div>
             <div>
-                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">AIR QUALITY (VOC)</span>
-                <span id="val-gas" style="color:#a855f7; font-weight: 600;">-- kΩ</span>
+                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">ACOUSTIC FLOOR</span>
+                <span id="val-db" style="color:#10b981; font-weight: 700; font-size: 1.1rem;">-- dB</span>
+                <div class="db-meter"><div id="db-fill" class="db-fill" style="width: 0%"></div></div>
             </div>
             <div>
-                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">SHIELDING (ΔT/ΔH)</span>
-                <span id="val-shield" style="color:#4ade80; font-weight: 600;">--</span>
+                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">AIR QUALITY (VOC)</span>
+                <span id="val-gas" style="color:#a855f7; font-weight: 700; font-size: 1.1rem;">-- kΩ</span>
             </div>
             <div>
-                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">BARO PRESSURE</span>
-                <span id="val-press" style="color:#f8fafc; font-weight: 600;">-- hPa</span>
+                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">BARO PRESSURE</span>
+                <span id="val-press" style="color:#f8fafc; font-weight: 700; font-size: 1.1rem;">-- hPa</span>
             </div>
-            <div>
-                <span style="color: #94a3b8; font-size: 0.7rem; display: block;">RAIN PROBABILITY</span>
-                <span id="val-pop" style="color:#38bdf8;">--%</span>
-            </div>
-        </div>
-
-        <div style="margin-top: 1rem; padding-top: 0.5rem; border-top: 1px dashed #334155; display: flex; justify-content: space-between; font-size: 0.8rem;">
-            <span style="color: #94a3b8;">Outdoor Forecast</span>
-            <span id="val-forecast" style="color:#38bdf8; font-weight: 600;">--</span>
         </div>
     </div>
 
     <!-- Vision -->
     <div class="dash-card">
-        <span class="label-sub">📸 LIVE VISION FEED</span>
+        <span class="label-sub">📸 OPTICAL GROUND-TRUTH</span>
         <div class="vision-container">
             <img id="live-photo" src="https://raw.githubusercontent.com/surendranb/gardenbot/main/media/latest.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
         </div>
     </div>
 </div>
 
-<div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 1.5rem;">
-    <!-- Chart 1: Vitality -->
+<div class="chart-grid">
+    <!-- Chart: Atmosphere -->
+    <div class="chart-full">
+        <span class="label-sub">📊 ATMOSPHERIC DYNAMICS (48H)</span>
+        <div class="chart-container">
+            <canvas id="atmosChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart: Kinetic Registry -->
     <div>
-        <span class="label-sub">📈 PLANT VITALITY (LAST 48H)</span>
+        <span class="label-sub">🔊 KINETIC & CHEMICAL REGISTRY (48H)</span>
+        <div class="chart-container">
+            <canvas id="kineticChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Chart: Vitality -->
+    <div>
+        <span class="label-sub">📈 METABOLIC VITALITY (48H)</span>
         <div class="chart-container">
             <canvas id="vitalityChart"></canvas>
         </div>
-        <div class="chart-note">Full date/time labels shown for every point in the 48-hour window.</div>
-    </div>
-    <!-- Chart 2: Environment -->
-    <div>
-        <span class="label-sub">📊 ENVIRONMENTAL CHRONICLE (LAST 48H)</span>
-        <div class="chart-container">
-            <canvas id="envChart"></canvas>
-        </div>
-        <div class="chart-note">Full date/time labels shown for every point in the 48-hour window.</div>
     </div>
 </div>
 
-<h2 style="margin-top: 3rem !important; border-bottom: 1px solid #334155; padding-bottom: 10px;">The Warden's Ledger</h2>
-<div id="warden-log-output" style="background: #0f172a; padding: 20px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.6; border: 1px solid #334155; color: #cbd5e1;">
+<h2 style="margin-top: 4rem !important; border-bottom: 1px solid #334155; padding-bottom: 10px;">The Warden's Ledger</h2>
+<div id="warden-log-output" style="background: #0f172a; padding: 25px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.7; border: 1px solid #334155; color: #cbd5e1;">
     Accessing neural audit...
 </div>
 
@@ -150,6 +168,14 @@ hide:
     const CSV_METRICS = GITHUB_RAW + "data/metrics.csv";
     const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv";
     const CSV_WEATHER = GITHUB_RAW + "data/weather.csv";
+
+    // V3 Palette
+    const PALETTE = {
+        temp: '#f97316', hum: '#0ea5e9', light: '#f59e0b',
+        db: '#10b981', voc: '#a855f7',
+        p1: '#2dd4bf', p2: '#84cc16', p3: '#15803d',
+        grid: '#334155', text: '#94a3b8', label: '#64748b'
+    };
 
     function parseCSV(url) {
         return new Promise((resolve, reject) => {
@@ -166,14 +192,8 @@ hide:
 
     function formatXAxis(timestamp) {
         const d = parseTimestamp(timestamp);
-        if (!d) return String(timestamp || "--");
-        return d.toLocaleString([], {
-            month: 'short',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
-        });
+        if (!d) return "";
+        return d.toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: false });
     }
 
     function lastHours(data, hours) {
@@ -194,75 +214,58 @@ hide:
 
             const lM = met[met.length - 1];
             const lT = tel[tel.length - 1];
-            const lW = wea.length ? wea[wea.length - 1] : { description: "N/A", pressure: "--", pop: 0, temp: lT.temp, humidity: lT.hum };
+            const lW = wea.length ? wea[wea.length - 1] : {};
 
-            // UI Updates
+            // Value Updates
             document.getElementById('sync-status').textContent = lM.timestamp || "--:--";
             document.getElementById('val-temp').textContent = lT.temp ? parseFloat(lT.temp).toFixed(1) : "--";
             document.getElementById('val-hum').textContent = lT.hum ? Math.round(lT.hum) : "--";
             document.getElementById('val-vpd').textContent = lM.vpd ? parseFloat(lM.vpd).toFixed(2) : "--";
-            document.getElementById('val-forecast').textContent = (lW.description || "N/A").toUpperCase();
-            document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
-
-            // New Factual Metrics
             document.getElementById('val-light').textContent = lT.light || "--";
+            document.getElementById('val-press').textContent = (lT.press && lT.press > 0 ? lT.press : (lW.pressure || "--")) + " hPa";
+            document.getElementById('val-gas').textContent = (lT.gas && lT.gas > 0) ? parseFloat(lT.gas).toFixed(2) + " kΩ" : "--";
             
-            // Prefer local BME680 pressure over OWM API
-            const localPress = lT.press || lW.pressure;
-            document.getElementById('val-press').textContent = (localPress || "--") + " hPa";
+            // DB Display & Meter
+            const db = parseFloat(lT.db) || -60;
+            document.getElementById('val-db').textContent = db.toFixed(1) + " dB";
+            const dbPercent = Math.min(100, Math.max(0, (db + 80) * 1.25)); // Map -80..0 to 0..100
+            document.getElementById('db-fill').style.width = dbPercent + "%";
 
-            // Gas Resistance
-            document.getElementById('val-gas').textContent = lT.gas ? parseFloat(lT.gas).toFixed(2) + " kΩ" : "-- kΩ";
-            
-            // Handle pop as either 0-1 or 0-100
-            let popVal = parseFloat(lW.pop) || 0;
-            if (popVal > 0 && popVal <= 1) popVal = popVal * 100;
-            document.getElementById('val-pop').textContent = Math.round(popVal) + "%";
-            
-            // Shielding Delta (Outdoor - Indoor)
-            if (lW.temp && lT.temp) {
-                const dT = (parseFloat(lW.temp) - parseFloat(lT.temp)).toFixed(1);
-                const dH = (parseFloat(lW.humidity || lW.hum) - parseFloat(lT.hum)).toFixed(0);
-                document.getElementById('val-shield').textContent = `${dT > 0 ? '+' : ''}${dT}° / ${dH > 0 ? '+' : ''}${dH}%`;
-            } else {
-                document.getElementById('val-shield').textContent = "-- / --";
-            }
-
-            // Simple State Inference (One factual-based indicator)
+            // State Inference
             const vpd = parseFloat(lM.vpd);
             const stateEl = document.getElementById('val-state');
             if (vpd > 2.0) { stateEl.textContent = "HIGH STRESS"; stateEl.style.color = "#ef4444"; stateEl.style.borderColor = "#ef4444"; }
             else if (vpd < 0.5) { stateEl.textContent = "STAGNANT"; stateEl.style.color = "#38bdf8"; stateEl.style.borderColor = "#38bdf8"; }
             else { stateEl.textContent = "STABLE"; stateEl.style.color = "#4ade80"; stateEl.style.borderColor = "#4ade80"; }
 
-            const met48 = lastHours(met, 48);
-            const tel48 = lastHours(tel, 48);
-            drawVitality(met48);
-            drawEnv(tel48, met48);
+            document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
 
-            // Ledger: Primary source is the latest_report.md
+            const m48 = lastHours(met, 48);
+            const t48 = lastHours(tel, 48);
+            
+            drawVitality(m48);
+            drawAtmos(t48);
+            drawKinetic(t48);
+
+            // Ledger
             try {
                 const res = await fetch(GITHUB_RAW + "logs/latest_report.md?t=" + Date.now());
                 if (res.ok) {
                     const mdText = await res.text();
                     document.getElementById('warden-log-output').innerHTML = marked.parse(mdText);
-                } else {
-                    document.getElementById('warden-log-output').innerHTML = "Waiting for latest report...";
                 }
-            } catch (e) {
-                console.error("Failed to load latest report", e);
-            }
+            } catch (e) {}
         } catch(e) { console.error(e); }
     }
 
-    const commonScaleOptions = {
-        y: { grid: { color: '#334155' }, ticks: { color: '#94a3b8' } },
-        x: { ticks: { 
-            maxTicksLimit: 24, 
-            color: '#64748b',
-            autoSkip: true,
-            maxRotation: 0
-        }, grid: { display: false } }
+    const baseOptions = {
+        responsive: true, maintainAspectRatio: false,
+        elements: { point: { radius: 0 }, line: { tension: 0.35, borderWidth: 2 } },
+        scales: {
+            x: { grid: { display: false }, ticks: { color: PALETTE.label, maxTicksLimit: 12, autoSkip: true } },
+            y: { grid: { color: PALETTE.grid }, ticks: { color: PALETTE.text } }
+        },
+        plugins: { legend: { position: 'top', align: 'end', labels: { color: PALETTE.text, usePointStyle: true, boxWidth: 6, padding: 20, font: { size: 11 } } } }
     };
 
     function drawVitality(data) {
@@ -271,42 +274,60 @@ hide:
         window.vChart = new Chart(ctx, {
             type: 'line',
             data: {
-            labels: data.map(d => formatXAxis(d.timestamp)),
-            datasets: [
-                { label: 'p1 (Nickels)', data: data.map(d => d.p1_pct), borderColor: '#4ade80', pointRadius: 0, tension: 0.3 },
-                { label: 'p2 (Mint)', data: data.map(d => d.p2_pct), borderColor: '#a3e635', pointRadius: 0, tension: 0.3 },
-                { label: 'p3 (Pothos)', data: data.map(d => d.p3_pct), borderColor: '#facc15', pointRadius: 0, tension: 0.3 }
-            ]
+                labels: data.map(d => formatXAxis(d.timestamp)),
+                datasets: [
+                    { label: 'Nickels (%)', data: data.map(d => d.p1_pct), borderColor: PALETTE.p1 },
+                    { label: 'Mint (%)', data: data.map(d => d.p2_pct), borderColor: PALETTE.p2 },
+                    { label: 'Pothos (%)', data: data.map(d => d.p3_pct), borderColor: PALETTE.p3 }
+                ]
             },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: commonScaleOptions,
-                plugins: { legend: { labels: { color: '#94a3b8', usePointStyle: true, boxWidth: 6 } } }
+            options: { ...baseOptions, scales: { ...baseOptions.scales, y: { ...baseOptions.scales.y, min: 0, max: 100, title: { display: true, text: 'MOISTURE (%)', color: PALETTE.label } } } }
+        });
+    }
+
+    function drawAtmos(data) {
+        const ctx = document.getElementById('atmosChart').getContext('2d');
+        if (window.aChart) window.aChart.destroy();
+        window.aChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(d => formatXAxis(d.timestamp)),
+                datasets: [
+                    { label: 'Temp (°C)', data: data.map(d => d.temp), borderColor: PALETTE.temp, yAxisID: 'y' },
+                    { label: 'Humidity (%)', data: data.map(d => d.hum), borderColor: PALETTE.hum, yAxisID: 'y' },
+                    { label: 'Light Intensity', data: data.map(d => d.light), borderColor: PALETTE.light, yAxisID: 'yRight', fill: true, backgroundColor: 'rgba(245, 158, 11, 0.05)' }
+                ]
+            },
+            options: { 
+                ...baseOptions, 
+                scales: { 
+                    x: baseOptions.scales.x,
+                    y: { ...baseOptions.scales.y, title: { display: true, text: 'T (°C) / H (%)', color: PALETTE.label } },
+                    yRight: { position: 'right', grid: { display: false }, ticks: { color: PALETTE.label }, title: { display: true, text: 'LIGHT (RAW)', color: PALETTE.label } }
+                } 
             }
         });
     }
 
-    function drawEnv(tel, met) {
-        const ctx = document.getElementById('envChart').getContext('2d');
-        if (window.eChart) window.eChart.destroy();
-        window.eChart = new Chart(ctx, {
+    function drawKinetic(data) {
+        const ctx = document.getElementById('kineticChart').getContext('2d');
+        if (window.kChart) window.kChart.destroy();
+        window.kChart = new Chart(ctx, {
             type: 'line',
             data: {
-            labels: tel.map(t => formatXAxis(t.timestamp)),
-            datasets: [
-                { label: 'Temp °C', data: tel.map(t => t.temp), borderColor: '#f97316', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
-                { label: 'Hum %', data: tel.map(t => t.hum), borderColor: '#38bdf8', pointRadius: 0, yAxisID: 'y', tension: 0.3 },
-                    { label: 'Solar', data: tel.map(t => t.light), borderColor: '#facc15', pointRadius: 0, fill: true, backgroundColor: 'rgba(250, 204, 21, 0.05)', yAxisID: 'ySolar', tension: 0.3 }
+                labels: data.map(d => formatXAxis(d.timestamp)),
+                datasets: [
+                    { label: 'Acoustics (dB)', data: data.map(d => d.db), borderColor: PALETTE.db, yAxisID: 'y' },
+                    { label: 'VOC Resist (kΩ)', data: data.map(d => d.gas), borderColor: PALETTE.voc, yAxisID: 'yRight' }
                 ]
             },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    y: { ...commonScaleOptions.y, min: 0, max: 100 },
-                    ySolar: { position: 'right', min: 0, max: 1024, grid: { display: false }, ticks: { display: false } },
-                    x: commonScaleOptions.x
-                },
-                plugins: { legend: { labels: { color: '#94a3b8', usePointStyle: true, boxWidth: 6 } } }
+            options: { 
+                ...baseOptions, 
+                scales: { 
+                    x: baseOptions.scales.x,
+                    y: { ...baseOptions.scales.y, min: -80, max: 0, title: { display: true, text: 'ENERGY (dB)', color: PALETTE.label } },
+                    yRight: { position: 'right', grid: { display: false }, ticks: { color: PALETTE.label }, title: { display: true, text: 'CHEM (kΩ)', color: PALETTE.label } }
+                } 
             }
         });
     }
