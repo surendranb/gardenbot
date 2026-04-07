@@ -9,16 +9,11 @@ hide:
 .md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
 .md-main__inner { max-width: none !important; }
 
-.status-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0f172a;
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: 1px solid #334155;
-    margin-bottom: 0.5rem;
-}
+/* Force Single Row UI */
+h1 { display: none !important; }
+.md-tabs { display: none !important; }
+.status-header { display: none !important; }
+
 .dash-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -74,14 +69,10 @@ hide:
 @keyframes pulse-stale { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 </style>
 
+<!-- Hidden Native Status Header (CSS display:none) -->
 <div class="status-header">
-    <div style="display: flex; align-items: center; gap: 15px;">
-        <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">REGISTRY STATUS: <span id="reg-status" style="color: #4ade80;">SYNCHRONIZED</span></span>
-    </div>
-    <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
-        <span id="sync-status">--:--:--</span>
-    </div>
+    <span id="reg-status">SYNCHRONIZED</span>
+    <span id="sync-status">--:--:--</span>
 </div>
 
 <div class="dash-grid">
@@ -173,6 +164,37 @@ hide:
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Inject Unified Single-Row Nav & Status into the MkDocs Top Header
+        const headerInner = document.querySelector('.md-header__inner');
+        if(headerInner) {
+            const topBar = document.createElement('div');
+            topBar.style.display = 'flex';
+            topBar.style.alignItems = 'center';
+            topBar.style.gap = '24px';
+            topBar.style.marginLeft = 'auto'; // push right
+            topBar.style.marginRight = '16px'; // before github logo
+            topBar.style.fontSize = '0.85rem';
+            
+            topBar.innerHTML = `
+                <a href="." style="color:#ffffff; font-weight:600; text-decoration:none">Dashboard</a>
+                <a href="architecture/" style="color:#94a3b8; text-decoration:none">Architecture</a>
+                <a href="gallery/" style="color:#94a3b8; text-decoration:none">Gallery</a>
+                <div style="width:1px; height:15px; background:#334155;"></div>
+                <div style="display:flex; gap:10px; align-items:center;">
+                    <span style="font-weight:700; color:#f8fafc; letter-spacing:0.05em;">STATUS: <span id="nav-reg-status" style="color:#4ade80;">SYNC</span></span>
+                    <span id="nav-sync-status" style="color:#4ade80; font-family:'JetBrains Mono', monospace; font-weight:bold;">--:--:--</span>
+                </div>
+            `;
+            const sourceNode = document.querySelector('.md-header__source');
+            if(sourceNode) {
+                headerInner.insertBefore(topBar, sourceNode);
+            } else {
+                headerInner.appendChild(topBar);
+            }
+        }
+    });
+
     const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
     const CSV_METRICS = GITHUB_RAW + "data/metrics.csv";
     const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv";
@@ -273,13 +295,18 @@ hide:
             });
 
             // Status Update
-            const regStatus = document.getElementById('reg-status');
-            if (hardwareWarning) {
-                regStatus.textContent = "SIGNAL DISTURBANCE";
+            const regStatus = document.getElementById('nav-reg-status');
+            if (regStatus && hardwareWarning) {
+                regStatus.textContent = "DISTURBED";
                 regStatus.style.color = "#facc15";
-            } else {
-                regStatus.textContent = "SYNCHRONIZED";
+            } else if (regStatus) {
+                regStatus.textContent = "SYNC";
                 regStatus.style.color = "#4ade80";
+            }
+            const syncStatus = document.getElementById('nav-sync-status');
+            if(syncStatus) {
+                syncStatus.textContent = formatXAxis(lT.timestamp);
+                syncStatus.style.color = hardwareWarning ? "#facc15" : "#4ade80";
             }
             
             // DB Display & Meter
