@@ -320,7 +320,7 @@ hide:
 
     const baseOptions = {
         responsive: true, maintainAspectRatio: false,
-        elements: { point: { radius: 0 }, line: { tension: 0.35, borderWidth: 2 } },
+        elements: { point: { radius: 0 }, line: { tension: 0.35, borderWidth: 2, spanGaps: true } },
         scales: {
             x: { grid: { display: false }, ticks: { color: PALETTE.label, maxTicksLimit: 12, autoSkip: true } },
             y: { grid: { color: PALETTE.grid }, ticks: { color: PALETTE.text } }
@@ -336,9 +336,9 @@ hide:
             data: {
                 labels: data.map(d => formatXAxis(d.timestamp)),
                 datasets: [
-                    { label: 'Nickels (%)', data: data.map(d => d.p1_pct), borderColor: PALETTE.p1 },
-                    { label: 'Mint (%)', data: data.map(d => d.p2_pct), borderColor: PALETTE.p2 },
-                    { label: 'Pothos (%)', data: data.map(d => d.p3_pct), borderColor: PALETTE.p3 }
+                    { label: 'Nickels (%)', data: data.map(d => parseFloat(d.p1_pct) || null), borderColor: PALETTE.p1 },
+                    { label: 'Mint (%)', data: data.map(d => parseFloat(d.p2_pct) || null), borderColor: PALETTE.p2 },
+                    { label: 'Pothos (%)', data: data.map(d => parseFloat(d.p3_pct) || null), borderColor: PALETTE.p3 }
                 ]
             },
             options: { ...baseOptions, scales: { ...baseOptions.scales, y: { ...baseOptions.scales.y, min: 0, max: 100, title: { display: true, text: 'MOISTURE (%)', color: PALETTE.label } } } }
@@ -353,9 +353,9 @@ hide:
             data: {
                 labels: data.map(d => formatXAxis(d.timestamp)),
                 datasets: [
-                    { label: 'Temp (°C)', data: data.map(d => d.temp), borderColor: PALETTE.temp, yAxisID: 'y' },
-                    { label: 'Humidity (%)', data: data.map(d => d.hum), borderColor: PALETTE.hum, yAxisID: 'y' },
-                    { label: 'Light Intensity', data: data.map(d => d.light), borderColor: PALETTE.light, yAxisID: 'yRight', fill: true, backgroundColor: 'rgba(245, 158, 11, 0.05)' }
+                    { label: 'Temp (°C)', data: data.map(d => parseFloat(d.temp) || null), borderColor: PALETTE.temp, yAxisID: 'y' },
+                    { label: 'Humidity (%)', data: data.map(d => parseFloat(d.hum) || null), borderColor: PALETTE.hum, yAxisID: 'y' },
+                    { label: 'Light Intensity', data: data.map(d => parseFloat(d.light) || null), borderColor: PALETTE.light, yAxisID: 'yRight', fill: true, backgroundColor: 'rgba(245, 158, 11, 0.05)' }
                 ]
             },
             options: { 
@@ -377,8 +377,8 @@ hide:
             data: {
                 labels: data.map(d => formatXAxis(d.timestamp)),
                 datasets: [
-                    { label: 'Acoustics (dB)', data: data.map(d => d.db), borderColor: PALETTE.db, yAxisID: 'y' },
-                    { label: 'VOC Resist (kΩ)', data: data.map(d => d.gas), borderColor: PALETTE.voc, yAxisID: 'yRight' }
+                    { label: 'Acoustics (dB)', data: data.map(d => parseFloat(d.db) || null), borderColor: PALETTE.db, yAxisID: 'y' },
+                    { label: 'VOC Resist (kΩ)', data: data.map(d => parseFloat(d.gas) || null), borderColor: PALETTE.voc, yAxisID: 'yRight' }
                 ]
             },
             options: { 
