@@ -1,12 +1,12 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 11:12:34
+**Generated:** 2026-04-07 11:14:52
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 11:12
+- **TIME OF AUDIT**: 11:14
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Warden)**: ON (Multiple Fans S+N)
-- **AIR QUALITY INFERENCE**: SUB-OPTIMAL - Fans running but VOC clearing is weak (Delta: -1.64 kOhms)
-- **EMPIRICAL PROOF**: -24.9 dB (Calibrated High)
+- **AIR QUALITY INFERENCE**: SUB-OPTIMAL - Fans running but VOC clearing is weak (Delta: -1.31 kOhms)
+- **EMPIRICAL PROOF**: -25.5 dB (Calibrated High)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling.
 
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.159 kPa | **24h Cycle**: 2.954 kPa | **72h Rhythm**: 3.277 kPa
+- **4h Pulse**: 2.04 kPa | **24h Cycle**: 2.898 kPa | **72h Rhythm**: 3.253 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 70.0% (Current) vs 69.4% (24h Avg) | **7d Baseline Delta**: -30.0% (📉 DECLINE/DRY)
-- **P2**: 61.4% (Current) vs 51.6% (24h Avg) | **7d Baseline Delta**: -38.6% (📉 DECLINE/DRY)
-- **P3**: 81.6% (Current) vs 73.2% (24h Avg) | **7d Baseline Delta**: 21.2% (📈 GROWTH/WET)
+- **P1**: 70.6% (Current) vs 69.6% (24h Avg) | **7d Baseline Delta**: -29.4% (📉 DECLINE/DRY)
+- **P2**: 64.1% (Current) vs 52.6% (24h Avg) | **7d Baseline Delta**: -35.9% (📉 DECLINE/DRY)
+- **P3**: 82.4% (Current) vs 73.7% (24h Avg) | **7d Baseline Delta**: 22.0% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -86,7 +86,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas
-2026-04-07 08:04:55,31.0,27.0,726,497.0,307.0,452.0,,
 2026-04-07 08:36:14,31.0,28.0,697,503.0,297.0,451.0,,
 2026-04-07 09:07:36,31.0,29.0,679,506.0,299.0,380.0,,
 2026-04-07 09:44:04,31.0,28.0,737,513.0,247.0,416.0,,
@@ -94,6 +93,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas
 2026-04-07 10:15:20,0.0,0.0,716,504.0,220.0,358.0,0.0,0.0
 2026-04-07 10:47:53,34.89,64.64,648,481.0,197.0,348.0,1010.34,6.54
 2026-04-07 11:12:21,0.0,0.0,640,482.0,196.0,373.0,0.0,0.0
+2026-04-07 11:14:48,0.0,0.0,645,473.0,108.0,350.0,0.0,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
