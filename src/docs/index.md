@@ -73,12 +73,14 @@ hide:
     background: #10b981;
     transition: width 0.5s ease;
 }
+.stale-warning { color: #facc15; font-size: 0.65rem; font-weight: 700; margin-left: 8px; animation: pulse-stale 2s infinite; display: inline-flex; align-items: center; gap: 4px; }
+@keyframes pulse-stale { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
 </style>
 
 <div class="status-header">
     <div style="display: flex; align-items: center; gap: 15px;">
         <span style="font-size: 1.4rem;">🌿</span>
-        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">REGISTRY STATUS: <span style="color: #4ade80;">SYNCHRONIZED</span></span>
+        <span style="font-weight: 700; color: #f8fafc; letter-spacing: 0.05em;">REGISTRY STATUS: <span id="reg-status" style="color: #4ade80;">SYNCHRONIZED</span></span>
     </div>
     <div style="font-family: monospace; font-size: 0.85rem; color: #4ade80; font-weight: bold;">
         <span id="sync-status">--:--:--</span>
@@ -93,8 +95,14 @@ hide:
             <span id="val-state" style="font-size: 0.65rem; color: #4ade80; border: 1px solid #4ade80; padding: 1px 6px; border-radius: 4px; font-weight: bold;">STABLE</span>
         </div>
         <div style="display: flex; align-items: baseline; gap: 1.2rem; margin-top: 0.5rem;">
-            <div style="color:#f97316;"><span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span></div>
-            <div style="color:#0ea5e9;"><span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span></div>
+            <div style="color:#f97316;">
+                <span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span>
+                <span id="stale-temp" class="stale-warning" style="display:none;">⚠️ STALE</span>
+            </div>
+            <div style="color:#0ea5e9;">
+                <span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span>
+                <span id="stale-hum" class="stale-warning" style="display:none;">⚠️ STALE</span>
+            </div>
             <div style="color:#a855f7; margin-left: auto;"><span id="val-vpd" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;"> kPa</span></div>
         </div>
         
@@ -102,19 +110,23 @@ hide:
             <div>
                 <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">LIGHT INTENSITY</span>
                 <span id="val-light" style="color:#f59e0b; font-weight: 700; font-size: 1.1rem;">--</span>
+                <span id="stale-light" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
             </div>
             <div>
                 <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">ACOUSTIC FLOOR</span>
                 <span id="val-db" style="color:#10b981; font-weight: 700; font-size: 1.1rem;">-- dB</span>
+                <span id="stale-db" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
                 <div class="db-meter"><div id="db-fill" class="db-fill" style="width: 0%"></div></div>
             </div>
             <div>
                 <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">AIR QUALITY (VOC)</span>
                 <span id="val-gas" style="color:#a855f7; font-weight: 700; font-size: 1.1rem;">-- kΩ</span>
+                <span id="stale-gas" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
             </div>
             <div>
                 <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">BARO PRESSURE</span>
                 <span id="val-press" style="color:#f8fafc; font-weight: 700; font-size: 1.1rem;">-- hPa</span>
+                <span id="stale-press" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
             </div>
         </div>
     </div>
@@ -196,6 +208,24 @@ hide:
         return d.toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: false });
     }
 
+    function timeSince(timestamp) {
+        const d = parseTimestamp(timestamp);
+        if (!d) return "";
+        const diff = (new Date() - d) / (1000 * 60); // minutes
+        if (diff < 60) return Math.round(diff) + "m ago";
+        return (diff / 60).toFixed(1) + "h ago";
+    }
+
+    function findLastValid(data, key, minVal = 0.001) {
+        for (let i = data.length - 1; i >= 0; i--) {
+            const val = parseFloat(data[i][key]);
+            if (!isNaN(val) && val > minVal) {
+                return { value: val, timestamp: data[i].timestamp, isStale: i < data.length - 1 };
+            }
+        }
+        return { value: null, timestamp: null, isStale: false };
+    }
+
     function lastHours(data, hours) {
         if (!data.length) return data;
         const points = data
@@ -216,14 +246,44 @@ hide:
             const lT = tel[tel.length - 1];
             const lW = wea.length ? wea[wea.length - 1] : {};
 
-            // Value Updates
-            document.getElementById('sync-status').textContent = lM.timestamp || "--:--";
-            document.getElementById('val-temp').textContent = lT.temp ? parseFloat(lT.temp).toFixed(1) : "--";
-            document.getElementById('val-hum').textContent = lT.hum ? Math.round(lT.hum) : "--";
-            document.getElementById('val-vpd').textContent = lM.vpd ? parseFloat(lM.vpd).toFixed(2) : "--";
-            document.getElementById('val-light').textContent = lT.light || "--";
-            document.getElementById('val-press').textContent = (lT.press && lT.press > 0 ? lT.press : (lW.pressure || "--")) + " hPa";
-            document.getElementById('val-gas').textContent = (lT.gas && lT.gas > 0) ? parseFloat(lT.gas).toFixed(2) + " kΩ" : "--";
+            // Metric Updates with Resilience Logic
+            const metrics = [
+                { id: 'temp', key: 'temp', min: 1.0, precision: 1 },
+                { id: 'hum', key: 'hum', min: 1.0, precision: 0 },
+                { id: 'press', key: 'press', min: 900, precision: 0 },
+                { id: 'gas', key: 'gas', min: 0.1, precision: 2 },
+                { id: 'light', key: 'light', min: -0.1, precision: 0 },
+                { id: 'db', key: 'db', min: -100, precision: 1 }
+            ];
+
+            let hardwareWarning = false;
+
+            metrics.forEach(m => {
+                const res = findLastValid(tel, m.key, m.min);
+                const el = document.getElementById(`val-${m.id}`);
+                const staleEl = document.getElementById(`stale-${m.id}`);
+                
+                if (res.value !== null) {
+                    el.textContent = m.precision === 0 ? Math.round(res.value) : res.value.toFixed(m.precision);
+                    if (res.isStale) {
+                        staleEl.textContent = `⚠️ stale (${timeSince(res.timestamp)})`;
+                        staleEl.style.display = 'inline-block';
+                        hardwareWarning = true;
+                    } else {
+                        staleEl.style.display = 'none';
+                    }
+                }
+            });
+
+            // Status Update
+            const regStatus = document.getElementById('reg-status');
+            if (hardwareWarning) {
+                regStatus.textContent = "SIGNAL DISTURBANCE";
+                regStatus.style.color = "#facc15";
+            } else {
+                regStatus.textContent = "SYNCHRONIZED";
+                regStatus.style.color = "#4ade80";
+            }
             
             // DB Display & Meter
             const db = parseFloat(lT.db) || -60;
