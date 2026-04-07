@@ -709,14 +709,16 @@ h1 { display: none !important; }
                 const el = document.getElementById(`val-${m.id}`);
                 const staleEl = document.getElementById(`stale-${m.id}`);
 
-                if (res.value !== null) {
+                if (res.value !== null && el) {
                     el.textContent = m.precision === 0 ? Math.round(res.value) : res.value.toFixed(m.precision);
-                    if (res.isStale) {
-                        staleEl.textContent = `⚠️ stale (${timeSince(res.timestamp)})`;
-                        staleEl.style.display = 'inline-block';
-                        hardwareWarning = true;
-                    } else {
-                        staleEl.style.display = 'none';
+                    if (staleEl) {
+                        if (res.isStale) {
+                            staleEl.textContent = `⚠️ stale (${timeSince(res.timestamp)})`;
+                            staleEl.style.display = 'inline-block';
+                            hardwareWarning = true;
+                        } else {
+                            staleEl.style.display = 'none';
+                        }
                     }
                 }
             });
