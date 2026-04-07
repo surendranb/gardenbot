@@ -55,6 +55,3 @@ if __name__ == "__main__":
     parser.add_argument("--fast", action="store_true")
     args = parser.parse_args()
     run_diagnostics(fast=args.fast)
-
-if __name__ == "__main__":
-    run_diagnostics()

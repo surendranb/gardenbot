@@ -1,12 +1,12 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 19:36:31
+**Generated:** 2026-04-07 20:07:23
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 19:36
+- **TIME OF AUDIT**: 20:07
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (High/Multiple)
+- **FANS STATUS (Acoustic Registry)**: ON (Low/Single)
 - **AIR QUALITY INFERENCE**: EFFICIENT - VOC baseline maintained. Delta: 0.0 kOhms
-- **EMPIRICAL PROOF**: -23.8 dB (Maximum convection)
+- **EMPIRICAL PROOF**: -38.3 dB (Active convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling.
 
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.611 kPa | **24h Cycle**: 2.011 kPa | **72h Rhythm**: 2.871 kPa
+- **4h Pulse**: 0.509 kPa | **24h Cycle**: 1.949 kPa | **72h Rhythm**: 2.844 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 86.1% (Current) vs 76.8% (24h Avg)
-- **P2**: 75.7% (Current) vs 60.0% (24h Avg)
-- **P3**: 85.6% (Current) vs 79.1% (24h Avg)
+- **P1**: 87.5% (Current) vs 76.7% (24h Avg)
+- **P2**: 74.8% (Current) vs 60.8% (24h Avg)
+- **P3**: 86.6% (Current) vs 79.9% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -84,7 +84,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-07 14:05:55,34.28,68.6,829,434.0,153.0,370.0,1007.77,39.25,0.0
 2026-04-07 14:29:23,34.25,69.31,840,432.0,155.0,369.0,1007.52,37.86,-25.6
 2026-04-07 15:22:10,0.0,0.0,880,437.0,174.0,362.0,0.0,0.0,-31.5
 2026-04-07 16:55:23,0.0,0.0,856,448.0,181.0,354.0,0.0,0.0,-23.6
@@ -92,6 +91,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-07 17:57:14,0.0,0.0,894,472.0,174.0,388.0,0.0,0.0,-22.3
 2026-04-07 18:45:37,0.0,0.0,865,419.0,118.0,393.0,0.0,0.0,0.0
 2026-04-07 19:36:16,0.0,0.0,726,413.0,219.0,344.0,0.0,0.0,-23.8
+2026-04-07 20:07:02,34.55,100.0,780,419.0,198.0,353.0,652.01,0.0,-38.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
