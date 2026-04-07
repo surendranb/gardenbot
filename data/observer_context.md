@@ -1,12 +1,12 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 20:07:23
+**Generated:** 2026-04-07 20:41:36
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 20:07
+- **TIME OF AUDIT**: 20:41
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Low/Single)
 - **AIR QUALITY INFERENCE**: EFFICIENT - VOC baseline maintained. Delta: 0.0 kOhms
-- **EMPIRICAL PROOF**: -38.3 dB (Active convection)
+- **EMPIRICAL PROOF**: -37.3 dB (Active convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling.
 
@@ -31,12 +31,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.509 kPa | **24h Cycle**: 1.949 kPa | **72h Rhythm**: 2.844 kPa
+- **4h Pulse**: 0.436 kPa | **24h Cycle**: 1.881 kPa | **72h Rhythm**: 2.817 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 87.5% (Current) vs 76.7% (24h Avg)
-- **P2**: 74.8% (Current) vs 60.8% (24h Avg)
-- **P3**: 86.6% (Current) vs 79.9% (24h Avg)
+- **P1**: 88.7% (Current) vs 77.5% (24h Avg)
+- **P2**: 75.9% (Current) vs 61.3% (24h Avg)
+- **P3**: 86.4% (Current) vs 80.1% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -84,7 +84,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-07 14:29:23,34.25,69.31,840,432.0,155.0,369.0,1007.52,37.86,-25.6
 2026-04-07 15:22:10,0.0,0.0,880,437.0,174.0,362.0,0.0,0.0,-31.5
 2026-04-07 16:55:23,0.0,0.0,856,448.0,181.0,354.0,0.0,0.0,-23.6
 2026-04-07 17:26:19,0.0,0.0,866,479.0,203.0,389.0,0.0,0.0,-28.2
@@ -92,6 +91,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-07 18:45:37,0.0,0.0,865,419.0,118.0,393.0,0.0,0.0,0.0
 2026-04-07 19:36:16,0.0,0.0,726,413.0,219.0,344.0,0.0,0.0,-23.8
 2026-04-07 20:07:02,34.55,100.0,780,419.0,198.0,353.0,652.01,0.0,-38.3
+2026-04-07 20:41:22,34.55,100.0,791,415.0,156.0,374.0,652.01,0.0,-37.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
