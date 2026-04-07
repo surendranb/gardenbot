@@ -14,8 +14,8 @@ const int SAMPLES = 50;
 
 void setup() {
   Serial.begin(9600);
-  
-  if (!bme.begin() && !bme.begin(0x76)) {
+  delay(3000); // Settle I2C bus
+  if (!bme.begin(0x76) && !bme.begin(0x77)) {
     Serial.println(F("Could not find a valid BME680 sensor, check wiring!"));
   } else {
     // Set up oversampling and filter initialization
@@ -77,5 +77,5 @@ void loop() {
   Serial.print(g);
   Serial.println();
 
-  delay(1000);
+  delay(5000);
 }
