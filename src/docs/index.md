@@ -180,6 +180,7 @@ h1 { display: none !important; }
                 <a href="." style="color:#ffffff; font-weight:600; text-decoration:none">Dashboard</a>
                 <a href="architecture/" style="color:#94a3b8; text-decoration:none">Architecture</a>
                 <a href="gallery/" style="color:#94a3b8; text-decoration:none">Gallery</a>
+                <a href="blog/" style="color:#94a3b8; text-decoration:none">Dev Blog</a>
                 <div style="width:1px; height:15px; background:#334155;"></div>
                 <div style="display:flex; gap:10px; align-items:center;">
                     <span style="font-weight:700; color:#f8fafc; letter-spacing:0.05em;">STATUS: <span id="nav-reg-status" style="color:#4ade80;">SYNC</span></span>
