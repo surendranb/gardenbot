@@ -148,6 +148,13 @@ def find_active_arduino_port():
     if not candidates:
         return None
 
+    # Priority 1: Direct path for stabilized hardware
+    STABLE_PORT = "/dev/cu.usbmodem1201"
+    if STABLE_PORT in candidates:
+        # Move it to the front
+        candidates.remove(STABLE_PORT)
+        candidates.insert(0, STABLE_PORT)
+
     print(f"Warden: Scanning candidates: {candidates}...")
     
     for port in candidates:
