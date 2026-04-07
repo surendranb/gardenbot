@@ -1,64 +1,60 @@
-#!/usr/bin/env python3
 import serial
 import time
 import sys
+import argparse
 
 PORT = "/dev/cu.usbmodem1201"
 BAUD = 9600
 
-def run_diagnostics():
-    print(f"--- GardenOS Hardware Diagnostic Tool ---")
-    print(f"Connecting to {PORT}...")
+def run_diagnostics(fast=False, duration=60):
+    delay = 0.25 if fast else 1.0
+    iterations = int(duration / delay)
+    
+    print(f"--- GardenOS High-Speed Signal Audit ---")
+    print(f"Polling {PORT} @ {delay}s intervals...")
     
     try:
-        ser = serial.Serial(PORT, BAUD, timeout=3)
-        time.sleep(2)  # Wait for Arduino reset
+        ser = serial.Serial(PORT, BAUD, timeout=1)
+        time.sleep(2)
         ser.flushInput()
         
-        print("Listening for 8-part telemetry stream...")
-        print("Format: TEMP|HUM|LIGHT|P1|P3|P2|PRESS|GAS")
-        print("-" * 50)
-        
-        stable_count = 0
-        for i in range(30):
-            line = ser.readline().decode('utf-8', errors='ignore').strip()
-            if not line:
-                print(f"[{i+1}/30] TIMEOUT: No data received.")
-                continue
-            
-            parts = line.split('|')
-            if len(parts) != 8:
-                print(f"[{i+1}/30] MALFORMED: {line}")
-                continue
-                
-            # Parse for health
+        recovered = False
+        for i in range(iterations):
             try:
-                temp = float(parts[0])
-                hum = float(parts[1])
+                line = ser.readline().decode('utf-8', errors='ignore').strip()
+                if not line: continue
+                
+                parts = line.split('|')
+                if len(parts) < 8: continue
+                
                 press = float(parts[6])
-                gas = float(parts[7])
+                if press > 900:
+                    if not recovered:
+                        print("\n✨ [SIGNAL ACQUIRED] BME680 is reporting valid pressure!")
+                        recovered = True
+                    sys.stdout.write("█")
+                else:
+                    sys.stdout.write("░")
+                sys.stdout.flush()
                 
-                bme_status = "✅ ONLINE" if press > 900 else "❌ ERROR (0.0)"
-                if bme_status == "✅ ONLINE": stable_count += 1
+                if i % 20 == 0:
+                    print(f" [RAW: {line}]")
+            except Exception:
+                continue
                 
-                print(f"[{i+1}/30] RAW: {line}")
-                print(f"       BME680: {bme_status} | T: {temp}°C | H: {hum}% | P: {press}hPa | G: {gas}kΩ")
-            except ValueError:
-                print(f"[{i+1}/30] PARSE ERROR: {line}")
-                
-            time.sleep(1)
+            time.sleep(delay)
             
-        print("-" * 50)
-        print(f"Diagnostics Complete. Stability: {stable_count}/30 valid BME680 pulses.")
-        if stable_count < 25:
-            print("⚠️ WARNING: Intermittent signal detected. Check I2C (A4/A5) jumpers.")
-        else:
-            print("✨ Hardware connection appears stable.")
+        print("\n" + "-" * 50)
+        print("Audit Complete.")
             
     except Exception as e:
-        print(f"FATAL ERROR: {e}")
-    finally:
-        if 'ser' in locals(): ser.close()
+        print(f"FATAL: {e}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--fast", action="store_true")
+    args = parser.parse_args()
+    run_diagnostics(fast=args.fast)
 
 if __name__ == "__main__":
     run_diagnostics()
