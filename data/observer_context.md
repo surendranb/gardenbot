@@ -1,12 +1,12 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-07 11:23:49
+**Generated:** 2026-04-07 11:25:10
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 11:23
+- **TIME OF AUDIT**: 11:25
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Warden)**: ON (Multiple Fans S+N)
-- **AIR QUALITY INFERENCE**: SUB-OPTIMAL - Fans running but VOC clearing is weak (Delta: -1.09 kOhms)
-- **EMPIRICAL PROOF**: -24.5 dB (Calibrated High)
+- **AIR QUALITY INFERENCE**: OPTIMAL - Fans effectively clearing VOCs (Gas Resistance rising: +5.34 kOhms)
+- **EMPIRICAL PROOF**: -24.8 dB (Calibrated High)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 - **CONSTRAINTS**: No direct sunlight. Thermal gain 12:00-15:00 from ceiling.
 
@@ -31,49 +31,49 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.938 kPa | **24h Cycle**: 2.845 kPa | **72h Rhythm**: 3.231 kPa
+- **4h Pulse**: 1.909 kPa | **24h Cycle**: 2.814 kPa | **72h Rhythm**: 3.216 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 71.2% (Current) vs 69.8% (24h Avg) | **7d Baseline Delta**: -28.8% (📉 DECLINE/DRY)
-- **P2**: 64.3% (Current) vs 53.0% (24h Avg) | **7d Baseline Delta**: -35.7% (📉 DECLINE/DRY)
-- **P3**: 83.1% (Current) vs 74.1% (24h Avg) | **7d Baseline Delta**: 22.7% (📈 GROWTH/WET)
+- **P1**: 71.6% (Current) vs 70.0% (24h Avg) | **7d Baseline Delta**: -28.4% (📉 DECLINE/DRY)
+- **P2**: 65.6% (Current) vs 53.7% (24h Avg) | **7d Baseline Delta**: -34.4% (📉 DECLINE/DRY)
+- **P3**: 83.4% (Current) vs 74.4% (24h Avg) | **7d Baseline Delta**: 23.0% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-04-07 11:23:37",
-  "model": "Garden Botanical Observer v1.2",
+  "timestamp": "2026-04-07 11:24:58",
+  "model": "Garden Botanical Observer v2.1",
   "plant_audit": {
-    "p1": {
-      "physical_facts": "String of Nickels in yellow pot; high leaf density, trailing habit.",
-      "explanatory_transformations": "Remained stable throughout the sequence; no significant growth or decline observed.",
-      "visual_health_inference": "Stable. No signs of chlorosis or wilting."
+    "p1_string_of_nickels": {
+      "physical_facts": "Yellow pot, dense foliage, trailing habit.",
+      "explanatory_transformations": "Remained stable throughout the sequence; foliage density is consistent.",
+      "visual_health_inference": "Healthy; turgor pressure appears optimal with no signs of chlorosis."
     },
-    "p2": {
-      "physical_facts": "Mexican Mint in black pot; two primary leaves, central position.",
-      "explanatory_transformations": "Gradual decline in turgor pressure observed over the 5-day period.",
-      "visual_health_inference": "Stressed. Reasoning: Leaf margins show progressive curling and darkening, indicating potential moisture stress."
+    "p2_mexican_mint": {
+      "physical_facts": "Black pot, central position, two primary leaves.",
+      "explanatory_transformations": "Significant decline; leaf tissue has progressively withered and collapsed into the soil.",
+      "visual_health_inference": "Critical; severe dehydration or root rot indicated by necrotic tissue and loss of structural integrity."
     },
-    "p3": {
-      "physical_facts": "Pothos in black pot with white rabbit scale anchor; 2 leaves.",
-      "explanatory_transformations": "The apical leaf has shown a slight downward droop relative to the rabbit anchor compared to the earliest image.",
-      "visual_health_inference": "Moderate stress. Reasoning: Necrotic tip on the larger leaf has expanded by approximately 1mm since the T-4 baseline."
+    "p3_pothos": {
+      "physical_facts": "Black pot, two leaves, white rabbit anchor.",
+      "explanatory_transformations": "The larger leaf shows progressive marginal browning and tip necrosis, likely due to environmental stress.",
+      "visual_health_inference": "Stressed; marginal necrosis suggests potential over-fertilization or inconsistent moisture levels."
     },
-    "p4": {
-      "physical_facts": "Silver Guest in black pot; small, near rim.",
-      "explanatory_transformations": "Significant decline; the plant has lost structural integrity and appears to be desiccating.",
-      "visual_health_inference": "Critical. Reasoning: Visible browning and collapse of the stem structure compared to the earliest image."
+    "p4_silver_guest": {
+      "physical_facts": "Black pot, small seedling near rim.",
+      "explanatory_transformations": "Remained largely static with minimal growth observed.",
+      "visual_health_inference": "Stagnant; lack of development suggests limited nutrient uptake or light deficiency."
     }
   },
   "biome_observations": {
-    "soil_texture": "Soil in p3 and p4 shows increased surface cracking, suggesting low humidity or lack of irrigation.",
-    "incidental_growth": "No weeds or secondary seedlings detected.",
-    "biome_anomalies": "White crystalline deposits (likely mineral salts or fertilizer residue) have appeared on the soil surface of p3 and p4 in the current image."
+    "soil_texture": "Soil in p2/p4 shows signs of compaction and surface crusting.",
+    "incidental_growth": "No weeds or moss detected; however, p2/p4 shows significant debris accumulation.",
+    "biome_anomalies": "A white granular substance (likely perlite or fertilizer residue) has appeared in the p2/p4 pot in the current image, which was absent in earlier frames."
   },
-  "temporal_deltas": "The sequence shows a clear trend of dehydration across the black-potted specimens (p2, p3, p4), while the yellow-potted p1 remains unaffected.",
-  "visual_health_inference": "The biome is experiencing a localized drought effect. The presence of surface salts suggests poor water quality or over-fertilization in a drying medium.",
-  "anomalies": "White granular debris (salts) appeared on the soil surface in the final frame, likely due to evaporation cycles.",
-  "narrative_description": "The botanical collection is showing signs of environmental stress, specifically in the black-potted units. While the String of Nickels (p1) is thriving, the Pothos (p3) and Mexican Mint (p2) are exhibiting signs of water stress. The Silver Guest (p4) is in a state of rapid decline. Immediate hydration and soil flushing are recommended.",
+  "temporal_deltas": "The sequence shows a clear decline in the health of p2 and p3 over the 5-day period, while p1 remains resilient.",
+  "visual_health_inference": "The overall biome is trending toward a negative health state, specifically regarding the occupants of the black pots (p2, p3, p4).",
+  "anomalies": "Introduction of white particulate matter in the p2/p4 pot in the final frame; potential chemical imbalance or top-dressing application.",
+  "narrative_description": "The audit reveals a stark contrast between the thriving p1 and the struggling occupants of the black pots. The p2/p4 pot exhibits signs of environmental stress, culminating in the appearance of unknown white particulates in the final observation. Immediate intervention is recommended for p2.",
   "confidence": 0.92
 }
 ```
@@ -81,7 +81,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas
-2026-04-07 09:07:36,31.0,29.0,679,506.0,299.0,380.0,,
 2026-04-07 09:44:04,31.0,28.0,737,513.0,247.0,416.0,,
 2026-04-07 10:04:39,0.0,0.0,724,548.0,118.0,373.0,0.0,0.0
 2026-04-07 10:15:20,0.0,0.0,716,504.0,220.0,358.0,0.0,0.0
@@ -89,6 +88,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas
 2026-04-07 11:12:21,0.0,0.0,640,482.0,196.0,373.0,0.0,0.0
 2026-04-07 11:14:48,0.0,0.0,645,473.0,108.0,350.0,0.0,0.0
 2026-04-07 11:23:32,0.0,0.0,656,470.0,208.0,353.0,0.0,0.0
+2026-04-07 11:24:54,34.52,72.69,681,472.0,154.0,362.0,1010.13,7.32
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
