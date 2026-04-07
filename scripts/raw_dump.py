@@ -3,30 +3,38 @@ import serial
 import time
 import sys
 
+# Configuration
 PORT = "/dev/cu.usbmodem1201"
 BAUD = 9600
 
-def run_raw_dump():
-    print(f"--- 📡 GardenOS Raw Diagnostic Dump ---")
-    print(f"Attempting to listen to {PORT} for 10 seconds...")
+def run_raw_watch():
+    print(f"--- 📡 GardenOS 20s Live Hardware Watch ---")
+    print(f"Watching {PORT} (9600)... Jiggle your wires now!")
     
     try:
         ser = serial.Serial(PORT, BAUD, timeout=1)
-        time.sleep(2) # Reset time
+        time.sleep(2) # Reset grace
+        ser.reset_input_buffer()
         
         start_time = time.time()
-        while time.time() - start_time < 10:
-            if ser.in_waiting > 0:
-                char = ser.read(ser.in_waiting).decode('utf-8', errors='ignore')
-                sys.stdout.write(char)
+        while time.time() - start_time < 20:
+            line = ser.readline().decode('utf-8', errors='ignore').strip()
+            if line:
+                if "|" in line:
+                    parts = line.split("|")
+                    temp = parts[0]
+                    press = parts[6] if len(parts) > 6 else "0.0"
+                    status = "✅" if float(press) > 900 else "░"
+                    print(f"[{status}] {line}")
+                else:
+                    print(f"[-] {line}")
                 sys.stdout.flush()
-            time.sleep(0.1)
             
-        print("\n\n" + "-" * 40)
-        print("Raw Dump Complete.")
+        print("-" * 40)
+        print("Hardware Watch Complete.")
         ser.close()
     except Exception as e:
         print(f"FATAL: {e}")
 
 if __name__ == "__main__":
-    run_raw_dump()
+    run_raw_watch()

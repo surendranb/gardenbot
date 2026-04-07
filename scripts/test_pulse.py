@@ -17,7 +17,7 @@ def run_pulse_test():
         ser.reset_input_buffer()
         
         recovered_any = False
-        for i in range(5):
+        for i in range(10):
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
