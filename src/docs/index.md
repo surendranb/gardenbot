@@ -152,6 +152,14 @@ h1 { display: none !important; }
             <canvas id="vitalityChart"></canvas>
         </div>
     </div>
+
+    <!-- Chart: VPD (Stress) -->
+    <div>
+        <span class="label-sub">🧪 TRANSPIRATION PRESSURE (VPD)</span>
+        <div class="chart-container">
+            <canvas id="vpdChart"></canvas>
+        </div>
+    </div>
 </div>
 
 <h2 style="margin-top: 4rem !important; border-bottom: 1px solid #334155; padding-bottom: 10px;">The Warden's Ledger</h2>
@@ -336,6 +344,7 @@ h1 { display: none !important; }
             drawVitality(m48);
             drawAtmos(t48);
             drawKinetic(t48);
+            drawVPD(m48);
 
             // Ledger
             try {
@@ -417,6 +426,31 @@ h1 { display: none !important; }
                     x: baseOptions.scales.x,
                     y: { ...baseOptions.scales.y, min: -80, max: 0, title: { display: true, text: 'ENERGY (dB)', color: PALETTE.label } },
                     yRight: { position: 'right', grid: { display: false }, ticks: { color: PALETTE.label }, title: { display: true, text: 'CHEM (kΩ)', color: PALETTE.label } }
+                } 
+            }
+        });
+    }
+
+    function drawVPD(data) {
+        const ctx = document.getElementById('vpdChart').getContext('2d');
+        if (window.vpaChart) window.vpaChart.destroy();
+        window.vpaChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(d => formatXAxis(d.timestamp)),
+                datasets: [{ 
+                    label: 'VPD (kPa)', 
+                    data: data.map(d => parseFloat(d.vpd) || null), 
+                    borderColor: PALETTE.voc,
+                    fill: true,
+                    backgroundColor: 'rgba(168, 85, 247, 0.1)'
+                }]
+            },
+            options: { 
+                ...baseOptions, 
+                scales: { 
+                    ...baseOptions.scales, 
+                    y: { ...baseOptions.scales.y, min: 0, title: { display: true, text: 'STRESS (kPa)', color: PALETTE.label } } 
                 } 
             }
         });
