@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-08 17:02:03
+**Generated:** 2026-04-08 17:32:46
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 17:02
+- **TIME OF AUDIT**: 17:32
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -36.5 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -35.5 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.229 kPa | **24h Cycle**: 1.045 kPa | **72h Rhythm**: 2.084 kPa
+- **4h Pulse**: 0.306 kPa | **24h Cycle**: 1.045 kPa | **72h Rhythm**: 2.061 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 63.9% (Current) vs 80.4% (24h Avg) | **7d Baseline Delta**: -36.1% (📉 DECLINE/DRY)
-- **P2**: 73.6% (Current) vs 79.4% (24h Avg) | **7d Baseline Delta**: -26.4% (📉 DECLINE/DRY)
-- **P3**: 76.5% (Current) vs 79.7% (24h Avg) | **7d Baseline Delta**: -18.9% (📉 DECLINE/DRY)
+- **P1**: 63.6% (Current) vs 80.2% (24h Avg) | **7d Baseline Delta**: -36.4% (📉 DECLINE/DRY)
+- **P2**: 62.8% (Current) vs 77.8% (24h Avg) | **7d Baseline Delta**: -37.2% (📉 DECLINE/DRY)
+- **P3**: 77.4% (Current) vs 79.8% (24h Avg) | **7d Baseline Delta**: -18.0% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -105,7 +105,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-08 13:26:16,34.55,100.0,798,497.0,142.0,405.0,652.01,0.0,-31.1
 2026-04-08 13:57:08,34.55,100.0,792,529.0,145.0,406.0,652.01,0.0,-38.6
 2026-04-08 14:27:56,34.55,100.0,792,531.0,142.0,407.0,652.01,0.0,-24.6
 2026-04-08 14:58:45,34.55,100.0,803,525.0,144.0,409.0,652.01,0.0,-37.6
@@ -113,6 +112,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-08 16:00:15,0.0,0.0,833,514.0,149.0,416.0,0.0,0.0,-29.0
 2026-04-08 16:31:00,0.0,0.0,793,499.0,187.0,419.0,0.0,0.0,-26.6
 2026-04-08 17:01:43,0.0,0.0,772,535.0,799.0,375.0,0.0,0.0,-36.5
+2026-04-08 17:32:27,0.0,0.0,786,506.0,839.0,379.0,0.0,0.0,-35.5
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
