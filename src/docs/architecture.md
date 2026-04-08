@@ -35,24 +35,25 @@ GardenOS is a digital twin of a desk-top biome. It's built as decoupled layers �
 graph TD
     %% Layer 1: Data Collection
     subgraph Collection["1. DATA COLLECTION (launchd on MacBook)"]
-        AR[Arduino Uno: Temp, Humidity, Light, Soil] -->|Serial| WPY[warden.py]
+        AR["Arduino Uno (BME680): Temp, Hum, Pres, Gas, Soil"] -->|Serial| WPY[warden.py]
+        MIC[USB Microphone] -->|ffmpeg| AWPY[acoustic_warden.py]
+        AWPY --> WPY
         WPY --> CSV[telemetry.csv]
         WPY --> MET[metrics.csv]
 
         CAM[USB Webcam] -->|OpenCV| VPY[vision.py]
-        VPY -->|Temporal stack analysis via Gemini| VJS[vision_observation.json]
-        VPY -->|Append| VHS[vision_history.jsonl]
+        VPY -->|Temporal stack analysis| VJS[vision_observation.json]
 
         OWM[OpenWeatherMap API] --> WSC[weather_scout.py]
         WSC --> WTH[weather_context.json]
     end
 
-    %% Layer 2: SILICA Context Layer (v2.1)
-    subgraph SILICA["2. SILICA (Semantic Context v2.1)"]
-        CSV & MET & VJS & VHS & WTH --> POC[prep_observer_context_v2.py]
-        GM[GARDEN_MANIFEST.md — World Model] --> POC
+    %% Layer 2: SILICA Context Layer (Unified)
+    subgraph SILICA["2. SILICA (Unified Context)"]
+        CSV & MET & VJS & WTH --> POC[prep_observer_context.py]
+        PSL["PROJECT_SILICA.md — Master Ledger"] --> POC
         HA[human_actions.jsonl — HITL Actions] --> POC
-        POC --> CTX[observer_context_v2.md]
+        POC --> CTX[observer_context.md]
     end
 
     %% Layer 3: The Warden / Observer
@@ -66,9 +67,9 @@ graph TD
     %% Layer 4: Public Presence
     subgraph Public["4. PUBLIC PRESENCE (Sync & Publish)"]
         LDG --> SYNC[sync.sh]
-        CSV & MET & VHS --> SYNC
+        CSV & MET --> SYNC
         SYNC --> GH[GitHub Repo]
-        GH --> WEB[GitHub Pages — Live Dashboard & Blog]
+        GH --> WEB[GitHub Pages — Live Dashboard]
     end
 
     %% Styling
@@ -109,11 +110,12 @@ Wooden surface, acts as a thermal insulator. The pots are decoupled from the des
 
 Three Python scripts run on independent **launchd** schedules on the MacBook. Each one collects a different type of data and writes it to flat files in `data/`.
 
-**`warden.py`** — connects to the Arduino over serial and reads from four sensors:
+**`warden.py`** — connects to the Arduino over serial and coordinates the environmental registry:
 
-* **DHT11**: temperature and humidity
-* **Lux sensor**: ambient light level
-* **3 capacitive soil probes**: one per pot (p1: Nickels, p2: Mint, p3: Pothos)
+* **BME680**: temperature, humidity, atmospheric pressure, and Gas Resistance (VOCs).
+* **Lux sensor**: ambient light level.
+* **3 capacitive soil probes**: one per pot (p1: Nickels, p2: Mint, p3: Pothos).
+* **`acoustic_warden.py`**: captures mean volume in dB to deterministically identify fan and AC states.
 
 Every reading gets written to `telemetry.csv` and `metrics.csv`.
 
@@ -127,22 +129,22 @@ Output goes to `weather_context.json`.
 
 ---
 
-### 2. SILICA (Context Layer v2.1)
+### 2. SILICA (Unified Context Layer)
 
-SILICA v2.1 is the "Brain" of GardenOS. It sits between raw data and the LLM. Instead of a simple data dump, it performs **Semantic Synthesis** — turning CSV rows into high-level botanical facts and visual trajectories.
+SILICA is the "Brain" of GardenOS. It sits between raw data and the LLM. Instead of a simple data dump, it performs **Semantic Synthesis** — turning CSV rows and acoustic signatures into high-level botanical facts and visual trajectories.
 
 It's made up of four key components:
 
-**`GARDEN_MANIFEST.md`** — the **world model**. It codifies the physical constants of the desk biome (window orientation, AC behavior, fan placement).
+**`PROJECT_SILICA.md`** — the **master ledger**. it codifies the physical constants of the desk biome (window orientation, AC behavior, fan placement) and the hardware-hardening rules (BME680 at 0x76).
 
-**`human_actions.jsonl`** — the **HITL (Human-in-the-Loop) Log**. Every manual action (misting, watering, sensor checks) is recorded here. In v2.1, these actions serve as **Master Overrides** that can invalidate historical "Hardware Issue" patterns.
+**`human_actions.jsonl`** — the **HITL (Human-in-the-Loop) Log**. Every manual action (misting, watering, sensor checks) is recorded here, serving as **Master Overrides** for data interpretation.
 
-**`prep_observer_context_v2.py`** — the **Expert Synthesizer**. This script calculates three temporal layers for the LLM:
+**`prep_observer_context.py`** — the **Expert Synthesizer**. This script calculates three temporal layers for the LLM:
 * **The Pulse (4h)**: High-resolution immediate impact.
 * **The Day (24h)**: Overnight recovery analysis.
 * **The Rhythm (72h/7d)**: Metabolic trends and growth baselines.
 
-**`observer_context_v2.md`** — the output. Here's a sample of the **Biological Tempo** the LLM receives:
+**`observer_context.md`** — the output. Here's a sample of the **Biological Tempo** the LLM receives:
 
 ```
 - VPD Rhythm: Current avg 3.6 kPa (Stable).

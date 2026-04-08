@@ -1,14 +1,32 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-08 06:54:00
+**Generated:** 2026-04-08 08:02:02
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
-- **TIME OF AUDIT**: 06:54
+### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
+## 2. THE WORLD MODEL
+(The Biome)
+- **Lighting**: North-facing window (diffuse light only). Camera LED always ON for calibration.
+- **Microclimate**: 
+    - **Thermal Gain**: 12:00 - 15:00 from ceiling radiation (1st floor). 
+    - **Airflow**: 
+        - **Fan S (South)**: Primary convection.
+        - **Fan N (North)**: Auxiliary cooling.
+        - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
+- **Physical Layout**: 
+    - **P1**: String of Nickels (Yellow Pot | Sensor A0).
+    - **P2**: Mexican Mint (Black Pot | Sensor A3).
+    - **P3**: Pothos (Black Pot | Sensor A2 | White Rabbit anchor).
+    - **P4**: Silver Guest (Black Pot | Shared with P2).
+
+---
+
+### 🕒 1B. THE DYNAMIC SNAPSHOT
+- **TIME OF AUDIT**: 08:02
 - **HUMAN OCCUPANCY**: LOW
-- **FANS STATUS (Acoustic Registry)**: ON (High/Multiple)
-- **AIR QUALITY INFERENCE**: EFFICIENT - VOC baseline maintained. Delta: 0.18 kOhms
-- **EMPIRICAL PROOF**: 0.0 dB (Maximum convection)
-- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
-- **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling.
+- **FANS STATUS (Acoustic Registry)**: OFF (Silent)
+- **EMPIRICAL PROOF**: -36.9 dB (Baseline Floor)
+- **BIOME STATE**: REST (Night/Stagnant Recovery)
+
 
 ## 📖 2. PRIOR INSIGHTS & RECOMMENDATIONS (Last 3 Reports)
 ### Report: 🪴 Garden Observer Report - 2026-04-03 06:03 PM IST
@@ -31,59 +49,68 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.897 kPa | **24h Cycle**: 1.488 kPa | **72h Rhythm**: 2.581 kPa
+- **4h Pulse**: 1.504 kPa | **24h Cycle**: 1.393 kPa | **72h Rhythm**: 2.517 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 87.3% (Current) vs 81.8% (24h Avg)
-- **P2**: 77.6% (Current) vs 72.7% (24h Avg)
-- **P3**: 75.4% (Current) vs 83.7% (24h Avg)
+- **P1**: 87.4% (Current) vs 82.7% (24h Avg)
+- **P2**: 81.4% (Current) vs 74.9% (24h Avg)
+- **P3**: 78.3% (Current) vs 84.3% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-04-08 06:53:50",
-  "model": "Garden Botanical Observer v1.2",
+  "timestamp": "2026-04-08 08:01:51",
+  "model": "Garden Botanical Observer (Expert Visual Ethologist)",
   "plant_audit": {
-    "p1": "String of Nickels: Stable leaf density, consistent turgor, no visible chlorosis.",
-    "p2": "Mexican Mint: Two primary leaves show slight drooping; secondary pair remains upright.",
-    "p3": "Pothos: Two leaves present; apical leaf shows marginal browning and slight necrosis.",
-    "p4": "Silver Guest: Minimal growth, remains near pot rim, stable."
+    "p1_string_of_nickels": {
+      "physical_facts": "Located in yellow pot. Dense foliage, consistent leaf count, stable posture.",
+      "explanatory_transformations": "Remained stable throughout the sequence. No significant growth or decline observed.",
+      "visual_health_inference": "Stable. No signs of chlorosis or wilting."
+    },
+    "p2_mexican_mint": {
+      "physical_facts": "Located in black pot. Two primary leaves, secondary growth present.",
+      "explanatory_transformations": "Growth has been stagnant; the secondary leaves show no significant expansion.",
+      "visual_health_inference": "Moderate stress. Leaf margins appear slightly dull, suggesting potential moisture inconsistency."
+    },
+    "p3_pothos": {
+      "physical_facts": "Two leaves, white rabbit scale anchor present.",
+      "explanatory_transformations": "The apical leaf shows a slight downward curvature compared to the earliest image.",
+      "visual_health_inference": "Stressed. Necrosis at the leaf tip has progressed slightly, indicating potential root-zone issues."
+    },
+    "p4_silver_guest": {
+      "physical_facts": "Smallest specimen, located near the rim of the shared pot.",
+      "explanatory_transformations": "Minimal change in size; remains in a dormant-like state.",
+      "visual_health_inference": "Stable but slow-growing. No visible pathogens."
+    }
   },
   "biome_observations": {
-    "soil_condition": "Soil appears consistently moist with some surface crusting in p3.",
-    "debris": "White granular deposits (likely perlite or mineral salts) observed in p3/p4.",
-    "desk_surface": "Clean, no significant organic debris or fungal blooms."
+    "soil_texture": "Soil in p3 and p4 shows accumulation of white mineral deposits (likely perlite or fertilizer salts).",
+    "surface_debris": "Minor debris noted on the desk surface near the pots.",
+    "incidental_growth": "No weeds or moss detected."
   },
   "temporal_deltas": {
-    "t_minus_4_to_t_minus_2": "Progressive leaf margin necrosis on p3; p2 shows slight wilting.",
-    "t_minus_1_to_current": "Total loss of visual data due to sensor blackout/occlusion."
+    "t_minus_4_to_t_minus_2": "Gradual accumulation of white particulate matter on the soil surface of p3.",
+    "t_minus_1": "Image data loss (black frame).",
+    "current": "Soil moisture appears slightly lower than the baseline; leaf tip necrosis on p3 is more pronounced."
   },
-  "visual_health_inference": {
-    "p1": "Healthy/Stable",
-    "p2": "Mildly Stressed (Watering/Humidity imbalance)",
-    "p3": "Stressed (Necrosis at leaf margins)",
-    "p4": "Dormant/Stable"
-  },
-  "anomalies": [
-    "Complete image signal loss in T-1 and CURRENT images.",
-    "Mineral salt accumulation on soil surface of p3."
-  ],
-  "narrative_description": "The sequence begins with a clear view of the botanical setup, showing signs of localized stress in the Pothos (p3) and Mexican Mint (p2). The Pothos exhibits clear marginal necrosis, likely due to moisture or nutrient issues. The biome is otherwise stable until T-1, where the visual feed fails completely, resulting in a black frame, followed by a low-light/noise frame in the CURRENT image, rendering further real-time assessment impossible.",
-  "confidence": 0.85
+  "visual_health_inference": "The biome is currently in a state of 'stagnant maintenance'. The Pothos (p3) is the primary indicator of stress, showing progressive tip necrosis. The Mexican Mint (p2) is stable but lacks vigorous growth.",
+  "anomalies": "The white particulate matter on the soil surface of p3/p4 has increased in density over the 5-day period. This suggests either top-dressing or salt accumulation from water evaporation.",
+  "narrative_description": "The botanical collection is currently stable but showing signs of minor environmental stress. The Pothos (p3) requires monitoring for further necrosis, while the soil surface in the black pots suggests a need for a review of watering or fertilization practices to address the mineral accumulation.",
+  "confidence": "0.92"
 }
 ```
 
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-08 01:23:31,35.42,66.28,870,454.0,176.0,400.0,1008.61,34.43,0.0
-2026-04-08 02:09:39,35.33,66.37,870,449.0,172.0,396.0,1008.43,34.54,0.0
-2026-04-08 02:56:24,35.28,66.75,873,452.0,173.0,413.0,1008.0,34.37,0.0
-2026-04-08 03:43:01,35.28,66.41,873,446.0,168.0,413.0,1007.87,34.34,0.0
 2026-04-08 04:29:42,35.16,66.21,872,436.0,164.0,408.0,1008.15,34.15,0.0
 2026-04-08 05:20:53,35.09,66.25,871,432.0,175.0,405.0,1008.44,33.71,0.0
 2026-04-08 06:07:32,35.02,66.5,867,430.0,163.0,393.0,1008.7,33.81,0.0
 2026-04-08 06:53:47,34.84,66.74,830,459.0,192.0,424.0,1009.55,34.29,0.0
+2026-04-08 07:22:54,34.55,100.0,763,444.0,139.0,391.0,652.01,0.0,0.0
+2026-04-08 07:30:56,33.3,72.45,742,444.0,138.0,391.0,1010.21,10.82,0.0
+2026-04-08 07:36:29,33.52,71.98,738,458.0,153.0,404.0,1010.26,33.04,-30.5
+2026-04-08 08:01:41,34.37,70.39,706,433.0,151.0,376.0,1010.5,15.06,-36.9
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK

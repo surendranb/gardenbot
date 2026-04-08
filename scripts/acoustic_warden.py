@@ -4,9 +4,25 @@ import re
 import os
 import sys
 
+def get_mic_index():
+    """Scans for the USB2.0 MIC and returns its index."""
+    try:
+        # Check system devices via ffmpeg
+        result = subprocess.run(
+            ["/opt/homebrew/bin/ffmpeg", "-list_devices", "true", "-f", "avfoundation", "-i", "dummy"],
+            stderr=subprocess.PIPE, text=True
+        )
+        # Look for [index] USB2.0 MIC in the audio devices section
+        audio_section = result.stderr.split("AVFoundation audio devices:")[1]
+        match = re.search(r"\[(\d+)\] USB2.0 MIC", audio_section)
+        if match:
+            return match.group(1)
+    except:
+        pass
+    return "0" # Fallback to first device
+
 # --- Configuration ---
-# Based on ffmpeg -list_devices, USB2.0 MIC is index 2
-MIC_INDEX = "2"
+MIC_INDEX = get_mic_index()
 DURATION = 5 # seconds
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
 AUDIO_TMP = os.path.join(BASE_DIR, "logs/acoustic_test.wav")

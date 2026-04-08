@@ -463,10 +463,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-silica-context-layer-v21" class="md-nav__link">
+  <a href="#2-silica-unified-context-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SILICA (Context Layer v2.1)
+        2. SILICA (Unified Context Layer)
       
     </span>
   </a>
@@ -699,10 +699,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-silica-context-layer-v21" class="md-nav__link">
+  <a href="#2-silica-unified-context-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. SILICA (Context Layer v2.1)
+        2. SILICA (Unified Context Layer)
       
     </span>
   </a>
@@ -794,24 +794,25 @@
 <pre class="mermaid"><code>graph TD
     %% Layer 1: Data Collection
     subgraph Collection["1. DATA COLLECTION (launchd on MacBook)"]
-        AR[Arduino Uno: Temp, Humidity, Light, Soil] --&gt;|Serial| WPY[warden.py]
+        AR["Arduino Uno (BME680): Temp, Hum, Pres, Gas, Soil"] --&gt;|Serial| WPY[warden.py]
+        MIC[USB Microphone] --&gt;|ffmpeg| AWPY[acoustic_warden.py]
+        AWPY --&gt; WPY
         WPY --&gt; CSV[telemetry.csv]
         WPY --&gt; MET[metrics.csv]
 
         CAM[USB Webcam] --&gt;|OpenCV| VPY[vision.py]
-        VPY --&gt;|Temporal stack analysis via Gemini| VJS[vision_observation.json]
-        VPY --&gt;|Append| VHS[vision_history.jsonl]
+        VPY --&gt;|Temporal stack analysis| VJS[vision_observation.json]
 
         OWM[OpenWeatherMap API] --&gt; WSC[weather_scout.py]
         WSC --&gt; WTH[weather_context.json]
     end
 
-    %% Layer 2: SILICA Context Layer (v2.1)
-    subgraph SILICA["2. SILICA (Semantic Context v2.1)"]
-        CSV &amp; MET &amp; VJS &amp; VHS &amp; WTH --&gt; POC[prep_observer_context_v2.py]
-        GM[GARDEN_MANIFEST.md — World Model] --&gt; POC
+    %% Layer 2: SILICA Context Layer (Unified)
+    subgraph SILICA["2. SILICA (Unified Context)"]
+        CSV &amp; MET &amp; VJS &amp; WTH --&gt; POC[prep_observer_context.py]
+        PSL["PROJECT_SILICA.md — Master Ledger"] --&gt; POC
         HA[human_actions.jsonl — HITL Actions] --&gt; POC
-        POC --&gt; CTX[observer_context_v2.md]
+        POC --&gt; CTX[observer_context.md]
     end
 
     %% Layer 3: The Warden / Observer
@@ -825,9 +826,9 @@
     %% Layer 4: Public Presence
     subgraph Public["4. PUBLIC PRESENCE (Sync &amp; Publish)"]
         LDG --&gt; SYNC[sync.sh]
-        CSV &amp; MET &amp; VHS --&gt; SYNC
+        CSV &amp; MET --&gt; SYNC
         SYNC --&gt; GH[GitHub Repo]
-        GH --&gt; WEB[GitHub Pages — Live Dashboard &amp; Blog]
+        GH --&gt; WEB[GitHub Pages — Live Dashboard]
     end
 
     %% Styling
@@ -856,11 +857,12 @@
 <h2 id="layer-breakdown">🛠️ Layer Breakdown</h2>
 <h3 id="1-data-collection">1. Data Collection</h3>
 <p>Three Python scripts run on independent <strong>launchd</strong> schedules on the MacBook. Each one collects a different type of data and writes it to flat files in <code>data/</code>.</p>
-<p><strong><code>warden.py</code></strong> — connects to the Arduino over serial and reads from four sensors:</p>
+<p><strong><code>warden.py</code></strong> — connects to the Arduino over serial and coordinates the environmental registry:</p>
 <ul>
-<li><strong>DHT11</strong>: temperature and humidity</li>
-<li><strong>Lux sensor</strong>: ambient light level</li>
-<li><strong>3 capacitive soil probes</strong>: one per pot (p1: Nickels, p2: Mint, p3: Pothos)</li>
+<li><strong>BME680</strong>: temperature, humidity, atmospheric pressure, and Gas Resistance (VOCs).</li>
+<li><strong>Lux sensor</strong>: ambient light level.</li>
+<li><strong>3 capacitive soil probes</strong>: one per pot (p1: Nickels, p2: Mint, p3: Pothos).</li>
+<li><strong><code>acoustic_warden.py</code></strong>: captures mean volume in dB to deterministically identify fan and AC states.</li>
 </ul>
 <p>Every reading gets written to <code>telemetry.csv</code> and <code>metrics.csv</code>.</p>
 <p><strong><code>vision.py</code></strong> — captures a frame from the USB webcam via OpenCV, then samples a multi-day temporal sequence (Historical Peak Stress + Today's morning recovery + Now). This stack is sent to <strong>Gemini on Google AI Studio</strong> for a meticulous "Expert Visual Ethologist" audit. It identifies specific orientation-calibrated physical changes (leaf count, color gradients, postural shifts) and provides pixel-based health inferences.</p>
@@ -868,16 +870,16 @@
 <p><strong><code>weather_scout.py</code></strong> — calls the OpenWeatherMap API for current Chennai conditions. To minimize API overhead, this runs on a separate twice-daily schedule (06:00 and 18:00).</p>
 <p>Output goes to <code>weather_context.json</code>.</p>
 <hr />
-<h3 id="2-silica-context-layer-v21">2. SILICA (Context Layer v2.1)</h3>
-<p>SILICA v2.1 is the "Brain" of GardenOS. It sits between raw data and the LLM. Instead of a simple data dump, it performs <strong>Semantic Synthesis</strong> — turning CSV rows into high-level botanical facts and visual trajectories.</p>
+<h3 id="2-silica-unified-context-layer">2. SILICA (Unified Context Layer)</h3>
+<p>SILICA is the "Brain" of GardenOS. It sits between raw data and the LLM. Instead of a simple data dump, it performs <strong>Semantic Synthesis</strong> — turning CSV rows and acoustic signatures into high-level botanical facts and visual trajectories.</p>
 <p>It's made up of four key components:</p>
-<p><strong><code>GARDEN_MANIFEST.md</code></strong> — the <strong>world model</strong>. It codifies the physical constants of the desk biome (window orientation, AC behavior, fan placement).</p>
-<p><strong><code>human_actions.jsonl</code></strong> — the <strong>HITL (Human-in-the-Loop) Log</strong>. Every manual action (misting, watering, sensor checks) is recorded here. In v2.1, these actions serve as <strong>Master Overrides</strong> that can invalidate historical "Hardware Issue" patterns.</p>
-<p><strong><code>prep_observer_context_v2.py</code></strong> — the <strong>Expert Synthesizer</strong>. This script calculates three temporal layers for the LLM:
+<p><strong><code>PROJECT_SILICA.md</code></strong> — the <strong>master ledger</strong>. it codifies the physical constants of the desk biome (window orientation, AC behavior, fan placement) and the hardware-hardening rules (BME680 at 0x76).</p>
+<p><strong><code>human_actions.jsonl</code></strong> — the <strong>HITL (Human-in-the-Loop) Log</strong>. Every manual action (misting, watering, sensor checks) is recorded here, serving as <strong>Master Overrides</strong> for data interpretation.</p>
+<p><strong><code>prep_observer_context.py</code></strong> — the <strong>Expert Synthesizer</strong>. This script calculates three temporal layers for the LLM:
 * <strong>The Pulse (4h)</strong>: High-resolution immediate impact.
 * <strong>The Day (24h)</strong>: Overnight recovery analysis.
 * <strong>The Rhythm (72h/7d)</strong>: Metabolic trends and growth baselines.</p>
-<p><strong><code>observer_context_v2.md</code></strong> — the output. Here's a sample of the <strong>Biological Tempo</strong> the LLM receives:</p>
+<p><strong><code>observer_context.md</code></strong> — the output. Here's a sample of the <strong>Biological Tempo</strong> the LLM receives:</p>
 <div class="highlight"><pre><span></span><code>- VPD Rhythm: Current avg 3.6 kPa (Stable).
 - P1 Velocity: 📈 REHYDRATING (-5.5% last 4h) | 7d Baseline: +30.4% (🌿 THRIVING).
 - P2 Velocity: ⚖️ MAINTAINING (-1.2% last 4h) | 7d Baseline: -27.0% (⚠️ STRESSED).

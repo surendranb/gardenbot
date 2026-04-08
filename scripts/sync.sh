@@ -75,7 +75,7 @@ deactivate
 ensure_remote
 
 log "Staging all assets..."
-$GIT add data/ media/ logs/ docs/ src/ archive/ scripts/ PROJECT_MOAT.md *.md
+$GIT add data/ media/ logs/ docs/ src/ archive/ scripts/ PROJECT_SILICA.md *.md
 
 if $GIT diff --cached --quiet; then
     log "No changes to sync."

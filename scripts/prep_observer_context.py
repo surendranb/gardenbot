@@ -19,10 +19,10 @@ HUMAN_ACTIONS_PATH = os.path.join(BASE_DIR, "data/human_actions.jsonl")
 VISION_LEDGER_MD_PATH = os.path.join(BASE_DIR, "logs/vision_ledger.md")
 OUTPUT_PATH = os.path.join(BASE_DIR, "data/observer_context.md")
 
-# Acoustic Calibration Thresholds
+# Acoustic Hardware Signatures (Deterministic DB Bins)
 MIC_INDEX = "2"
-THRESH_SILENCE = -42.0
-THRESH_SINGLE = -36.0
+SIG_LEVEL_1 = -35.0  # Transition to 1 Fan
+SIG_LEVEL_2 = -27.0  # Transition to 2 Fans
 
 def load_df(path):
     try:
@@ -37,28 +37,46 @@ def load_json(path):
     except: return {}
 
 def get_acoustic_fan_status(db_val):
-    """Translates raw dB into a human-readable convection status."""
-    if db_val is None: return "UNKNOWN", "N/A"
-    if db_val < THRESH_SILENCE:
-        return "OFF (All)", f"{db_val} dB (Dead Quiet)"
-    elif db_val < THRESH_SINGLE:
-        return "ON (Low/Single)", f"{db_val} dB (Active convection)"
+    """Determines fan state based on deterministic hardware dB clusters."""
+    if db_val is None or db_val == 0.0: return "UNKNOWN", "N/A"
+    
+    if db_val < SIG_LEVEL_1:
+        return "OFF (Silent)", f"{db_val} dB (Baseline Floor)"
+    elif db_val < SIG_LEVEL_2:
+        return "ON (Level 1: Single)", f"{db_val} dB (Mid-range Convection)"
     else:
-        return "ON (High/Multiple)", f"{db_val} dB (Maximum convection)"
+        return "ON (Level 2: High/Dual)", f"{db_val} dB (Maximum Convection)"
+
+def get_world_model_ledger():
+    """Extracts the permanent world model from the SILICA master ledger."""
+    path = os.path.join(BASE_DIR, "PROJECT_SILICA.md")
+    if not os.path.exists(path): return "Error: Project SILICA ledger missing."
+    try:
+        with open(path, 'r') as f:
+            content = f.read()
+            # Extract everything between 'THE WORLD MODEL' and the next header
+            # Uses a lookahead to stop exactly before the next section begins
+            pattern = r"## 2\. THE WORLD MODEL(.*?)(?=\n##|$)"
+            match = re.search(pattern, content, re.DOTALL)
+            if match:
+                return f"## 2. THE WORLD MODEL\n" + match.group(1).strip()
+            return "World model section not found in SILICA ledger."
+
+    except Exception as e:
+        return f"Error reading ledger: {str(e)}"
 
 def get_dynamic_world_model(t_df):
     now = datetime.now()
     hour = now.hour
     occupancy = "HIGH" if 9 <= hour <= 23 else "LOW"
     
-    # New Acoustic Ground Truth from Telemetry
     db_val = None
     if t_df is not None and not t_df.empty and 'db' in t_df.columns:
         db_val = t_df['db'].iloc[-1]
     
     fan_status, empirical_proof = get_acoustic_fan_status(db_val)
     
-    # BME680 Integration: Gas resistance based Air Quality Inference
+    # ... BME680 Logic ...
     air_quality_inference = "UNKNOWN (Insufficient Data)"
     if t_df is not None and not t_df.empty:
         try:
@@ -69,33 +87,30 @@ def get_dynamic_world_model(t_df):
                 gas_avg = recent['gas'].mean()
                 delta = curr_gas - gas_avg
                 
-                # Heuristic: Fans + Gas delta
                 is_fan_on = "ON" in fan_status
                 if is_fan_on:
-                    if delta > 0.5:
-                        air_quality_inference = f"OPTIMAL - Fans effectively clearing VOCs (Gas Resistance rising: +{round(delta, 2)} kOhms)"
-                    elif delta < -0.5:
-                        air_quality_inference = f"CRITICAL - Fans active but VOCs failing to clear (Check Fan Positioning). Delta: {round(delta, 2)} kOhms"
-                    else:
-                        air_quality_inference = f"EFFICIENT - VOC baseline maintained. Delta: {round(delta, 2)} kOhms"
+                    if delta > 0.5: air_quality_inference = f"OPTIMAL - Fans clearing VOCs (+{round(delta, 2)} kOhms)"
+                    elif delta < -0.5: air_quality_inference = f"CRITICAL - VOCs failing to clear. Delta: {round(delta, 2)} kOhms"
+                    else: air_quality_inference = f"EFFICIENT - VOC baseline maintained. Delta: {round(delta, 2)} kOhms"
                 else:
-                    if delta < -1.0:
-                        air_quality_inference = f"STAGNANT - VOCs accumulating (Gas Resistance dropping: {round(delta, 2)} kOhms). ACTIVATE FANS."
-                    else:
-                        air_quality_inference = "STABLE - Passive clearing sufficient."
-        except Exception as e:
-            air_quality_inference = f"ERROR (Inference failed: {str(e)})"
+                    if delta < -1.0: air_quality_inference = f"STAGNANT - VOCs accumulating ({round(delta, 2)} kOhms). ACTIVATE FANS."
+                    else: air_quality_inference = "STABLE - Passive clearing sufficient."
+        except: pass
 
     biome_mode = 'ACTIVE (Photosynthetic/Transpiration heavy)' if "ON" in fan_status else 'REST (Night/Stagnant Recovery)'
     
-    res = f"- **TIME OF AUDIT**: {now.strftime('%H:%M')}\n"
+    # Permanent Context (from Ledger)
+    ledger_context = get_world_model_ledger()
+
+    res = f"### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)\n{ledger_context}\n\n"
+    res += f"### 🕒 1B. THE DYNAMIC SNAPSHOT\n"
+    res += f"- **TIME OF AUDIT**: {now.strftime('%H:%M')}\n"
     res += f"- **HUMAN OCCUPANCY**: {occupancy}\n"
     res += f"- **FANS STATUS (Acoustic Registry)**: {fan_status}\n"
-    res += f"- **AIR QUALITY INFERENCE**: {air_quality_inference}\n"
     res += f"- **EMPIRICAL PROOF**: {empirical_proof}\n"
     res += f"- **BIOME STATE**: {biome_mode}\n"
-    res += f"- **CONSTRAINTS**: Indoor Room. Artificial Lighting Cycle. Thermal gain 12:00-15:00 from ceiling."
     return res
+
 
 def get_human_context():
     actions = []
