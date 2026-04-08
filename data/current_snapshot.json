@@ -1,44 +1,44 @@
 {
-  "timestamp": "2026-04-08T11:54:03.679113",
+  "timestamp": "2026-04-08T12:24:45.735612",
   "sensors": {
-    "timestamp": "2026-04-08 11:53:58",
-    "temp": 34.55,
-    "hum": 100.0,
-    "light": 760,
-    "p1": 485,
-    "p2": 167,
-    "p3": 400,
-    "press": 652.01,
+    "timestamp": "2026-04-08 12:24:40",
+    "temp": 0.0,
+    "hum": 0.0,
+    "light": 764,
+    "p1": 487,
+    "p2": 149,
+    "p3": 401,
+    "press": 0.0,
     "gas": 0.0,
-    "db": -31.3
+    "db": -31.2
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 74.2,
+      "moisture_pct": 73.6,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 79.2,
+      "moisture_pct": 84.5,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 78.1,
+      "moisture_pct": 77.8,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 0.0
+    "vpd_kpa": 0.611
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_060733.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_105136.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_112246.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-08T11:22:57.622044",
+      "timestamp": "2026-04-08T11:54:15.114442",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,9 +47,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_003656.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_112246.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_115404.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_112246.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_115404.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_003656.jpg"
       },
@@ -76,47 +76,47 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_112246.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_115404.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-08 11:22:49",
-        "model": "Garden Botanical Observer v2.4",
+        "timestamp": "2026-04-08 11:54:07",
+        "model": "Garden Botanical Observer v2.1",
         "plant_audit": {
-          "p1": {
-            "physical_facts": "String of Nickels in yellow pot; dense foliage, trailing habit, consistent green saturation.",
-            "explanatory_transformations": "Remained stable throughout the sequence; no significant leaf drop or growth spurts observed.",
-            "visual_health_inference": "Stable. Reasoning: Leaf turgor remains high with no chlorosis or margin necrosis."
+          "p1_string_of_nickels": {
+            "physical_facts": "Yellow pot, dense foliage, stable posture.",
+            "explanatory_transformations": "Remained consistent throughout the sequence; no significant growth or decline observed.",
+            "visual_health_inference": "Stable. No signs of chlorosis or wilting."
           },
-          "p2": {
-            "physical_facts": "Mexican Mint in black pot; two primary wide leaves, central position.",
-            "explanatory_transformations": "Showed slight wilting in T-3/T-2, but recovered turgor in current state.",
-            "visual_health_inference": "Recovering. Reasoning: Leaf posture is more erect compared to T-2; no signs of active decay."
+          "p2_mexican_mint": {
+            "physical_facts": "Black pot, two primary leaves, two emerging smaller leaves.",
+            "explanatory_transformations": "Maintained structural integrity; leaf orientation remains consistent with the light source.",
+            "visual_health_inference": "Healthy. Turgor pressure appears optimal."
           },
-          "p3": {
-            "physical_facts": "Pothos in black pot with rabbit anchor; two leaves, one showing apical browning.",
-            "explanatory_transformations": "The apical leaf browning has remained static since the earliest image; no further progression of necrosis.",
-            "visual_health_inference": "Stressed but stable. Reasoning: Apical necrosis is present but not expanding; petiole integrity is maintained."
+          "p3_pothos": {
+            "physical_facts": "Black pot, two leaves, white rabbit anchor present.",
+            "explanatory_transformations": "The leaf proximal to the rabbit shows slight marginal browning that has stabilized since T-4.",
+            "visual_health_inference": "Stressed. Marginal necrosis on the larger leaf suggests past moisture or nutrient imbalance."
           },
-          "p4": {
-            "physical_facts": "Silver Guest in black pot; small, near rim.",
-            "explanatory_transformations": "Remained largely dormant; no visible expansion of leaf surface area.",
-            "visual_health_inference": "Dormant. Reasoning: No signs of chlorosis or wilting, but no active growth detected."
+          "p4_silver_guest": {
+            "physical_facts": "Black pot, small seedling near rim.",
+            "explanatory_transformations": "Remained static; no new leaf development observed over the 5-day period.",
+            "visual_health_inference": "Dormant/Slow-growth. No signs of distress, but minimal metabolic activity."
           }
         },
         "biome_observations": {
-          "soil_texture": "Soil in p3 and p4 shows accumulation of white mineral/perlite deposits, increasing in density from T-4 to Current.",
-          "incidental_growth": "None observed.",
-          "biome_anomalies": "Presence of white granular debris (likely perlite or salt buildup) on the soil surface of p3/p4 has increased significantly."
+          "soil_surface": "Soil moisture appears consistent; white perlite/mineral deposits are present in the black pots.",
+          "desk_surface": "Clean, no debris or fungal growth detected.",
+          "incidental_growth": "None detected."
         },
         "temporal_deltas": {
-          "T_minus_4_to_T_minus_3": "Significant loss of moisture/turgor in p2 and p4.",
-          "T_minus_3_to_T_minus_2": "Introduction of white granular material to the soil surface.",
-          "T_minus_2_to_Current": "Stabilization of plant posture; no further degradation."
+          "t_minus_4_to_t_minus_3": "Significant change in camera angle/perspective; soil surface in p3/p4 shows addition of white mineral/perlite top-dressing.",
+          "t_minus_3_to_t_minus_2": "Minor shift in perlite distribution; plant positions remain fixed.",
+          "t_minus_2_to_current": "Stability maintained; no further physical changes to plant morphology."
         },
-        "visual_health_inference": "The biome is currently in a state of 'managed stasis'. While p3 shows localized necrosis, the lack of progression suggests the environment is currently non-lethal.",
-        "anomalies": "The white granular deposits on the soil surface are the primary anomaly; they appear to be accumulating, suggesting either top-dressing or mineral precipitation from water.",
-        "narrative_description": "The audit began by cataloging the four plants and establishing the rabbit anchor as the scale reference. I validated the sequence by comparing the leaf positions across the timeline. The plants show a trajectory of initial stress followed by stabilization. The most notable change is the accumulation of white particulate matter on the soil surface of the black pots, which warrants monitoring for potential soil salinity issues.",
+        "visual_health_inference": "The biome is in a state of 'Managed Stasis'. The plants are not actively growing but are maintaining their current physiological state. The Pothos (p3) is the most sensitive element, requiring monitoring of the necrotic leaf margins.",
+        "anomalies": "The sudden appearance of white mineral/perlite particles between T-4 and T-3 indicates human intervention (top-dressing) which was not present in the earliest image.",
+        "narrative_description": "The botanical collection is currently stable. The transition from the earliest image to the current state shows a deliberate addition of soil amendments (perlite) to the black pots. The plants are exhibiting signs of acclimatization to the indoor environment, with no acute signs of decline or rapid growth.",
         "confidence": 0.95
       }
     },
