@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-08T12:55:34.475775",
+  "timestamp": "2026-04-08T13:26:21.836151",
   "sensors": {
-    "timestamp": "2026-04-08 12:55:29",
+    "timestamp": "2026-04-08 13:26:16",
     "temp": 34.55,
     "hum": 100.0,
-    "light": 811,
-    "p1": 491,
-    "p2": 146,
-    "p3": 404,
+    "light": 798,
+    "p1": 497,
+    "p2": 142,
+    "p3": 405,
     "press": 652.01,
     "gas": 0.0,
-    "db": -30.1
+    "db": -31.1
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 72.4,
+      "moisture_pct": 70.6,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 85.4,
+      "moisture_pct": 86.5,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 76.9,
+      "moisture_pct": 76.6,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_060733.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_115404.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-08T12:24:57.002563",
+      "timestamp": "2026-04-08T12:55:44.212919",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,11 +47,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_003656.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_125535.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_125535.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_003656.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg"
       },
       "frame_sequence": [
         {
@@ -59,68 +60,64 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-04/garden_132428.jpg"
         },
         {
-          "label": "T-4",
+          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-06/garden_131522.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_003656.jpg"
         },
         {
-          "label": "CURRENT",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_122446.jpg"
+        },
+        {
+          "label": "CURRENT",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_125535.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-08 12:24:49",
+        "timestamp": "2026-04-08 12:55:38",
         "model": "Garden Botanical Observer v1.2",
         "plant_audit": {
-          "p1_string_of_nickels": {
-            "physical_facts": "Yellow pot, high leaf density, trailing habit.",
-            "explanatory_transformations": "Remained stable throughout the sequence; no significant wilting or growth observed.",
-            "visual_health_inference": "Stable. Leaf turgor appears consistent with baseline."
+          "p1": {
+            "physical_facts": "Yellow pot, String of Nickels. Dense foliage, consistent green saturation.",
+            "explanatory_transformations": "Remained stable throughout the sequence. No significant growth or decline observed.",
+            "visual_health_inference": "Stable. No signs of chlorosis or wilting."
           },
-          "p2_mexican_mint": {
-            "physical_facts": "Black pot, two primary leaves, central positioning.",
-            "explanatory_transformations": "Showed signs of progressive desiccation and leaf drop between T-3 and T-2.",
-            "visual_health_inference": "Stressed. Evidence of necrosis and structural collapse of secondary foliage."
+          "p2": {
+            "physical_facts": "Black pot, Mexican Mint. Two primary leaves, central position.",
+            "explanatory_transformations": "The plant has undergone significant senescence. The leaves have lost turgor and are now necrotic/shriveled compared to the initial state.",
+            "visual_health_inference": "Critical. The loss of structural integrity indicates severe water stress or root system failure."
           },
-          "p3_pothos": {
-            "physical_facts": "Black pot, two leaves, white rabbit anchor present.",
-            "explanatory_transformations": "The apical leaf shows consistent orientation; no significant movement relative to the rabbit anchor.",
-            "visual_health_inference": "Healthy. No chlorosis or margin necrosis detected."
+          "p3": {
+            "physical_facts": "Black pot, Pothos. Two leaves, white rabbit anchor present.",
+            "explanatory_transformations": "The leaves have shown progressive yellowing at the margins. The petiole posture has shifted from upright to slightly drooping.",
+            "visual_health_inference": "Stressed. Necrotic margins suggest nutrient imbalance or over-saturation of the substrate."
           },
-          "p4_silver_guest": {
-            "physical_facts": "Black pot, shared with p2, small stature near rim.",
-            "explanatory_transformations": "Remained largely static; minimal growth detected.",
-            "visual_health_inference": "Stable but dormant."
+          "p4": {
+            "physical_facts": "Black pot, Silver Guest. Small sprout near rim.",
+            "explanatory_transformations": "The sprout has remained largely static, showing no new leaf development over the 5-day period.",
+            "visual_health_inference": "Dormant/Stunted. Lack of development suggests environmental conditions are not optimal for active growth."
           }
         },
         "biome_observations": {
-          "soil_surface": "Introduction of white granular material (likely perlite or mineral supplement) observed in the black pots starting at T-2.",
-          "desk_surface": "Clean, no debris or fungal growth noted.",
-          "lighting": "Consistent cool spectrum LED illumination."
+          "soil_texture": "Soil in p2 and p3 shows increased white mineral deposits (perlite or salt buildup) over time.",
+          "incidental_growth": "No weeds or moss detected. Surface debris is limited to minor soil displacement.",
+          "biome_anomalies": "The introduction of white granular material (likely perlite or fertilizer) in the p2/p3 pots between T-4 and T-3."
         },
-        "temporal_deltas": {
-          "T_minus_4_to_T_minus_3": "Significant loss of foliage in the black pot containing p2/p4.",
-          "T_minus_3_to_T_minus_2": "Addition of white granular soil amendments.",
-          "T_minus_1": "Blackout/Sensor failure.",
-          "Current": "Recovery of visual feed; soil moisture appears slightly higher than T-2."
-        },
-        "visual_health_inference": "The biome is experiencing a transition. While p1 and p3 are robust, p2 is struggling with environmental adaptation, evidenced by leaf loss. The addition of soil amendments suggests an intervention to improve drainage or nutrient profile.",
-        "anomalies": {
-          "soil_texture": "Presence of white granular debris in black pots post-T-3.",
-          "sensor_status": "Total signal loss at T-1, indicating potential power cycle or hardware obstruction."
-        },
-        "narrative_description": "The audit confirms a stable environment for the Pothos and String of Nickels, while the Mexican Mint (p2) is undergoing a critical stress phase. The introduction of soil amendments indicates an active attempt to remediate the substrate. The system is currently stable following the T-1 outage.",
+        "temporal_deltas": "The sequence shows a clear decline in the health of p2 and p3. P1 remains the most resilient. The most significant change occurred between T-4 and T-3 with the addition of soil amendments.",
+        "visual_health_inference": "The biome is currently in a state of decline for the Pothos and Mexican Mint. The String of Nickels (p1) is the only specimen maintaining homeostasis.",
+        "anomalies": "The sudden appearance of white granular matter in the soil surface at T-3 suggests an intervention that has not yet resulted in visible recovery.",
+        "narrative_description": "The botanical audit reveals a struggling ecosystem. While the String of Nickels remains robust, the Pothos and Mexican Mint are exhibiting signs of physiological distress, characterized by leaf necrosis and loss of turgor. The soil amendments added mid-sequence have not yet reversed the downward health trajectory.",
         "confidence": 0.92
       }
     },
