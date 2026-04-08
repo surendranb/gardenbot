@@ -571,3 +571,4 @@ timestamp,vpd,p1_pct,p1_slope,p2_pct,p2_slope,p3_pct,p3_slope,p4_pct,p4_slope,p5
 2026-04-08 15:29:36,0.0,63.8,,86.5,,75.8,,,,,,,,False,False,False
 2026-04-08 16:00:15,0.611,65.3,,84.5,,73.5,,,,,,,,False,False,False
 2026-04-08 16:31:00,0.611,69.9,,73.4,,72.6,,,,,,,,False,False,False
+2026-04-08 17:01:43,0.611,58.9,,0.0,,85.2,,,,,,,,False,True,False
