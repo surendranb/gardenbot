@@ -12,8 +12,8 @@ BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
 TELEMETRY_PATH = os.path.join(BASE_DIR, "data/telemetry.csv")
 METRICS_PATH = os.path.join(BASE_DIR, "data/metrics.csv")
 WEATHER_PATH = os.path.join(BASE_DIR, "data/weather_context.json")
-MANIFEST_PATH = os.path.join(BASE_DIR, "GARDEN_MANIFEST.md")
 VISION_OBSERVATION_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
+
 VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 HUMAN_ACTIONS_PATH = os.path.join(BASE_DIR, "data/human_actions.jsonl")
 VISION_LEDGER_MD_PATH = os.path.join(BASE_DIR, "logs/vision_ledger.md")
