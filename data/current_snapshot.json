@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-09T03:18:17.079349",
+  "timestamp": "2026-04-09T03:49:01.284859",
   "sensors": {
-    "timestamp": "2026-04-09 03:18:11",
+    "timestamp": "2026-04-09 03:48:55",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 867,
-    "p1": 504,
-    "p2": 323,
-    "p3": 406,
+    "light": 872,
+    "p1": 509,
+    "p2": 340,
+    "p3": 428,
     "press": 0.0,
     "gas": 0.0,
-    "db": -39.2
+    "db": -37.0
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 68.4,
+      "moisture_pct": 66.9,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 33.6,
+      "moisture_pct": 28.7,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 76.4,
+      "moisture_pct": 70.1,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_001315.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_021639.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_024722.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-09T02:47:47.072471",
+      "timestamp": "2026-04-09T03:18:30.732152",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,9 +47,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_132622.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_001315.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_024722.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_031817.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_024722.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_031817.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-05/garden_132213.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_001315.jpg"
       },
@@ -76,51 +76,52 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_024722.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_031817.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-09 02:47:25",
-        "model": "Garden Botanical Observer v4.2",
+        "timestamp": "2026-04-09 03:18:20",
+        "model": "Garden Botanical Observer v2.4",
         "plant_audit": {
           "p1": {
-            "physical_facts": "String of Nickels in yellow pot. Dense foliage, consistent leaf count, stable posture.",
-            "explanatory_transformations": "Remained largely static throughout the 5-day sequence. No significant growth or senescence observed.",
-            "visual_health_inference": "Stable. No signs of chlorosis or turgor loss."
+            "physical_facts": "String of Nickels in yellow pot; dense foliage, consistent leaf count.",
+            "explanatory_transformations": "Stable throughout the sequence; no significant morphological shifts observed.",
+            "visual_health_inference": "Healthy; turgid leaves, no signs of chlorosis or desiccation."
           },
           "p2": {
-            "physical_facts": "Mexican Mint in black pot. Two primary leaves, central position.",
-            "explanatory_transformations": "Significant decline. The plant has transitioned from a healthy, upright state to a collapsed, necrotic state over the 5-day period.",
-            "visual_health_inference": "Critical. The plant shows severe wilting and tissue collapse, likely due to root-zone failure or environmental shock."
+            "physical_facts": "Mexican Mint in black pot; two primary leaves, central position.",
+            "explanatory_transformations": "Leaf posture remains consistent; no new growth or senescence detected.",
+            "visual_health_inference": "Stable; color saturation is uniform, indicating adequate hydration."
           },
           "p3": {
-            "physical_facts": "Pothos in black pot with rabbit anchor. Two leaves present.",
-            "explanatory_transformations": "The leaf near the rabbit has shown progressive marginal browning and a slight downward droop compared to the earliest image.",
-            "visual_health_inference": "Stressed. Necrosis on the leaf margin suggests potential over-watering or nutrient toxicity."
+            "physical_facts": "Pothos in black pot with rabbit anchor; 2 leaves present.",
+            "explanatory_transformations": "The leaf proximal to the rabbit has shown slight drooping over the 5-day period, likely due to light-seeking orientation.",
+            "visual_health_inference": "Mild stress; slight marginal browning on the older leaf suggests minor nutrient or moisture fluctuation."
           },
           "p4": {
-            "physical_facts": "Silver Guest in black pot. Small, near rim.",
-            "explanatory_transformations": "The plant has become increasingly difficult to distinguish as the soil surface has been covered with white particulate matter (perlite/debris).",
-            "visual_health_inference": "Indeterminate. Obscured by surface debris."
+            "physical_facts": "Silver Guest in black pot; small sprout near rim.",
+            "explanatory_transformations": "Growth is minimal; the sprout has maintained its vertical orientation relative to the soil surface.",
+            "visual_health_inference": "Dormant/Slow-growth; no signs of necrosis, but growth rate is stagnant."
           }
         },
         "biome_observations": {
-          "soil_surface": "Increasing accumulation of white granular debris (likely perlite or mineral salts) across all black pots.",
-          "desk_surface": "Clean, no significant organic debris or fungal growth noted."
+          "soil_surface": "Soil moisture appears consistent; no surface cracking or fungal blooms.",
+          "desk_surface": "Clean; no debris or foreign matter detected.",
+          "incidental_growth": "No weeds or secondary seedlings identified in any pots."
         },
         "temporal_deltas": {
-          "earliest_to_t4": "Initial decline of p2 observed.",
-          "t4_to_t1": "Rapid accumulation of white surface debris; p2 collapse accelerates.",
-          "t1_to_current": "Stasis in decline; no recovery observed."
+          "summary": "The biome has remained largely static over the 5-day observation window. The most notable change is the accumulation of white particulate matter (likely perlite or mineral deposits) on the soil surface of the black pots, which increased between T-3 and T-2."
         },
-        "visual_health_inference": "The biome is experiencing a decline in health, specifically in the black pots. The white particulate matter suggests either a top-dressing application or salt crusting from water evaporation, which may be impacting the root health of p2 and p3.",
-        "anomalies": [
-          "White granular accumulation on soil surface of black pots.",
-          "Total collapse of p2 (Mexican Mint).",
-          "Leaf margin necrosis on p3."
-        ],
-        "narrative_description": "The botanical sequence reveals a concerning trend of degradation in the black-potted specimens. While the String of Nickels (p1) remains resilient, the Mexican Mint (p2) has suffered a total loss of structural integrity. The accumulation of white particulates on the soil surface correlates with the decline of the plants, suggesting a potential issue with water quality or soil chemistry.",
-        "confidence": 0.92
+        "visual_health_inference": {
+          "overall_status": "Stable",
+          "reasoning": "Plants are maintaining current biomass. The lack of rapid growth or significant leaf drop indicates a stable, albeit slow-metabolism, indoor environment."
+        },
+        "anomalies": {
+          "detected": "Increased surface particulate matter in black pots (p3/p4).",
+          "explanation": "Likely irrigation-induced migration of perlite to the surface or mineral salt crystallization."
+        },
+        "narrative_description": "The botanical collection is in a state of 'rested equilibrium'. The plants show no signs of acute distress. The Pothos (p3) requires monitoring for the marginal browning on its primary leaf, while the other specimens are thriving in the fixed-light environment. The soil surface in the black pots has developed a light dusting of white particulates, which is a common occurrence in container gardening and does not currently pose a threat to plant health.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
