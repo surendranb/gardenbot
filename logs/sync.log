@@ -13131,3 +13131,39 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.28 seconds
 2026-04-09 12:02:55 Staging all assets...
+2026-04-09 12:02:55 Staging changes...
+[main 31e6081] GardenOS Sync: 2026-04-09 12:02:55
+ 9 files changed, 110 insertions(+), 50 deletions(-)
+ create mode 100644 archive/2026-04-09/garden_120233.jpg
+2026-04-09 12:02:55 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   180a7f5..31e6081  main -> main
+2026-04-09 12:02:59 Sync Successful.
+2026-04-09 12:34:39 --- Sync Start: 2026-04-09 12:34:39 ---
+2026-04-09 12:34:39 Generating gallery metadata...
+2026-04-09 12:34:39 Updating latest report pointer...
+2026-04-09 12:34:39 Latest report updated to: logs/reports/report_20260409_1123.md
+2026-04-09 12:34:39 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/observer_context.md
+INFO    -  Documentation built in 0.26 seconds
+2026-04-09 12:34:43 Staging all assets...
