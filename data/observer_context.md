@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-09 09:59:30
+**Generated:** 2026-04-09 10:30:15
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 09:59
+- **TIME OF AUDIT**: 10:30
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -31.0 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.6 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.729 kPa | **24h Cycle**: 0.578 kPa | **72h Rhythm**: 1.546 kPa
+- **4h Pulse**: 0.864 kPa | **24h Cycle**: 0.601 kPa | **72h Rhythm**: 1.547 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 73.4% (Current) vs 68.5% (24h Avg) | **7d Baseline Delta**: -26.6% (📉 DECLINE/DRY)
-- **P2**: 39.3% (Current) vs 45.2% (24h Avg) | **7d Baseline Delta**: -57.8% (📉 DECLINE/DRY)
-- **P3**: 77.8% (Current) vs 77.3% (24h Avg) | **7d Baseline Delta**: -1.1% (⚖️ STABLE)
+- **P1**: 74.0% (Current) vs 68.4% (24h Avg)
+- **P2**: 40.0% (Current) vs 44.2% (24h Avg)
+- **P3**: 80.7% (Current) vs 77.8% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -100,7 +100,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-09 05:22:01,0.0,0.0,871,512.0,339.0,428.0,0.0,0.0,-39.1
 2026-04-09 05:52:45,0.0,0.0,867,506.0,325.0,412.0,0.0,0.0,-39.1
 2026-04-09 06:23:26,0.0,0.0,864,504.0,326.0,421.0,0.0,0.0,-38.8
 2026-04-09 06:54:08,0.0,0.0,859,497.0,330.0,413.0,0.0,0.0,-36.8
@@ -108,6 +107,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-09 07:55:45,0.0,0.0,857,507.0,348.0,440.0,0.0,0.0,-40.6
 2026-04-09 08:26:36,0.0,0.0,806,481.0,295.0,397.0,0.0,0.0,-30.2
 2026-04-09 09:59:08,33.82,70.48,598,454.0,210.0,328.0,1012.07,76.95,-31.0
+2026-04-09 10:30:03,33.95,68.06,593,487.0,307.0,339.0,1011.81,43.64,-30.6
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
