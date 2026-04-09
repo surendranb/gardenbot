@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-09 08:57:47
+**Generated:** 2026-04-09 09:28:36
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,8 +21,8 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 08:57
-- **HUMAN OCCUPANCY**: LOW
+- **TIME OF AUDIT**: 09:28
+- **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
 - **EMPIRICAL PROOF**: -30.2 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.611 kPa | **24h Cycle**: 0.593 kPa | **72h Rhythm**: 1.593 kPa
+- **4h Pulse**: 0.611 kPa | **24h Cycle**: 0.593 kPa | **72h Rhythm**: 1.585 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 69.8% (Current) vs 68.5% (24h Avg) | **7d Baseline Delta**: -30.2% (📉 DECLINE/DRY)
-- **P2**: 32.6% (Current) vs 46.7% (24h Avg) | **7d Baseline Delta**: -67.4% (📉 DECLINE/DRY)
-- **P3**: 73.1% (Current) vs 77.0% (24h Avg) | **7d Baseline Delta**: -5.5% (⚖️ STABLE)
+- **P1**: 70.4% (Current) vs 68.7% (24h Avg) | **7d Baseline Delta**: -29.6% (📉 DECLINE/DRY)
+- **P2**: 33.5% (Current) vs 46.6% (24h Avg) | **7d Baseline Delta**: -66.5% (📉 DECLINE/DRY)
+- **P3**: 73.7% (Current) vs 77.0% (24h Avg) | **7d Baseline Delta**: -4.9% (⚖️ STABLE)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
