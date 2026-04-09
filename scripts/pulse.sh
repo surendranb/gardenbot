@@ -14,10 +14,13 @@ log "Starting Pulse..."
 # 1. Warden (Sensors)
 ./.venv/bin/python3 scripts/warden.py >> logs/cron.log 2>&1
 
-# 2. Vision (Camera)
+# 2. Context Prep (Step A: Vision Context)
+./.venv/bin/python3 scripts/prep_observer_context.py --vision-only >> logs/cron.log 2>&1
+
+# 3. Vision (Camera)
 ./.venv/bin/python3 scripts/vision.py >> logs/cron.log 2>&1
 
-# 3. Context Prep
+# 4. Context Prep (Step B: Full Synthesis)
 ./.venv/bin/python3 scripts/prep_observer_context.py >> logs/cron.log 2>&1
 
 # 4. Sync to GitHub

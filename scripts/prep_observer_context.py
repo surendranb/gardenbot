@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 import subprocess
 import re
+import argparse
 from datetime import datetime, timedelta
 
 # --- Configuration ---
@@ -17,6 +18,7 @@ VISION_OBSERVATION_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
 VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 HUMAN_ACTIONS_PATH = os.path.join(BASE_DIR, "data/human_actions.jsonl")
 VISION_LEDGER_MD_PATH = os.path.join(BASE_DIR, "logs/vision_ledger.md")
+VISION_CONTEXT_PATH = os.path.join(BASE_DIR, "data/vision_context.json")
 OUTPUT_PATH = os.path.join(BASE_DIR, "data/observer_context.md")
 
 # Acoustic Hardware Signatures (Deterministic DB Bins)
@@ -184,7 +186,48 @@ def get_biological_deltas(m_df):
         facts.append("Insufficient data for windows.")
     return "\n".join(facts)
 
+def export_vision_context():
+    """Exports a lightweight JSON for the vision model to understand recent human/system state."""
+    actions = []
+    try:
+        if os.path.exists(HUMAN_ACTIONS_PATH):
+            with open(HUMAN_ACTIONS_PATH, "r") as f:
+                for line in f:
+                    try: actions.append(json.loads(line.strip()))
+                    except: continue
+    except: pass
+    
+    # Filter for last 24h
+    now = datetime.now()
+    recent_actions = []
+    for a in actions:
+        try:
+            ts = pd.to_datetime(a.get('timestamp'))
+            if (now - ts.to_pydatetime().replace(tzinfo=None)) < timedelta(hours=24):
+                recent_actions.append(a)
+        except: continue
+
+    insights = get_temporal_insights(3).split("\n\n")
+    
+    payload = {
+        "timestamp": now.isoformat(),
+        "recent_human_actions": recent_actions[-3:],
+        "last_recommendations": [i.strip() for i in insights if i.strip()]
+    }
+    
+    with open(VISION_CONTEXT_PATH, 'w') as f:
+        json.dump(payload, f, indent=2)
+    print(f"Vision context exported to {VISION_CONTEXT_PATH}")
+
 def main():
+    parser = argparse.ArgumentParser(description="SILICA Context Synthesizer")
+    parser.add_argument("--vision-only", action="store_true", help="Only export light context for vision model")
+    args = parser.parse_args()
+
+    if args.vision_only:
+        export_vision_context()
+        return
+
     print("Synthesizing SILICA v2.2 (Corrected Logic)...")
     t_df, m_df = load_df(TELEMETRY_PATH), load_df(METRICS_PATH)
     vision = load_json(VISION_OBSERVATION_PATH)

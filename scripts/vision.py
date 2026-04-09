@@ -18,6 +18,7 @@ VISION_JSON_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
 VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 DAILY_BENCHMARK_PATH = os.path.join(ARCHIVE_DIR, "daily_benchmark.jpg")
 VISION_MODEL = os.environ.get("GEMINI_VISION_MODEL", "gemini-3.1-flash-lite-preview")
+VISION_CONTEXT_PATH = os.path.join(BASE_DIR, "data/vision_context.json")
 ENV_PATH = os.path.join(BASE_DIR, ".env")
 
 REFERENCE = {
@@ -106,11 +107,29 @@ def pick_temporal_stack(archive_path):
         "previous": stack[-2] if len(stack) >= 2 else None
     }
 
-def build_prompt():
+def build_prompt(ctx=None):
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    context_str = ""
+    if ctx:
+        actions = ctx.get("recent_human_actions", [])
+        recs = ctx.get("last_recommendations", [])
+        if actions:
+            context_str += "\nRECENT HUMAN ACTIONS (A PRIORI KNOWLEDGE):\n"
+            for a in actions:
+                context_str += f"- {a.get('timestamp')}: {a.get('action')} - {a.get('note')}\n"
+        if recs:
+            context_str += "\nLAST AI RECOMMENDATIONS:\n"
+            for r in recs:
+                context_str += f"- {r}\n"
+        
+        if context_str:
+            context_str += "\nCRITICAL INSTRUCTION: If you see visual changes that align with the human actions listed above (e.g., white material on soil after 'added powder', or wet soil after 'watering'), do NOT flag them as physiological stress or anomalies. Instead, confirm their presence as successful outcomes of user care.\n"
+
     return (
         f"Today's Date: {now_str}\n"
         "You are the Garden Botanical Observer (Expert Visual Ethologist).\n"
+        f"{context_str}"
         "Your task is to perform a meticulous physical audit and EXPLANATORY health inference of a CHRONOLOGICAL sequence of images. Starting from the oldest to the newsest (now)\n"
         "Create a detailed checklist of each plant"
         "You will follow a maker-checker mechanism. Describe what you will do first and then validate after you've done your interpretation. You job is to interpret the images accurately with a keen eye and the expeience of a renowned botanist"
@@ -166,8 +185,18 @@ def main():
     client = genai.Client(api_key=api_key)
     stack_info = pick_temporal_stack(res["archive_path"])
     
+    # Load context if available
+    ctx = None
+    if os.path.exists(VISION_CONTEXT_PATH):
+        try:
+            with open(VISION_CONTEXT_PATH, 'r') as f:
+                ctx = json.load(f)
+            print(f"Vision: Loaded local context from {VISION_CONTEXT_PATH}")
+        except Exception as e:
+            print(f"Vision: Failed to load context: {e}")
+
     # Bundle the prompt and the images
-    contents = [build_prompt()]
+    contents = [build_prompt(ctx)]
     frame_labels = []
     
     print(f"Vision: Sending {len(stack_info['compare_set'])} images to {VISION_MODEL}...")
