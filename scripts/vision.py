@@ -65,15 +65,15 @@ def capture_vision():
     except Exception as e:
         print(f"CV2 failed: {e}. Fallback to imagesnap...")
         try:
-            subprocess.run(["imagesnap", "-q", archive_path], check=True)
+            subprocess.run(["imagesnap", "-q", archive_path], check=True, timeout=15)
         except Exception as e2:
             print(f"Vision failed: {e2}")
             return {"error": str(e2)}
 
     if os.path.exists(archive_path):
-        subprocess.run(["cp", archive_path, PHOTO_PATH], check=True)
+        subprocess.run(["cp", archive_path, PHOTO_PATH], check=True, timeout=5)
         if now.hour == 6 and now.minute < 15:
-            subprocess.run(["cp", archive_path, DAILY_BENCHMARK_PATH], check=True)
+            subprocess.run(["cp", archive_path, DAILY_BENCHMARK_PATH], check=True, timeout=5)
         return {"photo_path": PHOTO_PATH, "archive_path": archive_path}
     return {"error": "Archive failed"}
 

@@ -10,7 +10,7 @@ def get_mic_index():
         # Check system devices via ffmpeg
         result = subprocess.run(
             ["/opt/homebrew/bin/ffmpeg", "-list_devices", "true", "-f", "avfoundation", "-i", "dummy"],
-            stderr=subprocess.PIPE, text=True
+            stderr=subprocess.PIPE, text=True, timeout=10
         )
         # Look for [index] USB2.0 MIC in the audio devices section
         audio_section = result.stderr.split("AVFoundation audio devices:")[1]
@@ -44,7 +44,7 @@ def capture_volume():
     
     try:
         # Run command and capture stderr where volumedetect outputs its data
-        result = subprocess.run(cmd, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(cmd, stderr=subprocess.PIPE, text=True, timeout=10)
         output = result.stderr
         
         # Look for mean_volume in the output
