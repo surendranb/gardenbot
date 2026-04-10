@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-10 06:09:07
+**Generated:** 2026-04-10 06:40:06
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 06:09
+- **TIME OF AUDIT**: 06:40
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -38.6 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -37.2 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.496 kPa | **24h Cycle**: 1.517 kPa | **72h Rhythm**: 1.243 kPa
+- **4h Pulse**: 1.479 kPa | **24h Cycle**: 1.533 kPa | **72h Rhythm**: 1.231 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 74.6% (Current) vs 73.7% (24h Avg) | **7d Baseline Delta**: -19.0% (📉 DECLINE/DRY)
-- **P2**: 33.4% (Current) vs 36.8% (24h Avg) | **7d Baseline Delta**: -66.6% (📉 DECLINE/DRY)
-- **P3**: 71.7% (Current) vs 82.9% (24h Avg) | **7d Baseline Delta**: -4.4% (⚖️ STABLE)
+- **P1**: 75.4% (Current) vs 74.0% (24h Avg)
+- **P2**: 35.2% (Current) vs 36.9% (24h Avg)
+- **P3**: 71.0% (Current) vs 82.9% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -103,7 +103,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-10 02:32:22,33.95,70.86,872,484.0,354.0,411.0,1009.44,23.36,-39.2
 2026-04-10 03:03:12,33.9,70.88,874,484.0,348.0,424.0,1009.25,23.12,-39.3
 2026-04-10 03:34:22,33.8,71.16,874,484.0,348.0,406.0,1009.4,24.39,-38.8
 2026-04-10 04:05:16,33.72,71.43,874,482.0,305.0,423.0,1009.45,25.22,-39.3
@@ -111,6 +110,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-10 05:06:57,33.63,71.46,874,484.0,308.0,427.0,1009.86,25.52,-39.2
 2026-04-10 05:37:55,33.56,71.94,874,482.0,308.0,428.0,1010.01,26.43,-39.2
 2026-04-10 06:08:51,33.48,72.43,868,485.0,311.0,434.0,1010.18,26.33,-38.6
+2026-04-10 06:39:40,33.52,72.77,824,462.0,307.0,431.0,1010.68,22.28,-37.2
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
