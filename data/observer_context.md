@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-10 10:37:17
+**Generated:** 2026-04-10 11:08:08
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 10:37
+- **TIME OF AUDIT**: 11:08
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -29.6 dB (Mid-range Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
+- **EMPIRICAL PROOF**: -23.3 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.516 kPa | **24h Cycle**: 1.65 kPa | **72h Rhythm**: 1.168 kPa
+- **4h Pulse**: 1.534 kPa | **24h Cycle**: 1.643 kPa | **72h Rhythm**: 1.147 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 75.6% (Current) vs 74.1% (24h Avg) | **7d Baseline Delta**: -14.3% (📉 DECLINE/DRY)
-- **P2**: 47.7% (Current) vs 38.0% (24h Avg) | **7d Baseline Delta**: -45.0% (📉 DECLINE/DRY)
-- **P3**: 70.9% (Current) vs 81.7% (24h Avg) | **7d Baseline Delta**: -0.6% (⚖️ STABLE)
+- **P1**: 74.6% (Current) vs 73.7% (24h Avg) | **7d Baseline Delta**: -15.0% (📉 DECLINE/DRY)
+- **P2**: 49.4% (Current) vs 38.2% (24h Avg) | **7d Baseline Delta**: -46.8% (📉 DECLINE/DRY)
+- **P3**: 71.3% (Current) vs 80.9% (24h Avg) | **7d Baseline Delta**: 0.4% (⚖️ STABLE)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -103,7 +103,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-10 06:08:51,33.48,72.43,868,485.0,311.0,434.0,1010.18,26.33,-38.6
 2026-04-10 06:39:40,33.52,72.77,824,462.0,307.0,431.0,1010.68,22.28,-37.2
 2026-04-10 07:10:40,33.51,73.07,834,479.0,296.0,419.0,1011.32,23.02,-37.1
 2026-04-10 07:41:28,33.63,72.96,771,482.0,275.0,437.0,1011.84,23.25,-35.8
@@ -111,6 +110,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-10 09:34:42,33.58,69.06,740,475.0,259.0,421.0,1012.81,28.41,-31.0
 2026-04-10 10:05:41,33.68,67.9,759,501.0,268.0,422.0,1012.81,27.88,-30.5
 2026-04-10 10:36:33,33.83,71.25,685,484.0,266.0,421.0,1012.57,24.87,-29.6
+2026-04-10 11:07:50,33.99,71.08,693,486.0,265.0,422.0,1012.2,22.65,-23.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
