@@ -1,44 +1,44 @@
 {
-  "timestamp": "2026-04-11T12:31:53.322968",
+  "timestamp": "2026-04-11T13:02:46.363228",
   "sensors": {
-    "timestamp": "2026-04-11 12:31:47",
-    "temp": 0.0,
-    "hum": 0.0,
-    "light": 729,
-    "p1": 471,
-    "p2": 236,
-    "p3": 473,
-    "press": 0.0,
-    "gas": 0.0,
-    "db": -30.8
+    "timestamp": "2026-04-11 13:02:40",
+    "temp": 34.16,
+    "hum": 68.19,
+    "light": 725,
+    "p1": 472,
+    "p2": 233,
+    "p3": 446,
+    "press": 1009.54,
+    "gas": 6.35,
+    "db": -30.6
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 78.5,
+      "moisture_pct": 78.2,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 59.1,
+      "moisture_pct": 59.9,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 57.3,
+      "moisture_pct": 65.0,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 0.611
+    "vpd_kpa": 1.707
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_060435.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_111330.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-11T12:01:22.669420",
+      "timestamp": "2026-04-11T12:32:06.590978",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,11 +47,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_130519.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-10/garden_131131.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_002423.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_123154.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_123154.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_002423.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg"
       },
       "frame_sequence": [
         {
@@ -59,62 +60,68 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-07/garden_130415.jpg"
         },
         {
-          "label": "T-4",
+          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-08/garden_132622.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_130519.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-10/garden_131131.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_002423.jpg"
         },
         {
-          "label": "CURRENT",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_120113.jpg"
+        },
+        {
+          "label": "CURRENT",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_123154.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-11 12:01:17",
+        "timestamp": "2026-04-11 12:31:57",
         "model": "Garden Botanical Observer v2.4",
         "plant_audit": {
-          "p1_string_of_nickels": {
-            "physical_facts": "Yellow pot. Foliage remains dense and turgid. No significant leaf drop observed.",
-            "explanatory_transformations": "Stable throughout the 5-day sequence. The plant maintains its structural integrity despite the surrounding biome's VPD fluctuations.",
-            "visual_health_inference": "Resilient. The consistent turgidity suggests the plant is successfully managing its internal water potential."
+          "p1": {
+            "status": "Stable",
+            "physical_facts": "Dense foliage, turgid leaves, yellow pot container.",
+            "explanatory_transformations": "Maintained consistent volume throughout the 5-day sequence; no significant leaf drop or chlorosis observed.",
+            "visual_health_reasoning": "Alignment with previous reports; turgidity indicates successful moisture regulation."
           },
-          "p2_mexican_mint": {
-            "physical_facts": "Black pot (shared). Two primary leaves remain; smaller central growth is present.",
-            "explanatory_transformations": "The leaf margin dehydration noted in previous reports has stabilized. No further necrosis progression observed since T-4.",
-            "visual_health_inference": "Recovering. The lack of further tissue degradation indicates that the current moisture levels are sufficient to prevent further stress."
+          "p2": {
+            "status": "Stressed",
+            "physical_facts": "Two primary leaves, central positioning, black pot.",
+            "explanatory_transformations": "Leaf margins show persistent dehydration compared to the T-5 baseline; no recovery despite soil surface moisture.",
+            "visual_health_reasoning": "Continued leaf margin necrosis and drooping; confirms root-zone compaction or sensor-data divergence."
           },
-          "p3_pothos": {
-            "physical_facts": "Black pot. Two leaves present. White rabbit (5cm) anchor remains in position.",
-            "explanatory_transformations": "The tip necrosis on the larger leaf has remained static since the baseline. No new lesions or yellowing observed.",
-            "visual_health_inference": "Stable. The plant is in a maintenance phase; the static nature of the necrosis suggests the stressor has been mitigated."
+          "p3": {
+            "status": "Stable",
+            "physical_facts": "Two leaves, white rabbit anchor (5cm), black pot.",
+            "explanatory_transformations": "Leaf posture remains consistent relative to the rabbit anchor; tip necrosis on the left leaf is static.",
+            "visual_health_reasoning": "Stable, though mild VPD stress persists; no progression of necrosis."
           },
-          "p4_silver_guest": {
-            "physical_facts": "Black pot (shared with p2). Smallest specimen located near the rim.",
-            "explanatory_transformations": "Growth remains slow but consistent. No signs of wilting or chlorosis.",
-            "visual_health_inference": "Stable. The plant is acclimated to the current environment."
+          "p4": {
+            "status": "Stressed",
+            "physical_facts": "Smallest specimen, near rim, black pot.",
+            "explanatory_transformations": "Growth remains stunted; no new leaf development observed over the 5-day period.",
+            "visual_health_reasoning": "Lack of apical growth and small stature indicate ongoing environmental stress."
           }
         },
         "biome_observations": {
-          "soil_surface": "Soil moisture appears consistent across all pots. White particulate matter (perlite/top-dressing) remains undisturbed.",
-          "desk_surface": "No debris or external contaminants noted. Cables are organized and clear of the foliage."
+          "soil_surface": "White particulate matter (perlite/additive) is present and stable across all pots, confirming user care actions.",
+          "desk_surface": "Clear of debris; no fungal growth or moisture leakage detected."
         },
-        "temporal_deltas": {
-          "summary": "The sequence from Earliest to Current shows a transition from active stress management to a state of equilibrium. The most significant change was the stabilization of p2's leaf margins following the intervention."
-        },
-        "visual_health_inference": "The biome is currently in a 'Rested State'. The lack of rapid changes in leaf posture or color indicates that the current environmental parameters are within the tolerance range of all four specimens.",
-        "anomalies": "None. The white material on the soil is confirmed as a successful outcome of user care (top-dressing/perlite) and is not a fungal anomaly.",
-        "narrative_description": "The botanical collection has achieved a period of stability. By auditing the sequence from the earliest image to the current, it is evident that the previous stressors\u2014specifically the leaf margin dehydration in p2\u2014have been halted. The plants are currently maintaining their physiological status, with no new signs of distress or rapid growth. The biome is well-regulated, and the current care regimen is effective.",
-        "confidence": 0.98
+        "temporal_deltas": "The sequence shows a 5-day progression where p2 and p4 remain in a state of arrested development, while p1 and p3 maintain structural integrity.",
+        "visual_health_inference": "The biome is currently experiencing a 'stasis' phase. While p1 and p3 are resilient, p2 and p4 are failing to thrive, likely due to the previously identified hardware/sensor issues affecting irrigation accuracy.",
+        "anomalies": "None detected beyond the previously noted sensor failure (A5) and associated plant stress.",
+        "narrative_description": "I have audited the sequence from T-5 to Current. The white material on the soil surface is confirmed as a successful user-applied additive. p1 and p3 show high resilience. p2 and p4 continue to exhibit signs of physiological stress, specifically leaf margin dehydration and lack of new growth. The sensor failure at A5 remains the primary bottleneck for p2/p4 recovery.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
