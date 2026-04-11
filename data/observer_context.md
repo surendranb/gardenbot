@@ -1,5 +1,5 @@
 # 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-11 21:07:30
+**Generated:** 2026-04-11 21:38:21
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,11 +21,11 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 21:07
+- **TIME OF AUDIT**: 21:38
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: UNKNOWN
-- **EMPIRICAL PROOF**: N/A
-- **BIOME STATE**: REST (Night/Stagnant Recovery)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
+- **EMPIRICAL PROOF**: -25.3 dB (Maximum Convection)
+- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 
 ## 📖 2. PRIOR INSIGHTS & RECOMMENDATIONS (Last 3 Reports)
@@ -50,12 +50,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.79 kPa | **24h Cycle**: 1.523 kPa | **72h Rhythm**: 1.43 kPa
+- **4h Pulse**: 1.841 kPa | **24h Cycle**: 1.558 kPa | **72h Rhythm**: 1.441 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 72.1% (Current) vs 73.7% (24h Avg) | **7d Baseline Delta**: -27.9% (📉 DECLINE/DRY)
-- **P2**: 58.5% (Current) vs 58.7% (24h Avg) | **7d Baseline Delta**: -22.2% (📉 DECLINE/DRY)
-- **P3**: 66.4% (Current) vs 72.3% (24h Avg) | **7d Baseline Delta**: -16.8% (📉 DECLINE/DRY)
+- **P1**: 71.4% (Current) vs 73.7% (24h Avg) | **7d Baseline Delta**: -28.6% (📉 DECLINE/DRY)
+- **P2**: 58.6% (Current) vs 58.6% (24h Avg) | **7d Baseline Delta**: -22.1% (📉 DECLINE/DRY)
+- **P3**: 66.2% (Current) vs 72.0% (24h Avg) | **7d Baseline Delta**: -16.1% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -105,7 +105,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-11 15:38:01,34.81,66.29,816,486.0,236.0,426.0,1007.46,6.31,-29.4
 2026-04-11 16:09:04,34.8,63.31,818,475.0,239.0,421.0,1007.48,22.82,-37.4
 2026-04-11 18:31:47,34.38,68.57,783,494.0,232.0,430.0,1008.68,22.77,0.0
 2026-04-11 19:03:34,34.6,67.91,863,491.0,238.0,444.0,1009.2,23.99,-36.2
@@ -113,6 +112,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-11 20:05:16,34.57,67.07,863,490.0,238.0,440.0,1010.04,23.12,-37.7
 2026-04-11 20:36:11,34.62,66.06,787,494.0,242.0,445.0,1010.44,20.49,-37.1
 2026-04-11 21:07:07,34.54,67.14,787,493.0,237.0,445.0,1010.71,19.53,0.0
+2026-04-11 21:38:04,31.6,53.87,790,507.0,236.0,445.0,1010.86,15.11,-25.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
