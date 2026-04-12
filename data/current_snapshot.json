@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-04-13T00:36:47.800662",
+  "timestamp": "2026-04-13T01:07:38.212644",
   "sensors": {
-    "timestamp": "2026-04-13 00:36:42",
+    "timestamp": "2026-04-13 01:07:32",
     "temp": 34.55,
     "hum": 100.0,
     "light": 839,
-    "p1": 526,
+    "p1": 523,
     "p2": 239,
-    "p3": 395,
+    "p3": 401,
     "press": 652.01,
     "gas": 0.0,
-    "db": -39.0
+    "db": -39.1
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 61.7,
+      "moisture_pct": 62.6,
       "is_dry": false
     },
     "p2": {
@@ -22,7 +22,7 @@
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 79.5,
+      "moisture_pct": 77.8,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg",
-      "previous": null,
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-13T00:06:08.311243",
+      "timestamp": "2026-04-13T00:37:00.814949",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -46,11 +46,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-10/garden_131131.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_130247.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-12/garden_131439.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_003648.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_003648.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_130519.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-12/garden_131439.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg"
       },
       "frame_sequence": [
         {
@@ -58,56 +59,64 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-09/garden_130519.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-10/garden_131131.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_130247.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-12/garden_131439.jpg"
         },
         {
-          "label": "CURRENT",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_000551.jpg"
+        },
+        {
+          "label": "CURRENT",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_003648.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-13 00:05:55",
+        "timestamp": "2026-04-13 00:36:52",
         "model": "Garden Botanical Observer v2.4",
         "plant_audit": {
           "p1_string_of_nickels": {
-            "physical_facts": "Yellow pot, dense foliage, turgid leaves, no significant change in leaf count.",
-            "explanatory_transformations": "Maintained stable posture throughout the 5-day sequence; no signs of wilting or chlorosis.",
-            "visual_health_inference": "Stable. The plant shows consistent turgidity, indicating successful water uptake and resilience to the current VPD environment."
+            "physical_facts": "Stable leaf count; foliage remains turgid and oriented toward the light source.",
+            "explanatory_transformations": "Maintained consistent posture throughout the 5-day sequence; no significant wilting or growth spurts observed.",
+            "visual_health_inference": "Stable. The plant shows high resilience to the current VPD environment."
           },
           "p2_mexican_mint": {
-            "physical_facts": "Black pot, two primary wide leaves, one smaller pair emerging. Leaf margins show slight dehydration.",
-            "explanatory_transformations": "The leaf margin necrosis observed at T-3 has remained static; no further progression of tissue death noted.",
-            "visual_health_inference": "Stressed but stable. The lack of progression in necrosis suggests the plant has reached a temporary equilibrium despite the sensor failure."
+            "physical_facts": "Two primary leaves present; slight drooping noted at the margins.",
+            "explanatory_transformations": "The leaf margin dehydration observed in the baseline has stabilized but remains present; no further necrosis progression.",
+            "visual_health_inference": "Stressed. Visual evidence of marginal dehydration persists despite the sensor's reported moisture levels."
           },
           "p3_pothos": {
-            "physical_facts": "Black pot, two leaves, white rabbit scale anchor present. Tip necrosis on one leaf.",
-            "explanatory_transformations": "The lesion on the leaf tip has not expanded since the initial observation. The rabbit anchor remains in a fixed position.",
-            "visual_health_inference": "Stable. The necrosis is localized and non-progressive, suggesting the plant is coping with the ambient VPD."
+            "physical_facts": "Two leaves present; white rabbit anchor (5cm) remains in position.",
+            "explanatory_transformations": "The lesion on the primary leaf has remained static since the T-4 baseline; no expansion of necrotic tissue.",
+            "visual_health_inference": "Stable. The plant is holding its current state; the lesion is not actively spreading."
           },
           "p4_silver_guest": {
-            "physical_facts": "Black pot (shared with p2), small sprout near the rim.",
-            "explanatory_transformations": "The sprout has maintained its position and color intensity over the 5-day period.",
-            "visual_health_inference": "Stable. No signs of etiolation or desiccation."
+            "physical_facts": "Small sprout near the rim; minimal leaf surface area.",
+            "explanatory_transformations": "Growth remains slow and steady; no significant change in leaf orientation or size over the 5-day period.",
+            "visual_health_inference": "Stable. The plant is in a slow-growth phase, typical for its size and current light conditions."
           }
         },
         "biome_observations": {
-          "soil_surface": "Consistent distribution of white perlite/debris across all pots. No fungal blooms or surface crusting detected.",
-          "desk_surface": "Clear of debris; no signs of water leakage or environmental contamination."
+          "soil_surface": "Consistent presence of white particulate matter (perlite/top-dressing) across all pots.",
+          "desk_surface": "No debris or fungal growth detected; environment remains clean.",
+          "incidental_growth": "None observed."
         },
-        "temporal_deltas": "The sequence shows a high degree of morphological stability. No significant growth or decline events occurred between T-3 and CURRENT.",
-        "visual_health_inference": "The biome is in a 'Rested State'. The lack of change across all specimens indicates that the current care regimen is successfully maintaining the status quo.",
-        "anomalies": "None detected. The sensor in p2 remains the only hardware-related concern.",
-        "narrative_description": "I have performed a chronological audit of the provided image sequence. First, I cataloged the baseline state of each plant, then compared the temporal progression of leaf morphology and soil conditions. My validation confirms that the plants are in a state of stasis. The 'Beyond-Inventory' check confirms no incidental growth or biome anomalies. The plants are currently resilient to the VPD stress previously identified.",
-        "confidence": 0.98
+        "temporal_deltas": {
+          "summary": "The biome has remained in a state of 'Rested Stasis' over the last 5 days. No significant physiological shifts or rapid growth events occurred.",
+          "checker_validation": "Validated: The lack of change in the rabbit anchor position and leaf orientation confirms the stability of the environment."
+        },
+        "visual_health_inference": "The biome is currently in a stable, albeit slightly stressed, state due to the persistent VPD. The lack of rapid change is a positive indicator of acclimation.",
+        "anomalies": "None. The white particulate matter on the soil is consistent with previous maintenance and is not a stress indicator.",
+        "narrative_description": "The garden is maintaining a steady state. p1 continues to be the most robust, while p2 and p3 show signs of environmental stress that have not worsened over the observation window. The biome is stable, and no immediate intervention is required beyond continued monitoring of the VPD.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
