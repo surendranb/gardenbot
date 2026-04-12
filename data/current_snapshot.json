@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-04-12T05:22:51.808020",
+  "timestamp": "2026-04-12T05:53:40.018005",
   "sensors": {
-    "timestamp": "2026-04-12 05:22:41",
-    "temp": 33.95,
-    "hum": 68.15,
-    "light": 870,
-    "p1": 499,
-    "p2": 234,
-    "p3": 475,
-    "press": 1008.68,
-    "gas": 40.08,
-    "db": 0.0
+    "timestamp": "2026-04-12 05:53:34",
+    "temp": 33.87,
+    "hum": 68.36,
+    "light": 868,
+    "p1": 498,
+    "p2": 232,
+    "p3": 474,
+    "press": 1008.93,
+    "gas": 38.85,
+    "db": -37.3
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 69.9,
+      "moisture_pct": 70.2,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 59.6,
+      "moisture_pct": 60.2,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 56.7,
+      "moisture_pct": 57.0,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 1.689
+    "vpd_kpa": 1.671
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
