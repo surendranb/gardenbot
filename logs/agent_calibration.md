@@ -1,0 +1,15 @@
+# 🧠 Agent Calibration Ledger
+
+This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to audit its previous reasoning against biological outcomes.
+
+## 📈 Learning History
+
+| Date | Type | Previous Hypothesis | Biological Outcome | Calibration Update |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-04-12 | Baseline | N/A | Biome in Maintenance | System initialized with Self-Learning protocol. |
+
+## 🛠️ Learned Heuristics
+
+- **H-01**: Prioritize **Compositional Truth** (visual turgidity/structural integrity) during high-VPD events over raw moisture alerts.
+- **H-02**: Cross-reference Fan status (Acoustic) with Gas/VOC levels to verify transpiration pressure logic.
+- **H-03**: Treat "White material on soil" as confirmed human amendment (perlite/powder) based on April 5-10 logs.

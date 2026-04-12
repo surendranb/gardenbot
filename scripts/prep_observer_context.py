@@ -19,6 +19,7 @@ VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 HUMAN_ACTIONS_PATH = os.path.join(BASE_DIR, "data/human_actions.jsonl")
 VISION_LEDGER_MD_PATH = os.path.join(BASE_DIR, "logs/vision_ledger.md")
 VISION_CONTEXT_PATH = os.path.join(BASE_DIR, "data/vision_context.json")
+CALIBRATION_PATH = os.path.join(BASE_DIR, "logs/agent_calibration.md")
 OUTPUT_PATH = os.path.join(BASE_DIR, "data/observer_context.md")
 
 # Acoustic Hardware Signatures (Deterministic DB Bins)
@@ -149,6 +150,14 @@ def get_temporal_insights(n=3):
     except: pass
     return "\n\n".join(insights) if insights else "No historical insights."
 
+def get_agent_calibration():
+    try:
+        if os.path.exists(CALIBRATION_PATH):
+            with open(CALIBRATION_PATH, 'r') as f:
+                return f.read()
+    except: pass
+    return "No calibration data available."
+
 def get_biological_deltas(m_df):
     if m_df is None or m_df.empty: return "No metric data."
     m_df['timestamp'] = pd.to_datetime(m_df['timestamp'])
@@ -235,15 +244,18 @@ def main():
     dynamic_world = get_dynamic_world_model(t_df)
     human_actions = get_human_context()
     prior_insights = get_temporal_insights(3)
+    calibration = get_agent_calibration()
     deltas = get_biological_deltas(m_df)
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    content = "# 📝 SILICA v2.2: Holistic Biological Context\n"
+    content = "# 📝 SILICA v3.0: High-Fidelity Biological Context\n"
     content += f"**Generated:** {timestamp}\n\n"
     content += "## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n"
     content += f"{dynamic_world}\n\n"
-    content += "## 📖 2. PRIOR INSIGHTS & RECOMMENDATIONS (Last 3 Reports)\n"
+    content += "## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS\n"
+    content += f"{calibration}\n\n"
+    content += "## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS\n"
     content += f"{prior_insights}\n\n"
     content += "## 🛠️ 3. HUMAN FEEDBACK LOOP (Recent Actions)\n"
     content += f"{human_actions}\n\n"

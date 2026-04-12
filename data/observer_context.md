@@ -1,5 +1,5 @@
-# 📝 SILICA v2.2: Holistic Biological Context
-**Generated:** 2026-04-12 06:55:36
+# 📝 SILICA v3.0: High-Fidelity Biological Context
+**Generated:** 2026-04-12 07:23:44
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,14 +21,32 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 06:55
+- **TIME OF AUDIT**: 07:23
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: UNKNOWN
 - **EMPIRICAL PROOF**: N/A
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 
-## 📖 2. PRIOR INSIGHTS & RECOMMENDATIONS (Last 3 Reports)
+## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS
+# 🧠 Agent Calibration Ledger
+
+This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to audit its previous reasoning against biological outcomes.
+
+## 📈 Learning History
+
+| Date | Type | Previous Hypothesis | Biological Outcome | Calibration Update |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-04-12 | Baseline | N/A | Biome in Maintenance | System initialized with Self-Learning protocol. |
+
+## 🛠️ Learned Heuristics
+
+- **H-01**: Prioritize **Compositional Truth** (visual turgidity/structural integrity) during high-VPD events over raw moisture alerts.
+- **H-02**: Cross-reference Fan status (Acoustic) with Gas/VOC levels to verify transpiration pressure logic.
+- **H-03**: Treat "White material on soil" as confirmed human amendment (perlite/powder) based on April 5-10 logs.
+
+
+## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS
 ### Report: 🪴 Garden Observer Report - 2026-04-03 06:03 PM IST
 * **p1 (String of Nickels):** Healthy - Alignment (sensor shows 85.3% moisture adequate and visuals show stable, turgid growth) ➔ **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes
 * **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 82.7% moisture adequate but visuals show leaf margin dehydration and drooping) ➔ **Advice:** HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.
@@ -50,12 +68,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 1.69 kPa | **24h Cycle**: 1.639 kPa | **72h Rhythm**: 1.598 kPa
+- **4h Pulse**: 1.673 kPa | **24h Cycle**: 1.64 kPa | **72h Rhythm**: 1.598 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 70.4% (Current) vs 72.1% (24h Avg) | **7d Baseline Delta**: -29.6% (📉 DECLINE/DRY)
-- **P2**: 59.6% (Current) vs 58.2% (24h Avg) | **7d Baseline Delta**: -20.5% (📉 DECLINE/DRY)
-- **P3**: 58.8% (Current) vs 64.8% (24h Avg) | **7d Baseline Delta**: -22.7% (📉 DECLINE/DRY)
+- **P1**: 70.3% (Current) vs 72.0% (24h Avg) | **7d Baseline Delta**: -29.7% (📉 DECLINE/DRY)
+- **P2**: 59.9% (Current) vs 58.3% (24h Avg) | **7d Baseline Delta**: -20.5% (📉 DECLINE/DRY)
+- **P3**: 58.3% (Current) vs 64.4% (24h Avg) | **7d Baseline Delta**: -24.9% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -105,7 +123,6 @@
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-12 03:19:02,34.07,67.7,870,500.0,235.0,460.0,1008.39,31.71,0.0
 2026-04-12 03:49:58,34.06,67.59,870,500.0,240.0,461.0,1008.29,31.68,-9.0
 2026-04-12 04:20:54,34.03,67.89,870,501.0,232.0,462.0,1008.28,34.4,-39.2
 2026-04-12 04:51:49,33.92,68.18,870,499.0,236.0,464.0,1008.47,36.35,0.0
@@ -113,6 +130,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-12 05:53:34,33.87,68.36,868,498.0,232.0,474.0,1008.93,38.85,-37.3
 2026-04-12 06:24:22,33.82,68.44,849,494.0,232.0,474.0,1009.24,35.42,0.0
 2026-04-12 06:55:15,33.69,68.48,815,488.0,231.0,472.0,1009.77,34.06,0.0
+2026-04-12 07:23:20,33.7,69.63,777,504.0,227.0,473.0,1010.18,29.76,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
