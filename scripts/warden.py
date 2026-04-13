@@ -161,7 +161,7 @@ def find_active_arduino_port():
         try:
             print(f"  Checking {port}...")
             ser = serial.Serial(port, 9600, timeout=3)
-            time.sleep(2) # Wait for Arduino reset
+            time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
             ser.reset_input_buffer()
             
             # Read a few lines to check for valid data format
@@ -184,7 +184,7 @@ def capture_data():
     
     try:
         ser = serial.Serial(port, 9600, timeout=5)
-        time.sleep(2)
+        time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         for _ in range(5): ser.readline() # Flush
         
@@ -206,6 +206,12 @@ def capture_data():
                         "gas": float(parts[7]),
                         "db": capture_volume() or 0.0
                     }
+                    
+                    # Garbage Detection Logic (BME680 Saturation Signature)
+                    if data["press"] == 652.01 and data["hum"] == 100.0:
+                        print("Warden: HARDWARE INTERFERENCE DETECTED (BME680 Saturation Signature 652/100). Telemetry may be disturbed.")
+                        # We still log it, but the Warden persona is now aware.
+                    
                     ser.close()
                     
                     new_df = pd.DataFrame([data])
@@ -324,7 +330,7 @@ def collect_once():
     print(f"Connecting to {port} for calibration capture...")
     try:
         ser = serial.Serial(port, 9600, timeout=5)
-        time.sleep(2) # Wait for reset
+        time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         
         # Flush a few lines to get fresh data

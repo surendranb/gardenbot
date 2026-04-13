@@ -11,6 +11,14 @@ log() {
 
 log "Starting Pulse..."
 
+# 0. Pre-flight Check (Hardware Presence)
+if [ ! -e "/dev/cu.usbmodem1201" ]; then
+    log "CRITICAL: Arduino port /dev/cu.usbmodem1201 not found. Aborting sensor capture."
+    # We still run sync to ensure logs are pushed
+    bash scripts/sync.sh >> logs/sync.log 2>&1
+    exit 1
+fi
+
 # 1. Warden (Sensors)
 ./.venv/bin/python3 scripts/warden.py >> logs/cron.log 2>&1
 
