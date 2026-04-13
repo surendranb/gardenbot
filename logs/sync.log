@@ -20095,3 +20095,50 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.26 seconds
 2026-04-13 20:17:38 Staging all assets...
+2026-04-13 20:17:39 Staging changes...
+[main 51d4c39] GardenOS Sync: 2026-04-13 20:17:39
+ 9 files changed, 82 insertions(+), 21 deletions(-)
+ create mode 100644 archive/2026-04-13/garden_201606.jpg
+2026-04-13 20:17:39 Pushing to GitHub...
+ssh: Could not resolve hostname github.com: nodename nor servname provided, or not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-04-13 20:17:39 Push failed; pulling remote and retrying.
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+ssh: Could not resolve hostname github.com: nodename nor servname provided, or not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-04-13 20:17:39 Sync Failed even after rebasing; please inspect the repo.
+2026-04-13 20:50:08 --- Sync Start: 2026-04-13 20:50:08 ---
+2026-04-13 20:50:08 Generating gallery metadata...
+2026-04-13 20:50:09 Updating latest report pointer...
+2026-04-13 20:50:09 Latest report updated to: logs/reports/report_20260412_0336.md
+2026-04-13 20:50:09 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/observer_context.md
+INFO    -  Documentation built in 0.26 seconds
+2026-04-13 20:50:12 Staging all assets...
