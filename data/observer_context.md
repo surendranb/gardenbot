@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-13 19:45:28
+**Generated:** 2026-04-13 20:17:38
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 19:45
+- **TIME OF AUDIT**: 20:17
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
-- **EMPIRICAL PROOF**: -17.7 dB (Maximum Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
+- **EMPIRICAL PROOF**: -30.2 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 
@@ -68,12 +68,12 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.23 kPa | **24h Cycle**: 0.545 kPa | **72h Rhythm**: 1.109 kPa
+- **4h Pulse**: 0.23 kPa | **24h Cycle**: 0.508 kPa | **72h Rhythm**: 1.097 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 55.2% (Current) vs 61.2% (24h Avg)
-- **P2**: 71.7% (Current) vs 68.0% (24h Avg)
-- **P3**: 78.5% (Current) vs 78.6% (24h Avg)
+- **P1**: 54.9% (Current) vs 61.2% (24h Avg) | **7d Baseline Delta**: -45.1% (📉 DECLINE/DRY)
+- **P2**: 71.6% (Current) vs 68.1% (24h Avg) | **7d Baseline Delta**: 44.7% (📈 GROWTH/WET)
+- **P3**: 78.9% (Current) vs 78.5% (24h Avg) | **7d Baseline Delta**: 27.0% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -118,7 +118,6 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-13 16:06:39,34.55,100.0,806,537.0,195.0,408.0,652.01,0.0,-21.6
 2026-04-13 16:37:29,34.55,100.0,766,552.0,194.0,409.0,652.01,0.0,-29.6
 2026-04-13 17:08:37,34.34,66.0,793,553.0,194.0,377.0,1007.95,3.91,-30.0
 2026-04-13 17:39:43,34.55,100.0,796,552.0,193.0,409.0,652.01,0.0,-24.4
@@ -126,6 +125,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-13 18:43:17,34.55,100.0,832,559.0,191.0,385.0,652.01,0.0,-36.6
 2026-04-13 19:14:29,34.55,100.0,836,558.0,190.0,386.0,652.01,0.0,-37.9
 2026-04-13 19:45:16,34.55,100.0,805,536.0,192.0,393.0,652.01,0.0,-17.7
+2026-04-13 20:16:00,34.55,100.0,806,545.0,199.0,396.0,652.01,0.0,-30.2
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
