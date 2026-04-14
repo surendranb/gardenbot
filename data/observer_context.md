@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-14 10:17:49
+**Generated:** 2026-04-14 10:48:36
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 10:17
+- **TIME OF AUDIT**: 10:48
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -30.3 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.1 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 
@@ -68,12 +68,12 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.0 kPa | **24h Cycle**: 0.184 kPa | **72h Rhythm**: 0.802 kPa
+- **4h Pulse**: 0.0 kPa | **24h Cycle**: 0.147 kPa | **72h Rhythm**: 0.798 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 51.5% (Current) vs 53.8% (24h Avg) | **7d Baseline Delta**: -16.9% (📉 DECLINE/DRY)
-- **P2**: 53.2% (Current) vs 70.7% (24h Avg) | **7d Baseline Delta**: -10.5% (📉 DECLINE/DRY)
-- **P3**: 75.1% (Current) vs 77.2% (24h Avg) | **7d Baseline Delta**: -14.9% (📉 DECLINE/DRY)
+- **P1**: 51.6% (Current) vs 53.7% (24h Avg) | **7d Baseline Delta**: -23.9% (📉 DECLINE/DRY)
+- **P2**: 52.3% (Current) vs 69.9% (24h Avg) | **7d Baseline Delta**: -18.2% (📉 DECLINE/DRY)
+- **P3**: 73.7% (Current) vs 76.9% (24h Avg) | **7d Baseline Delta**: -19.2% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -126,7 +126,6 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-14 06:40:27,34.55,100.0,813,553.0,244.0,407.0,652.01,0.0,-39.3
 2026-04-14 07:11:14,34.55,100.0,798,553.0,244.0,402.0,652.01,0.0,-37.7
 2026-04-14 07:42:44,34.55,100.0,767,556.0,252.0,404.0,652.01,0.0,0.0
 2026-04-14 08:13:47,34.55,100.0,766,558.0,254.0,410.0,652.01,0.0,-30.2
@@ -134,6 +133,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-14 09:15:43,34.55,100.0,798,561.0,263.0,413.0,652.01,0.0,-26.3
 2026-04-14 09:46:36,34.55,100.0,755,566.0,261.0,414.0,652.01,0.0,-30.1
 2026-04-14 10:17:30,34.55,100.0,762,566.0,269.0,423.0,652.01,0.0,-30.3
+2026-04-14 10:48:21,34.55,100.0,769,551.0,269.0,445.0,652.01,0.0,-30.1
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
