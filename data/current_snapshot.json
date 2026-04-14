@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-15T00:10:10.545574",
+  "timestamp": "2026-04-15T00:40:58.833289",
   "sensors": {
-    "timestamp": "2026-04-15 00:10:04",
+    "timestamp": "2026-04-15 00:40:53",
     "temp": 34.55,
     "hum": 100.0,
-    "light": 797,
-    "p1": 515,
-    "p2": 252,
-    "p3": 424,
+    "light": 799,
+    "p1": 506,
+    "p2": 259,
+    "p3": 426,
     "press": 652.01,
     "gas": 0.0,
-    "db": -39.4
+    "db": -39.2
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 65.0,
+      "moisture_pct": 67.8,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 54.4,
+      "moisture_pct": 52.3,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 71.2,
+      "moisture_pct": 70.7,
       "is_dry": false
     }
   },
@@ -33,7 +33,7 @@
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
-      "anchor": null,
+      "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_001011.jpg",
       "previous": null,
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
