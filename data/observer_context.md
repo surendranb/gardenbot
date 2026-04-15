@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-16 01:05:03
+**Generated:** 2026-04-16 01:35:52
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,10 +21,10 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 01:05
+- **TIME OF AUDIT**: 01:35
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -39.2 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -39.3 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 
@@ -73,9 +73,9 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 - **4h Pulse**: 0.0 kPa | **24h Cycle**: 0.0 kPa | **72h Rhythm**: 0.096 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 91.4% (Current) vs 80.3% (24h Avg) | **7d Baseline Delta**: 26.1% (📈 GROWTH/WET)
-- **P2**: 60.8% (Current) vs 55.4% (24h Avg) | **7d Baseline Delta**: 19.3% (📈 GROWTH/WET)
-- **P3**: 76.8% (Current) vs 74.0% (24h Avg) | **7d Baseline Delta**: 2.4% (⚖️ STABLE)
+- **P1**: 91.4% (Current) vs 80.8% (24h Avg) | **7d Baseline Delta**: 27.6% (📈 GROWTH/WET)
+- **P2**: 62.9% (Current) vs 55.9% (24h Avg) | **7d Baseline Delta**: 22.8% (📈 GROWTH/WET)
+- **P3**: 76.6% (Current) vs 74.1% (24h Avg) | **7d Baseline Delta**: 6.2% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
@@ -120,7 +120,6 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-15 21:24:00,34.55,100.0,807,429.0,247.0,400.0,652.01,0.0,-31.0
 2026-04-15 21:54:48,34.55,100.0,818,429.0,247.0,402.0,652.01,0.0,-27.4
 2026-04-15 22:25:33,34.55,100.0,818,434.0,242.0,407.0,652.01,0.0,-30.7
 2026-04-15 23:00:15,34.55,100.0,851,430.0,248.0,407.0,652.01,0.0,-38.6
@@ -128,6 +127,7 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 2026-04-16 00:02:28,34.55,100.0,852,428.0,244.0,405.0,652.01,0.0,-39.2
 2026-04-16 00:33:43,34.55,100.0,830,428.0,174.0,404.0,652.01,0.0,-37.2
 2026-04-16 01:04:32,34.55,100.0,837,430.0,190.0,405.0,652.01,0.0,-39.2
+2026-04-16 01:35:34,34.55,100.0,837,429.0,188.0,406.0,652.01,0.0,-39.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
