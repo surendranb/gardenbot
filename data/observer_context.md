@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-15 12:09:17
+**Generated:** 2026-04-15 12:40:16
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,7 +21,7 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 12:09
+- **TIME OF AUDIT**: 12:40
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.8 dB (Baseline Floor)
@@ -70,12 +70,12 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.0 kPa | **24h Cycle**: 0.0 kPa | **72h Rhythm**: 0.253 kPa
+- **4h Pulse**: 0.0 kPa | **24h Cycle**: 0.0 kPa | **72h Rhythm**: 0.251 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 65.9% (Current) vs 64.4% (24h Avg) | **7d Baseline Delta**: -9.9% (⚖️ STABLE)
-- **P2**: 54.3% (Current) vs 52.2% (24h Avg) | **7d Baseline Delta**: -31.7% (📉 DECLINE/DRY)
-- **P3**: 67.6% (Current) vs 68.9% (24h Avg) | **7d Baseline Delta**: -12.7% (📉 DECLINE/DRY)
+- **P1**: 65.6% (Current) vs 64.4% (24h Avg) | **7d Baseline Delta**: -10.2% (📉 DECLINE/DRY)
+- **P2**: 54.4% (Current) vs 52.3% (24h Avg) | **7d Baseline Delta**: -31.6% (📉 DECLINE/DRY)
+- **P3**: 67.3% (Current) vs 68.9% (24h Avg) | **7d Baseline Delta**: -13.0% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
