@@ -23995,3 +23995,40 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.26 seconds
 2026-04-16 04:10:26 Staging all assets...
+2026-04-16 04:10:27 Staging changes...
+[main b47b761] GardenOS Sync: 2026-04-16 04:10:27
+ 11 files changed, 159 insertions(+), 27 deletions(-)
+ create mode 100644 archive/2026-04-16/garden_041012.jpg
+ create mode 100644 logs/reports/report_20260416_0336.md
+2026-04-16 04:10:27 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   d89ff0a..b47b761  main -> main
+2026-04-16 04:10:30 Sync Successful.
+2026-04-16 04:41:14 --- Sync Start: 2026-04-16 04:41:14 ---
+2026-04-16 04:41:14 Generating gallery metadata...
+2026-04-16 04:41:14 Updating latest report pointer...
+2026-04-16 04:41:14 Latest report updated to: logs/reports/report_20260416_0336.md
+2026-04-16 04:41:14 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/observer_context.md
+INFO    -  Documentation built in 0.26 seconds
+2026-04-16 04:41:17 Staging all assets...
