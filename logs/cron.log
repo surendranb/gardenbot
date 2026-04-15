@@ -17036,3 +17036,26 @@ Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
 Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
 Synthesizing SILICA v2.2 (Corrected Logic)...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-04-15 15:45:24 [PULSE] Pulse Complete.
+2026-04-15 16:15:24 [PULSE] Starting Pulse...
+Warden: Found 4 ports on system.
+Warden: Scanning candidates: ['/dev/cu.usbmodem1201']...
+  Checking /dev/cu.usbmodem1201...
+Warden: Valid stream found on /dev/cu.usbmodem1201
+Listening to the room for 5 seconds...
+Warden: HARDWARE INTERFERENCE DETECTED (BME680 Saturation Signature 652/100). Telemetry may be disturbed.
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision context exported to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-11/garden_130247.jpg
+  Added T-5: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-12/garden_131439.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_133039.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-14/garden_132229.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_001011.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_131055.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_161555.jpg
+Inference failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Synthesizing SILICA v2.2 (Corrected Logic)...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
