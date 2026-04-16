@@ -208,11 +208,9 @@ def capture_data():
                     
                     # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
                     if data["press"] == 652.01 and data["hum"] == 100.0:
-                        print("Warden: REJECTING DATA: HARDWARE INTERFERENCE DETECTED (BME680 Saturation 652/100).")
-                        return None
+                        print("Warden: WARNING: BME680 Saturation detected (652/100). Recording partial telemetry.")
                     elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
-                        print("Warden: REJECTING DATA: BME680 I2C BUS DEAD (Reading absolute 0s).")
-                        return None
+                        print("Warden: WARNING: BME680 I2C BUS DEAD. Recording partial telemetry (Light/Moisture).")
                     
                     new_df = pd.DataFrame([data])
                     save_csv_append(new_df, RAW_CSV_PATH)
