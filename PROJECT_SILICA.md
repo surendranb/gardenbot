@@ -31,7 +31,7 @@ Project SILICA is the centralized biological and technical intelligence framewor
 To prevent I2C signal dropouts and "disturbed" telemetry, the following physical constants are mandatory:
 
 - **I2C Address**: The BME680 is hard-locked at **`0x76`**.
-- **Breadboard Orientation**: The sensor MUST be plugged **Vertically (Perpendicular)** to the power rails. Every pin must have its own isolated column number.
+- **Physical Mounting**: The sensor is directly wired/mounted (No breadboard). Ensure every pin has secure electrical contact and isolation.
 - **Boot Protocol**: A **3.0s settle delay** must be executed before I2C initialization to prevent race conditions.
 - **Loop Delay**: Production loop is set to **5.0s** to preserve the BME680 heater's lifespan.
 
