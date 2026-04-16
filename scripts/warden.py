@@ -382,6 +382,8 @@ if __name__ == "__main__":
         target_port = find_active_arduino_port()
         if target_port:
             execute_hardware_reset(target_port)
+            state["consecutive_drops"] = 0 # Reset counter after triggering recovery
+            save_warden_state(state) # Persist the reset
 
     raw = capture_data()
     metrics = compute_metrics(raw, plants)
@@ -394,5 +396,6 @@ if __name__ == "__main__":
 
     state_update = derive_hypothesis(raw, metrics, plants)
     state.update(state_update)
+    state["last_run"] = datetime.now().strftime("%Y-%m-%d %H:%M %p IST")
     save_snapshot(raw, metrics, plants, state)
     print("Warden: Run complete.")
