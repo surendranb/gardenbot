@@ -178,9 +178,13 @@ def capture_data():
                         "db": capture_volume() or 0.0
                     }
                     
-                    # Garbage Detection Logic (BME680 Saturation Signature)
+                    # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
                     if data["press"] == 652.01 and data["hum"] == 100.0:
-                        print("Warden: REJECTING DATA: HARDWARE INTERFERENCE DETECTED (BME680 Saturation Signature 652/100).")
+                        print("Warden: REJECTING DATA: HARDWARE INTERFERENCE DETECTED (BME680 Saturation 652/100).")
+                        ser.close()
+                        return None
+                    elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
+                        print("Warden: REJECTING DATA: BME680 I2C BUS DEAD (Reading absolute 0s).")
                         ser.close()
                         return None
                     
