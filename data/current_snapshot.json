@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-16T19:27:09.296767",
+  "timestamp": "2026-04-16T19:33:39.696514",
   "sensors": {
     "timestamp": "2026-04-16 19:27:03",
     "temp": 31.17,
     "hum": 56.06,
     "light": 816,
-    "p1": 452,
-    "p2": 175,
-    "p3": 407,
+    "p1": 452.0,
+    "p2": 175.0,
+    "p3": 407.0,
     "press": 1007.29,
     "gas": 16.45,
     "db": -29.6
@@ -30,11 +30,13 @@
     "vpd_kpa": 1.993
   },
   "intelligence": {
-    "hypothesis": "Telemetry stable; no immediate stress signal.",
-    "active_concerns": [],
+    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
+    "active_concerns": [
+      "missing-telemetry"
+    ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_061330.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_190307.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_191942.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
