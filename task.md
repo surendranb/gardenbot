@@ -14,3 +14,9 @@
 - `[x]` Implement Telemetry Sanitization in `prep_observer_context.py`.
 - `[x]` Inject Hardware Failure warnings into SILICA context.
 - `[x]` Enforce Visual Primacy in Reasoning Protocol.
+- `[x]` Phase 4: Deterministic Warden (v4.0) Hardening.
+    - `[x]` Wrap serial operations in `try...finally` for guaranteed release.
+    - `[x]` Replace `pd.concat` with O(1) file-append for telemetry logs.
+    - `[x]` implement Fail-Safe imports for acoustic dependencies.
+    - `[x]` Implement Atomic JSON writes (Snapshot protection).
+    - `[x]` Add "Hardware Safe Mode" threshold alerts.

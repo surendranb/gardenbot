@@ -12,7 +12,16 @@ import shutil
 import sys
 import argparse
 from datetime import datetime, timedelta
-from acoustic_warden import capture_volume
+
+# Fail-Safe Import for Acoustic Dependency
+try:
+    from acoustic_warden import capture_volume
+except ImportError:
+    print("Warden: Acoustic dependency missing. Running in environmental-only mode.")
+    def capture_volume(): return 0.0
+except Exception as e:
+    print(f"Warden: Acoustic initialization failed: {e}")
+    def capture_volume(): return 0.0
 
 # --- Configuration ---
 BASE_DIR = "/Users/surendran/.openclaw/workspace/gardenbot"
@@ -42,21 +51,33 @@ def load_warden_state():
     return state
 
 def save_warden_state(state):
-    with open(STATE_PATH, 'w') as f: json.dump(state, f, indent=2)
+    """Saves state atomically to prevent corruption on crash."""
+    temp_path = STATE_PATH + ".tmp"
+    with open(temp_path, 'w') as f:
+        json.dump(state, f, indent=2)
+    os.replace(temp_path, STATE_PATH)
+
+def save_csv_append(df, path):
+    """Appends to CSV without loading existing data (O(1) complexity)."""
+    header = not os.path.exists(path) or os.path.getsize(path) == 0
+    df.to_csv(path, mode='a', header=header, index=False)
 
 def execute_hardware_reset(port):
     """Bypasses normal flow to force a DTR reset on the Arduino."""
     print(f"Warden: Triggering HARDWARE DTR RESET on {port} due to consecutive drops.")
+    ser = None
     try:
-        ser = serial.Serial(port, 9600)
+        ser = serial.Serial(port, 9600, timeout=2)
         ser.setDTR(False)
         time.sleep(0.5)
         ser.setDTR(True)
-        ser.close()
         print("Warden: DTR Reset successful. Waiting 4.0s for Arduino boot sequence...")
         time.sleep(4.0)
     except Exception as e:
         print(f"Warden: Failed to trigger DTR reset: {e}")
+    finally:
+        if ser and ser.is_open:
+            ser.close()
 
 def get_temporal_vision_stack():
     """Retrieves paths for Anchor (6AM), Previous (T-3h), and Current photos."""
@@ -97,7 +118,7 @@ def load_vision_observation():
         print(f"Warden: Failed to load vision observation: {e}")
         return {"error": str(e)}
 
-def derive_hypothesis(raw, metrics, plants):
+def derive_hypothesis(raw, metrics, plants, **kwargs):
     """Produces a compact state update for the next run."""
     if not raw or not metrics:
         return {
@@ -119,7 +140,13 @@ def derive_hypothesis(raw, metrics, plants):
     if vpd is not None and vpd >= 3.0:
         concerns.append("high-vpd")
 
-    if dry_plants and vpd is not None and vpd >= 3.0:
+    # Hardware Safe Mode Threshold: If hardware fails for > 15 cycles (~7.5h or context dependent),
+    # escalate to a systemic failure warning.
+    consecutive_drops = kwargs.get('consecutive_drops', 0)
+    if consecutive_drops >= 5:
+        concerns.append("hardware-safe-mode")
+        hypothesis = f"CRITICAL: BME680 sensor has failed for {consecutive_drops} consecutive cycles. System entering Hardware Safe Mode. Logic Engine must prioritize Visual Ground Truth."
+    elif dry_plants and vpd is not None and vpd >= 3.0:
         hypothesis = f"Plants {', '.join(dry_plants)} are under dry-down pressure with elevated VPD."
     elif dry_plants:
         hypothesis = f"Dry-down detected in {', '.join(dry_plants)}; moisture needs follow-up."
@@ -153,6 +180,7 @@ def capture_data():
     port = find_active_arduino_port()
     if not port: return None
     
+    ser = None
     try:
         # Timeout 10s safely outlasts the 5.0s hardware loop
         ser = serial.Serial(port, 9600, timeout=10)
@@ -181,30 +209,19 @@ def capture_data():
                     # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
                     if data["press"] == 652.01 and data["hum"] == 100.0:
                         print("Warden: REJECTING DATA: HARDWARE INTERFERENCE DETECTED (BME680 Saturation 652/100).")
-                        ser.close()
                         return None
                     elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
                         print("Warden: REJECTING DATA: BME680 I2C BUS DEAD (Reading absolute 0s).")
-                        ser.close()
                         return None
                     
-                    ser.close()
-                    
                     new_df = pd.DataFrame([data])
-                    if os.path.exists(RAW_CSV_PATH):
-                        try:
-                            existing_df = pd.read_csv(RAW_CSV_PATH)
-                            final_df = pd.concat([existing_df, new_df], ignore_index=True)
-                        except pd.errors.EmptyDataError:
-                            final_df = new_df
-                    else:
-                        final_df = new_df
-                        
-                    final_df.to_csv(RAW_CSV_PATH, index=False)
+                    save_csv_append(new_df, RAW_CSV_PATH)
                     return data
-        ser.close()
     except Exception as e:
         print(f"Warden: Capture failed on {port}: {e}")
+    finally:
+        if ser and ser.is_open:
+            ser.close()
     return None
 
 def compute_metrics(raw_row, plants):
@@ -225,16 +242,7 @@ def compute_metrics(raw_row, plants):
                     metrics[f"{pid}_is_dry"] = metrics[f"{pid}_pct"] < p["dry_threshold_pct"]
         
         new_df = pd.DataFrame([metrics])
-        if os.path.exists(METRICS_CSV_PATH):
-            try:
-                existing_df = pd.read_csv(METRICS_CSV_PATH)
-                final_df = pd.concat([existing_df, new_df], ignore_index=True)
-            except pd.errors.EmptyDataError:
-                final_df = new_df
-        else:
-            final_df = new_df
-            
-        final_df.to_csv(METRICS_CSV_PATH, index=False)
+        save_csv_append(new_df, METRICS_CSV_PATH)
         return metrics
     except Exception as e:
         print(f"Warden: Metrics error: {e}")
@@ -288,7 +296,11 @@ def save_snapshot(raw, metrics, plants, state):
                 snapshot["intelligence"]["recent_visual_ledger"] = [s.strip() for s in sections[-3:] if s.strip()]
         except: pass
 
-    with open(SNAPSHOT_PATH, 'w') as f: json.dump(snapshot, f, indent=2)
+    temp_path = SNAPSHOT_PATH + ".tmp"
+    with open(temp_path, 'w') as f:
+        json.dump(snapshot, f, indent=2)
+    os.replace(temp_path, SNAPSHOT_PATH)
+    
     save_warden_state(state)
     print(f"Warden: Snapshot saved to {SNAPSHOT_PATH}")
 
@@ -394,7 +406,7 @@ if __name__ == "__main__":
     else:
         state["consecutive_drops"] = 0
 
-    state_update = derive_hypothesis(raw, metrics, plants)
+    state_update = derive_hypothesis(raw, metrics, plants, consecutive_drops=state.get("consecutive_drops", 0))
     state.update(state_update)
     state["last_run"] = datetime.now().strftime("%Y-%m-%d %H:%M %p IST")
     save_snapshot(raw, metrics, plants, state)
