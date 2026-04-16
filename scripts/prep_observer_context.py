@@ -39,6 +39,25 @@ def load_json(path):
         with open(path, 'r') as f: return json.load(f)
     except: return {}
 
+def sanitize_telemetry(df):
+    """Removes hardware failure signatures to prevent poisoning statistical windows."""
+    if df is None or df.empty: return df
+    
+    # Failure Signatures:
+    # 1. BME680 Saturation: hum=100.0, press=652.01
+    # 2. Dead Bus: temp=0.0, hum=0.0
+    # 3. Heater Stall: gas=0.0
+    mask = (
+        (df['hum'] == 100.0) | 
+        (df['press'] == 652.01) | 
+        ((df['temp'] == 0.0) & (df['hum'] == 0.0)) |
+        (df['gas'] == 0.0)
+    )
+    
+    failure_count = mask.sum()
+    clean_df = df[~mask].copy()
+    return clean_df, failure_count
+
 def get_acoustic_fan_status(db_val):
     """Determines fan state based on deterministic hardware dB clusters."""
     if db_val is None or db_val == 0.0: return "UNKNOWN", "N/A"
@@ -238,7 +257,9 @@ def main():
         return
 
     print("Synthesizing SILICA v2.2 (Corrected Logic)...")
-    t_df, m_df = load_df(TELEMETRY_PATH), load_df(METRICS_PATH)
+    t_df_raw, m_df = load_df(TELEMETRY_PATH), load_df(METRICS_PATH)
+    t_df, failure_count = sanitize_telemetry(t_df_raw)
+    
     vision = load_json(VISION_OBSERVATION_PATH)
     
     dynamic_world = get_dynamic_world_model(t_df)
@@ -249,10 +270,21 @@ def main():
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
+    health_warning = ""
+    if failure_count > 0:
+        health_warning = (
+            "### ⚠️ 1C. TELEMETRY HEALTH ALERT\n"
+            f"- **STATUS**: DEGRADED (Hardware Instability Detected)\n"
+            f"- **FAILURE SIGNATURES DETECTED**: {failure_count} points in last window.\n"
+            "- **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.\n"
+            "- **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.\n\n"
+        )
+
     content = "# 📝 SILICA v3.0: High-Fidelity Biological Context\n"
     content += f"**Generated:** {timestamp}\n\n"
     content += "## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n"
-    content += f"{dynamic_world}\n\n"
+    content += f"{dynamic_world}\n"
+    content += f"{health_warning}\n"
     content += "## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS\n"
     content += f"{calibration}\n\n"
     content += "## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS\n"
@@ -273,6 +305,7 @@ def main():
     content += "- **Acoustic Truth**: The Fan Status in Section 1 is EMPIRICAL. Use it to judge transpiration pressure.\n"
     content += "- **Action Tracking**: Reconcile Section 3 with Section 4 to see if care is working.\n"
     content += "- **Growth Velocity**: If delta in Section 4 is negative but Vision in Section 5 looks good, interpret as 'Peak Metabolism'.\n"
+    content += "- **Visual Primacy Rule**: If a sensor reports 100% humidity/0.0 VPD, but Vision (Section 5) shows dry soil or wilted leaves, disregard the sensor as a hardware stall. The images are the Ground Truth.\n"
 
     with open(OUTPUT_PATH, 'w') as f: f.write(content)
     print(f"Context saved to {OUTPUT_PATH}")

@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-16 16:29:29
+**Generated:** 2026-04-16 16:44:16
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,11 +21,17 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 16:29
+- **TIME OF AUDIT**: 16:44
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
 - **EMPIRICAL PROOF**: -21.9 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
+
+### ⚠️ 1C. TELEMETRY HEALTH ALERT
+- **STATUS**: DEGRADED (Hardware Instability Detected)
+- **FAILURE SIGNATURES DETECTED**: 236 points in last window.
+- **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
+- **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
 
 ## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS
@@ -73,57 +79,46 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.972 kPa | **24h Cycle**: 0.27 kPa | **72h Rhythm**: 0.112 kPa
+- **4h Pulse**: 1.02 kPa | **24h Cycle**: 0.297 kPa | **72h Rhythm**: 0.123 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 84.7% (Current) vs 89.3% (24h Avg) | **7d Baseline Delta**: 2.8% (⚖️ STABLE)
-- **P2**: 79.4% (Current) vs 71.1% (24h Avg) | **7d Baseline Delta**: 40.2% (📈 GROWTH/WET)
-- **P3**: 69.1% (Current) vs 74.2% (24h Avg) | **7d Baseline Delta**: -24.6% (📉 DECLINE/DRY)
+- **P1**: 84.6% (Current) vs 89.2% (24h Avg) | **7d Baseline Delta**: 2.7% (⚖️ STABLE)
+- **P2**: 79.5% (Current) vs 71.3% (24h Avg) | **7d Baseline Delta**: 40.3% (📈 GROWTH/WET)
+- **P3**: 68.8% (Current) vs 74.0% (24h Avg) | **7d Baseline Delta**: -24.9% (📉 DECLINE/DRY)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-04-16 16:29:21",
+  "timestamp": "2026-04-16 16:44:08",
   "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-  "compositional_truth_check": {
-    "p1_yellow_pot": "Present (String of Nickels)",
-    "p2_black_pot": "Systemic Loss (No visible Mexican Mint)",
-    "p3_black_pot_rabbit": "Present (Pothos)",
-    "p4_shared_pot": "Systemic Loss (No visible Silver Guest)",
-    "new_introductions": [
-      "Eggshell fragments in P3/P4 soil",
-      "Sensor V2.0 module in P1"
-    ]
+  "compositional_truth_check": "The registry is partially accurate but shows signs of significant biological decline. P1 (String of Nickels) is present in the yellow pot. P2 (Mexican Mint) and P4 (Silver Guest) are in the black pot, but P2 appears to be in a state of severe senescence or systemic loss. P3 (Pothos) is present with the white rabbit anchor.",
+  "inventory_reconciliation": {
+    "P1": "Present (Yellow Pot)",
+    "P2": "Systemic Loss (Dead/Shriveled)",
+    "P3": "Present (Black Pot with Rabbit)",
+    "P4": "Present (Black Pot, struggling)"
   },
-  "inventory_reconciliation": "The registry is largely inaccurate regarding P2 and P4. The pots are present, but the specified specimens are absent or replaced by debris/minimalist growth.",
   "plant_audit": {
-    "p1": "String of Nickels: Stable, showing consistent foliage density.",
-    "p2": "Mexican Mint: Absent. Pot contains only soil and sensor hardware.",
-    "p3": "Pothos: One primary leaf showing chlorosis/necrosis at the tip; structural integrity is declining.",
-    "p4": "Silver Guest: Absent. Pot contains a single, isolated, possibly adventitious sprout."
+    "P1": "Stable, showing consistent leaf structure.",
+    "P2": "Systemic loss; no viable green tissue observed.",
+    "P3": "One leaf shows chlorosis/necrosis (yellowing/browning), but the specimen remains anchored.",
+    "P4": "Struggling; minimal leaf development, high vulnerability."
   },
   "biome_observations": {
-    "soil_texture": "Consistently dry, granular, and loose across all pots.",
-    "debris": "Significant presence of white perlite and eggshell fragments.",
-    "anomalies": "The presence of a sensor module in P1 suggests an active monitoring intervention that may be affecting soil moisture retention."
+    "soil_texture": "Consistent dampness observed across all pots.",
+    "incidental_growth": "No weeds or moss detected.",
+    "anomalies": "Presence of white debris (likely perlite or eggshell fragments) in P3 and P4. Sensor wiring is visible in P4."
   },
   "temporal_deltas": {
-    "earliest_to_t5": "Minimal change; baseline established.",
-    "t4_to_t2": "Pothos leaf in P3 shows progressive browning at the distal end.",
-    "t1_to_current": "The Pothos leaf in P3 has reached a state of advanced senescence; no new growth observed in P4."
+    "T-5_to_T-4": "P4 leaf shows slight postural shift, likely due to light tracking.",
+    "T-4_to_T-3": "Minimal change; P3 leaf necrosis remains static.",
+    "T-3_to_T-2": "P4 leaf appears slightly more turgid.",
+    "T-2_to_T-1": "No significant morphological changes.",
+    "T-1_to_CURRENT": "Stable state; no new growth or further rapid decline."
   },
-  "visual_health_inference": {
-    "p1": "Healthy/Stable",
-    "p2": "Dead/Lost",
-    "p3": "Stressed/Declining",
-    "p4": "Dead/Lost"
-  },
-  "anomalies": [
-    "Chlorotic necrosis on Pothos leaf",
-    "Sensor V2.0 hardware presence",
-    "Eggshell debris as soil amendment"
-  ],
-  "narrative_description": "The biome is currently in a state of low-activity decline. P1 remains the most stable specimen. P3 is struggling, as evidenced by the progressive necrosis of its primary leaf. P2 and P4 are effectively empty, suggesting either a failure of the initial planting or a total loss of the specimens. The introduction of eggshells and sensor hardware indicates an attempt at soil enrichment or data-driven care, though the visual evidence suggests the plants are not currently thriving under these conditions.",
+  "visual_health_inference": "P1 is the healthiest specimen. P3 is under moderate stress (leaf necrosis). P4 is in a fragile state of early development. P2 is non-viable.",
+  "anomalies": "The white rabbit anchor is stable. The sensor in P4 is a technical intervention that may be impacting root space.",
+  "narrative_description": "The biome is currently in a state of stasis. While P1 maintains health, the other specimens are struggling. The Pothos (P3) shows clear signs of nutrient or environmental stress through leaf browning. The Mexican Mint (P2) has failed to thrive and should be considered a loss. The environment is controlled, but the lack of vigor suggests a need for substrate or light adjustment.",
   "confidence": 0.92
 }
 ```
@@ -131,11 +126,11 @@ This file tracks the Meta-Cognition of the Garden Warden. The agent uses this to
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p1,p2,p3,press,gas,db
-2026-04-16 11:53:26,34.55,100.0,717,447.0,176.0,418.0,652.01,0.0,-20.8
-2026-04-16 12:24:16,34.55,100.0,728,448.0,167.0,419.0,652.01,0.0,-24.7
-2026-04-16 12:44:46,0.0,0.0,733,449.0,170.0,420.0,0.0,0.0,-30.7
-2026-04-16 12:47:01,0.0,0.0,733,448.0,173.0,420.0,0.0,0.0,-30.3
-2026-04-16 12:54:50,0.0,0.0,732,448.0,167.0,421.0,0.0,0.0,-27.2
+2026-04-13 10:23:42,33.72,66.87,699,544.0,146.0,399.0,1011.91,33.2,-30.2
+2026-04-13 11:26:40,33.81,67.5,716,548.0,189.0,399.0,1011.24,6.22,-21.7
+2026-04-13 11:57:34,33.85,67.91,710,551.0,193.0,399.0,1010.58,23.77,-30.4
+2026-04-13 12:28:34,33.89,68.58,714,552.0,145.0,399.0,1010.02,11.77,-30.2
+2026-04-13 17:08:37,34.34,66.0,793,553.0,194.0,377.0,1007.95,3.91,-30.0
 2026-04-16 14:56:50,34.67,69.41,770,453.0,169.0,447.0,1006.24,5.92,-29.1
 2026-04-16 14:57:13,34.7,69.24,769,453.0,167.0,449.0,1006.2,7.27,-30.2
 2026-04-16 15:28:03,34.74,68.78,783,456.0,160.0,448.0,1005.95,33.92,-21.9
@@ -145,3 +140,4 @@ timestamp,temp,hum,light,p1,p2,p3,press,gas,db
 - **Acoustic Truth**: The Fan Status in Section 1 is EMPIRICAL. Use it to judge transpiration pressure.
 - **Action Tracking**: Reconcile Section 3 with Section 4 to see if care is working.
 - **Growth Velocity**: If delta in Section 4 is negative but Vision in Section 5 looks good, interpret as 'Peak Metabolism'.
+- **Visual Primacy Rule**: If a sensor reports 100% humidity/0.0 VPD, but Vision (Section 5) shows dry soil or wilted leaves, disregard the sensor as a hardware stall. The images are the Ground Truth.

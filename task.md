@@ -11,3 +11,6 @@
 - `[x]` Strip hardcoded assumptions from `vision.py` prompt.
 - `[x]` Sever Warden recommendations from Vision context to prevent narrative fallacy.
 - `[x]` Restructure JSON schema for `compositional_truth_check`.
+- `[/]` Implement Telemetry Sanitization in `prep_observer_context.py`.
+- `[ ]` Inject Hardware Failure warnings into SILICA context.
+- `[ ]` Enforce Visual Primacy in Reasoning Protocol.
