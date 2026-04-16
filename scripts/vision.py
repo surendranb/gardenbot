@@ -118,10 +118,11 @@ def build_prompt(ctx=None):
             context_str += "\nRECENT HUMAN ACTIONS (A PRIORI KNOWLEDGE):\n"
             for a in actions:
                 context_str += f"- {a.get('timestamp')}: {a.get('action')} - {a.get('note')}\n"
-        if recs:
-            context_str += "\nLAST AI RECOMMENDATIONS:\n"
-            for r in recs:
-                context_str += f"- {r}\n"
+        # --- REMOVED NARRATIVE FALLACY LOOP ---
+        # We no longer inject AI recommendations to prevent the vision model
+        # from conforming to the telemetry's theoretical assumptions.
+        # if recs:
+        #     context_str += "\nLAST AI RECOMMENDATIONS:\n" ...
         
         if context_str:
             context_str += "\nCRITICAL INSTRUCTION: If you see visual changes that align with the human actions listed above (e.g., white material on soil after 'added powder', or wet soil after 'watering'), do NOT flag them as physiological stress or anomalies. Instead, confirm their presence as successful outcomes of user care.\n"
@@ -139,24 +140,24 @@ def build_prompt(ctx=None):
         "- Plants are indoor on the desk."
         "- LIGHTING: Fixed Camera LED (cool spectrum) + Diffuse light from a North window. ZERO direct sunlight.\n"
         "- SCALE ANCHOR: White rabbit (5cm) in p3 pot.\n"
-        "- ORIENTATION (Calibration):\n"
-        "  * p1 (String of Nickels, Yellow pot): Has many leaves.\n"
-        "  * p2 (Mexican Mint) (Black pot): In the center of the pot. Has two big wide leaves and pair of smaller ones coming up. \n\n"
-        "  * p3 (Pothos, Black pot): Has 2 leaves and a rabbit toy for reference.\n"
-        "  * p4 (Silver Guest) (Black pot): Smallest and near the rim of the pot. Shares the pot with mexican mint.\n\n"
+        "- COMPOSITIONAL AUDIT REQUIREMENT:\n"
+        "  * DO NOT ASSUME. YOU MUST LOOK AT THE POTS. Identify all pots (e.g., Yellow Pot, Black Pot with Rabbit, Black Pot near edge). Check what is physically inside them.\n"
+        "  * Identify if a plant is clearly dead (bare soil/withered stems), completely absent, or if an entirely new specimen/leaf type has been introduced.\n\n"
         "IMAGE LABELS:\n"
         "- Sequence shows images taken during midday from last 5 days + Today's morning 'Rested State' + CURRENT.\n\n"
         "BIOME-WIDE MONITORING (The 'Beyond-Inventory' Rule):\n"
         "- Your audit must include the ENTIRE pot surface. \n"
         "- Identify 'Incidental Growth': Note any weeds, moss, secondary seedlings, or uncatalogued sprouts in the soil of p1-p4.\n"
         "- Identify 'Biome Anomalies': Note changes in soil texture (cracking vs. dampness), fungal presence, or debris on the desk surface.\n\n"
-        "REQUIRED AUDIT FOR EACH PLANT (p1-p4) & THE BIOME:\n"
-        "FOR EACH PLANT (p1-p4), PROVIDE AN EXPLANATORY AUDIT. DO NOT MIX UP THE PLANT NAMES OR ORDER & DOUBLE CHECK :\n"
-        "1. PHYSICAL FACTS: Leaf count, specific color gradients, and exact posture relative to pot rims.\n"
-        "2. EXPLANATORY TRANSFORMATIONS: Do not just state change; explain the trajectory. (e.g., 'Compared to Yesterday mid-day, the apical leaf on p3 has dropped by 5mm, whereas 3 days ago it was level with the pot rim').\n"
-        "3. PIXEL-BASED HEALTH REASONING: Deduce health using VISUAL EVIDENCE ONLY. If you say 'stressed', you must cite the specific visual evidence (e.g., 'Reasoning: p2 is exhibiting leaf-margin necrosis that has progressed 2mm deeper since the 48h baseline').\n\n"
+        "REQUIRED AUDIT:\n"
+        "FIRST, execute a Compositional Truth Check: State exactly what is physically in each pot right now. Ignore any past assumptions.\n"
+        "THEN, audit each physically present plant (name them positionally or by visible species).\n"
+        "FOR EACH PLANT, PROVIDE AN EXPLANATORY AUDIT:\n"
+        "1. PHYSICAL FACTS: Leaf count, specific color gradients, exact posture, and confirming it is alive vs dead mass.\n"
+        "2. EXPLANATORY TRANSFORMATIONS: Relate changes purely on pixels. (e.g., 'Compared to Yesterday, the left leaf has browned and collapsed').\n"
+        "3. PIXEL-BASED HEALTH REASONING: Deduce health using VISUAL EVIDENCE ONLY. DO NOT deduce health from inferred soil moisture or historical assumptions.\n\n"
         "Output format (JSON keys):\n"
-        "timestamp, model, plant_audit, biome_observations, temporal_deltas, visual_health_inference, anomalies, narrative_description, confidence.\n"
+        "timestamp, model, compositional_truth_check, plant_audit, biome_observations, temporal_deltas, visual_health_inference, anomalies, narrative_description, confidence.\n"
         "The JSON must be parseable. No markdown fences."
     )
 
