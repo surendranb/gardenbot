@@ -1,44 +1,44 @@
 {
-  "timestamp": "2026-04-16T21:05:44.752726",
+  "timestamp": "2026-04-16T21:36:18.093766",
   "sensors": {
-    "timestamp": "2026-04-16 21:05:39",
-    "temp": 0.0,
-    "hum": 0.0,
+    "timestamp": "2026-04-16 21:36:12",
+    "temp": 32.34,
+    "hum": 62.66,
     "light": 809,
-    "p1": 467,
-    "p2": 166,
-    "p3": 506,
-    "press": 0.0,
-    "gas": 0.0,
-    "db": -38.0
+    "p1": 456,
+    "p2": 157,
+    "p3": 410,
+    "press": 1008.92,
+    "gas": 2.5,
+    "db": -28.0
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 79.8,
+      "moisture_pct": 83.1,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 79.5,
+      "moisture_pct": 82.2,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 47.9,
+      "moisture_pct": 75.2,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 0.611
+    "vpd_kpa": 1.81
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_061330.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_203514.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_204401.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-16T20:44:11.142918",
+      "timestamp": "2026-04-16T21:05:55.690127",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -48,9 +48,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_131055.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_000234.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_132530.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_204401.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_210546.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_204401.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_210546.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-12/garden_131439.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_132530.jpg"
       },
@@ -81,39 +81,30 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_204401.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_210546.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-16 20:44:04",
+        "timestamp": "2026-04-16 21:05:49",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry is largely accurate but requires adjustment based on visual evidence. P3 (Pothos) is present with the anchor. P1 (String of Nickels) is present in the yellow pot. P2/P4 (Mexican Mint/Silver Guest) appear to be combined in the lower black pot, though the specimen is in a state of severe decline.",
-        "inventory_reconciliation": {
-          "P1": "Present (Yellow Pot)",
-          "P2": "Present (Lower Black Pot)",
-          "P3": "Present (Upper Black Pot with Rabbit)",
-          "P4": "Present (Lower Black Pot)",
-          "Systemic_Loss": "None, though P2/P4 are in critical condition.",
-          "New_Introductions": "None."
-        },
+        "compositional_truth_check": "The registry is partially accurate but requires significant revision based on visual evidence. P1 (String of Nickels) is present in the yellow pot. P2 (Mexican Mint) is present in the black pot (shared). P3 (Pothos) is present in the black pot with the rabbit anchor. P4 (Silver Guest) is present in the black pot (shared).",
+        "inventory_reconciliation": "No systemic losses detected. All registered specimens are present, though P3 shows significant senescence.",
         "plant_audit": {
-          "P1": "Stable, showing consistent leaf structure in the yellow pot.",
-          "P2_P4": "Critical. The specimen in the lower pot shows significant chlorosis and potential necrosis. The structural integrity of the stems is failing.",
-          "P3": "The Pothos leaf is showing signs of edge necrosis (browning/yellowing), likely due to environmental stress or moisture imbalance."
+          "P1": "String of Nickels: Stable, foliage remains consistent in the yellow pot.",
+          "P2": "Mexican Mint: Stable, occupying the shared black pot space.",
+          "P3": "Pothos: High stress. One leaf is chlorotic and necrotic (yellowing/browning). The other leaf remains green but shows signs of structural fatigue.",
+          "P4": "Silver Guest: Stable, co-habitating in the black pot."
         },
         "biome_observations": {
-          "soil_texture": "Soil appears consistently damp across all pots; no visible fungal blooms or crusting.",
-          "incidental_growth": "None detected.",
-          "biome_anomalies": "The presence of white debris (perlite/mineral deposits) is consistent across all pots. The white rabbit anchor remains stable."
+          "soil_surface": "Soil appears consistently moist with perlite/white debris present. No fungal blooms detected.",
+          "desk_surface": "Clean, no significant debris or anomalies.",
+          "incidental_growth": "None observed."
         },
-        "temporal_deltas": {
-          "T-5_to_T-3": "Minimal change; the Pothos leaf in P3 shows a slow progression of yellowing at the tip.",
-          "T-2_to_CURRENT": "The lower pot (P2/P4) shows a slight postural collapse of the primary leaf, indicating a loss of turgor pressure."
-        },
-        "visual_health_inference": "The biome is under moderate stress. P3 is exhibiting signs of nutrient deficiency or water stress (leaf tip necrosis). P2/P4 are in a state of advanced decline, with the primary leaf showing signs of wilting and potential senescence.",
-        "anomalies": "The electronic sensor in the lower pot (P2/P4) may be contributing to localized soil compaction or root zone disturbance.",
-        "narrative_description": "The audit confirms a stable but struggling indoor botanical environment. The Pothos (P3) is the most robust, though it shows clear signs of stress. The combined P2/P4 unit is the primary concern, as the specimen is failing to maintain structural rigidity. The lighting environment appears consistent, but the lack of natural light may be exacerbating the decline of the lower-pot specimens.",
-        "confidence": 0.92
+        "temporal_deltas": "Over the 5-day sequence, P3 has undergone progressive chlorosis on the left-most leaf. The leaf has transitioned from a healthy green to a mottled yellow-brown, indicating a potential nutrient deficiency or root-zone stress. The other plants remain largely static in their growth patterns.",
+        "visual_health_inference": "P3 is in a state of decline (senescence). The yellowing leaf suggests a lack of nitrogen or potential over-watering leading to root hypoxia. P1, P2, and P4 appear to be in a state of stasis or slow acclimation.",
+        "anomalies": "The presence of a white rabbit anchor in P3 is confirmed. No uncatalogued sprouts or unexpected interventions observed.",
+        "narrative_description": "The biome is currently under moderate stress, specifically regarding the Pothos (P3). The chronological audit reveals a slow but steady decline in the health of the Pothos leaf, which is now exhibiting significant necrosis. The other specimens in the yellow and black pots appear to be maintaining their baseline health, though growth is minimal. The environment is stable, but the Pothos requires immediate diagnostic attention to prevent further leaf loss.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
