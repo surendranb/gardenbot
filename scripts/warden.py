@@ -117,65 +117,19 @@ def derive_hypothesis(raw, metrics, plants):
     }
 
 def find_active_arduino_port():
-    """Scans for a port streaming valid gardenbot data (pipe-delimited)."""
-    all_p = list(serial.tools.list_ports.comports())
-    print(f"Warden: Found {len(all_p)} ports on system.")
-    
-    # Priority list of keywords
-    keywords = ["usbmodem", "usbserial", "arduino", "ch340", "cp210x", "ftdi"]
-    
-    candidates = []
-    for p in all_p:
-        device = p.device.lower()
-        desc = p.description.lower()
-        if any(k in device or k in desc for k in keywords):
-            candidates.append(p.device)
-    
-    if not candidates:
-        print("Warden: No candidate ports found with keyword filter. Trying exhaustive scan of all non-system ports...")
-        system_keywords = ["bluetooth", "debug", "wlan", "iphone", "apple", "wireless"]
-        candidates = [p.device for p in all_p if not any(sk in p.device.lower() or sk in p.description.lower() for sk in system_keywords)]
-        
-    if not candidates:
-        print("Warden: No candidate ports found after exhaustive scan.")
-        # Final desperation: if /dev/cu.usbmodem* exists in filesystem but not in pyserial list
-        import glob
-        fs_candidates = glob.glob("/dev/cu.usbmodem*") + glob.glob("/dev/cu.usbserial*")
-        if fs_candidates:
-            print(f"Warden: pyserial missed these filesystem devices: {fs_candidates}")
-            candidates = fs_candidates
-
-    if not candidates:
-        return None
-
-    # Priority 1: Direct path for stabilized hardware
+    """Scans for a port without opening it (to prevent DTR resets)."""
     STABLE_PORT = "/dev/cu.usbmodem1201"
-    if STABLE_PORT in candidates:
-        # Move it to the front
-        candidates.remove(STABLE_PORT)
-        candidates.insert(0, STABLE_PORT)
+    if os.path.exists(STABLE_PORT):
+        print(f"Warden: Stable port {STABLE_PORT} found natively.")
+        return STABLE_PORT
 
-    print(f"Warden: Scanning candidates: {candidates}...")
-    
-    for port in candidates:
-        try:
-            print(f"  Checking {port}...")
-            ser = serial.Serial(port, 9600, timeout=3)
-            time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
-            ser.reset_input_buffer()
-            
-            # Read a few lines to check for valid data format
-            for _ in range(10):
-                line = ser.readline().decode('utf-8', errors='ignore').strip()
-                if "|" in line and len(line.split("|")) >= 6:
-                    print(f"Warden: Valid stream found on {port}")
-                    ser.close()
-                    return port
-            ser.close()
-        except Exception as e:
-            print(f"  Skipping {port}: {e}")
-            
-    print("Warden: No active Gardenbot found.")
+    all_p = list(serial.tools.list_ports.comports())
+    keywords = ["usbmodem", "usbserial", "arduino", "ch340", "cp210x", "ftdi"]
+    for p in all_p:
+        if any(k in p.device.lower() or k in p.description.lower() for k in keywords):
+            return p.device
+
+    print("Warden: No candidate ports found.")
     return None
 
 def capture_data():
@@ -183,13 +137,13 @@ def capture_data():
     if not port: return None
     
     try:
-        ser = serial.Serial(port, 9600, timeout=5)
+        # Timeout 10s safely outlasts the 5.0s hardware loop
+        ser = serial.Serial(port, 9600, timeout=10)
         time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
-        for _ in range(5): ser.readline() # Flush
         
-        # Try capturing valid line
-        for _ in range(5):
+        # Read up to 3 times to find a complete loop packet without discarding
+        for _ in range(3):
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
@@ -209,8 +163,9 @@ def capture_data():
                     
                     # Garbage Detection Logic (BME680 Saturation Signature)
                     if data["press"] == 652.01 and data["hum"] == 100.0:
-                        print("Warden: HARDWARE INTERFERENCE DETECTED (BME680 Saturation Signature 652/100). Telemetry may be disturbed.")
-                        # We still log it, but the Warden persona is now aware.
+                        print("Warden: REJECTING DATA: HARDWARE INTERFERENCE DETECTED (BME680 Saturation Signature 652/100).")
+                        ser.close()
+                        return None
                     
                     ser.close()
                     
@@ -329,24 +284,16 @@ def collect_once():
     
     print(f"Connecting to {port} for calibration capture...")
     try:
-        ser = serial.Serial(port, 9600, timeout=5)
+        ser = serial.Serial(port, 9600, timeout=10)
         time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         
-        # Flush a few lines to get fresh data
-        for _ in range(5): 
-            ser.readline()
-            
-        # Read valid line
-        for _ in range(5):
+        # Wait up to 3 cycles (15s) for a valid response
+        for _ in range(3):
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
                 if len(parts) >= 8:
-                    # Parsing logic matches capture_data
-                    # parts[3] -> p1 (A0)
-                    # parts[5] -> p2 (A3, formerly A5)
-                    # parts[4] -> p3 (A2)
                     data = {
                         "p1": int(parts[3]),
                         "p2": int(parts[5]),
