@@ -32,14 +32,31 @@ def load_plants():
 
 def load_warden_state():
     """Loads the persistent reasoning state (Hypothesis Engine)."""
+    state = {"last_hypothesis": "Initial Observation", "active_concerns": [], "consecutive_drops": 0}
     if os.path.exists(STATE_PATH):
         try:
-            with open(STATE_PATH, 'r') as f: return json.load(f)
+            with open(STATE_PATH, 'r') as f:
+                loaded = json.load(f)
+                state.update(loaded)
         except: pass
-    return {"last_hypothesis": "Initial Observation", "active_concerns": []}
+    return state
 
 def save_warden_state(state):
     with open(STATE_PATH, 'w') as f: json.dump(state, f, indent=2)
+
+def execute_hardware_reset(port):
+    """Bypasses normal flow to force a DTR reset on the Arduino."""
+    print(f"Warden: Triggering HARDWARE DTR RESET on {port} due to consecutive drops.")
+    try:
+        ser = serial.Serial(port, 9600)
+        ser.setDTR(False)
+        time.sleep(0.5)
+        ser.setDTR(True)
+        ser.close()
+        print("Warden: DTR Reset successful. Waiting 4.0s for Arduino boot sequence...")
+        time.sleep(4.0)
+    except Exception as e:
+        print(f"Warden: Failed to trigger DTR reset: {e}")
 
 def get_temporal_vision_stack():
     """Retrieves paths for Anchor (6AM), Previous (T-3h), and Current photos."""
@@ -355,8 +372,22 @@ if __name__ == "__main__":
 
     plants = load_plants()
     state = load_warden_state()
+    
+    # Antifragile Hardware Reset check
+    if state.get("consecutive_drops", 0) >= 3:
+        target_port = find_active_arduino_port()
+        if target_port:
+            execute_hardware_reset(target_port)
+
     raw = capture_data()
     metrics = compute_metrics(raw, plants)
+    
+    # Update drops state
+    if raw is None:
+        state["consecutive_drops"] = state.get("consecutive_drops", 0) + 1
+    else:
+        state["consecutive_drops"] = 0
+
     state_update = derive_hypothesis(raw, metrics, plants)
     state.update(state_update)
     save_snapshot(raw, metrics, plants, state)
