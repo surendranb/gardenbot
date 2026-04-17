@@ -19396,3 +19396,23 @@ Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
 Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
 Synthesizing SILICA v2.2 (Corrected Logic)...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-04-17 22:18:54 [PULSE] Pulse Complete.
+2026-04-17 22:48:54 [PULSE] Starting Pulse...
+Warden: Stable port /dev/cu.usbmodem1201 found natively.
+Listening to the room for 5 seconds...
+Warden: WARNING: BME680 I2C BUS DEAD. Recording partial telemetry (Light/Moisture).
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision context exported to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 7 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-13/garden_133039.jpg
+  Added T-5: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-14/garden_132229.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_131055.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_132530.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_000913.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_132433.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_224907.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Synthesizing SILICA v2.2 (Corrected Logic)...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
