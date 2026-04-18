@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-04-18T09:08:23.306106",
+  "timestamp": "2026-04-18T09:39:00.902332",
   "sensors": {
-    "timestamp": "2026-04-18 09:08:17",
+    "timestamp": "2026-04-18 09:38:55",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 739,
+    "light": 735,
     "p1": 234,
-    "p2": 209,
+    "p2": 206,
     "p3": 502,
     "press": 0.0,
     "gas": 0.0,
@@ -18,7 +18,7 @@
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 67.0,
+      "moisture_pct": 67.8,
       "is_dry": false
     },
     "p3": {
@@ -34,7 +34,7 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_062921.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_080124.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_083719.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
