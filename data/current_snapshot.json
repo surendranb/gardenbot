@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-19T12:51:34.226507",
+  "timestamp": "2026-04-19T13:22:18.255409",
   "sensors": {
-    "timestamp": "2026-04-19 12:51:28",
+    "timestamp": "2026-04-19 13:22:12",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 789,
-    "p1": 469,
-    "p2": 190,
-    "p3": 398,
+    "light": 761,
+    "p1": 465,
+    "p2": 193,
+    "p3": 402,
     "press": 0.0,
     "gas": 0.0,
-    "db": -37.0
+    "db": -37.2
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 79.1,
+      "moisture_pct": 80.4,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 72.5,
+      "moisture_pct": 71.6,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 78.6,
+      "moisture_pct": 77.5,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_060947.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_114924.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_122023.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-19T11:49:59.161917",
+      "timestamp": "2026-04-19T12:51:58.052992",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,11 +47,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_132433.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_131423.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_000132.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_114924.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_122023.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_125135.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_114924.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_125135.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_131055.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_000132.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_122023.jpg"
       },
       "frame_sequence": [
         {
@@ -59,57 +60,60 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-15/garden_131055.jpg"
         },
         {
-          "label": "T-4",
+          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-16/garden_132530.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_132433.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_131423.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_000132.jpg"
         },
         {
+          "label": "T-1",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_122023.jpg"
+        },
+        {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_114924.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_125135.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-19 11:49:28",
-        "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry identifies P1 (String of Nickels), P2 (Mexican Mint), P3 (Pothos), and P4 (Silver Guest). Visual evidence confirms P3 (Pothos with rabbit) and P1 (String of Nickels in yellow pot). P2 and P4 are not clearly demarcated as distinct specimens; they appear to be represented by a single, struggling, singular-leafed specimen in the foreground pot.",
+        "timestamp": "2026-04-19 12:51:38",
+        "model": "Garden Botanical Observer v1.0",
+        "compositional_truth_check": "The registry is partially accurate but fails to account for the severe decline of the specimens. P3 (Pothos) is present with the anchor, but the foliage is in advanced necrosis. P1 (String of Nickels) is present but sparse. P2/P4 (Mexican Mint/Silver Guest) are effectively absent or reduced to non-viable remnants.",
         "inventory_reconciliation": {
-          "P1": "Present (Yellow Pot)",
-          "P2": "Systemic Loss/Ambiguous",
-          "P3": "Present (Black Pot with Rabbit)",
-          "P4": "Systemic Loss/Ambiguous"
+          "P1": "Present (String of Nickels)",
+          "P2": "Systemic Loss (No viable mint detected)",
+          "P3": "Present (Pothos - severe decline)",
+          "P4": "Systemic Loss (No viable silver guest detected)"
         },
         "plant_audit": {
-          "P1": "String of Nickels: Stable, low-density foliage, consistent moisture.",
-          "P3": "Pothos: Significant chlorosis and necrosis on the primary leaf. The specimen is in a state of advanced decline.",
-          "Foreground_Pot": "Contains a single, solitary green leaf. The rest of the soil is barren, indicating a systemic loss of the expected P2/P4 specimens."
+          "P1": "Yellow pot; foliage is minimal and appears dehydrated.",
+          "P2": "Black pot; no evidence of Mexican Mint; soil surface is barren.",
+          "P3": "Black pot; white rabbit anchor present; one large leaf is necrotic/yellowing, one small leaf remains.",
+          "P4": "Black pot; no evidence of Silver Guest; soil surface is barren."
         },
         "biome_observations": {
-          "soil_texture": "Consistently damp, dark, and rich in organic matter. No visible fungal blooms.",
-          "incidental_growth": "None observed.",
-          "desk_surface": "Clean, no debris."
+          "soil_texture": "Consistently dry, granular, and lacking organic vitality.",
+          "debris": "White perlite/egg-shell fragments present; no fungal growth observed.",
+          "desk_surface": "Clean, no significant biological spillover."
         },
         "temporal_deltas": {
-          "Earliest_to_T-4": "No significant change.",
-          "T-4_to_T-3": "Minor postural shift in the P3 leaf; necrosis on the P3 leaf edge appears to be expanding.",
-          "T-3_to_T-2": "P3 leaf shows increased yellowing (chlorosis).",
-          "T-2_to_T-1": "P3 leaf is drooping further; the foreground specimen remains static.",
-          "T-1_to_CURRENT": "The P3 leaf has reached a state of near-total senescence. The foreground specimen shows no new growth."
+          "earliest_to_t-5": "Negligible change; baseline state of decline established.",
+          "t-5_to_t-1": "Progressive yellowing of the large Pothos leaf in P3; soil moisture appears to have decreased.",
+          "t-1_to_current": "Stasis; no new growth; Pothos leaf in P3 shows increased chlorosis."
         },
-        "visual_health_inference": "The biome is in a state of critical decline. P3 is suffering from severe physiological stress, likely due to root-zone issues or light deficiency. The lack of secondary growth in the foreground pot suggests a failure of the P2/P4 specimens to establish.",
-        "anomalies": "The presence of a single, isolated leaf in the foreground pot where two species (P2/P4) were expected indicates a high mortality rate for the intended biome.",
-        "narrative_description": "The botanical environment is struggling. The Pothos (P3) is exhibiting classic signs of terminal decline, with the leaf transitioning from necrotic brown to chlorotic yellow. The String of Nickels (P1) is the only stable element. The foreground pot, intended for two species, is essentially barren, suggesting a failed propagation or severe environmental incompatibility.",
-        "confidence": 0.92
+        "visual_health_inference": "The biome is in a state of terminal decline. The Pothos (P3) is suffering from severe chlorosis and likely root-zone failure. The other pots (P1, P2, P4) show no signs of active growth and are effectively dormant or dead.",
+        "anomalies": "None detected; the lack of growth is the primary anomaly.",
+        "narrative_description": "The botanical collection is failing. The Pothos in P3 is the only specimen showing significant structural presence, though it is clearly dying. The other pots are essentially empty of the registered species, suggesting a total loss of the intended biome. The environment is static and lacks the necessary moisture or nutrient support for recovery.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
