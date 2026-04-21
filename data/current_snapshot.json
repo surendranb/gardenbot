@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-04-21T22:08:59.174483",
+  "timestamp": "2026-04-21T22:39:44.256234",
   "sensors": {
     "timestamp": "2026-04-21 22:08:53",
     "temp": 0.0,
     "hum": 0.0,
     "light": 877,
-    "p1": 562,
-    "p2": 196,
-    "p3": 403,
+    "p1": 562.0,
+    "p2": 196.0,
+    "p3": 403.0,
     "press": 0.0,
     "gas": 0.0,
     "db": -36.7
@@ -30,15 +30,17 @@
     "vpd_kpa": 0.611
   },
   "intelligence": {
-    "hypothesis": "Telemetry stable; no immediate stress signal.",
-    "active_concerns": [],
+    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
+    "active_concerns": [
+      "missing-telemetry"
+    ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_061515.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_210734.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_213815.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-21T21:38:34.140829",
+      "timestamp": "2026-04-21T22:09:28.303369",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -48,9 +50,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-20/garden_132609.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_000811.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_213815.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_220900.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_213815.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_220900.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_132433.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg"
       },
@@ -81,47 +83,38 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_213815.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_220900.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-21 21:38:19",
+        "timestamp": "2026-04-21 22:09:03",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry is partially accurate but incomplete. P3 (Pothos/Rabbit) and P1 (String of Nickels) are present. P2/P4 (Mexican Mint/Silver Guest) appear to be combined or misidentified in the registry as a single pot cluster. A new, unidentified sprout (likely an Alocasia or similar Araceae) is present in a separate black pot.",
+        "compositional_truth_check": "The registry is partially accurate but shows significant degradation. P3 (Pothos/Rabbit) is present. P1 (String of Nickels) is present in the yellow pot. P2/P4 (Mexican Mint/Silver Guest) are present in the black pot, though showing signs of severe decline.",
         "inventory_reconciliation": {
           "P1": "Present (Yellow Pot)",
-          "P2": "Present (Black Pot, shared)",
-          "P3": "Present (Black Pot, Rabbit anchor)",
-          "P4": "Present (Shared with P2)",
-          "New_Introduction": "Unidentified Araceae-like sprout in a black pot (foreground)."
+          "P2": "Systemic Loss (Dead/Shriveled)",
+          "P3": "Present (Black Pot with Rabbit)",
+          "P4": "Systemic Loss (Dead/Shriveled)"
         },
         "plant_audit": {
-          "P1": "Stable, low density.",
-          "P2/P4": "Showing signs of senescence; leaf yellowing observed.",
-          "P3": "Rabbit anchor stable; soil surface shows minor debris.",
-          "New_Sprout": "Active growth, single leaf unfurling."
+          "P1": "Stable, though growth is minimal.",
+          "P2_P4": "Severe decline. The foliage has collapsed and desiccated over the 5-day period.",
+          "P3": "The Pothos leaf remains, but the surrounding soil shows signs of debris accumulation."
         },
         "biome_observations": {
-          "soil_texture": "Consistent moisture, no visible fungal blooms.",
-          "debris": "Eggshell fragments present in the foreground pot (New Introduction/Intervention).",
+          "soil_texture": "Soil appears consistently dark and damp; no visible cracking.",
+          "debris": "Significant accumulation of white particulate matter (likely perlite or eggshell fragments) on the surface of P3 and P4.",
           "incidental_growth": "None observed."
         },
         "temporal_deltas": {
-          "T-5_to_T-3": "Minimal change; steady state.",
-          "T-2_to_Current": "Gradual yellowing of the P2/P4 foliage; the foreground sprout has maintained turgor pressure."
+          "T-5_to_T-3": "Initial state shows a healthy green leaf in the foreground pot (P4).",
+          "T-2_to_T-1": "Noticeable chlorosis and postural collapse of the primary specimen in the foreground pot.",
+          "CURRENT": "The foreground specimen has fully collapsed and lost structural integrity; the plant is effectively dead."
         },
-        "visual_health_inference": {
-          "P1": "Fair",
-          "P2/P4": "Poor (Chlorosis/Senescence)",
-          "P3": "Good",
-          "New_Sprout": "Excellent"
-        },
-        "anomalies": [
-          "Presence of eggshell fragments in the foreground pot.",
-          "Unidentified sprout in the foreground pot not listed in the registry."
-        ],
-        "narrative_description": "The biome is currently in a state of transition. While the established specimens in the yellow and rear black pots are showing signs of stress (yellowing leaves), the new introduction in the foreground pot is thriving, supported by the addition of calcium-rich debris (eggshells). The rabbit anchor remains a constant, though the surrounding soil in P3 is becoming slightly compacted.",
-        "confidence": 0.92
+        "visual_health_inference": "The biome is suffering from a failure to thrive. The foreground specimen (P4) has undergone total senescence. The Pothos (P3) is the only specimen maintaining structural integrity, though it appears stagnant.",
+        "anomalies": "The white particulate matter on the soil surface has increased in density, suggesting potential top-dressing or degradation of added soil amendments.",
+        "narrative_description": "I have performed a chronological audit of the biome. The sequence reveals a rapid decline in the foreground specimen (P4), which transitioned from a healthy, turgid state to a state of complete collapse and necrosis. The Pothos (P3) remains the anchor of the biome, though it shows no signs of active growth. The yellow pot (P1) remains static. The biome is currently in a state of negative progression.",
+        "confidence": 0.95
       }
     },
     "recent_visual_ledger": [
