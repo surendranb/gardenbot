@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-21T15:59:12.708426",
+  "timestamp": "2026-04-21T17:31:40.412218",
   "sensors": {
-    "timestamp": "2026-04-21 15:59:07",
+    "timestamp": "2026-04-21 17:31:34",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 774,
-    "p1": 269,
-    "p2": 209,
-    "p3": 463,
+    "light": 789,
+    "p1": 535,
+    "p2": 206,
+    "p3": 448,
     "press": 0.0,
     "gas": 0.0,
-    "db": -22.9
+    "db": -23.6
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 100,
+      "moisture_pct": 58.9,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 67.0,
+      "moisture_pct": 67.8,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 60.1,
+      "moisture_pct": 64.4,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_061515.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_145745.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_162956.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-21T15:28:51.813841",
+      "timestamp": "2026-04-21T17:01:19.586113",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -48,9 +48,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-20/garden_132609.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_000811.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_152837.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_170043.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_152837.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_170043.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-17/garden_132433.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg"
       },
@@ -81,46 +81,47 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_152837.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_170043.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-21 15:28:40",
+        "timestamp": "2026-04-21 17:00:47",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": {
-          "status": "Partial Reconciliation",
-          "notes": "P1 (String of Nickels) is present in the yellow pot. P3 (Pothos) is present in the black pot with the rabbit anchor. P2 (Mexican Mint) and P4 (Silver Guest) are not clearly identifiable as distinct specimens; the black pot containing the Pothos appears to contain a singular, struggling sprout, suggesting a potential systemic loss of the secondary species or a failure to thrive."
-        },
+        "compositional_truth_check": "The registry is partially accurate but requires significant revision based on visual evidence. P3 (Pothos) is present with the anchor. P1 (String of Nickels) is present in the yellow pot. P2/P4 (Mexican Mint/Silver Guest) are present in the black pot, though the specimen appears to be a singular, struggling seedling rather than a robust cluster.",
         "inventory_reconciliation": {
-          "p1": "Present (Yellow Pot)",
-          "p2": "Systemic Loss/Unidentified",
-          "p3": "Present (Black Pot with Rabbit)",
-          "p4": "Systemic Loss/Unidentified"
+          "P1": "Present (Yellow Pot)",
+          "P2": "Present (Black Pot - struggling)",
+          "P3": "Present (Black Pot - with rabbit anchor)",
+          "P4": "Systemic Loss (No evidence of a distinct second plant in the shared pot)"
         },
         "plant_audit": {
-          "p1_string_of_nickels": "Stable, low-light adapted, minimal growth.",
-          "p3_pothos": "Stunted, single-leaf morphology, showing signs of extreme stress or dormancy.",
-          "soil_surface": "Presence of white perlite/debris; no active fungal blooms observed."
+          "P1": "String of Nickels: Stable, showing minimal growth, consistent leaf count.",
+          "P2": "Mexican Mint: High stress. The seedling is singular and shows signs of chlorosis or dehydration.",
+          "P3": "Pothos: Stable. The white rabbit anchor remains in place. The primary leaf is intact.",
+          "P4": "Silver Guest: Not detected. The soil surface is clear of any secondary specimen matching this description."
         },
         "biome_observations": {
-          "soil_texture": "Consistently dark and damp; no signs of surface cracking.",
-          "incidental_growth": "None observed.",
-          "biome_anomalies": "Presence of white granular debris (likely perlite or eggshell fragments) on the soil surface of the P3 pot."
+          "soil_texture": "Consistently damp/dark across all pots; no signs of surface cracking.",
+          "fungal_presence": "None detected.",
+          "debris": "Presence of white perlite/vermiculite particles and small white fragments (likely eggshell) in P3 and P2/P4 pots."
         },
         "temporal_deltas": {
-          "t_minus_5_to_current": "The specimen in the P3 pot has remained largely static. The large, yellowing leaf visible in the earliest image has desiccated and disappeared by the current state, indicating a loss of biomass. The remaining green leaf shows no significant expansion or postural change."
+          "T-5_to_T-3": "Minimal change; the P2/P4 seedling maintains a consistent, slightly drooping posture.",
+          "T-2_to_T-1": "The P2/P4 seedling appears to have lost a small lower leaf fragment, indicating potential necrosis.",
+          "Current": "The P2/P4 seedling is now isolated; the surrounding soil is clear of other sprouts. The P3 Pothos leaf remains turgid."
         },
         "visual_health_inference": {
-          "p1": "Fair/Maintenance",
-          "p3": "Critical/Stunted",
-          "overall_biome": "The biome is in a state of 'stasis-decline'. The lack of new growth and the loss of the senescent leaf in P3 suggest the plants are struggling with the current light/nutrient regime."
+          "P1": "Fair - stable but slow growth.",
+          "P2": "Poor - high risk of mortality due to singular, fragile state.",
+          "P3": "Good - healthy turgor pressure.",
+          "P4": "N/A - Systemic Loss."
         },
         "anomalies": [
-          "Loss of senescent leaf in P3 pot between T-5 and T-3.",
-          "Persistent lack of development in the P3 sprout."
+          "Presence of white, irregular debris (eggshell fragments) in the soil, likely an intentional soil amendment or accidental introduction.",
+          "The P2/P4 pot contains only one visible seedling, contradicting the dual-registry expectation."
         ],
-        "narrative_description": "The botanical audit reveals a collection under significant stress. The Pothos (P3) has transitioned from a two-leaf state to a single-leaf state, suggesting a failure to establish or a severe nutrient/light deficit. The String of Nickels (P1) remains the most stable component. The absence of clear P2/P4 specimens indicates a high probability of mortality for those specific plants. The environment is stable but insufficient for active growth.",
-        "confidence": 0.85
+        "narrative_description": "The biome is currently in a state of stasis. The Pothos (P3) is the most robust occupant, maintaining its structural integrity alongside the rabbit anchor. The String of Nickels (P1) is holding steady. The most concerning observation is the P2/P4 pot, which shows signs of a failed or singular development, with the seedling appearing fragile and potentially suffering from nutrient or light deficiency. The environment is stable, but the lack of active growth suggests the need for a review of the current light or moisture regimen.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
