@@ -1,10 +1,10 @@
 {
-  "last_hypothesis": "VGT CRITICAL: {'p1': 'Stable/Dormant', 'p2_p4': 'Terminal/Dead', 'p3': 'Healthy/Stable'}",
+  "last_hypothesis": "VGT CRITICAL: {'p1': 'Stressed/Dehydrated.', 'p3': 'Terminal decline of the visible leaf; potential root viability unknown.', 'p4': 'Vigorous/Healthy.'}",
   "active_concerns": [
-    "VGT:systemic-loss:p2",
-    "VGT:systemic-loss:p4"
+    "VGT:systemic-loss:p2_mexican_mint",
+    "VGT:divergence-detected:p3"
   ],
   "consecutive_drops": 0,
-  "last_run": "2026-04-21 11:46 AM IST",
+  "last_run": "2026-04-21 11:52 AM IST",
   "last_human_action": "none"
 }
