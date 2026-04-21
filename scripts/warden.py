@@ -158,7 +158,9 @@ def derive_hypothesis(raw, metrics, plants, vision_observation=None, **kwargs):
                 if "dead" in audit or "necrotic" in audit or "terminal" in audit or "desiccated" in audit:
                     vgt_concerns.append(f"VGT:divergence-detected:{pid}")
         
-        if "terminal" in inference.lower() or "critical failure" in inference.lower():
+        # Ensure inference is a string for comparison
+        inf_str = str(inference).lower() if inference else ""
+        if "terminal" in inf_str or "critical failure" in inf_str:
             vgt_hypothesis = f"VGT CRITICAL: {inference}"
 
     vpd = metrics.get("vpd")
