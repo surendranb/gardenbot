@@ -1,5 +1,17 @@
 [
   {
+    "id": "p0",
+    "name": "Survivor Succulent",
+    "species": "Unknown Succulent",
+    "sensor_type": "none",
+    "sensor_key": "none",
+    "sensor_pin": "none",
+    "raw_wet": 0,
+    "raw_dry": 0,
+    "dry_threshold_pct": 50,
+    "color": "#00FF00"
+  },
+  {
     "id": "p1",
     "name": "String of Nickels",
     "species": "Dischidia nummularia",
@@ -12,18 +24,6 @@
     "color": "#00FF41"
   },
   {
-    "id": "p2",
-    "name": "Mexican Mint",
-    "species": "Plectranthus amboinicus",
-    "sensor_type": "capacitive_tlc555",
-    "sensor_key": "a5",
-    "sensor_pin": "a5",
-    "raw_wet": 96,
-    "raw_dry": 438,
-    "dry_threshold_pct": 20,
-    "color": "#ADFF2F"
-  },
-  {
     "id": "p3",
     "name": "Pothos",
     "species": "Epipremnum aureum",
@@ -34,18 +34,5 @@
     "raw_dry": 674,
     "dry_threshold_pct": 20,
     "color": "#FFD700"
-  },
-  {
-    "id": "p4",
-    "name": "Silver Guest Alpha",
-    "species": "Pilea glaucophylla",
-    "sensor_type": "capacitive_tlc555",
-    "sensor_pin": "a5",
-    "sensor_key": "a5",
-    "linked_to": "p2",
-    "raw_wet": 96,
-    "raw_dry": 438,
-    "dry_threshold_pct": 30,
-    "color": "#C0C0C0"
   }
 ]

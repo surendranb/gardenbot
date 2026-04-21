@@ -118,8 +118,8 @@ def load_vision_observation():
         print(f"Warden: Failed to load vision observation: {e}")
         return {"error": str(e)}
 
-def derive_hypothesis(raw, metrics, plants, **kwargs):
-    """Produces a compact state update for the next run."""
+def derive_hypothesis(raw, metrics, plants, vision_observation=None, **kwargs):
+    """Produces a compact state update for the next run, prioritizing Visual Ground Truth (VGT)."""
     if not raw or not metrics:
         return {
             "last_hypothesis": "Insufficient telemetry; awaiting next valid capture.",
@@ -134,6 +134,33 @@ def derive_hypothesis(raw, metrics, plants, **kwargs):
         if pct is not None and metrics.get(f"{pid}_is_dry"):
             dry_plants.append(pid)
 
+    # --- VISUAL GROUND TRUTH (VGT) OVERRIDE ---
+    vgt_concerns = []
+    vgt_hypothesis = None
+    
+    if vision_observation and "vision_report" in vision_observation:
+        report = vision_observation["vision_report"]
+        recon = report.get("inventory_reconciliation", {})
+        inference = report.get("visual_health_inference", "")
+        
+        # 1. Systemic Loss Check
+        for pid, status in recon.items():
+            if "Loss" in status or "Dead" in status:
+                vgt_concerns.append(f"VGT:systemic-loss:{pid}")
+        
+        # 2. Narrative Divergence Check
+        # If sensors say "Wet" (pct > 70) but Vision says "Terminal Decline" or "Stress"
+        for p in plants:
+            pid = p["id"]
+            pct = metrics.get(f"{pid}_pct", 0)
+            if pct > 70:
+                audit = report.get("plant_audit", {}).get(pid, "").lower()
+                if "dead" in audit or "necrotic" in audit or "terminal" in audit or "desiccated" in audit:
+                    vgt_concerns.append(f"VGT:divergence-detected:{pid}")
+        
+        if "terminal" in inference.lower() or "critical failure" in inference.lower():
+            vgt_hypothesis = f"VGT CRITICAL: {inference}"
+
     vpd = metrics.get("vpd")
     if dry_plants:
         concerns.append(f"dry:{','.join(dry_plants)}")
@@ -143,13 +170,22 @@ def derive_hypothesis(raw, metrics, plants, **kwargs):
     # Hardware Safe Mode Threshold: If hardware fails for > 15 cycles (~7.5h or context dependent),
     # escalate to a systemic failure warning.
     consecutive_drops = kwargs.get('consecutive_drops', 0)
-    if consecutive_drops >= 5:
+    
+    # Priority 1: VGT Critical
+    if vgt_hypothesis:
+        hypothesis = vgt_hypothesis
+        concerns.extend(vgt_concerns)
+    # Priority 2: Hardware Failure
+    elif consecutive_drops >= 5:
         concerns.append("hardware-safe-mode")
         hypothesis = f"CRITICAL: BME680 sensor has failed for {consecutive_drops} consecutive cycles. System entering Hardware Safe Mode. Logic Engine must prioritize Visual Ground Truth."
+    # Priority 3: VPD Stress
     elif dry_plants and vpd is not None and vpd >= 3.0:
         hypothesis = f"Plants {', '.join(dry_plants)} are under dry-down pressure with elevated VPD."
+    # Priority 4: Soil Moisture
     elif dry_plants:
         hypothesis = f"Dry-down detected in {', '.join(dry_plants)}; moisture needs follow-up."
+    # Priority 5: Atmospheric
     elif vpd is not None and vpd >= 3.0:
         hypothesis = "Soil moisture is adequate, but atmospheric demand remains high."
     else:
@@ -404,7 +440,8 @@ if __name__ == "__main__":
     else:
         state["consecutive_drops"] = 0
 
-    state_update = derive_hypothesis(raw, metrics, plants, consecutive_drops=state.get("consecutive_drops", 0))
+    vision_observation = load_vision_observation()
+    state_update = derive_hypothesis(raw, metrics, plants, vision_observation=vision_observation, consecutive_drops=state.get("consecutive_drops", 0))
     state.update(state_update)
     state["last_run"] = datetime.now().strftime("%Y-%m-%d %H:%M %p IST")
     save_snapshot(raw, metrics, plants, state)
