@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-21 23:10:43
+**Generated:** 2026-04-21 23:41:37
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,7 +21,7 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 23:10
+- **TIME OF AUDIT**: 23:41
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.3 dB (Baseline Floor)
@@ -69,9 +69,9 @@
 - **4h Pulse**: 0.611 kPa | **24h Cycle**: 0.611 kPa | **72h Rhythm**: 0.639 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 73.6% (Current) vs 82.7% (24h Avg) | **7d Baseline Delta**: 12.9% (📈 GROWTH/WET)
-- **P2**: 69.0% (Current) vs 70.2% (24h Avg) | **7d Baseline Delta**: 19.3% (📈 GROWTH/WET)
-- **P3**: 68.8% (Current) vs 68.4% (24h Avg) | **7d Baseline Delta**: -3.6% (⚖️ STABLE)
+- **P1**: 71.9% (Current) vs 82.2% (24h Avg) | **7d Baseline Delta**: 11.2% (📈 GROWTH/WET)
+- **P2**: 69.1% (Current) vs 70.2% (24h Avg) | **7d Baseline Delta**: 19.4% (📈 GROWTH/WET)
+- **P3**: 69.4% (Current) vs 68.5% (24h Avg) | **7d Baseline Delta**: -3.0% (⚖️ STABLE)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
