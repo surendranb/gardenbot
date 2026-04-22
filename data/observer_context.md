@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-22 10:36:56
+**Generated:** 2026-04-22 11:18:21
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,7 +21,7 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 10:36
+- **TIME OF AUDIT**: 11:18
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.3 dB (Baseline Floor)
@@ -29,7 +29,7 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 463 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 464 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -64,12 +64,12 @@
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 0.489 kPa | **24h Cycle**: 0.6 kPa | **72h Rhythm**: 0.635 kPa
+- **4h Pulse**: 0.407 kPa | **24h Cycle**: 0.588 kPa | **72h Rhythm**: 0.631 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 83.5% (Current) vs 64.7% (24h Avg) | **7d Baseline Delta**: 19.7% (📈 GROWTH/WET)
-- **P2**: 69.5% (Current) vs 69.8% (24h Avg) | **7d Baseline Delta**: 13.9% (📈 GROWTH/WET)
-- **P3**: 77.1% (Current) vs 72.4% (24h Avg) | **7d Baseline Delta**: 10.4% (📈 GROWTH/WET)
+- **P1**: 79.9% (Current) vs 64.7% (24h Avg) | **7d Baseline Delta**: 17.3% (📈 GROWTH/WET)
+- **P2**: 67.4% (Current) vs 69.5% (24h Avg) | **7d Baseline Delta**: 12.1% (📈 GROWTH/WET)
+- **P3**: 76.6% (Current) vs 72.4% (24h Avg) | **7d Baseline Delta**: 11.9% (📈 GROWTH/WET)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
