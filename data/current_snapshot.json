@@ -1,44 +1,44 @@
 {
-  "timestamp": "2026-04-22T13:21:04.896256",
+  "timestamp": "2026-04-22T14:22:47.953077",
   "sensors": {
-    "timestamp": "2026-04-22 13:20:59",
-    "temp": 34.55,
-    "hum": 100.0,
-    "light": 743,
-    "p1": 499,
-    "p2": 239,
-    "p3": 415,
-    "press": 652.01,
+    "timestamp": "2026-04-22 14:22:42",
+    "temp": 0.0,
+    "hum": 0.0,
+    "light": 777,
+    "p1": 513,
+    "p2": 237,
+    "p3": 418,
+    "press": 0.0,
     "gas": 0.0,
-    "db": -30.5
+    "db": -30.7
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 69.9,
+      "moisture_pct": 65.6,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 58.2,
+      "moisture_pct": 58.8,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 73.8,
+      "moisture_pct": 72.9,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 0.0
+    "vpd_kpa": 0.611
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_061926.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_122910.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-22T12:50:39.791112",
+      "timestamp": "2026-04-22T13:52:25.782713",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,12 +47,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-20/garden_132609.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_001154.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_121937.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_125019.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_135203.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_125019.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_135203.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_131423.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_121937.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg"
       },
       "frame_sequence": [
         {
@@ -77,42 +77,47 @@
         },
         {
           "label": "T-1",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_121937.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg"
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_125019.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_135203.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-22 12:50:22",
+        "timestamp": "2026-04-22 13:52:08",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "Registry vs. Reality: P1 (Yellow Pot) contains String of Nickels. P2/P4 (Black Pot) contains a single, struggling sprout. P3 (Black Pot) contains the White Rabbit anchor and a single leaf. P4 is not physically distinct from P2 in the current configuration.",
+        "compositional_truth_check": "The registry is partially accurate but requires significant revision based on visual evidence. P3 (Pothos/Rabbit) is present. P1 (String of Nickels) is present. P2/P4 (Mexican Mint/Silver Guest) are largely absent or represented by necrotic remnants.",
         "inventory_reconciliation": {
-          "P1": "Present",
-          "P2": "Systemic Loss (Original specimen absent/replaced by single sprout)",
-          "P3": "Present (Anchor intact)",
-          "P4": "Systemic Loss (Merged/Indistinguishable from P2)"
+          "P1": "Present (String of Nickels, yellow pot).",
+          "P2": "Systemic Loss (No viable Mexican Mint visible).",
+          "P3": "Present (Pothos, black pot, white rabbit anchor).",
+          "P4": "Systemic Loss (No viable Silver Guest visible)."
         },
         "plant_audit": {
-          "P1": "String of Nickels: Stable, showing consistent foliage density.",
-          "P2": "Sprout: Showing signs of chlorosis and structural weakness; appears to be a singular survivor.",
-          "P3": "Pothos: Significant leaf loss; only one primary leaf remains near the rabbit anchor.",
-          "P4": "N/A: No distinct specimen identified."
+          "P1": "Stable. The succulent foliage remains consistent throughout the sequence.",
+          "P3": "Stable. The Pothos leaf and the white rabbit anchor remain in situ. The necrotic leaf observed in the earliest image persists as a dried remnant.",
+          "P2_P4_Pot": "Degrading. The central black pot shows a single, thin, vertical sprout that appears to be struggling; no evidence of the registered species (Mexican Mint/Silver Guest) is present."
         },
         "biome_observations": {
-          "soil_texture": "Consistently damp across all pots; no visible fungal blooms.",
-          "incidental_growth": "None detected.",
-          "anomalies": "Presence of crushed eggshell fragments in the soil of the P2/P4 pot, indicating a nutrient intervention or soil amendment."
+          "soil_texture": "Consistently dark and damp; no signs of surface cracking.",
+          "debris": "Presence of eggshell fragments in the P2/P4 pot, acting as a potential soil amendment or mulch.",
+          "incidental_growth": "None observed."
         },
         "temporal_deltas": {
-          "T-5_to_T-3": "Initial state shows a brown, necrotic leaf in P3. P2/P4 sprout is upright.",
-          "T-2_to_T-1": "P3 necrotic leaf has been removed/fallen. P2/P4 sprout shows signs of wilting/postural collapse.",
-          "CURRENT": "P2/P4 sprout is now leaning significantly; P3 remains static with one leaf."
+          "earliest_to_t-3": "Minimal change; the Pothos leaf in P3 remains static.",
+          "t-2_to_current": "The sprout in the P2/P4 pot has undergone a slight postural shift, appearing more upright but lacking secondary leaf development."
         },
-        "visual_health_inference": "The biome is in a state of decline. P3 is suffering from severe defoliation. P2/P4 is failing to thrive, likely due to light deficiency or substrate issues. P1 is the only stable component.",
-        "anomalies": "Eggshell debris in P2/P4 soil is a non-standard intervention. The loss of the P3 leaf between T-5 and T-2 suggests active senescence.",
-        "narrative_description": "The botanical desk environment is currently struggling. While the String of Nickels (P1) maintains health, the Pothos (P3) has undergone a major loss of biomass. The sprout in the black pot (P2/P4) is exhibiting signs of etiolation and structural failure, likely exacerbated by the lack of direct light. The presence of eggshells suggests an attempt at soil enrichment, but the plants are not currently responding with new growth.",
+        "visual_health_inference": {
+          "P1": "Healthy/Dormant.",
+          "P3": "Stable/Recovering (necrotic leaf indicates past stress).",
+          "P2_P4": "Critical/Failure (specimens are not thriving; potential misidentification or total loss of original occupants)."
+        },
+        "anomalies": [
+          "Eggshell fragments in P2/P4 pot (New Intervention).",
+          "Unidentified thin sprout in P2/P4 pot (New Introduction/Volunteer)."
+        ],
+        "narrative_description": "The biome is currently in a state of stasis with high mortality in the P2/P4 sector. The Pothos (P3) and String of Nickels (P1) are holding their position, though the Pothos shows signs of previous senescence. The most significant development is the emergence of an uncatalogued sprout in the P2/P4 pot, which is currently the only sign of life in that container, suggesting the original specimens have been lost.",
         "confidence": 0.92
       }
     },
