@@ -1,47 +1,47 @@
 {
-  "timestamp": "2026-04-22T09:53:44.608546",
+  "timestamp": "2026-04-22T12:19:36.231533",
   "sensors": {
-    "timestamp": "2026-04-22 09:53:06",
-    "temp": 0.0,
-    "hum": 0.0,
-    "light": 660,
-    "p1": 240,
-    "p2": 198,
-    "p3": 410,
-    "press": 0.0,
+    "timestamp": "2026-04-22 12:19:30",
+    "temp": 34.55,
+    "hum": 100.0,
+    "light": 741,
+    "p1": 582,
+    "p2": 243,
+    "p3": 416,
+    "press": 652.01,
     "gas": 0.0,
-    "db": 0.0
+    "db": -30.3
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 100,
+      "moisture_pct": 44.5,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 70.2,
+      "moisture_pct": 57.0,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 75.2,
+      "moisture_pct": 73.5,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 0.611
+    "vpd_kpa": 0.0
   },
   "intelligence": {
-    "hypothesis": "VGT CRITICAL: The biome is in a state of critical failure. P3 is suffering from severe dehydration or root rot (evidenced by the brown, shriveled leaf). P2/P4 are effectively dead, with no viable vegetative structure remaining.",
+    "hypothesis": "VGT CRITICAL: P1 and P3 are in a state of stasis. P2/P4 is in a state of terminal decline (Systemic Loss). The lack of light and potential over-saturation of soil is likely contributing to the collapse of the P2/P4 specimen.",
     "active_concerns": [
       "VGT:systemic-loss:P2",
       "VGT:systemic-loss:P4"
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_061926.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_065009.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_111806.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-22T06:50:27.974855",
+      "timestamp": "2026-04-22T11:49:12.680036",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -50,9 +50,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-20/garden_132609.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_001154.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_065009.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_114842.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_065009.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_114842.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-18/garden_131423.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_001154.jpg"
       },
@@ -79,13 +79,13 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_065009.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_114842.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-22 06:50:13",
+        "timestamp": "2026-04-22 11:48:45",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry is partially accurate but shows significant degradation. P3 (Pothos/Rabbit) is present. P1 (String of Nickels) is present in the yellow pot. P2/P4 (Mexican Mint/Silver Guest) are in the black pot, but show severe decline.",
+        "compositional_truth_check": "The registry is partially accurate but shows significant degradation. P3 (Pothos/Rabbit) is present. P1 (String of Nickels) is present in the yellow pot. P2/P4 (Mexican Mint/Silver Guest) are in the black pot, but show signs of severe decline or loss.",
         "inventory_reconciliation": {
           "P1": "Present (Yellow Pot)",
           "P2": "Systemic Loss (Dead/Shriveled)",
@@ -93,23 +93,29 @@
           "P4": "Systemic Loss (Dead/Shriveled)"
         },
         "plant_audit": {
-          "P1": "String of Nickels: Stable, minimal growth, consistent hydration.",
-          "P2_P4": "Mexican Mint/Silver Guest: The primary specimen has undergone complete postural collapse and necrosis. Only a single, isolated, chlorotic leaf remains, which has detached from the main stem.",
-          "P3": "Pothos: The specimen is in a state of advanced senescence. The large leaf is necrotic (brown/crisp). The rabbit anchor remains in situ."
+          "P1": "Stable, low density, minimal growth observed.",
+          "P2_P4": "Severe decline. The central stem has collapsed and lost turgor pressure, transitioning from green to necrotic brown.",
+          "P3": "The Pothos leaf remains, though it shows a small necrotic spot. The white rabbit anchor is stable."
         },
         "biome_observations": {
-          "soil_texture": "Soil appears consistently damp with some surface crusting in the P3 pot.",
-          "fungal_presence": "None detected.",
-          "debris": "Significant presence of eggshell fragments used as soil amendment/top dressing."
+          "soil_texture": "Appears consistently damp/dark across all pots.",
+          "debris": "Eggshell fragments present in the black pot (P2/P4), likely an intervention for calcium or pH adjustment.",
+          "incidental_growth": "None observed."
         },
         "temporal_deltas": {
-          "T_minus_5_to_T_minus_1": "Progressive browning of the P3 leaf and total collapse of the P2/P4 stem.",
-          "T_minus_1_to_Current": "Stasis. No recovery observed. The P2/P4 leaf has shifted position slightly due to gravity/desiccation."
+          "Earliest_to_T-4": "No significant change.",
+          "T-4_to_T-3": "Minor postural shift in the P2/P4 stem.",
+          "T-3_to_T-2": "Increased wilting of the P2/P4 specimen; loss of verticality.",
+          "T-2_to_T-1": "Severe collapse of P2/P4; specimen is now lying flat against the soil.",
+          "T-1_to_CURRENT": "Specimen P2/P4 shows signs of desiccation and potential fungal decay; P3 leaf remains static."
         },
-        "visual_health_inference": "The biome is in a state of critical failure. P3 is suffering from severe dehydration or root rot (evidenced by the brown, shriveled leaf). P2/P4 are effectively dead, with no viable vegetative structure remaining.",
-        "anomalies": "The presence of eggshell fragments is a consistent intervention across all pots. No new plant introductions detected.",
-        "narrative_description": "The botanical environment is experiencing a severe decline. The Pothos (P3) is failing, with its primary leaf showing advanced necrosis. The Mexican Mint/Silver Guest (P2/P4) has suffered a total systemic collapse, leaving only a single, dying leaf fragment. The String of Nickels (P1) remains the only specimen showing relative stability, though it is not thriving. The environment is characterized by high mortality and lack of active growth.",
-        "confidence": 0.95
+        "visual_health_inference": "P1 and P3 are in a state of stasis. P2/P4 is in a state of terminal decline (Systemic Loss). The lack of light and potential over-saturation of soil is likely contributing to the collapse of the P2/P4 specimen.",
+        "anomalies": [
+          "Eggshell fragments in P2/P4 pot (New Intervention).",
+          "Necrotic spot on P3 leaf (Pathological indicator)."
+        ],
+        "narrative_description": "The biome is struggling. While the Pothos (P3) and String of Nickels (P1) maintain a baseline level of health, the specimen in the black pot (P2/P4) has undergone a rapid, irreversible decline over the 5-day observation period. The introduction of eggshells suggests an attempt to remediate the soil, but the plant has failed to respond, indicating root-level failure or environmental stress beyond nutrient deficiency.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
