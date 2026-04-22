@@ -143,20 +143,39 @@ def derive_hypothesis(raw, metrics, plants, vision_observation=None, **kwargs):
         recon = report.get("inventory_reconciliation", {})
         inference = report.get("visual_health_inference", "")
         
+        # Handle case where recon might be a string (from vision output)
+        if isinstance(recon, str):
+            # Parse string to extract plant statuses
+            recon_dict = {}
+            # Simple parsing - look for patterns like "P2_Mexican_Mint": "Systemic Loss..."
+            import re
+            # Find all plant status patterns
+            plant_pattern = r'P\d+_[A-Za-z_]+[^:]*:[^}]*'
+            matches = re.findall(r'P\d+_[A-Za-z_]+[^:]*:[^,}]*', recon)
+            for match in matches:
+                if ':' in match:
+                    pid, status = match.split(':', 1)
+                    pid = pid.strip()
+                    status = status.strip()
+                    recon_dict[pid] = status
+            recon = recon_dict
+        
         # 1. Systemic Loss Check
         for pid, status in recon.items():
-            if "Loss" in status or "Dead" in status:
+            if isinstance(status, str) and ("Loss" in status or "Dead" in status):
                 vgt_concerns.append(f"VGT:systemic-loss:{pid}")
         
         # 2. Narrative Divergence Check
         # If sensors say "Wet" (pct > 70) but Vision says "Terminal Decline" or "Stress"
-        for p in plants:
-            pid = p["id"]
-            pct = metrics.get(f"{pid}_pct", 0)
-            if pct > 70:
-                audit = report.get("plant_audit", {}).get(pid, "").lower()
-                if "dead" in audit or "necrotic" in audit or "terminal" in audit or "desiccated" in audit:
-                    vgt_concerns.append(f"VGT:divergence-detected:{pid}")
+        plant_audit = report.get("plant_audit", {})
+        if isinstance(plant_audit, dict):
+            for p in plants:
+                pid = p["id"]
+                pct = metrics.get(f"{pid}_pct", 0)
+                if pct > 70:
+                    audit = plant_audit.get(pid, "").lower()
+                    if isinstance(audit, str) and ("dead" in audit or "necrotic" in audit or "terminal" in audit or "desiccated" in audit):
+                        vgt_concerns.append(f"VGT:divergence-detected:{pid}")
         
         # Ensure inference is a string for comparison
         inf_str = str(inference).lower() if inference else ""
