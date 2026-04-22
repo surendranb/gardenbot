@@ -1,0 +1,760 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-Fidelity Botanical Agent">
+      
+      
+      
+        <link rel="canonical" href="https://surendranb.github.io/gardenbot/data/ledger/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Ledger - GardenOS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#garden-observer-report-2026-04-03-1038-am-ist" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="GardenOS" class="md-header__button md-logo" aria-label="GardenOS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            GardenOS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ledger
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/surendranb/gardenbot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dashboard
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../gallery/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Gallery
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../blog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  GardenOS Dev Blog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="GardenOS" class="md-nav__button md-logo" aria-label="GardenOS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    GardenOS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/surendranb/gardenbot" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GardenOS Dev Blog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#garden-observer-report-2026-04-03-1038-am-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Garden Observer Report - 2026-04-03 10:38 AM IST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biome-dynamics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌡️ Biome Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-update-internal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 STATE UPDATE (INTERNAL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garden-observer-report-2026-04-03-1207-pm-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Garden Observer Report - 2026-04-03 12:07 PM IST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#individual-plant-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Individual Plant Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biome-dynamics_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌡️ Biome Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-update-internal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 STATE UPDATE (INTERNAL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garden-observer-report-2026-04-03-0309-pm-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Garden Observer Report - 2026-04-03 03:09 PM IST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biome-dynamics_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌡️ Biome Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-update-internal_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 STATE UPDATE (INTERNAL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garden-observer-report-2026-04-03-0445-pm-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Garden Observer Report - 2026-04-03 04:45 PM IST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biome-dynamics_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌡️ Biome Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-update" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 STATE UPDATE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#garden-observer-report-2026-04-03-0603-pm-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🪴 Garden Observer Report - 2026-04-03 06:03 PM IST
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biome-dynamics_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌡️ Biome Dynamics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-update-internal_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 STATE UPDATE (INTERNAL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2026-04-22-0827" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026-04-22 08:27
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Ledger</h1>
+
+<h2 id="garden-observer-report-2026-04-03-1038-am-ist">🪴 Garden Observer Report - 2026-04-03 10:38 AM IST</h2>
+<ul>
+<li><strong>p1 (String of Nickels):</strong> Healthy - Alignment (sensor shows 89.9% moisture adequate and visuals show healthy, turgid growth) ➔ <strong>Advice:</strong> Continue foliar misting to mitigate VPD stress; monitor for any changes</li>
+<li><strong>p2 (Mexican Mint):</strong> Stressed - Divergence (sensor shows 92.7% moisture but A5 sensor broken; visuals show gradual wilting and loss of vertical rigidity) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.</li>
+<li><strong>p3 (Pothos):</strong> Stable - Alignment (sensor shows 71.5% moisture adequate and visuals show only slight chlorotic tip) ➔ <strong>Advice:</strong> Maintain current care; monitor lesion for changes; consider humidity support for VPD stress.</li>
+<li><strong>p4 (Silver Guest):</strong> Fragile - Divergence (sensor inferred from broken A5 unreliable; visuals show minimal growth and slight yellowing of cotyledons) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.</li>
+</ul>
+<h2 id="biome-dynamics">🌡️ Biome Dynamics</h2>
+<ul>
+<li><strong>VPD Context:</strong> VPD at 3.376 kPa (EXTREME, falling trend: -0.246) indicates high atmospheric demand driving transpiration stress despite adequate soil moisture in p1 and p3.</li>
+<li><strong>The Warden's Verdict:</strong> Extreme VPD continues to be the primary environmental stressor. p1 shows resilience with alignment. p2 and p4 show visual stress indicating potential hydration or establishment issues, compounded by A5 sensor failure. p3 shows minor visual stress likely from VPD despite adequate soil moisture.</li>
+</ul>
+<h2 id="state-update-internal">💾 STATE UPDATE (INTERNAL)</h2>
+<ul>
+<li><strong>NEW_HYPOTHESIS</strong>: The persistent extreme VPD is likely causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3.</li>
+<li><strong>LAST_HUMAN_ACTION</strong>: misted p1</li>
+<li><strong>ACTIVE CONCERNS</strong>: high-vpd, p2-nutrient-light-stress, p4-establishment-light</li>
+</ul>
+<h2 id="garden-observer-report-2026-04-03-1207-pm-ist">🪴 Garden Observer Report - 2026-04-03 12:07 PM IST</h2>
+<h2 id="individual-plant-status">🪴 Individual Plant Status</h2>
+<ul>
+<li><strong>p1 (String of Nickels):</strong> Healthy - Alignment (sensor shows 89.6% moisture adequate and visuals show healthy, turgid growth) ➔ <strong>Advice:</strong> Continue foliar misting to mitigate VPD stress; monitor for any changes</li>
+<li><strong>p2 (Mexican Mint):</strong> Stressed - Divergence (sensor shows 96.2% moisture adequate but visuals show slight drooping suggesting hydration/light needs) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.</li>
+<li><strong>p3 (Pothos):</strong> Stable - Alignment (sensor shows 70.9% moisture adequate and visuals show stable perforation as static feature) ➔ <strong>Advice:</strong> Maintain current care; monitor lesion for changes; consider humidity support for VPD stress.</li>
+<li><strong>p4 (Silver Guest):</strong> Stressed - Divergence (sensor data unreliable due to A5 failure; visuals show stunted growth suggesting nutrient/light limitation) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.</li>
+</ul>
+<h2 id="biome-dynamics_1">🌡️ Biome Dynamics</h2>
+<ul>
+<li><strong>VPD Context:</strong> VPD at 3.423 kPa (EXTREME, stable trend) indicates high atmospheric demand driving transpiration stress.</li>
+<li><strong>The Warden's Verdict:</strong> Extreme VPD continues as primary stressor. p1 shows resilience with alignment. p2 shows visual stress indicating hydration/light issues compounded by A5 sensor failure. p3 remains stable despite VPD. p4 shows establishment/light/nutrient issues exacerbated by sensor failure.</li>
+</ul>
+<h2 id="state-update-internal_1">💾 STATE UPDATE (INTERNAL)</h2>
+<ul>
+<li><strong>NEW_HYPOTHESIS</strong>: The persistent extreme VPD is causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3, compounded by A5 sensor failure masking true soil conditions.</li>
+<li><strong>LAST_HUMAN_ACTION</strong>: misted p1</li>
+<li><strong>ACTIVE_CONCERNS</strong>: high-vpd, p2-nutrient-light-stress, p4-establishment-light, a5-sensor-failure</li>
+</ul>
+<h2 id="garden-observer-report-2026-04-03-0309-pm-ist">🪴 Garden Observer Report - 2026-04-03 03:09 PM IST</h2>
+<ul>
+<li><strong>p1 (String of Nickels):</strong> Healthy - Alignment (sensor shows 85.3% moisture adequate and visuals show healthy, turgid growth) ➔ <strong>Advice:</strong> Continue foliar misting to mitigate VPD stress; monitor for any changes</li>
+<li><strong>p2 (Mexican Mint):</strong> Stressed - Divergence (sensor shows 88.0% moisture adequate but visuals show severe leaf-margin necrosis and wilting) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.</li>
+<li><strong>p3 (Pothos):</strong> Stable - Alignment (sensor shows 67.5% moisture adequate and visuals show stable leaf surface intact) ➔ <strong>Advice:</strong> Maintain current care; monitor for changes; consider humidity support for VPD stress.</li>
+<li><strong>p4 (Silver Guest):</strong> Stagnant - Divergence (sensor data unreliable due to A5 failure; visuals show lack of new leaf development suggesting slow establishment) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.</li>
+</ul>
+<h2 id="biome-dynamics_2">🌡️ Biome Dynamics</h2>
+<ul>
+<li><strong>VPD Context:</strong> VPD at 3.672 kPa (EXTREME, rising trend: +0.294 kPa/window) indicates high atmospheric demand driving transpiration stress despite adequate soil moisture readings.</li>
+<li><strong>The Warden's Verdict:</strong> Extreme VPD continues as primary stressor. p1 and p3 show resilience with alignment between sensors and visuals. p2 shows visual stress indicating hydration/light issues compounded by A5 sensor failure. p4 shows establishment/light/nutrient issues exacerbated by sensor failure.</li>
+</ul>
+<h2 id="state-update-internal_2">💾 STATE UPDATE (INTERNAL)</h2>
+<ul>
+<li><strong>NEW_HYPOTHESIS</strong>: The persistent extreme VPD is causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3, compounded by A5 sensor failure masking true soil conditions.</li>
+<li><strong>LAST_HUMAN_ACTION</strong>: misted p1</li>
+<li><strong>ACTIVE_CONCERNS</strong>: high-vpd, a5-sensor-failure, p2-visual-stress, p4-establishment-light</li>
+</ul>
+<h2 id="garden-observer-report-2026-04-03-0445-pm-ist">🪴 Garden Observer Report - 2026-04-03 04:45 PM IST</h2>
+<ul>
+<li><strong>P1:</strong> Healthy - Alignment ➔ <strong>Advice:</strong> Maintain care</li>
+<li><strong>P2:</strong> Stressed - Divergence (A5 Frozen) ➔ <strong>Advice:</strong> Ignore A5; visually assess</li>
+<li><strong>P3:</strong> Stable - Alignment ➔ <strong>Advice:</strong> Nominal</li>
+<li><strong>P4:</strong> Stressed - Divergence ➔ <strong>Advice:</strong> Visual audit needed</li>
+</ul>
+<h2 id="biome-dynamics_3">🌡️ Biome Dynamics</h2>
+<ul>
+<li><strong>VPD Context:</strong> EXTREME (3.376 kPa)</li>
+<li><strong>Verdict:</strong> A5 sensor confirmed failed; relying on visual stasis.</li>
+</ul>
+<h2 id="state-update">💾 STATE UPDATE</h2>
+<ul>
+<li><strong>HYPOTHESIS</strong>: A5 hardware shorted</li>
+<li><strong>CONCERNS</strong>: A5-Failure, High-VPD</li>
+</ul>
+<h2 id="garden-observer-report-2026-04-03-0603-pm-ist">🪴 Garden Observer Report - 2026-04-03 06:03 PM IST</h2>
+<ul>
+<li><strong>p1 (String of Nickels):</strong> Healthy - Alignment (sensor shows 85.3% moisture adequate and visuals show stable, turgid growth) ➔ <strong>Advice:</strong> Continue foliar misting to mitigate VPD stress; monitor for any changes</li>
+<li><strong>p2 (Mexican Mint):</strong> Stressed - Divergence (sensor shows 82.7% moisture adequate but visuals show leaf margin dehydration and drooping) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.</li>
+<li><strong>p3 (Pothos):</strong> Stable - Alignment (sensor shows 64.4% moisture adequate and visuals show only slight tip necrosis) ➔ <strong>Advice:</strong> Maintain current care; monitor lesion for changes; consider humidity support for VPD stress.</li>
+<li><strong>p4 (Silver Guest):</strong> Fragile - Divergence (sensor data unreliable due to A5 failure; visuals show significant loss of leaf color and structural integrity) ➔ <strong>Advice:</strong> HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.</li>
+</ul>
+<h2 id="biome-dynamics_4">🌡️ Biome Dynamics</h2>
+<ul>
+<li><strong>VPD Context:</strong> VPD at 3.622 kPa (EXTREME, stable trend) indicates high atmospheric demand driving transpiration stress.</li>
+<li><strong>The Warden's Verdict:</strong> Extreme VPD continues as primary stressor. p1 shows resilience with alignment. p2 and p4 show visual stress indicating hydration/light issues compounded by A5 sensor failure. p3 shows mild visual stress likely from VPD despite adequate soil moisture.</li>
+</ul>
+<h2 id="state-update-internal_3">💾 STATE UPDATE (INTERNAL)</h2>
+<ul>
+<li><strong>NEW_HYPOTHESIS</strong>: The persistent extreme VPD is causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3, compounded by A5 sensor failure masking true soil conditions.</li>
+<li><strong>LAST_HUMAN_ACTION</strong>: misted p1</li>
+<li><strong>ACTIVE CONCERNS</strong>: high-vpd, a5-sensor-failure, p2-visual-stress, p4-establishment-light</li>
+</ul>
+<h2 id="2026-04-22-0827">2026-04-22 08:27</h2>
+<p><strong>Data Summary</strong>: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "content.code.copy", "blog"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

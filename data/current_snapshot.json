@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-22T07:49:25.297660",
+  "timestamp": "2026-04-22T09:07:07.968454",
   "sensors": {
-    "timestamp": "2026-04-22 07:48:50",
+    "timestamp": "2026-04-22 09:06:57",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 781,
-    "p1": 539,
-    "p2": 198,
-    "p3": 387,
+    "light": 650,
+    "p1": 244,
+    "p2": 203,
+    "p3": 407,
     "press": 0.0,
     "gas": 0.0,
     "db": 0.0
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 57.7,
+      "moisture_pct": 100,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 70.2,
+      "moisture_pct": 68.7,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 81.8,
+      "moisture_pct": 76.1,
       "is_dry": false
     }
   },
@@ -37,7 +37,7 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_061926.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_061926.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_065009.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
@@ -113,9 +113,9 @@
       }
     },
     "recent_visual_ledger": [
-      "\ud83e\udeb4 Garden Observer Report - 2026-04-03 06:03 PM IST\n* **p1 (String of Nickels):** Healthy - Alignment (sensor shows 85.3% moisture adequate and visuals show stable, turgid growth) \u2794 **Advice:** Continue foliar misting to mitigate VPD stress; monitor for any changes\n* **p2 (Mexican Mint):** Stressed - Divergence (sensor shows 82.7% moisture adequate but visuals show leaf margin dehydration and drooping) \u2794 **Advice:** HARDWARE ISSUE: Ignore A5 sensor data. Visually assess for watering needs; check for root-zone compaction.\n* **p3 (Pothos):** Stable - Alignment (sensor shows 64.4% moisture adequate and visuals show only slight tip necrosis) \u2794 **Advice:** Maintain current care; monitor lesion for changes; consider humidity support for VPD stress.\n* **p4 (Silver Guest):** Fragile - Divergence (sensor data unreliable due to A5 failure; visuals show significant loss of leaf color and structural integrity) \u2794 **Advice:** HARDWARE ISSUE: Ignore A5 sensor data. Increase light exposure; inspect for nutrient deficiency; ensure proper establishment; consider separate potting.",
       "\ud83c\udf21\ufe0f Biome Dynamics\n* **VPD Context:** VPD at 3.622 kPa (EXTREME, stable trend) indicates high atmospheric demand driving transpiration stress.\n* **The Warden's Verdict:** Extreme VPD continues as primary stressor. p1 shows resilience with alignment. p2 and p4 show visual stress indicating hydration/light issues compounded by A5 sensor failure. p3 shows mild visual stress likely from VPD despite adequate soil moisture.",
-      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: The persistent extreme VPD is causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3, compounded by A5 sensor failure masking true soil conditions.\n- **LAST_HUMAN_ACTION**: misted p1\n- **ACTIVE CONCERNS**: high-vpd, a5-sensor-failure, p2-visual-stress, p4-establishment-light"
+      "\ud83d\udcbe STATE UPDATE (INTERNAL)\n- **NEW_HYPOTHESIS**: The persistent extreme VPD is causing transpiration stress that manifests as leaf-margin stress in p2 and growth inhibition in p4, despite adequate soil moisture in p1 and p3, compounded by A5 sensor failure masking true soil conditions.\n- **LAST_HUMAN_ACTION**: misted p1\n- **ACTIVE CONCERNS**: high-vpd, a5-sensor-failure, p2-visual-stress, p4-establishment-light",
+      "2026-04-22 08:27\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa."
     ]
   }
 }
