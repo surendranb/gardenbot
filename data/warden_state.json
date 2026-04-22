@@ -1,10 +1,7 @@
 {
-  "last_hypothesis": "VGT CRITICAL: The biome is in a state of terminal decline. The lack of natural light and potential over-saturation of the soil has led to root rot or systemic failure in the Pothos and the foreground specimens. The plants are not currently photosynthesizing effectively.",
-  "active_concerns": [
-    "VGT:systemic-loss:P2",
-    "VGT:systemic-loss:P4"
-  ],
+  "last_hypothesis": "Telemetry stable; no immediate stress signal.",
+  "active_concerns": [],
   "consecutive_drops": 0,
-  "last_run": "2026-04-22 20:32 PM IST",
+  "last_run": "2026-04-22 21:02 PM IST",
   "last_human_action": "none"
 }
