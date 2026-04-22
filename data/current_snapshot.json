@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-04-23T04:13:31.942354",
+  "timestamp": "2026-04-23T04:44:18.123767",
   "sensors": {
-    "timestamp": "2026-04-23 04:13:26",
+    "timestamp": "2026-04-23 04:44:12",
     "temp": 0.0,
     "hum": 0.0,
     "light": 886,
-    "p1": 240,
-    "p2": 208,
-    "p3": 468,
+    "p1": 229,
+    "p2": 213,
+    "p3": 469,
     "press": 0.0,
     "gas": 0.0,
-    "db": -38.9
+    "db": -39.2
   },
   "moisture_analysis": {
     "p1": {
@@ -18,11 +18,11 @@
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 67.3,
+      "moisture_pct": 65.8,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 58.7,
+      "moisture_pct": 58.4,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_000745.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_031152.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_041333.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-23T03:12:32.332300",
+      "timestamp": "2026-04-23T04:27:14.508997",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,9 +47,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_000745.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_031152.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_042652.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_031152.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_042652.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-19/garden_132219.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_000745.jpg"
       },
@@ -76,48 +76,39 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_031152.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_042652.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-23 03:11:55",
+        "timestamp": "2026-04-23 04:26:55",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": {
-          "status": "Partial Systemic Loss",
-          "details": "P1 (String of Nickels) and P2/P4 (Mexican Mint/Silver Guest) are largely obscured or show signs of severe decline. P3 (Pothos) remains the primary anchor."
-        },
+        "compositional_truth_check": "The registry is partially accurate but shows significant degradation. P3 (Pothos/Rabbit) is present. P1 (String of Nickels) is present but in decline. P2/P4 (Mexican Mint/Silver Guest) are largely obscured or lost to senescence.",
         "inventory_reconciliation": {
-          "P1": "Present, but showing significant chlorosis/necrosis.",
-          "P2": "Systemic Loss; no viable mint foliage visible.",
-          "P3": "Present; White Rabbit anchor stable.",
-          "P4": "Systemic Loss; merged with P2 decline."
+          "P1": "Present (Yellow Pot), showing signs of leaf loss.",
+          "P2": "Systemic Loss (Black Pot), no viable mint visible.",
+          "P3": "Present (Black Pot), White Rabbit anchor confirmed.",
+          "P4": "Systemic Loss (Black Pot), no viable silver guest visible."
         },
         "plant_audit": {
-          "P1": "Leaf turgor is failing; yellowing observed.",
-          "P2_P4": "Dead stem material only; no active growth.",
-          "P3": "Pothos leaf remains, though showing signs of light-starvation or moisture stress."
+          "P1": "Stems are thinning; original foliage count has decreased over the 5-day period.",
+          "P2": "No visible healthy tissue; soil surface appears barren.",
+          "P3": "Pothos leaf remains, but shows signs of chlorosis or dehydration.",
+          "P4": "No visible healthy tissue; likely lost to environmental stress."
         },
         "biome_observations": {
-          "soil_texture": "Dry, granular, with significant debris (eggshell fragments).",
-          "surface_anomalies": "Introduction of eggshell fragments as a soil amendment/top dressing.",
-          "fungal_presence": "None detected."
+          "soil_texture": "Soil appears consistently dry across all pots; no signs of recent irrigation.",
+          "debris": "Eggshell fragments observed in the foreground pot, acting as a mulch/calcium amendment.",
+          "surface": "Desk surface is clear of organic debris, suggesting controlled maintenance."
         },
         "temporal_deltas": {
-          "earliest_to_t-4": "Minimal change; initial state of decline established.",
-          "t-4_to_t-2": "Progressive loss of leaf turgor in P3; P2/P4 stem collapse.",
-          "t-1_to_current": "Increased darkness/shadowing; plant structures appear static or further desiccated."
+          "earliest_to_t4": "Initial state shows a brown, necrotic leaf in P3. P1 has visible succulent leaves.",
+          "t4_to_t2": "Progressive loss of turgor in the P3 leaf. P1 foliage count remains stable but appears slightly duller.",
+          "t2_to_current": "Significant light reduction in the environment makes further assessment difficult, but the P3 leaf appears to have lost structural integrity."
         },
-        "visual_health_inference": {
-          "P1": "Critical/Declining",
-          "P2_P4": "Dead",
-          "P3": "Stressed/Stable"
-        },
-        "anomalies": [
-          "Introduction of crushed eggshells in P3 and P4 pots.",
-          "Severe light-induced etiolation or lack of photosynthetic activity in the P3 specimen."
-        ],
-        "narrative_description": "The biome is in a state of advanced senescence. The Pothos (P3) is the only specimen maintaining structural integrity, though it is clearly struggling under the current lighting regime. The Mexican Mint (P2/P4) has suffered a total systemic collapse, leaving only necrotic stems. The introduction of eggshells suggests an attempt at soil remediation, but the lack of light is the primary limiting factor for recovery.",
-        "confidence": 0.92
+        "visual_health_inference": "The biome is in a state of advanced decline. The lack of turgor in the P3 leaf and the disappearance of P2/P4 suggest a failure in the hydration or light-spectrum requirements for these specific species.",
+        "anomalies": "Introduction of eggshell fragments in the foreground pot (P3/P4 area) as a potential soil amendment.",
+        "narrative_description": "The audit reveals a struggling indoor biome. The Pothos (P3) is the primary indicator of health, and its current state\u2014characterized by a loss of rigidity and color\u2014suggests chronic stress. The absence of the Mexican Mint and Silver Guest indicates a failure to thrive, likely due to the lack of direct light or improper moisture management. The presence of eggshells suggests an attempt at intervention, though it has not yet yielded visible recovery.",
+        "confidence": 0.85
       }
     },
     "recent_visual_ledger": [
