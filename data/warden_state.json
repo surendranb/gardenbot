@@ -1,11 +1,7 @@
 {
-  "last_hypothesis": "VGT CRITICAL: The plants are in a terminal state of decline. The lack of chlorophyll and loss of structural integrity in the P3 specimen, combined with the absence of other registered plants, indicates a failure of the current maintenance protocol.",
-  "active_concerns": [
-    "VGT:systemic-loss:P1",
-    "VGT:systemic-loss:P2",
-    "VGT:systemic-loss:P4"
-  ],
+  "last_hypothesis": "Telemetry stable; no immediate stress signal.",
+  "active_concerns": [],
   "consecutive_drops": 0,
-  "last_run": "2026-04-23 07:17 AM IST",
+  "last_run": "2026-04-23 07:48 AM IST",
   "last_human_action": "none"
 }
