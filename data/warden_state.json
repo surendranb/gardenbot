@@ -1,7 +1,11 @@
 {
-  "last_hypothesis": "Telemetry stable; no immediate stress signal.",
-  "active_concerns": [],
+  "last_hypothesis": "VGT CRITICAL: The biome is in a state of critical failure. The lack of photosynthetic material, combined with the presence of decaying organic matter (eggshells) in a non-productive soil environment, indicates a lack of nutrient uptake and potential root rot or severe dehydration/overwatering cycle.",
+  "active_concerns": [
+    "VGT:systemic-loss:P1",
+    "VGT:systemic-loss:P2/P4",
+    "VGT:systemic-loss:P3"
+  ],
   "consecutive_drops": 0,
-  "last_run": "2026-04-25 22:12 PM IST",
+  "last_run": "2026-04-25 22:42 PM IST",
   "last_human_action": "none"
 }
