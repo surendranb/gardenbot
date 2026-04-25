@@ -1,7 +1,10 @@
 {
-  "last_hypothesis": "Telemetry stable; no immediate stress signal.",
-  "active_concerns": [],
+  "last_hypothesis": "VGT CRITICAL: The specimens are in critical condition. The lack of light (zero direct sunlight) combined with the observed leaf degradation suggests a failure in the photosynthetic cycle. The plants are likely in a state of terminal senescence.",
+  "active_concerns": [
+    "VGT:systemic-loss:P1",
+    "VGT:systemic-loss:P2"
+  ],
   "consecutive_drops": 0,
-  "last_run": "2026-04-26 02:46 AM IST",
+  "last_run": "2026-04-26 03:17 AM IST",
   "last_human_action": "none"
 }
