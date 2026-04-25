@@ -1,16 +1,16 @@
 {
-  "timestamp": "2026-04-26T04:48:49.512060",
+  "timestamp": "2026-04-26T05:19:19.764454",
   "sensors": {
-    "timestamp": "2026-04-26 04:48:44",
+    "timestamp": "2026-04-26 05:19:14",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 889,
-    "p1": 196,
-    "p2": 220,
-    "p3": 367,
+    "light": 890,
+    "p1": 255,
+    "p2": 219,
+    "p3": 364,
     "press": 0.0,
     "gas": 0.0,
-    "db": -38.6
+    "db": -38.5
   },
   "moisture_analysis": {
     "p1": {
@@ -18,11 +18,11 @@
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 63.7,
+      "moisture_pct": 64.0,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 87.5,
+      "moisture_pct": 88.3,
       "is_dry": false
     }
   },
@@ -34,11 +34,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_001410.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_041817.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_042913.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-26T04:29:23.160739",
+      "timestamp": "2026-04-26T04:48:58.275333",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -47,9 +47,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-24/garden_133036.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_001410.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_042913.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_044850.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_042913.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_044850.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-22/garden_132106.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_001410.jpg"
       },
@@ -76,46 +76,46 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_042913.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_044850.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-26 04:29:16",
+        "timestamp": "2026-04-26 04:48:53",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
         "compositional_truth_check": {
-          "status": "CRITICAL_FAILURE",
-          "reconciliation_notes": "The biome has undergone a catastrophic collapse. The P3 Pothos (anchored by the white rabbit) and the P2/P4 specimens have been removed or have completely desiccated/decomposed. The only remaining physical evidence is the yellow pot (P1) and the black pot containing the white rabbit figurine, which is now devoid of visible plant matter."
+          "status": "Critical Systemic Loss",
+          "details": "The P3 Pothos (anchor) and P2/P4 specimens have undergone catastrophic decline. The white rabbit anchor is no longer visible in the current frame, suggesting removal or burial."
         },
         "inventory_reconciliation": {
-          "P1_String_of_Nickels": "Present (Yellow Pot), but appears empty/dormant.",
-          "P2_Mexican_Mint": "Systemic Loss.",
-          "P3_Pothos": "Systemic Loss (Rabbit figurine remains, plant is gone).",
-          "P4_Silver_Guest": "Systemic Loss."
+          "P1": "Present (Yellow Pot, empty/dormant)",
+          "P2": "Systemic Loss (Dead/Missing)",
+          "P3": "Systemic Loss (Anchor missing, plant material absent)",
+          "P4": "Systemic Loss (Dead/Missing)"
         },
         "plant_audit": {
-          "P1": "Empty soil surface; no visible foliage.",
-          "P2_P4_Cluster": "Empty soil surface; no visible foliage.",
-          "P3": "Rabbit figurine present; no plant matter detected."
+          "P1": "Soil surface appears undisturbed but devoid of visible String of Nickels foliage.",
+          "P3": "The white rabbit anchor has been removed. The Pothos foliage is entirely absent.",
+          "P4": "The single leaf observed in earlier frames has undergone necrosis and abscission."
         },
         "biome_observations": {
-          "soil_condition": "Appears dark and potentially saturated; no signs of active growth.",
-          "debris": "Eggshell fragments remain in the black pot, serving as a persistent anomaly.",
-          "desk_surface": "Clean, no organic matter or spillover."
+          "soil_texture": "Consistently dark and damp; no signs of fungal bloom, but significant organic decay.",
+          "debris": "Eggshell fragments remain in the P4 pot, serving as the only persistent marker of the previous biome state.",
+          "desk_surface": "Clear of debris; the removal of the rabbit anchor indicates a deliberate intervention."
         },
         "temporal_deltas": {
-          "EARLIEST_to_T-2": "Gradual loss of leaf turgidity and eventual disappearance of the P3 Pothos leaf.",
-          "T-1_to_CURRENT": "Total biome stasis; no further changes as the biological components have been removed or fully decayed."
+          "T-4_to_T-2": "Gradual loss of turgor in P4 leaf; rabbit anchor remains stable.",
+          "T-1_to_CURRENT": "Total disappearance of the rabbit anchor and final abscission of the last remaining leaf in the P4/P2 cluster."
         },
         "visual_health_inference": {
-          "status": "DECEASED/REMOVED",
-          "reasoning": "The transition from the earliest image to the current state shows a clear progression of plant loss. The absence of any green biomass confirms that the specimens are no longer viable or present in the monitored pots."
+          "status": "Non-viable",
+          "reasoning": "The complete absence of photosynthetic tissue across all pots indicates a total failure of the indoor biome. The environment is currently a collection of empty vessels."
         },
         "anomalies": [
-          "Eggshell fragments in the black pot (persistent).",
-          "White rabbit figurine (scale anchor) remains in an empty pot."
+          "Removal of the white rabbit scale anchor.",
+          "Complete disappearance of all plant matter."
         ],
-        "narrative_description": "The audit reveals a complete loss of the botanical specimens previously registered. The sequence documents the final stages of decline followed by the removal of the plants, leaving only the inert pots and the scale-anchor figurine. The environment is currently devoid of living plant life.",
-        "confidence": 1.0
+        "narrative_description": "The audit reveals a rapid and total collapse of the botanical collection. Over the observed sequence, the plants transitioned from a state of visible stress (leaf necrosis) to total disappearance. The removal of the white rabbit anchor suggests a manual clearing of the desk space, rendering the current biome 'reset' or 'abandoned'.",
+        "confidence": 0.98
       }
     },
     "recent_visual_ledger": [
