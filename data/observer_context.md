@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-04-25 16:03:16
+**Generated:** 2026-04-25 16:34:01
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,7 +21,7 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 16:03
+- **TIME OF AUDIT**: 16:34
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.3 dB (Baseline Floor)
@@ -29,19 +29,19 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 618 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 620 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
 
 ## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS
-# Agent Calibration Update - 2026-04-24
+# Agent Calibration Update - 2026-04-25
 
 ## Meta-Audit
-- **Previous Report (04-24 18:53):** Reported sensor failure (0.0°C/0.0% humidity) and recommended hardware inspection.
-- **Current Observation (04-24 21:53):** Telemetry persists at 0.0°C/0.0%, confirming sustained sensor hardware failure.
-- **Hypothesis Check:** Held. The sensor failure persists, validating the need for hardware-level intervention.
-- **Heuristic Shift:** **MAINTENANCE PROTOCOL ACTIVATED** - Continuation of proactive hardware troubleshooting; no shift required as hypothesis held.
+- **Previous Report (04-25 09:53):** Reported persistent sensor failure and suggested prioritizing explicit manual diagnostic triggers if telemetry remains flat for >24h.
+- **Current Observation (04-25 15:53):** Telemetry persists at 0.0°C/0.0%, confirming sustained sensor hardware failure for >24h.
+- **Hypothesis Check:** Held. The sensor failure persists, validating the need for hardware-level intervention and the heuristic of prioritizing manual diagnostics.
+- **Heuristic Shift:** **DIAGNOSTIC PROTOCOL ENHANCED** - Added explicit manual diagnostic triggers (physical connection check, I2C bus test, temporary sensor deployment) when telemetry remains flat for >24h.
 
 ## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS
 ### Report: 🌡️ Biome Dynamics
@@ -66,9 +66,9 @@
 - **4h Pulse**: 0.611 kPa | **24h Cycle**: 0.611 kPa | **72h Rhythm**: 0.592 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 93.1% (Current) vs 62.9% (24h Avg) | **7d Baseline Delta**: 6.9% (📈 GROWTH/WET)
-- **P2**: 69.3% (Current) vs 70.2% (24h Avg) | **7d Baseline Delta**: -1.5% (⚖️ STABLE)
-- **P3**: 80.0% (Current) vs 80.6% (24h Avg) | **7d Baseline Delta**: 3.1% (⚖️ STABLE)
+- **P1**: 93.1% (Current) vs 64.3% (24h Avg) | **7d Baseline Delta**: 2.3% (⚖️ STABLE)
+- **P2**: 67.1% (Current) vs 69.9% (24h Avg) | **7d Baseline Delta**: -3.7% (⚖️ STABLE)
+- **P3**: 80.2% (Current) vs 80.6% (24h Avg) | **7d Baseline Delta**: -1.6% (⚖️ STABLE)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
