@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-04-25T20:09:53.682838",
+  "timestamp": "2026-04-25T20:40:26.883320",
   "sensors": {
-    "timestamp": "2026-04-25 17:04:16",
+    "timestamp": "2026-04-25 20:40:21",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 814,
-    "p1": 601.0,
-    "p2": 156.0,
-    "p3": 390.0,
+    "light": 801,
+    "p1": 582,
+    "p2": 229,
+    "p3": 374,
     "press": 0.0,
     "gas": 0.0,
-    "db": -23.8
+    "db": -29.9
   },
   "moisture_analysis": {
     "p1": {
-      "moisture_pct": 38.7,
+      "moisture_pct": 44.5,
       "is_dry": false
     },
     "p2": {
-      "moisture_pct": 82.5,
+      "moisture_pct": 61.1,
       "is_dry": false
     },
     "p3": {
-      "moisture_pct": 80.9,
+      "moisture_pct": 85.5,
       "is_dry": false
     }
   },
@@ -30,17 +30,15 @@
     "vpd_kpa": 0.611
   },
   "intelligence": {
-    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
-    "active_concerns": [
-      "missing-telemetry"
-    ],
+    "hypothesis": "Telemetry stable; no immediate stress signal.",
+    "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_062019.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_190845.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_200954.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-25T19:39:36.512343",
+      "timestamp": "2026-04-25T20:28:38.857996",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -50,9 +48,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-24/garden_133036.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_001345.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_193923.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_202828.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_193923.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_202828.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-21/garden_132536.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg"
       },
@@ -83,43 +81,39 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_193923.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_202828.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-25 19:39:26",
+        "timestamp": "2026-04-25 20:28:32",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": {
-          "status": "Partial Discrepancy",
-          "reconciliation_notes": "The registry identifies P1, P2, P3, and P4. Visual evidence confirms only two visible pots: one black pot containing the P3 Pothos (with rabbit anchor) and a single leaf specimen, and one yellow pot (P1). P2 and P4 are not independently visible or have been consolidated/lost."
-        },
+        "compositional_truth_check": "The registry is partially inaccurate. P1 (String of Nickels) is absent/lost. P2/P4 (Mexican Mint/Silver Guest) are not visible as distinct specimens. P3 (Pothos) is present with the rabbit anchor. A new, unidentified sprout is present in the lower central pot.",
         "inventory_reconciliation": {
-          "P1_String_of_Nickels": "Present (Yellow Pot). Appears dormant or empty.",
-          "P2_Mexican_Mint": "Systemic Loss/Unobservable.",
-          "P3_Pothos": "Present (Black Pot with Rabbit).",
-          "P4_Silver_Guest": "Systemic Loss/Unobservable."
+          "P1": "Systemic Loss (Yellow pot is empty/soil only)",
+          "P2": "Systemic Loss (No evidence of Mexican Mint)",
+          "P3": "Present (Pothos leaf and rabbit anchor)",
+          "P4": "Systemic Loss (No evidence of Silver Guest)"
         },
         "plant_audit": {
-          "P3_Pothos": "The specimen shows a single, upright, pale green leaf. The petiole is thin, suggesting etiolation or stress. No significant growth or decline over the 5-day period.",
-          "P1_Yellow_Pot": "Appears to contain soil substrate only. No visible foliage or active growth."
+          "P1_Yellow_Pot": "Empty. Soil appears dry and undisturbed.",
+          "P3_Black_Pot_Rabbit": "Single Pothos leaf remains. Shows signs of chlorosis or thinning. Rabbit anchor is stable.",
+          "New_Sprout_Lower_Pot": "A single, pale, lanceolate leaf emerging from the soil. Appears to be a new, uncatalogued seedling."
         },
         "biome_observations": {
-          "soil_condition": "Dark, moist appearance. Presence of white particulate matter (likely perlite or eggshell fragments) consistent across all frames.",
-          "surface_debris": "Eggshell fragments noted in the P3 pot, serving as a potential calcium supplement or mulch.",
-          "desk_surface": "Clean, no significant fungal or pest activity observed."
+          "soil_texture": "Dark, moist, consistent across all pots.",
+          "debris": "Eggshell fragments present in the lower pot, acting as a potential calcium supplement or mulch.",
+          "incidental_growth": "None observed beyond the primary sprout."
         },
         "temporal_deltas": {
-          "T-5_to_Current": "The P3 leaf has maintained a consistent, slightly tilted posture. No new leaf emergence or senescence observed. The yellow pot remains consistently devoid of visible plant matter."
+          "T-5_to_T-1": "The Pothos leaf in P3 remains static. The sprout in the lower pot shows minimal elongation but maintains a consistent, pale green hue.",
+          "T-1_to_CURRENT": "No significant morphological changes. The environment appears stable but stagnant."
         },
-        "visual_health_inference": {
-          "P3_Pothos": "Stable but fragile. The lack of secondary leaves suggests a struggle for resources or light.",
-          "P1_Yellow_Pot": "Dormant or failed. Likely requires re-seeding or investigation of root health."
-        },
+        "visual_health_inference": "The Pothos (P3) is in a state of 'maintenance survival'\u2014it is not actively dying but shows no signs of active growth. The new sprout is the only sign of biological activity, though its pale color suggests limited light exposure (etiolation).",
         "anomalies": [
-          "Eggshell fragments present in P3 pot (Intervention).",
-          "Absence of P2 and P4 specimens (Systemic Loss)."
+          "Eggshell fragments in the lower pot (New Intervention).",
+          "Unidentified sprout in the lower pot (New Introduction)."
         ],
-        "narrative_description": "The biome is currently in a state of stasis. The P3 Pothos is the only active biological occupant, maintaining a single leaf with no signs of active expansion or decay. The yellow pot (P1) is currently a non-contributing element. The environment is stable, but the lack of diversity compared to the registry suggests a significant contraction of the botanical collection.",
+        "narrative_description": "The botanical environment is currently in a state of low-energy stasis. The original registry specimens (P1, P2, P4) have suffered systemic loss, leaving the desk dominated by a single Pothos leaf and a mysterious, pale seedling. The presence of eggshells suggests an attempt at soil amendment, though the lack of robust growth indicates the current light levels are insufficient for the plants to thrive.",
         "confidence": 0.92
       }
     },
