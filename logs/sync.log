@@ -41744,3 +41744,40 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 3.16 seconds
 2026-04-26 10:57:59 Staging all assets...
+2026-04-26 10:58:01 Staging changes...
+[main 31ece22f] GardenOS Sync: 2026-04-26 10:58:01
+ 12 files changed, 116 insertions(+), 68 deletions(-)
+ create mode 100644 archive/2026-04-26/garden_105703.jpg
+2026-04-26 10:58:02 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   05765927..31ece22f  main -> main
+2026-04-26 10:58:07 Sync Successful.
+2026-04-26 11:28:24 --- Sync Start: 2026-04-26 11:28:24 ---
+2026-04-26 11:28:24 Generating gallery metadata...
+2026-04-26 11:28:24 Updating latest report pointer...
+2026-04-26 11:28:24 Latest report updated to: logs/reports/report_20260426_0653.md
+2026-04-26 11:28:24 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/ledger.md
+  - data/observer_context.md
+INFO    -  Documentation built in 0.30 seconds
+2026-04-26 11:28:27 Staging all assets...
