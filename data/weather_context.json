@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-04-26 18:00:04",
+  "timestamp": "2026-04-27 06:00:04",
   "main": {
-    "temp": 31.35,
-    "humidity": 71,
+    "temp": 27.79,
+    "humidity": 90,
     "pressure": 1007
   },
   "weather": {
-    "id": 802,
-    "main": "Clouds",
-    "description": "scattered clouds",
-    "icon": "03d"
+    "id": 701,
+    "main": "Mist",
+    "description": "mist",
+    "icon": "50d"
   },
   "forecast": {
     "rain_expected": false,
