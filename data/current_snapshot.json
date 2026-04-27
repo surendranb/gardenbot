@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-27T23:42:43.352126",
+  "timestamp": "2026-04-28T00:13:39.768934",
   "sensors": {
     "timestamp": "2026-04-26 08:54:26",
     "temp": 0.0,
@@ -35,12 +35,12 @@
       "missing-telemetry"
     ],
     "temporal_stack": {
-      "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_061837.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_224108.jpg",
+      "anchor": null,
+      "previous": null,
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-27T23:12:25.913648",
+      "timestamp": "2026-04-27T23:43:19.566768",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -50,9 +50,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_133003.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_001143.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_132630.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_231206.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_234244.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_231206.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_234244.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-23/garden_132556.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_132630.jpg"
       },
@@ -83,47 +83,38 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_231206.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_234244.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-27 23:12:09",
+        "timestamp": "2026-04-27 23:42:47",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": {
-          "P1_String_of_Nickels": "Systemic Loss (Empty yellow pot)",
-          "P2_Mexican_Mint": "Systemic Loss (Empty black pot)",
-          "P3_Pothos": "Present (Single leaf remaining)",
-          "P4_Silver_Guest": "Systemic Loss (No evidence of silver foliage)"
-        },
+        "compositional_truth_check": "The registry is partially accurate but shows significant degradation. P1 (Yellow Pot) is present but appears empty/dormant. P3 (Black Pot with Rabbit) is present. P2 and P4 are not clearly distinguishable as separate entities; the black pot containing the rabbit appears to be the primary site of activity.",
         "inventory_reconciliation": {
-          "status": "Critical Decline",
-          "notes": "The biome has suffered a near-total collapse of the registered specimens. Only one Pothos leaf remains in the P3/P4 cluster."
+          "P1": "Present (Empty/Dormant)",
+          "P2": "Systemic Loss (No visible mint)",
+          "P3": "Present (Pothos/Rabbit anchor)",
+          "P4": "Systemic Loss (No visible silver guest)"
         },
         "plant_audit": {
-          "P1": "Empty soil, no visible growth.",
-          "P2": "Empty soil, no visible growth.",
-          "P3": "One surviving leaf, showing signs of chlorosis and dehydration.",
-          "P4": "Not detected; assumed lost."
+          "P1": "Yellow pot contains soil but no visible foliage. Potential dormancy or total loss.",
+          "P3": "Pothos specimen shows a single, declining leaf. The rabbit anchor remains in situ.",
+          "P2_P4_Cluster": "The black pot containing the rabbit shows a single, pale, chlorotic leaf that is progressively losing turgor pressure."
         },
         "biome_observations": {
-          "soil_condition": "Appears dry and compacted; presence of eggshell fragments suggests an attempt at nutrient supplementation.",
-          "debris": "Eggshell fragments scattered across the soil surface of the P3/P4 pot.",
-          "desk_surface": "Clean, no significant biological growth outside of pots."
+          "soil_condition": "Soil appears consistently dark and moist across all pots. No visible fungal blooms, but eggshell fragments are present as a persistent surface amendment.",
+          "incidental_growth": "None observed.",
+          "biome_anomalies": "The presence of eggshell fragments suggests an intentional, albeit potentially ineffective, nutrient intervention."
         },
         "temporal_deltas": {
-          "earliest_to_t-4": "Initial state shows P3 with a single leaf and P1/P2/P4 empty or dormant.",
-          "t-3_to_current": "Progressive loss of structural integrity in the remaining P3 leaf; no new growth observed."
+          "T_minus_5_to_T_minus_3": "Initial state shows a single, relatively healthy-looking leaf in the black pot. The yellow pot is empty.",
+          "T_minus_2_to_T_minus_1": "The leaf in the black pot begins to show signs of drooping and loss of structural integrity.",
+          "Current": "The leaf is significantly collapsed and appears to be in a state of terminal senescence."
         },
-        "visual_health_inference": {
-          "overall_health": "Critical/Terminal",
-          "reasoning": "The lack of turgor pressure in the remaining leaf and the absence of any secondary growth or recovery indicates a failure of the current environmental parameters."
-        },
-        "anomalies": [
-          "Eggshell fragments (likely calcium amendment attempt)",
-          "Total absence of P1, P2, and P4 specimens"
-        ],
-        "narrative_description": "The biome is in a state of advanced decay. The registry-expected plants are largely absent, suggesting either total mortality or complete senescence. The single remaining Pothos leaf is the only biological anchor, and it appears to be struggling. The presence of eggshells indicates an intervention that has failed to stimulate growth.",
-        "confidence": 0.95
+        "visual_health_inference": "The specimens are in a state of severe decline. The lack of light (zero direct sunlight) and potential over-saturation of soil (based on the dark, damp appearance) has likely led to root hypoxia or fungal rot. The Pothos is failing to thrive.",
+        "anomalies": "Eggshell fragments are present in the black pot, likely added as a calcium supplement, but they are not preventing the rapid decline of the remaining foliage.",
+        "narrative_description": "The biome is in a critical state of decline. The Pothos in the black pot is the only remaining specimen showing any biological presence, and it is currently exhibiting signs of terminal collapse. The yellow pot remains devoid of visible life. The environment appears to be suffering from a lack of adequate light and potentially poor drainage, leading to the rapid deterioration of the remaining plant matter.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
