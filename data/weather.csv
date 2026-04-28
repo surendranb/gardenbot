@@ -43,3 +43,4 @@ timestamp,temp,humidity,pressure,pop,description
 2026-04-27 06:00:04,27.79,90,1007,0,mist
 2026-04-27 18:00:06,31.14,77,1005,0,clear sky
 2026-04-28 06:00:02,28.57,89,1007,0,mist
+2026-04-28 18:00:06,31.81,72,1005,0,scattered clouds
