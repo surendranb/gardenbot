@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-29T12:02:55.432606",
+  "timestamp": "2026-04-29T12:33:25.127114",
   "sensors": {
     "timestamp": "2026-04-26 08:54:26",
     "temp": 0.0,
@@ -36,11 +36,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_062523.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_103108.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_122829.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-29T11:32:29.904910",
+      "timestamp": "2026-04-29T12:28:58.494303",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -49,11 +49,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_132630.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-28/garden_130035.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_001636.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_113212.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_120256.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_122829.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_113212.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_122829.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_001636.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_120256.jpg"
       },
       "frame_sequence": [
         {
@@ -61,61 +62,68 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg"
         },
         {
-          "label": "T-4",
+          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_133003.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_132630.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-28/garden_130035.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_001636.jpg"
         },
         {
+          "label": "T-1",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_120256.jpg"
+        },
+        {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_113212.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_122829.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-29 11:32:16",
+        "timestamp": "2026-04-29 12:28:33",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
         "compositional_truth_check": {
-          "status": "Partial Systemic Loss",
-          "details": "P1 (String of Nickels) is absent/bare soil. P2 (Mexican Mint) is absent/bare soil. P3 (Pothos) is present with anchor. P4 (Silver Guest) is absent/bare soil. Only P3 remains in a recognizable state."
+          "status": "Partial Reconciliation",
+          "notes": "Registry P1 (String of Nickels) is absent/unidentified. P2 (Mexican Mint) and P4 (Silver Guest) are not clearly demarcated in the black pot. P3 (Pothos) is present with the rabbit anchor."
         },
         "inventory_reconciliation": {
-          "P1": "Systemic Loss (Empty yellow pot)",
-          "P2": "Systemic Loss (Empty black pot)",
-          "P3": "Present (Pothos with rabbit anchor)",
-          "P4": "Systemic Loss (Empty black pot)"
+          "p1_yellow_pot": "Systemic Loss: Pot appears empty/soil-only.",
+          "p2_p4_black_pot": "Ambiguous: Contains a single, struggling sprout; likely a remnant of P2 or P4.",
+          "p3_black_pot": "Present: Pothos leaf and rabbit anchor intact."
         },
         "plant_audit": {
-          "P3": {
-            "health": "Declining",
-            "observation": "Single leaf remaining, showing signs of chlorosis and turgor loss. The petiole is weakening."
-          }
+          "p1": "Empty soil, no visible botanical activity.",
+          "p2_p4": "Single, chlorotic, elongated sprout. High risk of failure.",
+          "p3": "Single leaf specimen, stable but isolated."
         },
         "biome_observations": {
-          "soil_texture": "Consistently damp/dark; no visible fungal blooms, but high moisture retention noted.",
-          "debris": "Significant eggshell fragments present in P3, serving as a non-biological substrate addition.",
-          "surface": "Desk surface is clear of organic matter, suggesting a controlled but failing environment."
+          "soil_condition": "Dark, damp, potentially over-saturated. No fungal blooms observed.",
+          "surface_debris": "Eggshell fragments present in P3/P4 area; likely a calcium-supplementation intervention.",
+          "incidental_growth": "None detected."
         },
         "temporal_deltas": {
-          "earliest_to_t4": "Initial state showed a single Pothos leaf and a rabbit anchor. P1, P2, and P4 were already devoid of visible foliage.",
-          "t4_to_current": "Progressive senescence of the P3 leaf. The petiole has shifted from an upright posture to a horizontal, collapsing state."
+          "earliest_to_t5": "Initial observation shows a single leaf in P3 and a sprout in P4.",
+          "t5_to_current": "Minimal structural change. The sprout in P4 shows slight postural drooping; the P3 leaf remains static."
         },
-        "visual_health_inference": "The biome is in a state of terminal decline. The lack of light (North window only) combined with potential over-saturation of soil has led to the loss of all specimens except for one struggling Pothos leaf, which is currently undergoing rapid senescence.",
+        "visual_health_inference": {
+          "p3": "Stable, but low vigor.",
+          "p4": "Critical. The sprout is etiolated, suggesting insufficient light or root-zone stress.",
+          "p1": "Dead/Lost."
+        },
         "anomalies": [
-          "Eggshell fragments in P3 (likely an attempt at calcium supplementation or pH adjustment).",
-          "Total absence of P1, P2, and P4 specimens."
+          "Eggshell fragments (calcium intervention)",
+          "Etiolated sprout in P4",
+          "Empty P1 vessel"
         ],
-        "narrative_description": "The botanical audit reveals a catastrophic failure of the indoor biome. While the registry lists four distinct plant types, only a single, failing Pothos leaf remains in the P3 pot. The other pots (P1, P2, P4) are entirely devoid of plant matter, indicating systemic loss. The presence of eggshells suggests an intervention that failed to arrest the decline. The current state is characterized by high soil moisture and a lack of photosynthetic vigor, suggesting the plants have succumbed to either root rot or severe light starvation.",
-        "confidence": 0.95
+        "narrative_description": "The biome is in a state of arrested development. P1 is effectively a dormant or failed vessel. P3 maintains a single, surviving leaf, while the sprout in the black pot (P4) is struggling with significant etiolation, indicating a lack of sufficient light for its current developmental stage. The presence of eggshells suggests an attempt to amend soil nutrients, but the overall health remains precarious.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
