@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-30T00:20:22.720577",
+  "timestamp": "2026-04-30T00:50:58.052744",
   "sensors": {
     "timestamp": "2026-04-26 08:54:26",
     "temp": 0.0,
@@ -35,34 +35,29 @@
       "missing-telemetry"
     ],
     "temporal_stack": {
-      "anchor": null,
-      "previous": null,
+      "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002023.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002023.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-04-29T23:50:00.956510",
+      "timestamp": "2026-04-30T00:28:25.785888",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_133003.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-27/garden_132630.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-28/garden_130035.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_001636.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_130413.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_234950.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002023.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002803.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_234950.jpg",
-        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_130413.jpg"
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002803.jpg",
+        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_133003.jpg",
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002023.jpg"
       },
       "frame_sequence": [
         {
           "label": "EARLIEST",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-25/garden_132849.jpg"
-        },
-        {
-          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-26/garden_133003.jpg"
         },
         {
@@ -75,49 +70,47 @@
         },
         {
           "label": "T-2",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_001636.jpg"
-        },
-        {
-          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_130413.jpg"
         },
         {
+          "label": "T-1",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002023.jpg"
+        },
+        {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-29/garden_234950.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-04-30/garden_002803.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-04-29 23:49:53",
+        "timestamp": "2026-04-30 00:28:09",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry is largely non-representative of the current physical state. P1 (Yellow Pot) is present but appears devoid of viable foliage. P3 (Black Pot with Rabbit) contains a single leaf, likely a Pothos remnant. P2/P4 are not clearly distinguishable as separate entities; the black pot contains a single, struggling specimen.",
+        "compositional_truth_check": "The biome is in a state of advanced degradation. The registry is largely invalidated by the absence of viable specimens.",
         "inventory_reconciliation": {
-          "P1": "Systemic Loss (No visible String of Nickels)",
-          "P2": "Systemic Loss (No visible Mexican Mint)",
-          "P3": "Present (Pothos remnant)",
-          "P4": "Systemic Loss (No visible Silver Guest)"
+          "P1": "Systemic Loss (Yellow pot is empty/soil only)",
+          "P2": "Systemic Loss (Black pot is empty/soil only)",
+          "P3": "Systemic Loss (Pothos and Rabbit anchor are missing/absent)",
+          "P4": "Systemic Loss (No evidence of Silver Guest)"
         },
         "plant_audit": {
-          "P1_Yellow_Pot": "Empty soil, no signs of life.",
-          "P3_Black_Pot_Rabbit": "Single leaf remaining, showing signs of chlorosis and potential dehydration.",
-          "P2_P4_Black_Pot": "Single, thin, pale green stem/leaf structure. High risk of total senescence."
+          "P1": "Empty yellow pot; no botanical presence detected.",
+          "P2": "Empty black pot; no botanical presence detected.",
+          "P3": "The white rabbit anchor is missing. The Pothos is absent.",
+          "P4": "No evidence of the Silver Guest specimen."
         },
         "biome_observations": {
-          "soil_condition": "Dark, potentially over-saturated or lacking drainage; surface debris (eggshell fragments) noted.",
-          "surface_anomalies": "Eggshell fragments present in P3 and P2/P4 pots, likely an amateur attempt at calcium supplementation or pest deterrent.",
-          "desk_surface": "Clean, no significant fungal or pest debris."
+          "soil_condition": "Appears desiccated and dark; no signs of active moisture or fungal growth.",
+          "incidental_growth": "None detected.",
+          "biome_anomalies": "Presence of crushed eggshell fragments in the black pot, likely an abandoned soil amendment attempt."
         },
         "temporal_deltas": {
-          "earliest_to_t5": "Initial state showed a single leaf in P3 and a thin sprout in P2/P4.",
-          "t5_to_current": "Progressive postural collapse of the P2/P4 specimen. The P3 leaf remains static but appears increasingly fragile."
+          "earliest_to_t-4": "Initial state shows a single leaf fragment and eggshells in the black pot; yellow pot is empty.",
+          "t-4_to_t-2": "Gradual loss of structural integrity; the leaf fragment in the black pot shows signs of chlorosis and wilting.",
+          "t-2_to_current": "Total collapse. The leaf fragment has either desiccated or been removed. The white rabbit anchor has been removed from the scene."
         },
-        "visual_health_inference": "Critical. The specimens are in a state of advanced decline. The lack of light (as per biome registry) and potential soil issues have led to near-total systemic failure.",
-        "anomalies": [
-          "Eggshell fragments used as soil top-dressing.",
-          "Absence of expected plant density.",
-          "Severe etiolation/dehydration of remaining specimens."
-        ],
-        "narrative_description": "The biome is in a state of terminal decline. The 'String of Nickels' and 'Mexican Mint' are absent, suggesting total loss. The remaining Pothos leaf in the rabbit-anchored pot is the only vestige of the original collection. The presence of eggshells suggests an intervention that has failed to arrest the decline. The plants are likely suffering from a combination of insufficient light and poor root health.",
-        "confidence": 0.95
+        "visual_health_inference": "The biome has suffered a total systemic failure. All registered specimens are either dead, removed, or completely decomposed beyond visual recognition.",
+        "anomalies": "The removal of the white rabbit anchor suggests a deliberate clearing of the desk surface.",
+        "narrative_description": "The sequence documents the final stages of a failing indoor garden. Starting from a state of sparse, struggling growth, the biome has been completely cleared of all biological and decorative elements. The current state is a sterile, empty desk surface with only residual debris (eggshells) remaining in the primary black pot.",
+        "confidence": 0.98
       }
     },
     "recent_visual_ledger": [
