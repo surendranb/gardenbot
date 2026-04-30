@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-04-30 06:00:05",
+  "timestamp": "2026-04-30 18:00:03",
   "main": {
-    "temp": 29.98,
-    "humidity": 86,
-    "pressure": 1008
+    "temp": 31.81,
+    "humidity": 80,
+    "pressure": 1006
   },
   "weather": {
-    "id": 701,
-    "main": "Mist",
-    "description": "mist",
-    "icon": "50d"
+    "id": 801,
+    "main": "Clouds",
+    "description": "few clouds",
+    "icon": "02d"
   },
   "forecast": {
     "rain_expected": false,
-    "max_pop": 0
+    "max_pop": 0.12
   }
 }
