@@ -1,11 +1,55 @@
-=== GARDEN WARDEN ALPHA AUDIT - Thu Apr 30 20:29:25 IST 2026 ===
-INITIALIZE: Read PROJECT_SILICA.md - World model indicates 4 plants: P1(String of Nickels), P2(Mexican Mint), P3(Pothos w/White Rabbit), P4(Silver Guest)
-PERCEIVE: Warden capture failed due to stale telemetry (last reading 2026-04-26 08:54:26). Vision captured 7-image stack for analysis.
-AUDIT: Zero-knowledge state reconciliation:
-  - TELEMETRY: BME680 sensor FAILED (temp=0, hum=0, press=0, gas=0) indicating I2C bus dead. Light=710 nominal. Soil moisture shows P1=100%, P2=65.2%, P3=88.6%, VPD=0.611kPa nominal.
-  - VISION: Shows SYSTEMIC LOSS of P1 (String of Nickels - empty yellow pot), P2 (Mexican Mint - empty black pot), P4 (Silver Guest - no evidence). P3 (Pothos) present but severely diminished with single leaf showing chlorosis/dehydration. New introductions: eggshell fragments, receipt/paper debris, electronic component/IC chip.
-  - DISCREPANCY: Telemetry suggests adequate moisture while vision shows catastrophic plant loss. Telemetry hardware failure invalidates moisture readings.
-  - HARDWARE STATUS: BME680 I2C BUS DEAD - requires hardware reset per SILICA v3.3 Boot Protocol (3.0s settle delay).
-  - BOTANICAL STATUS: CRITICAL - 3/4 plants completely lost, remaining P3 struggling. Environment compromised by non-botanical debris (eggshells, paper, electronics).
-VERDICT: HARDWARE FAILURE CONFIRMED (BME680 sensor dead). BOTANICAL CRISIS CONFIRMED (systemic loss of 3 plants, 1 critical). IMMEDIATE ACTION REQUIRED: Hardware reset + botanical triage.
+=== AUTONOMOUS WARDEN AUDIT - 2026-05-01 08:37 IST ===
+INITIALIZE: Read PROJECT_SILICA.md (biome world model and plant registry).
+PERCEIVE: 
+  - Executed ./scripts/warden.py: 
+      * Stable port found on /dev/cu.usbmodem1201.
+      * Capture failed, using CSV fallback.
+      * Fallback raw data: timestamp 2026-04-26 08:54:26, temp 0.0, hum 0.0, light 710, p1 243.0, p2 215.0, p3 363.0, press 0.0, gas 0.0, db -35.3.
+      * Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json.
+  - Executed ./scripts/vision.py:
+      * Loaded local context from vision_context.json.
+      * Sent 6 images to gemini-3.1-flash-lite-preview.
+      * Vision JSON saved and history appended.
 
+AUDIT (zero-knowledge reconciliation):
+  - Telemetry analysis:
+      * Sensor timestamp is stale (2026-04-26, over 3 days old).
+      * Temperature and humidity readings are 0.0, indicating sensor failure or disconnection.
+      * Light, pressure, gas, and dB readings are nominal but likely irrelevant due to stale data.
+      * Moisture analysis derived from stale sensor data shows p1 at 100%, p2 at 65.2%, p3 at 88.6% (all non-dry).
+      * VPD calculated as 0.611 kPa (from the intra-day snapshot) but note the vision ledger reports extreme VPD (3.622 kPa) from a different context.
+      * Active concerns in intelligence: ["missing-telemetry"].
+      * Hypothesis: "Insufficient telemetry; awaiting next valid capture."
+  - Visual ground truth (vision_observation.json):
+      * Image sequence over 5 days (2026-04-27 to 2026-05-01).
+      * Compositional truth check: Biome in advanced degradation.
+      * Inventory reconciliation:
+          P1 (Yellow Pot): Systemic Loss (Empty/Dormant) -> no signs of String of Nickels (P0 missing).
+          P2: Systemic Loss (Not visible).
+          P3 (Black Pot with Rabbit): Present (Severely compromised) -> single leaf, significant chlorosis and loss of turgor.
+          P4: Systemic Loss (Not visible).
+      * Biome observations: Soil dark and potentially waterlogged; crushed eggshells noted in P3 (calcium amendment); no secondary growth or moss; electronic IC chip on desk surface.
+      * Temporal deltas: Introduction of paper receipt and electronic component; loss of ambient light degrading image quality.
+      * Visual health inference: Biome failing due to lack of light (North window only) and potential over-saturation -> root rot or total collapse.
+      * Anomalies: Introduction of crushed eggshells; disappearance of majority of registered plant population; electronic debris.
+      * Narrative: Environment transitioned to near-barren state; P3 Pothos is final remnant under severe stress.
+      * Confidence: 0.95.
+  - Cross-referencing with biome model (PROJECT_SILICA.md):
+      * P0 (The Survivor) expected thriving succulent in yellow pot -> observed as empty/dormant (Systemic Loss).
+      * P2/P4: Systemic Loss (Retired) -> observed as not visible (Systemic Loss).
+      * P3 (Pothos): Terminal Decline -> observed as severely compromised single leaf (consistent).
+  - Therefore:
+      * Not all plants accounted for: P0 is missing (expected survivor in P1), P2 and P4 missing (as expected), P3 present but compromised.
+      * Telemetry is NOT logically sound: stale data, zero temp/humidity indicates hardware failure.
+      * Hardware failure: Sensor disconnected or dead (no updates for >72 hours).
+      * Botanical crisis: Advanced degradation, only one struggling leaf remaining, likely due to light deficiency and over-saturation.
+
+FINAL VERDICT:
+  The biome is in a state of collapse. The primary stressors are:
+      1. Sensor hardware failure (telemetry stale, zero values).
+      2. Extreme vapor pressure deficit (VPD) causing transpiration stress (per vision ledger).
+      3. Insufficient light (North window only) exacerbating stress.
+      4. Potential over-saturation of soil contributing to root rot.
+  The only surviving vegetation is a single, severely compromised leaf in P3 (black pot with rabbit). Immediate intervention is required: sensor repair/replacement, light supplementation, and moisture adjustment.
+
+=== END AUDIT ===
