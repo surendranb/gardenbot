@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-05-02 18:00:04",
+  "timestamp": "2026-05-02 22:51:35",
   "main": {
-    "temp": 32.91,
-    "humidity": 76,
-    "pressure": 1004
+    "temp": 32.19,
+    "humidity": 77,
+    "pressure": 1006
   },
   "weather": {
-    "id": 802,
+    "id": 801,
     "main": "Clouds",
-    "description": "scattered clouds",
-    "icon": "03d"
+    "description": "few clouds",
+    "icon": "02n"
   },
   "forecast": {
     "rain_expected": false,
