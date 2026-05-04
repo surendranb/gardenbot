@@ -13,3 +13,8 @@ Calibration update for 2026-05-04 18:53:
 When telemetry shows persistent 0.0 readings despite human intervention attempts, recommend physical inspection of hardware before further software-based interventions.
 Reasoning: Repeated 0.0 readings after intervention attempts suggest either ineffective human actions or hardware-level issues requiring physical verification. Continued remote diagnostics without physical inspection wastes time and risks further damage.
 New heuristic: In persistent sensor failure states after intervention attempts, mandate physical hardware inspection as the next step.
+
+Calibration update for 2026-05-05 00:53:
+Confirmed: Physical hardware inspection is the absolute requirement for biome survival assessment.
+Reasoning: Persistent systemic 0.0 readings over >24h indicate a likely physical disconnect or sensor death, not software glitch.
+New heuristic: If 0.0 readings persist >24h, suspend all data analysis and mandate physical hardware integrity checks.
