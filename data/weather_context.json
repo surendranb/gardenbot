@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-05-03 18:00:00",
+  "timestamp": "2026-05-04 06:00:00",
   "main": {
-    "temp": 33.54,
-    "humidity": 63,
-    "pressure": 1004
+    "temp": 28.94,
+    "humidity": 74,
+    "pressure": 1006
   },
   "weather": {
-    "id": 804,
-    "main": "Clouds",
-    "description": "overcast clouds",
-    "icon": "04d"
+    "id": 701,
+    "main": "Mist",
+    "description": "mist",
+    "icon": "50d"
   },
   "forecast": {
     "rain_expected": false,
