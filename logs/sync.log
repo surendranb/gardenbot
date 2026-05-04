@@ -56445,3 +56445,41 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.36 seconds
 2026-05-04 20:41:58 Staging all assets...
+2026-05-04 20:41:58 Staging changes...
+[main d2105ca5] GardenOS Sync: 2026-05-04 20:41:58
+ 13 files changed, 143 insertions(+), 95 deletions(-)
+ create mode 100644 archive/2026-05-04/garden_203658.jpg
+ create mode 100644 archive/2026-05-04/garden_204142.jpg
+2026-05-04 20:41:58 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   ebb7f7f5..d2105ca5  main -> main
+2026-05-04 20:42:03 Sync Successful.
+2026-05-04 21:12:28 --- Sync Start: 2026-05-04 21:12:28 ---
+2026-05-04 21:12:28 Generating gallery metadata...
+2026-05-04 21:12:28 Updating latest report pointer...
+2026-05-04 21:12:28 Latest report updated to: logs/reports/report_20260504_1853.md
+2026-05-04 21:12:28 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/ledger.md
+  - data/observer_context.md
+INFO    -  Documentation built in 0.26 seconds
+2026-05-04 21:12:32 Staging all assets...
