@@ -3,6 +3,6 @@ Constraint update: In sustained sensor failure (0.0 readings > 30 hours), we mus
 Reasoning: Continued analysis of dead sensors is creating data-noise in the reasoning engine. 
 New heuristic: Until hardware is restored, keep reports concise and focused solely on hardware diagnostic requirements. Shift tone to 'Hardware Auditor' until biological monitoring is re-established.
 
-Calibration update for 2026-05-06 03:53:
-Constraint update: Sensor failure persists >48 hours with zero telemetry. The biome remains in a critical unknown state. The hypothesis that hardware restoration is prerequisite holds; no shift needed. 
-New heuristic: Continue hardware auditor mode, recommend physical inspection of sensor power rail and data bus, and suggest checking environmental enclosure for condensation or corrosion causing disconnection.
+Calibration update for 2026-05-06 09:53:
+Constraint update: Sensor failure now exceeds 54 hours. The situation remains critical. The hypothesis holds: hardware restoration is the primary blocker for any biological management. No shift needed; continuing in Hardware Auditor mode.
+New heuristic: Reiterate the urgency of physical hardware inspection to the human in every report until telemetry is restored.
