@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-06T13:24:32.970098",
+  "timestamp": "2026-05-06T13:54:57.676096",
   "sensors": {
     "timestamp": "2026-05-02 18:55:01",
     "temp": 0.0,
@@ -36,11 +36,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_061456.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_123733.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_125354.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-05-06T12:54:13.429572",
+      "timestamp": "2026-05-06T13:24:42.991201",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -49,12 +49,11 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-04/garden_130313.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-05/garden_132036.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_000415.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_122310.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_125354.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_132433.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_125354.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_132433.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-02/garden_131552.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_122310.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_000415.jpg"
       },
       "frame_sequence": [
         {
@@ -62,64 +61,61 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-02/garden_131552.jpg"
         },
         {
-          "label": "T-5",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-03/garden_130430.jpg"
         },
         {
-          "label": "T-4",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-04/garden_130313.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-05/garden_132036.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_000415.jpg"
         },
         {
-          "label": "T-1",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_122310.jpg"
-        },
-        {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_125354.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-06/garden_132433.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-05-06 12:53:57",
-        "model": "Garden Botanical Observer v1.0",
-        "compositional_truth_check": "Registry reconciliation indicates significant divergence from the expected biome. P1 (String of Nickels) is absent/unidentifiable. P2 (Mexican Mint) and P4 (Silver Guest) are not visually distinct or are lost. P3 (Pothos) is the only identifiable specimen, though in a state of severe decline.",
+        "timestamp": "2026-05-06 13:24:37",
+        "model": "Garden Botanical Observer (Expert Visual Ethologist)",
+        "compositional_truth_check": "The registry is partially accurate but incomplete. P3 (Pothos) and the white rabbit anchor are present. P1 (Yellow pot) appears empty/dormant. P2/P4 (Black pot) contains a single, struggling specimen. The registry fails to account for the significant presence of eggshell debris used as a soil amendment.",
         "inventory_reconciliation": {
-          "P1": "Systemic Loss",
-          "P2": "Systemic Loss",
-          "P3": "Present (Degraded)",
-          "P4": "Systemic Loss"
+          "P1": "Systemic Loss/Dormancy: No visible foliage.",
+          "P2/P4": "Stressed: Single stem remaining.",
+          "P3": "Present: Pothos leaf and rabbit anchor visible.",
+          "New_Introductions": "Eggshell fragments (calcium amendment) present in P3/P4 soil."
         },
         "plant_audit": {
-          "P1_Yellow_Pot": "Empty soil; no visible plant matter.",
-          "P2_Black_Pot": "No evidence of Mexican Mint or Silver Guest; soil appears barren.",
-          "P3_Pothos": "Single, chlorotic, and etiolated stem remaining. Significant loss of foliage compared to initial state.",
-          "P4_Shared_Pot": "Merged with P2/P3 space; no distinct specimen identified."
+          "P1": "Empty yellow pot. Soil appears dark and undisturbed.",
+          "P2_P4": "Single green stem with a small, pale leaf. Shows signs of chlorosis or light starvation.",
+          "P3": "Pothos leaf is present, showing stable turgor pressure."
         },
         "biome_observations": {
-          "soil_texture": "Consistently dark and damp across all pots; potential for root rot.",
-          "debris": "Presence of eggshell fragments in P3; electronic component (IC chip) observed on desk surface near pots.",
-          "incidental_growth": "None observed."
+          "soil_texture": "Consistently damp/dark across all pots.",
+          "debris": "Significant eggshell fragments in the black pots, likely an intentional pH or calcium intervention.",
+          "surface_anomalies": "Small electronic component (header pin) observed on the desk surface in early frames, removed in later frames."
         },
         "temporal_deltas": {
-          "T_minus_5_to_T_minus_3": "Initial state shows a single Pothos leaf and stem. Soil is dark.",
-          "T_minus_2": "Extreme low-light/shadow obscures detail, but structural integrity of the Pothos stem appears to be failing.",
-          "T_minus_1_to_Current": "The Pothos stem has undergone postural collapse, drooping significantly against the soil surface. No recovery observed."
+          "EARLIEST_to_T-4": "No significant change.",
+          "T-4_to_T-3": "Minor shift in the position of the electronic component.",
+          "T-3_to_T-2": "Electronic component removed; desk surface cleared.",
+          "T-2_to_T-1": "Lighting shift; image becomes significantly underexposed/dark.",
+          "T-1_to_CURRENT": "Lighting restored; plant in P2/P4 shows slight postural shift (droop)."
         },
-        "visual_health_inference": "The biome is in a state of critical failure. The Pothos (P3) is suffering from severe light starvation and likely overwatering, leading to the loss of all but one leaf and total loss of turgor pressure. Other registered plants are non-existent.",
+        "visual_health_inference": "The biome is in a state of 'Stasis/Survival'. The lack of robust growth in P2/P4 suggests the current light levels (North window + fixed LED) are insufficient for active photosynthesis, leading to the observed etiolation and leaf loss.",
         "anomalies": [
-          "Electronic component (IC chip) on desk surface.",
-          "Eggshell fragments used as soil top-dressing in P3.",
-          "Total absence of P1, P2, and P4."
+          "Electronic component (header pin) on desk surface (T-earliest to T-3).",
+          "Eggshell fragments as soil top-dressing.",
+          "Extreme underexposure in T-1."
         ],
-        "narrative_description": "The botanical environment is failing. The Pothos specimen is the sole survivor, exhibiting signs of advanced senescence and etiolation. The lack of light and potential overwatering have decimated the original registry. The presence of non-botanical debris (eggshells, electronics) suggests an experimental or neglected environment rather than a standard horticultural setup.",
-        "confidence": 0.95
+        "narrative_description": "The botanical environment is currently under-resourced. The Pothos (P3) remains the most stable element. The specimen in the black pot (P2/P4) is struggling, likely due to the lack of direct solar radiation. The presence of eggshells suggests an attempt to bolster soil nutrients, but the plant's morphology indicates a need for higher light intensity to prevent further decline.",
+        "confidence": 0.92
       }
     },
     "recent_visual_ledger": [
