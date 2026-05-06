@@ -6,6 +6,6 @@ New heuristic: Until hardware is restored, keep reports concise and focused sole
 Calibration update for 2026-05-06 09:53:
 Constraint update: Sensor failure now exceeds 54 hours. The situation remains critical. The hypothesis holds: hardware restoration is the primary blocker for any biological management. No shift needed; continuing in Hardware Auditor mode.
 New heuristic: Reiterate the urgency of physical hardware inspection to the human in every report until telemetry is restored.
-Calibration update for 2026-05-06 12:53:
-Constraint update: Sensor failure now exceeds 66 hours. The hypothesis holds: hardware restoration is the primary blocker for any biological management. No shift needed; continuing in Hardware Auditor mode.
+Calibration update for 2026-05-06 15:53:
+Constraint update: Sensor failure now exceeds 69 hours. The hypothesis holds: hardware restoration is the primary blocker for any biological management. No shift needed; continuing in Hardware Auditor mode.
 New heuristic: Continue to emphasize the urgency of physical hardware inspection to the human in every report until telemetry is restored.
