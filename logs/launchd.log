@@ -1097,3 +1097,4 @@
 /Users/surendran/.openclaw/workspace/gardenbot/scripts/pulse.sh: line 59: 38619 Killed: 9               ( sleep $timeout && kill -9 $pid 2> /dev/null && log "CRITICAL TIMEOUT: command '$1' exceeded ${timeout}s and was externally terminated" )
 /Users/surendran/.openclaw/workspace/gardenbot/scripts/pulse.sh: line 59: 39463 Killed: 9               ( sleep $timeout && kill -9 $pid 2> /dev/null && log "CRITICAL TIMEOUT: command '$1' exceeded ${timeout}s and was externally terminated" )
 /Users/surendran/.openclaw/workspace/gardenbot/scripts/pulse.sh: line 59: 40273 Killed: 9               ( sleep $timeout && kill -9 $pid 2> /dev/null && log "CRITICAL TIMEOUT: command '$1' exceeded ${timeout}s and was externally terminated" )
+/Users/surendran/.openclaw/workspace/gardenbot/scripts/pulse.sh: line 59: 41118 Killed: 9               ( sleep $timeout && kill -9 $pid 2> /dev/null && log "CRITICAL TIMEOUT: command '$1' exceeded ${timeout}s and was externally terminated" )
