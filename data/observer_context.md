@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-11 23:01:34
+**Generated:** 2026-05-12 01:00:16
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,8 +21,8 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 23:01
-- **HUMAN OCCUPANCY**: HIGH
+- **TIME OF AUDIT**: 01:00
+- **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.3 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
@@ -35,13 +35,11 @@
 
 
 ## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS
-# GardenBot Calibration Log
+# Agent Calibration Log - Garden Warden
+## 2026-05-11
+- Calibration: Telemetry integration normalized.
+- Heuristic shift: Prioritizing growth milestones over raw telemetry data. VPD trends are the primary stability metric now.
 
-## Calibration Notes
-- 2026-05-10: Initializing calibration sequence. Establishing baseline heuristics for Chennai micro-biome in May heat.
-- 2026-05-11 08:33: Heuristic maintained at "Remediation Alert/Safety Monitoring". State has not improved; confirmed static hazard requires immediate human manual intervention.
-- 2026-05-11 11:33: Calibration update: Shifted focus towards "Hazard Mitigation". Continued lack of human intervention necessitates transition to a 'Safety Warden' stance, prioritizing structural preservation of hardware over biome growth.
-- 2026-05-11 20:33: Calibration update: Critical Hazard Confirmed. Shifted from "Hazard Mitigation" to "Total Containment Recommendation". No biological viability remaining. Focus on hardware preservation and environmental remediation.
 
 ## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS
 ### Report: 2026-04-22 08:27
