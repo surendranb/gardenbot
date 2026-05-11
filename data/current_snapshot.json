@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T17:25:37.103549",
+  "timestamp": "2026-05-11T17:56:04.753697",
   "sensors": {
     "timestamp": "2026-05-02 18:55:01",
     "temp": 0.0,
@@ -36,7 +36,7 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-11/garden_061138.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-11/garden_165509.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-11/garden_165850.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
