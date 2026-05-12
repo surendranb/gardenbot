@@ -7,3 +7,8 @@
 - Calibration: Vision observation prioritized over failing telemetry sensors (temp/hum showing 0.0).
 - Heuristic shift: Visual evidence now primary trust metric when sensor data conflicts with biological reality.
 - Learned: Biome collapse can occur despite acceptable VPD readings when primary specimens are lost to systemic failure.
+
+## 2026-05-12 15:53
+- Calibration: Confirmed permanent sensor failure; telemetry stream is inert artifact.
+- Heuristic shift: Transitioning from reactive wardship to proactive system design - biome failure informs rebuild specifications.
+- Learned: Chronic VPD stress combined with sensor blindness creates irreversible collapse window; intervention must precede visual symptoms by 72h in Chennai microclimate.
