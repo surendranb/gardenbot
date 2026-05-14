@@ -27,3 +27,8 @@
 - Calibration: Confirmed continued state of mineralization; maintenance of decommissioning posture.
 - Heuristic shift: Establishing "Post-Biological Decommissioning" status as new stable state for this biome instance until physical intervention occurs.
 - Learned: Biological void persists longer than anticipated in mineralized substrates without external environmental influx.
+
+## 2026-05-14 17:47
+- Calibration: Audit interval match confirmed.
+- Heuristic shift: Maintained "Post-Biological Decommissioning" status.
+- Learned: Continuous audit of a mineralized system highlights the need for explicit "Stop/Decommission" signaling in agent protocols to prevent infinite archival loops.
