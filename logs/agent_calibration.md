@@ -10,3 +10,7 @@
 ## 2026-05-15 20:45
 - Calibration: Updated to "DEGRADED SENSORS WITH VISION CONFIRMATION" status.
 - Heuristic shift: Accepting visual primacy when sensor telemetry conflicts with observed biological state. Recognizing that hardware instability (651 failure points) can produce stable but misleading readings that mask actual biological decline. Moving from sensor-centric failure model to multi-modal validation where vision ground truth overrides suspect telemetry.
+
+## 2026-05-16 09:44
+- Calibration: Maintained "DEGRADED SENSORS WITH VISION CONFIRMATION" status.
+- Heuristic shift: Further reinforced visual primacy heuristic through consistent validation. Multiple audit cycles confirm that when vision shows clear biological stress symptoms (leaf necrosis, wilting, stunted growth) while telemetry indicates adequate conditions, the vision system provides reliable ground truth. This validates trusting image over sensor data when A5 hardware failure is detected, establishing a robust fault-tolerant observation framework.
