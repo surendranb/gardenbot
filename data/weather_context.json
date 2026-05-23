@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-05-23 06:00:01",
+  "timestamp": "2026-05-23 18:00:05",
   "main": {
-    "temp": 31.55,
-    "humidity": 68,
-    "pressure": 1007
+    "temp": 32.22,
+    "humidity": 66,
+    "pressure": 1005
   },
   "weather": {
-    "id": 701,
-    "main": "Mist",
-    "description": "mist",
+    "id": 721,
+    "main": "Haze",
+    "description": "haze",
     "icon": "50d"
   },
   "forecast": {
