@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-05-24 06:00:05",
+  "timestamp": "2026-05-24 18:00:05",
   "main": {
-    "temp": 29.97,
-    "humidity": 75,
-    "pressure": 1007
+    "temp": 34.06,
+    "humidity": 66,
+    "pressure": 1005
   },
   "weather": {
-    "id": 701,
-    "main": "Mist",
-    "description": "mist",
-    "icon": "50d"
+    "id": 801,
+    "main": "Clouds",
+    "description": "few clouds",
+    "icon": "02d"
   },
   "forecast": {
     "rain_expected": true,
-    "max_pop": 0.62
+    "max_pop": 0.92
   }
 }
