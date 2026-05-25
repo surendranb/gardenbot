@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-25T17:09:36.598070",
+  "timestamp": "2026-05-25T17:40:02.884057",
   "sensors": {
     "timestamp": "2026-05-02 18:55:01",
     "temp": 0.0,
@@ -36,11 +36,11 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_062655.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_163903.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_164629.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-05-25T16:46:39.602563",
+      "timestamp": "2026-05-25T17:09:47.289835",
       "model": "gemini-3.1-flash-lite-preview",
       "image_availability": {
         "compare_set": [
@@ -50,9 +50,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-24/garden_130910.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_002020.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_164629.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_170937.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_164629.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_170937.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-21/garden_130513.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg"
       },
@@ -83,25 +83,26 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_164629.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_170937.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-05-25 16:46:35",
-        "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The visual data provided for the final three time-steps (T-2, T-1, CURRENT) is entirely black/null, indicating a total loss of visual telemetry. The initial sequence (EARLIEST to T-3) shows two pots: a yellow pot (P1) and a black pot (P3/P4).",
-        "inventory_reconciliation": "P1 (String of Nickels) and P3/P4 (Pothos/Silver Guest) are present in the early images. P2 (Mexican Mint) is not visually confirmed in the frame. The current state is 'Systemic Loss' of visual data.",
+        "timestamp": "2026-05-25 17:09:41",
+        "model": "Garden Botanical Observer v1.0",
+        "compositional_truth_check": "The registry is largely invalidated by the current visual data. The sequence shows a rapid transition from visible plant matter to total darkness/blackout, rendering current physical assessment impossible.",
+        "inventory_reconciliation": "P1, P2, P3, and P4 are present in the early images but are obscured by a total loss of visual data (blackout) in the final three frames. No physical verification of current health is possible.",
         "plant_audit": {
-          "P1": "Yellow pot; soil appears dark and moist. No visible foliage growth.",
-          "P3/P4": "Black pot; contains white debris (likely eggshell fragments) on the soil surface. No healthy vegetative growth visible.",
-          "P2": "Not observed in the frame; presumed missing or outside the field of view."
+          "P1": "Visible in early frames; soil appears dark/damp.",
+          "P2": "Visible in early frames; structural integrity appears stable.",
+          "P3": "White rabbit anchor present in early frames; plant matter is minimal/obscured.",
+          "P4": "Shared pot with P2; no distinct growth identified."
         },
-        "biome_observations": "Soil in P1 and P3/P4 appears consistently dark, suggesting high moisture content. The presence of white, jagged debris in P3/P4 is noted as an intervention.",
-        "temporal_deltas": "From EARLIEST to T-3, there is no significant change in plant posture or growth. From T-2 to CURRENT, the image feed has failed, resulting in a total loss of observational capability.",
-        "visual_health_inference": "The specimens appear to be in a state of dormancy or failure. The lack of visible green tissue suggests the plants are either severely underdeveloped, buried, or deceased.",
-        "anomalies": "Presence of white, calcified-looking debris (eggshells) in P3/P4. Total loss of image signal in the final three frames.",
-        "narrative_description": "The audit began with a stable, albeit sparse, indoor setup. The plants in the yellow and black pots showed no signs of active, healthy growth, with soil moisture appearing high. The introduction of white debris in the black pot suggests a human intervention. Unfortunately, the chronological sequence terminates in a complete blackout, preventing any assessment of the plants' current status.",
-        "confidence": 0.4
+        "biome_observations": "Early images show dark, moist soil with some white debris (likely perlite or eggshell fragments). The final three images show a complete absence of light, indicating a camera failure or environmental blackout.",
+        "temporal_deltas": "T-5 to T-3: Stable. T-2 to Current: Total visual loss. No growth or decay can be tracked during the blackout period.",
+        "visual_health_inference": "Inconclusive due to blackout. Early images suggested adequate hydration but low light levels.",
+        "anomalies": "Total sensor blackout in the final three images. This is a critical system failure.",
+        "narrative_description": "The audit began with a clear view of the desk biome, showing four pots with moist soil and a white rabbit anchor. However, the sequence terminates in a complete visual blackout, preventing any assessment of the plants' current state. The transition from visible to black suggests either a hardware failure or an extreme change in lighting conditions.",
+        "confidence": 0.2
       }
     },
     "recent_visual_ledger": [
