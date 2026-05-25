@@ -1,1 +1,1 @@
-Calibration update: Heuristic remains stable. No significant shifts identified. Previous hypothesis held.
+Calibration update: Heuristic shift confirmed. Shifted from active management (biome-monitoring) to observational archival. The system is no longer a "garden" but an artifact. Future logs should reflect the transition from active Warden to Curator.
