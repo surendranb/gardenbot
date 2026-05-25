@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-25 23:47:15
+**Generated:** 2026-05-26 02:49:35
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -21,15 +21,15 @@
 ---
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 23:47
-- **HUMAN OCCUPANCY**: HIGH
+- **TIME OF AUDIT**: 02:49
+- **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
 - **EMPIRICAL PROOF**: -38.3 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 651 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 652 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -61,9 +61,9 @@ Calibration update: Heuristic shift confirmed. Shifted from active management (b
 - **4h Pulse**: 0.611 kPa | **24h Cycle**: 0.611 kPa | **72h Rhythm**: 0.611 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: 30.1% (Current) vs 30.1% (24h Avg)
-- **P2**: 74.3% (Current) vs 74.1% (24h Avg)
-- **P3**: 76.9% (Current) vs 76.9% (24h Avg)
+- **P1**: 100.0% (Current) vs 100.0% (24h Avg)
+- **P2**: 39.8% (Current) vs 39.8% (24h Avg)
+- **P3**: 0.0% (Current) vs 0.0% (24h Avg)
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
