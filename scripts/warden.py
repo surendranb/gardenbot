@@ -244,8 +244,8 @@ def capture_data():
         time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         
-        # Read up to 3 times to find a complete loop packet without discarding
-        for _ in range(3):
+        # Read up to 10 times to find a complete loop packet without discarding
+        for _ in range(10):
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
@@ -384,8 +384,8 @@ def collect_once():
         time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         
-        # Wait up to 3 cycles (15s) for a valid response
-        for _ in range(3):
+        # Wait up to 10 cycles (50s) for a valid response
+        for _ in range(10):
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
