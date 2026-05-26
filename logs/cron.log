@@ -52362,3 +52362,6 @@ Vision failed: [Errno 2] No such file or directory: 'imagesnap'
 Capture error: [Errno 2] No such file or directory: 'imagesnap'
 Synthesizing SILICA v2.2 (Corrected Logic)...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-05-26 23:27:24 [PULSE] Pulse Complete.
+2026-05-27 01:27:17 [PULSE] Starting Pulse...
+2026-05-27 01:27:17 [PULSE] CRITICAL: Arduino port /dev/cu.usbmodem1201 not found. Aborting sensor capture.
