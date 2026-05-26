@@ -20,10 +20,13 @@ Project SILICA is the centralized biological and technical intelligence framewor
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P1**: String of Nickels (Yellow Pot | Sensor A0).
-    - **P2**: Mexican Mint (Black Pot | Sensor A3).
-    - **P3**: Pothos (Black Pot | Sensor A2 | White Rabbit anchor).
-    - **P4**: Silver Guest (Black Pot | Shared with P2).
+    - **P2**: Mexican Mint (Black Pot | Sensor A2 | White Rabbit anchor).
+
+## 2.5. BIOLOGICAL BASELINE (Mexican Mint / Plectranthus amboinicus)
+- **Care Type**: Semi-succulent perennial.
+- **Watering Strategy**: "Soak and Dry". Highly susceptible to root rot if overwatered. Soil must be significantly dry before watering.
+- **Visual Turgidity**: Leaves will lose firmness and appear slightly droopy when severely underwatered.
+- **VPD Goal**: Moderate. Extreme VPD (> 3.0 kPa) induces stress, while very low VPD (< 0.5 kPa) risks fungal rot. The Warden must rely on visual wilt over raw sensor data.
 
 ---
 

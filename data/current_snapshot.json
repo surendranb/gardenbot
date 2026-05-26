@@ -1,66 +1,39 @@
 {
-  "timestamp": "2026-05-26T10:01:11.990053",
-  "sensors": {
-    "timestamp": "2026-05-26 10:01:06",
-    "temp": 0.0,
-    "hum": 0.0,
-    "light": 978,
-    "p1": 254,
-    "p2": 181,
-    "p3": 389,
-    "press": 0.0,
-    "gas": 0.0,
-    "db": -39.4
-  },
-  "moisture_analysis": {
-    "p1": {
-      "moisture_pct": 100,
-      "is_dry": false
-    },
-    "p2": {
-      "moisture_pct": 75.1,
-      "is_dry": false
-    },
-    "p3": {
-      "moisture_pct": 81.2,
-      "is_dry": false
-    }
-  },
+  "timestamp": "2026-05-26T10:32:40.391614",
+  "sensors": {},
+  "moisture_analysis": {},
   "environment": {
     "vpd_kpa": null
   },
   "intelligence": {
-    "hypothesis": "Telemetry stable; no immediate stress signal.",
-    "active_concerns": [],
+    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
+    "active_concerns": [
+      "missing-telemetry"
+    ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_065849.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_090020.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_100853.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-05-25T21:13:56.063648",
-      "model": "gemini-3.1-flash-lite-preview",
+      "timestamp": "2026-05-26T10:09:28.612850",
+      "model": "gemini-2.5-flash",
       "image_availability": {
         "compare_set": [
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-21/garden_130513.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-22/garden_132945.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-23/garden_131109.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-24/garden_130910.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_002020.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_211348.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_065849.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_100853.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_211348.jpg",
-        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-21/garden_130513.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg"
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_100853.jpg",
+        "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-22/garden_132945.jpg",
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_065849.jpg"
       },
       "frame_sequence": [
         {
           "label": "EARLIEST",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-21/garden_130513.jpg"
-        },
-        {
-          "label": "T-5",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-22/garden_132945.jpg"
         },
         {
@@ -73,43 +46,91 @@
         },
         {
           "label": "T-2",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_002020.jpg"
-        },
-        {
-          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg"
         },
         {
+          "label": "T-1",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_065849.jpg"
+        },
+        {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_211348.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_100853.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-05-25 21:13:51",
+        "timestamp": "2026-05-26 10:08:56",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-        "compositional_truth_check": "The registry is largely invalidated by the current visual data. The sequence shows a progression from visible soil/plant debris to total visual occlusion (black frames).",
+        "compositional_truth_check": {
+          "pots_present_in_initial_images": [
+            "P1 (Yellow Pot)",
+            "Black Pot (P2/P3/P4)"
+          ],
+          "registry_reconciliation": {
+            "P1_String_of_Nickels": "Systemic Loss (No identifiable plant material matching 'String of Nickels' observed in visible images. Only dried remnants or bare soil.)",
+            "P2_Mexican_Mint": "Systemic Loss (No identifiable plant material matching 'Mexican Mint' observed in visible images. Only soil and eggshell fragments.)",
+            "P3_Pothos": "Systemic Loss (No identifiable plant material matching 'Pothos' observed in visible images. White rabbit anchor not visible. Only soil and eggshell fragments.)",
+            "P4_Silver_Guest": "Systemic Loss (No identifiable plant material matching 'Silver Guest' observed in visible images. Only soil and eggshell fragments.)"
+          },
+          "new_introductions_interventions": {
+            "Black_Pot_Eggshells": "Presence of light-colored, irregular fragments (likely eggshells) on the soil surface of the black pot, indicating an intervention."
+          },
+          "overall_biome_status_current": "Systemic Loss (Entire biome, including all pots and plants, is absent from the camera's view in the [CURRENT] image, replaced by a uniform grey field.)"
+        },
         "inventory_reconciliation": {
-          "P1": "Systemic Loss (No visible plant matter)",
-          "P2": "Systemic Loss (No visible plant matter)",
-          "P3": "Systemic Loss (White rabbit anchor is no longer visible)",
-          "P4": "Systemic Loss"
+          "P1_String_of_Nickels": "Not present, only dried remnants or bare soil visible in initial images.",
+          "P2_Mexican_Mint": "Not present, only soil and eggshell fragments visible in initial images.",
+          "P3_Pothos": "Not present, white rabbit anchor missing, only soil and eggshell fragments visible in initial images.",
+          "P4_Silver_Guest": "Not present, only soil and eggshell fragments visible in initial images."
         },
         "plant_audit": {
-          "P1": "Earliest images show a yellow pot with dark, damp soil. No foliage present.",
-          "P2": "Earliest images show a black pot with dark, damp soil. No foliage present.",
-          "P3": "Earliest images show a black pot with a white rabbit anchor and organic debris (likely eggshells). No living plant tissue visible.",
-          "P4": "Shared space with P2; no distinct specimen identified."
+          "P1_Yellow_Pot": {
+            "earliest_state": "Contains dark soil with very faint, dark organic matter. No clear plant structure.",
+            "t-4_state": "Slightly clearer view, faint dark, stringy debris slightly more discernible on soil surface. No clear plant structure.",
+            "t-3_state": "Significantly clearer view. Soil surface appears dry. A few very thin, dark, dried strands or stems are clearly visible, consistent with dead plant matter. Not a healthy 'String of Nickels'.",
+            "t-2_state": "Not visible (blackout).",
+            "t-1_state": "Not visible (blackout).",
+            "current_state": "Not visible (entire biome absent from frame)."
+          },
+          "Black_Pot_P2_P3_P4": {
+            "earliest_state": "Contains dark soil with scattered light-colored, irregular fragments (eggshells). No clear plant material.",
+            "t-4_state": "Eggshell fragments are clearer. No clear plant material.",
+            "t-3_state": "Eggshell fragments are very distinct. Soil appears dark. No clear plant material.",
+            "t-2_state": "Not visible (blackout).",
+            "t-1_state": "Not visible (blackout).",
+            "current_state": "Not visible (entire biome absent from frame)."
+          }
         },
         "biome_observations": {
-          "soil_texture": "Consistently dark and damp across the initial sequence.",
-          "debris": "Eggshell fragments noted in P3 in the earliest images.",
-          "anomalies": "The final three images (T-2, T-1, CURRENT) are completely black, indicating a total failure of the visual monitoring system or a complete loss of light in the biome."
+          "incidental_growth": "None observed in any image where pots are visible.",
+          "soil_texture_changes": {
+            "P1_Yellow_Pot": "Soil surface appears somewhat clumpy in [EARLIEST], becoming visibly dry in [T-3].",
+            "Black_Pot": "Soil appears dark and consistent in texture across visible images."
+          },
+          "fungal_presence": "None observed.",
+          "debris_on_desk_surface": "A white cylindrical object and wires are visible to the right of the yellow pot in [EARLIEST], [T-4], and [T-3]."
         },
-        "temporal_deltas": "The sequence begins with a static, non-vegetated state and terminates in a complete loss of visual data (black frames). No growth was observed at any point.",
-        "visual_health_inference": "The specimens were likely already in a state of 'Systemic Loss' or 'Dormancy/Death' at the start of the observation period. The current state is 'Unobservable/Critical'.",
-        "anomalies": "The transition to total blackness suggests either a camera malfunction, a power failure to the LED, or the removal of the plants from the monitored area.",
-        "narrative_description": "The audit began with a set of pots containing soil and debris but no discernible living plant life. The 'white rabbit' anchor was present in the early frames but disappeared as the sequence progressed. The final stages of the observation are marked by a complete lack of visual input, rendering a current health assessment impossible. The biome appears to have been abandoned or the monitoring equipment has failed.",
-        "confidence": "High (regarding the lack of plant life in early frames; Low regarding the current state due to black frames)"
+        "temporal_deltas": {
+          "earliest_to_t-4": "Overall scene brightness slightly increased, revealing marginally more detail in the soil of both pots. No significant change in plant status.",
+          "t-4_to_t-3": "Significant increase in scene brightness and clarity. The faint debris in P1 becomes clearly identifiable as dried plant strands. Eggshell fragments in the black pot become more distinct. Soil in P1 appears drier.",
+          "t-3_to_t-2": "Complete loss of visual information; image is entirely black, indicating a camera malfunction, power outage, or intentional blackout.",
+          "t-2_to_t-1": "Continued loss of visual information; image remains black with a very slight, almost imperceptible, greyish tint in some areas, still functionally a blackout.",
+          "t-1_to_current": "Complete change of scene; the entire frame is now a uniform light grey, indicating the entire biome has been removed or the camera's view has been redirected."
+        },
+        "visual_health_inference": {
+          "P1_String_of_Nickels_Inference": "Based on visual evidence from [EARLIEST] to [T-3], the plant is either entirely absent or reduced to dead, dried remnants. Inferred as 'Lost'.",
+          "P2_Mexican_Mint_Inference": "Based on visual evidence from [EARLIEST] to [T-3], the plant is entirely absent. Inferred as 'Lost'.",
+          "P3_Pothos_Inference": "Based on visual evidence from [EARLIEST] to [T-3], the plant is entirely absent, and its scale anchor (white rabbit) is also missing. Inferred as 'Lost'.",
+          "P4_Silver_Guest_Inference": "Based on visual evidence from [EARLIEST] to [T-3], the plant is entirely absent. Inferred as 'Lost'.",
+          "Overall_Biome_Inference_T2_T1": "Health indeterminate due to complete lack of visual data (blackout).",
+          "Overall_Biome_Inference_Current": "The entire biome is visually 'Lost' from the monitoring system's view."
+        },
+        "anomalies": [
+          "The presence of eggshell fragments in the black pot is an observed intervention not explicitly in the initial registry description.",
+          "The complete blackouts in images [T-2] and [T-1] represent significant data acquisition anomalies.",
+          "The complete absence of the entire biome and the uniform grey screen in the [CURRENT] image is a major anomaly, indicating a fundamental change in the monitoring setup or environment."
+        ],
+        "narrative_description": "The initial sequence of images ([EARLIEST], [T-4], [T-3]) paints a grim picture for the expected biome. Pot P1, designated for 'String of Nickels', shows only dry soil with what are clearly dead, dried plant remnants by [T-3]. The black pot, intended for 'Mexican Mint', 'Pothos', and 'Silver Guest', contains only soil and eggshell fragments, with no discernible living plant material or the 'White Rabbit' anchor. All registered plants are visually confirmed as lost or severely degraded to unidentifiable states. The eggshell fragments suggest a past attempt at intervention, but it has not yielded visible plant life. The monitoring sequence then suffers a complete loss of visual data in [T-2] and [T-1] due to blackouts, making any further plant assessment impossible for those periods. The final image ([CURRENT]) presents a uniform light grey field, indicating that the entire plant setup has been removed or the camera's view has been completely altered, resulting in a systemic loss of the biome from observation.",
+        "confidence": "High"
       }
     },
     "recent_visual_ledger": [

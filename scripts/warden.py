@@ -255,11 +255,9 @@ def capture_data():
                         "temp": float(parts[0]), 
                         "hum": float(parts[1]), 
                         "light": int(parts[2]),
-                        "p1": int(parts[3]), # A0
-                        "p2": int(parts[5]), # A3 (formerly A5)
-                        "p3": int(parts[4]), # A2
-                        "press": float(parts[6]),
-                        "gas": float(parts[7]),
+                        "p2": int(parts[3]), # A2
+                        "press": float(parts[4]),
+                        "gas": float(parts[5]),
                         "db": capture_volume() or 0.0
                     }
                     

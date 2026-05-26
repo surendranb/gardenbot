@@ -1,51 +1,14 @@
 [
   {
-    "id": "p1",
-    "name": "String of Nickels",
-    "species": "Dischidia nummularia",
-    "sensor_type": "resistive_yl69",
-    "sensor_key": "a0",
-    "sensor_pin": "a0",
-    "raw_wet": 314,
-    "raw_dry": 318,
-    "dry_threshold_pct": 15,
-    "color": "#00FF41"
-  },
-  {
     "id": "p2",
     "name": "Mexican Mint",
     "species": "Plectranthus amboinicus",
     "sensor_type": "capacitive_tlc555",
-    "sensor_key": "a3",
-    "sensor_pin": "a3",
-    "raw_wet": 223,
-    "raw_dry": 270,
-    "dry_threshold_pct": 20,
-    "color": "#ADFF2F"
-  },
-  {
-    "id": "p3",
-    "name": "Pothos",
-    "species": "Epipremnum aureum",
-    "sensor_type": "capacitive_tlc555",
     "sensor_key": "a2",
     "sensor_pin": "a2",
-    "raw_wet": 409,
+    "raw_wet": 270,
     "raw_dry": 731,
     "dry_threshold_pct": 20,
-    "color": "#FFD700"
-  },
-  {
-    "id": "p4",
-    "name": "Silver Guest Alpha",
-    "species": "Pilea glaucophylla",
-    "sensor_type": "capacitive_tlc555",
-    "sensor_pin": "a3",
-    "sensor_key": "a3",
-    "linked_to": "p2",
-    "raw_wet": 223,
-    "raw_dry": 270,
-    "dry_threshold_pct": 30,
-    "color": "#C0C0C0"
+    "color": "#ADFF2F"
   }
 ]

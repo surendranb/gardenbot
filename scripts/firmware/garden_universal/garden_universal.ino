@@ -7,9 +7,9 @@ Adafruit_BME680 bme; // I2C
 
 #define LIGHT_PIN A1
 
-// Moisture pins moved from A5 to A3 for I2C compatibility
-const int PLANT_PINS[] = {A0, A2, A3};
-const int NUM_PLANTS = 3;
+// Moisture pin configured for single-plant architecture (Mexican Mint)
+const int PLANT_PINS[] = {A2};
+const int NUM_PLANTS = 1;
 const int SAMPLES = 50;
 
 void setup() {
@@ -62,7 +62,7 @@ void loop() {
 
   int light = getAveragedRead(LIGHT_PIN);
 
-  // Output: TEMP|HUM|LIGHT|A0|A2|A3|PRESS|GAS
+  // Output: TEMP|HUM|LIGHT|A2|PRESS|GAS
   Serial.print(t); Serial.print("|");
   Serial.print(h); Serial.print("|");
   Serial.print(light);
