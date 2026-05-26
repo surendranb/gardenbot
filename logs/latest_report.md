@@ -1,19 +1,19 @@
-# Garden Warden Audit: 2026-05-26 12:52
+# Garden Warden Audit: 2026-05-26 15:52
 
 ## 0. META-AUDIT
-Previous report (2026-05-26 07:51) declared biome as terminal with monitoring failure, suggesting formal decommissioning. Current data shows vision system recovery - clear images reveal a healthy plant in P2. Monitoring hardware appears partially restored (vision working), though telemetry.csv remains empty indicating ongoing telemetry issues. Calibration updated: Shift from active Warden to Curator remains, but observational capacity is recovering, suggesting potential transition back toward active monitoring if telemetry stabilizes.
+Previous report (2026-05-26 12:52) declared biome as THRIVING with recovering observational capacity. Current data confirms continued visual stability with clear images showing a healthy Mexican Mint plant. Telemetry collection remains non-functional (empty telemetry.csv). Calibration updated: Vision system stable showing thriving plant; telemetry persistence as failure. Monitoring capacity split: visual observational archival functional, quantitative data collection non-viable. System shows biological resilience - plant thrived despite observational gaps.
 
 ## 1. IDENTITY & BIOME
 Mexican Mint is a semi-succulent requiring a 'soak and dry' watering strategy and highly susceptible to root rot.
-- **TIME OF AUDIT**: 12:52 PM (Asia/Calcutta) / 12:39 (observer_context timestamp)
-- **HUMAN OCCUPANCY**: HIGH (from observer_context)
-- **FANS STATUS**: UNKNOWN (Acoustic registry not providing clear data)
+- **TIME OF AUDIT**: 15:52 PM (Asia/Calcutta) / 10:22 UTC
+- **HUMAN OCCUPANCY**: HIGH (from observer_context and recent activity)
+- **FANS STATUS**: UNKNOWN (Acoustic registry shows -39.2 dB baseline, consistent with previous readings indicating likely OFF state based on low ambient noise)
 - **MICRO-CLIMATE CONSTRAINTS**: 
   - Lighting: North-facing window (diffuse light only). Camera LED should be ON for calibration.
   - Thermal Gain: 12:00 - 15:00 from ceiling radiation (1st floor) - currently within this window.
   - Airflow: Fan S (South) primary convection, Fan N (North) auxiliary cooling, AC last resort at 26°C.
   - Physical Layout: P2 contains Mexican Mint (Black Pot | Sensor A2 | White Rabbit anchor).
-- **BIOME STATE**: REST (Night/Stagnant Recovery) per observer_context, though timestamp suggests afternoon - may indicate mislabeled state or transitional period.
+- **BIOME STATE**: ACTIVE (based on timestamp and human occupancy patterns)
 
 ## 2. REQUIREMENTS
 Most critical biological requirement: **Visual turgidity assessment** (prioritized over raw soil moisture data).
@@ -24,20 +24,15 @@ Most critical biological requirement: **Visual turgidity assessment** (prioritiz
 
 ## 3. HISTORICAL AUDIT
 Review of last 3 reports:
+- **2026-05-26 12:52**: THRIVING status, vision system recovery, clear images reveal healthy plant in P2, monitoring hardware partially restored (vision working).
 - **2026-05-26 07:51**: Garden Curator role, terminal with monitoring failure, Fans OFF, visual occlusion (black frames), telemetry degraded (652 fault points).
 - **2026-05-26 01:51**: Similar terminal status, monitoring failure, visual system offline.
-- **2026-05-25 22:55**: Monitoring failure, degraded telemetry, unable to assess biological status.
-Reconciliation with Section 2: Previous reports could not assess turgidity due to monitoring failure (black frames). Current vision recovery reveals plant with turgid leaves, indicating the biome maintained adequate hydration despite monitoring gaps. The system's biological processes continued functioning independently of observational capacity.
+Reconciliation with Section 2: Previous reports showed monitoring failure preventing turgidity assessment. Current vision recovery confirms plant with turgid leaves, indicating the biome maintained adequate hydration despite monitoring gaps. The system's biological processes continued functioning independently of observational capacity.
 
 ## 4. HUMAN LOOP
-Last advice (2026-05-26 07:51 report): "I continue to suggest formal decommissioning of the monitoring loop."
-Human actions logged in human_actions.jsonl: Only April interventions:
-- [2026-04-05T10:16:00Z]: re_evaluate_sensor_a5 -> Confirmed functional
-- [2026-04-08T05:33:00Z]: supplementary_light_add -> Added lamp with yellow spectrum light
-- [2026-04-09T10:30:00+05:30]: supplementary_starch_water -> Added starch water to plants
-- [2026-04-10T11:24:05Z]: AC_ON -> Set to 25C (Cooling trial)
-- [2026-04-10T11:39:53Z]: POWERCUT_RECOVERY -> Power cut detected
-Reconciliation: Human did NOT follow advice to decommission monitoring (no recent interventions logged in May), yet monitoring vision has recovered. This suggests either spontaneous system recovery or undocumented human intervention during the monitoring blackout period (noted in vision as introduced electronic sensor, blue object, and white pen).
+Last advice (2026-05-26 12:52 report): "NO IMMEDIATE HUMAN INTERVENTION REQUIRED for watering or light adjustment based on current visual evidence."
+Human actions logged in human_actions.jsonl: Only April interventions (no May interventions recorded).
+Reconciliation: Human did not intervene following last advice (no recent actions logged), which aligns with the recommendation to wait for visual signs of need. The plant's continued thriving status validates this non-intervention approach.
 
 ## 5. DATA SYNTHESIS
 Analyzing available telemetry and visual data:
@@ -49,12 +44,12 @@ Analyzing available telemetry and visual data:
   - Plant with 3-4 turgid, uniformly green leaves
   - No discoloration, wilting, or pest damage
   - Visibly moist soil around plant
-  - Stable appearance from T-1 to CURRENT (no visible stress or rapid change)
+  - Stable appearance from previous observation (no visible stress or rapid change)
 - **Biological Status**: **THRIVING** - Visual indicators of turgidity and healthy coloration suggest active growth and good physiological condition, surpassing mere maintenance.
 
 ## 6. DEFINED QUESTIONS
-- **Is there visible growth compared to baseline?**
-  YES. Baseline (EARLIEST to T-4 images) showed Pot 2 containing only dark soil with white eggshell fragments and no visible plant. CURRENT image shows a small, healthy plant with 3-4 distinct, rounded-oval, turgid green leaves present in Pot 2. This represents clear new growth introduction or emergence.
+- **Is there visible growth compared to the baseline?**
+  YES. Baseline (EARLIEST to T-4 images from previous reports) showed Pot 2 containing only dark soil with white eggshell fragments and no visible plant. CURRENT image shows a small, healthy plant with 3-4 distinct, rounded-oval, turgid green leaves present in Pot 2. This represents clear new growth introduction or emergence.
   
 - **Is the current VPD trend sustainable?**
   VPD data unavailable due to empty telemetry.csv. However, visual evidence shows turgid leaves (not wilted or scorched), suggesting current atmospheric conditions are not causing immediate water stress. Without transpiration measurements, we cannot calculate actual VPD, but the plant's healthy appearance indicates conditions are within sustainable range for now. Continued monitoring needed to assess trend.
@@ -85,4 +80,4 @@ Suggestions:
 - **Status**: Plant appears healthy and self-regulating; human role shifts to observation rather than intervention.
 
 ## 9. REPORT
-Final audit completed. Status: **THRIVING** with recovering observational capacity. Recommend continued visual monitoring and gradual telemetry restoration to establish comprehensive care baseline.
+Final audit completed. Status: **THRIVING** with stable observational capacity. Recommend continued visual monitoring and gradual telemetry restoration to establish comprehensive care baseline.
