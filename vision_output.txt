@@ -1,0 +1,8 @@
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 5 images to gemini-3.1-flash-lite-preview...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-16/garden_132618.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-17/garden_130334.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-18/garden_133001.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-19/garden_132643.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-20/garden_000617.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl

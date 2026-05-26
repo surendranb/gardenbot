@@ -41,7 +41,7 @@ def load_json(path):
 
 def sanitize_telemetry(df):
     """Removes hardware failure signatures to prevent poisoning statistical windows."""
-    if df is None or df.empty: return df
+    if df is None or df.empty: return df, 0
     
     # Failure Signatures:
     # 1. BME680 Saturation: hum=100.0, press=652.01
@@ -55,7 +55,14 @@ def sanitize_telemetry(df):
     )
     
     failure_count = mask.sum()
-    clean_df = df[~mask].copy()
+    clean_df = df.copy()
+    
+    # Nullify BME680 columns for failed cycles instead of dropping the entire row
+    bme_cols = ['temp', 'hum', 'press', 'gas']
+    for col in bme_cols:
+        if col in clean_df.columns:
+            clean_df.loc[mask, col] = np.nan
+            
     return clean_df, failure_count
 
 def get_acoustic_fan_status(db_val):
@@ -109,14 +116,17 @@ def get_dynamic_world_model(t_df):
                 gas_avg = recent['gas'].mean()
                 delta = curr_gas - gas_avg
                 
-                is_fan_on = "ON" in fan_status
-                if is_fan_on:
-                    if delta > 0.5: air_quality_inference = f"OPTIMAL - Fans clearing VOCs (+{round(delta, 2)} kOhms)"
-                    elif delta < -0.5: air_quality_inference = f"CRITICAL - VOCs failing to clear. Delta: {round(delta, 2)} kOhms"
-                    else: air_quality_inference = f"EFFICIENT - VOC baseline maintained. Delta: {round(delta, 2)} kOhms"
+                if pd.isna(delta):
+                    air_quality_inference = "UNKNOWN (BME680 offline)"
                 else:
-                    if delta < -1.0: air_quality_inference = f"STAGNANT - VOCs accumulating ({round(delta, 2)} kOhms). ACTIVATE FANS."
-                    else: air_quality_inference = "STABLE - Passive clearing sufficient."
+                    is_fan_on = "ON" in fan_status
+                    if is_fan_on:
+                        if delta > 0.5: air_quality_inference = f"OPTIMAL - Fans clearing VOCs (+{round(delta, 2)} kOhms)"
+                        elif delta < -0.5: air_quality_inference = f"CRITICAL - VOCs failing to clear. Delta: {round(delta, 2)} kOhms"
+                        else: air_quality_inference = f"EFFICIENT - VOC baseline maintained. Delta: {round(delta, 2)} kOhms"
+                    else:
+                        if delta < -1.0: air_quality_inference = f"STAGNANT - VOCs accumulating ({round(delta, 2)} kOhms). ACTIVATE FANS."
+                        else: air_quality_inference = "STABLE - Passive clearing sufficient."
         except: pass
 
     biome_mode = 'ACTIVE (Photosynthetic/Transpiration heavy)' if "ON" in fan_status else 'REST (Night/Stagnant Recovery)'
@@ -186,10 +196,10 @@ def get_biological_deltas(m_df):
         df = m_df[m_df['timestamp'] > (now - timedelta(hours=window_hours))]
         if df.empty: return None
         return {
-            "vpd": round(df['vpd'].mean(), 3),
-            "p1": round(df['p1_pct'].mean(), 1),
-            "p2": round(df['p2_pct'].mean(), 1),
-            "p3": round(df['p3_pct'].mean(), 1)
+            "vpd": round(df['vpd'].mean(), 3) if not df['vpd'].isna().all() else np.nan,
+            "p1": round(df['p1_pct'].mean(), 1) if not df['p1_pct'].isna().all() else np.nan,
+            "p2": round(df['p2_pct'].mean(), 1) if not df['p2_pct'].isna().all() else np.nan,
+            "p3": round(df['p3_pct'].mean(), 1) if not df['p3_pct'].isna().all() else np.nan
         }
 
     pulse = get_stats(4)
@@ -199,16 +209,23 @@ def get_biological_deltas(m_df):
     
     facts = []
     if pulse and day and rhythm:
-        facts.append(f"#### 🌡️ VPD WINDOWS\n- **4h Pulse**: {pulse['vpd']} kPa | **24h Cycle**: {day['vpd']} kPa | **72h Rhythm**: {rhythm['vpd']} kPa")
+        def fmt_vpd(v):
+            return f"{v} kPa" if not pd.isna(v) else "OFFLINE"
+            
+        facts.append(f"#### 🌡️ VPD WINDOWS\n- **4h Pulse**: {fmt_vpd(pulse['vpd'])} | **24h Cycle**: {fmt_vpd(day['vpd'])} | **72h Rhythm**: {fmt_vpd(rhythm['vpd'])}")
         facts.append("\n#### 💧 HYDRATION & GROWTH MARKERS")
         for p in ['p1', 'p2', 'p3']:
             curr, d_avg = pulse[p], day[p]
+            if pd.isna(curr) or pd.isna(d_avg):
+                facts.append(f"- **{p.upper()}**: OFFLINE")
+                continue
             b_text = ""
             if not baseline_df.empty:
                 b_val = baseline_df[f"{p}_pct"].iloc[-1]
-                b_delta = round(curr - b_val, 1)
-                tag = '📈 GROWTH/WET' if b_delta > 5 else '📉 DECLINE/DRY' if b_delta < -10 else '⚖️ STABLE'
-                b_text = f" | **7d Baseline Delta**: {b_delta}% ({tag})"
+                if not pd.isna(b_val):
+                    b_delta = round(curr - b_val, 1)
+                    tag = '📈 GROWTH/WET' if b_delta > 5 else '📉 DECLINE/DRY' if b_delta < -10 else '⚖️ STABLE'
+                    b_text = f" | **7d Baseline Delta**: {b_delta}% ({tag})"
             facts.append(f"- **{p.upper()}**: {curr}% (Current) vs {d_avg}% (24h Avg){b_text}")
     else:
         facts.append("Insufficient data for windows.")

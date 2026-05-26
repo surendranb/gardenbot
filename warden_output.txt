@@ -1,0 +1,8 @@
+Warden: Stable port /dev/cu.usbmodem1201 found natively.
+Warden: Capture failed, attempting CSV fallback...
+Warden: Fallback raw data found: {'timestamp': '2026-05-02 18:55:01', 'temp': 0.0, 'hum': 0.0, 'light': 756, 'p1': 629.0, 'p2': 184.0, 'p3': 404.0, 'press': 0.0, 'gas': 0.0, 'db': -37.2}
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+0, 'light': 756, 'p1': 629.0, 'p2': 184.0, 'p3': 404.0, 'press': 0.0, 'gas': 0.0, 'db': -37.2}
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.

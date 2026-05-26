@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gardenbot: Sentinel-1 Wiring Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #10b981;
+            --secondary: #3b82f6;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --uno-blue: #008184;
+            --wire-red: #ef4444;
+            --wire-black: #1e293b;
+            --wire-yellow: #f59e0b;
+            --wire-green: #10b981;
+            --wire-purple: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 { font-weight: 700; font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        p.subtitle { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 3rem; }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+        }
+
+        /* Breadboard Visualization */
+        .breadboard-container {
+            background: var(--card-bg);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breadboard-base {
+            width: 100%;
+            height: 480px;
+            background: #e2e8f0;
+            border-radius: 12px;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(30, 1fr);
+            padding: 20px;
+            gap: 8px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .hole {
+            width: 12px;
+            height: 12px;
+            background: #cbd5e1;
+            border-radius: 2px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .hole:hover { background: var(--primary); transform: scale(1.2); }
+
+        /* Module Components */
+        .component {
+            position: absolute;
+            background: #064e3b;
+            border-radius: 4px;
+            padding: 10px;
+            color: white;
+            font-size: 0.7rem;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            z-index: 10;
+        }
+
+        #bme680 {
+            width: 140px;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #334155;
+        }
+
+        #uno {
+            width: 250px;
+            height: 100px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--uno-blue);
+            justify-content: center;
+        }
+
+        .pin-label {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 4px 0;
+            padding: 0 4px;
+        }
+
+        /* Info Panel */
+        .info-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card h3 { margin-top: 0; color: var(--primary); font-size: 1.25rem; }
+        .pin-list { list-style: none; padding: 0; margin: 0; }
+        .pin-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        .pin-item span:first-child { color: var(--text-muted); }
+        .pin-item span:last-child { color: var(--secondary); font-weight: 600; }
+
+        .wire-tag {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .alert {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
+            padding: 16px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #fbbf24;
+        }
+
+        .diagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* SVG Wires */
+        .wire-path {
+            fill: none;
+            stroke-width: 4;
+            stroke-linecap: round;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .nav-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+
+    <h1>Sentinel-1 Wiring Guide</h1>
+    <p class="subtitle">Arduino Uno &nbsp;&bull;&nbsp; BME680 (6-Pin Module) &nbsp;&bull;&nbsp; 4-Wire I2C</p>
+
+    <div class="container">
+        <div class="breadboard-container">
+            <div class="breadboard-base">
+                <script>
+                    const base = document.querySelector('.breadboard-base');
+                    for(let i=0; i<300; i++) {
+                        const hole = document.createElement('div');
+                        hole.className = 'hole';
+                        base.appendChild(hole);
+                    }
+                </script>
+
+                <!-- BME680 -->
+                <div class="component" id="bme680">
+                    <div style="font-weight: 700; margin-bottom: 8px;">BME680 (6-PIN)</div>
+                    <div class="pin-label"><span>VIN → 5V</span> <span style="color:var(--wire-red)">●</span></div>
+                    <div class="pin-label"><span>GND → GND</span> <span style="color:var(--wire-black)">●</span></div>
+                    <div class="pin-label"><span>SCL → A5</span> <span style="color:var(--wire-yellow)">●</span></div>
+                    <div class="pin-label"><span>SDA → A4</span> <span style="color:var(--wire-purple)">●</span></div>
+                    <div class="pin-label" style="opacity:0.4"><span>SDO (Floating)</span> <span>○</span></div>
+                    <div class="pin-label" style="opacity:0.4"><span>CS (Floating)</span> <span>○</span></div>
+                </div>
+
+                <!-- Uno Pins -->
+                <div class="component" id="uno">
+                    <strong>ARDUINO UNO ANALOG RAIL</strong>
+                    <div style="display:flex; gap:10px; margin-top:10px;">
+                        <span>A0</span><span>A1</span><span>A2</span><span>A3</span><span style="color:var(--secondary)">A4</span><span style="color:var(--secondary)">A5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SVG Wires Overlay -->
+            <svg class="diagram-overlay" viewBox="0 0 1000 480">
+                <!-- SCL Wire -->
+                <path d="M 540 250 Q 600 150 560 410" class="wire-path" stroke="#f59e0b" />
+                <!-- SDA Wire -->
+                <path d="M 540 270 Q 620 170 515 410" class="wire-path" stroke="#8b5cf6" />
+            </svg>
+
+            <div class="alert">
+                <strong>WARNING:</strong> On Arduino Uno, I2C is <strong>HARD-HARDWIRED</strong> to Pins <strong>A4</strong> and <strong>A5</strong>. 
+                Even if you have other analog sensors, these two MUST stay clear for the BME680 to respond.
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="card">
+                <h3>Uno Pinout Mapping</h3>
+                <ul class="pin-list">
+                    <li class="pin-item"><span>Pin A4</span> <span>BME680 SDA (Purple)</span></li>
+                    <li class="pin-item"><span>Pin A5</span> <span>BME680 SCL (Yellow)</span></li>
+                    <li class="pin-item"><span>Pin A0</span> <span>Soil P1</span></li>
+                    <li class="pin-item"><span>Pin A1</span> <span>Light Sensor</span></li>
+                    <li class="pin-item"><span>Pin A2</span> <span>Soil P3</span></li>
+                    <li class="pin-item"><span>Pin A3</span> <span>Soil P2 (Mint)</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>The "Zero" Problem</h3>
+                <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted);">
+                    If you are seeing `0.00` values, the I2C bus is likely failing to initialize. 
+                    Ensure the BME680 is receiving <strong>5V/3.3V</strong> and that GND is shared between the Uno and the Breadboard.
+                </p>
+                <p style="font-size: 0.9rem; margin-top:10px;">
+                    <strong>Address Hack:</strong> If SDO is left floating, try tying <strong>SDO to GND</strong> to force address <code>0x76</code>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

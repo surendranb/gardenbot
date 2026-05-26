@@ -282,9 +282,17 @@ def capture_data():
 def compute_metrics(raw_row, plants):
     if not raw_row or not isinstance(raw_row, dict): return None
     try:
-        t, h = raw_row.get("temp", 25), raw_row.get("hum", 50)
-        svp = 0.61078 * math.exp((17.27 * t) / (t + 237.3))
-        vpd = round(svp - (svp * (h / 100.0)), 3)
+        t = raw_row.get("temp")
+        h = raw_row.get("hum")
+        press = raw_row.get("press")
+        
+        # Check BME680 failure signatures (Dead Bus or Saturation)
+        if (t == 0.0 and h == 0.0) or (h == 100.0 and press == 652.01) or t is None or h is None:
+            vpd = None
+        else:
+            svp = 0.61078 * math.exp((17.27 * t) / (t + 237.3))
+            vpd = round(svp - (svp * (h / 100.0)), 3)
+            
         metrics = {"timestamp": raw_row.get("timestamp"), "vpd": vpd}
         for p in plants:
             pid = p["id"]

@@ -17,7 +17,7 @@ ARCHIVE_DIR = os.path.join(BASE_DIR, "archive")
 VISION_JSON_PATH = os.path.join(BASE_DIR, "data/vision_observation.json")
 VISION_HISTORY_PATH = os.path.join(BASE_DIR, "logs/vision_history.jsonl")
 DAILY_BENCHMARK_PATH = os.path.join(ARCHIVE_DIR, "daily_benchmark.jpg")
-VISION_MODEL = os.environ.get("GEMINI_VISION_MODEL", "gemini-3.1-flash-lite-preview")
+VISION_MODEL = os.environ.get("GEMINI_VISION_MODEL", "gemini-2.5-flash")
 VISION_CONTEXT_PATH = os.path.join(BASE_DIR, "data/vision_context.json")
 ENV_PATH = os.path.join(BASE_DIR, ".env")
 
