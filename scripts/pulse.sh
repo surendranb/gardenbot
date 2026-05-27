@@ -25,17 +25,21 @@ run_with_timeout() {
 log "Starting Pulse..."
 
 # 0. Pre-flight Check (Hardware Presence & Lock Cleanup)
-if [ ! -e "/dev/cu.usbmodem1201" ]; then
-    log "CRITICAL: Arduino port /dev/cu.usbmodem1201 not found. Aborting sensor capture."
+ARDUINO_PORT=$(ls /dev/cu.usbmodem* /dev/cu.usbserial* 2>/dev/null | head -n 1)
+
+if [ -z "$ARDUINO_PORT" ]; then
+    log "CRITICAL: No Arduino USB port found. Aborting sensor capture."
     # We still run sync to ensure logs are pushed
     run_with_timeout 180 bash scripts/sync.sh >> logs/sync.log 2>&1
     exit 1
 fi
 
+log "Found Arduino at $ARDUINO_PORT"
+
 # Cleanup zombie serial handles
-ZOMBIE_PID=$(lsof -t /dev/cu.usbmodem1201)
+ZOMBIE_PID=$(lsof -t "$ARDUINO_PORT" 2>/dev/null)
 if [ ! -z "$ZOMBIE_PID" ]; then
-    log "WARNING: Port /dev/cu.usbmodem1201 held by PID $ZOMBIE_PID. Terminating zombie process."
+    log "WARNING: Port $ARDUINO_PORT held by PID $ZOMBIE_PID. Terminating zombie process."
     kill -9 $ZOMBIE_PID 2>/dev/null
     sleep 2
 fi
