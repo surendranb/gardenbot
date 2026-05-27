@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-05-27T11:25:42.725863",
+  "timestamp": "2026-05-27T12:06:55.541404",
   "sensors": {
-    "timestamp": "2026-05-27 11:25:37",
-    "temp": 36.33,
-    "hum": 53.56,
-    "light": 794,
-    "p2": 315,
-    "press": 1007.7,
-    "gas": 196.87,
-    "db": -30.6
+    "timestamp": "2026-05-27 12:06:50",
+    "temp": 35.98,
+    "hum": 58.99,
+    "light": 808,
+    "p2": 323,
+    "press": 1007.54,
+    "gas": 31.49,
+    "db": -9.1
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 90.2,
+      "moisture_pct": 88.5,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 2.809
+    "vpd_kpa": 2.434
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg",
-      "previous": null,
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_115611.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-05-27T08:32:52.178663",
+      "timestamp": "2026-05-27T11:57:18.033916",
       "model": "gemini-2.5-flash",
       "image_availability": {
         "compare_set": [
@@ -36,11 +36,12 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-24/garden_130910.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_131009.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg",
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_115611.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_115611.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-23/garden_131109.jpg",
-        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_131009.jpg"
+        "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg"
       },
       "frame_sequence": [
         {
@@ -48,122 +49,160 @@
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-23/garden_131109.jpg"
         },
         {
-          "label": "T-3",
+          "label": "T-4",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-24/garden_130910.jpg"
         },
         {
-          "label": "T-2",
+          "label": "T-3",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg"
         },
         {
-          "label": "T-1",
+          "label": "T-2",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_131009.jpg"
         },
         {
-          "label": "CURRENT",
+          "label": "T-1",
           "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg"
+        },
+        {
+          "label": "CURRENT",
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_115611.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-05-27 08:32:17",
+        "timestamp": "2026-05-27 11:56:15",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
         "compositional_truth_check": {
-          "pots_identified": {
-            "black_pot_p1": {
-              "present_in_images": [
-                "[EARLIEST]",
-                "[T-3]",
-                "[T-1]",
-                "[CURRENT]"
-              ],
-              "description": "A black plastic pot, initially containing bare soil with light fragments (likely eggshells). From [T-1] onwards, it contains a young plant and an electronic sensor module."
+          "pots_identified": [
+            {
+              "id": "Black Pot (P2)",
+              "status": "Present",
+              "contents": "Unidentified Plant Specimen A, soil, eggshell fragments"
             },
-            "yellow_tan_pot_p2": {
-              "present_in_images": [
-                "[EARLIEST]",
-                "[T-3]"
-              ],
-              "description": "A yellow/tan ceramic or terracotta pot, containing bare soil and a plant label 'Sensor V2.0.0'. Absent from [T-1] and [CURRENT] frames."
-            }
-          },
-          "registry_discrepancies": {
-            "p2_mexican_mint_black_pot": {
-              "registry_status": "Expected",
-              "observed_status": "Systemic Loss (if ever present) / New Introduction (current plant)",
-              "details": "The black pot (P1 in this audit, potentially P2 from registry) is present. However, no Mexican Mint is visible in [EARLIEST] or [T-3]. A new plant is introduced in [T-1] and [CURRENT] which does not visually match Mexican Mint (Plectranthus amboinicus) due to its smoother, more rounded leaves. Therefore, the registered Mexican Mint is either absent or replaced."
+            {
+              "id": "Yellow/Tan Pot",
+              "status": "Systemic Loss (present in EARLIEST, T-4; absent from T-2 onwards)",
+              "contents": "Dry soil, sparse dry plant material, plant tag"
             },
-            "p3_white_rabbit_anchor": {
-              "registry_status": "Expected",
-              "observed_status": "Systemic Loss",
-              "details": "The white rabbit (5cm) scale anchor and its associated P3 pot are not visible in any of the provided images."
+            {
+              "id": "White Cup",
+              "status": "New Introduction (present in CURRENT)",
+              "contents": "Water, single green leaf cutting"
             }
-          }
-        },
-        "inventory_reconciliation": {
-          "systemic_losses": [
-            "P2 Mexican Mint (as per registry, replaced by a different plant or never present)",
-            "P3 White Rabbit anchor (not present in any image)",
-            "Yellow/Tan Pot (from frame after [T-3])"
           ],
-          "new_introductions_interventions": [
-            "Yellow/Tan Pot (present in [EARLIEST] and [T-3], not in registry)",
-            "Plant in Black Pot (introduced between [T-3] and [T-1], not Mexican Mint)",
-            "Electronic Sensor Module (introduced between [T-3] and [T-1])",
-            "Plant label 'Sensor V2.0.0' in yellow/tan pot (present in [EARLIEST] and [T-3])"
+          "desk_items": [
+            {
+              "id": "White cylindrical object",
+              "status": "Present (EARLIEST, T-4)"
+            },
+            {
+              "id": "Wires",
+              "status": "Present (all images except T-3)"
+            },
+            {
+              "id": "Electronic circuit board (white)",
+              "status": "New Introduction (T-2 onwards)"
+            },
+            {
+              "id": "Blue object (book/box)",
+              "status": "New Introduction (T-2 onwards)"
+            },
+            {
+              "id": "White pen",
+              "status": "New Introduction (T-2 onwards)"
+            },
+            {
+              "id": "White paper/label",
+              "status": "New Introduction (T-1); removed by CURRENT"
+            },
+            {
+              "id": "Electronic component (purple PCB)",
+              "status": "New Introduction (CURRENT)"
+            }
           ]
         },
-        "plant_audit": {
-          "black_pot_plant": {
-            "earliest": "No plant visible, bare soil with light fragments.",
-            "t-3": "No plant visible, bare soil with light fragments, consistent with [EARLIEST].",
-            "t-2": "Image is black, no visual data.",
-            "t-1": "A young plant with 4-5 rounded, dull green leaves is present. Appears recently introduced. Leaves show good turgor for a new transplant. An electronic sensor module is placed on the soil surface.",
-            "current": "The plant shows slight but noticeable growth and improved turgor compared to [T-1]. Leaves remain dull green, rounded, and appear healthy. The sensor module is undisturbed."
+        "inventory_reconciliation": {
+          "P2_Mexican_Mint_Black_Pot": {
+            "registry_status": "Registered",
+            "physical_reality": "Black pot is present. Contains an unidentified plant specimen from T-2 onwards. The visual characteristics of this plant (rounded, turgid leaves) do not align with typical Mexican Mint morphology. Therefore, the registered 'Mexican Mint' is either a misidentification in the registry or a 'Systemic Loss' replaced by a 'New Introduction' (Unidentified Plant Specimen A).",
+            "reconciliation_status": "Mismatch/New Introduction"
           },
-          "yellow_tan_pot_plant": {
-            "earliest": "No plant visible, bare soil with a 'Sensor V2.0.0' label.",
-            "t-3": "No plant visible, bare soil with a 'Sensor V2.0.0' label, consistent with [EARLIEST].",
-            "t-2": "Image is black, no visual data.",
-            "t-1": "Pot not visible in frame.",
-            "current": "Pot not visible in frame."
+          "P3_White_Rabbit_Anchor": {
+            "registry_status": "Registered",
+            "physical_reality": "No white rabbit (5cm) or 'P3 pot' is visible in any image.",
+            "reconciliation_status": "Systemic Loss/Not Present"
+          }
+        },
+        "plant_audit": {
+          "Black_Pot_P2_Unidentified_Plant_Specimen_A": {
+            "EARLIEST": "Bare, dark soil with scattered light-colored fragments (eggshells). No discernible plant growth.",
+            "T-4": "Bare, dark soil with scattered light-colored fragments (eggshells). No discernible plant growth. Visually static from EARLIEST.",
+            "T-3": "No visual data.",
+            "T-2": "Emergence of a small, distinct plant. Consists of 4-5 rounded, turgid, green leaves. Appears healthy and actively growing. Soil remains dark and appears moist. Eggshell fragments still visible.",
+            "T-1": "Continued growth. Leaves appear slightly larger and more expanded than in T-2. Overall posture remains turgid and healthy. Consistent green coloration. Soil moisture appears adequate.",
+            "CURRENT": "Further healthy growth. Leaves are robust, larger, and maintain excellent turgor and a consistent healthy green color. No signs of stress or disease. Soil surface still shows eggshell fragments and appears adequately moist."
+          },
+          "Yellow_Tan_Pot_Contents": {
+            "EARLIEST": "Dry, clumpy soil with sparse, dry, stringy plant material or roots. A dark plant tag ('Sensor V2.0.0') is inserted. Appears dormant or deceased.",
+            "T-4": "Unchanged from EARLIEST. Contents remain dry and indistinct.",
+            "T-3": "No visual data.",
+            "T-2_onwards": "Systemic Loss. Pot is no longer visible in the frame."
           }
         },
         "biome_observations": {
-          "soil_texture_moisture": "Soil in both visible pots consistently appears dark and moist across all relevant images. No signs of cracking, dryness, or waterlogging are evident.",
-          "incidental_growth": "No weeds, moss, or secondary seedlings are observed in any of the pots.",
-          "fungal_presence": "No visible fungal growth detected.",
-          "debris_desk_surface": "Light-colored fragments (likely eggshells) are consistently present on the soil surface of the black pot. Wires and an electronic sensor module are present on the desk and within the black pot from [T-1] onwards. A blue object (book?) and a white pen are visible in the background of [T-1], and a white object (paper?) in [CURRENT]."
+          "soil_condition": {
+            "Black_Pot_P2": "Consistently dark and appears adequately moist from T-2 onwards. Earlier, it was dark but lacked plant life. Eggshell fragments are a persistent surface feature.",
+            "Yellow_Tan_Pot": "Dry and clumpy in EARLIEST and T-4."
+          },
+          "incidental_growth": "No discernible weeds, moss, or secondary seedlings observed in any pot. The eggshell fragments are a deliberate addition, not incidental growth.",
+          "biome_anomalies": {
+            "T-3_Image_Loss": "Complete data loss for this timestamp.",
+            "Electronic_Intervention": "Introduction of electronic circuit boards, wires, a blue object, and a pen from T-2 onwards, indicating an active monitoring or experimental setup.",
+            "White_Cup_Cutting": "Introduction of a white cup containing water and a single green leaf cutting in CURRENT, suggesting propagation or a new experimental element."
+          }
         },
         "temporal_deltas": {
-          "earliest_to_t-3": "Minimal to no discernible change in pot contents or soil condition. The scene remains largely static.",
-          "t-3_to_t-2": "Complete loss of visual data; the image is entirely black.",
-          "t-2_to_t-1": "Significant compositional shift. The yellow/tan pot is removed from the frame. A young plant and an electronic sensor module are introduced into the black pot. The camera angle has changed to focus solely on the black pot.",
-          "t-1_to_current": "The plant in the black pot exhibits slight growth and improved turgor. Its leaves appear slightly larger and firmer. The sensor module and eggshell fragments remain undisturbed. Soil moisture is consistent."
+          "EARLIEST_to_T-4": "Minimal change. The scene remains largely static with the two pots and surrounding debris.",
+          "T-4_to_T-3": "Complete loss of visual data, resulting in a black image.",
+          "T-3_to_T-2": "Significant transformation. The yellow/tan pot is removed (Systemic Loss). A distinct plant emerges and grows in the black pot. Electronic monitoring equipment (circuit board, wires, blue object, pen) is introduced to the desk surface.",
+          "T-2_to_T-1": "The plant in the black pot exhibits slight but noticeable growth, with leaves expanding. A white paper/label is introduced to the bottom edge of the frame.",
+          "T-1_to_CURRENT": "The plant in the black pot continues its healthy growth. The white paper/label is removed. A second electronic component (purple PCB) is introduced. A white cup containing water and a green leaf cutting is introduced to the right of the black pot."
         },
         "visual_health_inference": {
-          "plant_in_black_pot": {
-            "t-1_state": "Appears to be a healthy young specimen, likely recently transplanted. Leaves are dull green but show good turgor, indicating successful establishment.",
-            "current_state": "Shows positive signs of health and adaptation. The slight increase in size and improved turgor suggest active growth and a favorable environment. No signs of stress, disease, or nutrient deficiency (e.g., chlorosis, necrosis, wilting) are observed."
-          },
-          "overall_biome_health": "The consistently moist soil and lack of incidental growth or fungal presence suggest a well-maintained environment for the current plant. The introduction of the sensor module implies active monitoring, which could contribute to optimal conditions."
+          "Unidentified_Plant_Specimen_A_Black_Pot": "Excellent health. Displays robust, consistent growth, turgid green leaves, and no visual indicators of nutrient deficiency, disease, or pest infestation. The presence of eggshells may be contributing to its vitality.",
+          "Yellow_Tan_Pot_Contents": "Deceased or dormant in EARLIEST and T-4, characterized by dry, sparse material. Subsequently, the pot was removed, indicating a 'Systemic Loss'.",
+          "Leaf_in_White_Cup": "Appears fresh and green, suggesting viability as a cutting or a recently detached, healthy leaf."
         },
         "anomalies": [
-          "Registry Discrepancy: The 'EXPECTED BIOME REGISTRY' does not match the observed plant species or the presence of the white rabbit anchor.",
-          "Missing Registry Items: P2 Mexican Mint (as registered) and P3 White Rabbit anchor are absent.",
-          "Unregistered Pot: A yellow/tan pot is present in initial frames but not in the registry.",
-          "Black Image: [T-2] is completely black, indicating a data acquisition failure or intentional blackout.",
-          "New Plant Introduction: A plant appears in the black pot between [T-3] and [T-1] without prior registry.",
-          "New Intervention: An electronic sensor module is introduced into the black pot between [T-3] and [T-1].",
-          "Compositional Shift: A significant change in scene composition and camera angle occurs between [T-3] and [T-1], removing one pot from view."
+          {
+            "type": "Data Loss",
+            "description": "Image [T-3] is completely black, indicating a failure in image capture or storage for that specific timestamp."
+          },
+          {
+            "type": "Compositional Change",
+            "description": "The Yellow/Tan Pot, present in EARLIEST and T-4, is a 'Systemic Loss' from T-2 onwards, as it is no longer visible."
+          },
+          {
+            "type": "Plant Identity Mismatch",
+            "description": "The plant growing in the Black Pot (P2) from T-2 onwards does not visually conform to the expected morphology of 'Mexican Mint' as per the registry. Its leaves are rounded and smooth, unlike the typically serrated or fuzzy leaves of Mexican Mint. This suggests either a misidentification in the registry or a replacement plant."
+          },
+          {
+            "type": "New Introduction/Intervention",
+            "description": "The introduction of electronic circuit boards, wires, a blue object, and a pen from T-2 onwards, indicating an active monitoring or experimental setup. Further, a second electronic component (purple PCB) and a white cup with water and a leaf cutting are introduced in CURRENT."
+          },
+          {
+            "type": "Environmental Debris",
+            "description": "The consistent presence of eggshell fragments on the soil surface of the black pot, while potentially beneficial, is an intentional intervention not part of the natural biome."
+          }
         ],
-        "narrative_description": "The audit reveals a dynamic indoor botanical setup with notable discrepancies from the provided registry. Initially, two pots were observed: a black pot and a yellow/tan pot, both containing bare, moist soil. The black pot held light fragments (likely eggshells), while the yellow/tan pot featured a 'Sensor V2.0.0' label. Neither the registered 'Mexican Mint' nor the 'White Rabbit anchor' was present. A significant data gap occurred with a completely black image at [T-2]. Subsequently, a major compositional change took place: the yellow/tan pot was removed from the scene, and a new, distinct plant with rounded, dull green leaves was introduced into the black pot, accompanied by an electronic sensor module. From [T-1] to [CURRENT], this newly introduced plant has shown positive signs of health, exhibiting slight growth and improved turgor. The soil in the black pot has remained consistently moist, and no adverse biome conditions (like weeds or fungi) were observed. The plant's morphology does not align with the registered 'Mexican Mint', indicating either a replacement or an initial misregistration. The overall environment appears conducive to the current plant's health and growth.",
+        "narrative_description": "The botanical observation sequence begins with a scene featuring two pots: a black pot with bare soil and eggshell fragments, and an unregistered yellow pot containing dry, indistinct plant material. A significant data gap occurred at T-3. Subsequently, a dramatic transformation is observed by T-2, where the yellow pot has been removed, and a healthy, unidentified plant specimen has emerged and begun to thrive in the black pot. This period also marks the introduction of electronic monitoring equipment around the black pot. Over the following days, the plant in the black pot demonstrates consistent, vigorous growth, maintaining turgid, green, rounded leaves, indicative of excellent health. The soil in the black pot appears consistently moist and well-maintained. The latest observation in CURRENT reveals further interventions, including an additional electronic component and a white cup containing water and a fresh leaf cutting, suggesting ongoing experimentation or propagation efforts. A key discrepancy remains between the registry's expectation of 'Mexican Mint' in P2 and the visually distinct, unidentified plant that has actually grown, highlighting either a registry error or a deliberate plant substitution.",
         "confidence": "High"
       }
     },
     "recent_visual_ledger": [
-      "2026-04-22 08:27\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa.",
       "2026-05-03 16:37\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa.",
-      "2026-05-03 16:38\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa."
+      "2026-05-03 16:38\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa.",
+      "2026-05-27 11:36\n**Data Summary**: Temp: 0.0C, Hum: 0.0%, VPD: 0.611 kPa."
     ]
   }
 }
