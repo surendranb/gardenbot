@@ -249,7 +249,7 @@ def capture_data():
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
-                if len(parts) >= 8:
+                if len(parts) >= 6:
                     data = {
                         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                         "temp": float(parts[0]), 
