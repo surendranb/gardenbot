@@ -56,4 +56,11 @@ The system is decoupled into four functional layers:
 - **Real-time Truth**: All GitHub Raw data fetches MUST use cache-busting (**`?t=Date.now()`**) to bypass the 5-minute CDN delay.
 
 ---
-*Last Hardened: April 8, 2026 (Reflecting successful BME680 recovery)*
+*Last Hardened: May 27, 2026 (Reflecting successful BME680 recovery)*
+
+---
+
+## 6. PROJECT MANAGEMENT & TICKETING (Multica)
+- **Primary Tracker**: All major architectural outcomes, hardware diagnostics, and agent adjustments must be documented in the core Multica project to preserve historical context and enable rollbacks.
+- **Multica Project URL**: `http://localhost:3010/projects/61f63933-34be-4647-b71e-809493de6232`
+- **Project ID**: `61f63933-34be-4647-b71e-809493de6232`
