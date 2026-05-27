@@ -20,13 +20,21 @@ Project SILICA is the centralized biological and technical intelligence framewor
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P2**: Mexican Mint (Black Pot | Sensor A2 | White Rabbit anchor).
+    - **P1**: Mexican Mint (Black Pot | Sensor A2 | Very young transplant, extremely fragile).
+    - **P2**: Money Plant (Clear Cup | Water Propagation | No Sensors).
 
-## 2.5. BIOLOGICAL BASELINE (Mexican Mint / Plectranthus amboinicus)
+## 2.5. BIOLOGICAL BASELINE 
+**1. Mexican Mint (Plectranthus amboinicus)**
 - **Care Type**: Semi-succulent perennial.
 - **Watering Strategy**: "Soak and Dry". Highly susceptible to root rot if overwatered. Soil must be significantly dry before watering.
 - **Visual Turgidity**: Leaves will lose firmness and appear slightly droopy when severely underwatered.
-- **VPD Goal**: Moderate. Extreme VPD (> 3.0 kPa) induces stress, while very low VPD (< 0.5 kPa) risks fungal rot. The Warden must rely on visual wilt over raw sensor data.
+- **VPD Goal**: Moderate. Extreme VPD (> 3.0 kPa) induces stress, while very low VPD (< 0.5 kPa) risks fungal rot.
+
+**2. Money Plant (Epipremnum aureum - Seedling)**
+- **Care Type**: Tropical vining plant (currently in young seedling phase).
+- **Watering Strategy**: "Moderate". Prefers slightly moist but well-draining soil.
+- **Visual Turgidity**: Leaves droop and lose gloss when underwatered. Yellowing indicates overwatering.
+- **VPD Goal**: Moderate to Low (0.8 - 1.2 kPa). Thrives in higher humidity environments.
 
 ---
 
