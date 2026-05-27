@@ -52504,3 +52504,49 @@ Traceback (most recent call last):
   File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
     raise KeyError(key) from err
 KeyError: 'p1_pct'
+2026-05-27 18:20:14 [PULSE] Pulse Complete.
+2026-05-27 18:50:14 [PULSE] Starting Pulse...
+2026-05-27 18:50:14 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Listening to the room for 5 seconds...
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision context exported to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 7 images to gemini-2.5-flash...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-23/garden_131109.jpg
+  Added T-5: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-24/garden_130910.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-25/garden_130525.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-26/garden_131009.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_083212.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_120722.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-27/garden_185027.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Synthesizing SILICA v2.2 (Corrected Logic)...
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3641, in get_loc
+    return self._engine.get_loc(casted_key)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 168, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 197, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7668, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7676, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'p1_pct'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/prep_observer_context.py", line 331, in <module>
+    main()
+    ~~~~^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/prep_observer_context.py", line 286, in main
+    deltas = get_biological_deltas(m_df)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/prep_observer_context.py", line 205, in get_biological_deltas
+    pulse = get_stats(4)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/scripts/prep_observer_context.py", line 200, in get_stats
+    "p1": round(df['p1_pct'].mean(), 1) if not df['p1_pct'].isna().all() else np.nan,
+                                               ~~^^^^^^^^^^
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/pandas/core/frame.py", line 4378, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/Users/surendran/.openclaw/workspace/gardenbot/.venv/lib/python3.14/site-packages/pandas/core/indexes/base.py", line 3648, in get_loc
+    raise KeyError(key) from err
+KeyError: 'p1_pct'
