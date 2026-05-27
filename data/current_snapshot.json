@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-05-27T08:49:19.198763",
+  "timestamp": "2026-05-27T11:16:31.073405",
   "sensors": {
-    "timestamp": "2026-05-27 08:49:13",
+    "timestamp": "2026-05-27 11:16:25",
     "temp": 0.0,
     "hum": 0.0,
-    "light": 776,
-    "p2": 318,
+    "light": 789,
+    "p2": 349,
     "press": 0.0,
     "gas": 0.0,
-    "db": -30.1
+    "db": -30.5
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 89.6,
+      "moisture_pct": 82.9,
       "is_dry": false
     }
   },
