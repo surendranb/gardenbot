@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-28 13:53:09
+**Generated:** 2026-05-28 14:24:03
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,10 +17,10 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 13:53
+- **TIME OF AUDIT**: 14:24
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
-- **EMPIRICAL PROOF**: -25.8 dB (Maximum Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
+- **EMPIRICAL PROOF**: -31.5 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
@@ -55,11 +55,11 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.318 kPa | **24h Cycle**: 2.301 kPa | **72h Rhythm**: 2.446 kPa
+- **4h Pulse**: 2.402 kPa | **24h Cycle**: 2.306 kPa | **72h Rhythm**: 2.447 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 84.7% (Current) vs 85.9% (24h Avg)
+- **P2**: 83.2% (Current) vs 85.9% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -194,7 +194,6 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-28 10:16:40,34.85,60.64,780,326,1008.74,79.06,-17.6
 2026-05-28 10:44:41,34.92,59.85,783,326,1008.57,77.45,-30.2
 2026-05-28 11:16:01,34.99,59.05,790,348,1008.07,77.02,-30.2
 2026-05-28 11:47:28,35.07,57.59,805,351,1007.59,75.49,-29.8
@@ -202,6 +201,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-28 12:49:42,34.92,55.67,807,351,1006.55,2.49,-30.8
 2026-05-28 13:21:07,34.82,56.6,825,348,1006.09,4.56,-29.6
 2026-05-28 13:52:32,,,823,352,,,-25.8
+2026-05-28 14:23:42,35.46,56.71,815,351,1005.48,3.85,-31.5
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
