@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-28 18:35:24
+**Generated:** 2026-05-28 19:06:49
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,15 +17,15 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 18:35
+- **TIME OF AUDIT**: 19:06
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -37.8 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -37.4 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 3 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 4 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -55,262 +55,293 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.241 kPa | **24h Cycle**: 2.283 kPa | **72h Rhythm**: 2.43 kPa
+- **4h Pulse**: 2.186 kPa | **24h Cycle**: 2.284 kPa | **72h Rhythm**: 2.43 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 82.2% (Current) vs 85.5% (24h Avg)
+- **P2**: 81.7% (Current) vs 85.4% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-05-28 18:03:48",
+  "timestamp": "2026-05-28 19:06:07",
   "model": "Garden Botanical Observer (Expert Visual Ethologist)",
   "compositional_truth_check": {
-    "EARLIEST": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Yellowish/Tan",
-          "contents": "Bare soil, P2 Sensor V2.0 tag",
-          "notes": "Registry states 'Black Pot' for P2, this is a color discrepancy."
-        },
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Dark soil, white eggshell fragments",
-          "notes": "No plant visible."
-        }
-      ],
-      "unmonitored_cup": {
-        "type": "Cup",
-        "color": "White",
-        "contents": "Unclear, partially obscured."
-      }
-    },
-    "T-5": {
-      "containers": [],
-      "unmonitored_cup": null,
-      "notes": "Complete visual blackout."
-    },
-    "T-4": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Dark soil, white eggshell fragments, small plant, sensor module",
-          "notes": "This pot now aligns with P2 'Black Pot' description."
-        }
-      ],
-      "unmonitored_cup": {
-        "type": "Cup",
-        "color": "White",
-        "contents": "Not clearly visible, possibly out of frame."
-      }
-    },
-    "T-3": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Dark soil, white eggshell fragments, small plant, sensor module"
-        },
-        {
-          "type": "Cup",
-          "color": "White",
-          "contents": "Clear water, single plant cutting"
-        }
-      ],
-      "unmonitored_cup": null
-    },
-    "T-2": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Drier, lighter soil surface, white eggshell fragments, small plant, sensor module"
-        },
-        {
-          "type": "Cup",
-          "color": "White",
-          "contents": "Clear water, single plant cutting"
-        }
-      ],
-      "unmonitored_cup": null
-    },
-    "T-1": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Dark soil, white eggshell fragments, small plant, sensor module"
-        },
-        {
-          "type": "Cup",
-          "color": "White",
-          "contents": "Clear water, single plant cutting"
-        }
-      ],
-      "unmonitored_cup": null
-    },
-    "CURRENT": {
-      "containers": [
-        {
-          "type": "Pot",
-          "color": "Black",
-          "contents": "Dark soil, white eggshell fragments, small plant, sensor module"
-        },
-        {
-          "type": "Cup",
-          "color": "White",
-          "contents": "Clear water, single plant cutting"
-        }
-      ],
-      "unmonitored_cup": null
-    }
-  },
-  "inventory_reconciliation": {
-    "P2_Mexican_Mint": {
-      "registry_status": "Expected",
-      "EARLIEST": "Systemic Loss (plant absent), Registry Discrepancy (pot color yellowish/tan instead of black)",
-      "T-5": "Systemic Loss (visual blackout)",
-      "T-4": "New Introduction/Intervention (small plant appeared in black pot, now matching registry pot color)",
-      "T-3": "Present and accounted for",
-      "T-2": "Present and accounted for",
-      "T-1": "Present and accounted for",
-      "CURRENT": "Present and accounted for"
-    },
-    "Unmonitored_Money_Plant": {
-      "registry_status": "Expected",
-      "EARLIEST": "Systemic Loss (plant absent)",
-      "T-5": "Systemic Loss (visual blackout)",
-      "T-4": "Not clearly visible",
-      "T-3": "New Introduction/Intervention (cutting appeared in white cup)",
-      "T-2": "Present and accounted for",
-      "T-1": "Present and accounted for",
-      "CURRENT": "Present and accounted for"
-    }
-  },
-  "plant_audit": {
-    "P2_Mexican_Mint": {
-      "EARLIEST": "Absent. Only bare soil and sensor tag in a yellowish/tan pot.",
-      "T-5": "Absent (visual blackout).",
-      "T-4": "A small plant with 4-5 rounded, dark green, turgid leaves is present in a black pot. No visible signs of stress.",
-      "T-3": "The plant has grown slightly, now showing 5-6 rounded, dark green, turgid leaves. Appears robust.",
-      "T-2": "Leaves appear slightly lighter green, possibly due to increased ambient light. Still turgid. No new leaves observed.",
-      "T-1": "Leaves have returned to a darker green, likely due to reduced ambient light. Turgid and healthy appearance maintained.",
-      "CURRENT": "No discernible change from T-1. Leaves remain dark green and turgid, plant appears stable."
-    },
-    "Unmonitored_Money_Plant": {
-      "EARLIEST": "Absent. White cup contents unclear.",
-      "T-5": "Absent (visual blackout).",
-      "T-4": "Not clearly visible, possibly out of frame.",
-      "T-3": "A single cutting with one healthy, green, turgid leaf is present in clear water within the white cup. No visible roots.",
-      "T-2": "The cutting's leaf remains healthy and turgid. Water level appears stable. No visible root development.",
-      "T-1": "The cutting's leaf maintains its healthy, turgid, green appearance. No visible root development.",
-      "CURRENT": "No discernible change from T-1. The cutting remains healthy with no visible root development."
-    }
-  },
-  "biome_observations": {
-    "soil_black_pot_P2": {
-      "EARLIEST": "Dark, somewhat moist soil with scattered white eggshell fragments.",
-      "T-5": "Not visible.",
-      "T-4": "Dark, appears moist with eggshell fragments.",
-      "T-3": "Dark, appears moist with eggshell fragments.",
-      "T-2": "Surface appears drier and lighter in color, with eggshell fragments still present.",
-      "T-1": "Darker, appears moist (likely due to lighting change), eggshell fragments present.",
-      "CURRENT": "Dark, appears moist (likely due to lighting change), eggshell fragments present."
-    },
-    "water_white_cup_unmonitored": {
-      "EARLIEST": "Unclear.",
-      "T-5": "Not visible.",
-      "T-4": "Not visible.",
-      "T-3": "Clear water, level appears stable. No visible algae or debris.",
-      "T-2": "Clear water, level appears stable.",
-      "T-1": "Clear water, level appears stable.",
-      "CURRENT": "Clear water, level appears stable."
-    },
-    "incidental_growth": "No incidental weeds, moss, or secondary seedlings observed in any image.",
-    "biome_anomalies": "No fungal presence or unusual debris noted on the desk surface beyond wires, a book, and a pen in some frames. The presence of eggshells in the black pot is a consistent intervention."
-  },
-  "temporal_deltas": {
-    "EARLIEST_to_T-5": "A complete loss of visual data occurred, indicating a camera malfunction or blackout. All plants and pots became unobservable.",
-    "T-5_to_T-4": "The camera feed was restored. The yellowish/tan pot previously associated with P2 is no longer visible. A black pot, now housing a small plant (P2) and the sensor, along with eggshell fragments, has appeared. The white cup is not clearly in frame.",
-    "T-4_to_T-3": "The white cup, containing a Money Plant cutting propagating in water, became clearly visible. The P2 plant in the black pot showed slight growth, with an additional leaf and overall larger appearance.",
-    "T-3_to_T-2": "A significant increase in ambient lighting is evident. The P2 plant's leaves appear slightly lighter green, and the soil surface in the black pot appears noticeably drier and lighter in color. No significant changes to the Money Plant cutting.",
-    "T-2_to_T-1": "The ambient lighting has decreased, returning to a darker state similar to T-3. The P2 plant's leaves appear darker green again, likely a response to the lighting change rather than a physiological shift. No other significant physical changes to either plant or their environment.",
-    "T-1_to_CURRENT": "No discernible changes in the health, size, or posture of either the P2 Mexican Mint or the Unmonitored Money Plant cutting. Environmental conditions (lighting, water level) appear stable."
-  },
-  "visual_health_inference": {
-    "P2_Mexican_Mint": {
-      "EARLIEST": "Lost/Absent.",
-      "T-5": "Undeterminable (blackout).",
-      "T-4": "Healthy. Leaves are turgid and dark green, indicating good hydration and photosynthetic activity.",
-      "T-3": "Healthy. Continued turgidity and dark green coloration, with observed growth, suggests thriving conditions.",
-      "T-2": "Generally healthy, but the slightly lighter leaf color and drier soil surface could indicate mild, early-stage water stress or a response to increased light exposure. Leaves remain turgid.",
-      "T-1": "Healthy. The return to darker green leaves and potentially re-moistened soil (due to lighting) suggests recovery or stable conditions.",
-      "CURRENT": "Healthy. Leaves are consistently dark green and turgid, showing no signs of wilting, discoloration, or pest damage."
-    },
-    "Unmonitored_Money_Plant": {
-      "EARLIEST": "Lost/Absent.",
-      "T-5": "Undeterminable (blackout).",
-      "T-4": "Not visible.",
-      "T-3": "Healthy. The single leaf is turgid and green, indicating successful initial propagation without visible stress.",
-      "T-2": "Healthy. The leaf maintains its turgidity and green color. No visible root development yet, which is normal for early propagation.",
-      "T-1": "Healthy. Continued stability of the cutting, with no signs of decline.",
-      "CURRENT": "Healthy. The cutting remains stable and vigorous, with no visible signs of stress or deterioration. Root development is not yet visually apparent."
-    }
-  },
-  "anomalies": {
-    "systemic_loss": [
+    "current_state": [
       {
-        "image": "EARLIEST",
-        "item": "Mexican Mint plant (P2)"
+        "pot_id": "Black Pot",
+        "contents": "Small plant with 3-4 rounded leaves, dark soil, white eggshell fragments, purple PCB sensor.",
+        "location": "Left/Center"
       },
       {
-        "image": "EARLIEST",
-        "item": "Money Plant (Unmonitored)"
-      },
-      {
-        "image": "T-5",
-        "item": "Complete camera visual data"
-      },
-      {
-        "image": "T-4",
-        "item": "Yellowish/tan pot from EARLIEST"
-      }
-    ],
-    "new_introduction_intervention": [
-      {
-        "image": "EARLIEST",
-        "item": "Eggshells in black pot"
-      },
-      {
-        "image": "T-4",
-        "item": "Small plant in black pot (P2)"
-      },
-      {
-        "image": "T-3",
-        "item": "Money Plant cutting in white cup (Unmonitored)"
-      }
-    ],
-    "registry_discrepancy": [
-      {
-        "image": "EARLIEST",
-        "item": "P2 pot color (registry: 'Black Pot', image: 'Yellowish/Tan')"
+        "pot_id": "White Cup",
+        "contents": "Money Plant cutting with one leaf, water.",
+        "location": "Right"
       }
     ]
   },
-  "narrative_description": "The monitoring period began with a somewhat ambiguous scene. The 'EARLIEST' image showed a yellowish pot with the P2 sensor but no Mexican Mint plant, and a black pot with eggshells but no plant. The unmonitored Money Plant was also absent. This indicated initial systemic losses for both expected plants. A brief camera blackout ('T-5') interrupted observations. Upon restoration ('T-4'), a significant shift occurred: a small, healthy plant, consistent with a young Mexican Mint, appeared in a black pot (now aligning with the P2 registry description) alongside the sensor and eggshells. The yellowish pot was gone. By 'T-3', the unmonitored Money Plant cutting was clearly visible in its white water-filled cup, appearing healthy. The P2 plant also showed slight growth. 'T-2' brought a notable increase in ambient light, causing the P2 plant's leaves to appear slightly lighter green and the soil surface to dry. However, by 'T-1', the lighting had returned to a darker state, and the P2 plant's leaves regained their darker green hue, suggesting a healthy response to environmental shifts. The 'CURRENT' image shows both plants maintaining their healthy, turgid appearance, with no significant changes from the previous day. The Mexican Mint appears stable and robust, and the Money Plant cutting continues its propagation without visible stress, though root development is not yet apparent.",
-  "confidence": "Moderate"
+  "inventory_reconciliation": {
+    "P2_Mexican_Mint": {
+      "registry_status": "Expected: Black Pot | Soil | Sensor",
+      "current_status": "Present. Plant introduced between [EARLIEST] and [T-4]. Sensor introduced between [EARLIEST] and [T-4].",
+      "notes": "The plant identified as 'Mexican Mint' is a new introduction, not present in the earliest image. The sensor type also changed."
+    },
+    "Unmonitored_Money_Plant": {
+      "registry_status": "Expected: White Cup | Water Propagation | No Sensors",
+      "current_status": "Present. Plant introduced between [T-4] and [T-3].",
+      "notes": "The Money Plant cutting is a new introduction, not present in the earliest images."
+    },
+    "Systemic_Losses": [
+      {
+        "item": "Mexican Mint plant (original)",
+        "reason": "Absent in [EARLIEST] image where the black pot was bare soil."
+      },
+      {
+        "item": "Money Plant (original)",
+        "reason": "Absent in [EARLIEST] and [T-4] images where the white cup was empty or not visible/containing plant."
+      },
+      {
+        "item": "Uncatalogued Yellowish Pot",
+        "reason": "Present in [EARLIEST] but not visible in any subsequent images."
+      }
+    ],
+    "New_Introductions_Interventions": [
+      {
+        "item": "Eggshell fragments",
+        "location": "Black Pot",
+        "timestamp_first_seen": "[EARLIEST]"
+      },
+      {
+        "item": "Small plant (assumed P2 Mexican Mint)",
+        "location": "Black Pot",
+        "timestamp_first_seen": "[T-4]"
+      },
+      {
+        "item": "Purple PCB sensor",
+        "location": "Black Pot",
+        "timestamp_first_seen": "[T-4]"
+      },
+      {
+        "item": "Money Plant cutting",
+        "location": "White Cup",
+        "timestamp_first_seen": "[T-3]"
+      }
+    ]
+  },
+  "plant_audit": {
+    "P2_Mexican_Mint_Black_Pot": [
+      {
+        "timestamp": "[EARLIEST]",
+        "description": "Absent. Pot contains bare soil with white eggshell fragments. A 'Sensor V2.0' tag is visible in an adjacent yellowish pot, not this one.",
+        "health_inference": "N/A (plant absent)"
+      },
+      {
+        "timestamp": "[T-5]",
+        "description": "Not visible (image is black).",
+        "health_inference": "Undeterminable"
+      },
+      {
+        "timestamp": "[T-4]",
+        "description": "Small plant with 3-4 rounded, light green leaves. Leaves appear turgid. Soil surface appears dry. A purple PCB sensor is now present in the soil.",
+        "health_inference": "Appears healthy for a young seedling."
+      },
+      {
+        "timestamp": "[T-3]",
+        "description": "Plant leaves appear slightly darker green and robust. Good turgor. Soil surface appears slightly damp.",
+        "health_inference": "Healthy, showing good vitality."
+      },
+      {
+        "timestamp": "[T-2]",
+        "description": "Leaves appear lighter green, likely due to significantly brighter ambient lighting. Good turgor maintained. Soil surface is very damp, almost saturated.",
+        "health_inference": "Healthy, but the very damp soil suggests recent heavy watering; monitor for overwatering."
+      },
+      {
+        "timestamp": "[T-1]",
+        "description": "Leaves have returned to a darker green hue, consistent with reduced lighting. Good turgor. Soil surface is moist, less saturated than [T-2].",
+        "health_inference": "Healthy, soil moisture levels appear more balanced."
+      },
+      {
+        "timestamp": "[CURRENT]",
+        "description": "Leaves maintain healthy green color and good turgor. No visible signs of stress or discoloration. Soil surface is dry with minor cracking.",
+        "health_inference": "Appears healthy, but the dry and cracked soil indicates a need for watering soon to prevent potential stress."
+      }
+    ],
+    "Unmonitored_Money_Plant_White_Cup": [
+      {
+        "timestamp": "[EARLIEST]",
+        "description": "Absent. White cup partially visible, appears empty or with water.",
+        "health_inference": "N/A (plant absent)"
+      },
+      {
+        "timestamp": "[T-5]",
+        "description": "Not visible (image is black).",
+        "health_inference": "Undeterminable"
+      },
+      {
+        "timestamp": "[T-4]",
+        "description": "Not visible in the frame.",
+        "health_inference": "N/A (plant absent)"
+      },
+      {
+        "timestamp": "[T-3]",
+        "description": "Single leaf cutting, healthy green, submerged in water. Appears turgid and stable.",
+        "health_inference": "Healthy, successfully propagating."
+      },
+      {
+        "timestamp": "[T-2]",
+        "description": "Single leaf cutting, healthy green, submerged in water. Appears turgid and stable.",
+        "health_inference": "Healthy."
+      },
+      {
+        "timestamp": "[T-1]",
+        "description": "Single leaf cutting, healthy green, submerged in water. Appears turgid and stable.",
+        "health_inference": "Healthy."
+      },
+      {
+        "timestamp": "[CURRENT]",
+        "description": "Single leaf cutting, healthy green, submerged in water. Appears turgid and stable. Water level appears consistent.",
+        "health_inference": "Healthy and stable in water propagation."
+      }
+    ]
+  },
+  "biome_observations": {
+    "soil_texture_changes": [
+      {
+        "timestamp": "[EARLIEST]",
+        "observation": "Black pot soil appears dry. Yellowish pot soil appears dry."
+      },
+      {
+        "timestamp": "[T-4]",
+        "observation": "Black pot soil appears dry."
+      },
+      {
+        "timestamp": "[T-3]",
+        "observation": "Black pot soil appears slightly damp."
+      },
+      {
+        "timestamp": "[T-2]",
+        "observation": "Black pot soil is very damp, almost saturated."
+      },
+      {
+        "timestamp": "[T-1]",
+        "observation": "Black pot soil is moist, less saturated than [T-2]."
+      },
+      {
+        "timestamp": "[CURRENT]",
+        "observation": "Black pot soil is dry with minor surface cracking."
+      }
+    ],
+    "incidental_growth": "No weeds, moss, secondary seedlings, or uncatalogued sprouts observed in any image.",
+    "fungal_presence": "No visible fungal presence detected.",
+    "desk_surface_debris": [
+      {
+        "timestamp": "[EARLIEST]",
+        "observation": "Dark desk surface, wires visible."
+      },
+      {
+        "timestamp": "[T-4]",
+        "observation": "Dark desk surface, wires, a blue book, and a pen visible."
+      },
+      {
+        "timestamp": "[T-3]",
+        "observation": "Dark desk surface, wires, a blue book, and a pen visible."
+      },
+      {
+        "timestamp": "[T-2]",
+        "observation": "Desk surface appears lighter due to increased ambient light, wires, blue book, and pen visible."
+      },
+      {
+        "timestamp": "[T-1]",
+        "observation": "Dark desk surface, wires, blue book, and pen visible."
+      },
+      {
+        "timestamp": "[CURRENT]",
+        "observation": "Dark desk surface, wires visible. Blue book and pen are not clearly visible."
+      }
+    ]
+  },
+  "temporal_deltas": [
+    {
+      "from": "Initial State",
+      "to": "[EARLIEST]",
+      "changes": "The black pot contains bare soil with eggshell fragments. A yellowish pot with a 'Sensor V2.0' tag is present but also bare. The white cup is empty or contains only water. No plants are present in their designated locations."
+    },
+    {
+      "from": "[EARLIEST]",
+      "to": "[T-5]",
+      "changes": "The image is completely black, resulting in a total loss of visual information for this timestamp."
+    },
+    {
+      "from": "[T-5]",
+      "to": "[T-4]",
+      "changes": "A small plant with 3-4 rounded, light green leaves has been introduced into the black pot. The 'Sensor V2.0' tag is gone, replaced by a purple PCB sensor in the black pot. The yellowish pot is no longer visible in the frame. The white cup is still not visible."
+    },
+    {
+      "from": "[T-4]",
+      "to": "[T-3]",
+      "changes": "The white cup is now clearly visible and contains a Money Plant cutting with a single leaf in water. The plant in the black pot appears slightly more robust, with leaves showing a slightly darker green hue. The soil in the black pot appears slightly damp."
+    },
+    {
+      "from": "[T-3]",
+      "to": "[T-2]",
+      "changes": "There is a significant increase in overall ambient lighting. The soil in the black pot appears significantly damp, almost saturated. The leaves of the plant in the black pot appear a lighter green, likely due to the brighter lighting, but maintain turgor."
+    },
+    {
+      "from": "[T-2]",
+      "to": "[T-1]",
+      "changes": "The overall ambient lighting has decreased, returning to a darker state. The soil in the black pot appears less damp than in [T-2], but still moist. The leaves of the plant in the black pot have returned to a darker green hue, consistent with the reduced lighting."
+    },
+    {
+      "from": "[T-1]",
+      "to": "[CURRENT]",
+      "changes": "The soil in the black pot appears significantly drier, with some visible surface cracking. No significant changes in plant structure or color for either plant."
+    }
+  ],
+  "visual_health_inference": {
+    "P2_Mexican_Mint_Black_Pot": "The plant has been successfully introduced and appears to be establishing well. It shows consistent healthy leaf color and turgor throughout the observed period, adapting to changes in lighting and watering. The current dry soil condition warrants immediate attention to prevent stress.",
+    "Unmonitored_Money_Plant_White_Cup": "The cutting was successfully introduced and has maintained a healthy appearance in water propagation. No signs of decline or stress observed."
+  },
+  "anomalies": [
+    {
+      "timestamp": "[EARLIEST]",
+      "type": "Compositional Anomaly",
+      "description": "Presence of white eggshell fragments in the black pot, not part of standard registry. An uncatalogued yellowish pot with a sensor tag is also present."
+    },
+    {
+      "timestamp": "[T-5]",
+      "type": "Data Anomaly",
+      "description": "Image is completely black, resulting in a total loss of visual data for this timestamp."
+    },
+    {
+      "timestamp": "[T-4]",
+      "type": "Compositional Anomaly",
+      "description": "Introduction of a new plant specimen and a purple PCB sensor in the black pot, replacing the previous bare soil and sensor tag. The yellowish pot is no longer visible."
+    },
+    {
+      "timestamp": "[T-3]",
+      "type": "Compositional Anomaly",
+      "description": "Introduction of a Money Plant cutting into the white cup."
+    },
+    {
+      "timestamp": "[T-2]",
+      "type": "Environmental Anomaly",
+      "description": "Significant increase in ambient lighting. Soil in the black pot appears excessively damp, indicating potential overwatering or recent heavy watering."
+    },
+    {
+      "timestamp": "[CURRENT]",
+      "type": "Environmental Anomaly",
+      "description": "Soil in the black pot is notably dry and cracked, indicating a need for watering and potential water stress if not addressed."
+    }
+  ],
+  "narrative_description": "The botanical observation period reveals a dynamic environment. Initially, the designated P2 Mexican Mint pot was bare, containing only soil and eggshells, and the Money Plant was absent. A significant data gap occurred at [T-5]. Subsequently, a small plant (assumed Mexican Mint) and a new sensor were introduced into the black pot by [T-4]. By [T-3], a Money Plant cutting was introduced into the white cup. Both plants have shown consistent health and vitality, adapting to fluctuating lighting conditions. A notable watering event occurred around [T-2], leading to very damp soil, which has since dried out considerably by [CURRENT], showing surface cracking. While both plants currently appear healthy, the dry soil in the black pot suggests an imminent need for watering to maintain optimal health.",
+  "confidence": "High"
 }
 ```
 
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-28 14:54:38,33.34,50.99,818,346,1005.12,12.21,-30.7
 2026-05-28 15:25:54,34.07,52.26,841,348,1005.18,60.14,-31.2
 2026-05-28 15:57:42,34.6,63.85,815,348,1004.89,47.72,-31.0
 2026-05-28 16:29:13,35.29,65.46,841,349,1005.03,42.44,-31.7
@@ -318,6 +349,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-28 17:32:15,33.17,57.62,817,354,1005.64,57.93,-30.7
 2026-05-28 18:03:38,,,803,365,,,-31.2
 2026-05-28 18:35:03,,,815,363,,,-37.8
+2026-05-28 19:05:57,,,810,364,,,-37.4
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
