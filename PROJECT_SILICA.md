@@ -20,8 +20,8 @@ Project SILICA is the centralized biological and technical intelligence framewor
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P1**: Mexican Mint (Black Pot | Sensor A2 | Very young transplant, extremely fragile).
-    - **P2**: Money Plant (Clear Cup | Water Propagation | No Sensors).
+    - **P2**: Mexican Mint (Black Pot | Sensor A2 | Soil).
+    - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ## 2.5. BIOLOGICAL BASELINE 
 **1. Mexican Mint (Plectranthus amboinicus)**
