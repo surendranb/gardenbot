@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-28 20:10:08
+**Generated:** 2026-05-28 20:41:00
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,15 +17,15 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 20:10
+- **TIME OF AUDIT**: 20:41
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
-- **EMPIRICAL PROOF**: -21.8 dB (Maximum Convection)
+- **EMPIRICAL PROOF**: -26.3 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 6 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 7 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -55,11 +55,11 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.131 kPa | **24h Cycle**: 2.287 kPa | **72h Rhythm**: 2.43 kPa
+- **4h Pulse**: 2.21 kPa | **24h Cycle**: 2.284 kPa | **72h Rhythm**: 2.43 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 80.8% (Current) vs 85.3% (24h Avg)
+- **P2**: 80.4% (Current) vs 85.2% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -288,7 +288,6 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-28 16:29:13,35.29,65.46,841,349,1005.03,42.44,-31.7
 2026-05-28 17:00:46,33.87,57.04,767,345,1005.36,52.73,-21.5
 2026-05-28 17:32:15,33.17,57.62,817,354,1005.64,57.93,-30.7
 2026-05-28 18:03:38,,,803,365,,,-31.2
@@ -296,6 +295,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-28 19:05:57,,,810,364,,,-37.4
 2026-05-28 19:37:24,,,818,365,,,-23.9
 2026-05-28 20:08:58,,,776,363,,,-21.8
+2026-05-28 20:40:43,,,817,365,,,-26.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
