@@ -196,10 +196,10 @@ def get_biological_deltas(m_df):
         df = m_df[m_df['timestamp'] > (now - timedelta(hours=window_hours))]
         if df.empty: return None
         return {
-            "vpd": round(df['vpd'].mean(), 3) if not df['vpd'].isna().all() else np.nan,
-            "p1": round(df['p1_pct'].mean(), 1) if not df['p1_pct'].isna().all() else np.nan,
-            "p2": round(df['p2_pct'].mean(), 1) if not df['p2_pct'].isna().all() else np.nan,
-            "p3": round(df['p3_pct'].mean(), 1) if not df['p3_pct'].isna().all() else np.nan
+            "vpd": round(df['vpd'].mean(), 3) if 'vpd' in df and not df['vpd'].isna().all() else np.nan,
+            "p1": round(df['p1_pct'].mean(), 1) if 'p1_pct' in df and not df['p1_pct'].isna().all() else np.nan,
+            "p2": round(df['p2_pct'].mean(), 1) if 'p2_pct' in df and not df['p2_pct'].isna().all() else np.nan,
+            "p3": round(df['p3_pct'].mean(), 1) if 'p3_pct' in df and not df['p3_pct'].isna().all() else np.nan
         }
 
     pulse = get_stats(4)
