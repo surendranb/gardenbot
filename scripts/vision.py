@@ -139,7 +139,6 @@ def build_prompt(ctx=None):
         "WORLD MODEL:\n"
         "- Plants are indoor on the desk."
         "- LIGHTING: Fixed Camera LED (cool spectrum) + Diffuse light from a North window. ZERO direct sunlight.\n"
-        "- SCALE ANCHOR: White rabbit (5cm) in p3 pot.\n"
         "- EXPECTED BIOME REGISTRY (A Priori):\n"
         "  * P2: Mexican Mint (Black Pot | Soil | Sensor)\n"
         "  * Unmonitored: Money Plant (White Cup | Water Propagation | No Sensors)\n\n"
