@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-28 22:15:40
+**Generated:** 2026-05-28 22:46:43
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,15 +17,15 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 22:15
+- **TIME OF AUDIT**: 22:46
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
-- **EMPIRICAL PROOF**: -26.2 dB (Maximum Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
+- **EMPIRICAL PROOF**: -31.7 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 10 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 11 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -59,7 +59,7 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 79.3% (Current) vs 84.8% (24h Avg)
+- **P2**: 79.2% (Current) vs 84.7% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -252,7 +252,6 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-28 18:35:03,,,815,363,,,-37.8
 2026-05-28 19:05:57,,,810,364,,,-37.4
 2026-05-28 19:37:24,,,818,365,,,-23.9
 2026-05-28 20:08:58,,,776,363,,,-21.8
@@ -260,6 +259,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-28 21:11:35,,,807,366,,,-20.0
 2026-05-28 21:43:13,,,804,368,,,-30.7
 2026-05-28 22:14:42,,,788,370,,,-26.2
+2026-05-28 22:46:16,,,849,367,,,-31.7
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
