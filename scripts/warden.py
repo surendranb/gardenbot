@@ -244,8 +244,9 @@ def capture_data():
         time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
         ser.reset_input_buffer()
         
-        # Read up to 10 times to find a complete loop packet without discarding
-        for _ in range(10):
+        # Multi-sample to allow BME680 warm-up (Collect ~4 valid readings over ~20s)
+        valid_readings = []
+        for _ in range(25): # Wait up to 25 cycles
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
@@ -260,16 +261,32 @@ def capture_data():
                         "gas": float(parts[5]),
                         "db": capture_volume() or 0.0
                     }
-                    
-                    # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
-                    if data["press"] == 652.01 and data["hum"] == 100.0:
-                        print("Warden: WARNING: BME680 Saturation detected (652/100). Recording partial telemetry.")
-                    elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
-                        print("Warden: WARNING: BME680 I2C BUS DEAD. Recording partial telemetry (Light/Moisture).")
-                    
-                    new_df = pd.DataFrame([data])
-                    save_csv_append(new_df, RAW_CSV_PATH)
-                    return data
+                    valid_readings.append(data)
+                    print(f"Warden: Captured sample {len(valid_readings)}/4 (Gas: {data['gas']})")
+                    if len(valid_readings) >= 4:
+                        break
+        
+        if valid_readings:
+            # Pick the latest reading for maximum warm-up time
+            best_data = valid_readings[-1]
+            
+            # Fallback: if the latest reading had a dead bus, scan backwards for a good one
+            for data in reversed(valid_readings):
+                if not (data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0):
+                    best_data = data
+                    break
+            
+            data = best_data
+            
+            # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
+            if data["press"] == 652.01 and data["hum"] == 100.0:
+                print("Warden: WARNING: BME680 Saturation detected (652/100). Recording partial telemetry.")
+            elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
+                print("Warden: WARNING: BME680 I2C BUS DEAD. Recording partial telemetry (Light/Moisture).")
+            
+            new_df = pd.DataFrame([data])
+            save_csv_append(new_df, RAW_CSV_PATH)
+            return data
     except Exception as e:
         print(f"Warden: Capture failed on {port}: {e}")
     finally:

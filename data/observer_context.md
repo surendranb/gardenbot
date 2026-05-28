@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-28 09:20:40
+**Generated:** 2026-05-28 09:42:44
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,7 +17,7 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 09:20
+- **TIME OF AUDIT**: 09:42
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
 - **EMPIRICAL PROOF**: -30.9 dB (Mid-range Convection)
@@ -25,7 +25,7 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 82 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 94 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -55,11 +55,11 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.133 kPa | **24h Cycle**: 2.623 kPa | **72h Rhythm**: 2.563 kPa
+- **4h Pulse**: 2.19 kPa | **24h Cycle**: 2.489 kPa | **72h Rhythm**: 2.466 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 84.0% (Current) vs 85.6% (24h Avg)
+- **P2**: 87.0% (Current) vs 86.3% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -158,14 +158,14 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-28 06:51:22,,,884,343,,,0.0
-2026-05-28 07:37:50,,,837,343,,,0.0
-2026-05-28 08:11:47,,,825,343,,,0.0
-2026-05-28 08:24:16,,,817,344,,,0.0
-2026-05-28 09:03:24,,,733,341,,,-31.5
-2026-05-28 09:10:45,35.5,63.1,796,385,1008.98,1.14,-31.1
-2026-05-28 09:15:51,,,739,327,,,-31.1
-2026-05-28 09:19:52,,,751,327,,,-30.9
+2026-05-28 09:33:48,35.67,62.15,760,323,1008.93,92.57,-30.3
+2026-05-28 09:34:05,35.67,62.17,761,323,1008.93,98.45,-30.7
+2026-05-28 09:34:22,35.66,62.18,759,323,1008.92,105.55,-31.0
+2026-05-28 09:34:39,35.68,62.19,757,323,1008.9,111.03,-31.0
+2026-05-28 09:34:56,35.67,62.18,755,324,1008.9,115.4,-30.6
+2026-05-28 09:35:13,35.68,62.15,757,323,1008.9,120.4,-30.5
+2026-05-28 09:38:18,34.92,62.45,758,323,1008.99,57.97,-31.0
+2026-05-28 09:42:03,34.95,62.37,778,325,1008.99,62.49,-30.9
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
