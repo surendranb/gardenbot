@@ -59,12 +59,8 @@ done
 
 echo "]" >> data/gallery.json
 
-log "Updating latest report pointer..."
-LATEST_REPORT=$(ls -t logs/reports/report_*.md 2>/dev/null | head -n 1)
-if [ -n "$LATEST_REPORT" ]; then
-    cp "$LATEST_REPORT" logs/latest_report.md
-    log "Latest report updated to: $LATEST_REPORT"
-fi
+log "Archiving latest agent reasoning..."
+python3 scripts/archive_report.py
 
 log "Building site..."
 source "$MKDOCS_VENV/bin/activate"

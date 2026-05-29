@@ -766,14 +766,45 @@ h1 { display: none !important; }
             drawKinetic(t48);
             drawVPD(m48);
 
-            // Ledger
+            // Ledger History
             try {
-                const res = await fetch(GITHUB_RAW + "logs/latest_report.md?t=" + Date.now());
+                const res = await fetch(GITHUB_RAW + "logs/warden_history.jsonl?t=" + Date.now());
                 if (res.ok) {
-                    const mdText = await res.text();
-                    document.getElementById('warden-log-output').innerHTML = marked.parse(mdText);
+                    const text = await res.text();
+                    const lines = text.trim().split('\n');
+                    let html = '';
+
+                    for (let i = lines.length - 1; i >= 0; i--) {
+                        if (!lines[i]) continue;
+                        try {
+                            const entry = JSON.parse(lines[i]);
+                            const isLatest = (i === lines.length - 1);
+
+                            html += `
+                            <div style="margin-bottom: 20px; border: 1px solid ${isLatest ? '#4ade80' : '#334155'}; border-radius: 8px; padding: 15px; background: ${isLatest ? 'rgba(74, 222, 128, 0.05)' : '#0f172a'}; opacity: ${isLatest ? '1' : '0.6'}; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='${isLatest ? '1' : '0.6'}'">
+                                <div style="font-size: 0.75rem; color: ${isLatest ? '#4ade80' : '#94a3b8'}; margin-bottom: 10px; font-weight: bold; display: flex; justify-content: space-between; border-bottom: 1px solid #334155; padding-bottom: 8px;">
+                                    <span>${isLatest ? '🟢 LATEST AUDIT' : '⏳ HISTORICAL AUDIT'}</span>
+                                    <span>${entry.timestamp}</span>
+                                </div>
+                                <div style="font-size: 0.85rem; padding-top: 5px;">
+                                    ${marked.parse(entry.report)}
+                                </div>
+                            </div>`;
+                        } catch(e) {
+                            console.error("JSON parse error on line", e);
+                        }
+                    }
+
+                    document.getElementById('warden-log-output').innerHTML = html || 'No history available.';
+                    // Remove default container styles so cards sit flush
+                    const container = document.getElementById('warden-log-output');
+                    container.style.padding = '0';
+                    container.style.background = 'transparent';
+                    container.style.border = 'none';
                 }
-            } catch (e) {}
+            } catch (e) {
+                console.error("Ledger fetch error:", e);
+            }
         } catch(e) { console.error(e); }
     }
 
