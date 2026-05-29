@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-29 23:04:26
+**Generated:** 2026-05-30 01:40:28
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,8 +17,8 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 23:04
-- **HUMAN OCCUPANCY**: HIGH
+- **TIME OF AUDIT**: 01:40
+- **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: UNKNOWN
 - **EMPIRICAL PROOF**: N/A
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
@@ -55,11 +55,11 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.071 kPa | **24h Cycle**: 2.2 kPa | **72h Rhythm**: 2.382 kPa
+- **4h Pulse**: 1.991 kPa | **24h Cycle**: 2.193 kPa | **72h Rhythm**: 2.378 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 70.4% (Current) vs 72.6% (24h Avg)
+- **P2**: 68.3% (Current) vs 71.8% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -284,7 +284,6 @@ Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemi
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-29 11:11:35,35.34,58.07,834,422,1006.65,4.98,-32.6
 2026-05-29 13:20:50,35.16,61.98,768,404,1005.7,36.57,0.0
 2026-05-29 14:17:46,35.32,63.37,802,400,1005.21,40.15,0.0
 2026-05-29 15:17:20,35.71,62.23,790,401,1004.91,43.77,0.0
@@ -292,6 +291,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-29 18:12:03,36.06,60.32,820,405,1004.97,44.47,0.0
 2026-05-29 20:35:30,35.99,64.12,773,404,1006.69,47.08,0.0
 2026-05-29 22:59:05,35.8,65.76,831,409,1007.19,45.49,0.0
+2026-05-30 01:24:45,35.28,65.5,903,423,1005.84,40.98,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
