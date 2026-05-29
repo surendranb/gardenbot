@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-05-29T13:21:00.636519",
+  "timestamp": "2026-05-29T14:17:56.813600",
   "sensors": {
-    "timestamp": "2026-05-29 13:20:50",
-    "temp": 35.16,
-    "hum": 61.98,
-    "light": 768,
-    "p2": 404,
-    "press": 1005.7,
-    "gas": 36.57,
+    "timestamp": "2026-05-29 14:17:46",
+    "temp": 35.32,
+    "hum": 63.37,
+    "light": 802,
+    "p2": 400,
+    "press": 1005.21,
+    "gas": 40.15,
     "db": 0.0
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 70.9,
+      "moisture_pct": 71.8,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 2.157
+    "vpd_kpa": 2.096
   },
   "intelligence": {
     "hypothesis": "Telemetry stable; no immediate stress signal.",
