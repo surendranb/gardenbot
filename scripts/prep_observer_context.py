@@ -143,6 +143,26 @@ def get_dynamic_world_model(t_df):
     res += f"- **BIOME STATE**: {biome_mode}\n"
     return res
 
+def get_weather_context():
+    try:
+        path = os.path.join(BASE_DIR, "data/weather_context.json")
+        if os.path.exists(path):
+            with open(path, 'r') as f:
+                data = json.load(f)
+            return f"- Outside Weather: {data.get('description', 'Unknown')}, {data.get('temp', 'Unknown')}°C, Humidity: {data.get('humidity', 'Unknown')}%"
+    except: pass
+    
+    # Fallback to weather.csv
+    try:
+        path = os.path.join(BASE_DIR, "data/weather.csv")
+        if os.path.exists(path):
+            df = pd.read_csv(path)
+            if not df.empty:
+                latest = df.iloc[-1]
+                return f"- Outside Weather: {latest.get('temp', 'Unknown')}°C, Humidity: {latest.get('humidity', 'Unknown')}%, Rain: {latest.get('rain', 'Unknown')}"
+    except: pass
+    return "- Outside Weather: Data unavailable"
+
 
 def get_human_context():
     actions = []
@@ -167,16 +187,18 @@ def get_human_context():
 def get_temporal_insights(n=3):
     insights = []
     try:
-        if os.path.exists(VISION_LEDGER_MD_PATH):
-            with open(VISION_LEDGER_MD_PATH, 'r') as f:
-                content = f.read()
-                entries = [e.strip() for e in content.split("## ") if e.strip()]
-                for e in entries[-n:]:
-                    lines = e.split("\n")
-                    header = lines[0]
-                    advice = [l for l in lines if "Advice:" in l or "Verdict:" in l or "Next Steps" in l]
-                    insights.append(f"### Report: {header}\n" + "\n".join(advice[:3]))
-    except: pass
+        history_path = os.path.join(BASE_DIR, "logs/warden_history.jsonl")
+        if os.path.exists(history_path):
+            with open(history_path, 'r') as f:
+                lines = f.readlines()
+                for line in lines[-n:]:
+                    if not line.strip(): continue
+                    entry = json.loads(line)
+                    ts = entry.get('timestamp', 'Unknown Time')
+                    report = entry.get('report', '')
+                    insights.append(f"### Report from {ts}\n{report}\n")
+    except Exception as e:
+        return f"Error reading history: {e}"
     return "\n\n".join(insights) if insights else "No historical insights."
 
 def get_agent_calibration():
@@ -280,6 +302,7 @@ def main():
     vision = load_json(VISION_OBSERVATION_PATH)
     
     dynamic_world = get_dynamic_world_model(t_df)
+    weather_info = get_weather_context()
     human_actions = get_human_context()
     prior_insights = get_temporal_insights(3)
     calibration = get_agent_calibration()
@@ -301,6 +324,7 @@ def main():
     content += f"**Generated:** {timestamp}\n\n"
     content += "## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n"
     content += f"{dynamic_world}\n"
+    content += f"{weather_info}\n\n"
     content += f"{health_warning}\n"
     content += "## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS\n"
     content += f"{calibration}\n\n"
