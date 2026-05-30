@@ -56,22 +56,7 @@ run_with_timeout 300 ./.venv/bin/python3 scripts/vision.py >> logs/cron.log 2>&1
 # 4. Context Prep (Step B: Full Synthesis)
 run_with_timeout 60 ./.venv/bin/python3 scripts/prep_observer_context.py >> logs/cron.log 2>&1
 
-# 5. Agent Audit & Slack Delivery
-log "Running Agent Audit..."
-# Run the agent and capture the output.
-REPORT=$(/Users/surendran/.pnpm-global/openclaw agent --agent main --message "COMMAND_PROTOCOL: AUTONOMOUS_WARDEN_AUDIT
-
-1. PERCEIVE: Read \`/Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md\` to retrieve the latest synthesized telemetry, weather, visual ground truth, and recent history.
-2. AUDIT: Reconcile the data. Are the plants visually turgid? Is the telemetry logically sound? Are there hardware failures or botanical crises? Note any changes from the previous history.
-3. REPORT: Deliver a high-signal report. No AI-isms. Just literal, actionable truth. If human action is required, e.g. watering, explicitly state it!")
-
-# Archive the report
-./.venv/bin/python3 scripts/archive_report.py "$REPORT"
-
-# Deliver to Slack
-/Users/surendran/.pnpm-global/openclaw message send --channel slack --target C0AK6A4SJES --message "$REPORT" --media media/latest.jpg >> logs/cron.log 2>&1
-
-# 6. Sync to GitHub
+# 5. Sync to GitHub
 run_with_timeout 300 bash scripts/sync.sh >> logs/sync.log 2>&1
 
 log "Pulse Complete."
