@@ -59,7 +59,7 @@ run_with_timeout 60 ./.venv/bin/python3 scripts/prep_observer_context.py >> logs
 # 5. Agent Audit & Slack Delivery
 log "Running Agent Audit..."
 # Run the agent and capture the output.
-REPORT=$(openclaw agent --model "google/gemini-flash-latest" --message "COMMAND_PROTOCOL: AUTONOMOUS_WARDEN_AUDIT
+REPORT=$(openclaw agent --agent main --message "COMMAND_PROTOCOL: AUTONOMOUS_WARDEN_AUDIT
 
 1. PERCEIVE: Read \`/Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md\` to retrieve the latest synthesized telemetry, weather, visual ground truth, and recent history.
 2. AUDIT: Reconcile the data. Are the plants visually turgid? Is the telemetry logically sound? Are there hardware failures or botanical crises? Note any changes from the previous history.
@@ -69,7 +69,7 @@ REPORT=$(openclaw agent --model "google/gemini-flash-latest" --message "COMMAND_
 ./.venv/bin/python3 scripts/archive_report.py "$REPORT"
 
 # Deliver to Slack
-openclaw message send --channel slack --target C0AK6A4SJES --message "$REPORT" --media data/latest.jpg >> logs/cron.log 2>&1
+openclaw message send --channel slack --target C0AK6A4SJES --message "$REPORT" --media media/latest.jpg >> logs/cron.log 2>&1
 
 # 6. Sync to GitHub
 run_with_timeout 300 bash scripts/sync.sh >> logs/sync.log 2>&1
