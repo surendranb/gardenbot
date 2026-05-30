@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-30 08:56:15
+**Generated:** 2026-05-30 11:25:13
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,8 +17,8 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 08:56
-- **HUMAN OCCUPANCY**: LOW
+- **TIME OF AUDIT**: 11:25
+- **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: UNKNOWN
 - **EMPIRICAL PROOF**: N/A
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
@@ -27,7 +27,7 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 11 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 12 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -89,11 +89,11 @@ BIOME STABLE. P2 is drying out correctly. No intervention required.
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.439 kPa | **24h Cycle**: 2.274 kPa | **72h Rhythm**: 2.38 kPa
+- **4h Pulse**: 2.359 kPa | **24h Cycle**: 2.266 kPa | **72h Rhythm**: 2.319 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 64.9% (Current) vs 68.7% (24h Avg)
+- **P2**: 59.7% (Current) vs 67.9% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -221,7 +221,6 @@ BIOME STABLE. P2 is drying out correctly. No intervention required.
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-29 20:35:30,35.99,64.12,773,404,1006.69,47.08,0.0
 2026-05-29 22:59:05,35.8,65.76,831,409,1007.19,45.49,0.0
 2026-05-30 01:24:45,35.28,65.5,903,423,1005.84,40.98,0.0
 2026-05-30 02:42:07,35.4,57.84,902,425,1005.19,54.85,0.0
@@ -229,6 +228,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-30 04:45:04,34.71,55.35,900,422,1005.14,44.52,0.0
 2026-05-30 06:02:04,34.55,54.62,891,423,1005.24,46.35,0.0
 2026-05-30 08:10:17,34.38,56.57,820,450,1007.33,39.96,0.0
+2026-05-30 11:24:28,,,785,462,,,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
