@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-30 21:10:36
+**Generated:** 2026-05-30 21:41:56
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 21:10
+- **TIME OF AUDIT**: 21:41
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -35.4 dB (Baseline Floor)
-- **BIOME STATE**: REST (Night/Stagnant Recovery)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
+- **EMPIRICAL PROOF**: -29.2 dB (Mid-range Convection)
+- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 20 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 21 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -89,166 +89,125 @@ BIOME STABLE. P2 is drying out correctly. No intervention required.
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: OFFLINE | **24h Cycle**: 2.304 kPa | **72h Rhythm**: 2.258 kPa
+- **4h Pulse**: OFFLINE | **24h Cycle**: 2.304 kPa | **72h Rhythm**: 2.249 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 61.6% (Current) vs 63.2% (24h Avg)
+- **P2**: 60.8% (Current) vs 62.8% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-05-30 21:09:54",
+  "timestamp": "2026-05-30 21:41:26",
   "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-  "compositional_truth_check": {
-    "pots_observed": [
-      {
-        "id": "P2",
-        "container_type": "Black Pot",
-        "contents": "Soil, Plant, Sensor",
-        "registry_match": "P2: Mexican Mint (Black Pot | Soil | Sensor)"
-      },
-      {
-        "id": "Unmonitored_Cup",
-        "container_type": "White Cup",
-        "contents": "Water, Plant Cutting",
-        "registry_match": "Unmonitored: Money Plant (White Cup | Water Propagation | No Sensors)",
-        "introduction_point": "T-3"
-      }
-    ],
-    "systemic_losses": [],
-    "new_introductions_interventions": [
-      {
-        "item": "Unmonitored: Money Plant (White Cup | Water Propagation | No Sensors)",
-        "image_sequence_point": "T-3",
-        "description": "A white cup containing a plant cutting in water was introduced into the biome."
-      },
-      {
-        "item": "Sensor Component (Purple PCB)",
-        "image_sequence_point": "T-3",
-        "description": "A purple PCB, likely part of the sensor system, became clearly visible near the black pot."
-      }
-    ]
-  },
+  "compositional_truth_check": [
+    {
+      "container_id": "P2",
+      "type": "Black Pot",
+      "contents": "Plant (Mexican Mint), Soil, Sensor, White fragments"
+    },
+    {
+      "container_id": "Unmonitored",
+      "type": "White Cup",
+      "contents": "Plant cutting (Money Plant), Water"
+    }
+  ],
   "inventory_reconciliation": {
     "P2_Mexican_Mint": {
-      "status": "Present and accounted for, matching registry.",
-      "details": "The Mexican Mint in the black pot with soil and sensor is consistently present throughout the sequence."
+      "status": "Present",
+      "details": "Matches registry. Plant, soil, and sensor are consistently observed."
     },
     "Unmonitored_Money_Plant": {
-      "status": "Introduced at T-3, matching registry from that point.",
-      "details": "The Money Plant cutting in the white cup for water propagation was not present in the EARLIEST image but appeared at T-3 and remained through CURRENT."
+      "status": "New Introduction",
+      "details": "Introduced in [T-3] image. Matches registry description of a Money Plant cutting in water propagation."
     }
   },
   "plant_audit": {
     "P2_Mexican_Mint": {
-      "earliest": {
-        "description": "Young plant with 4-5 rounded, turgid, healthy medium-green leaves. Upright posture. Soil appears moist with white fragments (eggshells). Sensor visible.",
+      "[EARLIEST]": {
+        "description": "Small plant with 4-5 rounded, turgid green leaves. Appears healthy. Soil is dark, likely moist. Sensor visible. White fragments on soil surface.",
         "health_inference": "Healthy"
       },
-      "t_minus_3": {
-        "description": "Plant largely unchanged in size and leaf count (4-5 leaves), maintaining turgidity and green color. Soil surface appears slightly drier, with more visible clumping. White fragments persist. A purple PCB sensor component is now clearly visible.",
-        "health_inference": "Healthy, but soil moisture decreasing."
+      "[T-3]": {
+        "description": "Plant morphology unchanged from [EARLIEST]. Leaves remain green and turgid. Soil appears moist. Sensor slightly more prominent. White fragments on soil surface.",
+        "health_inference": "Healthy"
       },
-      "t_minus_2": {
-        "description": "Leaves still green and turgid, no visible loss or significant growth. Posture consistent. Soil surface texture similar to T-3, possibly marginally drier. Sensor components in place.",
-        "health_inference": "Healthy, but soil moisture continues to decrease."
+      "[T-2]": {
+        "description": "Plant morphology unchanged. Leaves are green and turgid. Soil appears moist. Sensor visible.",
+        "health_inference": "Healthy"
       },
-      "t_minus_1": {
-        "description": "Leaves present, but overall image much darker, making color assessment difficult. Appears to retain shape and turgidity. Soil surface noticeably dry and showing signs of cracking. White fragments still visible.",
-        "health_inference": "Stable, but under increasing stress due to very dry soil. Immediate intervention (watering) recommended."
+      "[T-1]": {
+        "description": "Plant appears stable, no visible leaf loss or wilting. Overall image is darker, making precise color assessment difficult. Leaves appear green but less vibrant due to lighting.",
+        "health_inference": "Stable, obscured by lighting"
       },
-      "current": {
-        "description": "Extremely dark image. Plant barely discernible as a shadowy outline. No details about color, turgidity, or specific leaf count can be accurately determined. Soil surface completely obscured.",
-        "health_inference": "Indeterminate due to severe lighting limitations. No visible collapse, but no positive signs of health either."
+      "[CURRENT]": {
+        "description": "Plant is significantly obscured by extreme darkness. No clear signs of wilting or discoloration are discernible, but vibrancy and turgidity cannot be confirmed. Appears structurally stable.",
+        "health_inference": "Stable, severely obscured by lighting"
       }
     },
     "Unmonitored_Money_Plant": {
-      "earliest": {
+      "[EARLIEST]": {
         "description": "Not present.",
         "health_inference": "N/A"
       },
-      "t_minus_3": {
-        "description": "A cutting with a single prominent, healthy-looking green, turgid leaf submerged in clear water within a white plastic cup. Water level high. No roots clearly visible.",
-        "health_inference": "Healthy (newly introduced)."
+      "[T-3]": {
+        "description": "Single plant cutting with at least one healthy, green leaf in a white cup with water. Appears turgid.",
+        "health_inference": "Healthy"
       },
-      "t_minus_2": {
-        "description": "Cutting still present with its single prominent green, turgid leaf. Water level appears consistent. No visible changes.",
-        "health_inference": "Healthy."
+      "[T-2]": {
+        "description": "Plant cutting unchanged. Leaf remains green and turgid. Water level appears consistent.",
+        "health_inference": "Healthy"
       },
-      "t_minus_1": {
-        "description": "Cutting and leaf still present. Due to darker lighting, green color appears less vibrant, but leaf shape and turgidity seem maintained. Water level appears consistent.",
-        "health_inference": "Healthy, despite darker lighting."
+      "[T-1]": {
+        "description": "Plant cutting appears stable. Leaf remains green. Overall image is darker. Water level possibly slightly decreased.",
+        "health_inference": "Stable, obscured by lighting"
       },
-      "current": {
-        "description": "Cutting barely visible as a dark silhouette in the extremely dark image. No details about health, color, or turgidity can be assessed.",
-        "health_inference": "Indeterminate due to severe lighting limitations."
+      "[CURRENT]": {
+        "description": "Plant cutting is almost entirely obscured by extreme darkness. No clear signs of decline, but detailed assessment is impossible.",
+        "health_inference": "Stable, severely obscured by lighting"
       }
     }
   },
   "biome_observations": {
-    "incidental_growth": "No weeds, moss, secondary seedlings, or uncatalogued sprouts observed in either the black pot or white cup throughout the sequence.",
-    "biome_anomalies": [
-      {
-        "type": "Soil Texture Change (Black Pot)",
-        "earliest": "Moist, dark soil.",
-        "t_minus_3": "Slightly drier, clumping.",
-        "t_minus_2": "Similar to T-3, possibly marginally drier.",
-        "t_minus_1": "Noticeably dry, showing signs of cracking.",
-        "current": "Obscured by darkness."
-      },
-      {
-        "type": "Debris (Black Pot)",
-        "description": "Small white fragments (consistent with eggshells) are present on the soil surface of the black pot from EARLIEST through T-1. Obscured in CURRENT."
-      },
-      {
-        "type": "Water Clarity (White Cup)",
-        "description": "Water in the white cup appears clear and free of algae or debris from T-3 through T-1. Obscured in CURRENT."
-      },
-      {
-        "type": "Desk Surface Debris",
-        "description": "Desk surface generally clear, apart from the plants, sensor setup, a blue book, and a pen visible in EARLIEST."
-      }
-    ]
+    "soil_P2": {
+      "[EARLIEST]": "Dark, appears moist. Contains small white fragments.",
+      "[T-3]": "Dark, appears moist. Contains small white fragments.",
+      "[T-2]": "Dark, appears moist. Contains small white fragments.",
+      "[T-1]": "Dark, moisture level difficult to ascertain due to dim lighting. Contains small white fragments.",
+      "[CURRENT]": "Extremely dark, moisture level impossible to ascertain. Contains small white fragments."
+    },
+    "water_Unmonitored": {
+      "[EARLIEST]": "N/A",
+      "[T-3]": "Clear water present in white cup.",
+      "[T-2]": "Clear water present, level appears consistent.",
+      "[T-1]": "Clear water present, level possibly slightly decreased.",
+      "[CURRENT]": "Water level and clarity impossible to ascertain due to extreme darkness."
+    },
+    "desk_surface": "Consistently dark. No incidental growth, fungal presence, or significant debris observed across the timeline."
   },
   "temporal_deltas": {
-    "earliest_to_t_minus_3": {
-      "P2_Mexican_Mint": "Soil appears slightly drier. A purple PCB component of the sensor became clearly visible.",
-      "Unmonitored_Money_Plant": "New introduction of the Money Plant cutting in a white cup with water."
-    },
-    "t_minus_3_to_t_minus_2": {
-      "P2_Mexican_Mint": "Minimal change; soil moisture might have decreased slightly.",
-      "Unmonitored_Money_Plant": "No discernible change."
-    },
-    "t_minus_2_to_t_minus_1": {
-      "P2_Mexican_Mint": "Significant darkening of the image. Soil surface appears noticeably drier and possibly cracking.",
-      "Unmonitored_Money_Plant": "Darker lighting, no structural changes."
-    },
-    "t_minus_1_to_current": {
-      "P2_Mexican_Mint": "Extreme darkening of the image, rendering most visual details unobservable.",
-      "Unmonitored_Money_Plant": "Extreme darkening of the image, rendering most visual details unobservable."
-    }
+    "[EARLIEST]_to_[T-3]": "Introduction of the 'Unmonitored' Money Plant cutting in a white cup. P2 plant remains stable.",
+    "[T-3]_to_[T-2]": "Minimal changes. Both plants remain stable in appearance.",
+    "[T-2]_to_[T-1]": "Overall scene lighting significantly darkened. Water level in the white cup possibly slightly decreased. Plants appear stable but less vibrant due to lighting.",
+    "[T-1]_to_[CURRENT]": "Extreme degradation in lighting, making detailed observation very challenging for both plants and biome elements. Both plants appear structurally stable but are heavily obscured."
   },
   "visual_health_inference": {
-    "P2_Mexican_Mint": "Initially healthy (EARLIEST to T-2), but progressively experienced drying soil conditions (T-1). Current health is indeterminate due to severe visual obstruction.",
-    "Unmonitored_Money_Plant": "Appeared healthy and stable in water propagation from its introduction (T-3) through T-1. Current health is indeterminate due to severe visual obstruction."
+    "P2_Mexican_Mint": "The Mexican Mint plant (P2) maintained a healthy appearance from [EARLIEST] to [T-2]. In subsequent images, severe lighting degradation makes a definitive health assessment challenging. However, no visual cues of wilting, discoloration, or leaf loss are present, suggesting a stable condition despite the obscured view.",
+    "Unmonitored_Money_Plant": "The Money Plant cutting (Unmonitored), introduced in [T-3], appeared healthy with a turgid green leaf until [T-2]. Similar to P2, its health assessment is severely hampered by poor lighting in [T-1] and [CURRENT]. No visible signs of decline are present, indicating a stable state under observation."
   },
-  "anomalies": [
-    "Introduction of the Money Plant cutting in a white cup at T-3.",
-    "Increased visibility of a purple PCB sensor component at T-3.",
-    "Progressive drying and cracking of soil in the black pot from T-3 to T-1.",
-    "Severe and progressive darkening of images from T-1 to CURRENT, significantly hindering visual assessment."
-  ],
-  "narrative_description": "The observation period tracked two plant specimens: a Mexican Mint in a black pot with a sensor, and a Money Plant cutting in a white cup. The Mexican Mint (P2) maintained its leaf count and turgidity, appearing healthy from EARLIEST to T-2. However, its soil progressively dried out, becoming noticeably parched and cracked by T-1, indicating a need for watering. The Money Plant cutting (Unmonitored) was introduced at T-3 and appeared healthy, propagating in water through T-1. A sensor setup is consistently present with the Mexican Mint, and white eggshell fragments are noted on the soil surface of the black pot. No incidental growth or other significant biome anomalies were detected, apart from the changing soil moisture and the introduction of the Money Plant. The primary challenge for this audit is the severe degradation of image quality due to extreme darkening in the later stages (T-1 and CURRENT), making definitive health inferences for the most recent states impossible. While no systemic losses or major structural collapses were observed, the health of both plants in the 'CURRENT' state cannot be confirmed visually.",
-  "confidence": "Medium-High. Initial images provide good detail for assessment. Later images (T-1, CURRENT) are severely underexposed, limiting accurate assessment of color, turgidity, and fine details, thus reducing confidence for the most recent states."
+  "anomalies": {
+    "New_Introduction": "The 'Unmonitored' Money Plant in a white cup was introduced between [EARLIEST] and [T-3].",
+    "Lighting_Degradation": "Significant and progressive darkening of the scene from [T-1] to [CURRENT], severely impacting visual clarity and assessment."
+  },
+  "narrative_description": "The botanical observation period began with a healthy Mexican Mint (P2) in a black pot. By [T-3], a Money Plant cutting (Unmonitored) was introduced in a white cup for water propagation, also appearing healthy. Both plants maintained a stable and healthy appearance through [T-2]. However, a progressive and significant degradation in lighting quality was observed from [T-1] to [CURRENT], culminating in extreme darkness that severely obscured visual details. Despite the poor visibility, no overt signs of decline such as wilting, discoloration, or leaf loss were detected for either plant. The soil in P2 consistently appeared moist in earlier images, and the water level in the Money Plant's cup seemed to slightly decrease by [T-1]. The white fragments on the soil surface of P2 remained consistent throughout. The primary challenge for the current assessment is the lack of adequate illumination, which compromises the ability to make precise health inferences, though structural stability is inferred.",
+  "confidence": "Moderate (due to significant lighting degradation in later images impacting detailed assessment)"
 }
 ```
 
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-30 13:14:19,,,807,441,,,0.0
 2026-05-30 15:06:29,,,823,476,,,0.0
 2026-05-30 17:54:38,,,864,460,,,0.0
 2026-05-30 19:03:22,,,815,451,,,-30.4
@@ -256,6 +215,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-30 20:06:44,,,643,442,,,-34.9
 2026-05-30 20:38:06,,,581,437,,,-29.2
 2026-05-30 21:09:24,,,495,431,,,-35.4
+2026-05-30 21:41:15,,,815,473,,,-29.2
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
