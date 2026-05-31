@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-05-31 14:59:43
+**Generated:** 2026-05-31 15:30:30
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 14:59
+- **TIME OF AUDIT**: 15:30
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -31.3 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -31.1 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 23 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 24 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -113,11 +113,11 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: OFFLINE | **24h Cycle**: 2.304 kPa | **72h Rhythm**: 2.241 kPa
+- **4h Pulse**: OFFLINE | **24h Cycle**: OFFLINE | **72h Rhythm**: 2.217 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 60.0% (Current) vs 62.1% (24h Avg)
+- **P2**: 51.2% (Current) vs 59.0% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -288,7 +288,6 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-05-30 19:03:22,,,815,451,,,-30.4
 2026-05-30 19:35:25,,,836,460,,,-31.7
 2026-05-30 20:06:44,,,643,442,,,-34.9
 2026-05-30 20:38:06,,,581,437,,,-29.2
@@ -296,6 +295,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-05-30 21:41:15,,,815,473,,,-29.2
 2026-05-30 22:12:41,,,814,472,,,-31.0
 2026-05-30 22:44:33,,,812,470,,,-31.3
+2026-05-31 15:30:17,,,794,495,,,-31.1
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
