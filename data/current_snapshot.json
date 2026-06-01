@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-06-01T16:12:33.679928",
+  "timestamp": "2026-06-01T19:14:22.028225",
   "sensors": {
-    "timestamp": "2026-06-01 16:12:28",
+    "timestamp": "2026-06-01 19:14:16",
     "temp": 34.55,
     "hum": 100.0,
-    "light": 843,
-    "p2": 523,
+    "light": 824,
+    "p2": 526,
     "press": 652.01,
     "gas": 0.0,
-    "db": -25.3
+    "db": -21.6
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 45.1,
+      "moisture_pct": 44.5,
       "is_dry": false
     }
   },
@@ -24,11 +24,11 @@
     "active_concerns": [],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_075747.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_150951.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_154125.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
-      "timestamp": "2026-06-01T15:41:54.205972",
+      "timestamp": "2026-06-01T16:13:02.124650",
       "model": "gemini-2.5-flash",
       "image_availability": {
         "compare_set": [
@@ -36,9 +36,9 @@
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-31/garden_132125.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_001937.jpg",
           "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_130551.jpg",
-          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_154125.jpg"
+          "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_161234.jpg"
         ],
-        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_154125.jpg",
+        "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_161234.jpg",
         "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-05-28/garden_132114.jpg",
         "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_130551.jpg"
       },
@@ -61,83 +61,79 @@
         },
         {
           "label": "CURRENT",
-          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_154125.jpg"
+          "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_161234.jpg"
         }
       ],
       "vision_report": {
-        "timestamp": "2026-06-01 15:41:29",
+        "timestamp": "2026-06-01 16:12:38",
         "model": "Garden Botanical Observer (Expert Visual Ethologist)",
         "compositional_truth_check": {
-          "pots_identified": [
-            "Black Pot (P2)",
-            "White Cup (Unmonitored)"
-          ],
-          "sensor_presence": "Sensor visible in Black Pot (P2) in [EARLIEST], [T-3], [T-1]. Not visible in [T-2], [CURRENT] due to darkness.",
-          "new_introductions_interventions": [],
-          "systemic_losses": []
-        },
-        "inventory_reconciliation": {
-          "P2_mexican_mint": {
-            "status": "Present and visually healthy in visible images ([EARLIEST], [T-3], [T-1]). Not discernible in [T-2], [CURRENT] due to extreme darkness.",
-            "pot_type": "Black Pot",
-            "medium": "Soil",
-            "sensor_status": "Sensor present and connected."
+          "P2_Mexican_Mint": {
+            "registry_status": "Registered",
+            "physical_presence_earliest": "Present (Black Pot, Soil, Plant, Sensor)",
+            "physical_presence_t3": "Present (Black Pot, Soil, Plant, Sensor)",
+            "physical_presence_t2": "Not visually verifiable (Image too dark)",
+            "physical_presence_t1": "Present (Black Pot, Soil, Plant, Sensor)",
+            "physical_presence_current": "Not visually verifiable (Image too dark)",
+            "reconciliation": "Consistent with registry in verifiable images. No systemic loss."
           },
-          "unmonitored_money_plant": {
-            "status": "Present and visually healthy in visible images ([EARLIEST], [T-3], [T-1]). Not discernible in [T-2], [CURRENT] due to extreme darkness.",
-            "container_type": "White Cup",
-            "medium": "Water Propagation",
-            "sensor_status": "No sensor expected or present."
+          "Unmonitored_Money_Plant": {
+            "registry_status": "Registered (Unmonitored)",
+            "physical_presence_earliest": "Present (White Cup, Water, Plant)",
+            "physical_presence_t3": "Present (White Cup, Water, Plant)",
+            "physical_presence_t2": "Not visually verifiable (Image too dark)",
+            "physical_presence_t1": "Present (White Cup, Water, Plant)",
+            "physical_presence_current": "Not visually verifiable (Image too dark, faint cup outline possible)",
+            "reconciliation": "Consistent with registry in verifiable images. No systemic loss."
           }
         },
+        "inventory_reconciliation": {
+          "systemic_losses": [],
+          "new_introductions_interventions": []
+        },
         "plant_audit": {
-          "P2_mexican_mint": {
-            "earliest": "Small plant with 4-5 rounded, dark green, turgid leaves. Appears healthy. Soil is dark and moist.",
-            "t_minus_3": "Similar to [EARLIEST]. Leaves remain green and turgid. No visible signs of stress or degradation. Soil appears moist.",
-            "t_minus_2": "Not visible due to extreme darkness.",
-            "t_minus_1": "Plant visible again. Appears to have 2-3 distinct, green, turgid leaves. Overall posture seems slightly less robust than [EARLIEST], but no clear signs of decline. Soil remains dark.",
-            "current": "Not visible due to extreme darkness."
+          "P2_Mexican_Mint": {
+            "earliest": "Plant with 4-5 roundish, green, turgid leaves. Soil appears moist. Sensor visible.",
+            "t3": "Plant morphology consistent with 'earliest'. Leaves remain green and turgid. Soil appears consistently moist.",
+            "t2": "Not visually verifiable due to extreme darkness.",
+            "t1": "Plant morphology consistent with 'earliest' and 't3'. Leaves are green and turgid. Soil appears moist.",
+            "current": "Not visually verifiable due to extreme darkness."
           },
-          "unmonitored_money_plant": {
-            "earliest": "Single stem cutting with at least two ovate, glossy, dark green leaves. One leaf partially submerged, one above water. Water appears clear.",
-            "t_minus_3": "Similar to [EARLIEST]. Leaves remain green and healthy. Water level appears consistent.",
-            "t_minus_2": "Not visible due to extreme darkness.",
-            "t_minus_1": "Plant cutting visible again. Leaves appear green and healthy, consistent with previous observations. Water level appears stable.",
-            "current": "Not visible due to extreme darkness."
+          "Unmonitored_Money_Plant": {
+            "earliest": "Single large, green, turgid leaf on a stem in a white cup with water. Concentric rings visible at bottom of cup.",
+            "t3": "Leaf morphology and color consistent with 'earliest'. Water level appears stable.",
+            "t2": "Not visually verifiable due to extreme darkness.",
+            "t1": "Leaf morphology and color consistent with 'earliest' and 't3'. Water level appears stable.",
+            "current": "Not visually verifiable due to extreme darkness, though a faint outline of the cup may be present."
           }
         },
         "biome_observations": {
-          "soil_texture": "Consistently dark and appears moist in all visible images for P2. No cracking or dryness observed.",
-          "incidental_growth": "No weeds, moss, secondary seedlings, or uncatalogued sprouts observed in any visible image.",
-          "fungal_presence": "No visible fungal presence on soil or plants.",
-          "desk_surface_debris": "No significant debris observed on the desk surface in visible images.",
-          "water_clarity": "Water in the white cup appears clear in all visible images."
+          "incidental_growth": "None observed in any verifiable image.",
+          "biome_anomalies": {
+            "soil_texture_p2": "Consistently damp and well-structured in verifiable images, no cracking.",
+            "fungal_presence": "None observed.",
+            "debris_on_desk": "No significant debris observed.",
+            "lighting_consistency": "Intermittent severe underexposure/obstruction in images [T-2] and [CURRENT], hindering observation."
+          }
         },
         "temporal_deltas": {
-          "earliest_to_t_minus_3": "Minimal change observed. Both plants maintain their healthy appearance and turgidity. Environmental conditions (soil moisture, water level) appear stable.",
-          "t_minus_3_to_t_minus_2": "Dramatic change: Complete loss of visual information due to extreme darkness. No plant or biome details are discernible.",
-          "t_minus_2_to_t_minus_1": "Return of visibility. Plants appear largely consistent with earlier states, though the Mexican Mint might show a slight reduction in visible leaf count or density compared to [EARLIEST]. No signs of acute distress from the period of darkness.",
-          "t_minus_1_to_current": "Dramatic change: Near complete loss of visual information due to extreme darkness, similar to [T-2]. Only a faint outline of the white cup is discernible."
+          "P2_Mexican_Mint_delta": "Between verifiable images ([EARLIEST], [T-3], [T-1]), the Mexican Mint shows no discernible changes in leaf count, color, turgidity, or overall posture. It appears stable.",
+          "Unmonitored_Money_Plant_delta": "Between verifiable images ([EARLIEST], [T-3], [T-1]), the Money Plant shows no discernible changes in leaf appearance or water level. It appears stable.",
+          "overall_visual_system_delta": "Significant and recurring loss of visual data in images [T-2] and [CURRENT], indicating an intermittent issue with the camera or lighting conditions."
         },
         "visual_health_inference": {
-          "P2_mexican_mint": "Based on visible images ([EARLIEST], [T-3], [T-1]), the Mexican Mint appears healthy, with turgid, green leaves. No signs of wilting, discoloration, or pest damage. The slight reduction in visible leaves in [T-1] is not indicative of severe health decline but warrants continued observation.",
-          "unmonitored_money_plant": "Based on visible images ([EARLIEST], [T-3], [T-1]), the Money Plant cutting is thriving in water propagation, exhibiting healthy, glossy green leaves. No signs of rot, yellowing, or wilting.",
-          "overall_inference": "For the periods where visual data is available, both plants exhibit good health. The extreme darkness in [T-2] and [CURRENT] prevents any direct health assessment for those specific moments, but the plants' recovery of appearance in [T-1] after [T-2] suggests no lasting damage from the temporary lack of light/visibility."
+          "P2_Mexican_Mint_health": "Based on visible evidence in [EARLIEST], [T-3], and [T-1], the Mexican Mint appears healthy. Leaves are green and turgid, and soil moisture seems adequate. No signs of stress, disease, or nutrient deficiency are visible.",
+          "Unmonitored_Money_Plant_health": "Based on visible evidence in [EARLIEST], [T-3], and [T-1], the Money Plant appears healthy. The leaf is green and turgid, and the water propagation setup seems stable. No signs of stress or decline are visible."
         },
         "anomalies": [
           {
-            "timestamp": "T-2",
-            "type": "Environmental/Camera Anomaly",
-            "description": "Image is almost entirely black, rendering all subjects invisible. This is a significant deviation from expected conditions, likely due to camera malfunction, complete light obstruction, or sensor issue, rather than plant-specific anomaly."
-          },
-          {
-            "timestamp": "CURRENT",
-            "type": "Environmental/Camera Anomaly",
-            "description": "Image is extremely dark, obscuring most subjects. Only a faint outline of the white cup is visible. Similar to [T-2], this suggests a severe lighting issue or obstruction, preventing a clear audit of the plants."
+            "type": "Systemic Visual Obstruction",
+            "description": "Images [T-2] and [CURRENT] are almost entirely black, preventing any meaningful botanical observation. This represents a critical failure in the monitoring system's ability to capture data consistently.",
+            "impact": "Reduces the ability to track continuous plant health and detect subtle changes over the entire period."
           }
         ],
-        "narrative_description": "The botanical observation sequence reveals a consistent state of health for both the Mexican Mint (P2) and the Money Plant cutting in water propagation during periods of adequate visibility. The Mexican Mint in the black pot maintains turgid, green foliage, and the soil appears consistently moist. The Money Plant cutting in the white cup shows healthy, glossy leaves with clear water. However, the sequence is punctuated by two significant environmental anomalies at [T-2] and [CURRENT], where the images are almost entirely black, preventing any visual assessment of the plants or their immediate biome. Despite these periods of darkness, the plants visible in [T-1] (following [T-2]) did not show signs of acute distress, suggesting resilience or that the darkness was a temporary imaging issue rather than prolonged adverse conditions. No incidental growth, fungal presence, or other biome anomalies were detected in any of the visible images. The sensor for P2 remains in place throughout the visible sequence.",
-        "confidence": "High for visual assessments in adequately lit images ([EARLIEST], [T-3], [T-1]). Low for periods of extreme darkness ([T-2], [CURRENT]) where direct observation is impossible, limiting health inference to the preceding and succeeding visible states."
+        "narrative_description": "As the Garden Botanical Observer, my audit reveals that in the images where visual data is available ([EARLIEST], [T-3], [T-1]), both the Mexican Mint (P2) and the Unmonitored Money Plant exhibit stable and healthy conditions. The Mexican Mint maintains turgid, green foliage with consistently moist soil. The Money Plant's single leaf remains vibrant in its water propagation. No signs of stress, disease, pests, or incidental growth were observed in these frames. However, the most significant finding is the recurring and complete loss of visual information in images [T-2] and [CURRENT], rendering these periods unobservable. This systemic visual obstruction is a critical anomaly that limits the comprehensiveness of this chronological health assessment. While the plants appear healthy when visible, the intermittent data gaps prevent a definitive continuous trend analysis.",
+        "confidence": "Medium-High for periods with visible data, Low for periods with obstructed data. The overall confidence in a continuous health assessment is reduced due to the significant data gaps."
       }
     },
     "recent_visual_ledger": [
