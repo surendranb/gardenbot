@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-01 14:39:11
+**Generated:** 2026-06-01 15:10:44
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 14:39
+- **TIME OF AUDIT**: 15:10
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -30.6 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.8 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 56 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 57 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -117,92 +117,116 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 47.6% (Current) vs 47.7% (24h Avg)
+- **P2**: 47.7% (Current) vs 47.7% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-06-01 07:57:50",
-  "model": "Garden Botanical Observer",
+  "timestamp": "2026-06-01 15:09:54",
+  "model": "Garden Botanical Observer (Expert Visual Ethologist)",
   "compositional_truth_check": {
-    "observed_pots": [
+    "pots_identified": [
       {
-        "pot_type": "Black Pot",
-        "contents": "Plant with green leaves, soil, sensor",
-        "label": "P2"
+        "id": "P2",
+        "container_type": "Black Pot",
+        "contents": "Soil",
+        "sensor_present": true,
+        "visibility": {
+          "EARLIEST": "visible",
+          "T-3": "visible",
+          "T-2": "obscured_by_darkness",
+          "T-1": "visible",
+          "CURRENT": "obscured_by_darkness"
+        }
       },
       {
-        "pot_type": "White Cup",
-        "contents": "Plant stem with a single green leaf, water (implied)",
-        "label": "Unmonitored"
+        "id": "Unmonitored",
+        "container_type": "White Cup",
+        "contents": "Water Propagation",
+        "sensor_present": false,
+        "visibility": {
+          "EARLIEST": "visible",
+          "T-3": "visible",
+          "T-2": "obscured_by_darkness",
+          "T-1": "visible",
+          "CURRENT": "obscured_by_darkness"
+        }
       }
     ],
-    "image_T-1_status": "Complete visual blackout, no contents discernible."
-  },
-  "inventory_reconciliation": {
-    "P2_mexican_mint": {
-      "registry_status": "Present and accounted for (when visible)",
-      "physical_reality": "Small plant with 4-5 green leaves in soil, sensor attached. Consistent with 'Mexican Mint' description, though species identification is purely based on registry."
-    },
-    "unmonitored_money_plant": {
-      "registry_status": "Present and accounted for (when visible)",
-      "physical_reality": "Single stem with one large green leaf in a white cup, consistent with 'Money Plant' in water propagation."
-    },
     "systemic_losses": [],
     "new_introductions_interventions": []
   },
-  "plant_audit": {
-    "P2_mexican_mint": {
-      "earliest": "Small plant with 4-5 roundish, vibrant green leaves. Soil appears dark and moist. Sensor clearly visible.",
-      "T-2": "Plant largely consistent with 'EARLIEST'. Leaves maintain green color and turgidity. Soil still appears moist.",
-      "T-1": "Not visible due to image blackout. Systemic visual loss.",
-      "current": "Plant has 4-5 green leaves, similar in size and number to previous visible states. Leaves appear slightly less vibrant or turgid compared to 'EARLIEST', but no significant discoloration or wilting. Soil remains dark and moist."
+  "inventory_reconciliation": {
+    "P2_Mexican_Mint": {
+      "registry_status": "Present",
+      "visual_status": "Present when visible, but declining health trend. Obscured in T-2 and CURRENT."
     },
-    "unmonitored_money_plant": {
-      "earliest": "Single stem with one large, ovate, vibrant green leaf. Stem submerged in water within the white cup.",
-      "T-2": "Leaf and stem largely consistent with 'EARLIEST'. No visible changes in color or turgidity.",
-      "T-1": "Not visible due to image blackout. Systemic visual loss.",
-      "current": "Single stem with one large, green leaf. Appears consistent with previous visible states, maintaining its green color and form. No new roots or leaves are discernible, nor any signs of decline."
+    "Unmonitored_Money_Plant": {
+      "registry_status": "Present",
+      "visual_status": "Present when visible, but critically low water level in CURRENT. Obscured in T-2 and CURRENT."
+    }
+  },
+  "plant_audit": {
+    "P2_Mexican_Mint": {
+      "EARLIEST": "Plant with 4-5 visible, roundish, light green leaves, appearing turgid. Soil surface appears moist and dark brown. Sensor visible at top-left.",
+      "T-3": "Plant similar to EARLIEST, possibly slightly less vibrant. Soil surface appears slightly drier, lighter brown in areas. Sensor visible.",
+      "T-2": "Not visible due to extreme darkness.",
+      "T-1": "Plant shows fewer visible leaves (approx. 2-3), appearing smaller and potentially less turgid. Soil surface is noticeably dry, with some lighter, possibly cracked areas. Sensor visible.",
+      "CURRENT": "Not visible due to extreme darkness. Faint outline of the pot and sensor visible."
+    },
+    "Unmonitored_Money_Plant": {
+      "EARLIEST": "Single stem with one healthy, dark green, ovate leaf. Stem submerged in clear water within a white paper/plastic cup.",
+      "T-3": "Plant similar to EARLIEST, leaf appears healthy. Water level appears consistent.",
+      "T-2": "Not visible due to extreme darkness.",
+      "T-1": "Single leaf present, appears healthy. Water level in the cup seems slightly lower than previous observations.",
+      "CURRENT": "Not visible due to extreme darkness. The white cup is faintly discernible, and the water level appears critically low or entirely absent, showing the bottom concentric rings of the cup."
     }
   },
   "biome_observations": {
-    "P2_soil_surface": {
-      "earliest": "Dark, moist soil. No incidental growth, moss, or fungal presence.",
-      "T-2": "Dark, moist soil. No incidental growth, moss, or fungal presence.",
-      "T-1": "Not visible.",
-      "current": "Dark, moist soil. No incidental growth, moss, or fungal presence. Surface texture appears consistent."
+    "P2_soil_condition": {
+      "EARLIEST": "Moist, dark brown.",
+      "T-3": "Slightly drier, lighter brown in areas.",
+      "T-1": "Noticeably dry, with some lighter, possibly cracked areas."
     },
-    "unmonitored_water_cup": {
-      "earliest": "Water level not clearly visible, but stem is submerged. No visible algae or debris.",
-      "T-2": "Water level not clearly visible. No visible algae or debris.",
-      "T-1": "Not visible.",
-      "current": "Water level not clearly visible. No visible algae or debris."
+    "Unmonitored_water_level": {
+      "EARLIEST": "Consistent, clear water.",
+      "T-3": "Consistent.",
+      "T-1": "Slightly lower.",
+      "CURRENT": "Critically low or entirely absent."
     },
-    "desk_surface": {
-      "earliest": "Dark, clean surface.",
-      "T-2": "Dark, clean surface.",
-      "T-1": "Not visible.",
-      "current": "Dark, clean surface. No debris or anomalies."
-    }
+    "incidental_growth": "None observed in any visible image.",
+    "biome_anomalies": "None observed on desk surface when visible."
   },
   "temporal_deltas": {
-    "earliest_to_T-2": "Minimal change observed for both plants. Both appear stable.",
-    "T-2_to_T-1": "Complete loss of visual data due to image blackout. No botanical changes can be inferred.",
-    "T-1_to_current": "Reappearance of both plants, largely consistent with their state in 'T-2' and 'EARLIEST'. A very subtle, minor dullness might be present in the leaves of both plants, but no significant decline or growth."
+    "EARLIEST_to_T-3": {
+      "Mexican_Mint_P2": "Soil surface shows signs of drying. Leaves appear slightly less vibrant.",
+      "Money_Plant_Unmonitored": "No significant visual change in plant or water level.",
+      "Overall_Biome": "Overall scene appears slightly darker, possibly due to exposure change."
+    },
+    "T-3_to_T-2": {
+      "All_Plants_and_Pots": "Entire scene became completely dark, rendering all plants and pots invisible. This indicates a significant camera or lighting anomaly."
+    },
+    "T-2_to_T-1": {
+      "All_Plants_and_Pots": "Scene visibility restored.",
+      "Mexican_Mint_P2": "Significant decline observed: fewer visible leaves, potentially reduced turgidity, and markedly dry, possibly cracked soil.",
+      "Money_Plant_Unmonitored": "Plant appears stable, but water level in the cup seems to have decreased."
+    },
+    "T-1_to_CURRENT": {
+      "All_Plants_and_Pots": "Scene became extremely dark again, obscuring most details.",
+      "Mexican_Mint_P2": "Completely obscured by darkness.",
+      "Money_Plant_Unmonitored": "Completely obscured by darkness, but the water level in the cup appears critically low or absent, based on the faint outlines."
+    }
   },
   "visual_health_inference": {
-    "P2_mexican_mint": "Stable. Leaves are green, no wilting, discoloration, or signs of pest damage. The slight dullness in 'CURRENT' is minor and does not indicate poor health at this stage.",
-    "unmonitored_money_plant": "Stable. The single leaf is green, turgid, and shows no signs of stress or decline. Water propagation appears to be proceeding without issues based on visual evidence."
+    "P2_Mexican_Mint": "Appears to be in decline. Started healthy, showed signs of slight stress (drier soil), then significant leaf loss and very dry soil by T-1. This strongly suggests underwatering. Current status is unknown due to darkness, but the last clear observation indicates poor health.",
+    "Unmonitored_Money_Plant": "Started healthy and maintained relative health through T-1. However, the critically low or absent water level in the CURRENT image indicates severe neglect and imminent stress or loss if not addressed immediately. Its resilience in water propagation is being tested."
   },
   "anomalies": [
-    {
-      "type": "Systemic Visual Anomaly",
-      "image_label": "T-1",
-      "description": "The image labeled 'T-1' is almost completely black, rendering all botanical subjects and the environment invisible. This indicates a severe lighting failure or camera malfunction, not a change in the botanical biome itself."
-    }
+    "The images T-2 and CURRENT are severely underexposed or completely dark, rendering visual assessment of the plants impossible. This represents a critical anomaly in the monitoring system itself, potentially a camera malfunction or obstruction, rather than a biome anomaly.",
+    "The progressive drying of the soil for the Mexican Mint (P2) and the critically low water level for the Money Plant (Unmonitored) are significant care anomalies indicating neglect."
   ],
-  "narrative_description": "The botanical observation over the past few days reveals a generally stable environment for both the Mexican Mint (P2) and the Unmonitored Money Plant. Both specimens maintain their leaf count, color, and posture across the visible images. The Mexican Mint's soil consistently appears moist, suggesting adequate hydration. The Money Plant's single leaf remains healthy in its water propagation setup. A significant, non-botanical anomaly occurred with the 'T-1' image, which was a complete blackout, indicating a temporary system failure. Upon restoration of visibility in the 'CURRENT' image, both plants appear to have maintained their condition, with only a very subtle, almost imperceptible, dulling of leaf vibrancy that does not suggest any immediate health concerns. No incidental growth, pests, or significant environmental changes were observed.",
+  "narrative_description": "The chronological sequence of images reveals a concerning trend for the botanical specimens under observation. Initially, both the Mexican Mint (P2) in the black pot and the Money Plant in the white cup appeared to be in good health. However, the Mexican Mint has progressively shown signs of stress, primarily due to insufficient watering, evidenced by increasingly dry soil and visible leaf loss by image T-1. The Money Plant, while appearing more resilient in its water propagation setup, is now facing a critical situation with its water supply appearing critically low or absent in the CURRENT image. A significant and recurring anomaly in the monitoring system itself is the severe underexposure or complete darkness of images T-2 and CURRENT, which severely hampers a comprehensive assessment of the plants' immediate state. Based on the last clear observations, immediate intervention, particularly replenishment of water for both plants, is strongly recommended to prevent further decline or potential loss.",
   "confidence": "High"
 }
 ```
@@ -210,7 +234,6 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-01 11:02:29,,,815,509,,,-30.9
 2026-06-01 11:33:14,,,820,515,,,-30.6
 2026-06-01 12:03:59,,,834,505,,,-25.2
 2026-06-01 12:34:42,,,850,506,,,-19.8
@@ -218,6 +241,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-01 13:36:50,,,840,519,,,-25.6
 2026-06-01 14:07:35,,,883,513,,,-28.7
 2026-06-01 14:38:34,,,880,518,,,-30.6
+2026-06-01 15:09:44,,,879,507,,,-30.8
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
