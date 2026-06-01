@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-02 00:51:49
+**Generated:** 2026-06-02 03:22:18
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,7 +17,7 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 00:51
+- **TIME OF AUDIT**: 03:22
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: UNKNOWN
 - **EMPIRICAL PROOF**: N/A
@@ -27,7 +27,7 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 69 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 70 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -113,11 +113,11 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: OFFLINE | **24h Cycle**: OFFLINE | **72h Rhythm**: 2.353 kPa
+- **4h Pulse**: OFFLINE | **24h Cycle**: OFFLINE | **72h Rhythm**: 2.431 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 43.6% (Current) vs 46.3% (24h Avg)
+- **P2**: 43.2% (Current) vs 46.3% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -228,7 +228,6 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-01 20:15:50,,,812,527,,,-28.7
 2026-06-01 20:46:48,,,872,530,,,-21.1
 2026-06-01 21:18:03,,,860,528,,,-21.9
 2026-06-01 21:48:50,,,871,527,,,-24.5
@@ -236,6 +235,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-01 22:51:20,,,852,527,,,-28.2
 2026-06-01 23:22:06,,,845,533,,,-31.7
 2026-06-02 00:50:59,,,892,534,,,0.0
+2026-06-02 03:19:29,,,860,529,,,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
