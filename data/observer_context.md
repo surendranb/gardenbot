@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-03 19:46:10
+**Generated:** 2026-06-03 20:16:57
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 19:46
+- **TIME OF AUDIT**: 20:16
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -29.6 dB (Mid-range Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
+- **EMPIRICAL PROOF**: -18.5 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 122 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 123 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,7 +106,7 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 39.3% (Current) vs 42.6% (24h Avg) | **7d Baseline Delta**: -45.1% (📉 DECLINE/DRY)
+- **P2**: 38.8% (Current) vs 42.3% (24h Avg) | **7d Baseline Delta**: -45.6% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -199,7 +199,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-03 16:07:22,,,885,537,,,-27.1
 2026-06-03 16:38:36,,,891,538,,,-20.5
 2026-06-03 17:09:24,,,895,537,,,-23.5
 2026-06-03 17:40:34,,,899,537,,,-30.7
@@ -207,6 +206,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-03 18:43:00,,,913,559,,,-36.7
 2026-06-03 19:14:16,,,913,558,,,-36.3
 2026-06-03 19:45:32,,,872,557,,,-29.6
+2026-06-03 20:16:43,,,876,557,,,-18.5
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
