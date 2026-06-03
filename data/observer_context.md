@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-03 18:12:25
+**Generated:** 2026-06-03 18:43:43
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 18:12
+- **TIME OF AUDIT**: 18:43
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -35.5 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -36.7 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 119 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 120 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,88 +106,139 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 41.2% (Current) vs 43.3% (24h Avg)
+- **P2**: 40.5% (Current) vs 43.2% (24h Avg) | **7d Baseline Delta**: -44.3% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-06-03 18:11:58",
+  "timestamp": "2026-06-03 18:43:10",
   "model": "Garden Botanical Observer (Expert Visual Ethologist)",
   "compositional_truth_check": {
-    "P2_Black_Pot": {
-      "status": "Present and consistent from EARLIEST to T-1. Not visible in CURRENT.",
-      "contents": "Small plant with 2-3 leaves, soil, moisture sensor."
-    },
-    "Unmonitored_White_Cup": {
-      "status": "Present and consistent from EARLIEST to T-1. Not visible in CURRENT.",
-      "contents": "Single plant cutting with one leaf, water."
-    },
-    "CURRENT_Image_Visibility": {
-      "status": "Completely dark. No identifiable objects or plants visible."
+    "pots_identified": [
+      {
+        "id": "P2",
+        "type": "Black Pot",
+        "contents": "Soil, Plant, Sensor"
+      },
+      {
+        "id": "Unmonitored",
+        "type": "White Cup",
+        "contents": "Water, Plant"
+      }
+    ],
+    "registry_baseline": {
+      "P2": "Mexican Mint (Black Pot | Soil | Sensor)",
+      "Unmonitored": "Money Plant (White Cup | Water Propagation | No Sensors)"
     }
   },
   "inventory_reconciliation": {
-    "P2_Mexican_Mint": {
-      "registry_status": "Expected",
-      "visual_status": "Confirmed present and stable from EARLIEST to T-1. Visual presence lost in CURRENT due to obscurity.",
-      "systemic_loss": "Cannot be definitively declared as absence is due to visual obstruction, not observable physical loss."
-    },
-    "Unmonitored_Money_Plant": {
-      "registry_status": "Expected",
-      "visual_status": "Confirmed present and stable from EARLIEST to T-1. Visual presence lost in CURRENT due to obscurity.",
-      "systemic_loss": "Cannot be definitively declared as absence is due to visual obstruction, not observable physical loss."
-    },
-    "new_introductions_interventions": "None observed."
+    "P2_reconciliation": "Present and visually consistent with 'Mexican Mint' seedling from [EARLIEST] to [T-1]. Declared 'Systemic Loss' in [CURRENT] due to complete lack of visibility.",
+    "Unmonitored_reconciliation": "Present and visually consistent with 'Money Plant' cutting from [EARLIEST] to [T-1]. Declared 'Systemic Loss' in [CURRENT] due to complete lack of visibility.",
+    "new_introductions_interventions": "None observed from [EARLIEST] to [T-1]. Cannot assess for [CURRENT] due to darkness."
   },
-  "plant_audit": {
-    "P2_Mexican_Mint_Black_Pot": {
-      "EARLIEST": "Small seedling with 2-3 light green, rounded leaves. Appears turgid. Soil dark and moist. Sensor visible.",
-      "T-4": "No significant change from EARLIEST. Leaves appear healthy. Soil moist.",
-      "T-3": "Visibility reduced due to dim lighting, but plant appears stable. Leaves still present.",
-      "T-2": "Improved visibility. Plant appears stable, leaves healthy. Soil might be slightly less dark but still moist.",
-      "T-1": "Visibility reduced due to dim lighting. Plant appears stable, leaves present.",
-      "CURRENT": "Not visible due to complete darkness."
+  "plant_audit": [
+    {
+      "plant_id": "P2",
+      "registry_name": "Mexican Mint",
+      "observed_species": "Seedling (likely Mexican Mint based on registry)",
+      "chronological_state": {
+        "EARLIEST": "Two small, roundish, light green leaves visible. Appears to be a healthy young seedling. Soil dark and moist. Sensor connector visible.",
+        "T-4": "No significant change from [EARLIEST]. Two small, light green leaves. Soil dark and moist. Sensor connector visible.",
+        "T-3": "Leaves still present but less distinct due to significantly darker lighting. Soil appears dark.",
+        "T-2": "Leaves clearer again, light green and turgid. Soil surface appears slightly drier with some lighter brown areas. Sensor connector clearly visible.",
+        "T-1": "Leaves present but visibility reduced again due to darker lighting. Soil appears dark.",
+        "CURRENT": "Completely invisible due to total darkness."
+      }
     },
-    "Unmonitored_Money_Plant_White_Cup": {
-      "EARLIEST": "Single cutting with one large, ovate, dark green leaf. Stem submerged in clear water. Appears turgid.",
-      "T-4": "No significant change from EARLIEST. Leaf appears healthy. Water level consistent.",
-      "T-3": "Visibility reduced due to dim lighting, but leaf appears stable. Water level consistent.",
-      "T-2": "Improved visibility. Leaf appears stable and healthy. Stem might be slightly reoriented. Water level consistent.",
-      "T-1": "Visibility reduced due to dim lighting. Leaf appears stable. Water level consistent.",
-      "CURRENT": "Not visible due to complete darkness."
+    {
+      "plant_id": "Unmonitored",
+      "registry_name": "Money Plant",
+      "observed_species": "Cutting (likely Money Plant based on registry)",
+      "chronological_state": {
+        "EARLIEST": "Single stem with one larger, ovate, dark green leaf, partially submerged in water. Leaf appears healthy. Water surface shows concentric rings.",
+        "T-4": "No significant change from [EARLIEST]. Single dark green leaf, stem in water. Water level consistent.",
+        "T-3": "Leaf still present but less distinct due to significantly darker lighting. Stem visible in water.",
+        "T-2": "Leaf clearer again, dark green and turgid. Stem visible in water. Water level consistent.",
+        "T-1": "Leaf present but visibility reduced again due to darker lighting. Stem visible in water.",
+        "CURRENT": "Completely invisible due to total darkness."
+      }
+    }
+  ],
+  "biome_observations": {
+    "incidental_growth": "No weeds, moss, secondary seedlings, or uncatalogued sprouts observed in any image from [EARLIEST] to [T-1]. Cannot assess for [CURRENT].",
+    "biome_anomalies": [
+      {
+        "type": "Soil Texture (P2)",
+        "description": "Consistently dark and moist in most images. Slight surface drying observed in [T-2], indicating normal evaporation. No cracking or extreme dryness.",
+        "images_affected": "[T-2]"
+      },
+      {
+        "type": "Fungal Presence",
+        "description": "No visible fungal growth on soil, plants, or desk surface from [EARLIEST] to [T-1]. Cannot assess for [CURRENT].",
+        "images_affected": "None"
+      },
+      {
+        "type": "Debris on Desk Surface",
+        "description": "No significant debris observed on the desk surface around the pots from [EARLIEST] to [T-1]. Cannot assess for [CURRENT].",
+        "images_affected": "None"
+      },
+      {
+        "type": "Lighting Fluctuations",
+        "description": "Significant and inconsistent lighting variations across the sequence. Images [EARLIEST], [T-4], [T-2] show moderate to good illumination, while [T-3] and [T-1] are very dim. This impacts observation quality.",
+        "images_affected": "All except [CURRENT]"
+      },
+      {
+        "type": "Complete Darkness",
+        "description": "The [CURRENT] image is entirely black, rendering all objects invisible. This represents a critical monitoring failure, camera malfunction, or drastic environmental change (e.g., power outage, obstruction).",
+        "images_affected": "[CURRENT]"
+      }
+    ]
+  },
+  "temporal_deltas": [
+    {
+      "period": "[EARLIEST] to [T-4]",
+      "what_changed": "No significant visual changes observed in either plant's morphology or health. Lighting conditions remain consistently dim."
+    },
+    {
+      "period": "[T-4] to [T-3]",
+      "what_changed": "The overall scene illumination significantly decreased, making plant details less clear. No apparent plant health or structural changes, but observation is hampered by the darkness."
+    },
+    {
+      "period": "[T-3] to [T-2]",
+      "what_changed": "Significant increase in overall scene illumination, improving visibility. The soil surface in the black pot (P2) appears slightly drier than previous observations. No negative changes to the plants themselves."
+    },
+    {
+      "period": "[T-2] to [T-1]",
+      "what_changed": "The lighting has significantly dimmed again, similar to [T-3]. No discernible changes to the plants' health or structure."
+    },
+    {
+      "period": "[T-1] to [CURRENT]",
+      "what_changed": "Complete loss of visual information. The entire scene is dark, rendering all objects, including plants and pots, undetectable. This indicates a critical monitoring failure or a profound environmental change."
+    }
+  ],
+  "visual_health_inference": {
+    "P2_mexican_mint_seedling": {
+      "health_status_earliest_to_t1": "Healthy and stable. Leaves are consistently light green and turgid, indicating good hydration and active growth. Soil moisture appears adequate, with minor surface drying noted in [T-2] not impacting plant vigor.",
+      "health_status_current": "Cannot be assessed due to complete lack of visual data (Systemic Loss of monitoring)."
+    },
+    "unmonitored_money_plant_cutting": {
+      "health_status_earliest_to_t1": "Healthy and stable. The single leaf is consistently dark green and turgid, showing no signs of wilting, yellowing, or rot. Water level appears stable, supporting successful propagation.",
+      "health_status_current": "Cannot be assessed due to complete lack of visual data (Systemic Loss of monitoring)."
     }
   },
-  "biome_observations": {
-    "soil_P2": "Consistently dark and appears moist across all visible images (EARLIEST to T-1). No cracking, fungal growth, or incidental growth observed.",
-    "water_white_cup": "Appears clear and at a consistent level across all visible images (EARLIEST to T-1). No algae or debris observed.",
-    "desk_surface": "No significant debris or anomalies observed in any visible image.",
-    "incidental_growth": "None observed in either pot or on the desk surface."
-  },
-  "temporal_deltas": {
-    "EARLIEST_to_T-4": "No discernible changes in plant morphology, health, or environmental conditions. Lighting stable.",
-    "T-4_to_T-3": "Significant decrease in overall scene illumination, making detailed observation challenging. Plants appear stable but difficult to confirm with certainty.",
-    "T-3_to_T-2": "Significant increase in overall scene illumination, restoring visibility. Plants appear stable. Soil in P2 might be slightly drier.",
-    "T-2_to_T-1": "Significant decrease in overall scene illumination, similar to T-3. Plants appear stable but difficult to confirm with certainty.",
-    "T-1_to_CURRENT": "Catastrophic loss of illumination, rendering the entire scene completely dark and invisible. No plants or pots are discernible."
-  },
-  "visual_health_inference": {
-    "P2_Mexican_Mint": "Based on visible images (EARLIEST to T-1), the plant appears healthy, turgid, and shows no signs of stress, nutrient deficiency, or disease. Its health in the CURRENT image cannot be assessed due to lack of visibility.",
-    "Unmonitored_Money_Plant": "Based on visible images (EARLIEST to T-1), the cutting appears healthy, turgid, and shows no signs of stress or decay. Its health in the CURRENT image cannot be assessed due to lack of visibility."
-  },
-  "anomalies": {
-    "lighting_fluctuation": "Significant and inconsistent changes in scene illumination across the sequence (T-3, T-1 are very dark; CURRENT is completely dark). This is the primary anomaly impacting observation accuracy.",
-    "complete_visual_obscurity": "The final 'CURRENT' image is entirely dark, preventing any visual audit or confirmation of plant presence/state. This represents a critical failure in visual monitoring for the current timestamp."
-  },
-  "narrative_description": "The botanical observation over the past five days reveals a period of apparent stability for both the Mexican Mint (P2) and the Money Plant cutting. From the earliest image through T-1, both specimens maintained a healthy, turgid appearance with no visible signs of stress, leaf loss, or discoloration. The Mexican Mint seedling in the black pot consistently displayed 2-3 light green leaves, and its soil remained moist. The Money Plant cutting in the white cup retained its single, dark green leaf, with stable water levels. However, the monitoring period was significantly hampered by highly inconsistent lighting conditions. Images T-3 and T-1 were notably dim, making detailed observation challenging, while the final 'CURRENT' image presents a complete visual blackout. This extreme darkness renders any assessment of the plants' current state, or even their continued presence, impossible. While the plants appeared healthy when visible, the abrupt loss of visual data in the final capture prevents a conclusive health inference for the present moment. No incidental growth or biome anomalies were detected in any of the visible frames.",
-  "confidence": "Low for the 'CURRENT' state due to complete visual obstruction; High for observations made in visible images (EARLIEST to T-1) regarding plant health and stability. Overall confidence for the entire sequence is Moderate due to intermittent poor lighting and the final blackout."
+  "anomalies": [
+    "Inconsistent lighting conditions across the image sequence, significantly impacting observation clarity.",
+    "Complete darkness in the [CURRENT] image, leading to a total loss of visual monitoring data for the biome."
+  ],
+  "narrative_description": "The monitoring sequence begins with two plant specimens: a young Mexican Mint seedling in a black pot with soil and a sensor, and a Money Plant cutting in a white cup with water. Over the initial five days ([EARLIEST] to [T-1]), both plants exhibit stable health. The Mexican Mint seedling maintains two turgid, light green leaves, and the Money Plant cutting retains a healthy, dark green leaf. Minor fluctuations in soil moisture were observed in the Mexican Mint pot, with some surface drying noted in [T-2], but this did not appear to negatively impact the seedling. A significant challenge throughout the sequence was the highly inconsistent lighting conditions, with images alternating between dim and moderately lit states, occasionally hindering clear observation. No incidental growth, fungal presence, or desk debris was detected. However, the final image ([CURRENT]) presents a critical anomaly: complete darkness. All visual information regarding the plants, pots, and surrounding biome is absent. This renders any assessment of current plant health or status impossible, indicating a systemic loss of monitoring data or a profound environmental change.",
+  "confidence": "High for observations and inferences from [EARLIEST] to [T-1] regarding plant presence and general health, with moderate confidence for subtle details due to lighting variations. Confidence for [CURRENT] is low as no visual data is available, leading to a 'Systemic Loss' declaration for both plants in this final state. Overall confidence in the audit process and reconciliation is high."
 }
 ```
 
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-03 14:34:22,,,884,535,,,-30.8
 2026-06-03 15:05:09,,,889,535,,,-20.8
 2026-06-03 15:36:28,,,883,535,,,-24.4
 2026-06-03 16:07:22,,,885,537,,,-27.1
@@ -195,6 +246,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-03 17:09:24,,,895,537,,,-23.5
 2026-06-03 17:40:34,,,899,537,,,-30.7
 2026-06-03 18:11:48,,,915,575,,,-35.5
+2026-06-03 18:43:00,,,913,559,,,-36.7
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
