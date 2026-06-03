@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-04 00:56:39
+**Generated:** 2026-06-04 01:27:22
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 00:56
+- **TIME OF AUDIT**: 01:27
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -39.6 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -39.7 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 132 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 133 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,7 +106,7 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 37.2% (Current) vs 40.4% (24h Avg) | **7d Baseline Delta**: -41.5% (📉 DECLINE/DRY)
+- **P2**: 37.3% (Current) vs 40.3% (24h Avg) | **7d Baseline Delta**: -43.0% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -251,7 +251,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-03 21:18:38,,,875,558,,,-20.3
 2026-06-03 21:49:25,,,875,562,,,-30.7
 2026-06-03 22:20:45,,,874,560,,,-31.2
 2026-06-03 22:52:01,,,911,560,,,-38.9
@@ -259,6 +258,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-03 23:54:59,,,912,559,,,-38.1
 2026-06-04 00:25:44,,,911,558,,,-37.9
 2026-06-04 00:56:28,,,910,558,,,-39.6
+2026-06-04 01:27:11,,,910,557,,,-39.7
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
