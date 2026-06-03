@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-03 14:03:47
+**Generated:** 2026-06-03 14:34:37
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 14:03
+- **TIME OF AUDIT**: 14:34
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -31.5 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.8 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 111 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 112 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -108,7 +108,7 @@ No watering advised; soil moisture adequate.
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 42.5% (Current) vs 42.8% (24h Avg)
+- **P2**: 42.2% (Current) vs 43.0% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -206,7 +206,6 @@ No watering advised; soil moisture adequate.
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-03 10:23:36,,,815,526,,,-21.7
 2026-06-03 10:54:51,,,830,525,,,-31.8
 2026-06-03 11:25:39,,,829,532,,,-28.7
 2026-06-03 11:56:24,,,839,546,,,-37.7
@@ -214,6 +213,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-03 13:00:56,,,850,536,,,-30.2
 2026-06-03 13:32:08,,,862,535,,,-31.2
 2026-06-03 14:03:04,,,868,535,,,-31.5
+2026-06-03 14:34:22,,,884,535,,,-30.8
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
