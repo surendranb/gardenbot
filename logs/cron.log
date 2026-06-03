@@ -57148,3 +57148,27 @@ Vision failed: [Errno 2] No such file or directory: 'imagesnap'
 Capture error: [Errno 2] No such file or directory: 'imagesnap'
 Synthesizing SILICA v2.2 (Corrected Logic)...
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-03 01:48:21 [PULSE] Pulse Complete.
+2026-06-03 06:51:55 [PULSE] Starting Pulse...
+2026-06-03 06:51:55 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Listening to the room for 5 seconds...
+Acoustic Capture Failed: Command '['/opt/homebrew/bin/ffmpeg', '-y', '-f', 'avfoundation', '-i', ':0', '-t', '5', '-filter:a', 'volumedetect', '-f', 'null', '/dev/null']' timed out after 10 seconds
+Warden: Captured sample 1/4 (Gas: 0.0)
+Listening to the room for 5 seconds...
+Acoustic Capture Failed: Command '['/opt/homebrew/bin/ffmpeg', '-y', '-f', 'avfoundation', '-i', ':0', '-t', '5', '-filter:a', 'volumedetect', '-f', 'null', '/dev/null']' timed out after 10 seconds
+Warden: Captured sample 2/4 (Gas: 0.0)
+Listening to the room for 5 seconds...
+Acoustic Capture Failed: Command '['/opt/homebrew/bin/ffmpeg', '-y', '-f', 'avfoundation', '-i', ':0', '-t', '5', '-filter:a', 'volumedetect', '-f', 'null', '/dev/null']' timed out after 10 seconds
+Warden: Captured sample 3/4 (Gas: 0.0)
+Listening to the room for 5 seconds...
+Acoustic Capture Failed: Command '['/opt/homebrew/bin/ffmpeg', '-y', '-f', 'avfoundation', '-i', ':0', '-t', '5', '-filter:a', 'volumedetect', '-f', 'null', '/dev/null']' timed out after 10 seconds
+Warden: Captured sample 4/4 (Gas: 0.0)
+Warden: WARNING: BME680 Saturation detected (652/100). Recording partial telemetry.
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision context exported to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+CV2 failed: Capture failed. Fallback to imagesnap...
+Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+Capture error: [Errno 2] No such file or directory: 'imagesnap'
+Synthesizing SILICA v2.2 (Corrected Logic)...
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md

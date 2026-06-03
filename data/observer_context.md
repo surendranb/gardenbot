@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-03 01:48:13
+**Generated:** 2026-06-03 06:52:53
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,7 +17,7 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 01:48
+- **TIME OF AUDIT**: 06:52
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: UNKNOWN
 - **EMPIRICAL PROOF**: N/A
@@ -27,7 +27,7 @@
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 100 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 101 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -117,7 +117,7 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 45.4% (Current) vs 43.1% (24h Avg)
+- **P2**: 44.7% (Current) vs 43.1% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -185,7 +185,6 @@ BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no mo
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-02 19:37:03,,,886,518,,,-27.0
 2026-06-02 20:08:32,,,883,511,,,-31.2
 2026-06-02 20:39:42,,,884,518,,,-25.4
 2026-06-02 21:10:54,,,884,518,,,-30.4
@@ -193,6 +192,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-02 22:50:30,,,878,521,,,0.0
 2026-06-03 00:01:33,,,918,522,,,0.0
 2026-06-03 01:47:39,,,917,522,,,0.0
+2026-06-03 06:52:32,,,880,525,,,0.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
