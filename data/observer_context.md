@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-04 05:02:19
+**Generated:** 2026-06-04 05:33:02
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 05:02
+- **TIME OF AUDIT**: 05:33
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -39.5 dB (Baseline Floor)
+- **EMPIRICAL PROOF**: -38.1 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 140 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 141 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,7 +106,7 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 37.7% (Current) vs 39.7% (24h Avg)
+- **P2**: 37.7% (Current) vs 39.7% (24h Avg) | **7d Baseline Delta**: -46.7% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -251,7 +251,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-04 01:27:11,,,910,557,,,-39.7
 2026-06-04 01:57:53,,,910,557,,,-39.5
 2026-06-04 02:28:35,,,909,558,,,-38.8
 2026-06-04 02:59:18,,,909,557,,,-39.7
@@ -259,6 +258,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-04 04:00:43,,,909,558,,,-39.6
 2026-06-04 04:31:24,,,909,557,,,-39.6
 2026-06-04 05:02:08,,,908,557,,,-39.5
+2026-06-04 05:32:50,,,907,557,,,-38.1
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
