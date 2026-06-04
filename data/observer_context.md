@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-04 11:41:42
+**Generated:** 2026-06-04 12:12:27
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 11:41
+- **TIME OF AUDIT**: 12:12
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
-- **EMPIRICAL PROOF**: -23.9 dB (Maximum Convection)
+- **EMPIRICAL PROOF**: -22.3 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 153 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 154 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,7 +106,7 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 37.1% (Current) vs 38.5% (24h Avg) | **7d Baseline Delta**: -46.0% (📉 DECLINE/DRY)
+- **P2**: 37.1% (Current) vs 38.4% (24h Avg) | **7d Baseline Delta**: -45.3% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -251,7 +251,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-04 08:06:30,,,821,559,,,-33.6
 2026-06-04 08:37:13,,,813,559,,,-37.8
 2026-06-04 09:07:57,,,815,559,,,-38.0
 2026-06-04 09:38:39,,,814,560,,,-35.5
@@ -259,6 +258,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-04 10:40:05,,,827,561,,,-37.9
 2026-06-04 11:10:48,,,831,562,,,-36.2
 2026-06-04 11:41:31,,,849,559,,,-23.9
+2026-06-04 12:12:16,,,850,559,,,-22.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
