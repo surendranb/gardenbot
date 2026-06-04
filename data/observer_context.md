@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-04 16:53:59
+**Generated:** 2026-06-04 17:25:31
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 16:53
+- **TIME OF AUDIT**: 17:25
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -31.2 dB (Mid-range Convection)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
+- **EMPIRICAL PROOF**: -22.3 dB (Maximum Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 163 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 164 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,104 +106,137 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 36.4% (Current) vs 37.3% (24h Avg) | **7d Baseline Delta**: -46.5% (📉 DECLINE/DRY)
+- **P2**: 36.7% (Current) vs 37.3% (24h Avg) | **7d Baseline Delta**: -47.0% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
 ```json
 {
-  "timestamp": "2026-06-04 16:53:28",
-  "model": "Garden Botanical Observer",
+  "timestamp": "2026-06-04 17:24:43",
+  "model": "Garden Botanical Observer (Expert Visual Ethologist)",
   "compositional_truth_check": {
-    "pots_present": [
-      "Black Pot (P2)",
-      "White Cup (Unmonitored)"
-    ],
-    "other_objects_present": [
-      "White tube (labeled 'LATHER') on desk surface (from T-1 onwards)"
-    ]
+    "P2_Mexican_Mint_Black_Pot": {
+      "status": "Present and Accounted For",
+      "details": "Consistently visible in all clear images (EARLIEST, T-5, T-4, T-3, T-1, CURRENT). Contains soil and sensor, matching registry."
+    },
+    "Unmonitored_Money_Plant_White_Cup": {
+      "status": "Systemic Loss (Visually Obscured/Removed)",
+      "details": "Consistently visible in EARLIEST, T-5, T-4, T-3, T-1, matching registry. In the CURRENT image, the white cup and its plant are no longer clearly visible, obscured by a new object or removed from the frame. This constitutes a systemic loss from the observable biome."
+    }
   },
   "inventory_reconciliation": {
-    "P2_mexican_mint": {
-      "status": "Present",
-      "details": "Matches registry. Contains soil and a sensor."
-    },
-    "unmonitored_money_plant": {
-      "status": "Present",
-      "details": "Matches registry. In white cup with water propagation."
-    },
-    "systemic_losses": [],
-    "new_introductions_interventions": [
+    "P2_Mexican_Mint": "Reconciled. The plant in the black pot is present and identifiable as the registered Mexican Mint.",
+    "Unmonitored_Money_Plant": "Not reconciled in the CURRENT image. The registered Money Plant in the white cup is visually absent/obstructed, therefore declared 'Systemic Loss' for monitoring purposes."
+  },
+  "plant_audit": {
+    "P2_Mexican_Mint_Black_Pot": [
       {
-        "item": "White tube (labeled 'LATHER')",
-        "location": "Desk surface",
-        "first_observed_image": "T-1"
+        "image_label": "EARLIEST",
+        "description": "Two small, roundish, light green leaves are visible. The plant appears turgid and healthy, with no visible signs of stress, discoloration, or pest damage. Minimal growth observed.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-5",
+        "description": "The two small, roundish, light green leaves remain consistent in appearance with the EARLIEST image. Turgor and color are good, indicating continued health.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-4",
+        "description": "No discernible change from previous observations. The two small, light green leaves maintain their turgid and healthy appearance.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-3",
+        "description": "The plant continues to appear stable and healthy, with the two light green leaves showing consistent turgor and color as in earlier frames.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-2",
+        "description": "The plant is not discernible due to the extreme darkness of the image, which renders all visual information unavailable.",
+        "health_inference": "Undeterminable (Data Loss)"
+      },
+      {
+        "image_label": "T-1",
+        "description": "Visibility is restored. The two small, light green leaves are again clearly visible and appear consistent with previous healthy observations, maintaining good turgor and vibrant color.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "CURRENT",
+        "description": "The two small, light green leaves are still present. However, they exhibit a subtle reduction in vibrancy and possibly turgor compared to earlier images. While not severely wilted or discolored, there's a slight dulling of the overall plant appearance.",
+        "health_inference": "Fair (Subtle decline in vibrancy/turgor)"
+      }
+    ],
+    "Unmonitored_Money_Plant_White_Cup": [
+      {
+        "image_label": "EARLIEST",
+        "description": "One larger, ovate, dark green leaf is visible, extending from a stem submerged in water. The leaf appears turgid and healthy, with no signs of stress or disease.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-5",
+        "description": "The single ovate, dark green leaf remains consistent in appearance with the EARLIEST image, showing good turgor and healthy coloration.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-4",
+        "description": "No discernible change from previous observations. The single dark green leaf maintains its turgid and healthy appearance.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-3",
+        "description": "The plant continues to appear stable and healthy, with the single dark green leaf showing consistent turgor and color as in earlier frames.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "T-2",
+        "description": "The plant is not discernible due to the extreme darkness of the image, which renders all visual information unavailable.",
+        "health_inference": "Undeterminable (Data Loss)"
+      },
+      {
+        "image_label": "T-1",
+        "description": "Visibility is restored. The single ovate, dark green leaf is again clearly visible and appears consistent with previous healthy observations, maintaining good turgor and vibrant color.",
+        "health_inference": "Healthy"
+      },
+      {
+        "image_label": "CURRENT",
+        "description": "The white cup and its Money Plant occupant are no longer clearly visible in the frame. They appear to be either moved out of the camera's view or completely obscured by the 'LATHER' bottle.",
+        "health_inference": "Undeterminable (Visually Lost/Obscured)"
       }
     ]
   },
-  "plant_audit": {
-    "P2_mexican_mint": {
-      "type": "Mexican Mint",
-      "container": "Black Pot",
-      "growing_medium": "Soil",
-      "sensor_present": true,
-      "leaves": {
-        "count": "Consistently 2 visible",
-        "color": "Green",
-        "turgidity": "Turgid",
-        "condition": "No visible wilting, discoloration, or damage throughout the sequence (except T-2 due to visibility)."
-      },
-      "stem": "Not clearly visible, but leaves are well-supported.",
-      "soil_condition": "Consistently dark and moist, no cracking observed. No incidental growth or fungal presence.",
-      "health_status": "Healthy and stable."
-    },
-    "unmonitored_money_plant": {
-      "type": "Money Plant",
-      "container": "White Cup",
-      "growing_medium": "Water Propagation",
-      "sensor_present": false,
-      "leaves": {
-        "count": "Consistently 1 visible",
-        "color": "Vibrant Green",
-        "turgidity": "Turgid",
-        "condition": "No visible wilting, discoloration, or damage throughout the sequence (except T-2 due to visibility)."
-      },
-      "stem": "Submerged in water, appears healthy where visible.",
-      "water_condition": "Appears clear with consistent level. No visible algae or cloudiness.",
-      "health_status": "Healthy and stable, successful water propagation."
-    }
-  },
   "biome_observations": {
-    "incidental_growth": "None observed in either pot.",
-    "soil_texture": "P2 soil consistently dark and moist, no cracking.",
-    "fungal_presence": "None observed.",
-    "desk_surface_debris": "A white tube (labeled 'LATHER') is present on the desk surface from T-1 onwards."
+    "soil_black_pot": "The soil in the black pot consistently appears dark throughout the sequence, suggesting moisture, but its precise dampness or dryness cannot be accurately determined due to the low-light conditions. No incidental growth such as weeds, moss, or secondary seedlings, nor any fungal presence, is observed on the soil surface.",
+    "water_white_cup": "The water in the white cup appears clear in all images where it is visible (EARLIEST to T-1). No signs of algae growth or significant debris are observed. The water is not visible in the CURRENT image.",
+    "desk_surface": "The desk surface remains consistently dark. No significant debris or anomalies are noted on the surface itself, apart from the introduction and subsequent prominence of the 'LATHER' bottle."
   },
   "temporal_deltas": {
-    "earliest_to_t-5": "No significant change in plant appearance or biome. Both plants remain stable.",
-    "t-5_to_t-4": "No significant change in plant appearance or biome. Both plants remain stable.",
-    "t-4_to_t-3": "No significant change in plant appearance or biome. Both plants remain stable.",
-    "t-3_to_t-2": "Severe reduction in illumination, rendering most visual details unobservable. This is a photographic anomaly, not a biome change.",
-    "t-2_to_t-1": "Illumination restored. Introduction of a white tube (labeled 'LATHER') on the desk surface. Plants appear to be in the same stable, healthy condition as prior to T-2.",
-    "t-1_to_current": "No significant change in plant appearance or biome. Both plants remain stable, and the white tube persists on the desk."
+    "EARLIEST_to_T-3": "The period from EARLIEST to T-3 shows remarkable stability. Both the Mexican Mint and the Money Plant maintained consistent health, turgor, and coloration. No compositional changes were observed in the biome.",
+    "T-3_to_T-2": "A critical data acquisition anomaly occurred, resulting in an almost completely dark image (T-2). This rendered all botanical and biome observations impossible for this specific timestamp.",
+    "T-2_to_T-1": "Visibility was restored in T-1. Both plants reappeared in their previously observed healthy states. A 'New Introduction/Intervention' was noted with the appearance of a white tube/bottle ('LATHER') positioned behind the white cup.",
+    "T-1_to_CURRENT": "Significant changes are observed. The Mexican Mint shows a subtle decline in health, with reduced leaf vibrancy and turgor. The Money Plant in the white cup is no longer visible, indicating a 'Systemic Loss' from the monitoring perspective, likely due to being moved or obscured by the now more prominent 'LATHER' bottle."
   },
   "visual_health_inference": {
-    "P2_mexican_mint_health": "Healthy. Leaves are turgid, green, and show no signs of stress, disease, or nutrient deficiency. Soil moisture appears adequate.",
-    "unmonitored_money_plant_health": "Healthy. Leaf is turgid, vibrant green, and shows no signs of stress. Water propagation appears successful."
+    "P2_Mexican_Mint": "Based on visual evidence, the Mexican Mint has transitioned from a consistently 'Healthy' state to a 'Fair' state in the CURRENT image. This inference is drawn from the subtle reduction in leaf vibrancy and turgor, suggesting mild stress. While not critical, it warrants attention.",
+    "Unmonitored_Money_Plant": "The Money Plant was consistently 'Healthy' when visible in earlier images. However, its health status is now 'Undeterminable' in the CURRENT image due to its complete visual absence/obstruction. From a monitoring standpoint, this is classified as a 'Systemic Loss'."
   },
   "anomalies": [
     {
-      "type": "Photographic Anomaly",
-      "description": "Image [T-2] is severely underexposed, obscuring all visual details of the plants and their environment.",
-      "impact": "Temporarily prevented detailed observation of plant health and biome conditions for that specific timestamp."
+      "image_label": "T-2",
+      "type": "Data Acquisition Anomaly",
+      "description": "The image is almost entirely black, preventing any meaningful botanical or biome observation. This represents a temporary failure in data capture."
     },
     {
+      "image_label": "T-1",
       "type": "New Introduction/Intervention",
-      "description": "A white tube (labeled 'LATHER') appeared on the desk surface.",
-      "first_observed_image": "T-1"
+      "description": "A white tube or bottle, possibly labeled 'LATHER', was introduced into the biome, appearing behind the white cup."
+    },
+    {
+      "image_label": "CURRENT",
+      "type": "Systemic Loss / Compositional Change",
+      "description": "The Unmonitored Money Plant in the white cup is no longer visible in the frame. It has either been moved out of view or is completely obscured by the 'LATHER' bottle, which is now more prominent. This significantly alters the biome composition and impacts monitoring of this specific plant."
     }
   ],
-  "narrative_description": "The chronological audit reveals a consistent state of robust health for both the Mexican Mint in the black pot and the Money Plant in the white cup over the observed period. Both plants exhibit turgid, vibrant green foliage, indicating good hydration and overall vitality. The soil in the Mexican Mint's pot remains moist, and the water in the Money Plant's propagation cup remains clear. No signs of wilting, discoloration, pest damage, or incidental growth were observed on the plants or in their growing media. A notable external change occurred between [T-2] and [T-1] with the introduction of a white tube (labeled 'LATHER') onto the desk surface, which remained present in the [CURRENT] image. Image [T-2] presented a significant photographic anomaly due to extreme underexposure, making detailed observation impossible for that specific timestamp. Despite this brief visual interruption, the plants consistently appear robust and well-maintained throughout the sequence, thriving in their indoor environment with consistent lighting and care.",
+  "narrative_description": "The chronological audit begins with a stable and healthy biome observed from 'EARLIEST' through 'T-3'. Both the P2 Mexican Mint in the black pot and the Unmonitored Money Plant in the white cup exhibited consistent health, characterized by good leaf turgor and vibrant coloration under the fixed, low-light conditions. The soil in the black pot appeared moist, and the water in the white cup remained clear. A significant interruption occurred at 'T-2', where the image was almost entirely black, rendering all observations impossible due to a data acquisition anomaly. Visibility was restored in 'T-1', showing both plants in their previously healthy state, but with the notable 'New Introduction' of a 'LATHER' bottle behind the white cup. The 'CURRENT' image reveals the most substantial changes: the Mexican Mint shows a subtle decline in health, with its leaves appearing slightly less vibrant and turgid, suggesting mild stress. More critically, the Money Plant in the white cup is now visually absent, either moved or completely obscured by the 'LATHER' bottle, which has become more prominent. This constitutes a 'Systemic Loss' for the Money Plant from a monitoring perspective. No other incidental growth or biome anomalies were detected on the soil surface or desk throughout the sequence, beyond the noted compositional shifts.",
   "confidence": "High"
 }
 ```
@@ -211,7 +244,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-04 13:14:22,,,874,566,,,-23.4
 2026-06-04 13:45:29,,,877,564,,,-22.9
 2026-06-04 14:16:49,,,868,566,,,-30.9
 2026-06-04 14:48:07,,,843,565,,,-30.3
@@ -219,6 +251,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-04 15:50:36,,,860,560,,,-30.7
 2026-06-04 16:21:54,,,863,561,,,-18.6
 2026-06-04 16:53:18,,,860,554,,,-31.2
+2026-06-04 17:24:33,,,865,554,,,-22.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
