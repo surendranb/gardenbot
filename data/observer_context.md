@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-05 13:31:11
+**Generated:** 2026-06-05 13:36:03
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,7 +17,7 @@
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 13:31
+- **TIME OF AUDIT**: 13:36
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
 - **EMPIRICAL PROOF**: -30.0 dB (Mid-range Convection)
@@ -38,59 +38,7 @@ Calibration update: As of 2026-05-28 02:00 IST, the visual primacy rule and long
 Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemically lost from Pot B (black pot), replaced by an unidentified dicotyledonous plant showing healthy turgidity and stable growth. Soil moisture remains high (84.6%) indicating potential overhydration risk for succulent-adapted physiology; visual primacy rule confirms plant health despite sensor telemetry intermittency (light and p2 values present, temp/hum/press/gas/db zeroed). The persistent red light source from bottom-left continues to degrade image quality, though leaf turgidity assessment remains possible. No immediate watering advised; allow soil to dry between watering events to prevent root rot, adhering to 'soak and dry' strategy.
 
 ## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS
-### Report from Sunday, May 31st, 2026 — 12:58 PM (Asia/Calcutta)
-Audit Date: Sunday, May 31st, 2026 — 12:58 PM (Asia/Calcutta)
-Protocol: AUTONOMOUS_WARDEN_AUDIT
-
-1. RECONCILIATION
-* P2 (Mexican Mint Pot): The original Mexican Mint is confirmed as a systemic loss. A healthy, highly turgid volunteer seedling (unidentified dicotyledon) has occupied the pot and is thriving. Soil hydration is at 60.0% (down from 64.9% yesterday and 73.4% two days ago), demonstrating a perfect progression of the 'Soak and Dry' strategy.
-* Money Plant (White Cup): Stable and healthy in clear water propagation. The single prominent green leaf remains highly turgid. No visible root development or leaf growth, but water remains clean and level is stable.
-* Microclimate: Thermal gain is controlled. Convection is active via Fan S on Level 1 (acoustic signature: -31.3 dB).
-* Hardware & Telemetry: STATUS IS DEGRADED. The BME680 sensor is offline/failing, returning null values for temperature, humidity, pressure, and gas. Light sensors (495–836 lux), P2 soil moisture capacitive sensor (60.0%), and acoustic levels (-31.3 dB) are fully operational.
-
-2. BOTANICAL STATUS & TRENDS
-* P2 Volunteer Seedling: Excellent turgidity. No active stress.
-* Money Plant Cutting: Stable, healthy, turgid.
-* Crises: None.
-
-3. HUMAN INTERVENTION REQUIRED
-* HARDWARE ACTION REQUIRED: The BME680 telemetry sensor is offline/failing (reporting nulls for temperature/humidity/pressure/gas). Needs hardware inspection, connection check, or a system reboot.
-* BOTANICAL ACTION REQUIRED: Confirm whether to replant a new Mexican Mint in Pot B or update the official registry to track the thriving volunteer seedling instead.
-* WATERING: DO NOT WATER. Soil moisture in Pot B is drying down correctly (60.0%) as part of the Soak and Dry protocol.
-
-4. VERDICT
-BIOME STABLE BUT TELEMETRY IS DEGRADED. Botanical growth is stable/static; no moisture crisis or botanical stress present. Soil drying is proceeding ideally.
-
-
-### Report from 2026-06-03T07:47:45.585639
-Garden Warden Alpha Audit - 2026-06-03 07:46 AM IST
-Biome: REST (Night/Stagnant Recovery)
-Visuals: P2 seedling healthy, turgid; Money Plant cutting stable, turgid.
-Telemetry: P2 soil moisture 44.7% (stable), light ~880 lux, acoustic indicates fan intermittent. Temperature/humidity/pressure/gas sensors offline (BME680 failure).
-Hardware: DEGRADED - BME680 sensor failure; fan status uncertain but acoustic data shows occasional activity.
-Botanical: No crises. Seedling shows healthy growth; money plant stable.
-Action Required: 
-  1. Hardware: Inspect/reboot BME680 sensor to restore telemetry.
-  2. Botanical: Confirm identity of P2 seedling (Mexican Mint vs volunteer) and update registry if needed.
-No watering advised; soil moisture adequate.
-
-
-### Report from 2026-06-03T15:50:26.406048
-Garden Warden Alpha Audit - 2026-06-03 15:36 IST
-Biome: ACTIVE (High convection, transpiration heavy)
-Plants: 
-- P2 seedling: Visually healthy/turgid in prior adequate frames; current image underexposed (black). Soil moisture 41.9% (down from 43.2% 24h avg) - drying correctly.
-- Money plant: Leaf healthy/turgid in prior frames; current image underexposed. Possible root initiation visible in T-2.
-Telemetry: Light 883 lux, Fans S+N Level 2 (db -24.4). BME680 OFFLINE (temp/hum/press/gas null). P2 soil sensor OK.
-Hardware: 
-1. BME680 sensor failed - needs inspection/reboot.
-2. Camera system underexposed - current frame black; check exposure/hardware.
-Botanical: No stress observed when visible. Soil drying per Soak/Dry.
-Action Required:
-- Hardware: Fix BME680 and camera exposure.
-- Botanical: Confirm P2 seedling ID vs registry.
-- Watering: DO NOT WATER (soil drying correctly).
-
+No historical insights.
 
 ## 🛠️ 3. HUMAN FEEDBACK LOOP (Recent Actions)
 - **[2026-04-05T10:16:00Z]**: re_evaluate_sensor_a5 -> Confirmed functional based on telemetry fluctuation. (Status: resolved)

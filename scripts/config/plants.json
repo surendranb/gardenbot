@@ -1,8 +1,8 @@
 [
   {
     "id": "p2",
-    "name": "Mexican Mint",
-    "species": "Plectranthus amboinicus",
+    "name": "Jade Plant",
+    "species": "Crassula ovata",
     "sensor_type": "capacitive_tlc555",
     "sensor_key": "a2",
     "sensor_pin": "a2",
