@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-05 19:09:41
+**Generated:** 2026-06-05 19:40:25
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,11 +17,11 @@
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 19:09
+- **TIME OF AUDIT**: 19:40
 - **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -38.0 dB (Baseline Floor)
-- **BIOME STATE**: REST (Night/Stagnant Recovery)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 2: High/Dual)
+- **EMPIRICAL PROOF**: -25.3 dB (Maximum Convection)
+- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
@@ -65,11 +65,11 @@ Action Required:
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.79 kPa | **24h Cycle**: 2.769 kPa | **72h Rhythm**: 2.769 kPa
+- **4h Pulse**: 2.756 kPa | **24h Cycle**: 2.767 kPa | **72h Rhythm**: 2.767 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 91.6% (Current) vs 48.6% (24h Avg)
+- **P2**: 90.8% (Current) vs 49.5% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -171,7 +171,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-05 15:34:23,36.96,51.75,845,340,1001.28,74.08,-30.9
 2026-06-05 16:05:06,36.86,52.51,848,342,1001.9,67.54,-30.8
 2026-06-05 16:35:51,36.56,55.16,856,345,1002.28,62.02,-26.6
 2026-06-05 17:06:36,36.72,55.85,876,348,1002.31,56.83,-30.8
@@ -179,6 +178,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-05 18:08:05,36.63,57.05,875,351,1002.49,46.35,-30.9
 2026-06-05 18:38:48,36.75,55.34,903,354,1002.63,47.83,-38.0
 2026-06-05 19:09:31,36.71,55.6,905,355,1003.35,38.7,-38.0
+2026-06-05 19:40:14,34.77,50.47,881,362,1003.72,43.96,-25.3
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
