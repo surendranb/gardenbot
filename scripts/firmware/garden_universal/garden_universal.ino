@@ -16,16 +16,16 @@ void setup() {
   Serial.begin(9600);
   delay(3000); // Settle I2C bus
   
-  // BYPASS BME FOR DIAGNOSTICS
-  // if (!bme.begin(0x76) && !bme.begin(0x77)) {
-  //   Serial.println(F("Could not find a valid BME680 sensor, check wiring!"));
-  // } else {
-  //   bme.setTemperatureOversampling(BME680_OS_8X);
-  //   bme.setHumidityOversampling(BME680_OS_2X);
-  //   bme.setPressureOversampling(BME680_OS_4X);
-  //   bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
-  //   bme.setGasHeater(320, 150);
-  // }
+  if (!bme.begin(0x76) && !bme.begin(0x77)) {
+    Serial.println(F("Could not find a valid BME680 sensor, check wiring!"));
+  } else {
+    // Set up oversampling and filter initialization
+    bme.setTemperatureOversampling(BME680_OS_8X);
+    bme.setHumidityOversampling(BME680_OS_2X);
+    bme.setPressureOversampling(BME680_OS_4X);
+    bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
+    bme.setGasHeater(320, 150); // 320*C for 150 ms
+  }
 
   pinMode(LIGHT_PIN, INPUT);
   for(int i=0; i<NUM_PLANTS; i++) {
@@ -54,12 +54,12 @@ void loop() {
   float p = 0;
   float g = 0;
 
-  // if (bme.performReading()) {
-  //   h = bme.humidity;
-  //   t = bme.temperature;
-  //   p = bme.pressure / 100.0; // hPa
-  //   g = bme.gas_resistance / 1000.0; // KOhms
-  // }
+  if (bme.performReading()) {
+    h = bme.humidity;
+    t = bme.temperature;
+    p = bme.pressure / 100.0; // hPa
+    g = bme.gas_resistance / 1000.0; // KOhms
+  }
 
   int light = getAveragedRead(LIGHT_PIN);
 

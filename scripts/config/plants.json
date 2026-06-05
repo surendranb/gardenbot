@@ -6,8 +6,8 @@
     "sensor_type": "capacitive_tlc555",
     "sensor_key": "a2",
     "sensor_pin": "a2",
-    "raw_wet": 270,
-    "raw_dry": 731,
+    "raw_wet": 322,
+    "raw_dry": 633,
     "dry_threshold_pct": 20,
     "color": "#ADFF2F"
   }
