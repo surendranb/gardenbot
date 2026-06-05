@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-05 07:52:09
+**Generated:** 2026-06-05 08:22:51
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,17 +17,17 @@
     - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 07:52
+- **TIME OF AUDIT**: 08:22
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -30.2 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -29.6 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 192 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 193 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -106,7 +106,7 @@ Action Required:
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 40.8% (Current) vs 38.5% (24h Avg) | **7d Baseline Delta**: -36.4% (📉 DECLINE/DRY)
+- **P2**: 40.8% (Current) vs 38.5% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -232,7 +232,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-05 04:16:59,,,902,542,,,-38.8
 2026-06-05 04:47:41,,,902,542,,,-38.6
 2026-06-05 05:18:23,,,903,543,,,-39.0
 2026-06-05 05:49:05,,,900,543,,,-39.1
@@ -240,6 +239,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-05 06:50:32,,,861,543,,,-38.4
 2026-06-05 07:21:16,,,834,543,,,-37.0
 2026-06-05 07:51:58,,,812,544,,,-30.2
+2026-06-05 08:22:40,,,803,544,,,-29.6
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
