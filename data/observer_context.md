@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-05 13:08:41
+**Generated:** 2026-06-05 13:31:11
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -13,21 +13,21 @@
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P2**: Mexican Mint (Black Pot | Sensor A2 | Soil).
-    - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
+    - **P2**: Jade Plant / Crassula ovata (Black Pot | Sensor A2 | Soil).
+    - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 13:08
+- **TIME OF AUDIT**: 13:31
 - **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -29.7 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.0 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
 ### ⚠️ 1C. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
-- **FAILURE SIGNATURES DETECTED**: 203 points in last window.
+- **FAILURE SIGNATURES DETECTED**: 205 points in last window.
 - **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
 - **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
@@ -102,11 +102,11 @@ Action Required:
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: OFFLINE | **24h Cycle**: OFFLINE | **72h Rhythm**: OFFLINE
+- **4h Pulse**: 2.607 kPa | **24h Cycle**: 2.607 kPa | **72h Rhythm**: 2.607 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 31.2% (Current) vs 37.5% (24h Avg)
+- **P2**: 30.7% (Current) vs 37.0% (24h Avg) | **7d Baseline Delta**: -40.2% (📉 DECLINE/DRY)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -320,14 +320,14 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-05 09:54:49,,,820,557,,,-30.2
-2026-06-05 10:25:32,,,833,572,,,-28.0
-2026-06-05 10:56:21,,,826,589,,,-40.1
 2026-06-05 11:27:09,,,842,623,,,-38.1
 2026-06-05 11:58:04,,,860,612,,,-39.0
 2026-06-05 12:28:49,,,868,597,,,-39.0
 2026-06-05 12:59:38,,,854,622,,,-30.5
 2026-06-05 13:07:55,,,854,549,,,-29.7
+2026-06-05 13:16:21,,,861,556,,,-30.1
+2026-06-05 13:21:28,,,898,633,,,-29.8
+2026-06-05 13:30:54,36.58,57.49,844,529,1003.06,1.56,-30.0
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK

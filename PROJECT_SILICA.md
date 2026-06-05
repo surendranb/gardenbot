@@ -20,21 +20,15 @@ Project SILICA is the centralized biological and technical intelligence framewor
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P2**: Mexican Mint (Black Pot | Sensor A2 | Soil).
-    - **Unmonitored**: Money Plant (White Cup | Water Propagation | No Sensors).
+    - **P2**: Jade Plant / Crassula ovata (Black Pot | Sensor A2 | Soil).
+    - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ## 2.5. BIOLOGICAL BASELINE 
-**1. Mexican Mint (Plectranthus amboinicus)**
-- **Care Type**: Semi-succulent perennial.
-- **Watering Strategy**: "Soak and Dry". Highly susceptible to root rot if overwatered. Soil must be significantly dry before watering.
-- **Visual Turgidity**: Leaves will lose firmness and appear slightly droopy when severely underwatered.
-- **VPD Goal**: Moderate. Extreme VPD (> 3.0 kPa) induces stress, while very low VPD (< 0.5 kPa) risks fungal rot.
-
-**2. Money Plant (Epipremnum aureum - Seedling)**
-- **Care Type**: Tropical vining plant (currently in young seedling phase).
-- **Watering Strategy**: "Moderate". Prefers slightly moist but well-draining soil.
-- **Visual Turgidity**: Leaves droop and lose gloss when underwatered. Yellowing indicates overwatering.
-- **VPD Goal**: Moderate to Low (0.8 - 1.2 kPa). Thrives in higher humidity environments.
+**1. Jade Plant (Crassula ovata)**
+- **Care Type**: Succulent.
+- **Watering Strategy**: Strict "Soak and Dry". Because it is currently in a shallow dish lacking drainage, watering must be extremely conservative to prevent root rot. Allow soil to dry completely before watering.
+- **Visual Turgidity**: Healthy leaves are firm, plump, and upright. Underwatered leaves become soft, wrinkled, or flat. Overwatered leaves may turn yellow and drop off easily.
+- **VPD Goal**: High. Tolerates dry indoor atmospheres well (0.8 kPa to 1.5 kPa or higher). Low humidity prevents fungal diseases.
 
 ---
 
