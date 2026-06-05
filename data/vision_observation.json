@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T13:08:40.942030",
+  "timestamp": "2026-06-05T14:02:23.566880",
   "model": "gemini-2.5-flash",
   "image_availability": {
     "compare_set": [
@@ -8,11 +8,12 @@
       "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-03/garden_130103.jpg",
       "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-04/garden_131428.jpg",
       "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_001119.jpg",
-      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_130802.jpg"
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_130802.jpg",
+      "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_140148.jpg"
     ],
-    "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_130802.jpg",
+    "current": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_140148.jpg",
     "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_130551.jpg",
-    "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_001119.jpg"
+    "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_130802.jpg"
   },
   "frame_sequence": [
     {
@@ -20,228 +21,120 @@
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-01/garden_130551.jpg"
     },
     {
-      "label": "T-4",
+      "label": "T-5",
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-02/garden_132208.jpg"
     },
     {
-      "label": "T-3",
+      "label": "T-4",
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-03/garden_130103.jpg"
     },
     {
-      "label": "T-2",
+      "label": "T-3",
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-04/garden_131428.jpg"
     },
     {
-      "label": "T-1",
+      "label": "T-2",
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_001119.jpg"
     },
     {
-      "label": "CURRENT",
+      "label": "T-1",
       "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_130802.jpg"
+    },
+    {
+      "label": "CURRENT",
+      "path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-05/garden_140148.jpg"
     }
   ],
   "vision_report": {
-    "timestamp": "2026-06-05 13:08:05",
+    "timestamp": "2026-06-05 14:01:52",
     "model": "Garden Botanical Observer (Expert Visual Ethologist)",
     "compositional_truth_check": {
-      "current_image_composition": [
+      "pots_observed": [
         {
-          "container": "Black Pot",
-          "contents": "Dense, bushy plant with numerous small, rounded, succulent-like green leaves.",
-          "accessories": "Sensor wires visible."
+          "type": "Black Pot",
+          "label": "P2"
         },
         {
-          "container": "White Cup",
-          "contents": "Absent."
+          "type": "White Cup",
+          "label": "Unmonitored"
         }
-      ]
+      ],
+      "plants_observed_earliest": {
+        "P2": "Two small, round-leaved seedlings",
+        "Unmonitored": "Money Plant cutting (single leaf, roots in water)"
+      },
+      "plants_observed_current": {
+        "P2": "Dense, mature plant with numerous small, round, green leaves (consistent with Mexican Mint)",
+        "Unmonitored": "Absent"
+      }
     },
     "inventory_reconciliation": {
-      "P2_Mexican_Mint_Black_Pot": {
-        "registry_status": "Registered",
-        "visual_status_earliest": "Small seedling with two roundish leaves, consistent with a young plant in soil.",
-        "visual_status_current": "A large, bushy plant with numerous small, rounded, thick leaves. This is not the original seedling, nor does it visually resemble typical Mexican Mint. It represents a replacement.",
-        "reconciliation": "Systemic Loss (original seedling) and New Introduction/Intervention (new plant specimen)."
+      "P2_Mexican_Mint": {
+        "registry_expectation": "Mexican Mint (Black Pot | Soil | Sensor)",
+        "earliest_observation": "Two small seedlings, not identifiable as mature Mexican Mint. Discrepancy with registry's implied maturity.",
+        "current_observation": "Dense, healthy plant consistent with Mexican Mint. Indicates a replacement or significant intervention occurred between T-3 and T-1.",
+        "status": "Reconciled (post-intervention)"
       },
-      "Unmonitored_Money_Plant_White_Cup": {
-        "registry_status": "Registered (Unmonitored)",
-        "visual_status_earliest": "Money Plant cutting with one prominent ovate leaf and a smaller emerging shoot in water.",
-        "visual_status_current": "Completely absent from the scene.",
-        "reconciliation": "Systemic Loss."
+      "Unmonitored_Money_Plant": {
+        "registry_expectation": "Money Plant (White Cup | Water Propagation | No Sensors)",
+        "earliest_observation": "Present, single cutting with healthy leaf and roots.",
+        "current_observation": "Absent. Systemic Loss.",
+        "status": "Systemic Loss"
       }
     },
-    "plant_audit": [
-      {
-        "image_label": "EARLIEST",
-        "P2_Black_Pot_Plant": {
-          "description": "A small seedling with two distinct, roundish, turgid, and healthy green leaves. The plant appears robust for its size.",
-          "health_status": "Healthy",
-          "soil_condition": "Dark and appears moist.",
-          "incidental_growth": "None visible."
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "A Money Plant (Pothos) cutting with one prominent, ovate, turgid, and healthy green leaf. A smaller, emerging shoot or leaf is visible near the water surface.",
-          "health_status": "Healthy",
-          "water_condition": "Clear, adequate level.",
-          "incidental_growth": "None visible."
-        }
+    "plant_audit": {
+      "P2_Mexican_Mint_Timeline": {
+        "EARLIEST_to_T-3": "Two small, green, turgid seedlings. No significant growth or decline observed.",
+        "T-2": "Not discernible due to extreme underexposure.",
+        "T-1": "Dramatic change: Seedlings replaced by a large, dense, healthy plant with numerous small, round, green leaves. Appears robust and well-established.",
+        "CURRENT": "Maintains dense, healthy appearance from T-1. Foliage is vibrant green and turgid. A thin, white, linear structure (possibly a root or stem) extends upwards from the plant mass, partially out of frame."
       },
-      {
-        "image_label": "T-4",
-        "P2_Black_Pot_Plant": {
-          "description": "The seedling maintains its two small, roundish green leaves, appearing consistent with the previous state, though the overall image is darker.",
-          "health_status": "Healthy",
-          "soil_condition": "Appears moist.",
-          "incidental_growth": "None visible."
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "The Money Plant leaf is still present and appears healthy, consistent with the previous state. The smaller shoot is also visible.",
-          "health_status": "Healthy",
-          "water_condition": "Appears consistent.",
-          "incidental_growth": "None visible."
-        }
-      },
-      {
-        "image_label": "T-3",
-        "P2_Black_Pot_Plant": {
-          "description": "The seedling remains consistent, showing two green leaves with good turgor.",
-          "health_status": "Healthy",
-          "soil_condition": "Appears moist.",
-          "incidental_growth": "None visible."
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "The Money Plant cutting continues to appear healthy, with the main leaf and smaller shoot visible.",
-          "health_status": "Healthy",
-          "water_condition": "Appears consistent.",
-          "incidental_growth": "None visible."
-        }
-      },
-      {
-        "image_label": "T-2",
-        "P2_Black_Pot_Plant": {
-          "description": "The seedling's two leaves are still visible and appear healthy, maintaining their green color and turgor.",
-          "health_status": "Healthy",
-          "soil_condition": "Appears moist.",
-          "incidental_growth": "None visible."
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "The Money Plant cutting is still present and appears healthy, with no visible degradation.",
-          "health_status": "Healthy",
-          "water_condition": "Appears consistent.",
-          "incidental_growth": "None visible."
-        }
-      },
-      {
-        "image_label": "T-1",
-        "P2_Black_Pot_Plant": {
-          "description": "Indiscernible due to extreme darkness. No plant material or pot is visible.",
-          "health_status": "Undeterminable",
-          "soil_condition": "Undeterminable",
-          "incidental_growth": "Undeterminable"
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "Indiscernible due to extreme darkness. No plant material or cup is visible.",
-          "health_status": "Undeterminable",
-          "water_condition": "Undeterminable",
-          "incidental_growth": "Undeterminable"
-        }
-      },
-      {
-        "image_label": "CURRENT",
-        "P2_Black_Pot_Plant": {
-          "description": "A significantly larger, dense, and bushy plant occupies the black pot. It features numerous small, rounded, thick, and turgid leaves, uniformly healthy green. This plant is clearly a different specimen from the seedling observed in earlier images and does not resemble typical Mexican Mint.",
-          "health_status": "Vigorous and Healthy",
-          "soil_condition": "Completely obscured by dense foliage, but the plant's health suggests adequate moisture.",
-          "incidental_growth": "None visible on the pot surface."
-        },
-        "Unmonitored_White_Cup_Plant": {
-          "description": "Completely absent from the frame. The white cup and its contents are no longer present.",
-          "health_status": "Systemic Loss",
-          "water_condition": "N/A",
-          "incidental_growth": "N/A"
-        }
+      "Unmonitored_Money_Plant_Timeline": {
+        "EARLIEST_to_T-3": "Single cutting with a healthy, green, heart-shaped leaf and visible roots in clear water. No significant changes.",
+        "T-2": "Not discernible due to extreme underexposure.",
+        "T-1_to_CURRENT": "Completely absent from the biome. Systemic Loss."
       }
-    ],
-    "biome_observations": [
-      {
-        "image_label": "EARLIEST",
-        "desk_surface": "Dark, clean, no debris.",
-        "biome_anomalies": "None."
-      },
-      {
-        "image_label": "T-4",
-        "desk_surface": "Dark, clean, no debris. Overall image darker.",
-        "biome_anomalies": "None."
-      },
-      {
-        "image_label": "T-3",
-        "desk_surface": "Dark, clean, no debris.",
-        "biome_anomalies": "None."
-      },
-      {
-        "image_label": "T-2",
-        "desk_surface": "Dark, clean. A white cylindrical object (possibly part of sensor setup or background item) is more clearly visible in the upper right background.",
-        "biome_anomalies": "New visible background object (white cylinder)."
-      },
-      {
-        "image_label": "T-1",
-        "desk_surface": "Indiscernible due to extreme darkness.",
-        "biome_anomalies": "Extreme darkness rendering scene unobservable."
-      },
-      {
-        "image_label": "CURRENT",
-        "desk_surface": "Dark, clean, no debris.",
-        "biome_anomalies": "None, other than the significant changes in plant inventory."
-      }
-    ],
-    "temporal_deltas": [
-      {
-        "from_image": "EARLIEST",
-        "to_image": "T-4",
-        "changes": "The overall image is noticeably darker. Both plants (P2 seedling and Money Plant cutting) appear to maintain their health and form, showing no significant growth or decline. No changes in pot or soil/water conditions."
-      },
-      {
-        "from_image": "T-4",
-        "to_image": "T-3",
-        "changes": "Minimal to no discernible changes in plant appearance or biome. Consistency maintained."
-      },
-      {
-        "from_image": "T-3",
-        "to_image": "T-2",
-        "changes": "A white cylindrical object in the upper right background becomes more distinctly visible. Plants remain consistent in appearance and health."
-      },
-      {
-        "from_image": "T-2",
-        "to_image": "T-1",
-        "changes": "The entire scene becomes almost completely dark, rendering all plants, pots, and background elements indiscernible. This represents a loss of visual data for this specific timestamp."
-      },
-      {
-        "from_image": "T-1",
-        "to_image": "CURRENT",
-        "changes": "Dramatic and significant changes are observed. The 'Unmonitored: Money Plant (White Cup)' is completely absent, indicating a systemic loss. The 'P2: Mexican Mint (Black Pot)' has been replaced; the original small seedling is gone, and a new, much larger, bushy plant with numerous small, rounded, succulent-like leaves now occupies the pot. This is a clear new introduction/intervention. The new plant appears very healthy and vigorous."
-      }
-    ],
+    },
+    "biome_observations": {
+      "soil_texture_P2": "Appears dark and moist in earlier images. Mostly obscured by dense foliage in later images. No signs of cracking or dryness.",
+      "water_quality_unmonitored": "Clear in earlier images when present.",
+      "incidental_growth": "None observed in the black pot's soil at any stage.",
+      "fungal_presence": "None observed.",
+      "desk_debris": "None clearly observed."
+    },
+    "temporal_deltas": {
+      "EARLIEST_to_T-5": "Significant darkening of image, but plant forms consistent.",
+      "T-5_to_T-4": "Minimal change, consistent dark lighting.",
+      "T-4_to_T-3": "Further darkening of image. A white cylindrical object (sensor/camera component) becomes partially visible in the upper right.",
+      "T-3_to_T-2": "Extreme underexposure, resulting in near-total loss of visual information for the entire scene.",
+      "T-2_to_T-1": "Major intervention: Money Plant (white cup) removed (Systemic Loss). Seedlings in black pot replaced by a large, dense, healthy plant (New Introduction/Intervention). Lighting significantly improved.",
+      "T-1_to_CURRENT": "Plant in black pot maintains health and density. Camera angle shifted slightly, cropping more of the pot and revealing a new white linear structure extending upwards from the plant."
+    },
     "visual_health_inference": {
-      "P2_Black_Pot_Plant": {
-        "earliest_to_T-2": "The initial seedling consistently displayed healthy characteristics: turgid, green leaves, and no signs of stress or disease.",
-        "current": "The newly introduced plant in the black pot is exceptionally healthy and vigorous, characterized by dense, turgid, uniformly green foliage. It shows no signs of nutrient deficiency, pest infestation, or environmental stress."
+      "P2_Mexican_Mint": {
+        "EARLIEST_to_T-3": "Seedlings appear healthy and turgid.",
+        "T-1_to_CURRENT": "The introduced plant is in excellent health. Leaves are uniformly green, turgid, and show no signs of stress, wilting, or discoloration. Dense foliage indicates vigorous growth."
       },
-      "Unmonitored_White_Cup_Plant": {
-        "earliest_to_T-2": "The Money Plant cutting consistently appeared healthy, with a turgid, green leaf and an emerging shoot, indicating successful water propagation.",
-        "current": "The plant is entirely absent, indicating a complete loss from the biome."
+      "Unmonitored_Money_Plant": {
+        "EARLIEST_to_T-3": "Appears healthy with a turgid green leaf and visible roots.",
+        "T-1_to_CURRENT": "Dead/Lost (physically removed from the biome)."
       }
     },
-    "anomalies": {
-      "systemic_losses": [
-        "Original P2 seedling (Mexican Mint, based on registry) replaced by a new plant.",
-        "Unmonitored Money Plant (White Cup | Water Propagation) completely removed."
-      ],
-      "new_introductions_interventions": [
-        "A new, large, bushy plant with numerous small, rounded, succulent-like leaves has been introduced into the P2 black pot, replacing the original seedling. This plant does not visually match the description of Mexican Mint.",
-        "A white cylindrical object appeared in the background of T-2, not present or clearly visible in earlier images."
-      ]
-    },
-    "narrative_description": "The observation sequence begins with a baseline (EARLIEST) showing two healthy plants: a small, two-leaf seedling in a black pot (P2, registered as Mexican Mint) and a Money Plant cutting in a white cup (unmonitored). Both plants exhibited good turgor and green coloration. Over the next few days (T-4, T-3, T-2), the plants maintained their healthy state, with only minor changes in lighting and the appearance of a background object in T-2. A significant data anomaly occurred at T-1, where the entire scene was rendered indiscernible due to extreme darkness. The most dramatic transformation is evident in the CURRENT image. The Money Plant in the white cup has been entirely removed, representing a systemic loss. Furthermore, the black pot (P2) no longer contains the original small seedling. Instead, a completely different, much larger, and densely foliated plant with numerous small, rounded, succulent-like leaves has been introduced. This new plant is visually vigorous and healthy, but its morphology is inconsistent with Mexican Mint, indicating a clear intervention and replacement of the original specimen. The original P2 seedling is therefore also considered a systemic loss.",
+    "anomalies": [
+      {
+        "type": "Visual Obscuration",
+        "description": "Extreme underexposure in image T-2, rendering the scene almost entirely black and uninterpretable."
+      },
+      {
+        "type": "Environmental Object",
+        "description": "A white cylindrical object, likely a sensor or camera component, partially visible from T-3 onwards."
+      },
+      {
+        "type": "Unidentified Structure",
+        "description": "A thin, white, linear structure (possibly a root or stem) extending upwards from the plant in the black pot, visible in CURRENT image. Its nature and origin are unclear."
+      }
+    ],
+    "narrative_description": "The initial phase of observation (EARLIEST to T-3) revealed two small, healthy seedlings in a black pot and a healthy Money Plant cutting in a white cup. This initial state for the black pot was inconsistent with the registry's expectation of a mature Mexican Mint. The visual data quality deteriorated significantly, culminating in a near-black image at T-2. A major intervention occurred between T-3 and T-1: the Money Plant was removed, representing a systemic loss, and the black pot's contents were replaced with a large, dense, and very healthy plant, consistent with a mature Mexican Mint. This new plant has maintained excellent health and vigor through to the CURRENT image. The current view also reveals an unidentified white linear structure near the plant. The overall biome has undergone significant compositional changes over the observed period.",
     "confidence": "High"
   }
 }
