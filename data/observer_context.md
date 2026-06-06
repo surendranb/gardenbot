@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-06 08:28:35
+**Generated:** 2026-06-06 08:59:19
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,10 +17,10 @@
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 08:28
+- **TIME OF AUDIT**: 08:59
 - **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -29.7 dB (Mid-range Convection)
+- **EMPIRICAL PROOF**: -30.4 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
@@ -65,11 +65,11 @@ Action Required:
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.705 kPa | **24h Cycle**: 2.669 kPa | **72h Rhythm**: 2.669 kPa
+- **4h Pulse**: 2.71 kPa | **24h Cycle**: 2.67 kPa | **72h Rhythm**: 2.67 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 72.3% (Current) vs 66.3% (24h Avg) | **7d Baseline Delta**: 11.3% (📈 GROWTH/WET)
+- **P2**: 71.0% (Current) vs 66.7% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -171,7 +171,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-06 04:53:20,36.04,54.93,942,402,1004.36,50.13,-39.6
 2026-06-06 05:24:03,36.02,54.53,942,402,1004.53,49.04,-39.6
 2026-06-06 05:54:47,35.98,53.77,939,403,1004.96,49.45,-39.4
 2026-06-06 06:25:29,35.95,54.38,930,404,1005.58,49.63,-39.3
@@ -179,6 +178,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-06 07:26:56,35.82,53.39,874,405,1005.86,54.74,-36.1
 2026-06-06 07:57:38,35.86,54.23,860,418,1005.89,49.83,-30.6
 2026-06-06 08:28:24,35.73,54.14,861,427,1006.1,51.94,-29.7
+2026-06-06 08:59:08,35.78,53.57,869,432,1006.38,51.34,-30.4
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
