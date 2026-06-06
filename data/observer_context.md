@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-06 07:27:07
+**Generated:** 2026-06-06 07:57:50
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,11 +17,11 @@
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 07:27
+- **TIME OF AUDIT**: 07:57
 - **HUMAN OCCUPANCY**: LOW
-- **FANS STATUS (Acoustic Registry)**: OFF (Silent)
-- **EMPIRICAL PROOF**: -36.1 dB (Baseline Floor)
-- **BIOME STATE**: REST (Night/Stagnant Recovery)
+- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
+- **EMPIRICAL PROOF**: -30.6 dB (Mid-range Convection)
+- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
@@ -65,11 +65,11 @@ Action Required:
 
 ## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.711 kPa | **24h Cycle**: 2.667 kPa | **72h Rhythm**: 2.667 kPa
+- **4h Pulse**: 2.71 kPa | **24h Cycle**: 2.668 kPa | **72h Rhythm**: 2.668 kPa
 
 #### 💧 HYDRATION & GROWTH MARKERS
 - **P1**: OFFLINE
-- **P2**: 74.0% (Current) vs 65.2% (24h Avg)
+- **P2**: 73.3% (Current) vs 65.8% (24h Avg)
 - **P3**: OFFLINE
 
 ## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
@@ -171,7 +171,6 @@ Action Required:
 ## 🌡️ 6. RAW TELEMETRY (4h Window)
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-06 03:51:53,36.13,54.76,942,400,1003.93,52.9,-39.5
 2026-06-06 04:22:38,36.13,54.45,942,401,1004.11,54.1,-39.6
 2026-06-06 04:53:20,36.04,54.93,942,402,1004.36,50.13,-39.6
 2026-06-06 05:24:03,36.02,54.53,942,402,1004.53,49.04,-39.6
@@ -179,6 +178,7 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-06 06:25:29,35.95,54.38,930,404,1005.58,49.63,-39.3
 2026-06-06 06:56:11,35.89,54.58,905,405,1005.76,47.83,-37.6
 2026-06-06 07:26:56,35.82,53.39,874,405,1005.86,54.74,-36.1
+2026-06-06 07:57:38,35.86,54.23,860,418,1005.89,49.83,-30.6
 ```
 
 ## ℹ️ FINAL CONTEXT CHECK
