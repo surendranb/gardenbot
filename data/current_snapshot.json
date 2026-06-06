@@ -1,30 +1,32 @@
 {
-  "timestamp": "2026-06-06T12:03:43.301819",
+  "timestamp": "2026-06-06T12:34:25.497161",
   "sensors": {
-    "timestamp": "2026-06-06 12:03:37",
-    "temp": 36.33,
-    "hum": 51.02,
-    "light": 890,
-    "p2": 423,
-    "press": 1005.02,
-    "gas": 53.99,
-    "db": -38.4
+    "timestamp": "2026-06-06 12:34:20",
+    "temp": 36.41,
+    "hum": 50.47,
+    "light": 894,
+    "p2": 421,
+    "press": 1004.76,
+    "gas": 54.35,
+    "db": -38.5
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 67.5,
+      "moisture_pct": 68.2,
       "is_dry": false
     }
   },
   "environment": {
-    "vpd_kpa": 2.963
+    "vpd_kpa": 3.009
   },
   "intelligence": {
-    "hypothesis": "Telemetry stable; no immediate stress signal.",
-    "active_concerns": [],
+    "hypothesis": "Soil moisture is adequate, but atmospheric demand remains high.",
+    "active_concerns": [
+      "high-vpd"
+    ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-06/garden_062536.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-06/garden_110217.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-06/garden_113301.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
