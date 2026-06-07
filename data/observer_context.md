@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-Generated: 2026-06-07 08:56:47
+Generated: 2026-06-07 15:18:13
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,8 +17,8 @@ Generated: 2026-06-07 08:56:47
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 08:56
-- **HUMAN OCCUPANCY**: LOW
+- **TIME OF AUDIT**: 15:18
+- **HUMAN OCCUPANCY**: HIGH
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
 - **EMPIRICAL PROOF**: -31.8 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
@@ -35,22 +35,7 @@ Calibration update: As of 2026-05-28 02:00 IST, the visual primacy rule and long
 Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemically lost from Pot B (black pot), replaced by an unidentified dicotyledonous plant showing healthy turgidity and stable growth. Soil moisture remains high (84.6%) indicating potential overhydration risk for succulent-adapted physiology; visual primacy rule confirms plant health despite sensor telemetry intermittency (light and p2 values present, temp/hum/press/gas/db zeroed). The persistent red light source from bottom-left continues to degrade image quality, though leaf turgidity assessment remains possible. No immediate watering advised; allow soil to dry between watering events to prevent root rot, adhering to 'soak and dry' strategy.
 
 ## 📖 3. PRIOR INSIGHTS
-### Report from 2026-06-05T13:36:03.631539
-Garden Warden Alpha Audit - 2026-06-03 15:36 IST
-Biome: ACTIVE (High convection, transpiration heavy)
-Plants: 
-- P2 seedling: Visually healthy/turgid in prior adequate frames; current image underexposed (black). Soil moisture 41.9% (down from 43.2% 24h avg) - drying correctly.
-- Money plant: Leaf healthy/turgid in prior frames; current image underexposed. Possible root initiation visible in T-2.
-Telemetry: Light 883 lux, Fans S+N Level 2 (db -24.4). BME680 OFFLINE (temp/hum/press/gas null). P2 soil sensor OK.
-Hardware: 
-1. BME680 sensor failed - needs inspection/reboot.
-2. Camera system underexposed - current frame black; check exposure/hardware.
-Botanical: No stress observed when visible. Soil drying per Soak/Dry.
-Action Required:
-- Hardware: Fix BME680 and camera exposure.
-- Botanical: Confirm P2 seedling ID vs registry.
-- Watering: DO NOT WATER (soil drying correctly).
-
+No historical insights.
 
 ## 🛠️ 4. HUMAN FEEDBACK
 - **[2026-04-05T10:16:00Z]**: re_evaluate_sensor_a5 -> Confirmed functional based on telemetry fluctuation. (Status: resolved)
@@ -67,129 +52,7 @@ Action Required:
 
 ## 🎥 6. VISUAL GROUND-TRUTH
 ```json
-{
-  "timestamp": "2026-06-06T15:40:05Z",
-  "model": "Garden Botanical Observer (Expert Visual Ethologist)",
-  "compositional_truth_check": {
-    "expected_registry": {
-      "P2": "Mexican Mint (Black Pot | Soil | Sensor)",
-      "Unmonitored": "Money Plant (White Cup | Water Propagation | No Sensors)"
-    },
-    "actual_presence": {
-      "EARLIEST": [
-        "P2 (partial/dark)",
-        "Unmonitored Money Plant"
-      ],
-      "T-5": [
-        "P2 (partial/dark)",
-        "Unmonitored Money Plant"
-      ],
-      "T-4": [
-        "P2 (partial/dark)",
-        "Unmonitored Money Plant"
-      ],
-      "T-3": [
-        "P2 (top-down view)"
-      ],
-      "T-2": [
-        "P2 (extremely dark/obscured)"
-      ],
-      "T-1": [
-        "P2 (top-down view)"
-      ],
-      "CURRENT": [
-        "P2 (top-down view)"
-      ]
-    },
-    "reconciliation_notes": "The Unmonitored Money Plant in the white cup is visible in the first three frames (Earliest to T-4). From T-3 onwards, the camera was repositioned to a direct top-down view of P2 (Mexican Mint), excluding the white cup from the frame. This is a framing change rather than a systemic loss."
-  },
-  "inventory_reconciliation": {
-    "confirmed_active": [
-      "P2 (Mexican Mint)"
-    ],
-    "out_of_frame": [
-      "Unmonitored Money Plant (from T-3 onwards)"
-    ],
-    "systemic_losses": [],
-    "new_introductions": [
-      {
-        "item": "White tube (possible cosmetic/cream)",
-        "first_seen": "T-4",
-        "status": "Transient background object"
-      }
-    ]
-  },
-  "plant_audit": {
-    "P2_Mexican_Mint": {
-      "scientific_name": "Coleus amboinicus",
-      "visual_characteristics": "Thick, fleshy, ovate green leaves with serrated margins. Compact, decumbent growth habit.",
-      "sensor_presence": "Yes, white 3-pin connector with yellow/red/black wires visible at the upper rim of the pot.",
-      "substrate": "Soil (dark, appears moist)."
-    },
-    "Unmonitored_Money_Plant": {
-      "scientific_name": "Epipremnum aureum",
-      "visual_characteristics": "Single healthy green cordate leaf draped over the rim of a translucent white cup.",
-      "sensor_presence": "No",
-      "substrate": "Water propagation medium."
-    }
-  },
-  "biome_observations": {
-    "lighting_conditions": "Fixed cool-spectrum LED illumination. Significant exposure variation, culminating in an extremely dark frame at T-2 before returning to low-light levels in T-1 and CURRENT.",
-    "soil_surface": "Soil in P2 appears dark and consolidated, indicating adequate moisture retention.",
-    "sprouts_or_weeds": "None detected on the visible soil surface of P2.",
-    "debris": "No significant debris on the desk surface, though a white tube appears in the background of T-4."
-  },
-  "temporal_deltas": [
-    {
-      "interval": "EARLIEST to T-5",
-      "observation": "No noticeable physical changes. Both the Money Plant leaf and the edge of P2 remain static under low lighting."
-    },
-    {
-      "interval": "T-5 to T-4",
-      "observation": "A white tube (likely hand cream or lotion) is introduced into the upper right background. The plants remain unchanged."
-    },
-    {
-      "interval": "T-4 to T-3",
-      "observation": "Major intervention: The camera angle is shifted to a direct overhead top-down perspective of P2 (Mexican Mint). The dense, healthy, fleshy green foliage of the Mexican Mint is fully revealed. The Money Plant in the white cup is no longer in the frame."
-    },
-    {
-      "interval": "T-3 to T-2",
-      "observation": "Extreme lighting anomaly. The image is almost completely black, with only faint outlines of the Mexican Mint and a blue light reflection at the bottom. No structural changes can be verified due to underexposure."
-    },
-    {
-      "interval": "T-2 to T-1",
-      "observation": "Lighting is restored to a low-light state. The top-down view of P2 confirms the Mexican Mint remains structurally stable, turgid, and healthy."
-    },
-    {
-      "interval": "T-1 to CURRENT",
-      "observation": "No change. The Mexican Mint maintains its turgor, leaf orientation, and healthy green coloration."
-    }
-  ],
-  "visual_health_inference": {
-    "P2_Mexican_Mint": {
-      "status": "Excellent",
-      "evidence": "The leaves are highly turgid, plump, and display a vibrant green color without any signs of chlorosis, necrosis, or wilting. The growth is dense and compact, indicating adequate light levels for survival."
-    },
-    "Unmonitored_Money_Plant": {
-      "status": "Stable (when last seen at T-4)",
-      "evidence": "The single visible leaf was turgid, deep green, and free of blemishes or yellowing."
-    }
-  },
-  "anomalies": [
-    {
-      "type": "Camera Repositioning",
-      "timestamp_detected": "T-3",
-      "description": "Perspective shifted from a side-angle view of both containers to a dedicated top-down view of P2."
-    },
-    {
-      "type": "Severe Underexposure",
-      "timestamp_detected": "T-2",
-      "description": "The frame is almost entirely black, suggesting a temporary failure of the LED light source or an exposure setting error."
-    }
-  ],
-  "narrative_description": "The chronological sequence documents a stable indoor micro-biome. In the initial phase (Earliest to T-4), the camera captures a side profile of a water-propagated Money Plant in a white cup alongside the dark edge of P2 (Mexican Mint). At T-4, a minor human intervention is noted with the appearance of a white tube in the background. A significant adjustment occurs at T-3, where the camera is repositioned directly above P2, revealing a highly healthy, dense, and turgid Mexican Mint specimen. Despite a temporary blackout anomaly at T-2, the subsequent frames (T-1 and CURRENT) confirm that the Mexican Mint remains in excellent physiological health, showing robust leaf turgor and no signs of stress.",
-  "confidence": 0.95
-}
+{}
 ```
 
 ## 🌡️ 7. RAW TELEMETRY
