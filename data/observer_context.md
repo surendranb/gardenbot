@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-Generated: 2026-06-07 15:18:13
+Generated: 2026-06-08 04:18:01
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,11 +17,11 @@ Generated: 2026-06-07 15:18:13
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 15:18
-- **HUMAN OCCUPANCY**: HIGH
-- **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
-- **EMPIRICAL PROOF**: -31.8 dB (Mid-range Convection)
-- **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
+- **TIME OF AUDIT**: 04:18
+- **HUMAN OCCUPANCY**: LOW
+- **FANS STATUS (Acoustic Registry)**: UNKNOWN
+- **EMPIRICAL PROOF**: N/A
+- **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
@@ -35,7 +35,22 @@ Calibration update: As of 2026-05-28 02:00 IST, the visual primacy rule and long
 Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemically lost from Pot B (black pot), replaced by an unidentified dicotyledonous plant showing healthy turgidity and stable growth. Soil moisture remains high (84.6%) indicating potential overhydration risk for succulent-adapted physiology; visual primacy rule confirms plant health despite sensor telemetry intermittency (light and p2 values present, temp/hum/press/gas/db zeroed). The persistent red light source from bottom-left continues to degrade image quality, though leaf turgidity assessment remains possible. No immediate watering advised; allow soil to dry between watering events to prevent root rot, adhering to 'soak and dry' strategy.
 
 ## 📖 3. PRIOR INSIGHTS
-No historical insights.
+### Report from 2026-06-07T15:47:16.044913
+Garden Warden Alpha Audit - 2026-06-03 15:36 IST
+Biome: ACTIVE (High convection, transpiration heavy)
+Plants: 
+- P2 seedling: Visually healthy/turgid in prior adequate frames; current image underexposed (black). Soil moisture 41.9% (down from 43.2% 24h avg) - drying correctly.
+- Money plant: Leaf healthy/turgid in prior frames; current image underexposed. Possible root initiation visible in T-2.
+Telemetry: Light 883 lux, Fans S+N Level 2 (db -24.4). BME680 OFFLINE (temp/hum/press/gas null). P2 soil sensor OK.
+Hardware: 
+1. BME680 sensor failed - needs inspection/reboot.
+2. Camera system underexposed - current frame black; check exposure/hardware.
+Botanical: No stress observed when visible. Soil drying per Soak/Dry.
+Action Required:
+- Hardware: Fix BME680 and camera exposure.
+- Botanical: Confirm P2 seedling ID vs registry.
+- Watering: DO NOT WATER (soil drying correctly).
+
 
 ## 🛠️ 4. HUMAN FEEDBACK
 - **[2026-04-05T10:16:00Z]**: re_evaluate_sensor_a5 -> Confirmed functional based on telemetry fluctuation. (Status: resolved)
@@ -47,8 +62,8 @@ No historical insights.
 
 ## 🧠 5. BIOLOGICAL TEMPO
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.563 kPa | **24h Cycle**: 2.727 kPa
-#### 💧 JADE HYDRATION: 61.9% (Current) vs 68.3% (24h Avg)
+- **4h Pulse**: 2.545 kPa | **24h Cycle**: 2.545 kPa
+#### 💧 JADE HYDRATION: 33.8% (Current) vs 33.8% (24h Avg)
 
 ## 🎥 6. VISUAL GROUND-TRUTH
 ```json
@@ -58,7 +73,6 @@ No historical insights.
 ## 🌡️ 7. RAW TELEMETRY
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-06 18:44:38,37.31,58.7,932,436,1002.94,25.46,-36.6
 2026-06-06 19:15:21,37.4,58.73,930,436,1003.53,27.91,-37.4
 2026-06-06 19:46:04,37.15,59.97,933,437,1004.24,35.09,-37.1
 2026-06-06 20:16:46,37.2,60.43,900,437,1004.61,44.86,-37.7
@@ -66,4 +80,5 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-06 21:18:11,34.42,52.75,908,438,1005.01,63.0,-30.4
 2026-06-06 21:48:57,36.46,55.13,903,447,1005.17,49.1,-31.6
 2026-06-06 22:19:41,36.73,59.76,901,448,1005.62,41.84,-31.8
+2026-06-08 04:17:21,36.05,57.27,915,528,1005.21,16.94,0.0
 ```
