@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-06-07 06:00:05",
+  "timestamp": "2026-06-07 18:00:03",
   "main": {
-    "temp": 30.85,
-    "humidity": 65,
-    "pressure": 1007
+    "temp": 33.72,
+    "humidity": 68,
+    "pressure": 1005
   },
   "weather": {
     "id": 804,
@@ -12,7 +12,7 @@
     "icon": "04d"
   },
   "forecast": {
-    "rain_expected": true,
-    "max_pop": 0.8
+    "rain_expected": false,
+    "max_pop": 0
   }
 }
