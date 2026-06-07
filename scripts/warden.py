@@ -241,12 +241,24 @@ def capture_data():
     try:
         # Timeout 10s safely outlasts the 5.0s hardware loop
         ser = serial.Serial(port, 9600, timeout=10)
-        time.sleep(3.1) # BME680 Boot Protocol: 3.0s settle delay (SILICA v3.3)
+        time.sleep(4.0) # Hardware Hardening: Increased settle delay for BME680
         ser.reset_input_buffer()
         
-        # Multi-sample to allow BME680 warm-up (Collect ~4 valid readings over ~20s)
+        # --- BME680 BURN-IN & STABILIZATION (SILICA v3.5) ---
+        # Discard the first 10 readings to allow heater stabilization
+        print("Warden: BME680 Burn-in phase (10 samples)...")
+        burn_in_count = 0
+        while burn_in_count < 10:
+            line = ser.readline().decode('utf-8', errors='ignore').strip()
+            if "|" in line:
+                burn_in_count += 1
+                if burn_in_count % 5 == 0:
+                    print(f"  Burn-in progress: {burn_in_count}/10")
+        
+        # Now collect valid readings
         valid_readings = []
-        for _ in range(25): # Wait up to 25 cycles
+        print("Warden: Collecting final telemetry samples...")
+        for _ in range(25): 
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
@@ -256,33 +268,29 @@ def capture_data():
                         "temp": float(parts[0]), 
                         "hum": float(parts[1]), 
                         "light": int(parts[2]),
-                        "p2": int(parts[3]), # A2
+                        "p2": int(parts[3]), # A2 (Jade Plant)
                         "press": float(parts[4]),
                         "gas": float(parts[5]),
                         "db": capture_volume() or 0.0
                     }
+                    
+                    # Reject "Saturation Signature" (hum=100, press=652) during collection
+                    if data["press"] == 652.01 and data["hum"] == 100.0:
+                        print("  Rejecting Saturation artifact...")
+                        continue
+                        
                     valid_readings.append(data)
-                    print(f"Warden: Captured sample {len(valid_readings)}/4 (Gas: {data['gas']})")
+                    print(f"  Captured sample {len(valid_readings)}/4 (Temp: {data['temp']}C)")
                     if len(valid_readings) >= 4:
                         break
         
         if valid_readings:
-            # Pick the latest reading for maximum warm-up time
-            best_data = valid_readings[-1]
+            # Pick the final stabilized reading
+            data = valid_readings[-1]
             
-            # Fallback: if the latest reading had a dead bus, scan backwards for a good one
-            for data in reversed(valid_readings):
-                if not (data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0):
-                    best_data = data
-                    break
-            
-            data = best_data
-            
-            # Garbage Detection Logic (BME680 Saturation Signature or Dead Bus)
-            if data["press"] == 652.01 and data["hum"] == 100.0:
-                print("Warden: WARNING: BME680 Saturation detected (652/100). Recording partial telemetry.")
-            elif data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
-                print("Warden: WARNING: BME680 I2C BUS DEAD. Recording partial telemetry (Light/Moisture).")
+            # Final check for Dead Bus
+            if data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
+                print("Warden: CRITICAL: BME680 I2C BUS DEAD.")
             
             new_df = pd.DataFrame([data])
             save_csv_append(new_df, RAW_CSV_PATH)

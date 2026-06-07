@@ -43,7 +43,7 @@ def ensure_paths():
     os.makedirs(os.path.dirname(VISION_JSON_PATH), exist_ok=True)
 
 def capture_vision():
-    """Captures an image, preferring cv2, falling back to imagesnap."""
+    """Captures an image, with adaptive exposure for night vision."""
     now = datetime.now()
     today_str = now.strftime("%Y-%m-%d")
     day_dir = os.path.join(ARCHIVE_DIR, today_str)
@@ -53,19 +53,47 @@ def capture_vision():
 
     try:
         import cv2
+        import numpy as np
         cap = cv2.VideoCapture(0)
         if not cap.isOpened(): raise RuntimeError("Cannot open camera")
+        
+        # Hardware Tuning: Set resolution and suppress high-speed mode
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-        for _ in range(3): cap.read(); time.sleep(0.5) # Warmup
+        
+        # --- ISP WARMUP & AUTO-EXPOSURE LOCK (SILICA v3.5) ---
+        # We discard 20 frames to give the camera's AE/AWB time to stabilize 
+        # specifically for night shots where the LED is the only source.
+        print("Vision: Camera Warmup (AE/AWB Stabilization)...")
+        for i in range(20):
+            ret, _ = cap.read()
+            if i % 10 == 0: time.sleep(0.2)
+            
         ret, frame = cap.read()
+        
+        # --- BRIGHTNESS VALIDATION ---
+        if ret:
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            mean_brightness = np.mean(gray)
+            print(f"Vision: Mean Pixel Intensity: {mean_brightness:.2f}")
+            
+            # If image is extremely dark (e.g. < 5.0), AE failed to ramp up.
+            if mean_brightness < 5.0:
+                print("Vision: WARNING: Frame underexposed. Attempting Recovery Capture...")
+                time.sleep(2.0)
+                # Second attempt with more settle time
+                for _ in range(10): cap.read()
+                ret, frame = cap.read()
+        
         cap.release()
         if not ret: raise RuntimeError("Capture failed")
         cv2.imwrite(archive_path, frame)
+        
     except Exception as e:
         print(f"CV2 failed: {e}. Fallback to imagesnap...")
         try:
-            subprocess.run(["imagesnap", "-q", archive_path], check=True, timeout=15)
+            # Fallback to imagesnap with a longer warmup delay if possible
+            subprocess.run(["imagesnap", "-w", "3", "-q", archive_path], check=True, timeout=20)
         except Exception as e2:
             print(f"Vision failed: {e2}")
             return {"error": str(e2)}
@@ -110,54 +138,54 @@ def pick_temporal_stack(archive_path):
 def build_prompt(ctx=None):
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
+    # Load actual biome registry
+    plants_config = []
+    plants_json_path = os.path.join(BASE_DIR, "scripts/config/plants.json")
+    if os.path.exists(plants_json_path):
+        with open(plants_json_path, 'r') as f:
+            plants_config = json.load(f)
+    
+    registry_str = ""
+    for p in plants_config:
+        registry_str += f"  * {p['id'].upper()}: {p['name']} ({p.get('species', 'Unknown')}) | Sensor: {p.get('sensor_key', 'None')}\n"
+    if not registry_str:
+        registry_str = "  * No plants currently registered."
+
     context_str = ""
     if ctx:
         actions = ctx.get("recent_human_actions", [])
-        recs = ctx.get("last_recommendations", [])
         if actions:
             context_str += "\nRECENT HUMAN ACTIONS (A PRIORI KNOWLEDGE):\n"
             for a in actions:
                 context_str += f"- {a.get('timestamp')}: {a.get('action')} - {a.get('note')}\n"
-        # --- REMOVED NARRATIVE FALLACY LOOP ---
-        # We no longer inject AI recommendations to prevent the vision model
-        # from conforming to the telemetry's theoretical assumptions.
-        # if recs:
-        #     context_str += "\nLAST AI RECOMMENDATIONS:\n" ...
         
         if context_str:
-            context_str += "\nCRITICAL INSTRUCTION: If you see visual changes that align with the human actions listed above (e.g., white material on soil after 'added powder', or wet soil after 'watering'), do NOT flag them as physiological stress or anomalies. Instead, confirm their presence as successful outcomes of user care.\n"
+            context_str += "\nCRITICAL INSTRUCTION: If you see visual changes that align with the human actions listed above, do NOT flag them as physiological stress. Instead, confirm their presence as successful outcomes of user care.\n"
 
     return (
         f"Today's Date: {now_str}\n"
         "You are the Garden Botanical Observer (Expert Visual Ethologist).\n"
         f"{context_str}"
-        "Your task is to perform a meticulous physical audit and EXPLANATORY health inference of a CHRONOLOGICAL sequence of images. Starting from the oldest to the newsest (now)\n"
-        "Create a detailed checklist of each plant"
-        "You will follow a maker-checker mechanism. Describe what you will do first and then validate after you've done your interpretation. You job is to interpret the images accurately with a keen eye and the expeience of a renowned botanist"
-        "You will audit each image carefully from oldest to newest & ask after each image, what changed. Then write a detailed note about that"
+        "Your task is to perform a meticulous physical audit and health inference of a CHRONOLOGICAL sequence of images. Starting from the oldest to the newest (now).\n"
+        "You will follow a maker-checker mechanism. Describe what you will do first and then validate after you've done your interpretation.\n"
         "Return one strict JSON object and nothing else.\n\n"
         "WORLD MODEL:\n"
-        "- Plants are indoor on the desk."
-        "- LIGHTING: Fixed Camera LED (cool spectrum) + Diffuse light from a North window. ZERO direct sunlight.\n"
+        "- Plants are indoor on the desk.\n"
+        "- LIGHTING: Fixed Camera LED + Diffuse light from a North window. ZERO direct sunlight.\n"
         "- EXPECTED BIOME REGISTRY (A Priori):\n"
-        "  * P2: Mexican Mint (Black Pot | Soil | Sensor)\n"
-        "  * Unmonitored: Money Plant (White Cup | Water Propagation | No Sensors)\n\n"
+        f"{registry_str}\n"
         "- COMPOSITIONAL AUDIT REQUIREMENT:\n"
         "  * YOUR PRIMARY DIRECTIVE: Do not let the registry above blind you to physical reality. Use it as a 'Baseline Checklist' only.\n"
-        "  * RECONCILIATION: Compare the current image against the registry. If a registered plant is missing (e.g., bare soil or shriveled mass where a plant should be), you MUST declare it a 'Systemic Loss'.\n"
-        "  * ANOMALY DETECTION: If you see a leaf type, specimen, or structural change (like new pots or eggshells) not in the registry, declare it a 'New Introduction/Intervention'.\n\n"
+        "  * RECONCILIATION: Compare the current image against the registry. If a registered plant is missing, declare it a 'Systemic Loss'.\n"
+        "  * ANOMALY DETECTION: If you see a leaf type, specimen, or structural change not in the registry, declare it a 'New Introduction/Intervention'.\n\n"
         "IMAGE LABELS:\n"
         "- Sequence shows images taken during midday from last 5 days + Today's morning 'Rested State' + CURRENT.\n\n"
-        "BIOME-WIDE MONITORING (The 'Beyond-Inventory' Rule):\n"
-        "- Your audit must include the ENTIRE pot surface. \n"
-        "- Identify 'Incidental Growth': Note any weeds, moss, secondary seedlings, or uncatalogued sprouts in the soil of p1-p4.\n"
-        "- Identify 'Biome Anomalies': Note changes in soil texture (cracking vs. dampness), fungal presence, or debris on the desk surface.\n\n"
         "REQUIRED AUDIT:\n"
-        "1. Compositional Truth Check: List all pots and reconcile them against the EXPECTED BIOME REGISTRY. Identify any 'Systemic Losses' or 'New Introductions'.\n"
-        "2. Multi-Day Comparative Audit: Using the archival stack (EARLIEST to CURRENT), describe how each pot's occupant has transformed. Be specific about leaf loss, color shifts, and postural collapse.\n"
-        "3. Pixel-Based Health Reasoning: Deduce health using VISUAL EVIDENCE ONLY. If the registry says 'Mexican Mint' but you see a dead brown stem, the truth is 'Dead/Lost'.\n\n"
+        "1. Compositional Truth Check: List all pots and reconcile them against the registry.\n"
+        "2. Multi-Day Comparative Audit: Describe how each occupant has transformed.\n"
+        "3. Pixel-Based Health Reasoning: Deduce health using VISUAL EVIDENCE ONLY.\n\n"
         "Output format (JSON keys):\n"
-        "timestamp, model, compositional_truth_check, inventory_reconciliation, plant_audit, biome_observations, temporal_deltas, visual_health_inference, anomalies, narrative_description, confidence.\n"
+        "timestamp, compositional_truth_check, inventory_reconciliation, plant_audit, biome_observations, visual_health_inference, anomalies, narrative_description, confidence.\n"
         "The JSON must be parseable. No markdown fences."
     )
 
