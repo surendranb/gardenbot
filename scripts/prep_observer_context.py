@@ -44,9 +44,6 @@ def sanitize_telemetry(df):
     if df is None or df.empty: return df, 0
     
     # Failure Signatures:
-    # 1. BME680 Saturation: hum=100.0, press=652.01
-    # 2. Dead Bus: temp=0.0, hum=0.0
-    # 3. Heater Stall: gas=0.0
     mask = (
         (df['hum'] == 100.0) | 
         (df['press'] == 652.01) | 
@@ -57,7 +54,6 @@ def sanitize_telemetry(df):
     failure_count = mask.sum()
     clean_df = df.copy()
     
-    # Nullify BME680 columns for failed cycles instead of dropping the entire row
     bme_cols = ['temp', 'hum', 'press', 'gas']
     for col in bme_cols:
         if col in clean_df.columns:
@@ -83,14 +79,11 @@ def get_world_model_ledger():
     try:
         with open(path, 'r') as f:
             content = f.read()
-            # Extract everything between 'THE WORLD MODEL' and the next header
-            # Uses a lookahead to stop exactly before the next section begins
             pattern = r"## 2\. THE WORLD MODEL(.*?)(?=\n##|$)"
             match = re.search(pattern, content, re.DOTALL)
             if match:
                 return f"## 2. THE WORLD MODEL\n" + match.group(1).strip()
             return "World model section not found in SILICA ledger."
-
     except Exception as e:
         return f"Error reading ledger: {str(e)}"
 
@@ -105,7 +98,6 @@ def get_dynamic_world_model(t_df):
     
     fan_status, empirical_proof = get_acoustic_fan_status(db_val)
     
-    # ... BME680 Logic ...
     air_quality_inference = "UNKNOWN (Insufficient Data)"
     if t_df is not None and not t_df.empty:
         try:
@@ -130,8 +122,6 @@ def get_dynamic_world_model(t_df):
         except: pass
 
     biome_mode = 'ACTIVE (Photosynthetic/Transpiration heavy)' if "ON" in fan_status else 'REST (Night/Stagnant Recovery)'
-    
-    # Permanent Context (from Ledger)
     ledger_context = get_world_model_ledger()
 
     res = f"### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)\n{ledger_context}\n\n"
@@ -151,18 +141,7 @@ def get_weather_context():
                 data = json.load(f)
             return f"- Outside Weather: {data.get('description', 'Unknown')}, {data.get('temp', 'Unknown')}°C, Humidity: {data.get('humidity', 'Unknown')}%"
     except: pass
-    
-    # Fallback to weather.csv
-    try:
-        path = os.path.join(BASE_DIR, "data/weather.csv")
-        if os.path.exists(path):
-            df = pd.read_csv(path)
-            if not df.empty:
-                latest = df.iloc[-1]
-                return f"- Outside Weather: {latest.get('temp', 'Unknown')}°C, Humidity: {latest.get('humidity', 'Unknown')}%, Rain: {latest.get('rain', 'Unknown')}"
-    except: pass
     return "- Outside Weather: Data unavailable"
-
 
 def get_human_context():
     actions = []
@@ -197,8 +176,7 @@ def get_temporal_insights(n=3):
                     ts = entry.get('timestamp', 'Unknown Time')
                     report = entry.get('report', '')
                     insights.append(f"### Report from {ts}\n{report}\n")
-    except Exception as e:
-        return f"Error reading history: {e}"
+    except: pass
     return "\n\n".join(insights) if insights else "No historical insights."
 
 def get_agent_calibration():
@@ -219,42 +197,19 @@ def get_biological_deltas(m_df):
         if df.empty: return None
         return {
             "vpd": round(df['vpd'].mean(), 3) if 'vpd' in df and not df['vpd'].isna().all() else np.nan,
-            "p1": round(df['p1_pct'].mean(), 1) if 'p1_pct' in df and not df['p1_pct'].isna().all() else np.nan,
-            "p2": round(df['p2_pct'].mean(), 1) if 'p2_pct' in df and not df['p2_pct'].isna().all() else np.nan,
-            "p3": round(df['p3_pct'].mean(), 1) if 'p3_pct' in df and not df['p3_pct'].isna().all() else np.nan
+            "p2": round(df['p2_pct'].mean(), 1) if 'p2_pct' in df and not df['p2_pct'].isna().all() else np.nan
         }
 
     pulse = get_stats(4)
     day = get_stats(24)
     rhythm = get_stats(72)
-    baseline_df = m_df[(m_df['timestamp'] > (now - timedelta(days=7, minutes=30))) & (m_df['timestamp'] <= (now - timedelta(days=7)))]
-    
     facts = []
     if pulse and day and rhythm:
-        def fmt_vpd(v):
-            return f"{v} kPa" if not pd.isna(v) else "OFFLINE"
-            
-        facts.append(f"#### 🌡️ VPD WINDOWS\n- **4h Pulse**: {fmt_vpd(pulse['vpd'])} | **24h Cycle**: {fmt_vpd(day['vpd'])} | **72h Rhythm**: {fmt_vpd(rhythm['vpd'])}")
-        facts.append("\n#### 💧 HYDRATION & GROWTH MARKERS")
-        for p in ['p1', 'p2', 'p3']:
-            curr, d_avg = pulse[p], day[p]
-            if pd.isna(curr) or pd.isna(d_avg):
-                facts.append(f"- **{p.upper()}**: OFFLINE")
-                continue
-            b_text = ""
-            if not baseline_df.empty:
-                b_val = baseline_df[f"{p}_pct"].iloc[-1]
-                if not pd.isna(b_val):
-                    b_delta = round(curr - b_val, 1)
-                    tag = '📈 GROWTH/WET' if b_delta > 5 else '📉 DECLINE/DRY' if b_delta < -10 else '⚖️ STABLE'
-                    b_text = f" | **7d Baseline Delta**: {b_delta}% ({tag})"
-            facts.append(f"- **{p.upper()}**: {curr}% (Current) vs {d_avg}% (24h Avg){b_text}")
-    else:
-        facts.append("Insufficient data for windows.")
+        facts.append(f"#### 🌡️ VPD WINDOWS\n- **4h Pulse**: {pulse['vpd']} kPa | **24h Cycle**: {day['vpd']} kPa")
+        facts.append(f"#### 💧 JADE HYDRATION: {pulse['p2']}% (Current) vs {day['p2']}% (24h Avg)")
     return "\n".join(facts)
 
 def export_vision_context():
-    """Exports a lightweight JSON for the vision model to understand recent human/system state."""
     actions = []
     try:
         if os.path.exists(HUMAN_ACTIONS_PATH):
@@ -263,42 +218,19 @@ def export_vision_context():
                     try: actions.append(json.loads(line.strip()))
                     except: continue
     except: pass
-    
-    # Filter for last 24h
-    now = datetime.now()
-    recent_actions = []
-    for a in actions:
-        try:
-            ts = pd.to_datetime(a.get('timestamp'))
-            if (now - ts.to_pydatetime().replace(tzinfo=None)) < timedelta(hours=24):
-                recent_actions.append(a)
-        except: continue
-
-    insights = get_temporal_insights(3).split("\n\n")
-    
-    payload = {
-        "timestamp": now.isoformat(),
-        "recent_human_actions": recent_actions[-3:],
-        "last_recommendations": [i.strip() for i in insights if i.strip()]
-    }
-    
-    with open(VISION_CONTEXT_PATH, 'w') as f:
-        json.dump(payload, f, indent=2)
-    print(f"Vision context exported to {VISION_CONTEXT_PATH}")
+    payload = {"timestamp": datetime.now().isoformat(), "recent_human_actions": actions[-3:]}
+    with open(VISION_CONTEXT_PATH, 'w') as f: json.dump(payload, f, indent=2)
 
 def main():
     parser = argparse.ArgumentParser(description="SILICA Context Synthesizer")
-    parser.add_argument("--vision-only", action="store_true", help="Only export light context for vision model")
+    parser.add_argument("--vision-only", action="store_true")
     args = parser.parse_args()
-
     if args.vision_only:
         export_vision_context()
         return
 
-    print("Synthesizing SILICA v2.2 (Corrected Logic)...")
     t_df_raw, m_df = load_df(TELEMETRY_PATH), load_df(METRICS_PATH)
     t_df, failure_count = sanitize_telemetry(t_df_raw)
-    
     vision = load_json(VISION_OBSERVATION_PATH)
     
     dynamic_world = get_dynamic_world_model(t_df)
@@ -309,44 +241,33 @@ def main():
     deltas = get_biological_deltas(m_df)
     
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
     health_warning = ""
-    if failure_count > 0:
-        health_warning = (
-            "### ⚠️ 1C. TELEMETRY HEALTH ALERT\n"
-            f"- **STATUS**: DEGRADED (Hardware Instability Detected)\n"
-            f"- **FAILURE SIGNATURES DETECTED**: {failure_count} points in last window.\n"
-            "- **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.\n"
-            "- **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.\n\n"
+    curr_temp = t_df['temp'].iloc[-1] if t_df is not None and not t_df.empty else 0
+    fan_status = get_acoustic_fan_status(t_df['db'].iloc[-1] if t_df is not None and not t_df.empty else None)[0]
+
+    if curr_temp > 36.5 and "OFF" in fan_status:
+        health_warning += (
+            "### 🚨 1C. CRITICAL THERMAL ALERT\n"
+            f"- **TEMP**: {curr_temp}°C (Extreme Heat Spike)\n"
+            "- **FANS**: OFF (Acoustic proof indicates no convection)\n"
+            "- **ACTION REQUIRED**: Manually activate cooling systems immediately. VPD is reaching lethal succulent thresholds.\n\n"
         )
 
-    content = "# 📝 SILICA v3.0: High-Fidelity Biological Context\n"
-    content += f"**Generated:** {timestamp}\n\n"
-    content += "## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n"
-    content += f"{dynamic_world}\n"
-    content += f"{weather_info}\n\n"
-    content += f"{health_warning}\n"
-    content += "## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS\n"
-    content += f"{calibration}\n\n"
-    content += "## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS\n"
-    content += f"{prior_insights}\n\n"
-    content += "## 🛠️ 3. HUMAN FEEDBACK LOOP (Recent Actions)\n"
-    content += f"{human_actions}\n\n"
-    content += "## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)\n"
-    content += f"{deltas}\n\n"
-    content += "## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)\n"
-    content += "```json\n"
-    content += json.dumps(vision.get('vision_report', {}), indent=2)
-    content += "\n```\n\n"
-    content += "## 🌡️ 6. RAW TELEMETRY (4h Window)\n"
-    content += "```csv\n"
-    content += t_df.tail(8).to_csv(index=False) if t_df is not None else "No telemetry."
-    content += "```\n\n"
-    content += "## ℹ️ FINAL CONTEXT CHECK\n"
-    content += "- **Acoustic Truth**: The Fan Status in Section 1 is EMPIRICAL. Use it to judge transpiration pressure.\n"
-    content += "- **Action Tracking**: Reconcile Section 3 with Section 4 to see if care is working.\n"
-    content += "- **Growth Velocity**: If delta in Section 4 is negative but Vision in Section 5 looks good, interpret as 'Peak Metabolism'.\n"
-    content += "- **Visual Primacy Rule**: If a sensor reports 100% humidity/0.0 VPD, but Vision (Section 5) shows dry soil or wilted leaves, disregard the sensor as a hardware stall. The images are the Ground Truth.\n"
+    if failure_count > 0:
+        health_warning += (
+            "### ⚠️ 1D. TELEMETRY HEALTH ALERT\n"
+            f"- **STATUS**: DEGRADED (Hardware Instability Detected)\n"
+            f"- **FAILURE SIGNATURES DETECTED**: {failure_count} points in last window.\n"
+        )
+
+    content = f"# 📝 SILICA v3.0: High-Fidelity Biological Context\nGenerated: {timestamp}\n\n"
+    content += f"## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n{dynamic_world}\n{weather_info}\n\n{health_warning}\n"
+    content += f"## 🧠 2. AGENT CALIBRATION\n{calibration}\n\n"
+    content += f"## 📖 3. PRIOR INSIGHTS\n{prior_insights}\n\n"
+    content += f"## 🛠️ 4. HUMAN FEEDBACK\n{human_actions}\n\n"
+    content += f"## 🧠 5. BIOLOGICAL TEMPO\n{deltas}\n\n"
+    content += f"## 🎥 6. VISUAL GROUND-TRUTH\n```json\n{json.dumps(vision.get('vision_report', {}), indent=2)}\n```\n\n"
+    content += f"## 🌡️ 7. RAW TELEMETRY\n```csv\n{t_df.tail(8).to_csv(index=False) if t_df is not None else 'No telemetry.'}```\n"
 
     with open(OUTPUT_PATH, 'w') as f: f.write(content)
     print(f"Context saved to {OUTPUT_PATH}")

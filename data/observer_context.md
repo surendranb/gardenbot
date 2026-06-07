@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-**Generated:** 2026-06-06 22:19:52
+Generated: 2026-06-07 08:56:47
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,27 +17,24 @@
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 22:19
-- **HUMAN OCCUPANCY**: HIGH
+- **TIME OF AUDIT**: 08:56
+- **HUMAN OCCUPANCY**: LOW
 - **FANS STATUS (Acoustic Registry)**: ON (Level 1: Single)
 - **EMPIRICAL PROOF**: -31.8 dB (Mid-range Convection)
 - **BIOME STATE**: ACTIVE (Photosynthetic/Transpiration heavy)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
 
-### ⚠️ 1C. TELEMETRY HEALTH ALERT
+### ⚠️ 1D. TELEMETRY HEALTH ALERT
 - **STATUS**: DEGRADED (Hardware Instability Detected)
 - **FAILURE SIGNATURES DETECTED**: 206 points in last window.
-- **ACTION**: Statistical windows (Section 4) have been SANITIZED. Hardware artifacts removed.
-- **CRITICAL INSTRUCTION**: If Section 5 (Vision) contradicts Section 4 (Telemetry), **TRUST THE IMAGE**. Do not hallucinate root rot if the soil is visibly dry.
 
-
-## 🧠 2. AGENT CALIBRATION & LEARNED HEURISTICS
+## 🧠 2. AGENT CALIBRATION
 Calibration update: As of 2026-05-28 02:00 IST, the visual primacy rule and longitudinal report comparison reveal systemic loss of Mexican Mint in Pot B (black pot). Previous reports (08:00, 11:00, 23:29) misidentified an unidentified dicotyledonous seedling as Mexican Mint, leading to erroneous MAINTAINING assessments. The registered plant is absent throughout the observed sequence, replaced by a healthy volunteer seedling showing excellent turgidity and growth. The vision system, despite degradation by red light source, provides reliable assessment of plant location and turgidity trends. Telemetry shows intermittent functionality with warm, moderately humid conditions when operational. Foreign objects (blue book, electronic components/wires, white pen, white cup with cutting) persist on desk surface. The introduced plant demonstrates biological resilience, maintaining healthy turgidity despite observational limitations and registry discrepancy. The true status of Mexican Mint is systemic loss, necessitating replanting intervention.
 
 Calibration update: As of 2026-05-28 05:00 IST, the Mexican Mint remains systemically lost from Pot B (black pot), replaced by an unidentified dicotyledonous plant showing healthy turgidity and stable growth. Soil moisture remains high (84.6%) indicating potential overhydration risk for succulent-adapted physiology; visual primacy rule confirms plant health despite sensor telemetry intermittency (light and p2 values present, temp/hum/press/gas/db zeroed). The persistent red light source from bottom-left continues to degrade image quality, though leaf turgidity assessment remains possible. No immediate watering advised; allow soil to dry between watering events to prevent root rot, adhering to 'soak and dry' strategy.
 
-## 📖 3. PRIOR INSIGHTS & RECOMMENDATIONS
+## 📖 3. PRIOR INSIGHTS
 ### Report from 2026-06-05T13:36:03.631539
 Garden Warden Alpha Audit - 2026-06-03 15:36 IST
 Biome: ACTIVE (High convection, transpiration heavy)
@@ -55,7 +52,7 @@ Action Required:
 - Watering: DO NOT WATER (soil drying correctly).
 
 
-## 🛠️ 3. HUMAN FEEDBACK LOOP (Recent Actions)
+## 🛠️ 4. HUMAN FEEDBACK
 - **[2026-04-05T10:16:00Z]**: re_evaluate_sensor_a5 -> Confirmed functional based on telemetry fluctuation. (Status: resolved)
 - **[2026-04-08T05:33:00Z]**: supplementary_light_add -> Added lamp with yellow spectrum light. Option to switch to blue LED available. (Status: applied)
 - **[2026-04-09T10:30:00+05:30]**: supplementary_starch_water -> Added some starch water to all the plants. (Status: applied)
@@ -63,16 +60,12 @@ Action Required:
 - **[2026-04-10T11:39:53Z]**: POWERCUT_RECOVERY -> Power cut detected; AC restart pending/shifted (Status: applied)
 
 
-## 🧠 4. BIOLOGICAL TEMPO (Tiered Telemetry)
+## 🧠 5. BIOLOGICAL TEMPO
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.572 kPa | **24h Cycle**: 2.732 kPa | **72h Rhythm**: 2.731 kPa
+- **4h Pulse**: 2.563 kPa | **24h Cycle**: 2.727 kPa
+#### 💧 JADE HYDRATION: 61.9% (Current) vs 68.3% (24h Avg)
 
-#### 💧 HYDRATION & GROWTH MARKERS
-- **P1**: OFFLINE
-- **P2**: 62.2% (Current) vs 68.5% (24h Avg) | **7d Baseline Delta**: 6.0% (📈 GROWTH/WET)
-- **P3**: OFFLINE
-
-## 🎥 5. VISUAL GROUND-TRUTH (Latest Gemini Audit)
+## 🎥 6. VISUAL GROUND-TRUTH
 ```json
 {
   "timestamp": "2026-06-06T15:40:05Z",
@@ -199,7 +192,7 @@ Action Required:
 }
 ```
 
-## 🌡️ 6. RAW TELEMETRY (4h Window)
+## 🌡️ 7. RAW TELEMETRY
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
 2026-06-06 18:44:38,37.31,58.7,932,436,1002.94,25.46,-36.6
@@ -211,9 +204,3 @@ timestamp,temp,hum,light,p2,press,gas,db
 2026-06-06 21:48:57,36.46,55.13,903,447,1005.17,49.1,-31.6
 2026-06-06 22:19:41,36.73,59.76,901,448,1005.62,41.84,-31.8
 ```
-
-## ℹ️ FINAL CONTEXT CHECK
-- **Acoustic Truth**: The Fan Status in Section 1 is EMPIRICAL. Use it to judge transpiration pressure.
-- **Action Tracking**: Reconcile Section 3 with Section 4 to see if care is working.
-- **Growth Velocity**: If delta in Section 4 is negative but Vision in Section 5 looks good, interpret as 'Peak Metabolism'.
-- **Visual Primacy Rule**: If a sensor reports 100% humidity/0.0 VPD, but Vision (Section 5) shows dry soil or wilted leaves, disregard the sensor as a hardware stall. The images are the Ground Truth.
