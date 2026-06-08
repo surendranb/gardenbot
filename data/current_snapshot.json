@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T21:11:41.501717",
+  "timestamp": "2026-06-08T21:51:03.200891",
   "sensors": {
     "timestamp": "2026-06-08 21:11:36",
     "temp": 0.0,
@@ -20,13 +20,13 @@
     "vpd_kpa": null
   },
   "intelligence": {
-    "hypothesis": "Dry-down detected in p2; moisture needs follow-up.",
+    "hypothesis": "Insufficient telemetry; awaiting next valid capture.",
     "active_concerns": [
-      "dry:p2"
+      "missing-telemetry"
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_100047.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_200822.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_204003.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
