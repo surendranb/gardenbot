@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-06-08T16:26:14.883268",
+  "timestamp": "2026-06-08T16:57:57.545045",
   "sensors": {
-    "timestamp": "2026-06-08 16:26:09",
-    "temp": 36.99,
-    "hum": 48.64,
-    "light": 869,
-    "p2": 608,
-    "press": 1002.6,
-    "gas": 63.39,
-    "db": -25.2
+    "timestamp": "2026-06-08 16:57:52",
+    "temp": 37.06,
+    "hum": 48.2,
+    "light": 868,
+    "p2": 614,
+    "press": 1002.58,
+    "gas": 63.92,
+    "db": -24.7
   },
   "moisture_analysis": {
     "p2": {
-      "moisture_pct": 8.0,
+      "moisture_pct": 6.1,
       "is_dry": true
     }
   },
   "environment": {
-    "vpd_kpa": 3.221
+    "vpd_kpa": 3.261
   },
   "intelligence": {
     "hypothesis": "Plants p2 are under dry-down pressure with elevated VPD.",
@@ -27,7 +27,7 @@
     ],
     "temporal_stack": {
       "anchor": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_100047.jpg",
-      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_152247.jpg",
+      "previous": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-08/garden_155432.jpg",
       "current": "/Users/surendran/.openclaw/workspace/gardenbot/media/latest.jpg"
     },
     "vision_observation": {
