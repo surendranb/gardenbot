@@ -251,11 +251,23 @@ def capture_data():
             print("Warden: WARNING: Daemon data is stale (>5 mins). Sensor may have locked up.")
             
         # Append acoustic data
-        data['db'] = capture_volume() or 0.0
+        db = capture_volume() or 0.0
         
-        new_df = pd.DataFrame([data])
+        # Enforce legacy 8-column schema for CSV
+        csv_data = {
+            "timestamp": data["timestamp"],
+            "temp": data.get("temp", 0.0) or 0.0,
+            "hum": data.get("hum", 0.0) or 0.0,
+            "light": data.get("light", 0),
+            "p2": data.get("p2_jade", 0),
+            "press": data.get("press", 0.0) or 0.0,
+            "gas": data.get("gas", 0.0) or 0.0,
+            "db": db
+        }
+        
+        new_df = pd.DataFrame([csv_data])
         save_csv_append(new_df, RAW_CSV_PATH)
-        return data
+        return csv_data
         
     except Exception as e:
         print(f"Warden: Failed to read from BME daemon: {e}")
