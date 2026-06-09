@@ -106197,3 +106197,38 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.26 seconds
 2026-06-10 00:18:11 Staging all assets...
+2026-06-10 00:18:11 Staging changes...
+[main d2009b6f] GardenOS Sync: 2026-06-10 00:18:11
+ 9 files changed, 66 insertions(+), 14 deletions(-)
+2026-06-10 00:18:11 Pushing to GitHub...
+To github.com:surendranb/gardenbot.git
+   625c90e2..d2009b6f  main -> main
+2026-06-10 00:18:15 Sync Successful.
+2026-06-10 01:21:08 --- Sync Start: 2026-06-10 01:21:08 ---
+2026-06-10 01:21:08 Generating gallery metadata...
+2026-06-10 01:21:09 Archiving latest agent reasoning...
+2026-06-10 01:21:09 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/ledger.md
+  - data/observer_context.md
+INFO    -  Documentation built in 0.26 seconds
+2026-06-10 01:21:12 Staging all assets...
