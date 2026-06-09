@@ -234,72 +234,42 @@ def find_active_arduino_port():
     return None
 
 def capture_data():
-    port = find_active_arduino_port()
-    if not port: return None
+    """Reads the latest stabilized telemetry from the background BME daemon."""
+    state_file = "/Users/surendran/.openclaw/workspace/gardenbot/data/bme_state.json"
     
-    ser = None
     try:
-        # Timeout 10s safely outlasts the 5.0s hardware loop
-        ser = serial.Serial(port, 9600, timeout=10)
-        time.sleep(4.0) # Hardware Hardening: Increased settle delay for BME680
-        ser.reset_input_buffer()
-        
-        # --- BME680 BURN-IN & STABILIZATION (SILICA v3.5) ---
-        # Discard the first 10 readings to allow heater stabilization
-        print("Warden: BME680 Burn-in phase (10 samples)...")
-        burn_in_count = 0
-        while burn_in_count < 10:
-            line = ser.readline().decode('utf-8', errors='ignore').strip()
-            if "|" in line:
-                burn_in_count += 1
-                if burn_in_count % 5 == 0:
-                    print(f"  Burn-in progress: {burn_in_count}/10")
-        
-        # Now collect valid readings
-        valid_readings = []
-        print("Warden: Collecting final telemetry samples...")
-        for _ in range(25): 
-            line = ser.readline().decode('utf-8', errors='ignore').strip()
-            if "|" in line:
-                parts = line.split("|")
-                if len(parts) >= 6:
-                    data = {
-                        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                        "temp": float(parts[0]), 
-                        "hum": float(parts[1]), 
-                        "light": int(parts[2]),
-                        "p2": int(parts[3]), # A2 (Jade Plant)
-                        "press": float(parts[4]),
-                        "gas": float(parts[5]),
-                        "db": capture_volume() or 0.0
-                    }
-                    
-                    # Reject "Saturation Signature" (hum=100, press=652) during collection
-                    if data["press"] == 652.01 and data["hum"] == 100.0:
-                        print("  Rejecting Saturation artifact...")
-                        continue
-                        
-                    valid_readings.append(data)
-                    print(f"  Captured sample {len(valid_readings)}/4 (Temp: {data['temp']}C)")
-                    if len(valid_readings) >= 4:
-                        break
-        
-        if valid_readings:
-            # Pick the final stabilized reading
-            data = valid_readings[-1]
+        if not os.path.exists(state_file):
+            print("Warden: BME State file missing. Daemon may be offline.")
+            return fallback_to_last_csv()
             
-            # Final check for Dead Bus
-            if data["temp"] == 0.0 and data["hum"] == 0.0 and data["press"] == 0.0:
-                print("Warden: CRITICAL: BME680 I2C BUS DEAD.")
+        with open(state_file, 'r') as f:
+            data = json.load(f)
             
-            new_df = pd.DataFrame([data])
-            save_csv_append(new_df, RAW_CSV_PATH)
-            return data
+        # Check staleness
+        last_ts = datetime.strptime(data['timestamp'], "%Y-%m-%d %H:%M:%S")
+        if (datetime.now() - last_ts).total_seconds() > 300:
+            print("Warden: WARNING: Daemon data is stale (>5 mins). Sensor may have locked up.")
+            
+        # Append acoustic data
+        data['db'] = capture_volume() or 0.0
+        
+        new_df = pd.DataFrame([data])
+        save_csv_append(new_df, RAW_CSV_PATH)
+        return data
+        
     except Exception as e:
-        print(f"Warden: Capture failed on {port}: {e}")
-    finally:
-        if ser and ser.is_open:
-            ser.close()
+        print(f"Warden: Failed to read from BME daemon: {e}")
+        return fallback_to_last_csv()
+
+def fallback_to_last_csv():
+    try:
+        df = pd.read_csv(RAW_CSV_PATH)
+        if not df.empty:
+            last = df.iloc[-1].to_dict()
+            print(f"Warden: Fallback raw data found: {last}")
+            return last
+    except:
+        pass
     return None
 
 def compute_metrics(raw_row, plants):
