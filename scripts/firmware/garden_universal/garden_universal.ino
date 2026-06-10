@@ -6,8 +6,9 @@
 Adafruit_BME680 bme; // I2C
 
 #define LIGHT_PIN A1
+#define PIR_PIN 2
 
-// Moisture pin configured for single-plant architecture (Mexican Mint)
+// Moisture pin configured for Jade Plant (P2)
 const int PLANT_PINS[] = {A2};
 const int NUM_PLANTS = 1;
 const int SAMPLES = 50;
@@ -19,27 +20,27 @@ void setup() {
   if (!bme.begin(0x76) && !bme.begin(0x77)) {
     Serial.println(F("Could not find a valid BME680 sensor, check wiring!"));
   } else {
-    // Set up oversampling and filter initialization
     bme.setTemperatureOversampling(BME680_OS_8X);
     bme.setHumidityOversampling(BME680_OS_2X);
     bme.setPressureOversampling(BME680_OS_4X);
     bme.setIIRFilterSize(BME680_FILTER_SIZE_3);
-    bme.setGasHeater(320, 150); // 320*C for 150 ms
+    bme.setGasHeater(320, 150); 
   }
 
   pinMode(LIGHT_PIN, INPUT);
+  pinMode(PIR_PIN, INPUT);
   for(int i=0; i<NUM_PLANTS; i++) {
     pinMode(PLANT_PINS[i], INPUT);
   }
 
-  Serial.println(F("--- GARDENOS FIRMWARE v2.2 (BME680) TARGETED ---"));
+  Serial.println(F("--- GARDENOS FIRMWARE v3.0 (UNIVERSAL) ---"));
   Serial.println(F("GARDEN_UNIVERSAL_READY"));
 }
 
 int getAveragedRead(int pin) {
   long sum = 0;
-  analogRead(pin); // Switch mux
-  delay(20);       // Longer settling time
+  analogRead(pin); 
+  delay(20);       
 
   for(int i=0; i<SAMPLES; i++) {
     sum += analogRead(pin);
@@ -62,8 +63,9 @@ void loop() {
   }
 
   int light = getAveragedRead(LIGHT_PIN);
+  int motion = digitalRead(PIR_PIN);
 
-  // Output: TEMP|HUM|LIGHT|A2|PRESS|GAS
+  // Output format: TEMP|HUM|LIGHT|JADE|PRESS|GAS|PIR
   Serial.print(t); Serial.print("|");
   Serial.print(h); Serial.print("|");
   Serial.print(light);
@@ -76,6 +78,8 @@ void loop() {
   Serial.print(p);
   Serial.print("|");
   Serial.print(g);
+  Serial.print("|");
+  Serial.print(motion);
   Serial.println();
 
   delay(5000);
