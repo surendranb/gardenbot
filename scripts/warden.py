@@ -56,8 +56,8 @@ def capture_data():
             line = ser.readline().decode('utf-8', errors='ignore').strip()
             if "|" in line:
                 parts = line.split("|")
-                if len(parts) >= 6:
-                    t, h, l, a2, p, g = map(float, parts)
+                if len(parts) >= 7:
+                    t, h, l, a2, p, g, pir = map(float, parts[:7])
                     
                     # Detect BME failure (Zeros)
                     if t == 0.0 and h == 0.0:
@@ -66,7 +66,7 @@ def capture_data():
                     readings.append({
                         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                         "temp": t, "hum": h, "light": int(l), "p2": int(a2),
-                        "press": p, "gas": g, "db": 0.0 # dB added later
+                        "press": p, "gas": g, "pir": int(pir), "db": 0.0
                     })
                     print(f"  Sample {len(readings)}/3 captured.")
                     if len(readings) >= 3:
