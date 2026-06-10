@@ -63210,3 +63210,16 @@ CV2 failed: Capture failed. Fallback to imagesnap...
 Vision failed: [Errno 2] No such file or directory: 'imagesnap'
 Capture error: [Errno 2] No such file or directory: 'imagesnap'
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-10 05:48:59 [PULSE] Pulse Complete.
+2026-06-10 07:19:22 [PULSE] Starting Pulse...
+2026-06-10 07:19:22 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Warden: WARNING: Daemon data is stale (>5 mins). Sensor may have locked up.
+Listening to the room for 5 seconds...
+Acoustic Capture Failed: Command '['/opt/homebrew/bin/ffmpeg', '-y', '-f', 'avfoundation', '-i', ':0', '-t', '5', '-filter:a', 'volumedetect', '-f', 'null', '/dev/null']' timed out after 10 seconds
+Warden: Snapshot saved to /Users/surendran/.openclaw/workspace/gardenbot/data/current_snapshot.json
+Warden: Run complete.
+Vision: Camera Warmup (AE/AWB Stabilization)...
+CV2 failed: Capture failed. Fallback to imagesnap...
+Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+Capture error: [Errno 2] No such file or directory: 'imagesnap'
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
