@@ -1,5 +1,5 @@
 # 📝 SILICA v3.0: High-Fidelity Biological Context
-Generated: 2026-06-10 07:20:30
+Generated: 2026-06-10 08:29:23
 
 ## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS
 ### 🎭 1A. THE PERMANENT MODEL (SILICA Ledger)
@@ -17,10 +17,10 @@ Generated: 2026-06-10 07:20:30
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ### 🕒 1B. THE DYNAMIC SNAPSHOT
-- **TIME OF AUDIT**: 07:20
+- **TIME OF AUDIT**: 08:29
 - **HUMAN OCCUPANCY**: LOW
-- **FANS STATUS (Acoustic Registry)**: UNKNOWN
-- **EMPIRICAL PROOF**: N/A
+- **FANS STATUS (Acoustic Registry)**: OFF (Silent)
+- **EMPIRICAL PROOF**: -36.8 dB (Baseline Floor)
 - **BIOME STATE**: REST (Night/Stagnant Recovery)
 
 - Outside Weather: Unknown, Unknown°C, Humidity: Unknown%
@@ -85,8 +85,8 @@ Audit Date: 2026-06-09 13:38 IST
 
 ## 🧠 5. BIOLOGICAL TEMPO
 #### 🌡️ VPD WINDOWS
-- **4h Pulse**: 2.946 kPa | **24h Cycle**: 3.003 kPa
-#### 💧 JADE HYDRATION: 79.1% (Current) vs 38.5% (24h Avg)
+- **4h Pulse**: 2.943 kPa | **24h Cycle**: 2.996 kPa
+#### 💧 JADE HYDRATION: 78.2% (Current) vs 40.5% (24h Avg)
 
 ## 🎥 6. VISUAL GROUND-TRUTH
 ```json
@@ -113,12 +113,12 @@ Audit Date: 2026-06-09 13:38 IST
 ## 🌡️ 7. RAW TELEMETRY
 ```csv
 timestamp,temp,hum,light,p2,press,gas,db
-2026-06-09 20:38:36,,,824,368,,,-28.4
-2026-06-09 22:02:09,32.59,39.42,836,403,1006.58,34.23,-19.6
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-29.8
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-39.1
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,0.0
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-36.8
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-35.8
 2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,0.0
+2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-34.9
+2026-06-09 22:09:50,32.57,40.35,833,406,1006.58,56.59,-36.8
 ```
