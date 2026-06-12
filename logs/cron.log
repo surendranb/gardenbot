@@ -64310,3 +64310,17 @@ CV2 failed: Capture failed. Fallback to imagesnap...
 Vision failed: [Errno 2] No such file or directory: 'imagesnap'
 Capture error: [Errno 2] No such file or directory: 'imagesnap'
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-12 02:52:05 [PULSE] Pulse Complete.
+2026-06-12 05:46:01 [PULSE] Starting Pulse...
+2026-06-12 05:46:01 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Starting Warden V3.6 at 2026-06-12 05:46:02.466842
+Warden: BME680 Settle phase (3 samples)...
+  Sample 1/3 captured.
+  Sample 2/3 captured.
+  Sample 3/3 captured.
+Warden: Telemetry verified. Temp: 35.63C
+Vision: Camera Warmup (AE/AWB Stabilization)...
+CV2 failed: Capture failed. Fallback to imagesnap...
+Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+Capture error: [Errno 2] No such file or directory: 'imagesnap'
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
