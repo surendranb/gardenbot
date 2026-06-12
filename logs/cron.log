@@ -64497,3 +64497,20 @@ CV2 failed: Cannot open camera. Fallback to imagesnap...
 Vision failed: [Errno 2] No such file or directory: 'imagesnap'
 Capture error: [Errno 2] No such file or directory: 'imagesnap'
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-12 13:47:35 [PULSE] Pulse Complete.
+2026-06-12 14:17:35 [PULSE] Starting Pulse...
+2026-06-12 14:17:35 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Starting Warden V3.6 at 2026-06-12 14:17:37.036752
+Warden: BME680 Settle phase (3 samples)...
+  Sample 1/3 captured.
+  Sample 2/3 captured.
+  Sample 3/3 captured.
+Warden: Telemetry verified. Temp: 35.26C
+[ WARN:0@0.248] global cap.cpp:459 open VIDEOIO(AVFOUNDATION): raised unknown C++ exception!
+
+
+[ WARN:0@0.253] global cap_ffmpeg_impl.hpp:1217 open VIDEOIO/FFMPEG: Failed list devices for backend avfoundation
+CV2 failed: Cannot open camera. Fallback to imagesnap...
+Vision failed: [Errno 2] No such file or directory: 'imagesnap'
+Capture error: [Errno 2] No such file or directory: 'imagesnap'
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
