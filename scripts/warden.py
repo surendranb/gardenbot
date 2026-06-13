@@ -28,7 +28,14 @@ def find_active_arduino_port():
             return port.device
     return None
 
-def capture_volume():
+# Add path to import the acoustic warden
+sys.path.append(os.path.dirname(__file__))
+try:
+    from acoustic_warden import capture_volume
+except ImportError:
+    def capture_volume(): return 0.0
+
+def capture_volume_old():
     # Placeholder for acoustic warden capture logic
     return 0.0
 
