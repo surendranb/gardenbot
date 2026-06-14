@@ -65545,3 +65545,26 @@ Vision: Sending 6 images to gemini-flash-latest...
   Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_151635.jpg
 Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-14 15:17:04 [PULSE] Pulse Complete.
+2026-06-14 15:47:04 [PULSE] Starting Pulse...
+2026-06-14 15:47:04 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Starting Warden V3.6 at 2026-06-14 15:47:05.376743
+Warden: BME680 Settle phase (3 samples)...
+  Sample 1/3 captured.
+  Sample 2/3 captured.
+  Sample 3/3 captured.
+Listening to the room for 5 seconds...
+Warden: Telemetry verified. Temp: 35.18C
+Vision: Camera Warmup (AE/AWB Stabilization)...
+Vision: Mean Pixel Intensity: 3.24
+Vision: WARNING: Frame underexposed. Attempting Recovery Capture...
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 6 images to gemini-flash-latest...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-10/garden_130629.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_080404.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_154729.jpg
+Vision JSON saved to /Users/surendran/.openclaw/workspace/gardenbot/data/vision_observation.json and history appended to /Users/surendran/.openclaw/workspace/gardenbot/logs/vision_history.jsonl
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
