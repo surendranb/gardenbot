@@ -253,13 +253,6 @@ def main():
             "- **ACTION REQUIRED**: Manually activate cooling systems immediately. VPD is reaching lethal succulent thresholds.\n\n"
         )
 
-    if failure_count > 0:
-        health_warning += (
-            "### ⚠️ 1D. TELEMETRY HEALTH ALERT\n"
-            f"- **STATUS**: DEGRADED (Hardware Instability Detected)\n"
-            f"- **FAILURE SIGNATURES DETECTED**: {failure_count} points in last window.\n"
-        )
-
     content = f"# 📝 SILICA v3.0: High-Fidelity Biological Context\nGenerated: {timestamp}\n\n"
     content += f"## 🏛️ 1. IDENTITY & WORLD CONSTRAINTS\n{dynamic_world}\n{weather_info}\n\n{health_warning}\n"
     content += f"## 🧠 2. AGENT CALIBRATION\n{calibration}\n\n"
