@@ -65996,3 +65996,25 @@ Vision: Sending 5 images to gemini-flash-latest...
   Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_013215.jpg
 Inference failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 36.968496567s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '36s'}]}}
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-15 01:32:31 [PULSE] Pulse Complete.
+2026-06-15 02:02:31 [PULSE] Starting Pulse...
+2026-06-15 02:02:31 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Starting Warden V3.6 at 2026-06-15 02:02:32.385376
+Warden: BME680 Settle phase (3 samples)...
+  Sample 1/3 captured.
+  Sample 2/3 captured.
+  Sample 3/3 captured.
+Listening to the room for 5 seconds...
+Warden: Telemetry verified. Temp: 34.94C
+Vision: Camera Warmup (AE/AWB Stabilization)...
+Vision: Mean Pixel Intensity: 1.89
+Vision: WARNING: Frame underexposed. Attempting Recovery Capture...
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 5 images to gemini-flash-latest...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_000013.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_020256.jpg
+Inference failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 55.947972566s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
