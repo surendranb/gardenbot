@@ -5,7 +5,7 @@ Project SILICA is the centralized biological and technical intelligence framewor
 ---
 
 ## 1. THE MISSION & PERSONA
-- **The Mission**: To ensure plants thrive in a high-VPD indoor environment in Chennai through intelligence-led manual care.
+- **The Mission**: To help a single Jade plant thrive in a high-VPD indoor environment in Chennai through intelligence-led manual care.
 - **The Persona**: An expert agricultural statistician with a specialty in tropical meteorology. 
 - **Core Philosophy**: "Local Truth over Textbook Guesses." Prioritize visual turgidity, deterministic math (Vapor Pressure Deficit), and acoustic ground-truth over raw sensor alarms.
 
@@ -20,11 +20,11 @@ Project SILICA is the centralized biological and technical intelligence framewor
         - **Fan N (North)**: Auxiliary cooling.
         - **AC**: Last resort at 26°C (Note: Tanks humidity, spikes VPD).
 - **Physical Layout**: 
-    - **P2**: Jade Plant / Crassula ovata (Black Pot | Sensor A2 | Soil).
+    - **One plant**: Jade Plant / Crassula ovata (Black Pot | Soil moisture sensor | Indoor desk).
     - **Unmonitored**: Self-Watering Pot (White Cylindrical Object in Background | Pending Setup).
 
 ## 2.5. BIOLOGICAL BASELINE 
-**1. Jade Plant (Crassula ovata)**
+**Jade Plant (Crassula ovata)**
 - **Care Type**: Succulent.
 - **Watering Strategy**: Strict "Soak and Dry". Because it is currently in a shallow dish lacking drainage, watering must be extremely conservative to prevent root rot. Allow soil to dry completely before watering.
 - **Visual Turgidity**: Healthy leaves are firm, plump, and upright. Underwatered leaves become soft, wrinkled, or flat. Overwatered leaves may turn yellow and drop off easily.
@@ -45,9 +45,9 @@ To prevent I2C signal dropouts and "disturbed" telemetry, the following physical
 ## 4. SYSTEM ARCHITECTURE
 The system is decoupled into four functional layers:
 
-1. **Collection (`launchd`)**: `pulse.sh` runs every 30m. `warden.py` is prioritized for **`/dev/cu.usbmodem1201`** (Speed Hack) to ensure instantaneous capture.
+1. **Collection (`launchd`)**: `pulse.sh` runs every 30m. `warden.py` captures sensor data from the Arduino.
 2. **Context (SILICA)**: `prep_observer_context.py` synthesizes telemetry, vision observation, and human actions into `data/observer_context.md`.
-3. **Reasoning (OpenClaw)**: The Warden (Agent) reconciles data conflicts every 3 hours and broadcasts targeted action plans.
+3. **Reasoning (OpenClaw)**: The Warden (Agent) reconciles data conflicts every 4 hours and broadcasts targeted action plans.
 4. **Sharing (Sync)**: `sync.sh` builds the MkDocs site and commits all data to GitHub Pages.
 
 ---
@@ -58,7 +58,7 @@ The system is decoupled into four functional layers:
 - **Real-time Truth**: All GitHub Raw data fetches MUST use cache-busting (**`?t=Date.now()`**) to bypass the 5-minute CDN delay.
 
 ---
-*Last Hardened: May 27, 2026 (Reflecting successful BME680 recovery)*
+*Last Hardened: June 16, 2026 (Cleaned legacy multi-plant references)*
 
 ---
 

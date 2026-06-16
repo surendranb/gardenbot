@@ -1,12 +1,12 @@
 # 🌿 Gardenbot: Master State Ledger
 
 ## 🎯 Global Vision
-Project SILICA. A centralized, self-learning biological and technical intelligence framework for an indoor garden in Chennai. Prioritizes "Local Truth" (visual turgidity, Vapor Pressure Deficit, acoustic confirmation) over textbook guesses.
+Project SILICA. A centralized, self-learning biological and technical intelligence framework for an indoor Jade plant in Chennai. Prioritizes "Local Truth" (visual turgidity, Vapor Pressure Deficit, acoustic confirmation) over textbook guesses.
 
 ## 🛠 Active Technical Stack
-- **Hardware**: ESP/Arduino for Moisture (A0-A3), BME680 (Address 0x76 DHT/VPD), Dual Fans (South/North).
+- **Hardware**: ESP/Arduino for soil moisture sensing, BME680 (Address 0x76 for temperature/humidity/pressure/gas), Dual Fans (South/North).
 - **Data Pipeline**: `launchd` triggers `pulse.sh` (30m intervals), executing `scripts/warden.py`.
-- **Reasoning**: Context built via `prep_observer_context.py` into `observer_context.md`, then reasoned upon by the OpenClaw agent (`jobs.json`).
+- **Reasoning**: Context built via `prep_observer_context.py` into `observer_context.md`, then reasoned upon by the OpenClaw Garden Warden agent.
 - **Publishing**: `sync.sh` deployed into an MkDocs site via regular GH Pages commits.
 
 ## 🚦 Current Development State
