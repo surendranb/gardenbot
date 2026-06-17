@@ -114628,3 +114628,44 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.28 seconds
 2026-06-17 07:28:17 Staging all assets...
+2026-06-17 07:28:17 Staging changes...
+[main 01034bee] GardenOS Sync: 2026-06-17 07:28:17
+ 7 files changed, 58 insertions(+), 5 deletions(-)
+2026-06-17 07:28:17 Pushing to GitHub...
+Connection to github.com closed by remote host.
+client_loop: send disconnect: Broken pipe
+send-pack: unexpected disconnect while reading sideband packet
+fatal: the remote end hung up unexpectedly
+2026-06-17 07:43:22 Push failed; pulling remote and retrying.
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+Everything up-to-date
+2026-06-17 07:43:25 Sync Successful after rebasing.
+2026-06-17 08:14:50 --- Sync Start: 2026-06-17 08:14:50 ---
+2026-06-17 08:14:50 Generating gallery metadata...
+2026-06-17 08:14:50 Archiving latest agent reasoning...
+2026-06-17 08:14:50 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/ledger.md
+  - data/observer_context.md
+INFO    -  Documentation built in 0.28 seconds
+2026-06-17 08:18:58 Staging all assets...
