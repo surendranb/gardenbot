@@ -114549,3 +114549,47 @@ INFO    -  The following pages exist in the docs directory, but are not included
   - data/observer_context.md
 INFO    -  Documentation built in 0.28 seconds
 2026-06-17 05:52:42 Staging all assets...
+2026-06-17 05:52:42 Staging changes...
+[main c7bc60f4] GardenOS Sync: 2026-06-17 05:52:42
+ 9 files changed, 76 insertions(+), 17 deletions(-)
+2026-06-17 05:52:42 Pushing to GitHub...
+kex_exchange_identification: read: Operation timed out
+banner exchange: Connection to 20.207.73.82 port 22: Operation timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+2026-06-17 06:09:47 Push failed; pulling remote and retrying.
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+To github.com:surendranb/gardenbot.git
+   813966f7..c7bc60f4  main -> main
+2026-06-17 06:09:51 Sync Successful after rebasing.
+2026-06-17 06:41:16 --- Sync Start: 2026-06-17 06:41:16 ---
+2026-06-17 06:41:16 Generating gallery metadata...
+2026-06-17 06:41:16 Archiving latest agent reasoning...
+2026-06-17 06:41:16 Building site...
+
+[31m │  ⚠  Warning from the Material for MkDocs team[0m
+[31m │[0m
+[31m │[0m  MkDocs 2.0, the underlying framework of Material for MkDocs,
+[31m │[0m  will introduce backward-incompatible changes, including:
+[31m │[0m
+[31m │  × [0mAll plugins will stop working – the plugin system has been removed
+[31m │  × [0mAll theme overrides will break – the theming system has been rewritten
+[31m │  × [0mNo migration path exists – existing projects cannot be upgraded
+[31m │  × [0mClosed contribution model – community members can't report bugs
+[31m │  × [0mCurrently unlicensed – unsuitable for production use
+[31m │[0m
+[31m │[0m  Our full analysis:
+[31m │[0m
+[31m │[0m  [4mhttps://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/[0m
+[0m
+WARNING -  Unrecognised configuration name: surendran
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/surendran/.openclaw/workspace/gardenbot/docs
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - data/ledger.md
+  - data/observer_context.md
+INFO    -  Documentation built in 0.28 seconds
+2026-06-17 06:41:20 Staging all assets...
