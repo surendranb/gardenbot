@@ -68016,3 +68016,25 @@ Vision: Sending 5 images to gemini-flash-latest...
   Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-17/garden_130753.jpg
 Inference failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
 Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
+2026-06-17 13:08:20 [PULSE] Pulse Complete.
+2026-06-17 13:38:20 [PULSE] Starting Pulse...
+2026-06-17 13:38:20 [PULSE] Found Arduino at /dev/cu.usbmodem11201
+Starting Warden V3.6 at 2026-06-17 13:38:21.521897
+Warden: BME680 Settle phase (3 samples)...
+  Sample 1/3 captured.
+  Sample 2/3 captured.
+  Sample 3/3 captured.
+Listening to the room for 5 seconds...
+Warden: Telemetry verified. Temp: 35.89C
+Vision: Camera Warmup (AE/AWB Stabilization)...
+Vision: Mean Pixel Intensity: 135.65
+Vision: Loaded local context from /Users/surendran/.openclaw/workspace/gardenbot/data/vision_context.json
+Vision: Sending 6 images to gemini-flash-latest...
+  Added EARLIEST: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg
+  Added T-4: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg
+  Added T-3: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-16/garden_143048.jpg
+  Added T-2: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-17/garden_090101.jpg
+  Added T-1: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-17/garden_130753.jpg
+  Added CURRENT: /Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-17/garden_133845.jpg
+Inference failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Context saved to /Users/surendran/.openclaw/workspace/gardenbot/data/observer_context.md
