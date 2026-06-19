@@ -1,972 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 GardenBot Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: rgba(22, 26, 34, 0.7);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-green: #10b981;
+            --accent-green-glow: rgba(16, 185, 129, 0.2);
+            --accent-blue: #3b82f6;
+            --accent-red: #ef4444;
+            --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="High-Fidelity Botanical Agent">
-      
-      
-      
-        <link rel="canonical" href="https://surendranb.github.io/gardenbot/">
-      
-      
-      
-        <link rel="next" href="architecture/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>GardenOS</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            min-height: 100vh;
+            padding: 2rem;
+            background-image: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
+        }
 
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 1.5rem;
+        }
 
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-<header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="GardenOS" class="md-header__button md-logo" aria-label="GardenOS" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+        .refresh-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
 
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            GardenOS
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Dashboard
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-      
-    
-    
-    
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/surendranb/gardenbot" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-      </div>
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Dashboard
+        .refresh-btn:hover {
+            border-color: var(--accent-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
 
-      </a>
-    </li>
-  
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
 
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="architecture/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Architecture
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="gallery/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Gallery
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="blog/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  GardenOS Dev Blog
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="GardenOS" class="md-nav__button md-logo" aria-label="GardenOS" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    GardenOS
-  </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/surendranb/gardenbot" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dashboard
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="gallery/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gallery
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-    
-  
-  
-    <li class="md-nav__item">
-      <a href="blog/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GardenOS Dev Blog
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-  
-
-
-
-  
-  
-
-
-  <h1>Dashboard</h1>
-
-<style>
-/* Modern Glassmorphic Dashboard */
-.md-content__inner { max-width: none !important; margin: 0 !important; padding: 1rem 2rem !important; }
-.md-main__inner { max-width: none !important; }
-
-/* Force Single Row UI */
-h1 { display: none !important; }
-.md-tabs { display: none !important; }
-.status-header { display: none !important; }
-
-.dash-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1.5rem;
-}
-.dash-card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-}
-.val-large { font-size: 2.4em; font-weight: 800; letter-spacing: -0.02em; }
-.label-sub { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.6rem; display: block; font-weight: 600; }
-.vision-container {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #334155;
-    background: #000;
-}
-.chart-container {
-    background: #1e293b;
-    padding: 1.5rem;
-    border-radius: 16px;
-    border: 1px solid #334155;
-    height: 380px;
-    margin-top: 0.5rem;
-}
-.chart-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 1.5rem;
-}
-
-
-.db-meter {
-    background: #0f172a;
-    height: 6px;
-    border-radius: 3px;
-    margin-top: 4px;
-    overflow: hidden;
-}
-.db-fill {
-    height: 100%;
-    background: #10b981;
-    transition: width 0.5s ease;
-}
-.stale-warning { color: #facc15; font-size: 0.65rem; font-weight: 700; margin-left: 8px; animation: pulse-stale 2s infinite; display: inline-flex; align-items: center; gap: 4px; }
-@keyframes pulse-stale { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
-</style>
-
-<!-- Hidden Native Status Header (CSS display:none) -->
-<div class="status-header">
-    <span id="reg-status">SYNCHRONIZED</span>
-    <span id="sync-status">--:--:--</span>
-</div>
-
-<div class="dash-grid">
-    <!-- Atmosphere -->
-    <div class="dash-card">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-            <span class="label-sub">🌡 ATMOMSPHERIC STATISTICS</span>
-            <span id="val-state" style="font-size: 0.65rem; color: #4ade80; border: 1px solid #4ade80; padding: 1px 6px; border-radius: 4px; font-weight: bold;">STABLE</span>
-        </div>
-        <div style="display: flex; align-items: baseline; gap: 1.2rem; margin-top: 0.5rem;">
-            <div style="color:#f97316;">
-                <span id="val-temp" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">°C</span>
-                <span id="stale-temp" class="stale-warning" style="display:none;">⚠️ STALE</span>
-            </div>
-            <div style="color:#0ea5e9;">
-                <span id="val-hum" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;">%</span>
-                <span id="stale-hum" class="stale-warning" style="display:none;">⚠️ STALE</span>
-            </div>
-            <div style="color:#a855f7; margin-left: auto;"><span id="val-vpd" class="val-large">--</span><span style="font-size: 1rem; opacity: 0.7;"> kPa</span></div>
-        </div>
-
-        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #334155; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.8rem;">
-            <div>
-                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">LIGHT INTENSITY</span>
-                <span id="val-light" style="color:#f59e0b; font-weight: 700; font-size: 1.1rem;">--</span>
-                <span id="stale-light" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
-            </div>
-            <div>
-                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">ACOUSTIC FLOOR</span>
-                <span id="val-db" style="color:#10b981; font-weight: 700; font-size: 1.1rem;">-- dB</span>
-                <span id="stale-db" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
-                <div class="db-meter"><div id="db-fill" class="db-fill" style="width: 0%"></div></div>
-            </div>
-            <div>
-                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">AIR QUALITY (VOC)</span>
-                <span id="val-gas" style="color:#a855f7; font-weight: 700; font-size: 1.1rem;">-- kΩ</span>
-                <span id="stale-gas" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
-            </div>
-            <div>
-                <span class="label-sub" style="font-size: 0.6rem; margin-bottom: 2px;">BARO PRESSURE</span>
-                <span id="val-press" style="color:#f8fafc; font-weight: 700; font-size: 1.1rem;">-- hPa</span>
-                <span id="stale-press" class="stale-warning" style="display:none; font-size: 0.55rem;">⚠️ STALE</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Vision -->
-    <div class="dash-card">
-        <span class="label-sub">📸 OPTICAL GROUND-TRUTH</span>
-        <div class="vision-container">
-            <img id="live-photo" src="https://raw.githubusercontent.com/surendranb/gardenbot/main/media/latest.jpg" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-        </div>
-    </div>
-</div>
-
-<div class="chart-grid">
-    <!-- Chart: Atmosphere -->
-    <div class="chart-full">
-        <span class="label-sub">📊 ATMOSPHERIC DYNAMICS (48H)</span>
-        <div class="chart-container">
-            <canvas id="atmosChart"></canvas>
-        </div>
-    </div>
-
-    <!-- Chart: Kinetic Registry -->
-    <div>
-        <span class="label-sub">🔊 KINETIC & CHEMICAL REGISTRY (48H)</span>
-        <div class="chart-container">
-            <canvas id="kineticChart"></canvas>
-        </div>
-    </div>
-
-    <!-- Chart: Vitality -->
-    <div>
-        <span class="label-sub">📈 METABOLIC VITALITY (48H)</span>
-        <div class="chart-container">
-            <canvas id="vitalityChart"></canvas>
-        </div>
-    </div>
-
-    <!-- Chart: VPD (Stress) -->
-    <div>
-        <span class="label-sub">🧪 TRANSPIRATION PRESSURE (VPD)</span>
-        <div class="chart-container">
-            <canvas id="vpdChart"></canvas>
-        </div>
-    </div>
-</div>
-
-<h2 style="margin-top: 4rem !important; border-bottom: 1px solid #334155; padding-bottom: 10px;">The Warden's Ledger</h2>
-<div id="warden-log-output" style="background: #0f172a; padding: 25px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.7; border: 1px solid #334155; color: #cbd5e1;">
-    Accessing neural audit...
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Inject Unified Single-Row Nav & Status into the MkDocs Top Header
-        const headerInner = document.querySelector('.md-header__inner');
-        if(headerInner) {
-            const topBar = document.createElement('div');
-            topBar.style.display = 'flex';
-            topBar.style.alignItems = 'center';
-            topBar.style.gap = '24px';
-            topBar.style.marginLeft = 'auto'; // push right
-            topBar.style.marginRight = '16px'; // before github logo
-            topBar.style.fontSize = '0.85rem';
-
-            topBar.innerHTML = `
-                <a href="." style="color:#ffffff; font-weight:600; text-decoration:none">Dashboard</a>
-                <a href="architecture/" style="color:#94a3b8; text-decoration:none">Architecture</a>
-                <a href="gallery/" style="color:#94a3b8; text-decoration:none">Gallery</a>
-                <a href="blog/" style="color:#94a3b8; text-decoration:none">Dev Blog</a>
-                <div style="width:1px; height:15px; background:#334155;"></div>
-                <div style="display:flex; gap:10px; align-items:center;">
-                    <span style="font-weight:700; color:#f8fafc; letter-spacing:0.05em;">STATUS: <span id="nav-reg-status" style="color:#4ade80;">SYNC</span></span>
-                    <span id="nav-sync-status" style="color:#4ade80; font-family:'JetBrains Mono', monospace; font-weight:bold;">--:--:--</span>
-                </div>
-            `;
-            const sourceNode = document.querySelector('.md-header__source');
-            if(sourceNode) {
-                headerInner.insertBefore(topBar, sourceNode);
-            } else {
-                headerInner.appendChild(topBar);
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: 1fr;
             }
         }
-    });
 
-    const GITHUB_RAW = "https://raw.githubusercontent.com/surendranb/gardenbot/main/";
-    const CACHE_BUST = "?t=" + Date.now();
-    const CSV_METRICS = GITHUB_RAW + "data/metrics.csv" + CACHE_BUST;
-    const CSV_TELEMETRY = GITHUB_RAW + "data/telemetry.csv" + CACHE_BUST;
-    const CSV_WEATHER = GITHUB_RAW + "data/weather.csv" + CACHE_BUST;
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
 
-    // V3 Palette
-    const PALETTE = {
-        temp: '#f97316', hum: '#0ea5e9', light: '#f59e0b',
-        db: '#10b981', voc: '#a855f7',
-        p1: '#2dd4bf', p2: '#f59e0b', p3: '#f43f5e',
-        grid: '#334155', text: '#94a3b8', label: '#64748b'
-    };
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            border-left: 3px solid var(--accent-green);
+            padding-left: 0.5rem;
+        }
 
-    function parseCSV(url) {
-        return new Promise((resolve, reject) => {
-            Papa.parse(url, { download: true, header: true, skipEmptyLines: true, 
-                complete: (r) => resolve(r.data), error: (e) => reject(e) });
-        });
-    }
+        /* KPI Panel */
+        .kpi-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
 
-    function parseTimestamp(value) {
-        const normalized = String(value || "").replace(" ", "T");
-        const d = new Date(normalized);
-        return isNaN(d.getTime()) ? null : d;
-    }
-
-    function formatXAxis(timestamp) {
-        const d = parseTimestamp(timestamp);
-        if (!d) return "";
-        return d.toLocaleString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-    }
-
-    function timeSince(timestamp) {
-        const d = parseTimestamp(timestamp);
-        if (!d) return "";
-        const diff = (new Date() - d) / (1000 * 60); // minutes
-        if (diff < 60) return Math.round(diff) + "m ago";
-        return (diff / 60).toFixed(1) + "h ago";
-    }
-
-    function findLastValid(data, key, minVal = 0.001) {
-        for (let i = data.length - 1; i >= 0; i--) {
-            const val = parseFloat(data[i][key]);
-            if (!isNaN(val) && val > minVal) {
-                return { value: val, timestamp: data[i].timestamp, isStale: i < data.length - 1 };
+        @media (max-width: 768px) {
+            .kpi-container {
+                grid-template-columns: 1fr 1fr;
             }
         }
-        return { value: null, timestamp: null, isStale: false };
-    }
 
-    function lastHours(data, hours) {
-        if (!data.length) return data;
-        const points = data
-            .map(row => ({ row, dt: parseTimestamp(row.timestamp) }))
-            .filter(item => item.dt)
-            .sort((a, b) => a.dt - b.dt);
-        if (!points.length) return data;
-        const cutoff = points[points.length - 1].dt.getTime() - (hours * 60 * 60 * 1000);
-        return points.filter(item => item.dt.getTime() >= cutoff).map(item => item.row);
-    }
+        .kpi-card {
+            background: rgba(30, 37, 48, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
 
-    async function refresh() {
-        try {
-            const [met, tel, wea] = await Promise.all([parseCSV(CSV_METRICS), parseCSV(CSV_TELEMETRY), parseCSV(CSV_WEATHER)]);
-            if (!met.length || !tel.length) return;
+        .kpi-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
 
-            const lM = met[met.length - 1];
-            const lT = tel[tel.length - 1];
-            const lW = wea.length ? wea[wea.length - 1] : {};
+        .kpi-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
 
-            // Metric Updates with Resilience Logic
-            const metrics = [
-                { id: 'temp', key: 'temp', min: 1.0, precision: 1 },
-                { id: 'hum', key: 'hum', min: 1.0, precision: 0 },
-                { id: 'press', key: 'press', min: 900, precision: 0 },
-                { id: 'gas', key: 'gas', min: 0.1, precision: 2 },
-                { id: 'light', key: 'light', min: -0.1, precision: 0 },
-                { id: 'db', key: 'db', min: -100, precision: 1 },
-                { id: 'vpd', key: 'vpd', min: -1.0, precision: 2, source: met }
-            ];
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+        }
 
-            let hardwareWarning = false;
+        .status-healthy { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+        .status-stressed { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+        .status-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
 
-            metrics.forEach(m => {
-                const sourceData = m.source || tel;
-                const res = findLastValid(sourceData, m.key, m.min);
-                const el = document.getElementById(`val-${m.id}`);
-                const staleEl = document.getElementById(`stale-${m.id}`);
+        /* Camera / Photo layout */
+        .photo-frame {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--card-border);
+        }
 
-                if (res.value !== null && el) {
-                    el.textContent = m.precision === 0 ? Math.round(res.value) : res.value.toFixed(m.precision);
-                    if (staleEl) {
-                        if (res.isStale) {
-                            staleEl.textContent = `⚠️ stale (${timeSince(res.timestamp)})`;
-                            staleEl.style.display = 'inline-block';
-                            hardwareWarning = true;
-                        } else {
-                            staleEl.style.display = 'none';
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-timestamp {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+        }
+
+        /* Forms and logger */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            background: rgba(20, 24, 33, 0.8);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 0.75rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+
+        .submit-btn {
+            background: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+            transition: opacity 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* History Tables */
+        .history-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: rgba(30, 37, 48, 0.4);
+            border: 1px solid var(--card-border);
+            padding: 0.75rem;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .history-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .history-body {
+            font-size: 0.95rem;
+        }
+
+        .interpretation-box {
+            background: rgba(16, 185, 129, 0.05);
+            border-left: 4px solid var(--accent-green);
+            padding: 1rem;
+            border-radius: 0 12px 12px 0;
+            margin-top: 1rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 260px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌿 GardenBot Biome Dashboard</h1>
+        <button class="refresh-btn" onclick="fetchData()">🔄 Refresh Data</button>
+    </header>
+
+    <div class="kpi-container">
+        <div class="kpi-card">
+            <div class="kpi-label">Indoor Temp</div>
+            <div class="kpi-value" id="kpi-temp">-- °C</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Soil Moisture</div>
+            <div class="kpi-value" id="kpi-soil">--</div>
+            <span class="status-badge" id="kpi-soil-trend">Stable</span>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Vapor Pressure Deficit</div>
+            <div class="kpi-value" id="kpi-vpd">-- kPa</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-label">Plant Health</div>
+            <div class="kpi-value" id="kpi-health">--</div>
+            <span class="status-badge" id="kpi-health-badge">Unknown</span>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Live Photo and Assessment -->
+        <div class="card">
+            <div class="card-title">Live Vision Ground Truth</div>
+            <div class="photo-frame">
+                <img id="latest-image" src="latest.jpg" alt="Latest Jade Plant Snap" onerror="this.src='https://placehold.co/600x400?text=No+Image+Captured+Yet'">
+                <div class="photo-timestamp" id="image-time">Time: --</div>
+            </div>
+
+            
+            <div class="interpretation-box">
+                <div style="font-weight: 600; margin-bottom: 0.25rem;">Warden's Latest Assessment:</div>
+                <div id="latest-reasoning" style="font-size: 0.95rem; line-height: 1.4;">No interpretations logged yet. Waiting for warden run.</div>
+            </div>
+        </div>
+
+        <!-- Environmental Controls & Log -->
+        <div class="card">
+            <div class="card-title">Log Human Action</div>
+            <form id="action-form" onsubmit="logAction(event)">
+                <div class="form-group">
+                    <label for="action-type">Action</label>
+                    <select id="action-type">
+                        <option value="watering">Watering</option>
+                        <option value="misting">Foliar Misting</option>
+                        <option value="ac_adjustment">AC Adjust (Temperature)</option>
+                        <option value="fertilizer">Starch / Nutrient Application</option>
+                        <option value="manual_audit">Manual Visual Check</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="action-note">Notes</label>
+                    <textarea id="action-note" rows="3" placeholder="Describe the action performed..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Save Action</button>
+            </form>
+            
+            <div style="margin-top: 1.5rem;">
+                <div style="font-weight:600; margin-bottom: 0.5rem; color: var(--text-secondary)">Recent Actions Log</div>
+                <div class="history-list" id="actions-log">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-title">Soil Moisture History</div>
+            <div class="chart-container">
+                <canvas id="soilChart"></canvas>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">VPD & Indoor Temperature</div>
+            <div class="chart-container">
+                <canvas id="vpdChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let soilChartInstance = null;
+        let vpdChartInstance = null;
+
+        async function fetchData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                updateDashboard(data);
+            } catch (error) {
+
+                console.error("Failed to load dashboard data:", error);
+            }
+        }
+
+        function updateDashboard(data) {
+            const telemetry = data.telemetry || [];
+            const interpretations = data.interpretations || [];
+            const humanActions = data.human_actions || [];
+            const vision = data.vision || [];
+
+            // 1. Update KPIs using the last telemetry point
+            if (telemetry.length > 0) {
+                const latest = telemetry[telemetry.length - 1];
+                document.getElementById('kpi-temp').innerText = `${latest.temp}°C`;
+                document.getElementById('kpi-soil').innerText = latest.soil_moisture;
+                document.getElementById('kpi-vpd').innerText = `${(0.61078 * Math.exp((17.27 * latest.temp) / (latest.temp + 237.3)) * (1 - latest.hum/100)).toFixed(2)} kPa`;
+            }
+
+            // Update trend & health from latest interpretation/vision
+            if (interpretations.length > 0) {
+                const latestInterp = interpretations[0];
+                document.getElementById('latest-reasoning').innerText = latestInterp.reasoning;
+                
+                const health = latestInterp.health_status;
+                const healthBadge = document.getElementById('kpi-health-badge');
+                document.getElementById('kpi-health').innerText = health;
+                healthBadge.innerText = latestInterp.watering_action;
+                
+                healthBadge.className = 'status-badge';
+                if (health === 'HEALTHY') {
+                    healthBadge.classList.add('status-healthy');
+                } else if (health === 'STRESSED') {
+                    healthBadge.classList.add('status-stressed');
+                } else {
+                    healthBadge.classList.add('status-warning');
+                }
+            }
+
+            // Update Image Timestamp
+            if (vision.length > 0) {
+                document.getElementById('image-time').innerText = `Captured: ${vision[0].timestamp}`;
+                if (vision[0].image_path) {
+                    // Force refresh image to bypass browser cache
+                    document.getElementById('latest-image').src = `latest.jpg?t=${new Date().getTime()}`;
+                }
+            }
+
+
+            // 2. Load Actions Log
+            const actionsLog = document.getElementById('actions-log');
+            actionsLog.innerHTML = '';
+            humanActions.forEach(action => {
+                const div = document.createElement('div');
+                div.className = 'history-item';
+                div.innerHTML = `
+                    <div class="history-meta">
+                        <strong>${action.action.toUpperCase()}</strong>
+                        <span>${action.timestamp}</span>
+                    </div>
+                    <div class="history-body">${action.note}</div>
+                `;
+                actionsLog.appendChild(div);
+            });
+
+            // 3. Render Charts
+            renderSoilChart(telemetry);
+            renderVpdChart(telemetry);
+        }
+
+        function renderSoilChart(telemetry) {
+            const ctx = document.getElementById('soilChart').getContext('2d');
+            const labels = telemetry.map(t => t.timestamp.split(' ')[1] || t.timestamp);
+            const soilMoisture = telemetry.map(t => t.soil_moisture);
+
+            if (soilChartInstance) {
+                soilChartInstance.destroy();
+            }
+
+            soilChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Soil Moisture (Analog)',
+                        data: soilMoisture,
+                        borderColor: '#10b981',
+                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#9ca3af' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        function renderVpdChart(telemetry) {
+            const ctx = document.getElementById('vpdChart').getContext('2d');
+            const labels = telemetry.map(t => t.timestamp.split(' ')[1] || t.timestamp);
+            const temps = telemetry.map(t => t.temp);
+            const vpds = telemetry.map(t => {
+                const svp = 0.61078 * Math.exp((17.27 * t.temp) / (t.temp + 237.3));
+                return svp * (1 - t.hum / 100);
+            });
+
+            if (vpdChartInstance) {
+                vpdChartInstance.destroy();
+            }
+
+            vpdChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'VPD (kPa)',
+                            data: vpds,
+                            borderColor: '#3b82f6',
+                            borderWidth: 2,
+                            tension: 0.3,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'Temp (°C)',
+                            data: temps,
+                            borderColor: '#f59e0b',
+                            borderWidth: 1.5,
+                            borderDash: [5, 5],
+                            tension: 0.3,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            grid: { color: 'rgba(255,255,255,0.05)' },
+                            ticks: { color: '#9ca3af' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: { color: '#9ca3af' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: { color: '#9ca3af' }
                         }
                     }
                 }
             });
+        }
 
-            // Status Update
-            const regStatus = document.getElementById('nav-reg-status');
-            if (regStatus && hardwareWarning) {
-                regStatus.textContent = "DISTURBED";
-                regStatus.style.color = "#facc15";
-            } else if (regStatus) {
-                regStatus.textContent = "SYNC";
-                regStatus.style.color = "#4ade80";
-            }
-            const syncStatus = document.getElementById('nav-sync-status');
-            if(syncStatus) {
-                syncStatus.textContent = formatXAxis(lT.timestamp);
-                syncStatus.style.color = hardwareWarning ? "#facc15" : "#4ade80";
+        async function logAction(e) {
+            e.preventDefault();
+            const action = document.getElementById('action-type').value;
+            const note = document.getElementById('action-note').value;
+            
+            if (!note) {
+                alert("Please add a note describing your action!");
+                return;
             }
 
-            // DB Display & Meter
-            const db = parseFloat(lT.db) || -60;
-            document.getElementById('val-db').textContent = db.toFixed(1) + " dB";
-            const dbPercent = Math.min(100, Math.max(0, (db + 80) * 1.25)); // Map -80..0 to 0..100
-            document.getElementById('db-fill').style.width = dbPercent + "%";
-
-            // State Inference
-            const vpd = parseFloat(lM.vpd);
-            const stateEl = document.getElementById('val-state');
-            if (vpd > 2.0) { stateEl.textContent = "HIGH STRESS"; stateEl.style.color = "#ef4444"; stateEl.style.borderColor = "#ef4444"; }
-            else if (vpd < 0.5) { stateEl.textContent = "STAGNANT"; stateEl.style.color = "#38bdf8"; stateEl.style.borderColor = "#38bdf8"; }
-            else { stateEl.textContent = "STABLE"; stateEl.style.color = "#4ade80"; stateEl.style.borderColor = "#4ade80"; }
-
-            document.getElementById('live-photo').src = GITHUB_RAW + "media/latest.jpg?t=" + Date.now();
-
-            const m48 = lastHours(met, 48);
-            const t48 = lastHours(tel, 48);
-
-            drawVitality(m48);
-            drawAtmos(t48);
-            drawKinetic(t48);
-            drawVPD(m48);
-
-            // Ledger History
             try {
-                const res = await fetch(GITHUB_RAW + "logs/warden_history.jsonl?t=" + Date.now());
-                if (res.ok) {
-                    const text = await res.text();
-                    const lines = text.trim().split('\n');
-                    let html = '';
-
-                    for (let i = lines.length - 1; i >= 0; i--) {
-                        if (!lines[i]) continue;
-                        try {
-                            const entry = JSON.parse(lines[i]);
-                            const isLatest = (i === lines.length - 1);
-
-                            html += `
-                            <div style="margin-bottom: 20px; border: 1px solid ${isLatest ? '#4ade80' : '#334155'}; border-radius: 8px; padding: 15px; background: ${isLatest ? 'rgba(74, 222, 128, 0.05)' : '#0f172a'}; opacity: ${isLatest ? '1' : '0.6'}; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='${isLatest ? '1' : '0.6'}'">
-                                <div style="font-size: 0.75rem; color: ${isLatest ? '#4ade80' : '#94a3b8'}; margin-bottom: 10px; font-weight: bold; display: flex; justify-content: space-between; border-bottom: 1px solid #334155; padding-bottom: 8px;">
-                                    <span>${isLatest ? '🟢 LATEST AUDIT' : '⏳ HISTORICAL AUDIT'}</span>
-                                    <span>${entry.timestamp}</span>
-                                </div>
-                                <div style="font-size: 0.85rem; padding-top: 5px;">
-                                    ${marked.parse(entry.report)}
-                                </div>
-                            </div>`;
-                        } catch(e) {
-                            console.error("JSON parse error on line", e);
-                        }
-                    }
-
-                    document.getElementById('warden-log-output').innerHTML = html || 'No history available.';
-                    // Remove default container styles so cards sit flush
-                    const container = document.getElementById('warden-log-output');
-                    container.style.padding = '0';
-                    container.style.background = 'transparent';
-                    container.style.border = 'none';
-                }
-            } catch (e) {
-                console.error("Ledger fetch error:", e);
-            }
-        } catch(e) { console.error(e); }
-    }
-
-    const baseOptions = {
-        responsive: true, maintainAspectRatio: false,
-        elements: { point: { radius: 0 }, line: { tension: 0.35, borderWidth: 2, spanGaps: true } },
-        scales: {
-            x: { grid: { display: false }, ticks: { color: PALETTE.label, maxTicksLimit: 12, autoSkip: true } },
-            y: { grid: { color: PALETTE.grid }, ticks: { color: PALETTE.text } }
-        },
-        plugins: { legend: { position: 'top', align: 'end', labels: { color: PALETTE.text, usePointStyle: true, boxWidth: 6, padding: 20, font: { size: 11 } } } }
-    };
-
-    function drawVitality(data) {
-        const ctx = document.getElementById('vitalityChart').getContext('2d');
-        if (window.vChart) window.vChart.destroy();
-        window.vChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: data.map(d => formatXAxis(d.timestamp)),
-                datasets: [
-                    { label: 'Mexican Mint (%)', data: data.map(d => parseFloat(d.p2_pct) || null), borderColor: PALETTE.p2 }
-                ]
-            },
-            options: { ...baseOptions, scales: { ...baseOptions.scales, y: { ...baseOptions.scales.y, min: 0, max: 100, title: { display: true, text: 'MOISTURE (%)', color: PALETTE.label } } } }
-        });
-    }
-
-    function drawAtmos(data) {
-        const ctx = document.getElementById('atmosChart').getContext('2d');
-        if (window.aChart) window.aChart.destroy();
-        window.aChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: data.map(d => formatXAxis(d.timestamp)),
-                datasets: [
-                    { label: 'Temp (°C)', data: data.map(d => parseFloat(d.temp) || null), borderColor: PALETTE.temp, yAxisID: 'y' },
-                    { label: 'Humidity (%)', data: data.map(d => parseFloat(d.hum) || null), borderColor: PALETTE.hum, yAxisID: 'y' },
-                    { label: 'Light Intensity', data: data.map(d => parseFloat(d.light) || null), borderColor: PALETTE.light, yAxisID: 'yRight', fill: true, backgroundColor: 'rgba(245, 158, 11, 0.05)' }
-                ]
-            },
-            options: { 
-                ...baseOptions, 
-                scales: { 
-                    x: baseOptions.scales.x,
-                    y: { ...baseOptions.scales.y, title: { display: true, text: 'T (°C) / H (%)', color: PALETTE.label } },
-                    yRight: { position: 'right', grid: { display: false }, ticks: { color: PALETTE.label }, title: { display: true, text: 'LIGHT (RAW)', color: PALETTE.label } }
-                } 
-            }
-        });
-    }
-
-    function drawKinetic(data) {
-        const ctx = document.getElementById('kineticChart').getContext('2d');
-        if (window.kChart) window.kChart.destroy();
-        window.kChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: data.map(d => formatXAxis(d.timestamp)),
-                datasets: [
-                    { label: 'Acoustics (dB)', data: data.map(d => parseFloat(d.db) || null), borderColor: PALETTE.db, yAxisID: 'y' },
-                    { label: 'VOC Resist (kΩ)', data: data.map(d => parseFloat(d.gas) || null), borderColor: PALETTE.voc, yAxisID: 'yRight' }
-                ]
-            },
-            options: { 
-                ...baseOptions, 
-                scales: { 
-                    x: baseOptions.scales.x,
-                    y: { ...baseOptions.scales.y, min: -80, max: 0, title: { display: true, text: 'ENERGY (dB)', color: PALETTE.label } },
-                    yRight: { position: 'right', grid: { display: false }, ticks: { color: PALETTE.label }, title: { display: true, text: 'CHEM (kΩ)', color: PALETTE.label } }
-                } 
-            }
-        });
-    }
-
-    function drawVPD(data) {
-        const ctx = document.getElementById('vpdChart').getContext('2d');
-        if (window.vpaChart) window.vpaChart.destroy();
-        window.vpaChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: data.map(d => formatXAxis(d.timestamp)),
-                datasets: [{ 
-                    label: 'VPD (kPa)', 
-                    data: data.map(d => parseFloat(d.vpd) || null), 
-                    borderColor: PALETTE.voc,
-                    fill: true,
-                    backgroundColor: 'rgba(168, 85, 247, 0.1)'
-                }]
-            },
-            options: { 
-                ...baseOptions, 
-                scales: { 
-                    ...baseOptions.scales, 
-                    y: { ...baseOptions.scales.y, min: 0, title: { display: true, text: 'STRESS (kPa)', color: PALETTE.label } } 
-                } 
-            }
-        });
-    }
-
-    refresh();
-    setInterval(refresh, 300000);
-</script>
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-  
-
-
-
+                const resp = await fetch('/api/actions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action, note })
+                });
                 
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
-    </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "content.code.copy", "blog"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
+                if (resp.ok) {
+                    document.getElementById('action-note').value = '';
+                    fetchData();
+                } else {
+                    alert("Error logging action!");
+                }
+            } catch (err) {
+                console.error("Failed to log action:", err);
+            }
+        }
+
+        // Initial fetch
+        fetchData();
+    </script>
+</body>
 </html>

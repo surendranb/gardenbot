@@ -1,19 +1,16 @@
-
-__pycache__/
-! .env.example
-.DS_Store
-.env
-.env.*
-.env.local
-.ipynb_checkpoints/
 .venv/
+.venv_mkdocs/
+.env
+.DS_Store
+__pycache__/
 *.pyc
-# Claude
-# Python
-# Secrets
-# System
-CLAUDE.md
-GEMINI.md
-PROJECT_V2_STATUS.md
-Thumbs.db
-local/
+
+# Local Database
+data/garden.db
+
+# OpenClaw agent runtime session states
+.agents/garden_warden/sessions/
+.agents/garden_warden/openclaw-agent.sqlite*
+.openclaw/
+logs/*.log
+logs/*.txt
