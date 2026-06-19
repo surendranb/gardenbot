@@ -428,7 +428,13 @@
             border-radius: 12px;
             padding: 1.5rem;
             background: var(--bg-color);
-            overflow-x: auto;
+            overflow: visible;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: auto !important;
+            min-height: 500px;
         }
     </style>
 </head>
