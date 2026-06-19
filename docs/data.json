@@ -1957,6 +1957,15 @@
   ],
   "interpretations": [
     {
+      "timestamp": "2026-06-19 11:13:30",
+      "vpd": 1.877,
+      "health_status": "STRESSED",
+      "watering_action": "HOLD",
+      "reasoning": "VPD at 1.88 kPa, approaching 2.0 kPa stress threshold. Soil is drying (trend: DRYING). Vision confirms STRESSED turgidity with discoloration. High temps (36\u00b0C) expected. Root health prioritized: maintaining current hydration levels to avoid thermal stress combined with moisture, will re-evaluate in 3 hours.",
+      "slack_message": "Jade status: STRESSED. VPD 1.88 kPa. Soil drying. No water today. Observing.",
+      "telemetry_snapshot": "{\"temp_c\": 34.29, \"humidity\": 65.28, \"vpd_kpa\": 1.877, \"soil_moisture\": 339}"
+    },
+    {
       "timestamp": "2026-06-19 10:37:57",
       "vpd": 1.817,
       "health_status": "STRESSED",
