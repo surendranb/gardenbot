@@ -408,6 +408,13 @@
             gap: 2.5rem;
         }
 
+        .architecture-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: -1rem;
+        }
+
         .svg-container {
             border: 1px solid var(--surface-border);
             border-radius: 12px;
@@ -548,27 +555,50 @@
         <div id="tab-architecture" class="tab-pane">
             <div class="architecture-card">
                 <h2 class="status-card-header">System Schematics</h2>
+                <p class="architecture-desc">
+                    Gardenbot operates as a closed-loop autonomous warden. Environmental telemetry is gathered via the ESP8266 sensory array (BME680, LDR, Soil Probes) and combined with optical and acoustic captures from the host machine. The OpenClaw agent digests this context every 4 hours to evaluate plant vitality and issue care directives.
+                </p>
                 <div class="svg-container">
                     <div class="mermaid">
-graph TD
-Plant[Physical Pot]
-Sensors[Sensors]
-Mic[Microphone]
-Python[Python Scripts]
-DB[SQLite DB]
-Claw[OpenClaw]
-Slack[Slack]
-Static[Static Compile]
-Web[GitHub Pages]
-Plant-->Sensors
-Mic-->Python
-Sensors-->Python
-Python-->DB
-DB-->Claw
-Claw-->DB
-Claw-->Slack
-DB-->Static
-Static-->Web
+                    graph TD
+                        classDef hardware fill:#e8e4db,stroke:#c97c5d,stroke-width:2px,color:#212922
+                        classDef software fill:#ffffff,stroke:#67947d,stroke-width:2px,color:#212922
+                        classDef storage fill:#dfd5c6,stroke:#5a655d,stroke-width:2px,color:#212922
+                        classDef external fill:#f7f5f0,stroke:#8c968f,stroke-width:2px,color:#212922,stroke-dasharray: 5 5
+
+                        subgraph Environment ["🌱 Physical Environment"]
+                            Plant["Jade Plant (Target)"]:::hardware
+                        end
+
+                        subgraph Hardware ["💻 Sensory Hardware"]
+                            Sensors["ESP8266 Sensor Array<br>(BME680, Lux, Soil Probes)"]:::hardware
+                            Mic["Room Microphone<br>(Acoustic Warden)"]:::hardware
+                            Cam["Desk Camera<br>(Optical Capture)"]:::hardware
+                        end
+
+                        subgraph Logic ["🧠 Logic & Data (Local Workstation)"]
+                            Python["Python Data Pipeline<br>(collect.py, vision.py)"]:::software
+                            DB[("SQLite Database<br>(garden.db)")]:::storage
+                            Claw{"OpenClaw Agent<br>(Garden Warden)"}:::software
+                            Static["Static Compiler<br>(build_static.py)"]:::software
+                        end
+
+                        subgraph Cloud ["☁️ Cloud & Notifications"]
+                            Slack["Slack Channel<br>(#plantclaw)"]:::external
+                            Web["GitHub Pages<br>(Dashboard)"]:::external
+                        end
+
+                        Plant -.->|Transpires / Reflects| Sensors
+                        Plant -.->|Visual State| Cam
+                        Sensors -->|Serial Telemetry| Python
+                        Mic -->|Ambient Audio| Python
+                        Cam -->|JPEG Snapshots| Python
+                        Python -->|Writes Data| DB
+                        DB -->|Reads History| Claw
+                        Claw -.->|Writes Warden Logs| DB
+                        Claw -->|Alerts & Directives| Slack
+                        DB -->|Reads State| Static
+                        Static -->|Git Sync| Web
                     </div>
                 </div>
             </div>
