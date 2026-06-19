@@ -7,6 +7,8 @@
     <!-- Google Fonts for Editorial Aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
     <style>
         :root {
             /* Warm Linen & Studio Light Mode Palette */
@@ -807,86 +809,25 @@
 
                 <div class="arch-grid">
                     <div class="svg-container">
-                        <!-- Full Loop Schematics SVG (Sensors, Plant, Python, Claw, Slack, Website) -->
-                        <svg width="100%" height="450" viewBox="0 0 450 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background Wash -->
-                            <rect width="450" height="450" rx="10" fill="#f7f5f0"/>
+                        <div class="mermaid">
+                        graph TD
+                            Plant["Physical Pot<br/>(Jade Plant)"]
+                            Sensors["Sensors<br/>(BME680, Lux, Soil Moisture)"]
+                            Mic["Room Microphone"]
                             
-                            <!-- Node 1: Plant & Pot -->
-                            <rect x="30" y="30" width="100" height="60" rx="8" fill="#ffffff" stroke="#c97c5d" stroke-width="1.5"/>
-                            <text x="80" y="55" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="12" text-anchor="middle">Physical Pot</text>
-                            <text x="80" y="72" fill="#ca6747" font-family="'Outfit', sans-serif" font-weight="600" font-size="10" text-anchor="middle">Jade Plant</text>
-
-                            <!-- Node 2: Sensors -->
-                            <rect x="30" y="160" width="100" height="70" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
-                            <text x="80" y="180" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" text-anchor="middle">Sensors & Mic</text>
-                            <text x="80" y="198" fill="#5a655d" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">BME680 / Lux / H2O</text>
-                            <text x="80" y="213" fill="#8c968f" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">Arduino ADC</text>
-
-                            <!-- Node 3: Python Collectors -->
-                            <rect x="175" y="160" width="100" height="70" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
-                            <text x="225" y="180" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" text-anchor="middle">Python Scripts</text>
-                            <text x="225" y="198" fill="#ca6747" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" text-anchor="middle">collect.py</text>
-                            <text x="225" y="213" fill="#67947d" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" text-anchor="middle">vision.py</text>
-
-                            <!-- Node 4: SQLite Database -->
-                            <rect x="175" y="30" width="100" height="60" rx="10" fill="#ffffff" stroke="#67947d" stroke-width="2"/>
-                            <text x="225" y="60" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="12" text-anchor="middle">SQLite DB</text>
-                            <text x="225" y="76" fill="#67947d" font-family="'Outfit', sans-serif" font-size="10" font-weight="700" text-anchor="middle">garden.db</text>
-
-                            <!-- Node 5: Claw Agent -->
-                            <rect x="320" y="30" width="100" height="60" rx="8" fill="#ffffff" stroke="#c97c5d" stroke-width="1.5"/>
-                            <text x="370" y="55" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="12" text-anchor="middle">OpenClaw</text>
-                            <text x="370" y="72" fill="#ca6747" font-family="'Outfit', sans-serif" font-weight="700" font-size="10" text-anchor="middle">Garden Warden</text>
-
-                            <!-- Node 6: Slack Deliverable -->
-                            <rect x="320" y="160" width="100" height="60" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
-                            <text x="370" y="185" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="12" text-anchor="middle">Slack Channel</text>
-                            <text x="370" y="202" fill="#67947d" font-family="'Outfit', sans-serif" font-weight="600" font-size="10" text-anchor="middle">#plantclaw</text>
-
-                            <!-- Node 7: Static Compiler & Git -->
-                            <rect x="175" y="290" width="100" height="65" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
-                            <text x="225" y="310" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" text-anchor="middle">static compile</text>
-                            <text x="225" y="326" fill="#8c968f" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">build_static.py</text>
-                            <text x="225" y="339" fill="#8c968f" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">Git sync.sh</text>
-
-                            <!-- Node 8: Website -->
-                            <rect x="175" y="385" width="100" height="50" rx="8" fill="#ffffff" stroke="#67947d" stroke-width="1.5"/>
-                            <text x="225" y="408" fill="#212922" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" text-anchor="middle">GitHub Pages</text>
-                            <text x="225" y="423" fill="#67947d" font-family="'Outfit', sans-serif" font-size="9" font-weight="600" text-anchor="middle">dashboard</text>
-
-                            <!-- FLOW CONNECTIONS -->
-                            <!-- Plant -> Sensors -->
-                            <path d="M80 90 V 160" stroke="#8c968f" stroke-width="1.5" marker-end="url(#arr)"/>
+                            Plant -.->|Transpires & reflects| Sensors
+                            Mic -.->|Captures ambient audio| Python
                             
-                            <!-- Sensors -> Python -->
-                            <path d="M130 195 H 175" stroke="#5a655d" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+                            Sensors -->|Serial| Python["Python Scripts<br/>(collect.py, vision.py)"]
+                            Python -->|Writes Data| DB[("SQLite DB<br/>(garden.db)")]
                             
-                            <!-- Python -> DB -->
-                            <path d="M225 160 V 90" stroke="#67947d" stroke-width="1.5" marker-end="url(#arr)"/>
+                            DB -->|Reads History| Claw["OpenClaw<br/>(Garden Warden)"]
+                            Claw -.->|Writes interpretations| DB
+                            Claw -->|Sends Care Alerts| Slack["Slack Channel<br/>(#plantclaw)"]
                             
-                            <!-- DB -> Claw -->
-                            <path d="M275 60 H 320" stroke="#ca6747" stroke-width="1.5" marker-end="url(#arr)"/>
-                            
-                            <!-- Claw -> DB (interpretation log) -->
-                            <path d="M320 70 H 275" stroke="#ca6747" stroke-width="1.2" stroke-dasharray="2 2" marker-end="url(#arr)"/>
-                            
-                            <!-- Claw -> Slack -->
-                            <path d="M370 90 V 160" stroke="#5a655d" stroke-width="1.5" marker-end="url(#arr)"/>
-
-                            <!-- DB -> Static Compile -->
-                            <path d="M220 90 V 290" stroke="#5a655d" stroke-width="1.5" marker-end="url(#arr)"/>
-
-                            <!-- Static Compile -> Website -->
-                            <path d="M225 355 V 385" stroke="#67947d" stroke-width="1.5" marker-end="url(#arr)"/>
-
-                            <!-- Definitions for markers -->
-                            <defs>
-                                <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#5a655d" />
-                                </marker>
-                            </defs>
-                        </svg>
+                            DB -->|Reads Data| Static["Static Compile<br/>(build_static.py)"]
+                            Static -->|Git Sync| Web["GitHub Pages<br/>(Dashboard)"]
+                        </div>
                     </div>
 
                     <div class="arch-details">
