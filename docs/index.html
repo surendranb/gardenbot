@@ -566,39 +566,38 @@
                         classDef storage fill:#dfd5c6,stroke:#5a655d,stroke-width:2px,color:#212922
                         classDef external fill:#f7f5f0,stroke:#8c968f,stroke-width:2px,color:#212922,stroke-dasharray: 5 5
 
-                        subgraph Environment ["🌱 Physical Environment"]
-                            Plant["Jade Plant (Target)"]:::hardware
+                        subgraph Physical ["🌱 Physical Environment"]
+                            Pot["Physical Pot & Plant<br>(Soil Probe inserted)"]:::hardware
                         end
 
-                        subgraph Hardware ["💻 Sensory Hardware"]
-                            Sensors["ESP8266 Sensor Array<br>(BME680, Lux, Soil Probes)"]:::hardware
-                            Mic["Room Microphone<br>(Acoustic Warden)"]:::hardware
-                            Cam["Desk Camera<br>(Optical Capture)"]:::hardware
+                        subgraph Hardware ["💻 Hardware (Edge)"]
+                            Arduino["Arduino Microcontroller<br>(BME680, Light Sensor)"]:::hardware
+                            Webcam["USB Webcam<br>(Audio & Visual Capture)"]:::hardware
+                            Laptop["Host Laptop"]:::hardware
                         end
 
-                        subgraph Logic ["🧠 Logic & Data (Local Workstation)"]
+                        subgraph Logic ["🧠 Logic & Data (Laptop)"]
                             Python["Python Data Pipeline<br>(collect.py, vision.py)"]:::software
                             DB[("SQLite Database<br>(garden.db)")]:::storage
                             Claw{"OpenClaw Agent<br>(Garden Warden)"}:::software
-                            Static["Static Compiler<br>(build_static.py)"]:::software
                         end
 
                         subgraph Cloud ["☁️ Cloud & Notifications"]
-                            Slack["Slack Channel<br>(#plantclaw)"]:::external
-                            Web["GitHub Pages<br>(Dashboard)"]:::external
+                            LLM["Gemini / OpenRouter<br>(LLM Analysis)"]:::external
+                            Slack["Slack Channel<br>(#gardenbot)"]:::external
+                            Github["GitHub Pages<br>(Dashboard Deployment)"]:::external
                         end
 
-                        Plant -.->|Transpires / Reflects| Sensors
-                        Plant -.->|Visual State| Cam
-                        Sensors -->|Serial Telemetry| Python
-                        Mic -->|Ambient Audio| Python
-                        Cam -->|JPEG Snapshots| Python
-                        Python -->|Writes Data| DB
-                        DB -->|Reads History| Claw
-                        Claw -.->|Writes Warden Logs| DB
-                        Claw -->|Alerts & Directives| Slack
-                        DB -->|Reads State| Static
-                        Static -->|Git Sync| Web
+                        Pot -->|Moisture Readings| Arduino
+                        Arduino -->|Serial Telemetry| Laptop
+                        Webcam -->|USB Feed| Laptop
+                        
+                        Laptop --> Python
+                        Python -->|Writes Telemetry & Vision| DB
+                        DB -->|Provides Context| Claw
+                        Claw <-->|API Calls & Reasoning| LLM
+                        Claw -->|Issues Directives| Slack
+                        Claw -->|Posts Updates| Github
                     </div>
                 </div>
             </div>
