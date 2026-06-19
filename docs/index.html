@@ -577,41 +577,42 @@
                     graph TD
                         classDef hardware fill:#e8e4db,stroke:#c97c5d,stroke-width:2px,color:#212922
                         classDef software fill:#ffffff,stroke:#67947d,stroke-width:2px,color:#212922
-                        classDef storage fill:#dfd5c6,stroke:#5a655d,stroke-width:2px,color:#212922
-                        classDef external fill:#f7f5f0,stroke:#8c968f,stroke-width:2px,color:#212922,stroke-dasharray: 5 5
+                        classDef cloud fill:#f4f1ea,stroke:#8c968f,stroke-width:2px,stroke-dasharray: 5 5,color:#212922
 
                         subgraph Physical ["🌱 Physical Environment"]
                             Pot["Physical Pot & Plant"]:::hardware
                         end
 
                         subgraph Hardware ["💻 Hardware (Edge)"]
-                            Arduino["Arduino Microcontroller<br>(Soil Moisture, BME, Lux)"]:::hardware
-                            Webcam["USB Webcam & Mic<br>(Audio & Visual Capture)"]:::hardware
+                            Arduino["Arduino Microcontroller<br>(Soil Moisture, BME680, Lux Light Sensor)"]:::hardware
                             Laptop["Host Laptop"]:::hardware
+                            Webcam["USB Webcam & Mic<br>(Audio / Visual)"]:::hardware
                         end
 
+                        Pot -->|Soil Probe inserted into dirt| Arduino
+                        Arduino -->|Serial Telemetry over USB| Laptop
+                        Webcam -->|USB Feed| Laptop
+
                         subgraph Logic ["🧠 Logic & Data (Laptop)"]
-                            Python["Python Data Pipeline<br>(collect.py, vision.py)"]:::software
-                            DB["SQLite Database<br>(garden.db)"]:::storage
+                            Python["Python Pipeline<br>(collect.py, vision.py)"]:::software
+                            DB[("SQLite Database<br>(garden.db)")]:::software
                             Claw{"OpenClaw Agent<br>(Garden Warden)"}:::software
                         end
 
-                        subgraph Cloud ["☁️ Cloud Services"]
-                            LLM["Gemini / OpenRouter<br>(LLM Analysis)"]:::external
-                            Slack["Slack Channel<br>(#gardenbot)"]:::external
-                            Github["GitHub Pages<br>(Dashboard Deployment)"]:::external
-                        end
-
-                        Pot -->|Sensory Target| Arduino
-                        Arduino -->|Serial Readings| Laptop
-                        Webcam -->|USB Feed| Laptop
-                        
                         Laptop --> Python
                         Python -->|Writes Data| DB
-                        DB -->|Context| Claw
-                        Claw <-->|API Calls & Insights| LLM
-                        Claw -->|Issues Updates| Slack
-                        Claw -->|Triggers Sync| Github
+                        Python -->|Reads Context| DB
+                        DB -->|Reads State| Claw
+
+                        subgraph Cloud ["☁️ Cloud Services"]
+                            LLM["Gemini / OpenRouter<br>(LLM Insight)"]:::cloud
+                            Slack["Slack: #gardenbot<br>(Alerts)"]:::cloud
+                            Github["GitHub Pages: Dashboard<br>(Git Sync)"]:::cloud
+                        end
+
+                        Claw --> LLM
+                        Claw --> Slack
+                        Claw --> Github
                     </div>
                 </div>
             </div>
