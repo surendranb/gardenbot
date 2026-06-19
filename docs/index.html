@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌿 GardenBot Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Editorial Aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* High-legibility dark mode palette */
-            --bg-color: #0b0c10;
-            --surface-bg: rgba(22, 28, 45, 0.7);
-            --surface-border: rgba(255, 255, 255, 0.1);
-            --surface-glow: rgba(16, 185, 129, 0.05);
+            /* Warm Linen & Studio Light Mode Palette */
+            --bg-color: #f7f5f0;           /* Soft linen paper */
+            --bg-accent: #f2e2d9;         /* Very soft terracotta wash */
+            --surface-bg: #ffffff;        /* Pure studio white */
+            --surface-border: #e8e4db;    /* Soft clay border */
+            --surface-border-active: #c97c5d; /* Clay terracotta */
             
-            --text-primary: #ffffff;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-primary: #212922;       /* Deep forest charcoal */
+            --text-secondary: #5a655d;     /* Soft sage gray */
+            --text-muted: #8c968f;         /* Pale clay gray */
             
-            --accent-green: #10b981;
-            --accent-green-glow: rgba(16, 185, 129, 0.2);
-            --accent-blue: #3b82f6;
-            --accent-orange: #f59e0b;
-            --accent-red: #ef4444;
+            --accent-terracotta: #ca6747;  /* Warm clay orange */
+            --accent-sage: #67947d;        /* Soft botanical green */
+            --accent-sand: #dfd5c6;        /* Warm studio sand */
+            --accent-red: #cc5a5a;         /* Soft clay red */
             
-            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-serif: 'Lora', Georgia, serif;
+            --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            --shadow-soft: 0 8px 30px rgba(80, 75, 70, 0.04);
+            --shadow-hover: 0 12px 40px rgba(80, 75, 70, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -36,13 +42,13 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
-            font-family: var(--font-family);
+            font-family: var(--font-sans);
             min-height: 100vh;
-            padding: 3rem 2rem;
-            background-image: radial-gradient(circle at 10% 10%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-                              radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
-            background-attachment: fixed;
-            line-height: 1.5;
+            padding: 2.5rem 1.5rem;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 10% 10%, rgba(202, 103, 71, 0.02) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 90%, rgba(103, 148, 125, 0.03) 0%, transparent 40%);
+            -webkit-font-smoothing: antialiased;
         }
 
         .dashboard-container {
@@ -50,67 +56,142 @@
             margin: 0 auto;
         }
 
+        /* Nav & Header Design */
         header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--surface-border);
         }
 
-        h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #ffffff 0%, #34d399 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .brand-group {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
         h1 span {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            letter-spacing: 0;
-            background: rgba(16, 185, 129, 0.05);
-            -webkit-text-fill-color: initial;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-sage);
+            border: 1px solid rgba(103, 148, 125, 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+            background: rgba(103, 148, 125, 0.05);
+            text-transform: uppercase;
         }
 
-        .refresh-btn {
-            background: rgba(255, 255, 255, 0.05);
+        /* Navigation Tabs */
+        nav {
+            display: flex;
+            background: rgba(232, 228, 219, 0.5);
+            padding: 0.3rem;
+            border-radius: 12px;
+            gap: 0.2rem;
             border: 1px solid var(--surface-border);
-            color: var(--text-primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 14px;
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 9px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
+            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
+        .nav-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-btn.active {
+            color: var(--text-primary);
+            background: var(--surface-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .refresh-btn {
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: var(--shadow-soft);
+        }
+
         .refresh-btn:hover {
-            background: rgba(16, 185, 129, 0.15);
-            border-color: var(--accent-green);
-            color: #34d399;
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.2);
+            border-color: var(--accent-terracotta);
+            color: var(--accent-terracotta);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Tab Content Panes */
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* KPI Panel */
         .kpi-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
         }
 
         @media (max-width: 1024px) {
@@ -128,67 +209,65 @@
         .kpi-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            padding: 1.8rem;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.2s ease;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
         }
 
         .kpi-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--surface-border-active);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .kpi-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 700;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.6rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
         }
 
         .kpi-value {
-            font-size: 2.6rem;
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 0.4rem;
-            color: #ffffff;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
         }
 
         .kpi-subtext {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            font-weight: 500;
+            gap: 0.3rem;
+            font-weight: 600;
         }
 
         .status-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.35rem 0.9rem;
-            font-size: 0.8rem;
+            gap: 0.3rem;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.7rem;
             font-weight: 800;
-            border-radius: 30px;
+            border-radius: 6px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        .status-healthy { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-        .status-stressed { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
-        .status-warning { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .status-healthy { background: rgba(103, 148, 125, 0.1); color: var(--accent-sage); border: 1px solid rgba(103, 148, 125, 0.2); }
+        .status-stressed { background: rgba(202, 103, 71, 0.1); color: var(--accent-terracotta); border: 1px solid rgba(202, 103, 71, 0.2); }
+        .status-warning { background: rgba(204, 90, 90, 0.1); color: var(--accent-red); border: 1px solid rgba(204, 90, 90, 0.2); }
 
         /* Main Grid */
         .dashboard-grid {
             display: grid;
-            grid-template-columns: 500px 1fr;
+            grid-template-columns: 460px 1fr;
             gap: 2rem;
         }
 
@@ -201,10 +280,9 @@
         .section-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
-            border-radius: 28px;
+            border-radius: 20px;
             padding: 2rem;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: var(--shadow-soft);
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
@@ -214,34 +292,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-left: 5px solid var(--accent-green);
-            padding-left: 0.9rem;
-            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--accent-terracotta);
+            padding-left: 0.8rem;
+            margin-bottom: 0.2rem;
         }
 
         .section-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #ffffff;
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         .section-subtitle {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-top: 0.2rem;
+            margin-top: 0.1rem;
         }
 
-        /* Camera Frame */
+        /* Framed Art Camera Container */
         .camera-container {
             width: 100%;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 8px solid var(--accent-sand); /* Sand matting */
+            box-shadow: 0 4px 15px rgba(80, 75, 70, 0.1), inset 0 2px 4px rgba(0,0,0,0.05);
             position: relative;
             aspect-ratio: 4/3;
-            background: #0d0f14;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            background: #eae6dd;
         }
 
         .camera-container img {
@@ -252,94 +330,241 @@
 
         .camera-overlay {
             position: absolute;
-            bottom: 16px;
-            left: 16px;
-            right: 16px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
             display: flex;
             justify-content: space-between;
-            background: rgba(11, 12, 16, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 0.6rem 1rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.4rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
             color: var(--text-primary);
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            border: 1px solid var(--surface-border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .report-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 1.8rem;
-            border-radius: 20px;
-            position: relative;
+            background: var(--bg-color);
+            border: 1px solid var(--surface-border);
+            padding: 1.5rem;
+            border-radius: 12px;
         }
 
         .metric-hud {
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 1rem; 
-            margin-bottom: 1.5rem; 
+            gap: 0.6rem 1rem; 
+            margin-bottom: 1rem; 
             border-bottom: 1px solid var(--surface-border); 
-            padding-bottom: 1.2rem;
+            padding-bottom: 1rem;
         }
 
         .hud-item {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .hud-item strong {
-            color: #ffffff;
-            font-size: 1.05rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
             font-weight: 700;
         }
 
         .report-label {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             font-weight: 800;
-            color: #34d399;
+            color: var(--accent-terracotta);
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 0.8rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.3rem;
         }
 
         .report-text {
-            font-size: 1.05rem;
-            color: #e2e8f0;
-            line-height: 1.7;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.6;
             font-weight: 400;
+            font-style: italic;
+            font-family: var(--font-serif);
         }
 
         /* Charts */
         .chart-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            padding: 1.8rem;
+            background: #faf9f6;
+            border: 1px solid var(--surface-border);
+            border-radius: 12px;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 0.8rem;
         }
 
         .chart-title {
-            font-size: 1rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.01em;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
+            letter-spacing: 0.03em;
         }
 
         .chart-wrapper {
             position: relative;
-            height: 300px;
+            height: 280px;
             width: 100%;
+        }
+
+        /* Architecture Page styling */
+        .architecture-card {
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 992px) {
+            .arch-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .svg-container {
+            border: 1px solid var(--surface-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arch-details h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .arch-details p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .arch-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .arch-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .arch-list li strong {
+            color: var(--accent-terracotta);
+        }
+
+        .arch-list li::before {
+            content: "✦";
+            color: var(--accent-sage);
+            font-weight: 700;
+        }
+
+        /* About Page styling */
+        .about-card {
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-soft);
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--text-primary);
+            text-align: center;
+        }
+
+        .about-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-top: -1.5rem;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .about-section {
+            border-top: 1px solid var(--surface-border);
+            padding-top: 1.5rem;
+        }
+
+        .about-section h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--accent-terracotta);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+            background: var(--bg-color);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid var(--surface-border);
+        }
+
+        .spec-item {
+            font-size: 0.9rem;
+        }
+
+        .spec-item strong {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
     </style>
 </head>
@@ -347,103 +572,247 @@
 
     <div class="dashboard-container">
         <header>
-            <h1>🌿 GardenBot <span>v2.0</span></h1>
-            <button class="refresh-btn" onclick="fetchData()">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-                Force Sync
-            </button>
+            <div class="brand-group">
+                <h1>🌿 GardenBot <span>v2.0</span></h1>
+            </div>
+            
+            <nav>
+                <button class="nav-btn active" onclick="switchTab('dashboard')">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+                    Dashboard
+                </button>
+                <button class="nav-btn" onclick="switchTab('architecture')">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    Architecture
+                </button>
+                <button class="nav-btn" onclick="switchTab('about')">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    About
+                </button>
+            </nav>
+
+            <div class="header-actions">
+                <button class="refresh-btn" onclick="fetchData()">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                    Force Sync
+                </button>
+            </div>
         </header>
 
-        <!-- Metrics Grid -->
-        <div class="kpi-row">
-            <div class="kpi-card">
-                <div class="kpi-label">Ambient Temperature</div>
-                <div class="kpi-value" id="kpi-temp">--°C</div>
-                <div class="kpi-subtext" id="kpi-temp-sub">Indoor Desk Sensor</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-label">Soil State</div>
-                <div class="kpi-value" id="kpi-soil">--</div>
-                <div class="kpi-subtext">
-                    Trend: <span class="status-pill status-healthy" id="kpi-soil-trend" style="padding:0.2rem 0.6rem; font-size:0.75rem;">Stable</span>
+        <!-- =================== DASHBOARD TAB =================== -->
+        <div id="tab-dashboard" class="tab-pane active">
+            <!-- Metrics Row -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-label">Studio Temperature</div>
+                    <div class="kpi-value" id="kpi-temp">--°C</div>
+                    <div class="kpi-subtext" id="kpi-temp-sub">Indoor Desk Sensor</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Hydration Balance</div>
+                    <div class="kpi-value" id="kpi-soil">--</div>
+                    <div class="kpi-subtext">
+                        Trend: <span class="status-pill status-healthy" id="kpi-soil-trend">Stable</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Transpiration Load</div>
+                    <div class="kpi-value" id="kpi-vpd">-- kPa</div>
+                    <div class="kpi-subtext" id="kpi-vpd-status">Loading range...</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Jade Vitality</div>
+                    <div class="kpi-value" id="kpi-health">--</div>
+                    <div style="margin-top:0.15rem;">
+                        <span class="status-pill" id="kpi-health-badge">Unknown</span>
+                    </div>
                 </div>
             </div>
-            <div class="kpi-card">
-                <div class="kpi-label">Transpiration VPD</div>
-                <div class="kpi-value" id="kpi-vpd">-- kPa</div>
-                <div class="kpi-subtext" id="kpi-vpd-status">Loading range...</div>
-            </div>
-            <div class="kpi-card">
-                <div class="kpi-label">Jade Health Status</div>
-                <div class="kpi-value" id="kpi-health">--</div>
-                <div style="margin-top:0.2rem;">
-                    <span class="status-pill" id="kpi-health-badge">Unknown</span>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column: Vision framed image + Diagnostic text -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">Optical Feed</div>
+                            <div class="section-subtitle">Tactile crop of our Crassula ovata</div>
+                        </div>
+                    </div>
+
+                    <div class="camera-container">
+                        <img id="latest-image" src="latest.jpg" alt="Latest visual feed snapshot" onerror="this.src='https://placehold.co/640x480?text=No+Image+Captured+Yet'">
+                        <div class="camera-overlay">
+                            <span>Focal Length: Desk Lens</span>
+                            <span id="image-time">Time: --</span>
+                        </div>
+                    </div>
+
+                    <div class="report-box">
+                        <div class="metric-hud">
+                            <div class="hud-item">Foliage Count: <strong id="vis-leaves">--</strong> (<span id="vis-leaves-change">--</span>)</div>
+                            <div class="hud-item">Turgor Metric: <strong id="vis-turg-score">--</strong></div>
+                            <div class="hud-item">Large Stalk: <strong>8.0 cm</strong></div>
+                            <div class="hud-item">Small Stalk: <strong>7.0 cm</strong></div>
+                        </div>
+                        <div class="report-label">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            Warden's Diagnostic Synthesis
+                        </div>
+                        <div class="report-text" id="latest-reasoning">Waiting for diagnostic logs...</div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Environmental trends -->
+                <div class="section-card">
+                    <div class="section-header">
+                        <div>
+                            <div class="section-title">Environmental Trends</div>
+                            <div class="section-subtitle">Properly calibrated timeline metrics</div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="chart-box">
+                            <div class="chart-title">
+                                <span style="display:inline-block; width:8px; height:8px; background:var(--accent-sage); border-radius:50%;"></span>
+                                Hydration (Analog Soil Moisture)
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="soilChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="chart-box">
+                            <div class="chart-title">
+                                <span style="display:inline-block; width:8px; height:8px; background:var(--accent-terracotta); border-radius:50%;"></span>
+                                Transpiration Stress Index (VPD in kPa)
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="vpdChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="dashboard-grid">
-            <!-- Left Side: Vision and Warden Reports -->
-            <div class="section-card">
+        <!-- =================== ARCHITECTURE TAB =================== -->
+        <div id="tab-architecture" class="tab-pane">
+            <div class="architecture-card">
                 <div class="section-header">
                     <div>
-                        <div class="section-title">Optical Feed</div>
-                        <div class="section-subtitle">Real-time Jade plant visual analysis</div>
+                        <div class="section-title">System Architecture</div>
+                        <div class="section-subtitle">Thermostat-pattern botanical agent design</div>
                     </div>
                 </div>
 
-                <div class="camera-container">
-                    <img id="latest-image" src="latest.jpg" alt="Latest visual feed snapshot" onerror="this.src='https://placehold.co/640x480?text=No+Image+Captured+Yet'">
-                    <div class="camera-overlay">
-                        <span>Lens: USB Desk Camera</span>
-                        <span id="image-time">Time: --</span>
-                    </div>
-                </div>
+                <div class="arch-grid">
+                    <div class="svg-container">
+                        <!-- Clean Inline SVG Diagram of the Architecture -->
+                        <svg width="100%" height="320" viewBox="0 0 450 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Grid -->
+                            <rect width="450" height="320" rx="8" fill="#f7f5f0"/>
+                            
+                            <!-- Central Database -->
+                            <rect x="165" y="120" width="120" height="70" rx="10" fill="#ffffff" stroke="#c97c5d" stroke-width="2"/>
+                            <text x="225" y="152" fill="#212922" font-family="'Outfit', sans-serif" font-size="14" font-weight="700" text-anchor="middle">SQLite DB</text>
+                            <text x="225" y="170" fill="#67947d" font-family="'Outfit', sans-serif" font-size="11" font-weight="600" text-anchor="middle">garden.db</text>
+                            
+                            <!-- Collector Block -->
+                            <rect x="20" y="30" width="110" height="50" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
+                            <text x="75" y="55" fill="#212922" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" text-anchor="middle">collect.py</text>
+                            <text x="75" y="68" fill="#8c968f" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">Arduino Sensors</text>
+                            
+                            <!-- Vision Block -->
+                            <rect x="320" y="30" width="110" height="50" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
+                            <text x="375" y="55" fill="#212922" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" text-anchor="middle">vision.py</text>
+                            <text x="375" y="68" fill="#8c968f" font-family="'Outfit', sans-serif" font-size="9" text-anchor="middle">Camera + Gemini</text>
+                            
+                            <!-- Warden Agent Block -->
+                            <rect x="165" y="240" width="120" height="50" rx="8" fill="#ffffff" stroke="#e8e4db" stroke-width="1.5"/>
+                            <text x="225" y="265" fill="#212922" font-family="'Outfit', sans-serif" font-size="12" font-weight="600" text-anchor="middle">Warden Agent</text>
+                            <text x="225" y="278" fill="#ca6747" font-family="'Outfit', sans-serif" font-size="9" font-weight="700" text-anchor="middle">REASONING</text>
 
-                <div class="report-box">
-                    <div class="metric-hud">
-                        <div class="hud-item">Leaves: <strong id="vis-leaves">--</strong> (<span id="vis-leaves-change">--</span>)</div>
-                        <div class="hud-item">Turgidity Index: <strong id="vis-turg-score">--</strong></div>
-                        <div class="hud-item">Canopy Height: <strong id="vis-height">--</strong></div>
-                        <div class="hud-item">Canopy Width: <strong id="vis-width">--</strong></div>
+                            <!-- Arrows -->
+                            <!-- collect -> DB -->
+                            <path d="M75 80 V 155 H 160" stroke="#8c968f" stroke-width="1.5" marker-end="url(#arrow)" fill="none" stroke-dasharray="3 3"/>
+                            <!-- vision -> DB -->
+                            <path d="M375 80 V 155 H 290" stroke="#8c968f" stroke-width="1.5" marker-end="url(#arrow)" fill="none" stroke-dasharray="3 3"/>
+                            <!-- DB -> Warden -->
+                            <path d="M210 195 V 235" stroke="#67947d" stroke-width="1.5" marker-end="url(#arrow)"/>
+                            <!-- Warden -> DB (interpretation writeback) -->
+                            <path d="M240 235 V 195" stroke="#ca6747" stroke-width="1.5" marker-end="url(#arrow)"/>
+                            
+                            <!-- Definitions for markers -->
+                            <defs>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#5a655d" />
+                                </marker>
+                            </defs>
+                        </svg>
                     </div>
-                    <div class="report-label">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        Warden Report Summary
+
+                    <div class="arch-details">
+                        <h3>Thermostat-Pattern Philosophy</h3>
+                        <p>
+                            Instead of running fragile multi-step bash processes that generate intermediary files, GardenBot v2 uses the proven **thermostat architecture**. The system is completely centered around a single database which acts as the absolute source of truth.
+                        </p>
+                        
+                        <ul class="arch-list">
+                            <li><strong>Dumb Collectors:</strong> <code>collect.py</code> runs periodically via launchd, capturing environmental data (soil moisture, temperature, humidity) and writing directly to SQLite.</li>
+                            <li><strong>Asynchronous Eye:</strong> <code>vision.py</code> evaluates camera feeds via Gemini Vision and updates the database independently.</li>
+                            <li><strong>Decoupled Reasoning:</strong> The Warden Agent wakes up every 4 hours, queries historical data from the SQLite DB, applies biological logic via <code>garden_math.py</code>, posts alerts to Slack, and records its interpretation back to the DB.</li>
+                            <li><strong>Static Compilation:</strong> The dashboard is entirely static, reading data and updates from a compiled JSON file derived straight from SQLite.</li>
+                        </ul>
                     </div>
-                    <div class="report-text" id="latest-reasoning">Waiting for agent diagnostic logs...</div>
                 </div>
             </div>
+        </div>
 
-            <!-- Right Side: Trends (No Intervention Ledger) -->
-            <div class="section-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">Environmental Trends</div>
-                        <div class="section-subtitle">Historical biome metrics logs</div>
-                    </div>
-                </div>
+        <!-- =================== ABOUT TAB =================== -->
+        <div id="tab-about" class="tab-pane">
+            <div class="about-card">
+                <h2 class="about-title">About GardenBot</h2>
+                <div class="about-subtitle"> चेन्नई डेस्क बायोम — Chennai Desk Biome</div>
+                
+                <div class="about-content">
+                    <p>
+                        GardenBot is an intelligent, low-intervention botanical companion designed specifically to monitor and manage a single <strong>Jade Succulent</strong> (<em>Crassula ovata</em>). The plant is housed in a self-watering terracotta pot placed on a physical wooden workstation desk in Chennai, India.
+                    </p>
 
-                <div style="display: flex; flex-direction: column; gap: 2rem;">
-                    <div class="chart-box">
-                        <div class="chart-title">
-                            <span style="display:inline-block; width:12px; height:12px; background:#10b981; border-radius:50%;"></span>
-                            Soil Moisture (Analog Log)
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="soilChart"></canvas>
+                    <div class="about-section">
+                        <h3>Target Plant Profile</h3>
+                        <p>
+                            Jades are highly resilient succulents native to southern Africa. They thrive in a soak-and-dry watering regime. Because their roots rot quickly in standing water, the self-watering system relies on a slow-wicking moisture sponge that dries out completely between cycles.
+                        </p>
+                        
+                        <div class="spec-grid">
+                            <div class="spec-item">
+                                <strong>Stature Baseline</strong>
+                                2 Stalks: 8.0 cm (Large) & 7.0 cm (Small)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Pot Dimensions</strong>
+                                8.0 cm x 8.0 cm
+                            </div>
+                            <div class="spec-item">
+                                <strong>VPD Range (Optimal)</strong>
+                                0.8 kPa — 1.5 kPa (Succulent Transpiration)
+                            </div>
+                            <div class="spec-item">
+                                <strong>Chennai Indoor Norms</strong>
+                                Temperature: 30°C — 36°C | Humidity: 50% — 75%
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="chart-box">
-                        <div class="chart-title">
-                            <span style="display:inline-block; width:12px; height:12px; background:#3b82f6; border-radius:50%;"></span>
-                            Vapor Pressure Deficit (kPa)
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="vpdChart"></canvas>
-                        </div>
+
+                    <div class="about-section">
+                        <h3>Diagnostic Rules</h3>
+                        <p>
+                            The system evaluates water requirements based on two signals: <strong>Soil moisture index</strong> (the physical resistance measured via the capacitive soil probe) and <strong>Turgidity</strong> (the visual plumpness/thickness of the leaves analyzed by vision). 
+                            If the soil index is dry but the vision model confirms leaves are thick and turgid, the agent defaults to <strong>Hold Water</strong> to prevent root suffocation.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -453,6 +822,25 @@
     <script>
         let soilChartInstance = null;
         let vpdChartInstance = null;
+
+        // Navigation Switcher
+        function switchTab(tabName) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => {
+                pane.classList.remove('active');
+            });
+            // Deactivate all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show active pane
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+            
+            // Highlight active button
+            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => btn.getAttribute('onclick').includes(tabName));
+            if (activeBtn) activeBtn.classList.add('active');
+        }
 
         async function fetchData() {
             try {
@@ -468,7 +856,6 @@
         function formatLabelTimestamp(rawTs) {
             try {
                 if (!rawTs) return '--';
-                // Convert YYYY-MM-DD HH:MM:SS to a JS-parseable string
                 const t = rawTs.replace(/-/g, '/');
                 const dt = new Date(t);
                 if (isNaN(dt.getTime())) return rawTs;
@@ -498,11 +885,11 @@
                 
                 const vpdStatus = document.getElementById('kpi-vpd-status');
                 if (vpd > 2.0) {
-                    vpdStatus.innerHTML = `<span style="color:var(--accent-red); font-weight:700;">● CRITICAL STRESS</span>`;
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-red); font-weight:700;">● STRESS</span>`;
                 } else if (vpd > 1.5) {
-                    vpdStatus.innerHTML = `<span style="color:var(--accent-orange); font-weight:700;">● HIGH</span>`;
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-terracotta); font-weight:700;">● HIGH</span>`;
                 } else {
-                    vpdStatus.innerHTML = `<span style="color:var(--accent-green); font-weight:700;">● OPTIMAL RANGE</span>`;
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-sage); font-weight:700;">● OPTIMAL</span>`;
                 }
             }
 
@@ -530,7 +917,7 @@
             // Image Timestamp & Vision
             if (vision.length > 0) {
                 const latestVision = vision[0];
-                document.getElementById('image-time').innerText = `Updated: ${formatLabelTimestamp(latestVision.timestamp)}`;
+                document.getElementById('image-time').innerText = `Lens: ${formatLabelTimestamp(latestVision.timestamp)}`;
                 if (latestVision.image_path) {
                     document.getElementById('latest-image').src = `latest.jpg?t=${new Date().getTime()}`;
                 }
@@ -539,15 +926,11 @@
                 const leafChange = latestVision.leaf_change !== null && latestVision.leaf_change !== undefined ? latestVision.leaf_change : 0;
                 const changeSign = leafChange >= 0 ? `+${leafChange}` : `${leafChange}`;
                 const turgScore = latestVision.turgidity_score !== null && latestVision.turgidity_score !== undefined ? (latestVision.turgidity_score * 100).toFixed(0) + '%' : '--';
-                const height = latestVision.plant_height_cm !== null && latestVision.plant_height_cm !== undefined ? latestVision.plant_height_cm.toFixed(1) + ' cm' : '--';
-                const width = latestVision.canopy_width_cm !== null && latestVision.canopy_width_cm !== undefined ? latestVision.canopy_width_cm.toFixed(1) + ' cm' : '--';
                 
                 document.getElementById('vis-leaves').innerText = leaves;
                 document.getElementById('vis-leaves-change').innerText = changeSign;
-                document.getElementById('vis-leaves-change').style.color = leafChange > 0 ? '#34d399' : (leafChange < 0 ? '#f87171' : 'var(--text-secondary)');
+                document.getElementById('vis-leaves-change').style.color = leafChange > 0 ? 'var(--accent-sage)' : (leafChange < 0 ? 'var(--accent-red)' : 'var(--text-secondary)');
                 document.getElementById('vis-turg-score').innerText = turgScore;
-                document.getElementById('vis-height').innerText = height;
-                document.getElementById('vis-width').innerText = width;
             }
 
             // 3. Render charts
@@ -569,10 +952,10 @@
                     datasets: [{
                         label: 'Soil Moisture',
                         data: soilMoisture,
-                        borderColor: '#10b981',
-                        backgroundColor: 'rgba(16, 185, 129, 0.02)',
-                        borderWidth: 2.5,
-                        tension: 0.3,
+                        borderColor: '#67947d',
+                        backgroundColor: 'rgba(103, 148, 125, 0.04)',
+                        borderWidth: 2,
+                        tension: 0.2,
                         fill: true,
                         pointRadius: 0
                     }]
@@ -582,12 +965,24 @@
                     maintainAspectRatio: false,
                     scales: {
                         y: {
-                            grid: { color: 'rgba(255,255,255,0.03)', drawTicks: false },
-                            ticks: { color: '#94a3b8', font: { size: 10, weight: '500' } }
+                            title: {
+                                display: true,
+                                text: 'Analog Level',
+                                color: '#5a655d',
+                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
+                            },
+                            grid: { color: 'rgba(0,0,0,0.03)', drawTicks: false },
+                            ticks: { color: '#5a655d', font: { size: 9, weight: '500' } }
                         },
                         x: {
+                            title: {
+                                display: true,
+                                text: 'Timeline',
+                                color: '#5a655d',
+                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
+                            },
                             grid: { display: false },
-                            ticks: { color: '#94a3b8', maxTicksLimit: 6, font: { size: 10, weight: '500' } }
+                            ticks: { color: '#5a655d', maxTicksLimit: 6, font: { size: 9, weight: '500' } }
                         }
                     },
                     plugins: {
@@ -614,10 +1009,10 @@
                     datasets: [{
                         label: 'VPD (kPa)',
                         data: vpds,
-                        borderColor: '#3b82f6',
-                        backgroundColor: 'rgba(59, 130, 246, 0.02)',
-                        borderWidth: 2.5,
-                        tension: 0.3,
+                        borderColor: '#ca6747',
+                        backgroundColor: 'rgba(202, 103, 71, 0.04)',
+                        borderWidth: 2,
+                        tension: 0.2,
                         fill: true,
                         pointRadius: 0
                     }]
@@ -627,12 +1022,24 @@
                     maintainAspectRatio: false,
                     scales: {
                         y: {
-                            grid: { color: 'rgba(255,255,255,0.03)', drawTicks: false },
-                            ticks: { color: '#94a3b8', font: { size: 10, weight: '500' } }
+                            title: {
+                                display: true,
+                                text: 'VPD (kPa)',
+                                color: '#5a655d',
+                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
+                            },
+                            grid: { color: 'rgba(0,0,0,0.03)', drawTicks: false },
+                            ticks: { color: '#5a655d', font: { size: 9, weight: '500' } }
                         },
                         x: {
+                            title: {
+                                display: true,
+                                text: 'Timeline',
+                                color: '#5a655d',
+                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
+                            },
                             grid: { display: false },
-                            ticks: { color: '#94a3b8', maxTicksLimit: 6, font: { size: 10, weight: '500' } }
+                            ticks: { color: '#5a655d', maxTicksLimit: 6, font: { size: 9, weight: '500' } }
                         }
                     },
                     plugins: {
