@@ -550,26 +550,25 @@
                 <h2 class="status-card-header">System Schematics</h2>
                 <div class="svg-container">
                     <div class="mermaid">
-                    graph TD
-                        Plant[Physical Pot - Jade Plant]
-                        Sensors[Sensors - BME680 Lux Moisture]
-                        Mic[Room Microphone]
-                        Python[Python Scripts - collect vision]
-                        DB[(SQLite - garden db)]
-                        Claw[OpenClaw - Garden Warden]
-                        Slack[Slack Channel]
-                        Static[Static Compile - build_static]
-                        Web[GitHub Pages Dashboard]
-
-                        Plant -.->|Transpires| Sensors
-                        Mic -.->|Audio| Python
-                        Sensors -->|Serial| Python
-                        Python -->|Writes Data| DB
-                        DB -->|Reads History| Claw
-                        Claw -.->|Writes Logs| DB
-                        Claw -->|Care Alerts| Slack
-                        DB -->|Reads Data| Static
-                        Static -->|Git Sync| Web
+graph TD
+Plant[Physical Pot]
+Sensors[Sensors]
+Mic[Microphone]
+Python[Python Scripts]
+DB[SQLite DB]
+Claw[OpenClaw]
+Slack[Slack]
+Static[Static Compile]
+Web[GitHub Pages]
+Plant-->Sensors
+Mic-->Python
+Sensors-->Python
+Python-->DB
+DB-->Claw
+Claw-->DB
+Claw-->Slack
+DB-->Static
+Static-->Web
                     </div>
                 </div>
             </div>
