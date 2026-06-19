@@ -1,28 +1,6 @@
 {
   "telemetry": [
     {
-      "timestamp": "2026-06-16 09:53:59",
-      "temp": 34.9,
-      "hum": 56.44,
-      "light": 771,
-      "soil_moisture": 304,
-      "pressure": 1006.89,
-      "gas": 74.01,
-      "pir": null,
-      "db": -37.5
-    },
-    {
-      "timestamp": "2026-06-16 10:24:36",
-      "temp": 34.92,
-      "hum": 55.71,
-      "light": 776,
-      "soil_moisture": 304,
-      "pressure": 1006.66,
-      "gas": 77.45,
-      "pir": null,
-      "db": -36.7
-    },
-    {
       "timestamp": "2026-06-16 11:25:51",
       "temp": 35.08,
       "hum": 56.23,
@@ -1099,9 +1077,57 @@
       "gas": 55.1,
       "pir": 1,
       "db": -30.8
+    },
+    {
+      "timestamp": "2026-06-19 12:32:06",
+      "temp": 34.55,
+      "hum": 62.48,
+      "light": 665,
+      "soil_moisture": 295,
+      "pressure": 1006.84,
+      "gas": 60.67,
+      "pir": 0,
+      "db": -30.5
+    },
+    {
+      "timestamp": "2026-06-19 13:02:31",
+      "temp": 34.54,
+      "hum": 63.14,
+      "light": 687,
+      "soil_moisture": 303,
+      "pressure": 1006.17,
+      "gas": 56.21,
+      "pir": 0,
+      "db": -22.1
     }
   ],
   "weather": [
+    {
+      "timestamp": "2026-06-19 13:02:31",
+      "temp": 34.37,
+      "feels_like": 41.37,
+      "hum": 60.0,
+      "pressure": 1006.0,
+      "clouds": 100,
+      "wind_speed": 0.89,
+      "description": "overcast clouds",
+      "forecast_3h_temp": 33.6,
+      "forecast_3h_hum": 58.0,
+      "forecast_3h_rain": 0.96
+    },
+    {
+      "timestamp": "2026-06-19 12:32:06",
+      "temp": 34.67,
+      "feels_like": 41.67,
+      "hum": 61.0,
+      "pressure": 1007.0,
+      "clouds": 100,
+      "wind_speed": 0.89,
+      "description": "overcast clouds",
+      "forecast_3h_temp": 34.33,
+      "forecast_3h_hum": 60.0,
+      "forecast_3h_rain": 0.96
+    },
     {
       "timestamp": "2026-06-19 12:01:41",
       "temp": 34.28,
@@ -1725,32 +1751,6 @@
       "forecast_3h_temp": null,
       "forecast_3h_hum": null,
       "forecast_3h_rain": null
-    },
-    {
-      "timestamp": "2026-05-28 18:00:00",
-      "temp": 33.89,
-      "feels_like": null,
-      "hum": 69.0,
-      "pressure": 1006.0,
-      "clouds": null,
-      "wind_speed": null,
-      "description": "scattered clouds",
-      "forecast_3h_temp": null,
-      "forecast_3h_hum": null,
-      "forecast_3h_rain": null
-    },
-    {
-      "timestamp": "2026-05-28 06:00:05",
-      "temp": 30.27,
-      "feels_like": null,
-      "hum": 82.0,
-      "pressure": 1008.0,
-      "clouds": null,
-      "wind_speed": null,
-      "description": "mist",
-      "forecast_3h_temp": null,
-      "forecast_3h_hum": null,
-      "forecast_3h_rain": null
     }
   ],
   "vision": [
@@ -2056,6 +2056,15 @@
     }
   ],
   "interpretations": [
+    {
+      "timestamp": "2026-06-19 12:16:54",
+      "vpd": 1.967,
+      "health_status": "TURGID",
+      "watering_action": "HOLD \ud83d\udeab",
+      "reasoning": "Soil reservoir is moist and turgor is optimal. No water needed.",
+      "slack_message": "*\ud83c\udf31 Garden Warden | Chennai Desk Biome*\n_Diagnostic Audit at 12:16 PM_\n\n\"Hey boss! My camera is aligned and I'm watching the leaves closely.\" \ud83e\udd9e\n\n*Jade Stature & Foliage:*\n\u2022 *Stalks:* Large stalk is 8.0 cm | Small stalk is 7.0 cm\n\u2022 *Canopy:* 10.5 cm wide (relative to the 8.0 cm pot)\n\u2022 *Leaf Count:* 28 leaves total (stable baseline)\n\n*Botanical Audit (Visuals & Soil):*\n\u2022 *Turgidity:* *TURGID* (Score: 0.95/1.0). \"My leaves are plump, shiny, and holding moisture perfectly!\" \ud83c\udf43\n\u2022 *Soil:* *MOIST* (Moisture index: 286 | Trend: WETTING \ud83d\udca7). \"Sponge reservoir is doing its job!\"\n\u2022 *Transpiration Stress (VPD):* 1.967 kPa (HIGH \ud83c\udf21\ufe0f). \"Chennai heat is here, keep the airflow going!\"\n\n*Biome Environmental Stats:*\n\u2022 *Inside:* 34.47\u00b0C | 63.98% | 645 lux\n\u2022 *Outside:* 34.28\u00b0C | Forecast: overcast clouds\n\u2022 *Acoustic Fans:* ON \ud83d\udca8 (Active cooling detected) (Level: -30.8 dB)\n\n*Action Required:* *HOLD \ud83d\udeab*\n\ud83d\udc49 _Soil reservoir is moist and turgor is optimal. No water needed._",
+      "telemetry_snapshot": "{\"timestamp\": \"2026-06-19 12:01:41\", \"temp_c\": 34.47, \"humidity\": 63.98, \"vpd_kpa\": 1.967, \"light_lux\": 645, \"soil_moisture\": 286, \"gas_resistance\": 55.1, \"pir_motion\": 1, \"ambient_noise_db\": -30.8}"
+    },
     {
       "timestamp": "2026-06-19 12:02:43",
       "vpd": 1.967,
