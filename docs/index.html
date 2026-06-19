@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
+    <script>mermaid.initialize({startOnLoad:false, theme: 'neutral'});</script>
     <style>
         :root {
             var(--bg-color): #f7f5f0;
@@ -579,12 +579,19 @@ Static-->Web
     <script>
         const chartInstances = {};
 
+        let mermaidRendered = false;
+
         function switchTab(tabName) {
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(`tab-${tabName}`).classList.add('active');
             const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabName));
             if (activeBtn) activeBtn.classList.add('active');
+            
+            if (tabName === 'architecture' && !mermaidRendered) {
+                mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+                mermaidRendered = true;
+            }
         }
 
         async function fetchData() {
