@@ -477,11 +477,11 @@
         }
 
         .arch-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
             font-size: 0.9rem;
             color: var(--text-primary);
+            line-height: 1.6;
         }
 
         .arch-list li strong {
@@ -490,6 +490,9 @@
 
         .arch-list li::before {
             content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
             color: var(--accent-sage);
             font-weight: 700;
         }
