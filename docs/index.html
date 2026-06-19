@@ -246,12 +246,10 @@
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
             border-radius: 16px;
-            padding: 1.2rem;
-            box-shadow: var(--shadow-soft);
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-            height: 200px;
+            height: 240px;
         }
 
         .trend-card-header {
@@ -259,6 +257,7 @@
             flex-direction: column;
             border-left: 3px solid var(--accent-sage);
             padding-left: 0.75rem;
+            margin-bottom: 1rem;
         }
 
         .trend-card-title {
@@ -693,13 +692,13 @@
                 }
             }
 
-            renderChart('soilChart', telemetry, 'soil_moisture', '#67947d', 'rgba(103, 148, 125, 0.1)');
-            renderChart('tempChart', telemetry, 'temp', '#ca6747', 'rgba(202, 103, 71, 0.1)');
-            renderChart('humChart', telemetry, 'hum', '#5a655d', 'rgba(90, 101, 93, 0.1)');
-            renderChart('luxChart', telemetry, 'light', '#d09f5e', 'rgba(208, 159, 94, 0.1)');
+            renderChart('soilChart', telemetry, 'soil_moisture', '#67947d', 'rgba(103, 148, 125, 0.1)', '');
+            renderChart('tempChart', telemetry, 'temp', '#ca6747', 'rgba(202, 103, 71, 0.1)', '°C');
+            renderChart('humChart', telemetry, 'hum', '#5a655d', 'rgba(90, 101, 93, 0.1)', '%');
+            renderChart('luxChart', telemetry, 'light', '#d09f5e', 'rgba(208, 159, 94, 0.1)', ' lx');
         }
 
-        function renderChart(canvasId, data, dataKey, color, bgColor) {
+        function renderChart(canvasId, data, dataKey, color, bgColor, unit) {
             const ctx = document.getElementById(canvasId).getContext('2d');
             const labels = data.map(t => formatLabelTimestamp(t.timestamp));
             const values = data.map(t => t[dataKey]);
@@ -711,27 +710,44 @@
                 data: {
                     labels: labels,
                     datasets: [{
+                        label: dataKey,
                         data: values,
                         borderColor: color,
                         backgroundColor: bgColor,
                         borderWidth: 2,
                         tension: 0.2,
                         fill: true,
-                        pointRadius: 0
+                        pointRadius: 0,
+                        pointHoverRadius: 4
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.y + unit;
+                                }
+                            }
+                        }
+                    },
                     scales: {
                         y: {
-                            grid: { color: 'rgba(0,0,0,0.02)', drawTicks: false },
-                            ticks: { color: '#8c968f', font: { size: 9 }, maxTicksLimit: 5 }
+                            grid: { color: 'rgba(0,0,0,0.04)', drawTicks: false },
+                            ticks: { 
+                                color: '#8c968f', 
+                                font: { size: 10 }, 
+                                maxTicksLimit: 6,
+                                callback: function(value) { return value + unit; }
+                            }
                         },
-                        x: {
+                        x: { 
+                            display: true,
                             grid: { display: false },
-                            ticks: { display: false }
+                            ticks: { color: '#8c968f', font: { size: 9 }, maxTicksLimit: 6, maxRotation: 0 }
                         }
                     }
                 }
