@@ -1,28 +1,6 @@
 {
   "telemetry": [
     {
-      "timestamp": "2026-06-15 11:15:37",
-      "temp": 34.89,
-      "hum": 56.54,
-      "light": 759,
-      "soil_moisture": 395,
-      "pressure": 1005.71,
-      "gas": 76.67,
-      "pir": null,
-      "db": -30.6
-    },
-    {
-      "timestamp": "2026-06-15 11:46:16",
-      "temp": 32.03,
-      "hum": 40.6,
-      "light": 759,
-      "soil_moisture": 349,
-      "pressure": 1005.33,
-      "gas": 126.52,
-      "pir": null,
-      "db": -29.3
-    },
-    {
       "timestamp": "2026-06-15 12:17:10",
       "temp": 34.61,
       "hum": 51.59,
@@ -1649,9 +1627,57 @@
       "gas": 61.2,
       "pir": 1,
       "db": -20.0
+    },
+    {
+      "timestamp": "2026-06-19 15:34:35",
+      "temp": 35.02,
+      "hum": 61.87,
+      "light": 719,
+      "soil_moisture": 311,
+      "pressure": 1004.83,
+      "gas": 63.24,
+      "pir": 1,
+      "db": -30.5
+    },
+    {
+      "timestamp": "2026-06-19 16:04:59",
+      "temp": 35.05,
+      "hum": 60.55,
+      "light": 726,
+      "soil_moisture": 312,
+      "pressure": 1004.47,
+      "gas": 69.34,
+      "pir": 1,
+      "db": -29.6
     }
   ],
   "weather": [
+    {
+      "timestamp": "2026-06-19 16:04:59",
+      "temp": 36.27,
+      "feels_like": 43.27,
+      "hum": 64.0,
+      "pressure": 1005.0,
+      "clouds": 100,
+      "wind_speed": 5.22,
+      "description": "overcast clouds",
+      "forecast_3h_temp": 33.58,
+      "forecast_3h_hum": 68.0,
+      "forecast_3h_rain": 0.0
+    },
+    {
+      "timestamp": "2026-06-19 15:34:34",
+      "temp": 34.55,
+      "feels_like": 41.55,
+      "hum": 66.0,
+      "pressure": 1005.0,
+      "clouds": 100,
+      "wind_speed": 3.91,
+      "description": "overcast clouds",
+      "forecast_3h_temp": 31.55,
+      "forecast_3h_hum": 70.0,
+      "forecast_3h_rain": 0.0
+    },
     {
       "timestamp": "2026-06-19 15:04:10",
       "temp": 35.53,
@@ -2275,35 +2301,24 @@
       "forecast_3h_temp": null,
       "forecast_3h_hum": null,
       "forecast_3h_rain": null
-    },
-    {
-      "timestamp": "2026-05-31 18:00:02",
-      "temp": 33.38,
-      "feels_like": null,
-      "hum": 65.0,
-      "pressure": 1006.0,
-      "clouds": null,
-      "wind_speed": null,
-      "description": "few clouds",
-      "forecast_3h_temp": null,
-      "forecast_3h_hum": null,
-      "forecast_3h_rain": null
-    },
-    {
-      "timestamp": "2026-05-31 08:58:07",
-      "temp": 33.06,
-      "feels_like": null,
-      "hum": 63.0,
-      "pressure": 1008.0,
-      "clouds": null,
-      "wind_speed": null,
-      "description": "mist",
-      "forecast_3h_temp": null,
-      "forecast_3h_hum": null,
-      "forecast_3h_rain": null
     }
   ],
   "vision": [
+    {
+      "timestamp": "2026-06-19 15:55:05",
+      "image_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-19/garden_155505.jpg",
+      "model": "gemini-2.5-flash",
+      "turgidity": "TURGID",
+      "soil_visual": "UNKNOWN",
+      "anomalies": "Some dried, brown material is visible in the center of the plant, near the base of the rabbit.",
+      "confidence": 0.7,
+      "raw_json": "{\n  \"turgidity\": \"TURGID\",\n  \"turgidity_score\": 0.95,\n  \"leaf_count\": 27,\n  \"leaf_change\": -1,\n  \"plant_height_cm\": 7.8,\n  \"canopy_width_cm\": 10.5,\n  \"soil_visual\": \"UNKNOWN\",\n  \"anomalies\": \"Some dried, brown material is visible in the center of the plant, near the base of the rabbit.\",\n  \"confidence\": 0.7\n}",
+      "leaf_count": 27,
+      "leaf_change": -1,
+      "turgidity_score": 0.95,
+      "plant_height_cm": 7.8,
+      "canopy_width_cm": 10.5
+    },
     {
       "timestamp": "2026-06-19 12:08:28",
       "image_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-19/garden_120828.jpg",
@@ -2583,21 +2598,6 @@
       "anomalies": "{\"imaging_anomalies\": [\"Image [T-4] is completely black, indicating a camera exposure failure or lack of LED trigger.\", \"Image [T-2] is extremely dark/underexposed, making detailed visual inspection impossible for that frame.\"], \"botanical_anomalies\": [\"A single highly pale/chlorotic leaf is visible on the upper right branch in T-1 and CURRENT.\"]}",
       "confidence": 0.95,
       "raw_json": "{\"timestamp\": \"2026-06-15T16:26:53.156751\", \"model\": \"gemini-flash-latest\", \"image_availability\": {\"compare_set\": [\"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_000013.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_162618.jpg\"], \"current\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_162618.jpg\", \"anchor\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\", \"previous\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\"}, \"frame_sequence\": [{\"label\": \"EARLIEST\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\"}, {\"label\": \"T-4\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg\"}, {\"label\": \"T-3\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg\"}, {\"label\": \"T-2\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_000013.jpg\"}, {\"label\": \"T-1\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\"}, {\"label\": \"CURRENT\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_162618.jpg\"}], \"vision_report\": {\"timestamp\": \"2026-06-15T16:26:23Z\", \"compositional_truth_check\": {\"pots_detected\": 1, \"expected_registry\": [\"P2: Jade Plant (Crassula ovata)\"], \"observed_registry\": [\"P2: Jade Plant (Crassula ovata)\"]}, \"inventory_reconciliation\": {\"status\": \"Reconciled\", \"systemic_loss\": [], \"new_introductions\": []}, \"plant_audit\": {\"P2\": {\"scientific_name\": \"Crassula ovata\", \"common_name\": \"Jade Plant\", \"status\": \"Present\", \"visual_features\": {\"leaf_color\": \"Predominantly green with some leaves showing lighter/pale coloration (notably one pale leaf on the upper right section in T-1 and CURRENT).\", \"turgidity\": \"High; leaves appear plump and succulent, indicating adequate hydration.\", \"stem_structure\": \"Multiple branching stems spreading across the pot.\", \"growth_stage\": \"Mature vegetative\"}}}, \"biome_observations\": {\"lighting\": \"Fixed LED illumination with diffuse ambient light. Significant exposure variations observed across the sequence (T-4 is completely dark; T-2 is extremely underexposed).\", \"sensor_hardware\": \"An electronic sensor module (likely a PIR motion sensor or light sensor with a white dome) is visible at the top right of the pot, connected by wires.\"}, \"visual_health_inference\": {\"health_status\": \"Stable\", \"evidence\": \"The succulent leaves maintain their plumpness and turgor throughout the visible frames (T-3, T-1, CURRENT). The pale leaf on the upper right stem in T-1 and CURRENT represents localized senescence or minor chlorosis, but does not indicate systemic physiological stress. The historical starch water application and AC cooling trials from April 2026 have resulted in a stable, well-hydrated specimen.\", \"action_coherence\": \"The stable turgor and healthy leaf density align with successful long-term outcomes of past user care (supplementary starch water and temperature management).\"}, \"anomalies\": {\"imaging_anomalies\": [\"Image [T-4] is completely black, indicating a camera exposure failure or lack of LED trigger.\", \"Image [T-2] is extremely dark/underexposed, making detailed visual inspection impossible for that frame.\"], \"botanical_anomalies\": [\"A single highly pale/chlorotic leaf is visible on the upper right branch in T-1 and CURRENT.\"]}, \"narrative_description\": \"The chronological sequence of the Jade Plant (P2) shows a stable and healthy indoor succulent. A maker-checker process was applied: first, verifying the presence of the registered plant across all frames, and second, validating its health status by analyzing leaf turgidity and color. While frames T-4 and T-2 suffer from severe underexposure/blackout issues, the well-lit frames (T-3, T-1, and CURRENT) confirm that the plant is well-hydrated with plump, fleshy leaves. A single pale leaf is observed on the upper right stem, which is likely a natural localized senescence. Overall, the plant exhibits excellent turgor and no signs of systemic stress, confirming successful long-term maintenance.\", \"confidence\": 0.95}}",
-      "leaf_count": null,
-      "leaf_change": null,
-      "turgidity_score": null,
-      "plant_height_cm": null,
-      "canopy_width_cm": null
-    },
-    {
-      "timestamp": "2026-06-15 15:24:59",
-      "image_path": "/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_152442.jpg",
-      "model": "gemini-flash-latest",
-      "turgidity": "WILTING",
-      "soil_visual": "UNKNOWN",
-      "anomalies": "T-4 is a completely black frame (temporary camera/sensor failure). T-2 is severely underexposed.",
-      "confidence": 0.95,
-      "raw_json": "{\"timestamp\": \"2026-06-15T15:24:59.994892\", \"model\": \"gemini-flash-latest\", \"image_availability\": {\"compare_set\": [\"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_000013.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\", \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_152442.jpg\"], \"current\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_152442.jpg\", \"anchor\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\", \"previous\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\"}, \"frame_sequence\": [{\"label\": \"EARLIEST\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-11/garden_133012.jpg\"}, {\"label\": \"T-4\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-12/garden_120435.jpg\"}, {\"label\": \"T-3\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-14/garden_131309.jpg\"}, {\"label\": \"T-2\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_000013.jpg\"}, {\"label\": \"T-1\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_132006.jpg\"}, {\"label\": \"CURRENT\", \"path\": \"/Users/surendran/.openclaw/workspace/gardenbot/archive/2026-06-15/garden_152442.jpg\"}], \"vision_report\": {\"timestamp\": \"2026-06-15T15:24:46Z\", \"compositional_truth_check\": \"The visual field contains a single circular pot housing a Jade Plant (Crassula ovata) along with an adjacent electronic sensor module (PIR dome sensor with colored wires) at the upper right.\", \"inventory_reconciliation\": \"P2 (Jade Plant / Crassula ovata) is present and accounted for. There are no systemic losses or new plant introductions.\", \"plant_audit\": \"The Jade Plant (P2) maintains its overall structural form. Earliest image shows a dark but intact plant. T-4 is a complete black frame. T-3 shows healthy green leaves with good turgor. T-2 is highly underexposed. T-1 and CURRENT show the plant clearly, with a distinct pale/whitish leaf on the upper right cluster. This pale leaf is firm and intact, indicating no structural decay.\", \"biome_observations\": \"The environment is indoor with fixed LED lighting. Two frames (T-4 and T-2) exhibit severe capture/exposure anomalies. The sensor (a2) remains in a stable position relative to the pot.\", \"visual_health_inference\": \"The plant displays excellent turgor and leaf retention. The pale/whitish leaf observed in the upper right quadrant in T-1 and CURRENT is not flagged as physiological stress; instead, it is interpreted as a successful outcome of user care, potentially representing starch water residue or healthy light-induced variegation following the supplementary starch water and cooling trials.\", \"anomalies\": \"T-4 is a completely black frame (temporary camera/sensor failure). T-2 is severely underexposed.\", \"narrative_description\": \"The 5-day chronological monitoring of the Jade Plant (P2) reveals a stable and healthy specimen. Although the sequence is interrupted by two imaging anomalies (a complete blackout at T-4 and extreme underexposure at T-2), the usable images confirm robust health. The plant shows no signs of wilting or leaf drop. The distinctive pale leaf on the upper right is firm and healthy, aligning with positive physiological responses to the historical starch water application and stable 25C temperature management.\", \"confidence\": 0.95}}",
       "leaf_count": null,
       "leaf_change": null,
       "turgidity_score": null,

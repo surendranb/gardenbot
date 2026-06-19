@@ -567,37 +567,37 @@
                         classDef external fill:#f7f5f0,stroke:#8c968f,stroke-width:2px,color:#212922,stroke-dasharray: 5 5
 
                         subgraph Physical ["🌱 Physical Environment"]
-                            Pot["Physical Pot & Plant<br>(Soil Probe inserted)"]:::hardware
+                            Pot["Physical Pot & Plant"]:::hardware
                         end
 
                         subgraph Hardware ["💻 Hardware (Edge)"]
-                            Arduino["Arduino Microcontroller<br>(BME680, Light Sensor)"]:::hardware
-                            Webcam["USB Webcam<br>(Audio & Visual Capture)"]:::hardware
+                            Arduino["Arduino Microcontroller<br>(Soil Moisture, BME, Lux)"]:::hardware
+                            Webcam["USB Webcam & Mic<br>(Audio & Visual Capture)"]:::hardware
                             Laptop["Host Laptop"]:::hardware
                         end
 
                         subgraph Logic ["🧠 Logic & Data (Laptop)"]
                             Python["Python Data Pipeline<br>(collect.py, vision.py)"]:::software
-                            DB[("SQLite Database<br>(garden.db)")]:::storage
+                            DB["SQLite Database<br>(garden.db)"]:::storage
                             Claw{"OpenClaw Agent<br>(Garden Warden)"}:::software
                         end
 
-                        subgraph Cloud ["☁️ Cloud & Notifications"]
+                        subgraph Cloud ["☁️ Cloud Services"]
                             LLM["Gemini / OpenRouter<br>(LLM Analysis)"]:::external
                             Slack["Slack Channel<br>(#gardenbot)"]:::external
                             Github["GitHub Pages<br>(Dashboard Deployment)"]:::external
                         end
 
-                        Pot -->|Moisture Readings| Arduino
-                        Arduino -->|Serial Telemetry| Laptop
+                        Pot -->|Sensory Target| Arduino
+                        Arduino -->|Serial Readings| Laptop
                         Webcam -->|USB Feed| Laptop
                         
                         Laptop --> Python
-                        Python -->|Writes Telemetry & Vision| DB
-                        DB -->|Provides Context| Claw
-                        Claw <-->|API Calls & Reasoning| LLM
-                        Claw -->|Issues Directives| Slack
-                        Claw -->|Posts Updates| Github
+                        Python -->|Writes Data| DB
+                        DB -->|Context| Claw
+                        Claw <-->|API Calls & Insights| LLM
+                        Claw -->|Issues Updates| Slack
+                        Claw -->|Triggers Sync| Github
                     </div>
                 </div>
             </div>
