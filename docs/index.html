@@ -572,47 +572,247 @@
                 <p class="architecture-desc">
                     Gardenbot operates as a closed-loop autonomous warden. Environmental telemetry is gathered via the ESP8266 sensory array (BME680, LDR, Soil Probes) and combined with optical and acoustic captures from the host machine. The OpenClaw agent digests this context every 4 hours to evaluate plant vitality and issue care directives.
                 </p>
-                <div class="svg-container">
-                    <div class="mermaid">
-                    graph TD
-                        classDef hardware fill:#e8e4db,stroke:#c97c5d,stroke-width:2px,color:#212922
-                        classDef software fill:#ffffff,stroke:#67947d,stroke-width:2px,color:#212922
-                        classDef cloud fill:#f4f1ea,stroke:#8c968f,stroke-width:2px,stroke-dasharray: 5 5,color:#212922
+                <div class="custom-schematic">
+                    <style>
+                        .custom-schematic {
+                            font-family: var(--font-sans);
+                            padding: 2rem 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            background: var(--bg-color);
+                            border-radius: 12px;
+                            border: 1px solid var(--surface-border);
+                        }
+                        
+                        .schematic-layer {
+                            width: 100%;
+                            max-width: 600px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            position: relative;
+                            margin-bottom: 0;
+                        }
+                        
+                        .layer-title {
+                            font-family: var(--font-serif);
+                            font-weight: 600;
+                            color: var(--text-muted);
+                            text-transform: uppercase;
+                            letter-spacing: 1.5px;
+                            font-size: 0.85rem;
+                            margin-bottom: 1.5rem;
+                            width: 100%;
+                            text-align: center;
+                            border-bottom: 1px solid rgba(0,0,0,0.05);
+                            padding-bottom: 0.5rem;
+                        }
 
-                        subgraph Physical ["🌱 Physical Environment"]
-                            Pot["Physical Pot & Plant"]:::hardware
-                        end
+                        .s-node {
+                            background: var(--surface-bg);
+                            border: 2px solid;
+                            border-radius: 8px;
+                            padding: 1rem 1.5rem;
+                            text-align: center;
+                            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+                            z-index: 2;
+                            position: relative;
+                            min-width: 200px;
+                            transition: transform 0.2s ease, box-shadow 0.2s ease;
+                        }
+                        
+                        .s-node:hover {
+                            transform: translateY(-2px);
+                            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+                        }
 
-                        subgraph Hardware ["💻 Hardware (Edge)"]
-                            Arduino["Arduino Microcontroller<br>(Soil Moisture, BME680, Lux Light Sensor)"]:::hardware
-                            Laptop["Host Laptop"]:::hardware
-                            Webcam["USB Webcam & Mic<br>(Audio / Visual)"]:::hardware
-                        end
+                        .node-hardware { border-color: #c97c5d; background: #faf8f5; }
+                        .node-software { border-color: #67947d; background: #ffffff; }
+                        .node-cloud { border-color: #8c968f; background: #f4f1ea; border-style: dashed; }
 
-                        Pot -->|Soil Probe inserted into dirt| Arduino
-                        Arduino -->|Serial Telemetry over USB| Laptop
-                        Webcam -->|USB Feed| Laptop
+                        .s-title {
+                            font-weight: 600;
+                            color: var(--text-primary);
+                            font-size: 1rem;
+                            margin-bottom: 0.25rem;
+                        }
+                        
+                        .s-desc {
+                            font-size: 0.8rem;
+                            color: var(--text-muted);
+                        }
 
-                        subgraph Logic ["🧠 Logic & Data (Laptop)"]
-                            Python["Python Pipeline<br>(collect.py, vision.py)"]:::software
-                            DB[("SQLite Database<br>(garden.db)")]:::software
-                            Claw{"OpenClaw Agent<br>(Garden Warden)"}:::software
-                        end
+                        .s-wire {
+                            width: 2px;
+                            min-height: 40px;
+                            background: linear-gradient(to bottom, #d1d5d2, #aab2ad);
+                            position: relative;
+                            z-index: 1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto;
+                        }
+                        
+                        .s-wire::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -4px;
+                            left: -4px;
+                            border-width: 5px 5px 0;
+                            border-style: solid;
+                            border-color: #aab2ad transparent transparent transparent;
+                        }
 
-                        Laptop --> Python
-                        Python -->|Writes Data| DB
-                        Python -->|Reads Context| DB
-                        DB -->|Reads State| Claw
+                        .s-wire span {
+                            position: absolute;
+                            background: var(--bg-color);
+                            padding: 0.2rem 0.6rem;
+                            font-size: 0.75rem;
+                            color: var(--text-muted);
+                            border-radius: 12px;
+                            white-space: nowrap;
+                            border: 1px solid var(--surface-border);
+                        }
 
-                        subgraph Cloud ["☁️ Cloud Services"]
-                            LLM["Gemini / OpenRouter<br>(LLM Insight)"]:::cloud
-                            Slack["Slack: #gardenbot<br>(Alerts)"]:::cloud
-                            Github["GitHub Pages: Dashboard<br>(Git Sync)"]:::cloud
-                        end
+                        .grid-2 {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            gap: 2rem;
+                            width: 100%;
+                            justify-items: center;
+                        }
+                        
+                        .grid-3 {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            gap: 1rem;
+                            width: 100%;
+                            justify-items: center;
+                        }
 
-                        Claw --> LLM
-                        Claw --> Slack
-                        Claw --> Github
+                        .wire-split {
+                            width: calc(100% - 200px);
+                            height: 40px;
+                            border-top: 2px solid #d1d5d2;
+                            border-left: 2px solid #d1d5d2;
+                            border-right: 2px solid #d1d5d2;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+                            margin-top: -2px;
+                            position: relative;
+                            border-bottom: none;
+                        }
+                        
+                        .wire-split-down {
+                            width: 2px;
+                            height: 20px;
+                            background: #d1d5d2;
+                            margin: 0 auto;
+                        }
+
+                        .parallel-wires {
+                            display: flex;
+                            gap: 6rem;
+                            margin: 0 auto;
+                        }
+                    </style>
+
+                    <!-- PHYSICAL ENVIRONMENT -->
+                    <div class="schematic-layer">
+                        <div class="layer-title">🌱 PHYSICAL ENVIRONMENT</div>
+                        <div class="s-node node-hardware">
+                            <div class="s-title">Physical Pot & Plant</div>
+                        </div>
+                        <div class="s-wire" style="height: 60px;">
+                            <span>Soil Probe inserted into dirt</span>
+                        </div>
+                    </div>
+
+                    <!-- HARDWARE EDGE -->
+                    <div class="schematic-layer">
+                        <div class="layer-title">💻 HARDWARE (EDGE)</div>
+                        <div class="grid-2">
+                            <div class="s-node node-hardware">
+                                <div class="s-title">Arduino Microcontroller</div>
+                                <div class="s-desc">(Soil Moisture, BME680, Lux)</div>
+                            </div>
+                            <div class="s-node node-hardware">
+                                <div class="s-title">USB Webcam & Mic</div>
+                                <div class="s-desc">(Audio / Visual)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid-2" style="margin-top: 0; margin-bottom: 0;">
+                            <div class="s-wire" style="height: 50px;"><span>Serial Telemetry over USB</span></div>
+                            <div class="s-wire" style="height: 50px;"><span>USB Feed</span></div>
+                        </div>
+
+                        <div class="s-node node-hardware" style="width: 300px;">
+                            <div class="s-title">Host Laptop</div>
+                        </div>
+                        <div class="s-wire" style="height: 40px;"></div>
+                    </div>
+
+                    <!-- LOGIC & DATA -->
+                    <div class="schematic-layer">
+                        <div class="layer-title">🧠 LOGIC & DATA (LAPTOP)</div>
+                        
+                        <div class="s-node node-software" style="width: 300px;">
+                            <div class="s-title">Python Pipeline</div>
+                            <div class="s-desc">(collect.py, vision.py)</div>
+                        </div>
+                        
+                        <div class="parallel-wires">
+                            <div class="s-wire" style="height: 60px;"><span>Writes Data</span></div>
+                            <div class="s-wire" style="height: 60px;"><span>Reads Context</span></div>
+                        </div>
+
+                        <div class="s-node node-software" style="width: 300px;">
+                            <div class="s-title">SQLite Database</div>
+                            <div class="s-desc">(garden.db)</div>
+                        </div>
+                        
+                        <div class="s-wire" style="height: 50px;"><span>Reads State</span></div>
+
+                        <div class="s-node node-software" style="width: 300px;">
+                            <div class="s-title">OpenClaw Agent</div>
+                            <div class="s-desc">(Garden Warden)</div>
+                        </div>
+                        
+                        <div class="wire-split-down"></div>
+                        <div class="wire-split"></div>
+                        <div class="grid-3" style="margin-top: 0;">
+                            <div class="s-wire" style="height: 20px; width: 0; background: transparent;">
+                                <div style="position: absolute; width: 2px; height: 20px; background: #d1d5d2; top: -40px;"></div>
+                                <div style="position: absolute; bottom: -4px; left: -1px; border-width: 5px 5px 0; border-style: solid; border-color: #aab2ad transparent transparent transparent; top: -20px;"></div>
+                            </div>
+                            <div class="s-wire" style="height: 20px;"></div>
+                            <div class="s-wire" style="height: 20px; width: 0; background: transparent;">
+                                <div style="position: absolute; width: 2px; height: 20px; background: #d1d5d2; top: -40px;"></div>
+                                <div style="position: absolute; bottom: -4px; left: -1px; border-width: 5px 5px 0; border-style: solid; border-color: #aab2ad transparent transparent transparent; top: -20px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CLOUD SERVICES -->
+                    <div class="schematic-layer" style="margin-top: 1rem;">
+                        <div class="layer-title">☁️ CLOUD SERVICES</div>
+                        <div class="grid-3">
+                            <div class="s-node node-cloud">
+                                <div class="s-title">Gemini / OpenRouter</div>
+                                <div class="s-desc">(LLM Insight)</div>
+                            </div>
+                            <div class="s-node node-cloud">
+                                <div class="s-title">Slack: #gardenbot</div>
+                                <div class="s-desc">(Alerts)</div>
+                            </div>
+                            <div class="s-node node-cloud">
+                                <div class="s-title">GitHub Pages</div>
+                                <div class="s-desc">(Git Sync)</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
