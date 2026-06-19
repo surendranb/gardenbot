@@ -428,9 +428,11 @@
                 </div>
 
                 <div class="report-box">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid var(--surface-border); padding-bottom: 0.5rem;">
-                        <span style="font-size:0.85rem; color:var(--text-secondary);">Total Leaves: <strong style="color:var(--text-primary);" id="vis-leaves">--</strong> (<span id="vis-leaves-change">--</span>)</span>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--surface-border); padding-bottom: 0.75rem;">
+                        <span style="font-size:0.85rem; color:var(--text-secondary);">Leaves: <strong style="color:var(--text-primary);" id="vis-leaves">--</strong> (<span id="vis-leaves-change">--</span>)</span>
                         <span style="font-size:0.85rem; color:var(--text-secondary);">Turgidity Index: <strong style="color:var(--text-primary);" id="vis-turg-score">--</strong></span>
+                        <span style="font-size:0.85rem; color:var(--text-secondary);">Canopy Height: <strong style="color:var(--text-primary);" id="vis-height">--</strong></span>
+                        <span style="font-size:0.85rem; color:var(--text-secondary);">Canopy Width: <strong style="color:var(--text-primary);" id="vis-width">--</strong></span>
                     </div>
                     <div class="report-label">Warden Report Summary</div>
                     <div class="report-text" id="latest-reasoning">Waiting for agent diagnostic logs...</div>
@@ -549,11 +551,15 @@
                 const leafChange = latestVision.leaf_change !== null && latestVision.leaf_change !== undefined ? latestVision.leaf_change : 0;
                 const changeSign = leafChange >= 0 ? `+${leafChange}` : `${leafChange}`;
                 const turgScore = latestVision.turgidity_score !== null && latestVision.turgidity_score !== undefined ? (latestVision.turgidity_score * 100).toFixed(0) + '%' : '--';
+                const height = latestVision.plant_height_cm !== null && latestVision.plant_height_cm !== undefined ? latestVision.plant_height_cm.toFixed(1) + ' cm' : '--';
+                const width = latestVision.canopy_width_cm !== null && latestVision.canopy_width_cm !== undefined ? latestVision.canopy_width_cm.toFixed(1) + ' cm' : '--';
                 
                 document.getElementById('vis-leaves').innerText = leaves;
                 document.getElementById('vis-leaves-change').innerText = changeSign;
                 document.getElementById('vis-leaves-change').style.color = leafChange > 0 ? '#34d399' : (leafChange < 0 ? '#f87171' : 'var(--text-secondary)');
                 document.getElementById('vis-turg-score').innerText = turgScore;
+                document.getElementById('vis-height').innerText = height;
+                document.getElementById('vis-width').innerText = width;
             }
 
             // 2. Timeline Interventions
