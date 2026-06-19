@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌿 GardenBot Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-color: #0f1115;
-            --card-bg: rgba(22, 26, 34, 0.7);
-            --card-border: rgba(255, 255, 255, 0.05);
+            --bg-color: #08090c;
+            --surface-bg: rgba(17, 20, 28, 0.7);
+            --surface-border: rgba(255, 255, 255, 0.05);
+            --surface-glow: rgba(16, 185, 129, 0.03);
+            
             --text-primary: #f3f4f6;
-            --text-secondary: #9ca3af;
+            --text-secondary: #8e9aaf;
+            --text-muted: #4b5563;
+            
             --accent-green: #10b981;
-            --accent-green-glow: rgba(16, 185, 129, 0.2);
+            --accent-green-glow: rgba(16, 185, 129, 0.15);
             --accent-blue: #3b82f6;
+            --accent-orange: #f59e0b;
             --accent-red: #ef4444;
-            --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --accent-red-glow: rgba(239, 68, 68, 0.15);
+            
+            --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         * {
@@ -31,325 +38,436 @@
             color: var(--text-primary);
             font-family: var(--font-family);
             min-height: 100vh;
-            padding: 2rem;
-            background-image: radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 40%);
+            padding: 3rem 2rem;
+            background-image: radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.06) 0%, transparent 40%),
+                              radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.04) 0%, transparent 45%);
+            background-attachment: fixed;
+            line-height: 1.5;
+        }
+
+        .dashboard-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--card-border);
+            margin-bottom: 3rem;
             padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--surface-border);
         }
 
         h1 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #fff 0%, #a7f3d0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h1 span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border: 1px solid var(--surface-border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            letter-spacing: 0;
+            background: rgba(255,255,255,0.02);
+            -webkit-text-fill-color: initial;
+        }
+
+        .refresh-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--surface-border);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .refresh-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
         .refresh-btn:hover {
-            border-color: var(--accent-green);
-            background: rgba(16, 185, 129, 0.1);
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (max-width: 1024px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            border-left: 3px solid var(--accent-green);
-            padding-left: 0.5rem;
+            background: rgba(16, 185, 129, 0.08);
+            border-color: rgba(16, 185, 129, 0.4);
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
         }
 
         /* KPI Panel */
-        .kpi-container {
+        .kpi-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
-        @media (max-width: 768px) {
-            .kpi-container {
+        @media (max-width: 1024px) {
+            .kpi-row {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
+        @media (max-width: 640px) {
+            .kpi-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .kpi-card {
-            background: rgba(30, 37, 48, 0.4);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 1rem;
-            text-align: center;
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            transition: transform 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
         }
 
         .kpi-label {
             font-size: 0.85rem;
+            font-weight: 600;
             color: var(--text-secondary);
-            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
         }
 
         .kpi-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
         }
 
-        .status-badge {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
+        .kpi-subtext {
             font-size: 0.85rem;
-            font-weight: 600;
-            border-radius: 6px;
-            margin-top: 0.5rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
-        .status-healthy { background: rgba(16, 185, 129, 0.2); color: #34d399; }
-        .status-stressed { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-        .status-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
 
-        /* Camera / Photo layout */
-        .photo-frame {
+        .status-healthy { background: rgba(16, 185, 129, 0.1); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .status-stressed { background: rgba(239, 68, 68, 0.1); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.2); }
+        .status-warning { background: rgba(245, 158, 11, 0.1); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.2); }
+
+        /* Main Grid */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 550px 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section-card {
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            border-radius: 24px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--accent-green);
+            padding-left: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Camera Frame */
+        .camera-container {
             width: 100%;
-            height: 320px;
-            border-radius: 12px;
-            background: #000;
+            border-radius: 16px;
             overflow: hidden;
+            border: 1px solid var(--surface-border);
             position: relative;
-            border: 1px solid var(--card-border);
+            aspect-ratio: 4/3;
+            background: #0d0f14;
         }
 
-        .photo-frame img {
+        .camera-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .photo-timestamp {
+        .camera-overlay {
             position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(0,0,0,0.6);
-            padding: 0.25rem 0.5rem;
-            font-size: 0.8rem;
-            border-radius: 4px;
-        }
-
-        /* Forms and logger */
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            background: rgba(20, 24, 33, 0.8);
-            border: 1px solid var(--card-border);
-            color: var(--text-primary);
-            padding: 0.75rem;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent-green);
-        }
-
-        .submit-btn {
-            background: var(--accent-green);
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            transition: opacity 0.2s ease;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* History Tables */
-        .history-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            max-height: 250px;
-            overflow-y: auto;
-        }
-
-        .history-item {
-            background: rgba(30, 37, 48, 0.4);
-            border: 1px solid var(--card-border);
-            padding: 0.75rem;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .history-meta {
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
             display: flex;
             justify-content: space-between;
+            background: rgba(8, 9, 12, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--surface-border);
+        }
+
+        .report-box {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--surface-border);
+            padding: 1.5rem;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .report-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .report-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Lists & Tables */
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-height: 350px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+        }
+
+        /* Custom Scrollbar */
+        .timeline-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .timeline-list::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .timeline-list::-webkit-scrollbar-thumb {
+            background: var(--surface-border);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--surface-border);
+            padding: 1.2rem;
+            border-radius: 16px;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            transition: border-color 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex-grow: 1;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-action {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .timeline-time {
             font-size: 0.8rem;
             color: var(--text-secondary);
         }
 
-        .history-body {
-            font-size: 0.95rem;
+        .timeline-note {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
-        .interpretation-box {
-            background: rgba(16, 185, 129, 0.05);
-            border-left: 4px solid var(--accent-green);
-            padding: 1rem;
-            border-radius: 0 12px 12px 0;
-            margin-top: 1rem;
+        .chart-box {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 1.5rem;
         }
 
-        .chart-container {
+        .chart-wrapper {
             position: relative;
-            height: 260px;
+            height: 250px;
             width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🌿 GardenBot Biome Dashboard</h1>
-        <button class="refresh-btn" onclick="fetchData()">🔄 Refresh Data</button>
-    </header>
+    <div class="dashboard-container">
+        <header>
+            <h1>🌿 GardenBot <span>v2.0</span></h1>
+            <button class="refresh-btn" onclick="fetchData()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                Sync Status
+            </button>
+        </header>
 
-    <div class="kpi-container">
-        <div class="kpi-card">
-            <div class="kpi-label">Indoor Temp</div>
-            <div class="kpi-value" id="kpi-temp">-- °C</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Soil Moisture</div>
-            <div class="kpi-value" id="kpi-soil">--</div>
-            <span class="status-badge" id="kpi-soil-trend">Stable</span>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Vapor Pressure Deficit</div>
-            <div class="kpi-value" id="kpi-vpd">-- kPa</div>
-        </div>
-        <div class="kpi-card">
-            <div class="kpi-label">Plant Health</div>
-            <div class="kpi-value" id="kpi-health">--</div>
-            <span class="status-badge" id="kpi-health-badge">Unknown</span>
-        </div>
-    </div>
-
-    <div class="grid-container">
-        <!-- Live Photo and Assessment -->
-        <div class="card">
-            <div class="card-title">Live Vision Ground Truth</div>
-            <div class="photo-frame">
-                <img id="latest-image" src="latest.jpg" alt="Latest Jade Plant Snap" onerror="this.src='https://placehold.co/600x400?text=No+Image+Captured+Yet'">
-                <div class="photo-timestamp" id="image-time">Time: --</div>
+        <!-- Metrics Grid -->
+        <div class="kpi-row">
+            <div class="kpi-card">
+                <div class="kpi-label">Ambient Temperature</div>
+                <div class="kpi-value" id="kpi-temp">--°C</div>
+                <div class="kpi-subtext" id="kpi-temp-sub">Indoor Desk Sensor</div>
             </div>
-
-            
-            <div class="interpretation-box">
-                <div style="font-weight: 600; margin-bottom: 0.25rem;">Warden's Latest Assessment:</div>
-                <div id="latest-reasoning" style="font-size: 0.95rem; line-height: 1.4;">No interpretations logged yet. Waiting for warden run.</div>
+            <div class="kpi-card">
+                <div class="kpi-label">Soil State</div>
+                <div class="kpi-value" id="kpi-soil">--</div>
+                <div class="kpi-subtext">
+                    Trend: <span class="status-pill status-healthy" id="kpi-soil-trend" style="padding:0.1rem 0.4rem; font-size:0.75rem;">Stable</span>
+                </div>
             </div>
-        </div>
-
-        <!-- Environmental Controls & Log -->
-        <div class="card">
-            <div class="card-title">Log Human Action</div>
-            <form id="action-form" onsubmit="logAction(event)">
-                <div class="form-group">
-                    <label for="action-type">Action</label>
-                    <select id="action-type">
-                        <option value="watering">Watering</option>
-                        <option value="misting">Foliar Misting</option>
-                        <option value="ac_adjustment">AC Adjust (Temperature)</option>
-                        <option value="fertilizer">Starch / Nutrient Application</option>
-                        <option value="manual_audit">Manual Visual Check</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="action-note">Notes</label>
-                    <textarea id="action-note" rows="3" placeholder="Describe the action performed..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Save Action</button>
-            </form>
-            
-            <div style="margin-top: 1.5rem;">
-                <div style="font-weight:600; margin-bottom: 0.5rem; color: var(--text-secondary)">Recent Actions Log</div>
-                <div class="history-list" id="actions-log">
-                    <!-- Loaded dynamically -->
+            <div class="kpi-card">
+                <div class="kpi-label">Transpiration VPD</div>
+                <div class="kpi-value" id="kpi-vpd">-- kPa</div>
+                <div class="kpi-subtext" id="kpi-vpd-status">Loading range...</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Jade Health Status</div>
+                <div class="kpi-value" style="font-size:1.8rem; line-height:1.2; margin-top:0.4rem;" id="kpi-health">--</div>
+                <div>
+                    <span class="status-badge" id="kpi-health-badge">Unknown</span>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Charts -->
-    <div class="grid-container">
-        <div class="card">
-            <div class="card-title">Soil Moisture History</div>
-            <div class="chart-container">
-                <canvas id="soilChart"></canvas>
+        <!-- Main Content -->
+        <div class="dashboard-grid">
+            <!-- Left Side: Vision and Warden Reports -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div>
+                        <div class="section-title">Optical Feed</div>
+                        <div class="section-subtitle">Real-time Jade plant visual analysis</div>
+                    </div>
+                </div>
+
+                <div class="camera-container">
+                    <img id="latest-image" src="latest.jpg" alt="Latest visual feed snapshot" onerror="this.src='https://placehold.co/640x480?text=No+Image+Captured+Yet'">
+                    <div class="camera-overlay">
+                        <span>Lens: BME-Camera Node 1</span>
+                        <span id="image-time">Time: --</span>
+                    </div>
+                </div>
+
+                <div class="report-box">
+                    <div class="report-label">Warden Report Summary</div>
+                    <div class="report-text" id="latest-reasoning">Waiting for agent diagnostic logs...</div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-title">VPD & Indoor Temperature</div>
-            <div class="chart-container">
-                <canvas id="vpdChart"></canvas>
+
+            <!-- Right Side: Trends and Human Intervention Log -->
+            <div class="section-card">
+                <div class="section-header">
+                    <div>
+                        <div class="section-title">Environmental Trends</div>
+                        <div class="section-subtitle">Historical biome metrics logs</div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="chart-box">
+                        <div style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom:1rem;">Soil Moisture (Analog Log)</div>
+                        <div class="chart-wrapper">
+                            <canvas id="soilChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <div style="font-size:0.85rem; font-weight:600; color:var(--text-secondary); margin-bottom:1rem;">Vapor Pressure Deficit (kPa)</div>
+                        <div class="chart-wrapper">
+                            <canvas id="vpdChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem;">
+                    <div class="section-header" style="border-left-color: var(--accent-blue); margin-bottom:1rem;">
+                        <div>
+                            <div class="section-title">Intervention Ledger</div>
+                            <div class="section-subtitle">Human actions logged via Slack interface</div>
+                        </div>
+                    </div>
+                    <div class="timeline-list" id="actions-log">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -364,7 +482,6 @@
                 const data = await response.json();
                 updateDashboard(data);
             } catch (error) {
-
                 console.error("Failed to load dashboard data:", error);
             }
         }
@@ -375,15 +492,27 @@
             const humanActions = data.human_actions || [];
             const vision = data.vision || [];
 
-            // 1. Update KPIs using the last telemetry point
+            // 1. Update metrics
             if (telemetry.length > 0) {
                 const latest = telemetry[telemetry.length - 1];
-                document.getElementById('kpi-temp').innerText = `${latest.temp}°C`;
+                document.getElementById('kpi-temp').innerText = `${latest.temp.toFixed(1)}°C`;
                 document.getElementById('kpi-soil').innerText = latest.soil_moisture;
-                document.getElementById('kpi-vpd').innerText = `${(0.61078 * Math.exp((17.27 * latest.temp) / (latest.temp + 237.3)) * (1 - latest.hum/100)).toFixed(2)} kPa`;
+                
+                // VPD calculation
+                const vpd = 0.61078 * Math.exp((17.27 * latest.temp) / (latest.temp + 237.3)) * (1 - latest.hum/100);
+                document.getElementById('kpi-vpd').innerText = `${vpd.toFixed(2)} kPa`;
+                
+                const vpdStatus = document.getElementById('kpi-vpd-status');
+                if (vpd > 2.0) {
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-red); font-weight:700;">● CRITICAL STRESS</span>`;
+                } else if (vpd > 1.5) {
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-orange); font-weight:700;">● HIGH</span>`;
+                } else {
+                    vpdStatus.innerHTML = `<span style="color:var(--accent-green); font-weight:700;">● OPTIMAL range</span>`;
+                }
             }
 
-            // Update trend & health from latest interpretation/vision
+            // Interpretations
             if (interpretations.length > 0) {
                 const latestInterp = interpretations[0];
                 document.getElementById('latest-reasoning').innerText = latestInterp.reasoning;
@@ -391,9 +520,10 @@
                 const health = latestInterp.health_status;
                 const healthBadge = document.getElementById('kpi-health-badge');
                 document.getElementById('kpi-health').innerText = health;
-                healthBadge.innerText = latestInterp.watering_action;
                 
-                healthBadge.className = 'status-badge';
+                healthBadge.innerText = latestInterp.watering_action;
+                healthBadge.className = 'status-pill';
+                
                 if (health === 'HEALTHY') {
                     healthBadge.classList.add('status-healthy');
                 } else if (health === 'STRESSED') {
@@ -403,33 +533,52 @@
                 }
             }
 
-            // Update Image Timestamp
+            // Image Timestamp
             if (vision.length > 0) {
-                document.getElementById('image-time').innerText = `Captured: ${vision[0].timestamp}`;
+                document.getElementById('image-time').innerText = `${vision[0].timestamp}`;
                 if (vision[0].image_path) {
-                    // Force refresh image to bypass browser cache
                     document.getElementById('latest-image').src = `latest.jpg?t=${new Date().getTime()}`;
                 }
             }
 
-
-            // 2. Load Actions Log
+            // 2. Timeline Interventions
             const actionsLog = document.getElementById('actions-log');
             actionsLog.innerHTML = '';
-            humanActions.forEach(action => {
-                const div = document.createElement('div');
-                div.className = 'history-item';
-                div.innerHTML = `
-                    <div class="history-meta">
-                        <strong>${action.action.toUpperCase()}</strong>
-                        <span>${action.timestamp}</span>
-                    </div>
-                    <div class="history-body">${action.note}</div>
-                `;
-                actionsLog.appendChild(div);
-            });
+            if (humanActions.length === 0) {
+                actionsLog.innerHTML = '<div style="color:var(--text-secondary); text-align:center; padding: 2rem 0;">No logged actions.</div>';
+            } else {
+                humanActions.forEach(action => {
+                    const div = document.createElement('div');
+                    div.className = 'timeline-item';
+                    
+                    let icon = '⚡';
+                    if (action.action.toLowerCase().includes('water')) icon = '💧';
+                    if (action.action.toLowerCase().includes('mist')) icon = '💨';
+                    if (action.action.toLowerCase().includes('ac')) icon = '❄️';
+                    if (action.action.toLowerCase().includes('starch')) icon = '🧪';
+                    
+                    // Format timestamp cleanly
+                    let ts_str = action.timestamp;
+                    try {
+                        const dt = new Date(action.timestamp);
+                        ts_str = dt.toLocaleString();
+                    } catch(e) {}
+                    
+                    div.innerHTML = `
+                        <div class="timeline-icon">${icon}</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <span class="timeline-action">${action.action.replace(/_/g, ' ').toUpperCase()}</span>
+                                <span class="timeline-time">${ts_str}</span>
+                            </div>
+                            <div class="timeline-note">${action.note}</div>
+                        </div>
+                    `;
+                    actionsLog.appendChild(div);
+                });
+            }
 
-            // 3. Render Charts
+            // 3. Render charts
             renderSoilChart(telemetry);
             renderVpdChart(telemetry);
         }
@@ -439,22 +588,21 @@
             const labels = telemetry.map(t => t.timestamp.split(' ')[1] || t.timestamp);
             const soilMoisture = telemetry.map(t => t.soil_moisture);
 
-            if (soilChartInstance) {
-                soilChartInstance.destroy();
-            }
+            if (soilChartInstance) soilChartInstance.destroy();
 
             soilChartInstance = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'Soil Moisture (Analog)',
+                        label: 'Soil Moisture',
                         data: soilMoisture,
                         borderColor: '#10b981',
-                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                        backgroundColor: 'rgba(16, 185, 129, 0.03)',
                         borderWidth: 2,
-                        tension: 0.3,
-                        fill: true
+                        tension: 0.35,
+                        fill: true,
+                        pointRadius: 0
                     }]
                 },
                 options: {
@@ -462,12 +610,12 @@
                     maintainAspectRatio: false,
                     scales: {
                         y: {
-                            grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { color: '#9ca3af' }
+                            grid: { color: 'rgba(255,255,255,0.03)', drawTicks: false },
+                            ticks: { color: '#8e9aaf', font: { size: 9 } }
                         },
                         x: {
                             grid: { display: false },
-                            ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                            ticks: { color: '#8e9aaf', maxTicksLimit: 6, font: { size: 9 } }
                         }
                     },
                     plugins: {
@@ -480,101 +628,48 @@
         function renderVpdChart(telemetry) {
             const ctx = document.getElementById('vpdChart').getContext('2d');
             const labels = telemetry.map(t => t.timestamp.split(' ')[1] || t.timestamp);
-            const temps = telemetry.map(t => t.temp);
             const vpds = telemetry.map(t => {
                 const svp = 0.61078 * Math.exp((17.27 * t.temp) / (t.temp + 237.3));
                 return svp * (1 - t.hum / 100);
             });
 
-            if (vpdChartInstance) {
-                vpdChartInstance.destroy();
-            }
+            if (vpdChartInstance) vpdChartInstance.destroy();
 
             vpdChartInstance = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [
-                        {
-                            label: 'VPD (kPa)',
-                            data: vpds,
-                            borderColor: '#3b82f6',
-                            borderWidth: 2,
-                            tension: 0.3,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: 'Temp (°C)',
-                            data: temps,
-                            borderColor: '#f59e0b',
-                            borderWidth: 1.5,
-                            borderDash: [5, 5],
-                            tension: 0.3,
-                            yAxisID: 'y1'
-                        }
-                    ]
+                    datasets: [{
+                        label: 'VPD (kPa)',
+                        data: vpds,
+                        borderColor: '#3b82f6',
+                        backgroundColor: 'rgba(59, 130, 246, 0.03)',
+                        borderWidth: 2,
+                        tension: 0.35,
+                        fill: true,
+                        pointRadius: 0
+                    }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
                         y: {
-                            type: 'linear',
-                            display: true,
-                            position: 'left',
-                            grid: { color: 'rgba(255,255,255,0.05)' },
-                            ticks: { color: '#9ca3af' }
-                        },
-                        y1: {
-                            type: 'linear',
-                            display: true,
-                            position: 'right',
-                            grid: { drawOnChartArea: false },
-                            ticks: { color: '#9ca3af' }
+                            grid: { color: 'rgba(255,255,255,0.03)', drawTicks: false },
+                            ticks: { color: '#8e9aaf', font: { size: 9 } }
                         },
                         x: {
                             grid: { display: false },
-                            ticks: { color: '#9ca3af', maxTicksLimit: 10 }
+                            ticks: { color: '#8e9aaf', maxTicksLimit: 6, font: { size: 9 } }
                         }
                     },
                     plugins: {
-                        legend: {
-                            labels: { color: '#9ca3af' }
-                        }
+                        legend: { display: false }
                     }
                 }
             });
         }
 
-        async function logAction(e) {
-            e.preventDefault();
-            const action = document.getElementById('action-type').value;
-            const note = document.getElementById('action-note').value;
-            
-            if (!note) {
-                alert("Please add a note describing your action!");
-                return;
-            }
-
-            try {
-                const resp = await fetch('/api/actions', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action, note })
-                });
-                
-                if (resp.ok) {
-                    document.getElementById('action-note').value = '';
-                    fetchData();
-                } else {
-                    alert("Error logging action!");
-                }
-            } catch (err) {
-                console.error("Failed to log action:", err);
-            }
-        }
-
-        // Initial fetch
         fetchData();
     </script>
 </body>
