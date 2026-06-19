@@ -6,8 +6,7 @@
     <title>🌿 gardenbot</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:false, theme: 'neutral'});</script>
+    <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.7/leader-line.min.js"></script>
     <style>
         :root {
             var(--bg-color): #f7f5f0;
@@ -572,11 +571,11 @@
                 <p class="architecture-desc">
                     Gardenbot operates as a closed-loop autonomous warden. Environmental telemetry is gathered via the ESP8266 sensory array (BME680, LDR, Soil Probes) and combined with optical and acoustic captures from the host machine. The OpenClaw agent digests this context every 4 hours to evaluate plant vitality and issue care directives.
                 </p>
-                <div class="custom-schematic">
+                <div class="custom-schematic" id="schematic-container">
                     <style>
                         .custom-schematic {
                             font-family: var(--font-sans);
-                            padding: 2rem 0;
+                            padding: 4rem 2rem;
                             display: flex;
                             flex-direction: column;
                             align-items: center;
@@ -584,6 +583,8 @@
                             border-radius: 12px;
                             border: 1px solid var(--surface-border);
                             overflow-x: auto;
+                            position: relative;
+                            gap: 4rem;
                         }
                         
                         .s-node {
@@ -602,247 +603,102 @@
                         .node-software { border-color: #67947d; background: #ffffff; }
                         .node-cloud { border-color: #8c968f; background: #f4f1ea; border-style: dashed; }
 
-                        .s-title {
-                            font-weight: 600;
-                            color: var(--text-primary);
-                            font-size: 0.9rem;
-                            margin-bottom: 0.25rem;
-                        }
+                        .s-title { font-weight: 600; color: var(--text-primary); font-size: 0.9rem; margin-bottom: 0.25rem; }
+                        .s-desc { font-size: 0.75rem; color: var(--text-muted); }
+
+                        .s-row { display: flex; gap: 4rem; align-items: center; justify-content: center; width: 100%; }
+                        .s-col { display: flex; flex-direction: column; align-items: center; gap: 4rem; }
                         
-                        .s-desc {
-                            font-size: 0.75rem;
-                            color: var(--text-muted);
-                        }
-
-                        .s-wire {
-                            width: 2px;
-                            background: linear-gradient(to bottom, #d1d5d2, #aab2ad);
-                            position: relative;
-                            z-index: 1;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            margin: 0 auto;
-                        }
-                        
-                        .s-wire-horizontal {
-                            height: 2px;
-                            background: #d1d5d2;
-                            position: relative;
-                            z-index: 1;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                        }
-
-                        .s-wire::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -4px;
-                            left: -4px;
-                            border-width: 5px 5px 0;
-                            border-style: solid;
-                            border-color: #aab2ad transparent transparent transparent;
-                        }
-
-                        .s-wire span, .s-wire-horizontal span {
-                            position: absolute;
+                        .leader-line-label {
                             background: var(--bg-color);
                             padding: 0.2rem 0.6rem;
                             font-size: 0.7rem;
                             color: var(--text-muted);
                             border-radius: 12px;
-                            white-space: nowrap;
                             border: 1px solid var(--surface-border);
-                        }
-
-                        .s-row {
-                            display: flex;
-                            gap: 2rem;
-                            align-items: center;
-                            justify-content: center;
-                            width: 100%;
-                            margin-bottom: 0;
-                            position: relative;
-                        }
-                        
-                        .s-col {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                        }
-                        
-                        .wire-t-junction {
-                            width: calc(100% - 160px);
-                            height: 40px;
-                            border-top: 2px solid #d1d5d2;
-                            border-left: 2px solid #d1d5d2;
-                            border-right: 2px solid #d1d5d2;
-                            border-top-left-radius: 8px;
-                            border-top-right-radius: 8px;
-                            margin-top: -2px;
-                            position: relative;
-                        }
-                        
-                        .s-wire-arrow-only {
-                            width: 2px;
-                            height: 20px;
-                            background: transparent;
-                            position: relative;
-                            margin: 0 auto;
-                        }
-                        .s-wire-arrow-only::after {
-                            content: '';
-                            position: absolute;
-                            bottom: -4px;
-                            left: -4px;
-                            border-width: 5px 5px 0;
-                            border-style: solid;
-                            border-color: #aab2ad transparent transparent transparent;
+                            font-family: var(--font-sans);
                         }
                     </style>
 
-                    <div style="width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center;">
-                        
-                        <!-- 1. POT -->
-                        <div class="s-node node-hardware">
-                            <div class="s-title">Physical Pot & Plant</div>
-                        </div>
-                        <div class="s-wire" style="height: 40px;"><span>inserted into dirt</span></div>
+                    <!-- 1. POT -->
+                    <div class="s-node node-hardware" id="node-pot">
+                        <div class="s-title">Physical Pot & Plant</div>
+                    </div>
 
-                        <!-- 2. SENSORS -->
-                        <div class="s-row" style="align-items: flex-start; gap: 4rem;">
-                            <!-- Left: Soil Moisture -->
-                            <div class="s-col">
-                                <div class="s-node node-hardware">
-                                    <div class="s-title">Soil Moisture Sensor</div>
-                                </div>
-                                <div class="s-wire" style="height: 40px;"></div>
-                            </div>
-                            
-                            <!-- Right: Air Sensors -->
-                            <div class="s-col" style="margin-top: 2rem;">
-                                <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.5rem;">(exposed to air)</div>
-                                <div class="s-row" style="gap: 1rem;">
-                                    <div class="s-col">
-                                        <div class="s-node node-hardware" style="min-width: 100px;">
-                                            <div class="s-title">BME680</div>
-                                        </div>
-                                        <div class="s-wire" style="height: 40px;"></div>
-                                    </div>
-                                    <div class="s-col">
-                                        <div class="s-node node-hardware" style="min-width: 100px;">
-                                            <div class="s-title">Lux Sensor</div>
-                                        </div>
-                                        <div class="s-wire" style="height: 40px;"></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- 2. SENSORS -->
+                    <div class="s-row" style="align-items: flex-start; gap: 6rem;">
+                        <div class="s-node node-hardware" id="node-soil">
+                            <div class="s-title">Soil Moisture Sensor</div>
                         </div>
                         
-                        <!-- Top-bar for sensors combining into Arduino -->
-                        <div style="width: 320px; height: 2px; background: #d1d5d2; margin-top: -2px; position: relative;"></div>
-                        <div class="s-wire" style="height: 20px;"></div>
-
-                        <!-- 3. ARDUINO -->
-                        <div class="s-node node-hardware" style="width: 320px;">
-                            <div class="s-title">Arduino Uno Microcontroller</div>
+                        <div style="display:flex; flex-direction:column; align-items:center; gap:0.5rem;">
+                            <div style="font-size:0.75rem; color:var(--text-muted);">(exposed to air)</div>
+                            <div class="s-row" style="gap: 2rem;">
+                                <div class="s-node node-hardware" id="node-bme" style="min-width: 100px;">
+                                    <div class="s-title">BME680</div>
+                                </div>
+                                <div class="s-node node-hardware" id="node-lux" style="min-width: 100px;">
+                                    <div class="s-title">Lux Sensor</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="s-wire" style="height: 50px;"><span>Serial over USB</span></div>
+                    </div>
 
-                        <!-- 4. LAPTOP LAYER -->
-                        <div class="s-row" style="gap: 0;">
-                            <!-- Webcam -->
-                            <div class="s-col" style="margin-right: 2rem;">
-                                <div class="s-node node-hardware">
-                                    <div class="s-title">Webcam & Mic</div>
-                                    <div class="s-desc">(Sight & Audio)</div>
-                                </div>
-                            </div>
-                            <!-- Arrow from Webcam to Laptop -->
-                            <div class="s-wire-horizontal" style="width: 40px;">
-                                <span>USB</span>
-                                <div style="position:absolute; right:-4px; border-width: 5px 0 5px 5px; border-style: solid; border-color: transparent transparent transparent #aab2ad;"></div>
-                            </div>
-                            
-                            <!-- Laptop -->
-                            <div class="s-col">
-                                <div class="s-node node-hardware" style="width: 200px;">
-                                    <div class="s-title">Host Laptop</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Arrow from OWM to Laptop -->
-                            <div class="s-wire-horizontal" style="width: 60px;">
-                                <div style="position:absolute; left:-4px; border-width: 5px 5px 5px 0; border-style: solid; border-color: transparent #aab2ad transparent transparent;"></div>
-                            </div>
-                            <!-- OpenWeatherMaps -->
-                            <div class="s-col" style="margin-left: 2rem;">
-                                <div class="s-node node-cloud">
-                                    <div class="s-title">OpenWeatherMaps</div>
-                                    <div class="s-desc">(API / Context)</div>
-                                </div>
-                            </div>
+                    <!-- 3. ARDUINO -->
+                    <div class="s-node node-hardware" id="node-arduino" style="width: 320px;">
+                        <div class="s-title">Arduino Uno Microcontroller</div>
+                    </div>
+
+                    <!-- 4. LAPTOP LAYER -->
+                    <div class="s-row" style="gap: 4rem;">
+                        <div class="s-node node-hardware" id="node-webcam">
+                            <div class="s-title">Webcam & Mic</div>
+                            <div class="s-desc">(Sight & Audio)</div>
                         </div>
                         
-                        <div class="s-wire" style="height: 40px;"></div>
-
-                        <!-- 5. PIPELINE -->
-                        <div class="s-node node-software" style="width: 300px;">
-                            <div class="s-title">Python Pipeline</div>
+                        <div class="s-node node-hardware" id="node-laptop" style="width: 200px;">
+                            <div class="s-title">Host Laptop</div>
                         </div>
-                        <div class="s-wire" style="height: 40px;"></div>
-
-                        <!-- 6. DB -->
-                        <div class="s-node node-software" style="width: 300px;">
-                            <div class="s-title">SQLite Database</div>
+                        
+                        <div class="s-node node-cloud" id="node-owm">
+                            <div class="s-title">OpenWeatherMaps</div>
+                            <div class="s-desc">(API / Context)</div>
                         </div>
-                        <div class="s-wire" style="height: 40px;"></div>
+                    </div>
 
-                        <!-- 7. CLAW -->
-                        <div style="position: relative; display: flex; justify-content: center; width: 100%;">
-                            <div class="s-node node-software" style="width: 300px;">
-                                <div class="s-title">OpenClaw Agent</div>
-                            </div>
-                            
-                            <!-- Bash / Curl breakout -->
-                            <div style="position: absolute; left: 50%; margin-left: 150px; top: 50%; transform: translateY(-50%); display: flex; align-items: center;">
-                                <div class="s-wire-horizontal" style="width: 60px;">
-                                    <span style="top: -24px;">Bash / Curl</span>
-                                    <div style="position:absolute; right:-4px; border-width: 5px 0 5px 5px; border-style: solid; border-color: transparent transparent transparent #aab2ad;"></div>
-                                </div>
-                                <div class="s-node node-hardware" style="min-width: 120px; margin-left: 4px; padding: 0.6rem;">
-                                    <div class="s-title" style="font-size: 0.8rem;">Host Terminal</div>
-                                    <div class="s-desc" style="font-size: 0.65rem;">(Direct Execution)</div>
-                                </div>
-                            </div>
+                    <!-- 5. PIPELINE -->
+                    <div class="s-node node-software" id="node-pipeline" style="width: 300px;">
+                        <div class="s-title">Python Pipeline</div>
+                    </div>
+
+                    <!-- 6. DB -->
+                    <div class="s-node node-software" id="node-db" style="width: 300px;">
+                        <div class="s-title">SQLite Database</div>
+                    </div>
+
+                    <!-- 7. CLAW -->
+                    <div class="s-row" style="gap: 4rem; justify-content: center; position: relative;">
+                        <div class="s-node node-software" id="node-claw" style="width: 300px;">
+                            <div class="s-title">OpenClaw Agent</div>
                         </div>
-                        <div class="s-wire" style="height: 30px;"></div>
-
-                        <!-- 8. CLOUD OUTPUTS -->
-                        <div class="wire-t-junction" style="width: 440px;"></div>
-                        <div class="s-row" style="gap: 2rem; align-items: flex-start;">
-                            <div class="s-col">
-                                <div class="s-wire-arrow-only"></div>
-                                <div class="s-node node-cloud" style="min-width: 120px;">
-                                    <div class="s-title">Gemini</div>
-                                </div>
-                            </div>
-                            <div class="s-col">
-                                <div style="width:2px; height:20px; background:#d1d5d2; margin-top:-20px;"></div>
-                                <div class="s-wire-arrow-only" style="margin-top:-20px;"></div>
-                                <div class="s-node node-cloud" style="min-width: 120px;">
-                                    <div class="s-title">Slack</div>
-                                </div>
-                            </div>
-                            <div class="s-col">
-                                <div class="s-wire-arrow-only"></div>
-                                <div class="s-node node-cloud" style="min-width: 120px;">
-                                    <div class="s-title">GitHub</div>
-                                </div>
-                            </div>
+                        
+                        <div class="s-node node-hardware" id="node-terminal" style="position: absolute; left: 50%; margin-left: 200px;">
+                            <div class="s-title" style="font-size: 0.8rem;">Host Terminal</div>
+                            <div class="s-desc" style="font-size: 0.65rem;">(Direct Execution)</div>
                         </div>
+                    </div>
 
+                    <!-- 8. CLOUD OUTPUTS -->
+                    <div class="s-row" style="gap: 4rem;">
+                        <div class="s-node node-cloud" id="node-gemini" style="min-width: 120px;">
+                            <div class="s-title">Gemini</div>
+                        </div>
+                        <div class="s-node node-cloud" id="node-slack" style="min-width: 120px;">
+                            <div class="s-title">Slack</div>
+                        </div>
+                        <div class="s-node node-cloud" id="node-github" style="min-width: 120px;">
+                            <div class="s-title">GitHub</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -853,7 +709,8 @@
     <script>
         const chartInstances = {};
 
-        let mermaidRendered = false;
+        let linesRendered = false;
+        let lines = [];
 
         function switchTab(tabName) {
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
@@ -862,11 +719,61 @@
             const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabName));
             if (activeBtn) activeBtn.classList.add('active');
             
-            if (tabName === 'architecture' && !mermaidRendered) {
-                mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-                mermaidRendered = true;
+            if (tabName === 'architecture') {
+                if (!linesRendered) {
+                    renderLines();
+                    linesRendered = true;
+                } else {
+                    lines.forEach(line => {
+                        line.show('none');
+                        line.position();
+                    });
+                }
+            } else {
+                lines.forEach(line => line.hide('none'));
             }
         }
+
+        function renderLines() {
+            const commonOptions = { color: '#aab2ad', size: 2, path: 'fluid', startSocketGravity: [0, 40], endSocketGravity: [0, -40] };
+            
+            const makeLabel = (text) => LeaderLine.pathLabel(text, { 
+                padding: '0.2rem 0.6rem', 
+                color: 'var(--text-muted)', 
+                outlineColor: 'var(--bg-color)', 
+                fontSize: '0.7rem' 
+            });
+
+            lines.push(new LeaderLine(document.getElementById('node-pot'), document.getElementById('node-soil'), { ...commonOptions, middleLabel: makeLabel('inserted into dirt') }));
+            
+            lines.push(new LeaderLine(document.getElementById('node-soil'), document.getElementById('node-arduino'), commonOptions));
+            lines.push(new LeaderLine(document.getElementById('node-bme'), document.getElementById('node-arduino'), commonOptions));
+            lines.push(new LeaderLine(document.getElementById('node-lux'), document.getElementById('node-arduino'), commonOptions));
+
+            lines.push(new LeaderLine(document.getElementById('node-arduino'), document.getElementById('node-laptop'), { ...commonOptions, middleLabel: makeLabel('Serial over USB') }));
+            
+            lines.push(new LeaderLine(document.getElementById('node-webcam'), document.getElementById('node-laptop'), { color: '#aab2ad', size: 2, path: 'fluid', startSocket: 'right', endSocket: 'left', middleLabel: makeLabel('USB') }));
+            lines.push(new LeaderLine(document.getElementById('node-owm'), document.getElementById('node-laptop'), { color: '#aab2ad', size: 2, path: 'fluid', startSocket: 'left', endSocket: 'right' }));
+            
+            lines.push(new LeaderLine(document.getElementById('node-laptop'), document.getElementById('node-pipeline'), commonOptions));
+            lines.push(new LeaderLine(document.getElementById('node-pipeline'), document.getElementById('node-db'), commonOptions));
+            lines.push(new LeaderLine(document.getElementById('node-db'), document.getElementById('node-claw'), commonOptions));
+            
+            lines.push(new LeaderLine(document.getElementById('node-claw'), document.getElementById('node-terminal'), { color: '#aab2ad', size: 2, path: 'fluid', startSocket: 'right', endSocket: 'left', middleLabel: makeLabel('Bash / Curl') }));
+            
+            const cloudOpts = { color: '#aab2ad', size: 2, path: 'grid', startSocket: 'bottom', endSocket: 'top' };
+            lines.push(new LeaderLine(document.getElementById('node-claw'), document.getElementById('node-gemini'), cloudOpts));
+            lines.push(new LeaderLine(document.getElementById('node-claw'), document.getElementById('node-slack'), cloudOpts));
+            lines.push(new LeaderLine(document.getElementById('node-claw'), document.getElementById('node-github'), cloudOpts));
+
+            setTimeout(() => lines.forEach(line => line.position()), 50);
+        }
+
+        window.addEventListener('resize', () => {
+            if (document.getElementById('tab-architecture').classList.contains('active')) {
+                lines.forEach(line => line.position());
+            }
+        });
 
         async function fetchData() {
             try {
