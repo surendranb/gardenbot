@@ -4,34 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌿 gardenbot</title>
-    <!-- Google Fonts for Editorial Aesthetic -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true, theme: 'neutral'});</script>
     <style>
         :root {
-            /* Warm Linen & Studio Light Mode Palette */
-            --bg-color: #f7f5f0;           /* Soft linen paper */
-            --bg-accent: #f2e2d9;         /* Very soft terracotta wash */
-            --surface-bg: #ffffff;        /* Pure studio white */
-            --surface-border: #e8e4db;    /* Soft clay border */
-            --surface-border-active: #c97c5d; /* Clay terracotta */
+            var(--bg-color): #f7f5f0;
+            --bg-color: #f7f5f0;
+            --surface-bg: #ffffff;
+            --surface-border: #e8e4db;
+            --surface-border-active: #c97c5d;
             
-            --text-primary: #212922;       /* Deep forest charcoal */
-            --text-secondary: #5a655d;     /* Soft sage gray */
-            --text-muted: #8c968f;         /* Pale clay gray */
+            --text-primary: #212922;
+            --text-secondary: #5a655d;
+            --text-muted: #8c968f;
             
-            --accent-terracotta: #ca6747;  /* Warm clay orange */
-            --accent-sage: #67947d;        /* Soft botanical green */
-            --accent-sand: #dfd5c6;        /* Warm studio sand */
-            --accent-red: #cc5a5a;         /* Soft clay red */
+            --accent-terracotta: #ca6747;
+            --accent-sage: #67947d;
+            --accent-sand: #dfd5c6;
+            --accent-red: #cc5a5a;
             
             --font-serif: 'Lora', Georgia, serif;
             --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
             
             --shadow-soft: 0 10px 35px rgba(80, 75, 70, 0.05);
-            --shadow-hover: 0 15px 45px rgba(80, 75, 70, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -46,7 +43,7 @@
             color: var(--text-primary);
             font-family: var(--font-sans);
             min-height: 100vh;
-            padding: 3rem 1.5rem;
+            padding: 2rem 1.5rem;
             line-height: 1.6;
             background-image: radial-gradient(circle at 10% 10%, rgba(202, 103, 71, 0.015) 0%, transparent 40%),
                               radial-gradient(circle at 90% 90%, rgba(103, 148, 125, 0.02) 0%, transparent 40%);
@@ -61,25 +58,22 @@
         /* Nav & Header Design */
         header {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 3.5rem;
-            padding-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
             border-bottom: 1px solid var(--surface-border);
-            text-align: center;
         }
 
         .brand-title {
             font-family: var(--font-serif);
-            font-size: 3.5rem;
+            font-size: 2.2rem;
             font-weight: 500;
             letter-spacing: -0.04em;
             color: var(--accent-sage);
-            margin-bottom: 0.5rem;
         }
 
-        /* Navigation Tabs */
         nav {
             display: flex;
             background: rgba(232, 228, 219, 0.4);
@@ -100,14 +94,6 @@
             border-radius: 9px;
             cursor: pointer;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .nav-btn:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.4);
         }
 
         .nav-btn.active {
@@ -116,31 +102,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
         }
 
-        .refresh-btn {
-            background: var(--surface-bg);
-            border: 1px solid var(--surface-border);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.8rem;
-            font-family: var(--font-sans);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            box-shadow: var(--shadow-soft);
-            margin-top: 0.5rem;
-        }
-
-        .refresh-btn:hover {
-            border-color: var(--accent-terracotta);
-            color: var(--accent-terracotta);
-            transform: translateY(-1px);
-        }
-
-        /* Tab Content Panes */
         .tab-pane {
             display: none;
             animation: fadeIn 0.4s ease;
@@ -155,7 +116,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Main Grid: 3 columns exactly like mockup */
         .dashboard-grid {
             display: grid;
             grid-template-columns: 320px 1fr 340px;
@@ -180,26 +140,12 @@
             }
         }
 
-        /* Column Classes */
-        .col-left {
+        .col-left, .col-middle, .col-right {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
-        .col-middle {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .col-right {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        /* Framed Succulent Image */
         .framed-art {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
@@ -212,11 +158,10 @@
             width: 100%;
             border-radius: 8px;
             overflow: hidden;
-            border: 8px solid var(--accent-sand); /* Soft warm matte */
+            border: 8px solid var(--accent-sand);
             position: relative;
             aspect-ratio: 1/1;
             background: #eae6dd;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .camera-frame img {
@@ -235,39 +180,27 @@
             font-style: italic;
         }
 
-        /* Metrics grid */
         .metric-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
         .metric-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
             border-radius: 14px;
-            padding: 1rem 1.2rem;
+            padding: 1.2rem;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-shadow: var(--shadow-soft);
-            transition: var(--transition);
-        }
-
-        .metric-card:hover {
-            border-color: var(--surface-border-active);
-            transform: translateY(-1px);
-        }
-
-        .metric-info {
-            display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             gap: 0.8rem;
+            box-shadow: var(--shadow-soft);
         }
 
         .metric-icon-wrapper {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             background: var(--bg-color);
             display: flex;
@@ -276,7 +209,7 @@
             color: var(--accent-sage);
         }
 
-        .metric-card:nth-child(2) .metric-icon-wrapper {
+        .metric-card:nth-child(2n) .metric-icon-wrapper {
             color: var(--accent-terracotta);
         }
 
@@ -286,27 +219,30 @@
         }
 
         .metric-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 0.2rem;
         }
 
         .metric-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            font-weight: 500;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-weight: 700;
         }
 
-        /* Trend Charts Card */
         .trend-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             box-shadow: var(--shadow-soft);
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: 0.8rem;
+            height: 200px;
         }
 
         .trend-card-header {
@@ -318,17 +254,16 @@
 
         .trend-card-title {
             font-family: var(--font-serif);
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-primary);
         }
 
-        .trend-card-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+        .chart-wrapper {
+            flex-grow: 1;
+            position: relative;
         }
 
-        /* Plant Vitality Circular Ring */
         .vitality-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
@@ -358,56 +293,19 @@
             justify-content: center;
         }
 
-        .vitality-ring-svg {
-            transform: rotate(-90deg);
-        }
-
-        .vitality-ring-bg {
-            fill: none;
-            stroke: var(--surface-border);
-            stroke-width: 8;
-        }
-
+        .vitality-ring-svg { transform: rotate(-90deg); }
+        .vitality-ring-bg { fill: none; stroke: var(--surface-border); stroke-width: 8; }
         .vitality-ring-progress {
-            fill: none;
-            stroke: var(--accent-sage);
-            stroke-width: 8;
-            stroke-dasharray: 377; /* 2 * PI * r (r=60) */
-            stroke-dashoffset: 377;
-            stroke-linecap: round;
+            fill: none; stroke: var(--accent-sage); stroke-width: 8;
+            stroke-dasharray: 377; stroke-dashoffset: 377; stroke-linecap: round;
             transition: stroke-dashoffset 1s ease-out;
         }
 
-        .vitality-text-center {
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        .vitality-text-center { position: absolute; display: flex; flex-direction: column; align-items: center; }
+        .vitality-percentage { font-size: 2.2rem; font-weight: 800; color: var(--text-primary); line-height: 1; }
+        .vitality-label-sub { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-top: 0.15rem; }
+        .vitality-footer { font-size: 0.85rem; color: var(--text-secondary); font-weight: 500; }
 
-        .vitality-percentage {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            line-height: 1;
-        }
-
-        .vitality-label-sub {
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-secondary);
-            margin-top: 0.15rem;
-        }
-
-        .vitality-footer {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Garden Status & Notes Panel */
         .status-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
@@ -427,16 +325,17 @@
         }
 
         .status-bot-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
             color: var(--accent-sage);
             background: var(--bg-color);
             padding: 0.4rem 0.8rem;
-            border-radius: 10px;
+            border-radius: 6px;
             border: 1px solid var(--surface-border);
+            align-self: flex-start;
         }
 
         .agent-note-box {
@@ -447,10 +346,42 @@
             font-style: italic;
             border-left: 2px solid var(--accent-terracotta);
             padding-left: 0.8rem;
-            margin-top: 0.25rem;
         }
 
-        /* Last Updated Vitals Card */
+        .profile-card {
+            background: var(--surface-bg);
+            border: 1px solid var(--surface-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .spec-item {
+            font-size: 0.9rem;
+            background: var(--bg-color);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--surface-border);
+        }
+
+        .spec-item strong {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2rem;
+        }
+
         .updated-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
@@ -462,28 +393,10 @@
             gap: 0.5rem;
         }
 
-        .updated-title {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
+        .updated-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; }
+        .updated-subtitle { font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+        .updated-time { font-size: 0.9rem; font-weight: 500; }
 
-        .updated-subtitle {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .updated-time {
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        /* Architecture Page styling */
         .architecture-card {
             background: var(--surface-bg);
             border: 1px solid var(--surface-border);
@@ -495,144 +408,12 @@
             gap: 2.5rem;
         }
 
-        .arch-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (min-width: 992px) {
-            .arch-grid {
-                grid-template-columns: 1.2fr 1fr;
-            }
-        }
-
         .svg-container {
             border: 1px solid var(--surface-border);
             border-radius: 12px;
-            padding: 1rem;
+            padding: 1.5rem;
             background: var(--bg-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .arch-details h3 {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-            color: var(--text-primary);
-        }
-
-        .arch-details p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .arch-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .arch-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-
-        .arch-list li strong {
-            color: var(--accent-terracotta);
-            display: block;
-            font-size: 0.95rem;
-            margin-bottom: 0.15rem;
-        }
-
-        .arch-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            top: 0.1rem;
-            color: var(--accent-sage);
-            font-weight: 700;
-        }
-
-        /* About Page styling */
-        .about-card {
-            background: var(--surface-bg);
-            border: 1px solid var(--surface-border);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-soft);
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .about-title {
-            font-family: var(--font-serif);
-            font-size: 2.2rem;
-            color: var(--text-primary);
-            text-align: center;
-        }
-
-        .about-subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-top: -1.5rem;
-            font-style: italic;
-        }
-
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            font-size: 1rem;
-            color: var(--text-primary);
-            line-height: 1.8;
-        }
-
-        .about-section {
-            border-top: 1px solid var(--surface-border);
-            padding-top: 1.5rem;
-        }
-
-        .about-section h3 {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: var(--accent-terracotta);
-        }
-
-        .spec-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
-            background: var(--bg-color);
-            padding: 1.2rem;
-            border-radius: 12px;
-            border: 1px solid var(--surface-border);
-        }
-
-        .spec-item {
-            font-size: 0.9rem;
-        }
-
-        .spec-item strong {
-            display: block;
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -641,33 +422,15 @@
     <div class="dashboard-container">
         <header>
             <div class="brand-title">gardenbot</div>
-            
             <nav>
-                <button class="nav-btn active" onclick="switchTab('dashboard')">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-                    Dashboard
-                </button>
-                <button class="nav-btn" onclick="switchTab('architecture')">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    Architecture
-                </button>
-                <button class="nav-btn" onclick="switchTab('about')">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                    About
-                </button>
+                <button class="nav-btn active" onclick="switchTab('dashboard')">Dashboard</button>
+                <button class="nav-btn" onclick="switchTab('architecture')">Architecture</button>
             </nav>
-
-            <button class="refresh-btn" onclick="fetchData()">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
-                Force Sync
-            </button>
         </header>
 
-        <!-- =================== DASHBOARD TAB =================== -->
         <div id="tab-dashboard" class="tab-pane active">
             <div class="dashboard-grid">
                 
-                <!-- COLUMN 1: Visual Art Feed & Metrics -->
                 <div class="col-left">
                     <div class="framed-art">
                         <div class="camera-frame">
@@ -677,88 +440,68 @@
                     </div>
 
                     <div class="metric-list">
-                        <!-- Soil Moisture Card -->
                         <div class="metric-card">
-                            <div class="metric-info">
-                                <div class="metric-icon-wrapper">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>
-                                </div>
-                                <div class="metric-details">
-                                    <span class="metric-title">Soil Moisture</span>
-                                    <span class="metric-subtitle" id="val-soil">--</span>
-                                </div>
+                            <div class="metric-icon-wrapper">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-11-7-11S5 10.7 5 15a7 7 0 0 0 7 7z"/></svg>
+                            </div>
+                            <div class="metric-details">
+                                <span class="metric-title">Soil Moisture</span>
+                                <span class="metric-subtitle" id="val-soil">--</span>
                             </div>
                         </div>
 
-                        <!-- Temp Card -->
                         <div class="metric-card">
-                            <div class="metric-info">
-                                <div class="metric-icon-wrapper">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-                                </div>
-                                <div class="metric-details">
-                                    <span class="metric-title">Temperature</span>
-                                    <span class="metric-subtitle" id="val-temp">--°C</span>
-                                </div>
+                            <div class="metric-icon-wrapper">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                            </div>
+                            <div class="metric-details">
+                                <span class="metric-title">Temperature</span>
+                                <span class="metric-subtitle" id="val-temp">--°C</span>
                             </div>
                         </div>
 
-                        <!-- Humidity Card -->
                         <div class="metric-card">
-                            <div class="metric-info">
-                                <div class="metric-icon-wrapper">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                                </div>
-                                <div class="metric-details">
-                                    <span class="metric-title">Humidity</span>
-                                    <span class="metric-subtitle" id="val-hum">--%</span>
-                                </div>
+                            <div class="metric-icon-wrapper">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            </div>
+                            <div class="metric-details">
+                                <span class="metric-title">Humidity</span>
+                                <span class="metric-subtitle" id="val-hum">--%</span>
                             </div>
                         </div>
 
-                        <!-- Light Lux Card -->
                         <div class="metric-card">
-                            <div class="metric-info">
-                                <div class="metric-icon-wrapper">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                                </div>
-                                <div class="metric-details">
-                                    <span class="metric-title">Light Lux</span>
-                                    <span class="metric-subtitle" id="val-lux">-- lx</span>
-                                </div>
+                            <div class="metric-icon-wrapper">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                            </div>
+                            <div class="metric-details">
+                                <span class="metric-title">Light Lux</span>
+                                <span class="metric-subtitle" id="val-lux">-- lx</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- COLUMN 2: Double Trend Charts -->
                 <div class="col-middle">
-                    <!-- Chart 1 -->
                     <div class="trend-card">
-                        <div class="trend-card-header">
-                            <h2 class="trend-card-title">Soil Moisture & T</h2>
-                            <p class="trend-card-subtitle">Last 72 hours</p>
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="soilTempChart"></canvas>
-                        </div>
+                        <div class="trend-card-header"><h2 class="trend-card-title">Soil Moisture</h2></div>
+                        <div class="chart-wrapper"><canvas id="soilChart"></canvas></div>
                     </div>
-
-                    <!-- Chart 2 -->
                     <div class="trend-card">
-                        <div class="trend-card-header">
-                            <h2 class="trend-card-title">Humidity & Light</h2>
-                            <p class="trend-card-subtitle">Last 72 hours</p>
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="humLuxChart"></canvas>
-                        </div>
+                        <div class="trend-card-header"><h2 class="trend-card-title">Temperature</h2></div>
+                        <div class="chart-wrapper"><canvas id="tempChart"></canvas></div>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-card-header"><h2 class="trend-card-title">Humidity</h2></div>
+                        <div class="chart-wrapper"><canvas id="humChart"></canvas></div>
+                    </div>
+                    <div class="trend-card">
+                        <div class="trend-card-header"><h2 class="trend-card-title">Light Lux</h2></div>
+                        <div class="chart-wrapper"><canvas id="luxChart"></canvas></div>
                     </div>
                 </div>
 
-                <!-- COLUMN 3: Vitals & Details -->
                 <div class="col-right">
-                    <!-- Circular Vitality Ring -->
                     <div class="vitality-card">
                         <h2 class="vitality-title">Plant Vitality</h2>
                         <div class="vitality-ring-wrapper">
@@ -774,22 +517,27 @@
                         <div class="vitality-footer" id="score-status">Calculating...</div>
                     </div>
 
-                    <!-- Garden Status & Agent's Note -->
                     <div class="status-card">
                         <h2 class="status-card-header">Garden Status</h2>
-                        <div class="status-bot-badge">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a15 15 0 0 0-3.5 10c0 4.3 3.5 8 3.5 8s3.5-3.7 3.5-8A15 15 0 0 0 12 2z"/></svg>
-                            gardenbot
-                        </div>
+                        <div class="status-bot-badge">Garden Warden</div>
                         <div class="agent-note-box" id="latest-agent-note">
                             "Connecting to gardenbot warden..."
                         </div>
                     </div>
 
-                    <!-- Last Updated Freshness -->
+                    <div class="profile-card">
+                        <h2 class="status-card-header">Plant Profile</h2>
+                        <div class="spec-grid">
+                            <div class="spec-item"><strong>Stature</strong> 8cm & 7cm</div>
+                            <div class="spec-item"><strong>Pot</strong> 8x8 Terracotta</div>
+                            <div class="spec-item"><strong>VPD Target</strong> 0.8-1.5 kPa</div>
+                            <div class="spec-item"><strong>Climate</strong> 30-36°C Indoor</div>
+                        </div>
+                    </div>
+
                     <div class="updated-card">
                         <h2 class="updated-title">Last Updated</h2>
-                        <span class="updated-subtitle">Current Data | gardenbot</span>
+                        <span class="updated-subtitle">Current Data</span>
                         <div class="updated-time" id="updated-timestamp">--</div>
                     </div>
                 </div>
@@ -797,126 +545,46 @@
             </div>
         </div>
 
-        <!-- =================== ARCHITECTURE TAB =================== -->
         <div id="tab-architecture" class="tab-pane">
             <div class="architecture-card">
-                <div class="section-header">
-                    <div>
-                        <div class="section-title">System Schematics</div>
-                        <div class="section-subtitle">Full physical-to-digital botanical monitoring loop</div>
-                    </div>
-                </div>
+                <h2 class="status-card-header">System Schematics</h2>
+                <div class="svg-container">
+                    <div class="mermaid">
+                    graph TD
+                        Plant[Physical Pot: Jade Plant]
+                        Sensors[Sensors: BME680, Lux, Soil Moisture]
+                        Mic[Room Microphone]
+                        Python[Python Scripts: collect, vision]
+                        DB[(SQLite DB: garden.db)]
+                        Claw[OpenClaw: Garden Warden]
+                        Slack[Slack Channel: #plantclaw]
+                        Static[Static Compile: build_static]
+                        Web[GitHub Pages: Dashboard]
 
-                <div class="arch-grid">
-                    <div class="svg-container">
-                        <div class="mermaid">
-                        graph TD
-                            Plant["Physical Pot<br/>(Jade Plant)"]
-                            Sensors["Sensors<br/>(BME680, Lux, Soil Moisture)"]
-                            Mic["Room Microphone"]
-                            
-                            Plant -.->|Transpires & reflects| Sensors
-                            Mic -.->|Captures ambient audio| Python
-                            
-                            Sensors -->|Serial| Python["Python Scripts<br/>(collect.py, vision.py)"]
-                            Python -->|Writes Data| DB[("SQLite DB<br/>(garden.db)")]
-                            
-                            DB -->|Reads History| Claw["OpenClaw<br/>(Garden Warden)"]
-                            Claw -.->|Writes interpretations| DB
-                            Claw -->|Sends Care Alerts| Slack["Slack Channel<br/>(#plantclaw)"]
-                            
-                            DB -->|Reads Data| Static["Static Compile<br/>(build_static.py)"]
-                            Static -->|Git Sync| Web["GitHub Pages<br/>(Dashboard)"]
-                        </div>
-                    </div>
-
-                    <div class="arch-details">
-                        <h3>Full Botanical Loop Schematics</h3>
-                        <p>
-                            gardenbot operates as an automated, closed-loop botanical diagnostic pipeline tracking your desk biome. The workflow spans from physical plant transpiration to AI-interpreted alerts and public statistics:
-                        </p>
-                        
-                        <ul class="arch-list">
-                            <li><strong>1. Biome Sensors:</strong> High-precision BME680 environment chip (reads air temperature, humidity, pressure, and volatile gases), a capacitive soil moisture sensor, and room ambient microphone capture the desk's physical atmosphere.</li>
-                            <li><strong>2. Python Collectors:</strong> <code>collect.py</code> fires on a launchd daemon twice every hour to read the Arduino ADC serial streams. Asynchronously, <code>vision.py</code> queries the USB lens and runs a Gemini Vision pass. All data points append cleanly to SQLite.</li>
-                            <li><strong>3. The SQLite Core:</strong> <code>garden.db</code> stores all structured data, including telemetry logs, outdoor forecasts, visual metrics, and previous agent reports.</li>
-                            <li><strong>4. The Claw Warden:</strong> The OpenClaw <code>garden_warden</code> agent triggers every 4 hours, executes <code>garden_math.py</code> to calculate Vapor Pressure Deficit (VPD) and soil drying slopes, evaluates foliage progress, and writes its final care interpretation back to the DB.</li>
-                            <li><strong>5. Slack & Web Pipeline:</strong> High-priority care alerts deliver directly to the user's `#plantclaw` channel. Simultaneously, <code>build_static.py</code> compiles SQLite records into `data.json` and pushes the updated static dashboard to GitHub Pages.</li>
-                        </ul>
+                        Plant -.->|Transpires| Sensors
+                        Mic -.->|Audio| Python
+                        Sensors -->|Serial| Python
+                        Python -->|Writes Data| DB
+                        DB -->|Reads History| Claw
+                        Claw -.->|Writes Logs| DB
+                        Claw -->|Care Alerts| Slack
+                        DB -->|Reads Data| Static
+                        Static -->|Git Sync| Web
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- =================== ABOUT TAB =================== -->
-        <div id="tab-about" class="tab-pane">
-            <div class="about-card">
-                <h2 class="about-title">About GardenBot</h2>
-                <div class="about-subtitle"> चेन्नई डेस्क बायोम — Chennai Desk Biome</div>
-                
-                <div class="about-content">
-                    <p>
-                        GardenBot is an intelligent, low-intervention botanical companion designed specifically to monitor and manage a single <strong>Jade Succulent</strong> (<em>Crassula ovata</em>). The plant is housed in a self-watering terracotta pot placed on a physical wooden workstation desk in Chennai, India.
-                    </p>
-
-                    <div class="about-section">
-                        <h3>Target Plant Profile</h3>
-                        <p>
-                            Jades are highly resilient succulents native to southern Africa. They thrive in a soak-and-dry watering regime. Because their roots rot quickly in standing water, the self-watering system relies on a slow-wicking moisture sponge that dries out completely between cycles.
-                        </p>
-                        
-                        <div class="spec-grid">
-                            <div class="spec-item">
-                                <strong>Stature Baseline</strong>
-                                2 Stalks: 8.0 cm (Large) & 7.0 cm (Small)
-                            </div>
-                            <div class="spec-item">
-                                <strong>Pot Dimensions</strong>
-                                8.0 cm x 8.0 cm
-                            </div>
-                            <div class="spec-item">
-                                <strong>VPD Range (Optimal)</strong>
-                                0.8 kPa — 1.5 kPa (Succulent Transpiration)
-                            </div>
-                            <div class="spec-item">
-                                <strong>Chennai Indoor Norms</strong>
-                                Temperature: 30°C — 36°C | Humidity: 50% — 75%
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="about-section">
-                        <h3>Diagnostic Rules</h3>
-                        <p>
-                            The system evaluates water requirements based on two signals: <strong>Soil moisture index</strong> (the physical resistance measured via the capacitive soil probe) and <strong>Turgidity</strong> (the visual plumpness/thickness of the leaves analyzed by vision). 
-                            If the soil index is dry but the vision model confirms leaves are thick and turgid, the agent defaults to <strong>Hold Water</strong> to prevent root suffocation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
-        let soilTempChartInstance = null;
-        let humLuxChartInstance = null;
+        const chartInstances = {};
 
-        // Navigation Switcher
         function switchTab(tabName) {
-            // Hide all tab panes
-            document.querySelectorAll('.tab-pane').forEach(pane => {
-                pane.classList.remove('active');
-            });
-            // Deactivate all nav buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
-            // Show active pane
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             document.getElementById(`tab-${tabName}`).classList.add('active');
-            
-            // Highlight active button
-            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => btn.getAttribute('onclick').includes(tabName));
+            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.getAttribute('onclick').includes(tabName));
             if (activeBtn) activeBtn.classList.add('active');
         }
 
@@ -930,20 +598,16 @@
             }
         }
 
-        // Format raw SQLite timestamp cleanly to "DD-MMM HH:MM AM/PM"
         function formatLabelTimestamp(rawTs) {
             try {
                 if (!rawTs) return '--';
                 const t = rawTs.replace(/-/g, '/');
                 const dt = new Date(t);
                 if (isNaN(dt.getTime())) return rawTs;
-                
                 const timeStr = dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
                 const dateStr = dt.toLocaleDateString([], { month: 'short', day: 'numeric' });
                 return `${dateStr} ${timeStr}`;
-            } catch (e) {
-                return rawTs;
-            }
+            } catch (e) { return rawTs; }
         }
 
         function updateDashboard(data) {
@@ -951,49 +615,32 @@
             const interpretations = data.interpretations || [];
             const vision = data.vision || [];
 
-            // 1. Update metrics in Left Column
             if (telemetry.length > 0) {
                 const latest = telemetry[telemetry.length - 1];
                 document.getElementById('val-temp').innerText = `${latest.temp.toFixed(1)}°C`;
                 document.getElementById('val-soil').innerText = latest.soil_moisture;
                 document.getElementById('val-hum').innerText = `${latest.hum.toFixed(0)}%`;
                 document.getElementById('val-lux').innerText = `${latest.light.toLocaleString()} lx`;
-                
-                // VPD calculation
-                const vpd = 0.61078 * Math.exp((17.27 * latest.temp) / (latest.temp + 237.3)) * (1 - latest.hum/100);
-                
-                // Update Updated Card
                 document.getElementById('updated-timestamp').innerText = formatLabelTimestamp(latest.timestamp);
             }
 
-            // Update Garden Status (Last Agent Report)
             if (interpretations.length > 0) {
                 const latestInterp = interpretations[0];
                 document.getElementById('latest-agent-note').innerText = `"${latestInterp.reasoning}"`;
-                
                 const health = latestInterp.health_status;
-                
-                // Plant Vitality Progress calculation
                 let vitalityPct = 100;
                 if (health === 'STRESSED') vitalityPct = 75;
                 if (health === 'CRITICAL') vitalityPct = 40;
-                
-                // Cross check with turgor if available
                 if (vision.length > 0 && vision[0].turgidity_score !== null) {
                     vitalityPct = Math.round(vision[0].turgidity_score * 100);
                 }
-                
                 document.getElementById('score-pct').innerText = `${vitalityPct}%`;
                 document.getElementById('score-status').innerText = `Vitality: ${health}`;
-                
-                // Update circular ring stroke-dashoffset
-                // Circle perimeter is 345.5 (2 * PI * r = 2 * 3.14159 * 55)
                 const perimeter = 345.5;
                 const offset = perimeter - (vitalityPct / 100) * perimeter;
                 document.getElementById('vitality-indicator').style.strokeDashoffset = offset;
             }
 
-            // Image Timestamp
             if (vision.length > 0) {
                 const latestVision = vision[0];
                 document.getElementById('image-time').innerText = `Lens: Optical Desk Capture (${formatLabelTimestamp(latestVision.timestamp)})`;
@@ -1002,183 +649,45 @@
                 }
             }
 
-            // 3. Render charts (Last 72 hours)
-            renderSoilTempChart(telemetry);
-            renderHumLuxChart(telemetry);
+            renderChart('soilChart', telemetry, 'soil_moisture', '#67947d', 'rgba(103, 148, 125, 0.1)');
+            renderChart('tempChart', telemetry, 'temp', '#ca6747', 'rgba(202, 103, 71, 0.1)');
+            renderChart('humChart', telemetry, 'hum', '#5a655d', 'rgba(90, 101, 93, 0.1)');
+            renderChart('luxChart', telemetry, 'light', '#d09f5e', 'rgba(208, 159, 94, 0.1)');
         }
 
-        function renderSoilTempChart(telemetry) {
-            const ctx = document.getElementById('soilTempChart').getContext('2d');
-            const labels = telemetry.map(t => formatLabelTimestamp(t.timestamp));
-            const soilMoisture = telemetry.map(t => t.soil_moisture);
-            const temps = telemetry.map(t => t.temp);
+        function renderChart(canvasId, data, dataKey, color, bgColor) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            const labels = data.map(t => formatLabelTimestamp(t.timestamp));
+            const values = data.map(t => t[dataKey]);
 
-            if (soilTempChartInstance) soilTempChartInstance.destroy();
+            if (chartInstances[canvasId]) chartInstances[canvasId].destroy();
 
-            soilTempChartInstance = new Chart(ctx, {
+            chartInstances[canvasId] = new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: labels,
-                    datasets: [
-                        {
-                            label: 'Soil Moisture',
-                            data: soilMoisture,
-                            borderColor: '#67947d',
-                            backgroundColor: 'rgba(103, 148, 125, 0.03)',
-                            borderWidth: 2,
-                            tension: 0.2,
-                            fill: true,
-                            pointRadius: 0,
-                            yAxisID: 'yMoisture'
-                        },
-                        {
-                            label: 'Temperature',
-                            data: temps,
-                            borderColor: '#ca6747',
-                            borderWidth: 2,
-                            tension: 0.2,
-                            fill: false,
-                            pointRadius: 0,
-                            yAxisID: 'yTemp'
-                        }
-                    ]
+                    datasets: [{
+                        data: values,
+                        borderColor: color,
+                        backgroundColor: bgColor,
+                        borderWidth: 2,
+                        tension: 0.2,
+                        fill: true,
+                        pointRadius: 0
+                    }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
                     scales: {
-                        yMoisture: {
-                            type: 'linear',
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Moisture Index',
-                                color: '#5a655d',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
+                        y: {
                             grid: { color: 'rgba(0,0,0,0.02)', drawTicks: false },
-                            ticks: { color: '#5a655d', font: { size: 9 } }
-                        },
-                        yTemp: {
-                            type: 'linear',
-                            position: 'right',
-                            title: {
-                                display: true,
-                                text: 'Temperature (°C)',
-                                color: '#ca6747',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
-                            grid: { drawOnChartArea: false },
-                            ticks: { color: '#ca6747', font: { size: 9 } }
+                            ticks: { color: '#8c968f', font: { size: 9 }, maxTicksLimit: 5 }
                         },
                         x: {
-                            title: {
-                                display: true,
-                                text: 'Timeline (Last 72 Hours)',
-                                color: '#5a655d',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
                             grid: { display: false },
-                            ticks: { color: '#5a655d', maxTicksLimit: 6, font: { size: 9 } }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: {
-                                boxWidth: 10,
-                                font: { size: 10, family: "'Outfit', sans-serif" }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderHumLuxChart(telemetry) {
-            const ctx = document.getElementById('humLuxChart').getContext('2d');
-            const labels = telemetry.map(t => formatLabelTimestamp(t.timestamp));
-            const hums = telemetry.map(t => t.hum);
-            const luxs = telemetry.map(t => t.light);
-
-            if (humLuxChartInstance) humLuxChartInstance.destroy();
-
-            humLuxChartInstance = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: labels,
-                    datasets: [
-                        {
-                            label: 'Humidity',
-                            data: hums,
-                            borderColor: '#5a655d',
-                            borderWidth: 2,
-                            tension: 0.2,
-                            fill: false,
-                            pointRadius: 0,
-                            yAxisID: 'yHum'
-                        },
-                        {
-                            label: 'Light Lux',
-                            data: luxs,
-                            borderColor: '#d09f5e',
-                            backgroundColor: 'rgba(208, 159, 94, 0.03)',
-                            borderWidth: 2,
-                            tension: 0.2,
-                            fill: true,
-                            pointRadius: 0,
-                            yAxisID: 'yLux'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        yHum: {
-                            type: 'linear',
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Humidity (%)',
-                                color: '#5a655d',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
-                            grid: { color: 'rgba(0,0,0,0.02)', drawTicks: false },
-                            ticks: { color: '#5a655d', font: { size: 9 } }
-                        },
-                        yLux: {
-                            type: 'linear',
-                            position: 'right',
-                            title: {
-                                display: true,
-                                text: 'Light Intensity (Lux)',
-                                color: '#d09f5e',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
-                            grid: { drawOnChartArea: false },
-                            ticks: { color: '#d09f5e', font: { size: 9 } }
-                        },
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Timeline (Last 72 Hours)',
-                                color: '#5a655d',
-                                font: { size: 10, weight: '700', family: "'Outfit', sans-serif" }
-                            },
-                            grid: { display: false },
-                            ticks: { color: '#5a655d', maxTicksLimit: 6, font: { size: 9 } }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top',
-                            labels: {
-                                boxWidth: 10,
-                                font: { size: 10, family: "'Outfit', sans-serif" }
-                            }
+                            ticks: { display: false }
                         }
                     }
                 }

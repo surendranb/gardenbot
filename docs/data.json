@@ -1,17 +1,6 @@
 {
   "telemetry": [
     {
-      "timestamp": "2026-06-15 09:43:03",
-      "temp": 34.57,
-      "hum": 56.27,
-      "light": 715,
-      "soil_moisture": 422,
-      "pressure": 1006.73,
-      "gas": 70.75,
-      "pir": null,
-      "db": -25.9
-    },
-    {
       "timestamp": "2026-06-15 10:13:52",
       "temp": 34.71,
       "hum": 58.12,
@@ -1649,9 +1638,33 @@
       "gas": 61.75,
       "pir": 0,
       "db": -31.2
+    },
+    {
+      "timestamp": "2026-06-19 14:03:20",
+      "temp": 34.86,
+      "hum": 60.96,
+      "light": 680,
+      "soil_moisture": 313,
+      "pressure": 1005.62,
+      "gas": 58.79,
+      "pir": 1,
+      "db": -30.4
     }
   ],
   "weather": [
+    {
+      "timestamp": "2026-06-19 14:03:20",
+      "temp": 35.03,
+      "feels_like": 42.03,
+      "hum": 67.0,
+      "pressure": 1006.0,
+      "clouds": 100,
+      "wind_speed": 3.31,
+      "description": "overcast clouds",
+      "forecast_3h_temp": 33.63,
+      "forecast_3h_hum": 64.0,
+      "forecast_3h_rain": 0.95
+    },
     {
       "timestamp": "2026-06-19 13:32:55",
       "temp": 35.6,
@@ -2285,19 +2298,6 @@
       "clouds": null,
       "wind_speed": null,
       "description": "few clouds",
-      "forecast_3h_temp": null,
-      "forecast_3h_hum": null,
-      "forecast_3h_rain": null
-    },
-    {
-      "timestamp": "2026-05-29 18:00:05",
-      "temp": 33.11,
-      "feels_like": null,
-      "hum": 66.0,
-      "pressure": 1006.0,
-      "clouds": null,
-      "wind_speed": null,
-      "description": "scattered clouds",
       "forecast_3h_temp": null,
       "forecast_3h_hum": null,
       "forecast_3h_rain": null
