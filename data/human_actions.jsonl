@@ -1,8 +1,0 @@
-{"timestamp": "2026-04-05T09:58:00Z", "action": "re_evaluate_sensor_a5", "target": ["p2", "p4"], "note": "User reports A5 is not broken; investigation pending.", "status": "pending_verification"}
-{"timestamp": "2026-04-05T09:58:05Z", "action": "manual_light_misting", "target": ["p2", "p4"], "note": "Performed by user.", "status": "applied"}
-{"timestamp": "2026-04-05T10:11:00Z", "action": "foliar_tea_mist", "target": ["p3"], "note": "1:1 diluted green tea mist completed by user.", "status": "applied"}
-{"timestamp": "2026-04-05T10:16:00Z", "action": "re_evaluate_sensor_a5", "target": ["p2", "p4"], "note": "Confirmed functional based on telemetry fluctuation.", "status": "resolved"}
-{"timestamp": "2026-04-08T05:33:00Z", "action": "supplementary_light_add", "target": ["canopy"], "note": "Added lamp with yellow spectrum light. Option to switch to blue LED available.", "status": "applied"}
-{"timestamp": "2026-04-09T10:30:00+05:30", "action": "supplementary_starch_water", "target": ["p1", "p2", "p3", "p4"], "note": "Added some starch water to all the plants.", "status": "applied"}
-{"timestamp": "2026-04-10T11:24:05Z", "action": "AC_ON", "note": "Set to 25C (Cooling trial)", "status": "applied"}
-{"timestamp": "2026-04-10T11:39:53Z", "action": "POWERCUT_RECOVERY", "note": "Power cut detected; AC restart pending/shifted", "status": "applied"}

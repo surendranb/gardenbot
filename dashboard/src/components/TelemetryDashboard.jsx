@@ -113,7 +113,7 @@ export default function TelemetryDashboard({ data }) {
           <div className="camera-frame">
             <img 
               id="latest-image" 
-              src="/latest.jpg" 
+              src="./latest.jpg" 
               alt="Latest visual feed snapshot" 
               onError={(e) => { e.target.style.display = 'none'; }}
             />
